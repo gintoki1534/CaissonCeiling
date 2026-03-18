@@ -1,5 +1,21 @@
-Saved/
-Intermediate/
-DerivedDataCache/
+# Unreal generated data
+Binaries/
 Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# Logs and local cache
 *.log
+*.tmp
+*.VC.db
+*.VC.opendb
+*.opendb
+
+# IDE and local workspace files
+.vs/
+.vscode/
+.vsconfig
+*.sln
+*.code-workspace
+.ignore
