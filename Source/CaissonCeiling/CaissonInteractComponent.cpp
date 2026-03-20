@@ -1,40 +1,97 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "CaissonInteractComponent.h"
+
 #include "Components/PrimitiveComponent.h"
 
-// Sets default values for this component's properties
 UCaissonInteractComponent::UCaissonInteractComponent()
 {
 	PrimaryComponentTick.bCanEverTick = true;
-	InteractName = TEXT("未命名部件");
+	InteractName = TEXT("UnnamedInteractable");
+	InteractionId = NAME_None;
+	bInteractionEnabled = true;
+	bHoverHighlighted = false;
+	bPersistentHighlighted = false;
 }
 
-// Called when the game starts
 void UCaissonInteractComponent::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-// Called every frame
 void UCaissonInteractComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 }
 
+bool UCaissonInteractComponent::TryInteract()
+{
+	if (!bInteractionEnabled)
+	{
+		return false;
+	}
+
+	// 只有允许交互时才广播点击事件，避免重复完成。
+	OnInteractClicked.Broadcast();
+	return true;
+}
+
+void UCaissonInteractComponent::SetInteractionEnabled(bool bEnabled)
+{
+	bInteractionEnabled = bEnabled;
+}
+
+void UCaissonInteractComponent::SetHoverHighlight(bool bEnabled)
+{
+	if (bHoverHighlighted == bEnabled)
+	{
+		return;
+	}
+
+	bHoverHighlighted = bEnabled;
+	NotifyHoverStateChanged(bEnabled);
+	RefreshHighlightState();
+}
+
+void UCaissonInteractComponent::SetPersistentHighlight(bool bEnabled)
+{
+	if (bPersistentHighlighted == bEnabled)
+	{
+		return;
+	}
+
+	bPersistentHighlighted = bEnabled;
+	RefreshHighlightState();
+}
+
 void UCaissonInteractComponent::SetHighlightFocus(bool bIsFocused)
 {
-	// 尝试获取所属 Actor 的所有的渲染组件并开启 Custom Depth (例如用于描边高亮)
-	AActor* Owner = GetOwner();
-	if (Owner)
+	SetHoverHighlight(bIsFocused);
+}
+
+void UCaissonInteractComponent::RefreshHighlightState()
+{
+	const bool bShouldHighlight = bHoverHighlighted || bPersistentHighlighted;
+
+	if (AActor* Owner = GetOwner())
 	{
-		TArray<UPrimitiveComponent*> PrimComps;
-		Owner->GetComponents<UPrimitiveComponent>(PrimComps);
-		for (UPrimitiveComponent* Comp : PrimComps)
+		TArray<UPrimitiveComponent*> PrimitiveComponents;
+		Owner->GetComponents<UPrimitiveComponent>(PrimitiveComponents);
+
+		for (UPrimitiveComponent* Component : PrimitiveComponents)
 		{
-			Comp->SetRenderCustomDepth(bIsFocused);
-			// 默认 CustomDepthStencilValue 可在蓝图设置，例如为 1
+			// 统一使用 Custom Depth，蓝图或材质里可以继续扩展描边/发光效果。
+			Component->SetRenderCustomDepth(bShouldHighlight);
 		}
+	}
+}
+
+void UCaissonInteractComponent::NotifyHoverStateChanged(bool bHovered)
+{
+	if (bHovered)
+	{
+		OnHoverBegin.Broadcast();
+	}
+	else
+	{
+		OnHoverEnd.Broadcast();
 	}
 }

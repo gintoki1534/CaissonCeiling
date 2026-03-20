@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -7,6 +5,7 @@
 #include "CaissonPawn.generated.h"
 
 class UCameraComponent;
+class USceneComponent;
 class USpringArmComponent;
 
 /**
@@ -26,6 +25,14 @@ protected:
 public:	
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	// 独立场景根节点。整个展示 Pawn 的旋转中心由它决定。
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
+	USceneComponent* SceneRootComp;
+
+	// 模型旋转枢轴。展示模型应挂在这个节点下，鼠标拖拽时只旋转它。
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
+	USceneComponent* ModelPivotComp;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
 	USpringArmComponent* SpringArmComp;

@@ -1,19 +1,26 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "CaissonPawn.h"
-#include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Components/SceneComponent.h"
+#include "GameFramework/SpringArmComponent.h"
 
-// Sets default values
 ACaissonPawn::ACaissonPawn()
 {
- 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// 漫游场景需要持续处理相机旋转，因此保留 Tick。
 	PrimaryActorTick.bCanEverTick = true;
 
-	// 创建 SpringArm (用于围绕目标旋转和缩放相机)
+	// 创建独立根节点。这样展示模型和相机系统可以分层管理，
+	// 鼠标拖拽旋转时会围绕 Pawn 原点旋转，而不是围绕 SpringArm 本身。
+	SceneRootComp = CreateDefaultSubobject<USceneComponent>(TEXT("SceneRootComp"));
+	RootComponent = SceneRootComp;
+
+	// 创建模型旋转枢轴。展示模型统一挂在它下面，
+	// 鼠标拖拽时只旋转这个节点，不让相机跟着一起转。
+	ModelPivotComp = CreateDefaultSubobject<USceneComponent>(TEXT("ModelPivotComp"));
+	ModelPivotComp->SetupAttachment(SceneRootComp);
+
+	// 创建 SpringArm (用于控制 SceneCapture / Camera 的观察距离)
 	SpringArmComp = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArmComp"));
-	RootComponent = SpringArmComp;
+	SpringArmComp->SetupAttachment(SceneRootComp);
 	SpringArmComp->TargetArmLength = 1000.f;
 	SpringArmComp->bDoCollisionTest = false; // 视需求开启/关闭碰撞
 	
@@ -22,21 +29,18 @@ ACaissonPawn::ACaissonPawn()
 	CameraComp->SetupAttachment(SpringArmComp, USpringArmComponent::SocketName);
 }
 
-// Called when the game starts or when spawned
 void ACaissonPawn::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
 void ACaissonPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
 
-// Called to bind functionality to input
 void ACaissonPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
@@ -55,19 +59,24 @@ void ACaissonPawn::OnLookVectorReceived(const FVector2D& LookAxisVector)
 	float YawOffset = LookAxisVector.X * RotationSensitivity;
 	float PitchOffset = LookAxisVector.Y * RotationSensitivity;
 
-	// 1. 获取当前的旋转
-	FRotator CurrentRotation = GetActorRotation();
+	if (!ModelPivotComp)
+	{
+		return;
+	}
 
-	// 2. 加上我们计算出的偏移量
+	// 1. 获取当前模型枢轴的相对旋转
+	FRotator CurrentRotation = ModelPivotComp->GetRelativeRotation();
+
+	// 2. 加上鼠标拖拽带来的偏移量
 	CurrentRotation.Yaw += YawOffset;
 
-	// 限制俯仰角，防止模型直接翻转过去 (比如限制在 -80 到 80 度之间)
+	// 限制俯仰角，防止模型直接翻转过去
 	CurrentRotation.Pitch = FMath::Clamp(CurrentRotation.Pitch + PitchOffset, -80.0f, 80.0f);
 
 	// 不改变翻滚角 (Roll)
 	CurrentRotation.Roll = 0.0f;
 
-	// 3. 应用新的旋转到由 Pawn 整体 (或者 SpringArm)
-	SetActorRotation(CurrentRotation);
+	// 3. 只把新的旋转应用到模型枢轴，不旋转相机。
+	ModelPivotComp->SetRelativeRotation(CurrentRotation);
 }
 

@@ -1,0 +1,15 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = true
+
+[*.{h,cpp,cs,md,txt,ini,json,uproject,sln}]
+charset = utf-8
+
+[*.uasset]
+charset = unset
+
+[*.umap]
+charset = unset
