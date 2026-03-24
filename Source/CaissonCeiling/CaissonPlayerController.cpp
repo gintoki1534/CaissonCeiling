@@ -194,24 +194,21 @@ void ACaissonPlayerController::OnInteract()
 
 	UE_LOG(LogTemp, Log, TEXT("[交互] 射线命中对象：%s"), *InteractComp->GetOwner()->GetName());
 
-	if (InteractComp->TryInteract())
-	{
-		HandleLevel2Interaction(InteractComp);
-	}
+	HandleLevel2Interaction(InteractComp);
 }
 
-void ACaissonPlayerController::HandleLevel2Interaction(UCaissonInteractComponent* InteractComp)
+bool ACaissonPlayerController::HandleLevel2Interaction(UCaissonInteractComponent* InteractComp)
 {
 	if (!InteractComp)
 	{
-		return;
+		return false;
 	}
 
 	const FName TargetId = InteractComp->InteractionId;
 	if (TargetId.IsNone())
 	{
 		UE_LOG(LogTemp, Warning, TEXT("[Level2] 可交互对象未配置 InteractionId：%s"), *GetNameSafe(InteractComp->GetOwner()));
-		return;
+		return false;
 	}
 
 	if (!RequiredLevel2TargetIds.Contains(TargetId))
@@ -221,13 +218,50 @@ void ACaissonPlayerController::HandleLevel2Interaction(UCaissonInteractComponent
 			UE_LOG(LogTemp, Warning, TEXT("[交互调试] 对象 %s 存在交互组件，但 InteractionId=%s 不在当前目标列表中"), *GetNameSafe(InteractComp->GetOwner()), *TargetId.ToString());
 		}
 		UE_LOG(LogTemp, Verbose, TEXT("[Level2] 点击目标 %s，但它不属于当前关卡目标"), *TargetId.ToString());
-		return;
+		return false;
+	}
+
+	const int32 TargetCount = RequiredLevel2TargetIds.Num();
+	if (TargetCount <= 0)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("[Level2] 当前未配置 RequiredLevel2TargetIds，无法进行顺序判定"));
+		return false;
+	}
+
+	// 按顺序判定：只能点击当前步骤对应的目标。
+	if (CurrentStep < 0 || CurrentStep >= TargetCount)
+	{
+		if (bEnableInteractionDebugLogs)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("[交互调试] 当前步骤索引越界（CurrentStep=%d，TargetCount=%d），忽略本次点击"), CurrentStep, TargetCount);
+		}
+		return false;
+	}
+
+	const FName ExpectedTargetId = RequiredLevel2TargetIds[CurrentStep];
+	if (TargetId != ExpectedTargetId)
+	{
+		if (bEnableInteractionDebugLogs)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("[交互调试] 点击顺序不正确：当前应点击 %s，实际点击 %s"), *ExpectedTargetId.ToString(), *TargetId.ToString());
+		}
+		return false;
 	}
 
 	if (ActivatedLevel2TargetIds.Contains(TargetId))
 	{
 		UE_LOG(LogTemp, Verbose, TEXT("[Level2] 目标 %s 已经完成，本次不重复计数"), *TargetId.ToString());
-		return;
+		return false;
+	}
+
+	// 只有顺序正确时才触发点击事件，避免“点错也点亮”。
+	if (!InteractComp->TryInteract())
+	{
+		if (bEnableInteractionDebugLogs)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("[交互调试] 对象 %s 当前不可交互，忽略本次激活"), *GetNameSafe(InteractComp->GetOwner()));
+		}
+		return false;
 	}
 
 	// 记录本次激活的目标，并立即锁定，防止重复触发。
@@ -237,7 +271,6 @@ void ACaissonPlayerController::HandleLevel2Interaction(UCaissonInteractComponent
 	InteractComp->SetHoverHighlight(false);
 
 	const int32 FoundCount = GetFoundLevel2TargetCount();
-	const int32 TargetCount = RequiredLevel2TargetIds.Num();
 
 	UE_LOG(LogTemp, Log, TEXT("[Level2] 成功点亮目标 %s（%d/%d）"), *TargetId.ToString(), FoundCount, TargetCount);
 
@@ -246,6 +279,8 @@ void ACaissonPlayerController::HandleLevel2Interaction(UCaissonInteractComponent
 
 	// 目前每找到一个关键目标就推进一步，3 个目标全部完成后正好推进完整个阶段。
 	AdvanceStep();
+
+	return true;
 }
 
 void ACaissonPlayerController::UpdateHoveredInteractable()

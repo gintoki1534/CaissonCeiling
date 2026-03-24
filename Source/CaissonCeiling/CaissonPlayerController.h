@@ -42,7 +42,7 @@ protected:
 	void Look(const FInputActionValue& Value);
 	void OnInteract();
 	void OnRightClickSkip();
-	void HandleLevel2Interaction(UCaissonInteractComponent* InteractComp);
+	bool HandleLevel2Interaction(UCaissonInteractComponent* InteractComp);
 	void UpdateHoveredInteractable();
 	UCaissonInteractComponent* GetInteractComponentUnderCursor() const;
 
