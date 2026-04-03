@@ -21,6 +21,10 @@ ACaissonPlayerController::ACaissonPlayerController()
 	bEnableInteractionDebugLogs = true;
 	bEnableLevelTargetHover = false;
 	bEnableLevelTargetClick = false;
+	Level2FlowState = ELevel2FlowState::SearchingTargets;
+	ActiveInspectTargetId = NAME_None;
+	bCachedHoverEnabledBeforeInspect = false;
+	bCachedClickEnabledBeforeInspect = false;
 }
 
 void ACaissonPlayerController::BeginPlay()
@@ -85,12 +89,18 @@ void ACaissonPlayerController::AdvanceStep()
 void ACaissonPlayerController::ResetSteps()
 {
 	CurrentStep = 0;
+	Level2FlowState = ELevel2FlowState::SearchingTargets;
+	ActiveInspectTargetId = NAME_None;
+	SetIgnoreLookInput(false);
 	OnStepChanged.Broadcast(CurrentStep);
 }
 
 void ACaissonPlayerController::ResetLevel2TargetProgress()
 {
 	ActivatedLevel2TargetIds.Reset();
+	Level2FlowState = ELevel2FlowState::SearchingTargets;
+	ActiveInspectTargetId = NAME_None;
+	SetIgnoreLookInput(false);
 
 	if (CurrentHoveredInteractComponent)
 	{
@@ -160,6 +170,23 @@ void ACaissonPlayerController::Look(const FInputActionValue& Value)
 
 void ACaissonPlayerController::OnInteract()
 {
+	if (Level2FlowState == ELevel2FlowState::WaitingAnyClickToContinue)
+	{
+		Level2FlowState = ELevel2FlowState::TransitionRequested;
+		UE_LOG(LogTemp, Log, TEXT("[Level2] 检测到“任意点击继续”，请求进入下一关"));
+		OnLevel2NextLevelRequested.Broadcast();
+		return;
+	}
+
+	if (Level2FlowState == ELevel2FlowState::ShowingTargetInspect || Level2FlowState == ELevel2FlowState::TransitionRequested)
+	{
+		if (bEnableInteractionDebugLogs)
+		{
+			UE_LOG(LogTemp, Verbose, TEXT("[交互调试] 当前处于演出或跳转状态，忽略点击"));
+		}
+		return;
+	}
+
 	if (!bEnableLevelTargetClick)
 	{
 		if (bEnableInteractionDebugLogs)
@@ -280,7 +307,52 @@ bool ACaissonPlayerController::HandleLevel2Interaction(UCaissonInteractComponent
 	// 目前每找到一个关键目标就推进一步，3 个目标全部完成后正好推进完整个阶段。
 	AdvanceStep();
 
+	// 点击成功后进入“目标演出中”状态，蓝图执行镜头拉近 + 介绍 UI。
+	Level2FlowState = ELevel2FlowState::ShowingTargetInspect;
+	ActiveInspectTargetId = TargetId;
+	bCachedHoverEnabledBeforeInspect = bEnableLevelTargetHover;
+	bCachedClickEnabledBeforeInspect = bEnableLevelTargetClick;
+	SetLevelTargetInteractionEnabled(false, false);
+	SetIgnoreLookInput(true);
+
+	const bool bIsFinalTarget = (FoundCount >= TargetCount);
+	OnLevel2InspectStarted.Broadcast(TargetId, bIsFinalTarget);
+
 	return true;
+}
+
+void ACaissonPlayerController::CompleteLevel2InspectPresentation()
+{
+	if (Level2FlowState != ELevel2FlowState::ShowingTargetInspect)
+	{
+		if (bEnableInteractionDebugLogs)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("[交互调试] 调用了 CompleteLevel2InspectPresentation，但当前不在演出状态"));
+		}
+		return;
+	}
+
+	const int32 FoundCount = GetFoundLevel2TargetCount();
+	const int32 TargetCount = RequiredLevel2TargetIds.Num();
+
+	ActiveInspectTargetId = NAME_None;
+
+	if (TargetCount > 0 && FoundCount >= TargetCount)
+	{
+		Level2FlowState = ELevel2FlowState::WaitingAnyClickToContinue;
+		UE_LOG(LogTemp, Log, TEXT("[Level2] 三个目标演出完成，等待任意点击继续"));
+		OnLevel2FinalContinuePromptRequested.Broadcast();
+		return;
+	}
+
+	Level2FlowState = ELevel2FlowState::SearchingTargets;
+	SetLevelTargetInteractionEnabled(bCachedHoverEnabledBeforeInspect, bCachedClickEnabledBeforeInspect);
+	SetIgnoreLookInput(false);
+}
+
+bool ACaissonPlayerController::IsLevel2WaitingForAnyClickToContinue() const
+{
+	return Level2FlowState == ELevel2FlowState::WaitingAnyClickToContinue;
 }
 
 void ACaissonPlayerController::UpdateHoveredInteractable()

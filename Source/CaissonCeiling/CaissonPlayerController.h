@@ -10,9 +10,21 @@ class UInputAction;
 class UInputMappingContext;
 class UUserWidget;
 
+UENUM(BlueprintType)
+enum class ELevel2FlowState : uint8
+{
+	SearchingTargets UMETA(DisplayName="SearchingTargets"),
+	ShowingTargetInspect UMETA(DisplayName="ShowingTargetInspect"),
+	WaitingAnyClickToContinue UMETA(DisplayName="WaitingAnyClickToContinue"),
+	TransitionRequested UMETA(DisplayName="TransitionRequested")
+};
+
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStepChanged, int32, NewStep);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnLevel2TargetProgressChanged, int32, FoundCount, int32, TargetCount);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLevel2TargetActivated, FName, TargetId);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnLevel2InspectStarted, FName, TargetId, bool, bIsFinalTarget);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnLevel2FinalContinuePromptRequested);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnLevel2NextLevelRequested);
 
 UCLASS()
 class CAISSONCEILING_API ACaissonPlayerController : public APlayerController
@@ -83,6 +95,21 @@ public:
 	UPROPERTY(BlueprintAssignable, Category="Level2|Targets")
 	FOnLevel2TargetActivated OnLevel2TargetActivated;
 
+	// 正确点击目标后触发：蓝图据此执行镜头拉近和介绍 UI 展示。
+	UPROPERTY(BlueprintAssignable, Category="Level2|Flow")
+	FOnLevel2InspectStarted OnLevel2InspectStarted;
+
+	// 第三个目标流程结束后触发：蓝图显示“点击任何地方继续”提示。
+	UPROPERTY(BlueprintAssignable, Category="Level2|Flow")
+	FOnLevel2FinalContinuePromptRequested OnLevel2FinalContinuePromptRequested;
+
+	// 收到“任意点击继续”后触发：蓝图在这里执行关卡跳转（例如打开 Level3）。
+	UPROPERTY(BlueprintAssignable, Category="Level2|Flow")
+	FOnLevel2NextLevelRequested OnLevel2NextLevelRequested;
+
+	UPROPERTY(BlueprintReadOnly, Category="Level2|Flow")
+	ELevel2FlowState Level2FlowState;
+
 	UFUNCTION(BlueprintCallable, Category="CaissonStep")
 	void AdvanceStep();
 
@@ -101,6 +128,13 @@ public:
 	UFUNCTION(BlueprintPure, Category="Level2|Targets")
 	bool IsLevel2TargetActivated(FName TargetId) const;
 
+	// 蓝图在“介绍 UI 已点击继续 + 镜头已回原位”后调用，结束当前目标演出流程。
+	UFUNCTION(BlueprintCallable, Category="Level2|Flow")
+	void CompleteLevel2InspectPresentation();
+
+	UFUNCTION(BlueprintPure, Category="Level2|Flow")
+	bool IsLevel2WaitingForAnyClickToContinue() const;
+
 	UFUNCTION(BlueprintCallable, Category="CaissonUI")
 	UUserWidget* OpenCaissonWidget(TSubclassOf<UUserWidget> WidgetClass);
 
@@ -113,4 +147,10 @@ private:
 
 	UPROPERTY(Transient)
 	TObjectPtr<UCaissonInteractComponent> CurrentHoveredInteractComponent;
+
+	UPROPERTY(Transient)
+	FName ActiveInspectTargetId;
+
+	bool bCachedHoverEnabledBeforeInspect;
+	bool bCachedClickEnabledBeforeInspect;
 };

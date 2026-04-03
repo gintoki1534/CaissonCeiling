@@ -1,0 +1,108 @@
+# BP_LevelTarget_CloudPattern
+
+## 1. 蓝图定位
+
+本文档由 Docs/BlueprintExports/BP_LevelTarget_CloudPattern.json 自动整理生成，用于记录当前蓝图的真实导出结构。
+
+## 2. 基础信息
+
+1. 蓝图名：BP_LevelTarget_CloudPattern
+1. 资源路径：/Script/Engine.Blueprint'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern'
+1. 蓝图类型：Blueprint
+1. 父类：Engine.Actor
+1. 生成类：BP_LevelTarget_CloudPattern_C
+
+## 3. 当前状态
+
+1. 本文档基于蓝图导出数据自动生成。
+1. 事件链、控件树、变量和特殊设置以导出内容为准。
+1. 如果某些链路只是历史残留、未接入或未运行验证，需要后续人工补充确认。
+
+## 4. 控件树
+
+
+## 5. 事件图主链
+
+### 5.1 组件事件
+
+1. CaissonInteract -> OnInteractClicked
+1. CaissonInteract -> OnHoverEnd
+1. CaissonInteract -> OnHoverBegin
+
+### 5.2 主执行链
+
+1. CaissonInteract.OnInteractClicked -> Set bIsActivated -> LightComponent.SetIntensity -> LightComponent.SetIntensity
+1. CaissonInteract.OnHoverEnd -> K2Node_IfThenElse_2 -> LightComponent.SetIntensity
+1. CaissonInteract.OnHoverBegin -> K2Node_IfThenElse_1 -> LightComponent.SetIntensity
+1. ReceiveTick
+1. ReceiveActorBeginOverlap
+1. ReceiveBeginPlay
+
+## 6. 关键变量
+
+### 6.1 自定义变量
+
+1. bIsActivated
+   类型：bool
+   显示名：Is Activated
+
+
+## 7. 特殊设置
+
+1. 当前导出中未发现额外特殊设置。
+
+## 8. 其他图表
+
+### 8.1 BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature
+
+1. 图类型：BlueprintGraph.EdGraphSchema_K2
+1. 模块数：2
+1. 连接数：1
+1. 执行链：BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature -> ExecuteUbergraph_BP_LevelTarget_CloudPattern
+1. 关键节点：
+   - ExecuteUbergraph_BP_LevelTarget_CloudPattern
+     输入：execute <- K2Node_FunctionEntry_0:6E75489E4E2799B50F85848A71AF106B
+   - BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature
+
+### 8.2 BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature
+
+1. 图类型：BlueprintGraph.EdGraphSchema_K2
+1. 模块数：2
+1. 连接数：1
+1. 执行链：BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature -> ExecuteUbergraph_BP_LevelTarget_CloudPattern
+1. 关键节点：
+   - ExecuteUbergraph_BP_LevelTarget_CloudPattern
+     输入：execute <- K2Node_FunctionEntry_0:F028E2CE4BB4EB5FCBEA3CAC05996941
+   - BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature
+
+### 8.3 BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature
+
+1. 图类型：BlueprintGraph.EdGraphSchema_K2
+1. 模块数：2
+1. 连接数：1
+1. 执行链：BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature -> ExecuteUbergraph_BP_LevelTarget_CloudPattern
+1. 关键节点：
+   - ExecuteUbergraph_BP_LevelTarget_CloudPattern
+     输入：execute <- K2Node_FunctionEntry_0:0A66DB45483790FF747CF78C142A9BC7
+   - BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature
+
+### 8.4 UserConstructionScript
+
+1. 图类型：BlueprintGraph.EdGraphSchema_K2
+1. 模块数：1
+1. 连接数：0
+1. 执行链：UserConstructionScript
+1. 关键节点：
+   - UserConstructionScript
+
+## 9. 当前可直接确认的结论
+
+1. 本蓝图至少存在上文列出的执行链，可作为后续人工确认和接线补全文档的基础。
+1. Widget 树已经从导出中整理出来，后续可以继续补充哪些控件参与了实际逻辑。
+1. 变量区已经整理完成，后续重点是确认哪些变量仍然在真实运行链中使用。
+
+## 10. 后续补充建议
+
+1. 如果该蓝图已经过运行验证，建议补充一节“已运行验证链路”。
+1. 如果导出中存在历史残留变量、残留事件或旧链路，建议后续在本文档中手动标记。
+1. 如果本蓝图和别的蓝图存在强关联，建议在文档中补“对外依赖”。

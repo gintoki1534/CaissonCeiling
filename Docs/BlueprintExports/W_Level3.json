@@ -1,0 +1,615 @@
+{
+  "blueprint": {
+    "name": "W_Level3",
+    "asset_path": "/Script/UMGEditor.WidgetBlueprint'/Game/UI/W_Level3.W_Level3'",
+    "blueprint_class": "WidgetBlueprint",
+    "parent_class": "UMG.UserWidget",
+    "generated_class": "W_Level3_C",
+    "tick_prediction": null,
+    "tick_prediction_reason": null
+  },
+  "event_graph": {
+    "name": "EventGraph",
+    "schema": "BlueprintGraph.EdGraphSchema_K2",
+    "module_count": 4,
+    "connection_count": 0,
+    "modules": [
+      {
+        "id": "K2Node_Event_0",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "PreConstruct",
+        "meta": {
+          "event_name": "PreConstruct"
+        },
+        "pins": [
+          {
+            "id": "4BE3D7ED4CAD7B96C0ECB79D299EA3B9",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "A316AD4F415B922BA22D6199313B5381",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "E98CC0204DA52534D0B507BF6900CF66",
+            "name": "IsDesignTime",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/W_Level3.W_Level3:EventGraph.K2Node_Event_0'"
+      },
+      {
+        "id": "K2Node_Event_1",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "Construct",
+        "meta": {
+          "event_name": "Construct"
+        },
+        "pins": [
+          {
+            "id": "377472854352C421A52BAB99E8319980",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "169BF914437AA15F63B725AE8F006E0C",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/W_Level3.W_Level3:EventGraph.K2Node_Event_1'"
+      },
+      {
+        "id": "K2Node_Event_2",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "Tick",
+        "meta": {
+          "event_name": "Tick"
+        },
+        "pins": [
+          {
+            "id": "54183F79492E564C475A4AB63F227F72",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "1343D8174A4868ED1B4206851D66B92E",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "848D230142CFCF1ACAFF03B5DBF2A581",
+            "name": "MyGeometry",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "1CDE652C4EE70274D47C088C342FA604",
+            "name": "InDeltaTime",
+            "direction": "output",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/W_Level3.W_Level3:EventGraph.K2Node_Event_2'"
+      },
+      {
+        "id": "K2Node_ComponentBoundEvent_0",
+        "class": "K2Node_ComponentBoundEvent",
+        "kind": "component_bound_event",
+        "title": "Button_44.OnClicked",
+        "meta": {
+          "component": "Button_44",
+          "delegate_property": "OnClicked",
+          "custom_function_name": "BndEvt__W_Level3_Button_44_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature"
+        },
+        "pins": [
+          {
+            "id": "54F11C1A4F96F9C2BFE534A9BCAE7151",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "BB63B6FC43234BBADEBCE09C4D19BFCA",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/W_Level3.W_Level3:EventGraph.K2Node_ComponentBoundEvent_0'"
+      }
+    ],
+    "connections": [],
+    "exec_traces": [
+      [
+        "PreConstruct"
+      ],
+      [
+        "Construct"
+      ],
+      [
+        "Tick"
+      ],
+      [
+        "Button_44.OnClicked"
+      ]
+    ]
+  },
+  "other_graphs": [
+    {
+      "name": "BndEvt__W_Level3_Button_44_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 2,
+      "connection_count": 1,
+      "modules": [
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__W_Level3_Button_44_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__W_Level3_Button_44_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature"
+          },
+          "pins": [
+            {
+              "id": "4CFDB64F427700A362DF84A5BFE9A0DE",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "pin_id": "6E013F3C4B3532C16594FEA270FAED31"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level3.W_Level3:BndEvt__W_Level3_Button_44_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
+        },
+        {
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "ExecuteUbergraph_W_Level3",
+          "meta": {
+            "function_name": "ExecuteUbergraph_W_Level3",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "id": "6E013F3C4B3532C16594FEA270FAED31",
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "4CFDB64F427700A362DF84A5BFE9A0DE"
+                }
+              ]
+            },
+            {
+              "id": "F8415C184015F7444CB890A267D5D659",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "136B3D06403E3FE3C01835BD3366EF21",
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "self",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "53614D4E415557C52B534DBBBD7CF2EB",
+              "name": "EntryPoint",
+              "direction": "input",
+              "category": "int",
+              "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "4CFDB64F427700A362DF84A5BFE9A0DE"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3.W_Level3:BndEvt__W_Level3_Button_44_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature.K2Node_CallFunction_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "pin_name": "then",
+            "pin_id": "4CFDB64F427700A362DF84A5BFE9A0DE"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "pin_name": "execute",
+            "pin_id": "6E013F3C4B3532C16594FEA270FAED31"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "BndEvt__W_Level3_Button_44_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+          "ExecuteUbergraph_W_Level3"
+        ]
+      ]
+    },
+    {
+      "name": "ExecuteUbergraph_W_Level3",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 2,
+      "connection_count": 0,
+      "modules": [
+        {
+          "id": "K2Node_ComponentBoundEvent_0",
+          "class": "K2Node_ComponentBoundEvent",
+          "kind": "component_bound_event",
+          "title": "Button_44.OnClicked",
+          "meta": {
+            "component": "Button_44",
+            "delegate_property": "OnClicked",
+            "custom_function_name": "BndEvt__W_Level3_Button_44_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature"
+          },
+          "pins": [
+            {
+              "id": "54F11C1A4F96F9C2BFE534A9BCAE7151",
+              "name": "OutputDelegate",
+              "direction": "output",
+              "category": "delegate",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "BB63B6FC43234BBADEBCE09C4D19BFCA",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/W_Level3.W_Level3:ExecuteUbergraph_W_Level3.K2Node_ComponentBoundEvent_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "ExecuteUbergraph_W_Level3",
+          "meta": {
+            "function_name": "ExecuteUbergraph_W_Level3"
+          },
+          "pins": [
+            {
+              "id": "206BD3524F381BA35C1683AFF888CDEF",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "46C6F2DE4EA59AC8AB763ABDDDA33505",
+              "name": "EntryPoint",
+              "direction": "output",
+              "category": "int",
+              "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level3.W_Level3:ExecuteUbergraph_W_Level3.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [],
+      "exec_traces": [
+        [
+          "Button_44.OnClicked"
+        ],
+        [
+          "ExecuteUbergraph_W_Level3"
+        ]
+      ]
+    }
+  ],
+  "widget_tree": {
+    "root_widget": "CanvasPanel_30",
+    "widgets": [
+      {
+        "name": "Button_44",
+        "class": "Button",
+        "display_label": "Button_44",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_2",
+        "parent": "CanvasPanel_30",
+        "children": [],
+        "properties": {}
+      },
+      {
+        "name": "CanvasPanel_30",
+        "class": "CanvasPanel",
+        "display_label": "CanvasPanel_30",
+        "is_variable": false,
+        "slot": null,
+        "parent": null,
+        "children": [
+          "Button_44",
+          "背景",
+          "EditableTextBox_85"
+        ],
+        "properties": {
+          "bExpandedInDesigner": "True"
+        }
+      },
+      {
+        "name": "背景",
+        "class": "Image",
+        "display_label": "背景",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_0",
+        "parent": "CanvasPanel_30",
+        "children": [],
+        "properties": {
+          "Brush": "(ImageType=FullColor,ImageSize=(X=4096.000000,Y=2159.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Level1/背景模糊层.背景模糊层'\")"
+        }
+      },
+      {
+        "name": "EditableTextBox_85",
+        "class": "EditableTextBox",
+        "display_label": "EditableTextBox_85",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_1",
+        "parent": "CanvasPanel_30",
+        "children": [],
+        "properties": {
+          "Text": "NSLOCTEXT(\"[BB8C6375CC95ABC679EF6811644C7252]\", \"A7F981064DB207C5B28F73A78A7A06B7\", \"122333\")"
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "slot_name": "CanvasPanelSlot_2",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_30",
+        "child": "Button_44",
+        "layout_data": "(Offsets=(Left=264.264252,Top=209.352203,Right=300.772186,Bottom=205.032166))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_0",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_30",
+        "child": "背景",
+        "layout_data": "(Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_1",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_30",
+        "child": "EditableTextBox_85",
+        "layout_data": "(Offsets=(Left=700.000000,Top=724.000000,Right=604.504517,Bottom=245.072205))"
+      }
+    ]
+  },
+  "variables": {
+    "new_variables": [],
+    "generated_variables": [
+      {
+        "name": "Button_44",
+        "guid": "89022C4E4AB09698C5327FB8316EEBAE",
+        "friendly_name": "Button_44",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Button'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level3\")"
+        }
+      }
+    ],
+    "widget_variable_guid_map": {
+      "CanvasPanel_30": "730AB97A495E12378066E88A3A244D49",
+      "背景": "8BC83CD847FB7418EE56FFAEE0C78435",
+      "EditableTextBox_85": "670B574C4690E83D8EF188820BA83D97",
+      "Button_44": "89022C4E4AB09698C5327FB8316EEBAE"
+    }
+  },
+  "special_settings": [
+    {
+      "target": "背景",
+      "property": "Brush",
+      "value": "(ImageType=FullColor,ImageSize=(X=4096.000000,Y=2159.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Level1/背景模糊层.背景模糊层'\")"
+    },
+    {
+      "target": "EditableTextBox_85",
+      "property": "Text",
+      "value": "NSLOCTEXT(\"[BB8C6375CC95ABC679EF6811644C7252]\", \"A7F981064DB207C5B28F73A78A7A06B7\", \"122333\")"
+    },
+    {
+      "target": "Button_44",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=264.264252,Top=209.352203,Right=300.772186,Bottom=205.032166))"
+    },
+    {
+      "target": "背景",
+      "property": "LayoutData",
+      "value": "(Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
+    },
+    {
+      "target": "EditableTextBox_85",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=700.000000,Top=724.000000,Right=604.504517,Bottom=245.072205))"
+    }
+  ],
+  "doc_view": {
+    "blueprint_name": "W_Level3",
+    "blueprint_class": "WidgetBlueprint",
+    "module_count": 4,
+    "connection_count": 0,
+    "component_events": [
+      {
+        "title": "Button_44.OnClicked",
+        "id": "K2Node_ComponentBoundEvent_0",
+        "component": "Button_44",
+        "delegate_property": "OnClicked"
+      }
+    ],
+    "exec_traces": [
+      [
+        "PreConstruct"
+      ],
+      [
+        "Construct"
+      ],
+      [
+        "Tick"
+      ],
+      [
+        "Button_44.OnClicked"
+      ]
+    ],
+    "widget_outline": [
+      {
+        "name": "Button_44",
+        "class": "Button",
+        "parent": "CanvasPanel_30",
+        "children": []
+      },
+      {
+        "name": "CanvasPanel_30",
+        "class": "CanvasPanel",
+        "parent": null,
+        "children": [
+          "Button_44",
+          "背景",
+          "EditableTextBox_85"
+        ]
+      },
+      {
+        "name": "背景",
+        "class": "Image",
+        "parent": "CanvasPanel_30",
+        "children": []
+      },
+      {
+        "name": "EditableTextBox_85",
+        "class": "EditableTextBox",
+        "parent": "CanvasPanel_30",
+        "children": []
+      }
+    ],
+    "notices": [
+      "This export is built from full asset text, so it includes EventGraph, other detailed graphs, member variables, and generated variables that are serialized into the asset.",
+      "WidgetBlueprint exports also include WidgetTree structure and widget-specific designer properties.",
+      "Runtime-only state and values not serialized into the asset cannot be reconstructed from this exporter."
+    ]
+  }
+}

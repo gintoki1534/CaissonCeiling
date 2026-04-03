@@ -1,0 +1,1907 @@
+{
+  "blueprint": {
+    "name": "BP_LevelTarget_StarMap",
+    "asset_path": "/Script/Engine.Blueprint'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap'",
+    "blueprint_class": "Blueprint",
+    "parent_class": "Engine.Actor",
+    "generated_class": "BP_LevelTarget_StarMap_C",
+    "tick_prediction": null,
+    "tick_prediction_reason": null
+  },
+  "event_graph": {
+    "name": "EventGraph",
+    "schema": "BlueprintGraph.EdGraphSchema_K2",
+    "module_count": 19,
+    "connection_count": 13,
+    "modules": [
+      {
+        "id": "K2Node_VariableGet_9",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_9",
+        "meta": {},
+        "pins": [
+          {
+            "id": "50D786F24CCCF3B1858E71A1EF71BAF0",
+            "name": "ActivatedLight",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "pin_id": "DE57F8D74C855E969EA36794D9A597EA"
+              }
+            ]
+          },
+          {
+            "id": "735978474521BE484FA1C1B61A296FF0",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_VariableGet_9'"
+      },
+      {
+        "id": "K2Node_CallFunction_1",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "LightComponent.SetIntensity",
+        "meta": {
+          "function_name": "SetIntensity",
+          "function_owner": "LightComponent"
+        },
+        "pins": [
+          {
+            "id": "D9C2D7C845A704002D8D598A8B67E808",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_4",
+                "pin_id": "7269742249D29204A7398AAFC1F0A5BA"
+              }
+            ]
+          },
+          {
+            "id": "7269742249D29204A7398AAFC1F0A5BA",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "DE57F8D74C855E969EA36794D9A597EA",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_9",
+                "pin_id": "50D786F24CCCF3B1858E71A1EF71BAF0"
+              }
+            ]
+          },
+          {
+            "id": "A56D1EF44280F9685CA602AF21475654",
+            "name": "NewIntensity",
+            "direction": "input",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "4000.000000",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_4",
+                "pin_id": "7269742249D29204A7398AAFC1F0A5BA"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_9",
+                "pin_id": "50D786F24CCCF3B1858E71A1EF71BAF0"
+              }
+            ]
+          },
+          {
+            "name": "NewIntensity",
+            "category": "real",
+            "default_value": "4000.000000",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_CallFunction_1'"
+      },
+      {
+        "id": "K2Node_VariableSet_0",
+        "class": "K2Node_VariableSet",
+        "kind": "variable_set",
+        "title": "Set bIsActivated",
+        "meta": {
+          "variable_name": "bIsActivated"
+        },
+        "pins": [
+          {
+            "id": "B304B4D0456F21CA3DE565AF0A71F5FA",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_ComponentBoundEvent_6",
+                "pin_id": "D07DB4724D0FC495BCEFC5B8E198C811"
+              }
+            ]
+          },
+          {
+            "id": "675F031141D60A82C549339F6CCD9886",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_4",
+                "pin_id": "D9C2D7C845A704002D8D598A8B67E808"
+              }
+            ]
+          },
+          {
+            "id": "4B5A308A48233D11F4F193B5259EB666",
+            "name": "bIsActivated",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "6530F34440238F462E2583A50A8CE5FA",
+            "name": "Output_Get",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "37A936434362DA35F25A669905281EEB",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_ComponentBoundEvent_6",
+                "pin_id": "D07DB4724D0FC495BCEFC5B8E198C811"
+              }
+            ]
+          },
+          {
+            "name": "bIsActivated",
+            "category": "bool",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_VariableSet_0'"
+      },
+      {
+        "id": "K2Node_CallFunction_4",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "LightComponent.SetIntensity",
+        "meta": {
+          "function_name": "SetIntensity",
+          "function_owner": "LightComponent"
+        },
+        "pins": [
+          {
+            "id": "D9C2D7C845A704002D8D598A8B67E808",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_0",
+                "pin_id": "675F031141D60A82C549339F6CCD9886"
+              }
+            ]
+          },
+          {
+            "id": "7269742249D29204A7398AAFC1F0A5BA",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "pin_id": "D9C2D7C845A704002D8D598A8B67E808"
+              }
+            ]
+          },
+          {
+            "id": "DE57F8D74C855E969EA36794D9A597EA",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_8",
+                "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+              }
+            ]
+          },
+          {
+            "id": "A56D1EF44280F9685CA602AF21475654",
+            "name": "NewIntensity",
+            "direction": "input",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_0",
+                "pin_id": "675F031141D60A82C549339F6CCD9886"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_8",
+                "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_CallFunction_4'"
+      },
+      {
+        "id": "K2Node_VariableGet_8",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_8",
+        "meta": {},
+        "pins": [
+          {
+            "id": "F1B0B67D405C43704D6FF9B267608465",
+            "name": "HoverLight",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_4",
+                "pin_id": "DE57F8D74C855E969EA36794D9A597EA"
+              }
+            ]
+          },
+          {
+            "id": "5CFE8B37437671123853B0A9AD326E7C",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_VariableGet_8'"
+      },
+      {
+        "id": "K2Node_ComponentBoundEvent_6",
+        "class": "K2Node_ComponentBoundEvent",
+        "kind": "component_bound_event",
+        "title": "CaissonInteract.OnInteractClicked",
+        "meta": {
+          "component": "CaissonInteract",
+          "delegate_property": "OnInteractClicked",
+          "custom_function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature"
+        },
+        "pins": [
+          {
+            "id": "F92B397A4CD453E02F954C8CCB1085CE",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "D07DB4724D0FC495BCEFC5B8E198C811",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_0",
+                "pin_id": "B304B4D0456F21CA3DE565AF0A71F5FA"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_ComponentBoundEvent_6'"
+      },
+      {
+        "id": "K2Node_CallFunction_3",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "LightComponent.SetIntensity",
+        "meta": {
+          "function_name": "SetIntensity",
+          "function_owner": "LightComponent"
+        },
+        "pins": [
+          {
+            "id": "D9C2D7C845A704002D8D598A8B67E808",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_2",
+                "pin_id": "0A0A85604D62623B02B36D8B82C7434B"
+              }
+            ]
+          },
+          {
+            "id": "7269742249D29204A7398AAFC1F0A5BA",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "DE57F8D74C855E969EA36794D9A597EA",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_7",
+                "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+              }
+            ]
+          },
+          {
+            "id": "A56D1EF44280F9685CA602AF21475654",
+            "name": "NewIntensity",
+            "direction": "input",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_2",
+                "pin_id": "0A0A85604D62623B02B36D8B82C7434B"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_7",
+                "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_CallFunction_3'"
+      },
+      {
+        "id": "K2Node_VariableGet_7",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_7",
+        "meta": {},
+        "pins": [
+          {
+            "id": "F1B0B67D405C43704D6FF9B267608465",
+            "name": "HoverLight",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "pin_id": "DE57F8D74C855E969EA36794D9A597EA"
+              }
+            ]
+          },
+          {
+            "id": "A9920D704905C8404FC3D3BABC394CED",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_VariableGet_7'"
+      },
+      {
+        "id": "K2Node_IfThenElse_2",
+        "class": "K2Node_IfThenElse",
+        "kind": "K2Node_IfThenElse",
+        "title": "K2Node_IfThenElse_2",
+        "meta": {},
+        "pins": [
+          {
+            "id": "D638D86B4E708F0496E5A4A69BEA1B00",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_ComponentBoundEvent_5",
+                "pin_id": "C7E469194B365BAE74850E980BD9064F"
+              }
+            ]
+          },
+          {
+            "id": "033FE04C41E2107157C8D2A85A212792",
+            "name": "Condition",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_6",
+                "pin_id": "DC5DD74E45E0B4E85A3E74A1A28E0478"
+              }
+            ]
+          },
+          {
+            "id": "F1A8394940EF7C4EFB15D9B34304DFD1",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "0A0A85604D62623B02B36D8B82C7434B",
+            "name": "else",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "pin_id": "D9C2D7C845A704002D8D598A8B67E808"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_ComponentBoundEvent_5",
+                "pin_id": "C7E469194B365BAE74850E980BD9064F"
+              }
+            ]
+          },
+          {
+            "name": "Condition",
+            "category": "bool",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_6",
+                "pin_id": "DC5DD74E45E0B4E85A3E74A1A28E0478"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_IfThenElse'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_IfThenElse_2'"
+      },
+      {
+        "id": "K2Node_VariableGet_6",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_6",
+        "meta": {},
+        "pins": [
+          {
+            "id": "DC5DD74E45E0B4E85A3E74A1A28E0478",
+            "name": "bIsActivated",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_2",
+                "pin_id": "033FE04C41E2107157C8D2A85A212792"
+              }
+            ]
+          },
+          {
+            "id": "412AC704466916DF45D2EE80F31583BB",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_VariableGet_6'"
+      },
+      {
+        "id": "K2Node_ComponentBoundEvent_5",
+        "class": "K2Node_ComponentBoundEvent",
+        "kind": "component_bound_event",
+        "title": "CaissonInteract.OnHoverEnd",
+        "meta": {
+          "component": "CaissonInteract",
+          "delegate_property": "OnHoverEnd",
+          "custom_function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature"
+        },
+        "pins": [
+          {
+            "id": "DE7A9C974BAB248BC6991A9645FA5E5F",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "C7E469194B365BAE74850E980BD9064F",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_2",
+                "pin_id": "D638D86B4E708F0496E5A4A69BEA1B00"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_ComponentBoundEvent_5'"
+      },
+      {
+        "id": "K2Node_VariableGet_5",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_5",
+        "meta": {},
+        "pins": [
+          {
+            "id": "F1B0B67D405C43704D6FF9B267608465",
+            "name": "HoverLight",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_2",
+                "pin_id": "DE57F8D74C855E969EA36794D9A597EA"
+              }
+            ]
+          },
+          {
+            "id": "FD0709564C7078D353D2CB9C5743A928",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_VariableGet_5'"
+      },
+      {
+        "id": "K2Node_CallFunction_2",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "LightComponent.SetIntensity",
+        "meta": {
+          "function_name": "SetIntensity",
+          "function_owner": "LightComponent"
+        },
+        "pins": [
+          {
+            "id": "D9C2D7C845A704002D8D598A8B67E808",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_1",
+                "pin_id": "0A0A85604D62623B02B36D8B82C7434B"
+              }
+            ]
+          },
+          {
+            "id": "7269742249D29204A7398AAFC1F0A5BA",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "DE57F8D74C855E969EA36794D9A597EA",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_5",
+                "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+              }
+            ]
+          },
+          {
+            "id": "A56D1EF44280F9685CA602AF21475654",
+            "name": "NewIntensity",
+            "direction": "input",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "2000.000000",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_1",
+                "pin_id": "0A0A85604D62623B02B36D8B82C7434B"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_5",
+                "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+              }
+            ]
+          },
+          {
+            "name": "NewIntensity",
+            "category": "real",
+            "default_value": "2000.000000",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_CallFunction_2'"
+      },
+      {
+        "id": "K2Node_VariableGet_4",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_4",
+        "meta": {},
+        "pins": [
+          {
+            "id": "DC5DD74E45E0B4E85A3E74A1A28E0478",
+            "name": "bIsActivated",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_1",
+                "pin_id": "033FE04C41E2107157C8D2A85A212792"
+              }
+            ]
+          },
+          {
+            "id": "372E1B9F44C008CE2A8E3B83B1ACCA40",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_VariableGet_4'"
+      },
+      {
+        "id": "K2Node_IfThenElse_1",
+        "class": "K2Node_IfThenElse",
+        "kind": "K2Node_IfThenElse",
+        "title": "K2Node_IfThenElse_1",
+        "meta": {},
+        "pins": [
+          {
+            "id": "D638D86B4E708F0496E5A4A69BEA1B00",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_ComponentBoundEvent_3",
+                "pin_id": "73F0611B40633AD5C3C4DD8B5A87F745"
+              }
+            ]
+          },
+          {
+            "id": "033FE04C41E2107157C8D2A85A212792",
+            "name": "Condition",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_4",
+                "pin_id": "DC5DD74E45E0B4E85A3E74A1A28E0478"
+              }
+            ]
+          },
+          {
+            "id": "F1A8394940EF7C4EFB15D9B34304DFD1",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "0A0A85604D62623B02B36D8B82C7434B",
+            "name": "else",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_2",
+                "pin_id": "D9C2D7C845A704002D8D598A8B67E808"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_ComponentBoundEvent_3",
+                "pin_id": "73F0611B40633AD5C3C4DD8B5A87F745"
+              }
+            ]
+          },
+          {
+            "name": "Condition",
+            "category": "bool",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_4",
+                "pin_id": "DC5DD74E45E0B4E85A3E74A1A28E0478"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_IfThenElse'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_IfThenElse_1'"
+      },
+      {
+        "id": "K2Node_ComponentBoundEvent_3",
+        "class": "K2Node_ComponentBoundEvent",
+        "kind": "component_bound_event",
+        "title": "CaissonInteract.OnHoverBegin",
+        "meta": {
+          "component": "CaissonInteract",
+          "delegate_property": "OnHoverBegin",
+          "custom_function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature"
+        },
+        "pins": [
+          {
+            "id": "031703A0467E39D0E393B89188C32063",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "73F0611B40633AD5C3C4DD8B5A87F745",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_1",
+                "pin_id": "D638D86B4E708F0496E5A4A69BEA1B00"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_ComponentBoundEvent_3'"
+      },
+      {
+        "id": "K2Node_Event_2",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "ReceiveTick",
+        "meta": {
+          "event_name": "ReceiveTick"
+        },
+        "pins": [
+          {
+            "id": "1742F5A74AE5B35306CE56A53A375E3A",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "6D8DCC244DB44D2EFD98739D608F3895",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "3FE5CB4B4147F427A8C1D999CA633220",
+            "name": "DeltaSeconds",
+            "direction": "output",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_Event_2'"
+      },
+      {
+        "id": "K2Node_Event_1",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "ReceiveActorBeginOverlap",
+        "meta": {
+          "event_name": "ReceiveActorBeginOverlap"
+        },
+        "pins": [
+          {
+            "id": "8E2F7D5947F11C28BC588FB733DEB2C6",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "9156312444469C20AF098BA244644A86",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "7851887F475072BBE0A405AD2EB41BB4",
+            "name": "OtherActor",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_Event_1'"
+      },
+      {
+        "id": "K2Node_Event_0",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "ReceiveBeginPlay",
+        "meta": {
+          "event_name": "ReceiveBeginPlay"
+        },
+        "pins": [
+          {
+            "id": "B70324BB4DE8D97FB480188D7D265C7B",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "0E331A7C483F052826770180D4316441",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:EventGraph.K2Node_Event_0'"
+      }
+    ],
+    "connections": [
+      {
+        "from": {
+          "node": "K2Node_CallFunction_4",
+          "pin_name": "then",
+          "pin_id": "7269742249D29204A7398AAFC1F0A5BA"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_1",
+          "pin_name": "execute",
+          "pin_id": "D9C2D7C845A704002D8D598A8B67E808"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_ComponentBoundEvent_3",
+          "pin_name": "then",
+          "pin_id": "73F0611B40633AD5C3C4DD8B5A87F745"
+        },
+        "to": {
+          "node": "K2Node_IfThenElse_1",
+          "pin_name": "execute",
+          "pin_id": "D638D86B4E708F0496E5A4A69BEA1B00"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_ComponentBoundEvent_5",
+          "pin_name": "then",
+          "pin_id": "C7E469194B365BAE74850E980BD9064F"
+        },
+        "to": {
+          "node": "K2Node_IfThenElse_2",
+          "pin_name": "execute",
+          "pin_id": "D638D86B4E708F0496E5A4A69BEA1B00"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_ComponentBoundEvent_6",
+          "pin_name": "then",
+          "pin_id": "D07DB4724D0FC495BCEFC5B8E198C811"
+        },
+        "to": {
+          "node": "K2Node_VariableSet_0",
+          "pin_name": "execute",
+          "pin_id": "B304B4D0456F21CA3DE565AF0A71F5FA"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_IfThenElse_1",
+          "pin_name": "else",
+          "pin_id": "0A0A85604D62623B02B36D8B82C7434B"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_2",
+          "pin_name": "execute",
+          "pin_id": "D9C2D7C845A704002D8D598A8B67E808"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_IfThenElse_2",
+          "pin_name": "else",
+          "pin_id": "0A0A85604D62623B02B36D8B82C7434B"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_3",
+          "pin_name": "execute",
+          "pin_id": "D9C2D7C845A704002D8D598A8B67E808"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_4",
+          "pin_name": "bIsActivated",
+          "pin_id": "DC5DD74E45E0B4E85A3E74A1A28E0478"
+        },
+        "to": {
+          "node": "K2Node_IfThenElse_1",
+          "pin_name": "Condition",
+          "pin_id": "033FE04C41E2107157C8D2A85A212792"
+        },
+        "category": "bool"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_5",
+          "pin_name": "HoverLight",
+          "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_2",
+          "pin_name": "self",
+          "pin_id": "DE57F8D74C855E969EA36794D9A597EA"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_6",
+          "pin_name": "bIsActivated",
+          "pin_id": "DC5DD74E45E0B4E85A3E74A1A28E0478"
+        },
+        "to": {
+          "node": "K2Node_IfThenElse_2",
+          "pin_name": "Condition",
+          "pin_id": "033FE04C41E2107157C8D2A85A212792"
+        },
+        "category": "bool"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_7",
+          "pin_name": "HoverLight",
+          "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_3",
+          "pin_name": "self",
+          "pin_id": "DE57F8D74C855E969EA36794D9A597EA"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_8",
+          "pin_name": "HoverLight",
+          "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_4",
+          "pin_name": "self",
+          "pin_id": "DE57F8D74C855E969EA36794D9A597EA"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_9",
+          "pin_name": "ActivatedLight",
+          "pin_id": "50D786F24CCCF3B1858E71A1EF71BAF0"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_1",
+          "pin_name": "self",
+          "pin_id": "DE57F8D74C855E969EA36794D9A597EA"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableSet_0",
+          "pin_name": "then",
+          "pin_id": "675F031141D60A82C549339F6CCD9886"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_4",
+          "pin_name": "execute",
+          "pin_id": "D9C2D7C845A704002D8D598A8B67E808"
+        },
+        "category": "exec"
+      }
+    ],
+    "exec_traces": [
+      [
+        "CaissonInteract.OnInteractClicked",
+        "Set bIsActivated",
+        "LightComponent.SetIntensity",
+        "LightComponent.SetIntensity"
+      ],
+      [
+        "CaissonInteract.OnHoverEnd",
+        "K2Node_IfThenElse_2",
+        "LightComponent.SetIntensity"
+      ],
+      [
+        "CaissonInteract.OnHoverBegin",
+        "K2Node_IfThenElse_1",
+        "LightComponent.SetIntensity"
+      ],
+      [
+        "ReceiveTick"
+      ],
+      [
+        "ReceiveActorBeginOverlap"
+      ],
+      [
+        "ReceiveBeginPlay"
+      ]
+    ]
+  },
+  "other_graphs": [
+    {
+      "name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 2,
+      "connection_count": 1,
+      "modules": [
+        {
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "ExecuteUbergraph_BP_LevelTarget_StarMap",
+          "meta": {
+            "function_name": "ExecuteUbergraph_BP_LevelTarget_StarMap",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "id": "C3A72FAA46734C9B739F6998EFFA77E0",
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "4497A62243EB4F1FCF996EB69B1ACF69"
+                }
+              ]
+            },
+            {
+              "id": "DC13930D4A486C34A3A050B26EF60276",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "3D3CE848480FE9A548C7EAA710B4D873",
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "self",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "864DBFF04C4E6817FA02BEBCE1A69CB4",
+              "name": "EntryPoint",
+              "direction": "input",
+              "category": "int",
+              "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "4497A62243EB4F1FCF996EB69B1ACF69"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature"
+          },
+          "pins": [
+            {
+              "id": "4497A62243EB4F1FCF996EB69B1ACF69",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "pin_id": "C3A72FAA46734C9B739F6998EFFA77E0"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "pin_name": "then",
+            "pin_id": "4497A62243EB4F1FCF996EB69B1ACF69"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "pin_name": "execute",
+            "pin_id": "C3A72FAA46734C9B739F6998EFFA77E0"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature",
+          "ExecuteUbergraph_BP_LevelTarget_StarMap"
+        ]
+      ]
+    },
+    {
+      "name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 2,
+      "connection_count": 1,
+      "modules": [
+        {
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "ExecuteUbergraph_BP_LevelTarget_StarMap",
+          "meta": {
+            "function_name": "ExecuteUbergraph_BP_LevelTarget_StarMap",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "id": "C921AD944AFF8884EF2DE6AB8F65A69D",
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "2D8C9D6E4E7261B72E8B8C9756FA9C1A"
+                }
+              ]
+            },
+            {
+              "id": "267F801949E938E3BBFE9997875D8E68",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "FA660C53480E3670C294089A8F8BA195",
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "self",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "A146CC8E49B3851ED3F904B02A21E459",
+              "name": "EntryPoint",
+              "direction": "input",
+              "category": "int",
+              "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "2D8C9D6E4E7261B72E8B8C9756FA9C1A"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature"
+          },
+          "pins": [
+            {
+              "id": "2D8C9D6E4E7261B72E8B8C9756FA9C1A",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "pin_id": "C921AD944AFF8884EF2DE6AB8F65A69D"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "pin_name": "then",
+            "pin_id": "2D8C9D6E4E7261B72E8B8C9756FA9C1A"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "pin_name": "execute",
+            "pin_id": "C921AD944AFF8884EF2DE6AB8F65A69D"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature",
+          "ExecuteUbergraph_BP_LevelTarget_StarMap"
+        ]
+      ]
+    },
+    {
+      "name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 2,
+      "connection_count": 1,
+      "modules": [
+        {
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "ExecuteUbergraph_BP_LevelTarget_StarMap",
+          "meta": {
+            "function_name": "ExecuteUbergraph_BP_LevelTarget_StarMap",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "id": "CD12CFE241038B9D41C610B1F23DB143",
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "98C61C5C4B9CF03E09C03A8978030DBC"
+                }
+              ]
+            },
+            {
+              "id": "2757BAE344A77164A6CD5798E641BF42",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "CD51E698448704888F251DA67FEAD111",
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "self",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "AC764D76479FC9989451B88E77A4A4CD",
+              "name": "EntryPoint",
+              "direction": "input",
+              "category": "int",
+              "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "98C61C5C4B9CF03E09C03A8978030DBC"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature"
+          },
+          "pins": [
+            {
+              "id": "98C61C5C4B9CF03E09C03A8978030DBC",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "pin_id": "CD12CFE241038B9D41C610B1F23DB143"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "pin_name": "then",
+            "pin_id": "98C61C5C4B9CF03E09C03A8978030DBC"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "pin_name": "execute",
+            "pin_id": "CD12CFE241038B9D41C610B1F23DB143"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature",
+          "ExecuteUbergraph_BP_LevelTarget_StarMap"
+        ]
+      ]
+    },
+    {
+      "name": "UserConstructionScript",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 1,
+      "connection_count": 0,
+      "modules": [
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "UserConstructionScript",
+          "meta": {
+            "function_name": "UserConstructionScript"
+          },
+          "pins": [
+            {
+              "id": "FA1C1B984FCCEEC50A587C9EA2580999",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/LevelTargets/BP_LevelTarget_StarMap.BP_LevelTarget_StarMap:UserConstructionScript.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [],
+      "exec_traces": [
+        [
+          "UserConstructionScript"
+        ]
+      ]
+    }
+  ],
+  "widget_tree": {
+    "root_widget": null,
+    "widgets": [],
+    "relationships": []
+  },
+  "variables": {
+    "new_variables": [
+      {
+        "name": "bIsActivated",
+        "guid": "AA3CFCD549EF56BA1A25C2AD9F9E3F85",
+        "friendly_name": "Is Activated",
+        "category": "NSLOCTEXT(\"\", \"5F4A3B854BE6B47EFF3CF7817267E30F\", \"组件\")",
+        "property_flags": "65541",
+        "type": {
+          "pin_category": "bool",
+          "pin_subcategory": null,
+          "pin_subcategory_object": null
+        },
+        "metadata": null
+      }
+    ],
+    "generated_variables": [],
+    "widget_variable_guid_map": {}
+  },
+  "special_settings": [],
+  "doc_view": {
+    "blueprint_name": "BP_LevelTarget_StarMap",
+    "blueprint_class": "Blueprint",
+    "module_count": 19,
+    "connection_count": 13,
+    "component_events": [
+      {
+        "title": "CaissonInteract.OnInteractClicked",
+        "id": "K2Node_ComponentBoundEvent_6",
+        "component": "CaissonInteract",
+        "delegate_property": "OnInteractClicked"
+      },
+      {
+        "title": "CaissonInteract.OnHoverEnd",
+        "id": "K2Node_ComponentBoundEvent_5",
+        "component": "CaissonInteract",
+        "delegate_property": "OnHoverEnd"
+      },
+      {
+        "title": "CaissonInteract.OnHoverBegin",
+        "id": "K2Node_ComponentBoundEvent_3",
+        "component": "CaissonInteract",
+        "delegate_property": "OnHoverBegin"
+      }
+    ],
+    "exec_traces": [
+      [
+        "CaissonInteract.OnInteractClicked",
+        "Set bIsActivated",
+        "LightComponent.SetIntensity",
+        "LightComponent.SetIntensity"
+      ],
+      [
+        "CaissonInteract.OnHoverEnd",
+        "K2Node_IfThenElse_2",
+        "LightComponent.SetIntensity"
+      ],
+      [
+        "CaissonInteract.OnHoverBegin",
+        "K2Node_IfThenElse_1",
+        "LightComponent.SetIntensity"
+      ],
+      [
+        "ReceiveTick"
+      ],
+      [
+        "ReceiveActorBeginOverlap"
+      ],
+      [
+        "ReceiveBeginPlay"
+      ]
+    ],
+    "widget_outline": [],
+    "notices": [
+      "This export is built from full asset text, so it includes EventGraph, other detailed graphs, member variables, and generated variables that are serialized into the asset.",
+      "Runtime-only state and values not serialized into the asset cannot be reconstructed from this exporter."
+    ]
+  }
+}

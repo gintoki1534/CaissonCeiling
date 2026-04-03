@@ -4,6 +4,11 @@
 
 本文用于向后续开发者说明本分支自克隆基线以来完成了哪些重构工作、当前项目的职责边界，以及后续功能应如何继续开发。
 
+如果需要查看“当前蓝图资产有哪些、哪些已经验收、具体怎么接线”，请配合阅读：
+
+- `Docs/Blueprint_Architecture.md`
+- `Docs/README.md`
+
 结论先行：
 
 - 项目已经从“纯蓝图承载核心逻辑”迁移到“C++ 负责核心驱动，蓝图负责表现层”
@@ -25,7 +30,7 @@
 - 蓝图负责：
   - Widget 布局
   - 动画、图标、材质和资源引用
-  - SceneCapture 展示初始化
+  - 世界模型、背景板和关卡资源挂载
   - 页面表现刷新
   - 关卡摆放和资源组织
 
@@ -65,6 +70,7 @@
 
 - `UCaissonInteractComponent`
   - 提供统一的可点击交互入口
+  - 提供悬停与点击表现广播
 
 - `UCaissonUserWidget`
   - 作为 UI 蓝图的 C++ 基类扩展点
@@ -75,6 +81,7 @@
 
 - `Content/Input/IMC_Default`
 - `Content/Input/IA_Look`
+- `Content/Input/IA_Click`
 - `Content/Input/IA_RightClick`
 
 并且 `Config/DefaultInput.ini` 已切换到：
@@ -102,12 +109,23 @@
 - `SetupInputComponent` 中绑定 Look / Click / RightClick
 - `AdvanceStep` / `ResetSteps` 维护步骤状态
 - `OnStepChanged` 作为 UI 统一监听委托
+- `OnLevel2TargetProgressChanged` / `OnLevel2TargetActivated` 负责 Level2 目标广播
 - `OpenCaissonWidget` / `CloseCaissonWidget` 统一管理 UI 生命周期
 - `OnInteract` 通过射线检测触发 `UCaissonInteractComponent`
+- `UpdateHoveredInteractable` 负责悬停检测
 
 ### 4.2 `ACaissonPawn`
 
 当前负责展示相机与模型旋转，不应再在蓝图中重写同类逻辑。
+
+当前关键结构包括：
+
+- `SceneRootComp`
+- `ModelPivotComp`
+- `SpringArmComp`
+- `CameraComp`
+
+模型应挂在 `ModelPivotComp` 下，由 C++ 统一驱动旋转。
 
 后续如果需要新增：
 
@@ -130,6 +148,14 @@
 
 都建议优先挂这个组件，而不是在每个蓝图里各写一套点击事件。
 
+当前该组件还承担：
+
+- `OnHoverBegin`
+- `OnHoverEnd`
+- `OnInteractClicked`
+
+这三个蓝图事件入口。
+
 ## 5. 当前蓝图层的收口情况
 
 ### 5.1 已收口为“表现层壳”的蓝图
@@ -146,16 +172,23 @@
   - 步骤推进由 C++ 接管
   - Widget 只监听 `OnStepChanged` 并刷新表现
   - 右键开发跳步已经通过 Controller 验证可用
+  - 当前已增加介绍 UI、镜头回位后的回调承接以及 `Level2` 流程广播绑定
 
 - `BP_ShowcaseModel`
-  - 仅保留 SceneCapture 的展示初始化
-  - 不再承载核心输入、状态或交互逻辑
+  - 作为真实世界中的藻井展示 Pawn 蓝图
+  - 承载模型、相机和背景板
+  - 不再承载旧的 SceneCapture 主展示链路
+  - 当前已增加 `FocusTargetById` / `ReturnToDefaultView` / `OnReturnToDefaultFinished`
 
 ### 5.2 仍需注意的事项
 
 - `W_Level3` 尚未开始制作
   - 应直接按当前架构开发
   - 不要先搭一版纯蓝图流程再回头迁移
+
+- 蓝图资产的最新职责与接线，请以 `Docs/Blueprint_Architecture.md` 为准
+  - 该文档面向后续开发者与 AI
+  - 负责记录当前项目结构与已验证接线
 
 - 历史蓝图中如果仍残留：
   - 禁用节点
@@ -204,7 +237,8 @@
 - `SetVisibility`
 - 资源切换
 - 按钮点击后调用 C++ 暴露的方法
-- SceneCapture 的展示初始化
+- 目标对象的悬停与点亮表现
+- 世界背景板和模型资源接线
 
 ### 7.2 应高度警惕的模式
 
@@ -253,6 +287,14 @@
 ## 10. 当前结论
 
 当前分支已经完成了主线重构：项目的核心驱动已经转移到 C++。
+
+同时，展示架构也已经从“UI 中央显示 RenderTarget 模型”切换为“真实世界中的藻井模型 + 世界背景板 + UI 叠加说明”的方式。
+
+在此基础上，`Level2` 当前也已经形成了：
+
+- C++ 维护真实点击、顺序和流程状态
+- `W_Level2` 承接介绍 UI、步骤 UI 和回位完成回调
+- `BP_ShowcaseModel` 承接镜头拉近和回原位演出
 
 后续工作的重点不是“继续机械地把更多蓝图搬到 C++”，而是：
 

@@ -1,0 +1,183 @@
+{
+  "blueprint": {
+    "name": "BP_CaissonGameMode",
+    "asset_path": "/Script/Engine.Blueprint'/Game/UI/BP_CaissonGameMode.BP_CaissonGameMode'",
+    "blueprint_class": "Blueprint",
+    "parent_class": "CaissonCeiling.CaissonGameMode",
+    "generated_class": "BP_CaissonGameMode_C",
+    "tick_prediction": null,
+    "tick_prediction_reason": null
+  },
+  "event_graph": {
+    "name": "EventGraph",
+    "schema": "BlueprintGraph.EdGraphSchema_K2",
+    "module_count": 2,
+    "connection_count": 0,
+    "modules": [
+      {
+        "id": "K2Node_Event_0",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "ReceiveBeginPlay",
+        "meta": {
+          "event_name": "ReceiveBeginPlay"
+        },
+        "pins": [
+          {
+            "id": "124632A740533D088E12FFAB666151BC",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "16F5B2114E9F049DEE3A2F9E397AC698",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_CaissonGameMode.BP_CaissonGameMode:EventGraph.K2Node_Event_0'"
+      },
+      {
+        "id": "K2Node_Event_1",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "ReceiveTick",
+        "meta": {
+          "event_name": "ReceiveTick"
+        },
+        "pins": [
+          {
+            "id": "422B358143C6964CF7307DA222CE6901",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "67345B31400E17F9351FE694C8CD94C0",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "88CF30FF4B079DE4AA7CD1A9C7131456",
+            "name": "DeltaSeconds",
+            "direction": "output",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_CaissonGameMode.BP_CaissonGameMode:EventGraph.K2Node_Event_1'"
+      }
+    ],
+    "connections": [],
+    "exec_traces": [
+      [
+        "ReceiveBeginPlay"
+      ],
+      [
+        "ReceiveTick"
+      ]
+    ]
+  },
+  "other_graphs": [
+    {
+      "name": "ExecuteUbergraph_BP_CaissonGameMode",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 0,
+      "connection_count": 0,
+      "modules": [],
+      "connections": [],
+      "exec_traces": []
+    },
+    {
+      "name": "UserConstructionScript",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 1,
+      "connection_count": 0,
+      "modules": [
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "UserConstructionScript",
+          "meta": {
+            "function_name": "UserConstructionScript"
+          },
+          "pins": [
+            {
+              "id": "594F77914CE4FC5E1DBB809E230FC5AD",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/BP_CaissonGameMode.BP_CaissonGameMode:UserConstructionScript.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [],
+      "exec_traces": [
+        [
+          "UserConstructionScript"
+        ]
+      ]
+    }
+  ],
+  "widget_tree": {
+    "root_widget": null,
+    "widgets": [],
+    "relationships": []
+  },
+  "variables": {
+    "new_variables": [],
+    "generated_variables": [],
+    "widget_variable_guid_map": {}
+  },
+  "special_settings": [],
+  "doc_view": {
+    "blueprint_name": "BP_CaissonGameMode",
+    "blueprint_class": "Blueprint",
+    "module_count": 2,
+    "connection_count": 0,
+    "component_events": [],
+    "exec_traces": [
+      [
+        "ReceiveBeginPlay"
+      ],
+      [
+        "ReceiveTick"
+      ]
+    ],
+    "widget_outline": [],
+    "notices": [
+      "This export is built from full asset text, so it includes EventGraph, other detailed graphs, member variables, and generated variables that are serialized into the asset.",
+      "Runtime-only state and values not serialized into the asset cannot be reconstructed from this exporter."
+    ]
+  }
+}
