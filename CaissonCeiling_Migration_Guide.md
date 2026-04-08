@@ -107,6 +107,8 @@
 
 - `BeginPlay` 时添加默认输入映射
 - `SetupInputComponent` 中绑定 Look / Click / RightClick
+- `RightClickAction` 当前只负责维护“右键是否按住”的旋转门控状态
+- `Look` 当前只在按住右键时才继续驱动模型旋转
 - `AdvanceStep` / `ResetSteps` 维护步骤状态
 - `OnStepChanged` 作为 UI 统一监听委托
 - `OnLevel2TargetProgressChanged` / `OnLevel2TargetActivated` 负责 Level2 目标广播
@@ -171,7 +173,7 @@
 - `W_Level2`
   - 步骤推进由 C++ 接管
   - Widget 只监听 `OnStepChanged` 并刷新表现
-  - 右键开发跳步已经通过 Controller 验证可用
+  - 右键当前只承担按住拖拽旋转模型，不再承担开发跳步
   - 当前已增加介绍 UI、镜头回位后的回调承接以及 `Level2` 流程广播绑定
 
 - `BP_ShowcaseModel`

@@ -53,7 +53,8 @@ protected:
 
 	void Look(const FInputActionValue& Value);
 	void OnInteract();
-	void OnRightClickSkip();
+	void OnRightMousePressed();
+	void OnRightMouseReleased();
 	bool HandleLevel2Interaction(UCaissonInteractComponent* InteractComp);
 	void UpdateHoveredInteractable();
 	UCaissonInteractComponent* GetInteractComponentUnderCursor() const;
@@ -73,7 +74,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level2|Targets")
 	TArray<FName> RequiredLevel2TargetIds;
 
-	// 调试开关：是否允许右键直接跳过步骤。
+	// 兼容旧蓝图配置保留的历史参数；当前右键不再用于调试跳步。
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level2|Targets")
 	bool bRightClickSkipEnabled;
 
@@ -151,6 +152,7 @@ private:
 	UPROPERTY(Transient)
 	FName ActiveInspectTargetId;
 
+	bool bRightMouseLookHeld;
 	bool bCachedHoverEnabledBeforeInspect;
 	bool bCachedClickEnabledBeforeInspect;
 };

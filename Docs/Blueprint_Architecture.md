@@ -168,12 +168,16 @@
    - `CloudPattern`
    - `StarMap`
 2. `bRightClickSkipEnabled`
-   - 默认关闭
+   - 当前仅为兼容旧蓝图保留
+   - 已不再参与输入绑定或跳步逻辑
 
 维护原则：
 
 1. 这里只配输入资源和少量调试参数
 2. 不把步骤推进和点击判定搬回蓝图
+3. 旋转模型的输入门控在 `ACaissonPlayerController` 中完成：
+   - 未按住右键时，鼠标移动不应驱动模型旋转
+   - 只有按住右键时，`LookAction` 才会继续传给 `ACaissonPawn`
 
 ### 5.3 `W_Level1`
 
@@ -341,6 +345,7 @@
    - `SetActorEnableCollision(false)`
    - `SetActorTickEnabled(false)`
 8. 当前 `BP_ShowcaseModel` 已承担 `Level2` 镜头拉近、回原位演出以及退场隐藏，不再只是静态展示 Pawn
+9. 模型旋转输入门控不在该蓝图内实现，而由 `ACaissonPlayerController::Look()` 根据右键按住状态决定是否继续转发给 Pawn
 
 ### 5.5.1 `BP_ShowcaseModel_Level3`
 
@@ -418,10 +423,17 @@
 BP_CaissonGameMode
 -> BP_CaissonController
 -> ACaissonPlayerController
--> Enhanced Input 触发 Look / Click / RightClick
+-> RightClickAction.Started / Completed / Canceled 维护右键按住状态
+-> LookAction 只有在右键按住时才继续驱动模型旋转
+-> ClickAction 负责点击交互
 -> Controller 执行射线检测 / 步骤推进 / 广播
 -> 目标蓝图与 Widget 蓝图只接表现
 ```
+
+补充说明：
+
+1. `RightClickAction` 当前只承担“按住右键拖拽旋转模型”的输入门控，不再用于调试跳步。
+2. 如果后续需要恢复调试跳步，应单独增加新的 Debug 输入资源，而不是复用右键。
 
 ### 6.2 当前模型展示链路
 

@@ -55,7 +55,7 @@
 6. `BP_ShowcaseModel` 当前已新增 `DeactivateLevel2Presentation`，用于 `Level2` 退场。
 7. `BP_ShowcaseModel_Level3` 与 `W_Level3_Introdection` 当前已经建立，可在 `Level3` 介绍页中生成或复用第三关展示模型。
 8. 当前下一步重点是：
-   - 收尾 `Level2` 的悬停高亮与正式点亮
+
    - 继续联调 `Level2` 退场与 `Level3` 入口体验
    - 在已建立的 `Level3` 介绍页基础上进入新的玩法开发
 

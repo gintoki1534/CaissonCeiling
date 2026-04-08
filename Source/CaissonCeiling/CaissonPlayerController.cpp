@@ -14,7 +14,7 @@ ACaissonPlayerController::ACaissonPlayerController()
 	bEnableClickEvents = true;
 	bEnableMouseOverEvents = true;
 
-	// Level2 默认按 3 个目标推进，右键跳过默认关闭。
+	// Level2 默认按 3 个目标推进；当前仅允许按住右键时旋转模型。
 	CurrentStep = 0;
 	TotalSteps = 3;
 	bRightClickSkipEnabled = false;
@@ -23,6 +23,7 @@ ACaissonPlayerController::ACaissonPlayerController()
 	bEnableLevelTargetClick = false;
 	Level2FlowState = ELevel2FlowState::SearchingTargets;
 	ActiveInspectTargetId = NAME_None;
+	bRightMouseLookHeld = false;
 	bCachedHoverEnabledBeforeInspect = false;
 	bCachedClickEnabledBeforeInspect = false;
 }
@@ -68,7 +69,9 @@ void ACaissonPlayerController::SetupInputComponent()
 
 		if (RightClickAction)
 		{
-			EnhancedInputComponent->BindAction(RightClickAction, ETriggerEvent::Started, this, &ACaissonPlayerController::OnRightClickSkip);
+			EnhancedInputComponent->BindAction(RightClickAction, ETriggerEvent::Started, this, &ACaissonPlayerController::OnRightMousePressed);
+			EnhancedInputComponent->BindAction(RightClickAction, ETriggerEvent::Completed, this, &ACaissonPlayerController::OnRightMouseReleased);
+			EnhancedInputComponent->BindAction(RightClickAction, ETriggerEvent::Canceled, this, &ACaissonPlayerController::OnRightMouseReleased);
 		}
 	}
 }
@@ -133,20 +136,23 @@ bool ACaissonPlayerController::IsLevel2TargetActivated(FName TargetId) const
 	return ActivatedLevel2TargetIds.Contains(TargetId);
 }
 
-void ACaissonPlayerController::OnRightClickSkip()
+void ACaissonPlayerController::OnRightMousePressed()
 {
-	if (!bRightClickSkipEnabled)
-	{
-		UE_LOG(LogTemp, Verbose, TEXT("[Level2] 右键调试跳过已关闭"));
-		return;
-	}
+	bRightMouseLookHeld = true;
+}
 
-	UE_LOG(LogTemp, Warning, TEXT("[Level2] 检测到右键调试跳过，尝试推进步骤"));
-	AdvanceStep();
+void ACaissonPlayerController::OnRightMouseReleased()
+{
+	bRightMouseLookHeld = false;
 }
 
 void ACaissonPlayerController::Look(const FInputActionValue& Value)
 {
+	if (!bRightMouseLookHeld)
+	{
+		return;
+	}
+
 	const FVector2D LookAxisVector = Value.Get<FVector2D>();
 
 	APawn* MyPawn = GetPawn();
