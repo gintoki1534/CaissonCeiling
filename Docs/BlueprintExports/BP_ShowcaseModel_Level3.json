@@ -1,0 +1,562 @@
+{
+  "blueprint": {
+    "name": "BP_ShowcaseModel_Level3",
+    "asset_path": "/Script/Engine.Blueprint'/Game/UI/BP_ShowcaseModel_Level3.BP_ShowcaseModel_Level3'",
+    "blueprint_class": "Blueprint",
+    "parent_class": "CaissonCeiling.CaissonPawn",
+    "generated_class": "BP_ShowcaseModel_Level3_C",
+    "tick_prediction": null,
+    "tick_prediction_reason": null
+  },
+  "event_graph": {
+    "name": "EventGraph",
+    "schema": "BlueprintGraph.EdGraphSchema_K2",
+    "module_count": 3,
+    "connection_count": 0,
+    "modules": [
+      {
+        "id": "K2Node_Event_2",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "ReceiveTick",
+        "meta": {
+          "event_name": "ReceiveTick"
+        },
+        "pins": [
+          {
+            "id": "6C49C85A46E49FDEEA5290BF82194DE3",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "265BF4F44E867AE2FF584D8A74BF6330",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "69B4D9EB467C33B3F8B021B952A193E2",
+            "name": "DeltaSeconds",
+            "direction": "output",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_ShowcaseModel_Level3.BP_ShowcaseModel_Level3:EventGraph.K2Node_Event_2'"
+      },
+      {
+        "id": "K2Node_Event_1",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "ReceiveActorBeginOverlap",
+        "meta": {
+          "event_name": "ReceiveActorBeginOverlap"
+        },
+        "pins": [
+          {
+            "id": "F92178C84329575DC5C1BA850E1A6DA8",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "B4F6AF324743788CB3A15DAA7A33FD06",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "A66D74EA434477D427E53297BE998F0D",
+            "name": "OtherActor",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_ShowcaseModel_Level3.BP_ShowcaseModel_Level3:EventGraph.K2Node_Event_1'"
+      },
+      {
+        "id": "K2Node_Event_0",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "ReceiveBeginPlay",
+        "meta": {
+          "event_name": "ReceiveBeginPlay"
+        },
+        "pins": [
+          {
+            "id": "E303F3314533A46BA7D66EA4973B5796",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "A24B35AC49622E5D4CFA31A9C9B1E72B",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_ShowcaseModel_Level3.BP_ShowcaseModel_Level3:EventGraph.K2Node_Event_0'"
+      }
+    ],
+    "connections": [],
+    "exec_traces": [
+      [
+        "ReceiveTick"
+      ],
+      [
+        "ReceiveActorBeginOverlap"
+      ],
+      [
+        "ReceiveBeginPlay"
+      ]
+    ]
+  },
+  "other_graphs": [
+    {
+      "name": "ActivateLevel3Presentation",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 4,
+      "connection_count": 3,
+      "modules": [
+        {
+          "id": "K2Node_CallFunction_2",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "SetActorTickEnabled",
+          "meta": {
+            "function_name": "SetActorTickEnabled",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "id": "8221744148C472DA1DD73CA4B8C727E6",
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_1",
+                  "pin_id": "5859C35E463EBCE4B332CEB87A99D779"
+                }
+              ]
+            },
+            {
+              "id": "EF921B154725B215CB745C91E313FE64",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "ACD9862B406C8FF617798BBB46A5C231",
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "8469922B4DCC530E0E3A19A272C55531",
+              "name": "bEnabled",
+              "direction": "input",
+              "category": "bool",
+              "subcategory": "",
+              "default_value": "true",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_1",
+                  "pin_id": "5859C35E463EBCE4B332CEB87A99D779"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "bEnabled",
+              "category": "bool",
+              "default_value": "true",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level3.BP_ShowcaseModel_Level3:ActivateLevel3Presentation.K2Node_CallFunction_2'"
+        },
+        {
+          "id": "K2Node_CallFunction_1",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "SetActorEnableCollision",
+          "meta": {
+            "function_name": "SetActorEnableCollision",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "id": "ACCC895F40C333D76D6708BA7FBBE905",
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "pin_id": "259AF0FA4A9697E4C94B37BABB617AC4"
+                }
+              ]
+            },
+            {
+              "id": "5859C35E463EBCE4B332CEB87A99D779",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_2",
+                  "pin_id": "8221744148C472DA1DD73CA4B8C727E6"
+                }
+              ]
+            },
+            {
+              "id": "D19BAA6146E4394C7D1293B1D868DB35",
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "8EB07E4F476A942BD4A37E82DE086E39",
+              "name": "bNewActorEnableCollision",
+              "direction": "input",
+              "category": "bool",
+              "subcategory": "",
+              "default_value": "false",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "pin_id": "259AF0FA4A9697E4C94B37BABB617AC4"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level3.BP_ShowcaseModel_Level3:ActivateLevel3Presentation.K2Node_CallFunction_1'"
+        },
+        {
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "SetActorHiddenInGame",
+          "meta": {
+            "function_name": "SetActorHiddenInGame",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "id": "423B027D4725C1E6988D488C734D57B7",
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "4E8F13D24F25A96BA36C64A3F1D647E7"
+                }
+              ]
+            },
+            {
+              "id": "259AF0FA4A9697E4C94B37BABB617AC4",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_1",
+                  "pin_id": "ACCC895F40C333D76D6708BA7FBBE905"
+                }
+              ]
+            },
+            {
+              "id": "726F173142C5C96F9880D49D025A1323",
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "373CDA474435D69CA5CB8F805147BAF9",
+              "name": "bNewHidden",
+              "direction": "input",
+              "category": "bool",
+              "subcategory": "",
+              "default_value": "false",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "4E8F13D24F25A96BA36C64A3F1D647E7"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level3.BP_ShowcaseModel_Level3:ActivateLevel3Presentation.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "ActivateLevel3Presentation",
+          "meta": {
+            "function_name": "ActivateLevel3Presentation"
+          },
+          "pins": [
+            {
+              "id": "4E8F13D24F25A96BA36C64A3F1D647E7",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "pin_id": "423B027D4725C1E6988D488C734D57B7"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/BP_ShowcaseModel_Level3.BP_ShowcaseModel_Level3:ActivateLevel3Presentation.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_CallFunction_0",
+            "pin_name": "then",
+            "pin_id": "259AF0FA4A9697E4C94B37BABB617AC4"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_1",
+            "pin_name": "execute",
+            "pin_id": "ACCC895F40C333D76D6708BA7FBBE905"
+          },
+          "category": "exec"
+        },
+        {
+          "from": {
+            "node": "K2Node_CallFunction_1",
+            "pin_name": "then",
+            "pin_id": "5859C35E463EBCE4B332CEB87A99D779"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_2",
+            "pin_name": "execute",
+            "pin_id": "8221744148C472DA1DD73CA4B8C727E6"
+          },
+          "category": "exec"
+        },
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "pin_name": "then",
+            "pin_id": "4E8F13D24F25A96BA36C64A3F1D647E7"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "pin_name": "execute",
+            "pin_id": "423B027D4725C1E6988D488C734D57B7"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "ActivateLevel3Presentation",
+          "SetActorHiddenInGame",
+          "SetActorEnableCollision",
+          "SetActorTickEnabled"
+        ]
+      ]
+    },
+    {
+      "name": "UserConstructionScript",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 1,
+      "connection_count": 0,
+      "modules": [
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "UserConstructionScript",
+          "meta": {
+            "function_name": "UserConstructionScript"
+          },
+          "pins": [
+            {
+              "id": "DA4639D84E64F9CB6D2AED80874735D4",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/BP_ShowcaseModel_Level3.BP_ShowcaseModel_Level3:UserConstructionScript.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [],
+      "exec_traces": [
+        [
+          "UserConstructionScript"
+        ]
+      ]
+    }
+  ],
+  "widget_tree": {
+    "root_widget": null,
+    "widgets": [],
+    "relationships": []
+  },
+  "variables": {
+    "new_variables": [],
+    "generated_variables": [],
+    "widget_variable_guid_map": {}
+  },
+  "special_settings": [],
+  "doc_view": {
+    "blueprint_name": "BP_ShowcaseModel_Level3",
+    "blueprint_class": "Blueprint",
+    "module_count": 3,
+    "connection_count": 0,
+    "component_events": [],
+    "exec_traces": [
+      [
+        "ReceiveTick"
+      ],
+      [
+        "ReceiveActorBeginOverlap"
+      ],
+      [
+        "ReceiveBeginPlay"
+      ]
+    ],
+    "widget_outline": [],
+    "notices": [
+      "This export is built from full asset text, so it includes EventGraph, other detailed graphs, member variables, and generated variables that are serialized into the asset.",
+      "Runtime-only state and values not serialized into the asset cannot be reconstructed from this exporter."
+    ]
+  }
+}

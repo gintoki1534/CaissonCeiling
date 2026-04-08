@@ -11,1255 +11,9 @@
   "event_graph": {
     "name": "EventGraph",
     "schema": "BlueprintGraph.EdGraphSchema_K2",
-    "module_count": 66,
+    "module_count": 56,
     "connection_count": 66,
     "modules": [
-      {
-        "id": "K2Node_Event_2",
-        "class": "K2Node_Event",
-        "kind": "event",
-        "title": "ReceiveTick",
-        "meta": {
-          "event_name": "ReceiveTick"
-        },
-        "pins": [
-          {
-            "id": "6C49C85A46E49FDEEA5290BF82194DE3",
-            "name": "OutputDelegate",
-            "direction": "output",
-            "category": "delegate",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "265BF4F44E867AE2FF584D8A74BF6330",
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "69B4D9EB467C33B3F8B021B952A193E2",
-            "name": "DeltaSeconds",
-            "direction": "output",
-            "category": "real",
-            "subcategory": "float",
-            "default_value": "0.0",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_Event_2'"
-      },
-      {
-        "id": "K2Node_Event_1",
-        "class": "K2Node_Event",
-        "kind": "event",
-        "title": "ReceiveActorBeginOverlap",
-        "meta": {
-          "event_name": "ReceiveActorBeginOverlap"
-        },
-        "pins": [
-          {
-            "id": "F92178C84329575DC5C1BA850E1A6DA8",
-            "name": "OutputDelegate",
-            "direction": "output",
-            "category": "delegate",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "B4F6AF324743788CB3A15DAA7A33FD06",
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "A66D74EA434477D427E53297BE998F0D",
-            "name": "OtherActor",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_Event_1'"
-      },
-      {
-        "id": "K2Node_Event_0",
-        "class": "K2Node_Event",
-        "kind": "event",
-        "title": "ReceiveBeginPlay",
-        "meta": {
-          "event_name": "ReceiveBeginPlay"
-        },
-        "pins": [
-          {
-            "id": "E303F3314533A46BA7D66EA4973B5796",
-            "name": "OutputDelegate",
-            "direction": "output",
-            "category": "delegate",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "A24B35AC49622E5D4CFA31A9C9B1E72B",
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_Event_0'"
-      },
-      {
-        "id": "K2Node_VariableGet_9",
-        "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_9",
-        "meta": {},
-        "pins": [
-          {
-            "id": "151ED2874280C4345D3E38BDC9D83740",
-            "name": "CamAnchor_TiangongTower",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_9",
-                "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
-              },
-              {
-                "node": "K2Node_CallFunction_13",
-                "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
-              }
-            ]
-          },
-          {
-            "id": "2EFB55D348F6EFE875D204B9932BDFFF",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_9'"
-      },
-      {
-        "id": "K2Node_VariableGet_10",
-        "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_10",
-        "meta": {},
-        "pins": [
-          {
-            "id": "CFC636EE495BE8FE2542B181FC249B9C",
-            "name": "CamAnchor_CloudPattern",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_10",
-                "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
-              },
-              {
-                "node": "K2Node_CallFunction_14",
-                "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
-              }
-            ]
-          },
-          {
-            "id": "3DF72EDB47D31B78C3E8F7B29C7CEDF8",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_10'"
-      },
-      {
-        "id": "K2Node_VariableGet_7",
-        "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_7",
-        "meta": {},
-        "pins": [
-          {
-            "id": "E76253B042E0EC8CF08F108E035ADF51",
-            "name": "CamAnchor_StarMap",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_15",
-                "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
-              },
-              {
-                "node": "K2Node_CallFunction_16",
-                "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
-              }
-            ]
-          },
-          {
-            "id": "02112BB64EAC429C136A9196F5B930D8",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_7'"
-      },
-      {
-        "id": "K2Node_VariableSet_2",
-        "class": "K2Node_VariableSet",
-        "kind": "variable_set",
-        "title": "Set bReturningToDefault",
-        "meta": {
-          "variable_name": "bReturningToDefault"
-        },
-        "pins": [
-          {
-            "id": "496137A342A407E68A206081A067183E",
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CustomEvent_0",
-                "pin_id": "B08B718044A414830952BC8524EF8859"
-              }
-            ]
-          },
-          {
-            "id": "848162B24FBF137A890EBB8AD681F637",
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_13",
-                "pin_id": "77CE063046DD5BC79B477593498D4F87"
-              }
-            ]
-          },
-          {
-            "id": "A21B37F04774E665406799B3AD659FF8",
-            "name": "bReturningToDefault",
-            "direction": "input",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "false",
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "0727728240DB57167E797286B5279B0A",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "5F9D672A4CC7FB49BAF31DB3547AA98B",
-            "name": "Output_Get",
-            "direction": "output",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "false",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CustomEvent_0",
-                "pin_id": "B08B718044A414830952BC8524EF8859"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableSet_2'"
-      },
-      {
-        "id": "K2Node_VariableSet_13",
-        "class": "K2Node_VariableSet",
-        "kind": "variable_set",
-        "title": "Set StartRot",
-        "meta": {
-          "variable_name": "StartRot"
-        },
-        "pins": [
-          {
-            "id": "77CE063046DD5BC79B477593498D4F87",
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_2",
-                "pin_id": "848162B24FBF137A890EBB8AD681F637"
-              }
-            ]
-          },
-          {
-            "id": "51FEA40C4D9C07B6225F7D88112BFA08",
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_12",
-                "pin_id": "763404B54C14154BE4CDBF9A4D036C6F"
-              }
-            ]
-          },
-          {
-            "id": "159737AC433FCBC7CFF3A2A55EF8D486",
-            "name": "StartRot",
-            "direction": "input",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_6",
-                "pin_id": "EED2967B4925587074722085C3CF8CFA"
-              }
-            ]
-          },
-          {
-            "id": "410FC1504C5CFCE564304C97DAF25A6D",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "D1F8A1B2424113D443650E94861F9F93",
-            "name": "Output_Get",
-            "direction": "output",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_2",
-                "pin_id": "848162B24FBF137A890EBB8AD681F637"
-              }
-            ]
-          },
-          {
-            "name": "StartRot",
-            "category": "struct",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_6",
-                "pin_id": "EED2967B4925587074722085C3CF8CFA"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableSet_13'"
-      },
-      {
-        "id": "K2Node_CallFunction_6",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "SceneComponent.K2_GetComponentRotation",
-        "meta": {
-          "function_name": "K2_GetComponentRotation",
-          "function_owner": "SceneComponent"
-        },
-        "pins": [
-          {
-            "id": "25548AF44F6972ED1F5B80A129BD43CF",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_6",
-                "pin_id": "AE0AD8E040E1DFE1801495A51D74351F"
-              }
-            ]
-          },
-          {
-            "id": "EED2967B4925587074722085C3CF8CFA",
-            "name": "ReturnValue",
-            "direction": "output",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_13",
-                "pin_id": "159737AC433FCBC7CFF3A2A55EF8D486"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_6",
-                "pin_id": "AE0AD8E040E1DFE1801495A51D74351F"
-              }
-            ]
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_6'"
-      },
-      {
-        "id": "K2Node_VariableSet_12",
-        "class": "K2Node_VariableSet",
-        "kind": "variable_set",
-        "title": "Set StartLoc",
-        "meta": {
-          "variable_name": "StartLoc"
-        },
-        "pins": [
-          {
-            "id": "763404B54C14154BE4CDBF9A4D036C6F",
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_13",
-                "pin_id": "51FEA40C4D9C07B6225F7D88112BFA08"
-              }
-            ]
-          },
-          {
-            "id": "DBD4719D4E1C631A8C9CADADA0591AC2",
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_0",
-                "pin_id": "D459037F4B2B1B14D97483A22DBDE4D8"
-              }
-            ]
-          },
-          {
-            "id": "EF2159FE4BF1FF34987EF9B59A5E1A4E",
-            "name": "StartLoc",
-            "direction": "input",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_5",
-                "pin_id": "66170D0C45026B08005827B30B8D05FE"
-              }
-            ]
-          },
-          {
-            "id": "E3953BF24EB359DC9203D5B8031890E7",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "3439335E42E832E4EA869FB7C63DBE45",
-            "name": "Output_Get",
-            "direction": "output",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_13",
-                "pin_id": "51FEA40C4D9C07B6225F7D88112BFA08"
-              }
-            ]
-          },
-          {
-            "name": "StartLoc",
-            "category": "struct",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_5",
-                "pin_id": "66170D0C45026B08005827B30B8D05FE"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableSet_12'"
-      },
-      {
-        "id": "K2Node_CallFunction_5",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "SceneComponent.K2_GetComponentLocation",
-        "meta": {
-          "function_name": "K2_GetComponentLocation",
-          "function_owner": "SceneComponent"
-        },
-        "pins": [
-          {
-            "id": "3A5292164CF84EE8947153AC2C33FCA2",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_6",
-                "pin_id": "AE0AD8E040E1DFE1801495A51D74351F"
-              }
-            ]
-          },
-          {
-            "id": "66170D0C45026B08005827B30B8D05FE",
-            "name": "ReturnValue",
-            "direction": "output",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_12",
-                "pin_id": "EF2159FE4BF1FF34987EF9B59A5E1A4E"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_6",
-                "pin_id": "AE0AD8E040E1DFE1801495A51D74351F"
-              }
-            ]
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_5'"
-      },
-      {
-        "id": "K2Node_CallFunction_12",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "SceneComponent.K2_GetComponentRotation",
-        "meta": {
-          "function_name": "K2_GetComponentRotation",
-          "function_owner": "SceneComponent"
-        },
-        "pins": [
-          {
-            "id": "A22C4E5C4F2472E9567F7FA1F11C2D42",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_12",
-                "pin_id": "058909B34228B5EB2D2565BB17C2E1A0"
-              }
-            ]
-          },
-          {
-            "id": "22D5A23641552CD84A30659110E35DC8",
-            "name": "ReturnValue",
-            "direction": "output",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_1",
-                "pin_id": "159737AC433FCBC7CFF3A2A55EF8D486"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_12",
-                "pin_id": "058909B34228B5EB2D2565BB17C2E1A0"
-              }
-            ]
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_12'"
-      },
-      {
-        "id": "K2Node_CallFunction_8",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "SceneComponent.K2_GetComponentLocation",
-        "meta": {
-          "function_name": "K2_GetComponentLocation",
-          "function_owner": "SceneComponent"
-        },
-        "pins": [
-          {
-            "id": "18B2DBC14CEC1A51E8E640869B2A7008",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_12",
-                "pin_id": "058909B34228B5EB2D2565BB17C2E1A0"
-              }
-            ]
-          },
-          {
-            "id": "A610005F426F4F3150E616996E166FD1",
-            "name": "ReturnValue",
-            "direction": "output",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_0",
-                "pin_id": "EF2159FE4BF1FF34987EF9B59A5E1A4E"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_12",
-                "pin_id": "058909B34228B5EB2D2565BB17C2E1A0"
-              }
-            ]
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_8'"
-      },
-      {
-        "id": "K2Node_VariableGet_12",
-        "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_12",
-        "meta": {},
-        "pins": [
-          {
-            "id": "058909B34228B5EB2D2565BB17C2E1A0",
-            "name": "CameraComp",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_8",
-                "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
-              },
-              {
-                "node": "K2Node_CallFunction_12",
-                "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
-              }
-            ]
-          },
-          {
-            "id": "6C073FE04673160B68451DA463874CD0",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_12'"
-      },
-      {
-        "id": "K2Node_VariableGet_6",
-        "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_6",
-        "meta": {},
-        "pins": [
-          {
-            "id": "AE0AD8E040E1DFE1801495A51D74351F",
-            "name": "CameraComp",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_5",
-                "pin_id": "3A5292164CF84EE8947153AC2C33FCA2"
-              },
-              {
-                "node": "K2Node_CallFunction_6",
-                "pin_id": "25548AF44F6972ED1F5B80A129BD43CF"
-              }
-            ]
-          },
-          {
-            "id": "E07B41C545A265BD24FF189DA1B0B92D",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_6'"
-      },
-      {
-        "id": "K2Node_Timeline_0",
-        "class": "K2Node_Timeline",
-        "kind": "K2Node_Timeline",
-        "title": "K2Node_Timeline_0",
-        "meta": {},
-        "pins": [
-          {
-            "id": "BC2F7E3342EE4300AB9E7CB6D926E31D",
-            "name": "Play",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "8AB5A27C4B3ABF516F37198C9C2EC01A",
-            "name": "PlayFromStart",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_7",
-                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
-              },
-              {
-                "node": "K2Node_VariableSet_8",
-                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
-              },
-              {
-                "node": "K2Node_VariableSet_11",
-                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
-              },
-              {
-                "node": "K2Node_VariableSet_1",
-                "pin_id": "51FEA40C4D9C07B6225F7D88112BFA08"
-              }
-            ]
-          },
-          {
-            "id": "D2024C7D4A8A358301CFE5B34FD00CDF",
-            "name": "Stop",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "2880EE9A4BF5CA8227F57496D09E879C",
-            "name": "Reverse",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "E707BAB94245300B13E09393EEF423C6",
-            "name": "ReverseFromEnd",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "8A1724094FA3769B0001869B2B5BAAEE",
-            "name": "Update",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_3",
-                "pin_id": "DF3247874F3E37057E090BA38493D00C"
-              }
-            ]
-          },
-          {
-            "id": "BD11C2014C15CD1D01A005B5B80E1695",
-            "name": "Finished",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_3",
-                "pin_id": "CE07B595468DD1627D6BBE9783C938BC"
-              }
-            ]
-          },
-          {
-            "id": "2CAEE78D4FC9D953C04725A9E8061BBF",
-            "name": "SetNewTime",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "7496ED6A4704360873200DB44DFD7D89",
-            "name": "NewTime",
-            "direction": "input",
-            "category": "real",
-            "subcategory": "float",
-            "default_value": "0.0",
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "A2BA75254723D314B5748DA3817704A7",
-            "name": "Direction",
-            "direction": "output",
-            "category": "byte",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "BC4481EE4F37EC026B8663B682228D35",
-            "name": "Alpha",
-            "direction": "output",
-            "category": "real",
-            "subcategory": "float",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_0",
-                "pin_id": "A86F13264FBAF9F002DFDFBC11C12E11"
-              },
-              {
-                "node": "K2Node_CallFunction_1",
-                "pin_id": "9B9E86044F34771CCE8560BFC18AE895"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "PlayFromStart",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_7",
-                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
-              },
-              {
-                "node": "K2Node_VariableSet_8",
-                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
-              },
-              {
-                "node": "K2Node_VariableSet_11",
-                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
-              },
-              {
-                "node": "K2Node_VariableSet_1",
-                "pin_id": "51FEA40C4D9C07B6225F7D88112BFA08"
-              }
-            ]
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_Timeline'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_Timeline_0'"
-      },
-      {
-        "id": "K2Node_AddComponent_0",
-        "class": "K2Node_AddComponent",
-        "kind": "K2Node_AddComponent",
-        "title": "K2Node_AddComponent_0",
-        "meta": {},
-        "pins": [
-          {
-            "id": "F3E0AB5043FBCC470A36B09C6E0CBBFE",
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "D59BA44F4028CD2CFF943C80932F0916",
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "1B82535C4BA2D08AEB38D8A59A3DD0FF",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "FA8D00CE44CA9483F5AB30887A50BC39",
-            "name": "TemplateName",
-            "direction": "input",
-            "category": "name",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "E72CD4684EB5565D84B7288B0FAB7C40",
-            "name": "bManualAttachment",
-            "direction": "input",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "false",
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "E22E7F224B1B719D3ED1E8906ECA9ACE",
-            "name": "RelativeTransform",
-            "direction": "input",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "659F3C61436DDDDD6F4B508530E973D1",
-            "name": "ComponentTemplateContext",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "55B912DD40D818907FF4C593B1AC9670",
-            "name": "bDeferredFinish",
-            "direction": "input",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "false",
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "AD5C79C948016A6E571F99BC0469E15F",
-            "name": "ReturnValue",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_AddComponent'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_AddComponent_0'"
-      },
-      {
-        "id": "K2Node_ComponentBoundEvent_0",
-        "class": "K2Node_ComponentBoundEvent",
-        "kind": "component_bound_event",
-        "title": "TL_CameraMove.OnComponentActivated",
-        "meta": {
-          "component": "TL_CameraMove",
-          "delegate_property": "OnComponentActivated",
-          "custom_function_name": "BndEvt__BP_ShowcaseModel_TL_CameraMove_K2Node_ComponentBoundEvent_0_ActorComponentActivatedSignature__DelegateSignature"
-        },
-        "pins": [
-          {
-            "id": "AB5E6CA341D7726873720A84AA0E269B",
-            "name": "OutputDelegate",
-            "direction": "output",
-            "category": "delegate",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "05E20A4244C08E4E40C1AEBC7520E04E",
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "2B836CFA46EACB22E72450AD388A307C",
-            "name": "Component",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "84538ADF4C0485D2C81A5CB24E78E443",
-            "name": "bReset",
-            "direction": "output",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "false",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_ComponentBoundEvent_0'"
-      },
       {
         "id": "K2Node_CallDelegate_0",
         "class": "K2Node_CallDelegate",
@@ -1682,45 +436,166 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableSet_0'"
       },
       {
-        "id": "K2Node_PromotableOperator_4",
-        "class": "K2Node_PromotableOperator",
-        "kind": "K2Node_PromotableOperator",
-        "title": "K2Node_PromotableOperator_4",
+        "id": "K2Node_CallFunction_12",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SceneComponent.K2_GetComponentRotation",
+        "meta": {
+          "function_name": "K2_GetComponentRotation",
+          "function_owner": "SceneComponent"
+        },
+        "pins": [
+          {
+            "id": "A22C4E5C4F2472E9567F7FA1F11C2D42",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_12",
+                "pin_id": "058909B34228B5EB2D2565BB17C2E1A0"
+              }
+            ]
+          },
+          {
+            "id": "22D5A23641552CD84A30659110E35DC8",
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_1",
+                "pin_id": "159737AC433FCBC7CFF3A2A55EF8D486"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_12",
+                "pin_id": "058909B34228B5EB2D2565BB17C2E1A0"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_12'"
+      },
+      {
+        "id": "K2Node_CallFunction_8",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SceneComponent.K2_GetComponentLocation",
+        "meta": {
+          "function_name": "K2_GetComponentLocation",
+          "function_owner": "SceneComponent"
+        },
+        "pins": [
+          {
+            "id": "18B2DBC14CEC1A51E8E640869B2A7008",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_12",
+                "pin_id": "058909B34228B5EB2D2565BB17C2E1A0"
+              }
+            ]
+          },
+          {
+            "id": "A610005F426F4F3150E616996E166FD1",
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_0",
+                "pin_id": "EF2159FE4BF1FF34987EF9B59A5E1A4E"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_12",
+                "pin_id": "058909B34228B5EB2D2565BB17C2E1A0"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_8'"
+      },
+      {
+        "id": "K2Node_VariableGet_12",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_12",
         "meta": {},
         "pins": [
           {
-            "id": "0E35485E4C4082610CBA70A6077B867A",
-            "name": "A",
-            "direction": "input",
-            "category": "wildcard",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "A6BC16404A4EA6DF9FB1AB97EB4E79A3",
-            "name": "B",
-            "direction": "input",
-            "category": "wildcard",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "A8CB80114FC9BACD79AB7D9EDA72C966",
-            "name": "ReturnValue",
+            "id": "058909B34228B5EB2D2565BB17C2E1A0",
+            "name": "CameraComp",
             "direction": "output",
-            "category": "bool",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_8",
+                "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
+              },
+              {
+                "node": "K2Node_CallFunction_12",
+                "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
+              }
+            ]
+          },
+          {
+            "id": "6C073FE04673160B68451DA463874CD0",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
             "subcategory": "",
             "default_value": null,
             "default_object": null,
             "linked_to": []
           }
         ],
-        "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_PromotableOperator'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_PromotableOperator_4'"
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_12'"
       },
       {
         "id": "K2Node_VariableSet_6",
@@ -2154,22 +1029,22 @@
             "linked_to": []
           },
           {
-            "id": "BDF369104BDFC0F89FC2C0ACAFA90430",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
             "id": "058EBD564DE397DD6A47D5AC1FFEB239",
             "name": "Output_Get",
             "direction": "output",
             "category": "bool",
             "subcategory": "",
             "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "BDF369104BDFC0F89FC2C0ACAFA90430",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
             "default_object": null,
             "linked_to": []
           }
@@ -2203,6 +1078,42 @@
           }
         ],
         "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableSet_9'"
+      },
+      {
+        "id": "K2Node_CustomEvent_1",
+        "class": "K2Node_CustomEvent",
+        "kind": "K2Node_CustomEvent",
+        "title": "K2Node_CustomEvent_1",
+        "meta": {},
+        "pins": [
+          {
+            "id": "4B261BDE4BADAC765A97F98444522933",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "6BDC6A5B4D138726029EDBBC212693E7",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_9",
+                "pin_id": "90DF0F5E4D434ABD4E7A88A68B664516"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CustomEvent'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CustomEvent_1'"
       },
       {
         "id": "K2Node_VariableSet_11",
@@ -2370,65 +1281,6 @@
           }
         ],
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_16'"
-      },
-      {
-        "id": "K2Node_CustomEvent_0",
-        "class": "K2Node_CustomEvent",
-        "kind": "K2Node_CustomEvent",
-        "title": "K2Node_CustomEvent_0",
-        "meta": {},
-        "pins": [
-          {
-            "id": "BC8C7C534F0D7454D06B2F9DDAFA6813",
-            "name": "OutputDelegate",
-            "direction": "output",
-            "category": "delegate",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "B08B718044A414830952BC8524EF8859",
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_2",
-                "pin_id": "496137A342A407E68A206081A067183E"
-              }
-            ]
-          },
-          {
-            "id": "9697B12C41E2029776D3BE87CD2F5F0A",
-            "name": "TargetId",
-            "direction": "output",
-            "category": "name",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_PromotableOperator_2",
-                "pin_id": "AE39B52145ECA6961BB0BD9B1502F521"
-              },
-              {
-                "node": "K2Node_PromotableOperator_6",
-                "pin_id": "C4FEAB51433EE43AAC12E6984324C689"
-              },
-              {
-                "node": "K2Node_PromotableOperator_5",
-                "pin_id": "C4FEAB51433EE43AAC12E6984324C689"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CustomEvent'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CustomEvent_0'"
       },
       {
         "id": "K2Node_CallFunction_14",
@@ -2652,22 +1504,22 @@
             ]
           },
           {
-            "id": "188CE3A148C1D8BECB3B008756C8A064",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
             "id": "9251F1C446E6E3C1111837A32392DDE2",
             "name": "Output_Get",
             "direction": "output",
             "category": "struct",
             "subcategory": "",
             "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "188CE3A148C1D8BECB3B008756C8A064",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
             "default_object": null,
             "linked_to": []
           }
@@ -2763,48 +1615,6 @@
           }
         ],
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_13'"
-      },
-      {
-        "id": "K2Node_CallFunction_11",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "SceneComponent.K2_GetComponentRotation",
-        "meta": {
-          "function_name": "K2_GetComponentRotation",
-          "function_owner": "SceneComponent"
-        },
-        "pins": [
-          {
-            "id": "818E6DCF41AA7A3288FB609D4791ADE8",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "A8E5C5D6462D9A39EC496BBFECB1104D",
-            "name": "ReturnValue",
-            "direction": "output",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_11'"
       },
       {
         "id": "K2Node_VariableSet_10",
@@ -3021,7 +1831,7 @@
             ]
           },
           {
-            "id": "832C648746B6DD1CE213139921F878BF",
+            "id": "E8E61C1544A1CB1803CA9D8562997757",
             "name": "ErrorTolerance",
             "direction": "input",
             "category": "",
@@ -3146,24 +1956,71 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_IfThenElse'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_IfThenElse_1'"
       },
       {
-        "id": "K2Node_VariableGet_8",
-        "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_8",
-        "meta": {},
+        "id": "K2Node_VariableSet_5",
+        "class": "K2Node_VariableSet",
+        "kind": "variable_set",
+        "title": "Set TargetLoc",
+        "meta": {
+          "variable_name": "TargetLoc"
+        },
         "pins": [
           {
-            "id": "CFC636EE495BE8FE2542B181FC249B9C",
-            "name": "CamAnchor_CloudPattern",
-            "direction": "output",
-            "category": "object",
+            "id": "0A0D2B2545055D776DAC388F0B6A6BD1",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
             "subcategory": "",
             "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_2",
+                "pin_id": "2134F9674B241D43FD36E5AA2574A280"
+              }
+            ]
+          },
+          {
+            "id": "0F4A59FA4C77C8B449B2949F508257B4",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_8",
+                "pin_id": "1F1E1CCF4EA01B73B0C02983128FB9C7"
+              }
+            ]
+          },
+          {
+            "id": "F1A74BAE48286E39395E83BF6C328197",
+            "name": "TargetLoc",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_10",
+                "pin_id": "A610005F426F4F3150E616996E166FD1"
+              }
+            ]
+          },
+          {
+            "id": "035493B745B577839368B2A84AFEE16F",
+            "name": "Output_Get",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
             "default_object": null,
             "linked_to": []
           },
           {
-            "id": "3DF72EDB47D31B78C3E8F7B29C7CEDF8",
+            "id": "20D2D7EA44AD35FF56EFF890D8267A3D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -3175,6 +2032,30 @@
         ],
         "important_inputs": [
           {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_2",
+                "pin_id": "2134F9674B241D43FD36E5AA2574A280"
+              }
+            ]
+          },
+          {
+            "name": "TargetLoc",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_10",
+                "pin_id": "A610005F426F4F3150E616996E166FD1"
+              }
+            ]
+          },
+          {
             "name": "self",
             "category": "object",
             "default_value": null,
@@ -3182,47 +2063,114 @@
             "linked_to": []
           }
         ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_8'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableSet_5'"
       },
       {
-        "id": "K2Node_PromotableOperator_1",
+        "id": "K2Node_CallFunction_10",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SceneComponent.K2_GetComponentLocation",
+        "meta": {
+          "function_name": "K2_GetComponentLocation",
+          "function_owner": "SceneComponent"
+        },
+        "pins": [
+          {
+            "id": "18B2DBC14CEC1A51E8E640869B2A7008",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_10",
+                "pin_id": "CFC636EE495BE8FE2542B181FC249B9C"
+              }
+            ]
+          },
+          {
+            "id": "A610005F426F4F3150E616996E166FD1",
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_5",
+                "pin_id": "F1A74BAE48286E39395E83BF6C328197"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_10",
+                "pin_id": "CFC636EE495BE8FE2542B181FC249B9C"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_10'"
+      },
+      {
+        "id": "K2Node_PromotableOperator_6",
         "class": "K2Node_PromotableOperator",
         "kind": "K2Node_PromotableOperator",
-        "title": "K2Node_PromotableOperator_1",
+        "title": "K2Node_PromotableOperator_6",
         "meta": {},
         "pins": [
           {
-            "id": "AE39B52145ECA6961BB0BD9B1502F521",
+            "id": "C4FEAB51433EE43AAC12E6984324C689",
             "name": "A",
             "direction": "input",
             "category": "name",
             "subcategory": "",
             "default_value": null,
             "default_object": null,
-            "linked_to": []
+            "linked_to": [
+              {
+                "node": "K2Node_CustomEvent_0",
+                "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
+              }
+            ]
           },
           {
-            "id": "531D73F349A06AE53A34D8B679604C0F",
+            "id": "F7927F0D479BB746E36C4EAB41154D9F",
             "name": "B",
             "direction": "input",
             "category": "name",
             "subcategory": "",
-            "default_value": "TiangongTower",
+            "default_value": "CloudPattern",
             "default_object": null,
             "linked_to": []
           },
           {
-            "id": "AC56A72249AD70B6F27FD0B117EC26E1",
+            "id": "A53E8C534AD2FB4BBDC3718CC0284441",
             "name": "ReturnValue",
             "direction": "output",
             "category": "bool",
             "subcategory": "",
             "default_value": null,
             "default_object": null,
-            "linked_to": []
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_2",
+                "pin_id": "D0A18169431458328C8119A3FBEBD678"
+              }
+            ]
           },
           {
-            "id": "155594DF4D5E0B90267A8683E74C0B72",
+            "id": "83CE74A24030E59789B0F88383ACFFE1",
             "name": "ErrorTolerance",
             "direction": "input",
             "category": "",
@@ -3234,117 +2182,122 @@
         ],
         "important_inputs": [
           {
-            "name": "B",
+            "name": "A",
             "category": "name",
-            "default_value": "TiangongTower",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_PromotableOperator'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_PromotableOperator_1'"
-      },
-      {
-        "id": "K2Node_CallFunction_2",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "KismetMathLibrary.Conv_VectorToRotator",
-        "meta": {
-          "function_name": "Conv_VectorToRotator",
-          "function_owner": "KismetMathLibrary"
-        },
-        "pins": [
-          {
-            "id": "CAC7999A4F02EC7F55483A92B159EE6D",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
             "default_value": null,
-            "default_object": "/Script/Engine.Default__KismetMathLibrary",
-            "linked_to": []
-          },
-          {
-            "id": "7A5F28DB4F0882039D559BA73CDB24F6",
-            "name": "InVec",
-            "direction": "input",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "85A6BF9E4038E5645D44989B8B2D3A03",
-            "name": "ReturnValue",
-            "direction": "output",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": "/Script/Engine.Default__KismetMathLibrary",
-            "linked_to": []
-          },
-          {
-            "name": "InVec",
-            "category": "struct",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_2'"
-      },
-      {
-        "id": "K2Node_VariableGet_3",
-        "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_3",
-        "meta": {},
-        "pins": [
-          {
-            "id": "658BAA154AB7E4A8C59AD697E4BEC39B",
-            "name": "StartRot",
-            "direction": "output",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_1",
-                "pin_id": "2A55F6AD41ACA829CBF8CF958E2B6759"
+                "node": "K2Node_CustomEvent_0",
+                "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
               }
             ]
           },
           {
-            "id": "3EFA4C8A4A76BA3DB3EE28B02E9584E3",
-            "name": "self",
+            "name": "B",
+            "category": "name",
+            "default_value": "CloudPattern",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_PromotableOperator'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_PromotableOperator_6'"
+      },
+      {
+        "id": "K2Node_IfThenElse_2",
+        "class": "K2Node_IfThenElse",
+        "kind": "K2Node_IfThenElse",
+        "title": "K2Node_IfThenElse_2",
+        "meta": {},
+        "pins": [
+          {
+            "id": "02D60E6642101409F560C58262AEF819",
+            "name": "execute",
             "direction": "input",
-            "category": "object",
+            "category": "exec",
             "subcategory": "",
             "default_value": null,
             "default_object": null,
-            "linked_to": []
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_0",
+                "pin_id": "BCECF00D426C4968EDD3C28015A18A05"
+              }
+            ]
+          },
+          {
+            "id": "D0A18169431458328C8119A3FBEBD678",
+            "name": "Condition",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_PromotableOperator_6",
+                "pin_id": "A53E8C534AD2FB4BBDC3718CC0284441"
+              }
+            ]
+          },
+          {
+            "id": "2134F9674B241D43FD36E5AA2574A280",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_5",
+                "pin_id": "0A0D2B2545055D776DAC388F0B6A6BD1"
+              }
+            ]
+          },
+          {
+            "id": "38FB88014665847EFD1BDBB2B9B75F16",
+            "name": "else",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_1",
+                "pin_id": "02D60E6642101409F560C58262AEF819"
+              }
+            ]
           }
         ],
         "important_inputs": [
           {
-            "name": "self",
-            "category": "object",
+            "name": "execute",
+            "category": "exec",
             "default_value": null,
             "default_object": null,
-            "linked_to": []
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_0",
+                "pin_id": "BCECF00D426C4968EDD3C28015A18A05"
+              }
+            ]
+          },
+          {
+            "name": "Condition",
+            "category": "bool",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_PromotableOperator_6",
+                "pin_id": "A53E8C534AD2FB4BBDC3718CC0284441"
+              }
+            ]
           }
         ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_3'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_IfThenElse'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_IfThenElse_2'"
       },
       {
         "id": "K2Node_VariableSet_4",
@@ -3401,22 +2354,22 @@
             ]
           },
           {
-            "id": "20D2D7EA44AD35FF56EFF890D8267A3D",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
             "id": "035493B745B577839368B2A84AFEE16F",
             "name": "Output_Get",
             "direction": "output",
             "category": "struct",
             "subcategory": "",
             "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "20D2D7EA44AD35FF56EFF890D8267A3D",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
             "default_object": null,
             "linked_to": []
           }
@@ -3455,45 +2408,6 @@
           }
         ],
         "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableSet_4'"
-      },
-      {
-        "id": "K2Node_VariableGet_2",
-        "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_2",
-        "meta": {},
-        "pins": [
-          {
-            "id": "7C92922A45EBDCF5B458698DA00EDD5C",
-            "name": "StartLoc",
-            "direction": "output",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "8D73C5324F39A83040C8E0946901C1EB",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_2'"
       },
       {
         "id": "K2Node_CallFunction_9",
@@ -3551,6 +2465,1274 @@
           }
         ],
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_9'"
+      },
+      {
+        "id": "K2Node_IfThenElse_0",
+        "class": "K2Node_IfThenElse",
+        "kind": "K2Node_IfThenElse",
+        "title": "K2Node_IfThenElse_0",
+        "meta": {},
+        "pins": [
+          {
+            "id": "D459037F4B2B1B14D97483A22DBDE4D8",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_12",
+                "pin_id": "DBD4719D4E1C631A8C9CADADA0591AC2"
+              }
+            ]
+          },
+          {
+            "id": "2220B0FF4269F2479A5DABA7F88CDEDA",
+            "name": "Condition",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_PromotableOperator_2",
+                "pin_id": "AC56A72249AD70B6F27FD0B117EC26E1"
+              }
+            ]
+          },
+          {
+            "id": "01EED2404AF184F84B126183372F8913",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_4",
+                "pin_id": "0A0D2B2545055D776DAC388F0B6A6BD1"
+              }
+            ]
+          },
+          {
+            "id": "BCECF00D426C4968EDD3C28015A18A05",
+            "name": "else",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_2",
+                "pin_id": "02D60E6642101409F560C58262AEF819"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_12",
+                "pin_id": "DBD4719D4E1C631A8C9CADADA0591AC2"
+              }
+            ]
+          },
+          {
+            "name": "Condition",
+            "category": "bool",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_PromotableOperator_2",
+                "pin_id": "AC56A72249AD70B6F27FD0B117EC26E1"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_IfThenElse'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_IfThenElse_0'"
+      },
+      {
+        "id": "K2Node_PromotableOperator_2",
+        "class": "K2Node_PromotableOperator",
+        "kind": "K2Node_PromotableOperator",
+        "title": "K2Node_PromotableOperator_2",
+        "meta": {},
+        "pins": [
+          {
+            "id": "AE39B52145ECA6961BB0BD9B1502F521",
+            "name": "A",
+            "direction": "input",
+            "category": "name",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CustomEvent_0",
+                "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
+              }
+            ]
+          },
+          {
+            "id": "531D73F349A06AE53A34D8B679604C0F",
+            "name": "B",
+            "direction": "input",
+            "category": "name",
+            "subcategory": "",
+            "default_value": "TiangongTower",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "AC56A72249AD70B6F27FD0B117EC26E1",
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_0",
+                "pin_id": "2220B0FF4269F2479A5DABA7F88CDEDA"
+              }
+            ]
+          },
+          {
+            "id": "6A82B7724D9A52B589F443ABE1A717E7",
+            "name": "ErrorTolerance",
+            "direction": "input",
+            "category": "",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "A",
+            "category": "name",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CustomEvent_0",
+                "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
+              }
+            ]
+          },
+          {
+            "name": "B",
+            "category": "name",
+            "default_value": "TiangongTower",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_PromotableOperator'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_PromotableOperator_2'"
+      },
+      {
+        "id": "K2Node_VariableGet_9",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_9",
+        "meta": {},
+        "pins": [
+          {
+            "id": "151ED2874280C4345D3E38BDC9D83740",
+            "name": "CamAnchor_TiangongTower",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_9",
+                "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
+              },
+              {
+                "node": "K2Node_CallFunction_13",
+                "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
+              }
+            ]
+          },
+          {
+            "id": "2EFB55D348F6EFE875D204B9932BDFFF",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_9'"
+      },
+      {
+        "id": "K2Node_VariableGet_10",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_10",
+        "meta": {},
+        "pins": [
+          {
+            "id": "CFC636EE495BE8FE2542B181FC249B9C",
+            "name": "CamAnchor_CloudPattern",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_10",
+                "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
+              },
+              {
+                "node": "K2Node_CallFunction_14",
+                "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
+              }
+            ]
+          },
+          {
+            "id": "3DF72EDB47D31B78C3E8F7B29C7CEDF8",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_10'"
+      },
+      {
+        "id": "K2Node_VariableGet_7",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_7",
+        "meta": {},
+        "pins": [
+          {
+            "id": "E76253B042E0EC8CF08F108E035ADF51",
+            "name": "CamAnchor_StarMap",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_15",
+                "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
+              },
+              {
+                "node": "K2Node_CallFunction_16",
+                "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
+              }
+            ]
+          },
+          {
+            "id": "02112BB64EAC429C136A9196F5B930D8",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_7'"
+      },
+      {
+        "id": "K2Node_VariableSet_2",
+        "class": "K2Node_VariableSet",
+        "kind": "variable_set",
+        "title": "Set bReturningToDefault",
+        "meta": {
+          "variable_name": "bReturningToDefault"
+        },
+        "pins": [
+          {
+            "id": "496137A342A407E68A206081A067183E",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CustomEvent_0",
+                "pin_id": "B08B718044A414830952BC8524EF8859"
+              }
+            ]
+          },
+          {
+            "id": "848162B24FBF137A890EBB8AD681F637",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_13",
+                "pin_id": "77CE063046DD5BC79B477593498D4F87"
+              }
+            ]
+          },
+          {
+            "id": "A21B37F04774E665406799B3AD659FF8",
+            "name": "bReturningToDefault",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "5F9D672A4CC7FB49BAF31DB3547AA98B",
+            "name": "Output_Get",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "0727728240DB57167E797286B5279B0A",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CustomEvent_0",
+                "pin_id": "B08B718044A414830952BC8524EF8859"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableSet_2'"
+      },
+      {
+        "id": "K2Node_VariableSet_13",
+        "class": "K2Node_VariableSet",
+        "kind": "variable_set",
+        "title": "Set StartRot",
+        "meta": {
+          "variable_name": "StartRot"
+        },
+        "pins": [
+          {
+            "id": "77CE063046DD5BC79B477593498D4F87",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_2",
+                "pin_id": "848162B24FBF137A890EBB8AD681F637"
+              }
+            ]
+          },
+          {
+            "id": "51FEA40C4D9C07B6225F7D88112BFA08",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_12",
+                "pin_id": "763404B54C14154BE4CDBF9A4D036C6F"
+              }
+            ]
+          },
+          {
+            "id": "159737AC433FCBC7CFF3A2A55EF8D486",
+            "name": "StartRot",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_6",
+                "pin_id": "EED2967B4925587074722085C3CF8CFA"
+              }
+            ]
+          },
+          {
+            "id": "D1F8A1B2424113D443650E94861F9F93",
+            "name": "Output_Get",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "410FC1504C5CFCE564304C97DAF25A6D",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_2",
+                "pin_id": "848162B24FBF137A890EBB8AD681F637"
+              }
+            ]
+          },
+          {
+            "name": "StartRot",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_6",
+                "pin_id": "EED2967B4925587074722085C3CF8CFA"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableSet_13'"
+      },
+      {
+        "id": "K2Node_CallFunction_6",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SceneComponent.K2_GetComponentRotation",
+        "meta": {
+          "function_name": "K2_GetComponentRotation",
+          "function_owner": "SceneComponent"
+        },
+        "pins": [
+          {
+            "id": "25548AF44F6972ED1F5B80A129BD43CF",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_6",
+                "pin_id": "AE0AD8E040E1DFE1801495A51D74351F"
+              }
+            ]
+          },
+          {
+            "id": "EED2967B4925587074722085C3CF8CFA",
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_13",
+                "pin_id": "159737AC433FCBC7CFF3A2A55EF8D486"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_6",
+                "pin_id": "AE0AD8E040E1DFE1801495A51D74351F"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_6'"
+      },
+      {
+        "id": "K2Node_VariableSet_12",
+        "class": "K2Node_VariableSet",
+        "kind": "variable_set",
+        "title": "Set StartLoc",
+        "meta": {
+          "variable_name": "StartLoc"
+        },
+        "pins": [
+          {
+            "id": "763404B54C14154BE4CDBF9A4D036C6F",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_13",
+                "pin_id": "51FEA40C4D9C07B6225F7D88112BFA08"
+              }
+            ]
+          },
+          {
+            "id": "DBD4719D4E1C631A8C9CADADA0591AC2",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_0",
+                "pin_id": "D459037F4B2B1B14D97483A22DBDE4D8"
+              }
+            ]
+          },
+          {
+            "id": "EF2159FE4BF1FF34987EF9B59A5E1A4E",
+            "name": "StartLoc",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_5",
+                "pin_id": "66170D0C45026B08005827B30B8D05FE"
+              }
+            ]
+          },
+          {
+            "id": "3439335E42E832E4EA869FB7C63DBE45",
+            "name": "Output_Get",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "E3953BF24EB359DC9203D5B8031890E7",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_13",
+                "pin_id": "51FEA40C4D9C07B6225F7D88112BFA08"
+              }
+            ]
+          },
+          {
+            "name": "StartLoc",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_5",
+                "pin_id": "66170D0C45026B08005827B30B8D05FE"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableSet_12'"
+      },
+      {
+        "id": "K2Node_CallFunction_5",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SceneComponent.K2_GetComponentLocation",
+        "meta": {
+          "function_name": "K2_GetComponentLocation",
+          "function_owner": "SceneComponent"
+        },
+        "pins": [
+          {
+            "id": "3A5292164CF84EE8947153AC2C33FCA2",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_6",
+                "pin_id": "AE0AD8E040E1DFE1801495A51D74351F"
+              }
+            ]
+          },
+          {
+            "id": "66170D0C45026B08005827B30B8D05FE",
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_12",
+                "pin_id": "EF2159FE4BF1FF34987EF9B59A5E1A4E"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_6",
+                "pin_id": "AE0AD8E040E1DFE1801495A51D74351F"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_5'"
+      },
+      {
+        "id": "K2Node_VariableGet_6",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_6",
+        "meta": {},
+        "pins": [
+          {
+            "id": "AE0AD8E040E1DFE1801495A51D74351F",
+            "name": "CameraComp",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_5",
+                "pin_id": "3A5292164CF84EE8947153AC2C33FCA2"
+              },
+              {
+                "node": "K2Node_CallFunction_6",
+                "pin_id": "25548AF44F6972ED1F5B80A129BD43CF"
+              }
+            ]
+          },
+          {
+            "id": "E07B41C545A265BD24FF189DA1B0B92D",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_6'"
+      },
+      {
+        "id": "K2Node_CustomEvent_0",
+        "class": "K2Node_CustomEvent",
+        "kind": "K2Node_CustomEvent",
+        "title": "K2Node_CustomEvent_0",
+        "meta": {},
+        "pins": [
+          {
+            "id": "BC8C7C534F0D7454D06B2F9DDAFA6813",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "B08B718044A414830952BC8524EF8859",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_2",
+                "pin_id": "496137A342A407E68A206081A067183E"
+              }
+            ]
+          },
+          {
+            "id": "9697B12C41E2029776D3BE87CD2F5F0A",
+            "name": "TargetId",
+            "direction": "output",
+            "category": "name",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_PromotableOperator_2",
+                "pin_id": "AE39B52145ECA6961BB0BD9B1502F521"
+              },
+              {
+                "node": "K2Node_PromotableOperator_6",
+                "pin_id": "C4FEAB51433EE43AAC12E6984324C689"
+              },
+              {
+                "node": "K2Node_PromotableOperator_5",
+                "pin_id": "C4FEAB51433EE43AAC12E6984324C689"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CustomEvent'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CustomEvent_0'"
+      },
+      {
+        "id": "K2Node_CallFunction_4",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SceneComponent.K2_SetWorldRotation",
+        "meta": {
+          "function_name": "K2_SetWorldRotation",
+          "function_owner": "SceneComponent"
+        },
+        "pins": [
+          {
+            "id": "7C2FC47148DC43D7083645909B9A329B",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "pin_id": "835C8B024BB29E1F8E0698B759565BA6"
+              }
+            ]
+          },
+          {
+            "id": "1ECDE0284C895A04CD9A87B42315A3B6",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "2C74BF9B48A382729FD002A9EC51FA94",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_5",
+                "pin_id": "79712991457F221F807F1A8CC7F96106"
+              }
+            ]
+          },
+          {
+            "id": "E8822F4D416E99304591B2872B7407F2",
+            "name": "NewRotation",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "pin_id": "17193C034B2512739ACF789976EB45E1"
+              }
+            ]
+          },
+          {
+            "id": "2AE7BDC64F9305F3D764A7AF6603A525",
+            "name": "bSweep",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "42A3E91F4FA1B5D9C50434AB17C81EE0",
+            "name": "SweepHitResult",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "E52A1A11409EFE34E8A1F88E64C525FC",
+            "name": "bTeleport",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "pin_id": "835C8B024BB29E1F8E0698B759565BA6"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_5",
+                "pin_id": "79712991457F221F807F1A8CC7F96106"
+              }
+            ]
+          },
+          {
+            "name": "NewRotation",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "pin_id": "17193C034B2512739ACF789976EB45E1"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_4'"
+      },
+      {
+        "id": "K2Node_CallFunction_3",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SceneComponent.K2_SetWorldLocation",
+        "meta": {
+          "function_name": "K2_SetWorldLocation",
+          "function_owner": "SceneComponent"
+        },
+        "pins": [
+          {
+            "id": "DF3247874F3E37057E090BA38493D00C",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Timeline_0",
+                "pin_id": "8A1724094FA3769B0001869B2B5BAAEE"
+              }
+            ]
+          },
+          {
+            "id": "835C8B024BB29E1F8E0698B759565BA6",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_4",
+                "pin_id": "7C2FC47148DC43D7083645909B9A329B"
+              }
+            ]
+          },
+          {
+            "id": "F2A5FED040159C81D14A2CBB8A8B8C2D",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_5",
+                "pin_id": "79712991457F221F807F1A8CC7F96106"
+              }
+            ]
+          },
+          {
+            "id": "E7960AD743EC3C2B3DDFEFB188C3B02C",
+            "name": "NewLocation",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_0",
+                "pin_id": "99AAEF87426AE51AF02BF98D78DA151C"
+              }
+            ]
+          },
+          {
+            "id": "9D935BA94DF003C738643190528E3B9C",
+            "name": "bSweep",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "42BB16C04E4BFBB958BC4E857C6685A5",
+            "name": "SweepHitResult",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "5F190E584373F82EA66F35B50EB94C6C",
+            "name": "bTeleport",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Timeline_0",
+                "pin_id": "8A1724094FA3769B0001869B2B5BAAEE"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_5",
+                "pin_id": "79712991457F221F807F1A8CC7F96106"
+              }
+            ]
+          },
+          {
+            "name": "NewLocation",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_0",
+                "pin_id": "99AAEF87426AE51AF02BF98D78DA151C"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_3'"
+      },
+      {
+        "id": "K2Node_VariableGet_5",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_5",
+        "meta": {},
+        "pins": [
+          {
+            "id": "79712991457F221F807F1A8CC7F96106",
+            "name": "CameraComp",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "pin_id": "F2A5FED040159C81D14A2CBB8A8B8C2D"
+              },
+              {
+                "node": "K2Node_CallFunction_4",
+                "pin_id": "2C74BF9B48A382729FD002A9EC51FA94"
+              }
+            ]
+          },
+          {
+            "id": "F4356A894C7DFF5E515142A608515F23",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_5'"
+      },
+      {
+        "id": "K2Node_VariableGet_4",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_4",
+        "meta": {},
+        "pins": [
+          {
+            "id": "391EECA04CCD2800F17B92821B5C174E",
+            "name": "TargetRot",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "pin_id": "68AE9E6A407A95C7C61C60B754EF3F75"
+              }
+            ]
+          },
+          {
+            "id": "8954C8C04BAAE2E100047C8EC22BAA85",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_4'"
+      },
+      {
+        "id": "K2Node_VariableGet_3",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_3",
+        "meta": {},
+        "pins": [
+          {
+            "id": "658BAA154AB7E4A8C59AD697E4BEC39B",
+            "name": "StartRot",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "pin_id": "2A55F6AD41ACA829CBF8CF958E2B6759"
+              }
+            ]
+          },
+          {
+            "id": "3EFA4C8A4A76BA3DB3EE28B02E9584E3",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_3'"
       },
       {
         "id": "K2Node_VariableGet_1",
@@ -3907,15 +4089,25 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_0'"
       },
       {
-        "id": "K2Node_IfThenElse_0",
-        "class": "K2Node_IfThenElse",
-        "kind": "K2Node_IfThenElse",
-        "title": "K2Node_IfThenElse_0",
+        "id": "K2Node_Timeline_0",
+        "class": "K2Node_Timeline",
+        "kind": "K2Node_Timeline",
+        "title": "K2Node_Timeline_0",
         "meta": {},
         "pins": [
           {
-            "id": "D459037F4B2B1B14D97483A22DBDE4D8",
-            "name": "execute",
+            "id": "BC2F7E3342EE4300AB9E7CB6D926E31D",
+            "name": "Play",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "8AB5A27C4B3ABF516F37198C9C2EC01A",
+            "name": "PlayFromStart",
             "direction": "input",
             "category": "exec",
             "subcategory": "",
@@ -3923,263 +4115,172 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableSet_12",
-                "pin_id": "DBD4719D4E1C631A8C9CADADA0591AC2"
-              }
-            ]
-          },
-          {
-            "id": "2220B0FF4269F2479A5DABA7F88CDEDA",
-            "name": "Condition",
-            "direction": "input",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "true",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_PromotableOperator_2",
-                "pin_id": "AC56A72249AD70B6F27FD0B117EC26E1"
-              }
-            ]
-          },
-          {
-            "id": "01EED2404AF184F84B126183372F8913",
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_4",
-                "pin_id": "0A0D2B2545055D776DAC388F0B6A6BD1"
-              }
-            ]
-          },
-          {
-            "id": "BCECF00D426C4968EDD3C28015A18A05",
-            "name": "else",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_2",
-                "pin_id": "02D60E6642101409F560C58262AEF819"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_12",
-                "pin_id": "DBD4719D4E1C631A8C9CADADA0591AC2"
-              }
-            ]
-          },
-          {
-            "name": "Condition",
-            "category": "bool",
-            "default_value": "true",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_PromotableOperator_2",
-                "pin_id": "AC56A72249AD70B6F27FD0B117EC26E1"
-              }
-            ]
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_IfThenElse'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_IfThenElse_0'"
-      },
-      {
-        "id": "K2Node_CallFunction_7",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "KismetSystemLibrary.GetPrimaryAssetIdFromObject",
-        "meta": {
-          "function_name": "GetPrimaryAssetIdFromObject",
-          "function_owner": "KismetSystemLibrary"
-        },
-        "pins": [
-          {
-            "id": "EB0F64EA4E5302ABA8F9E6B00FA69D31",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": "/Script/Engine.Default__KismetSystemLibrary",
-            "linked_to": []
-          },
-          {
-            "id": "5DD317284CD5B68C32279292BB5235BC",
-            "name": "Object",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "A071B0F54431406B5B39BDB5001CC894",
-            "name": "ReturnValue",
-            "direction": "output",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": "/Script/Engine.Default__KismetSystemLibrary",
-            "linked_to": []
-          },
-          {
-            "name": "Object",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_7'"
-      },
-      {
-        "id": "K2Node_VariableSet_5",
-        "class": "K2Node_VariableSet",
-        "kind": "variable_set",
-        "title": "Set TargetLoc",
-        "meta": {
-          "variable_name": "TargetLoc"
-        },
-        "pins": [
-          {
-            "id": "0A0D2B2545055D776DAC388F0B6A6BD1",
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_2",
-                "pin_id": "2134F9674B241D43FD36E5AA2574A280"
-              }
-            ]
-          },
-          {
-            "id": "0F4A59FA4C77C8B449B2949F508257B4",
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
+                "node": "K2Node_VariableSet_7",
+                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+              },
               {
                 "node": "K2Node_VariableSet_8",
-                "pin_id": "1F1E1CCF4EA01B73B0C02983128FB9C7"
-              }
-            ]
-          },
-          {
-            "id": "F1A74BAE48286E39395E83BF6C328197",
-            "name": "TargetLoc",
-            "direction": "input",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": [
+                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+              },
               {
-                "node": "K2Node_CallFunction_10",
-                "pin_id": "A610005F426F4F3150E616996E166FD1"
+                "node": "K2Node_VariableSet_11",
+                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+              },
+              {
+                "node": "K2Node_VariableSet_1",
+                "pin_id": "51FEA40C4D9C07B6225F7D88112BFA08"
               }
             ]
           },
           {
-            "id": "035493B745B577839368B2A84AFEE16F",
-            "name": "Output_Get",
-            "direction": "output",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "20D2D7EA44AD35FF56EFF890D8267A3D",
-            "name": "self",
+            "id": "D2024C7D4A8A358301CFE5B34FD00CDF",
+            "name": "Stop",
             "direction": "input",
-            "category": "object",
+            "category": "exec",
             "subcategory": "",
             "default_value": null,
             "default_object": null,
             "linked_to": []
+          },
+          {
+            "id": "2880EE9A4BF5CA8227F57496D09E879C",
+            "name": "Reverse",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "E707BAB94245300B13E09393EEF423C6",
+            "name": "ReverseFromEnd",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "8A1724094FA3769B0001869B2B5BAAEE",
+            "name": "Update",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "pin_id": "DF3247874F3E37057E090BA38493D00C"
+              }
+            ]
+          },
+          {
+            "id": "BD11C2014C15CD1D01A005B5B80E1695",
+            "name": "Finished",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_3",
+                "pin_id": "CE07B595468DD1627D6BBE9783C938BC"
+              }
+            ]
+          },
+          {
+            "id": "2CAEE78D4FC9D953C04725A9E8061BBF",
+            "name": "SetNewTime",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "7496ED6A4704360873200DB44DFD7D89",
+            "name": "NewTime",
+            "direction": "input",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "A2BA75254723D314B5748DA3817704A7",
+            "name": "Direction",
+            "direction": "output",
+            "category": "byte",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "BC4481EE4F37EC026B8663B682228D35",
+            "name": "Alpha",
+            "direction": "output",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_0",
+                "pin_id": "A86F13264FBAF9F002DFDFBC11C12E11"
+              },
+              {
+                "node": "K2Node_CallFunction_1",
+                "pin_id": "9B9E86044F34771CCE8560BFC18AE895"
+              }
+            ]
           }
         ],
         "important_inputs": [
           {
-            "name": "execute",
+            "name": "PlayFromStart",
             "category": "exec",
             "default_value": null,
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_IfThenElse_2",
-                "pin_id": "2134F9674B241D43FD36E5AA2574A280"
-              }
-            ]
-          },
-          {
-            "name": "TargetLoc",
-            "category": "struct",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": [
+                "node": "K2Node_VariableSet_7",
+                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+              },
               {
-                "node": "K2Node_CallFunction_10",
-                "pin_id": "A610005F426F4F3150E616996E166FD1"
+                "node": "K2Node_VariableSet_8",
+                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+              },
+              {
+                "node": "K2Node_VariableSet_11",
+                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+              },
+              {
+                "node": "K2Node_VariableSet_1",
+                "pin_id": "51FEA40C4D9C07B6225F7D88112BFA08"
               }
             ]
-          },
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
           }
         ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableSet_5'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Timeline'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_Timeline_0'"
       },
       {
-        "id": "K2Node_CustomEvent_1",
-        "class": "K2Node_CustomEvent",
-        "kind": "K2Node_CustomEvent",
-        "title": "K2Node_CustomEvent_1",
-        "meta": {},
+        "id": "K2Node_Event_2",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "ReceiveTick",
+        "meta": {
+          "event_name": "ReceiveTick"
+        },
         "pins": [
           {
-            "id": "4B261BDE4BADAC765A97F98444522933",
+            "id": "6C49C85A46E49FDEEA5290BF82194DE3",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -4189,410 +4290,50 @@
             "linked_to": []
           },
           {
-            "id": "6BDC6A5B4D138726029EDBBC212693E7",
+            "id": "265BF4F44E867AE2FF584D8A74BF6330",
             "name": "then",
             "direction": "output",
             "category": "exec",
             "subcategory": "",
             "default_value": null,
             "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_9",
-                "pin_id": "90DF0F5E4D434ABD4E7A88A68B664516"
-              }
-            ]
+            "linked_to": []
+          },
+          {
+            "id": "69B4D9EB467C33B3F8B021B952A193E2",
+            "name": "DeltaSeconds",
+            "direction": "output",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": []
           }
         ],
         "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CustomEvent'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CustomEvent_1'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_Event_2'"
       },
       {
-        "id": "K2Node_CallFunction_10",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "SceneComponent.K2_GetComponentLocation",
+        "id": "K2Node_Event_1",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "ReceiveActorBeginOverlap",
         "meta": {
-          "function_name": "K2_GetComponentLocation",
-          "function_owner": "SceneComponent"
+          "event_name": "ReceiveActorBeginOverlap"
         },
         "pins": [
           {
-            "id": "18B2DBC14CEC1A51E8E640869B2A7008",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_10",
-                "pin_id": "CFC636EE495BE8FE2542B181FC249B9C"
-              }
-            ]
-          },
-          {
-            "id": "A610005F426F4F3150E616996E166FD1",
-            "name": "ReturnValue",
+            "id": "F92178C84329575DC5C1BA850E1A6DA8",
+            "name": "OutputDelegate",
             "direction": "output",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_5",
-                "pin_id": "F1A74BAE48286E39395E83BF6C328197"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_10",
-                "pin_id": "CFC636EE495BE8FE2542B181FC249B9C"
-              }
-            ]
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_10'"
-      },
-      {
-        "id": "K2Node_PromotableOperator_6",
-        "class": "K2Node_PromotableOperator",
-        "kind": "K2Node_PromotableOperator",
-        "title": "K2Node_PromotableOperator_6",
-        "meta": {},
-        "pins": [
-          {
-            "id": "C4FEAB51433EE43AAC12E6984324C689",
-            "name": "A",
-            "direction": "input",
-            "category": "name",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CustomEvent_0",
-                "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
-              }
-            ]
-          },
-          {
-            "id": "F7927F0D479BB746E36C4EAB41154D9F",
-            "name": "B",
-            "direction": "input",
-            "category": "name",
-            "subcategory": "",
-            "default_value": "CloudPattern",
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "A53E8C534AD2FB4BBDC3718CC0284441",
-            "name": "ReturnValue",
-            "direction": "output",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_2",
-                "pin_id": "D0A18169431458328C8119A3FBEBD678"
-              }
-            ]
-          },
-          {
-            "id": "6DDB9A0D447DFBE269D024ADEFBED102",
-            "name": "ErrorTolerance",
-            "direction": "input",
-            "category": "",
+            "category": "delegate",
             "subcategory": "",
             "default_value": null,
             "default_object": null,
             "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "A",
-            "category": "name",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CustomEvent_0",
-                "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
-              }
-            ]
           },
           {
-            "name": "B",
-            "category": "name",
-            "default_value": "CloudPattern",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_PromotableOperator'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_PromotableOperator_6'"
-      },
-      {
-        "id": "K2Node_IfThenElse_2",
-        "class": "K2Node_IfThenElse",
-        "kind": "K2Node_IfThenElse",
-        "title": "K2Node_IfThenElse_2",
-        "meta": {},
-        "pins": [
-          {
-            "id": "02D60E6642101409F560C58262AEF819",
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_0",
-                "pin_id": "BCECF00D426C4968EDD3C28015A18A05"
-              }
-            ]
-          },
-          {
-            "id": "D0A18169431458328C8119A3FBEBD678",
-            "name": "Condition",
-            "direction": "input",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "true",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_PromotableOperator_6",
-                "pin_id": "A53E8C534AD2FB4BBDC3718CC0284441"
-              }
-            ]
-          },
-          {
-            "id": "2134F9674B241D43FD36E5AA2574A280",
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_5",
-                "pin_id": "0A0D2B2545055D776DAC388F0B6A6BD1"
-              }
-            ]
-          },
-          {
-            "id": "38FB88014665847EFD1BDBB2B9B75F16",
-            "name": "else",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_1",
-                "pin_id": "02D60E6642101409F560C58262AEF819"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_0",
-                "pin_id": "BCECF00D426C4968EDD3C28015A18A05"
-              }
-            ]
-          },
-          {
-            "name": "Condition",
-            "category": "bool",
-            "default_value": "true",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_PromotableOperator_6",
-                "pin_id": "A53E8C534AD2FB4BBDC3718CC0284441"
-              }
-            ]
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_IfThenElse'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_IfThenElse_2'"
-      },
-      {
-        "id": "K2Node_PromotableOperator_2",
-        "class": "K2Node_PromotableOperator",
-        "kind": "K2Node_PromotableOperator",
-        "title": "K2Node_PromotableOperator_2",
-        "meta": {},
-        "pins": [
-          {
-            "id": "AE39B52145ECA6961BB0BD9B1502F521",
-            "name": "A",
-            "direction": "input",
-            "category": "name",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CustomEvent_0",
-                "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
-              }
-            ]
-          },
-          {
-            "id": "531D73F349A06AE53A34D8B679604C0F",
-            "name": "B",
-            "direction": "input",
-            "category": "name",
-            "subcategory": "",
-            "default_value": "TiangongTower",
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "AC56A72249AD70B6F27FD0B117EC26E1",
-            "name": "ReturnValue",
-            "direction": "output",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_0",
-                "pin_id": "2220B0FF4269F2479A5DABA7F88CDEDA"
-              }
-            ]
-          },
-          {
-            "id": "E2A86BDE47ED4C6377E7B18979D44A6B",
-            "name": "ErrorTolerance",
-            "direction": "input",
-            "category": "",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "A",
-            "category": "name",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CustomEvent_0",
-                "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
-              }
-            ]
-          },
-          {
-            "name": "B",
-            "category": "name",
-            "default_value": "TiangongTower",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_PromotableOperator'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_PromotableOperator_2'"
-      },
-      {
-        "id": "K2Node_VariableGet_4",
-        "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_4",
-        "meta": {},
-        "pins": [
-          {
-            "id": "391EECA04CCD2800F17B92821B5C174E",
-            "name": "TargetRot",
-            "direction": "output",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_1",
-                "pin_id": "68AE9E6A407A95C7C61C60B754EF3F75"
-              }
-            ]
-          },
-          {
-            "id": "8954C8C04BAAE2E100047C8EC22BAA85",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_4'"
-      },
-      {
-        "id": "K2Node_CallFunction_4",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "SceneComponent.K2_SetWorldRotation",
-        "meta": {
-          "function_name": "K2_SetWorldRotation",
-          "function_owner": "SceneComponent"
-        },
-        "pins": [
-          {
-            "id": "7C2FC47148DC43D7083645909B9A329B",
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_3",
-                "pin_id": "835C8B024BB29E1F8E0698B759565BA6"
-              }
-            ]
-          },
-          {
-            "id": "1ECDE0284C895A04CD9A87B42315A3B6",
+            "id": "B4F6AF324743788CB3A15DAA7A33FD06",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -4602,337 +4343,10 @@
             "linked_to": []
           },
           {
-            "id": "2C74BF9B48A382729FD002A9EC51FA94",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_5",
-                "pin_id": "79712991457F221F807F1A8CC7F96106"
-              }
-            ]
-          },
-          {
-            "id": "E8822F4D416E99304591B2872B7407F2",
-            "name": "NewRotation",
-            "direction": "input",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_1",
-                "pin_id": "17193C034B2512739ACF789976EB45E1"
-              }
-            ]
-          },
-          {
-            "id": "2AE7BDC64F9305F3D764A7AF6603A525",
-            "name": "bSweep",
-            "direction": "input",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "false",
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "42A3E91F4FA1B5D9C50434AB17C81EE0",
-            "name": "SweepHitResult",
-            "direction": "output",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "E52A1A11409EFE34E8A1F88E64C525FC",
-            "name": "bTeleport",
-            "direction": "input",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "false",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_3",
-                "pin_id": "835C8B024BB29E1F8E0698B759565BA6"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_5",
-                "pin_id": "79712991457F221F807F1A8CC7F96106"
-              }
-            ]
-          },
-          {
-            "name": "NewRotation",
-            "category": "struct",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_1",
-                "pin_id": "17193C034B2512739ACF789976EB45E1"
-              }
-            ]
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_4'"
-      },
-      {
-        "id": "K2Node_CallFunction_3",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "SceneComponent.K2_SetWorldLocation",
-        "meta": {
-          "function_name": "K2_SetWorldLocation",
-          "function_owner": "SceneComponent"
-        },
-        "pins": [
-          {
-            "id": "DF3247874F3E37057E090BA38493D00C",
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_Timeline_0",
-                "pin_id": "8A1724094FA3769B0001869B2B5BAAEE"
-              }
-            ]
-          },
-          {
-            "id": "835C8B024BB29E1F8E0698B759565BA6",
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_4",
-                "pin_id": "7C2FC47148DC43D7083645909B9A329B"
-              }
-            ]
-          },
-          {
-            "id": "F2A5FED040159C81D14A2CBB8A8B8C2D",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_5",
-                "pin_id": "79712991457F221F807F1A8CC7F96106"
-              }
-            ]
-          },
-          {
-            "id": "E7960AD743EC3C2B3DDFEFB188C3B02C",
-            "name": "NewLocation",
-            "direction": "input",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_0",
-                "pin_id": "99AAEF87426AE51AF02BF98D78DA151C"
-              }
-            ]
-          },
-          {
-            "id": "9D935BA94DF003C738643190528E3B9C",
-            "name": "bSweep",
-            "direction": "input",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "false",
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "42BB16C04E4BFBB958BC4E857C6685A5",
-            "name": "SweepHitResult",
-            "direction": "output",
-            "category": "struct",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "5F190E584373F82EA66F35B50EB94C6C",
-            "name": "bTeleport",
-            "direction": "input",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "false",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_Timeline_0",
-                "pin_id": "8A1724094FA3769B0001869B2B5BAAEE"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_5",
-                "pin_id": "79712991457F221F807F1A8CC7F96106"
-              }
-            ]
-          },
-          {
-            "name": "NewLocation",
-            "category": "struct",
-            "default_value": "0, 0, 0",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_0",
-                "pin_id": "99AAEF87426AE51AF02BF98D78DA151C"
-              }
-            ]
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_CallFunction_3'"
-      },
-      {
-        "id": "K2Node_VariableGet_5",
-        "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_5",
-        "meta": {},
-        "pins": [
-          {
-            "id": "79712991457F221F807F1A8CC7F96106",
-            "name": "CameraComp",
+            "id": "A66D74EA434477D427E53297BE998F0D",
+            "name": "OtherActor",
             "direction": "output",
             "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_3",
-                "pin_id": "F2A5FED040159C81D14A2CBB8A8B8C2D"
-              },
-              {
-                "node": "K2Node_CallFunction_4",
-                "pin_id": "2C74BF9B48A382729FD002A9EC51FA94"
-              }
-            ]
-          },
-          {
-            "id": "F4356A894C7DFF5E515142A608515F23",
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_VariableGet_5'"
-      },
-      {
-        "id": "K2Node_PromotableOperator_0",
-        "class": "K2Node_PromotableOperator",
-        "kind": "K2Node_PromotableOperator",
-        "title": "K2Node_PromotableOperator_0",
-        "meta": {},
-        "pins": [
-          {
-            "id": "9FF2D1C64F858D787055B2A0EFC81E3E",
-            "name": "A",
-            "direction": "input",
-            "category": "wildcard",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "FC83386543254D692B2C3EA6A43888E3",
-            "name": "B",
-            "direction": "input",
-            "category": "wildcard",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "356663294C5788801A687C9734629589",
-            "name": "ReturnValue",
-            "direction": "output",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "id": "97545DF54AA0ACAA75F3A7AEEB987AD5",
-            "name": "ErrorTolerance",
-            "direction": "input",
-            "category": "wildcard",
             "subcategory": "",
             "default_value": null,
             "default_object": null,
@@ -4940,7 +4354,40 @@
           }
         ],
         "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_PromotableOperator'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_PromotableOperator_0'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_Event_1'"
+      },
+      {
+        "id": "K2Node_Event_0",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "ReceiveBeginPlay",
+        "meta": {
+          "event_name": "ReceiveBeginPlay"
+        },
+        "pins": [
+          {
+            "id": "E303F3314533A46BA7D66EA4973B5796",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "A24B35AC49622E5D4CFA31A9C9B1E72B",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:EventGraph.K2Node_Event_0'"
       }
     ],
     "connections": [
@@ -5812,13 +5259,349 @@
       ],
       [
         "ReceiveBeginPlay"
-      ],
-      [
-        "TL_CameraMove.OnComponentActivated"
       ]
     ]
   },
   "other_graphs": [
+    {
+      "name": "DeactivateLevel2Presentation",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 4,
+      "connection_count": 3,
+      "modules": [
+        {
+          "id": "K2Node_CallFunction_2",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "SetActorTickEnabled",
+          "meta": {
+            "function_name": "SetActorTickEnabled",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "id": "CD834B0F4896F795278BD09B94840291",
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_1",
+                  "pin_id": "53308BB9445AE260A52E5FB4F084958F"
+                }
+              ]
+            },
+            {
+              "id": "7C9546224C3CE449CBCE2E88621C8D67",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "F5E0B26C4DD7D339F33147B5F59D3C2A",
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "1CF15FB040488D4B871B55B44D05EE2D",
+              "name": "bEnabled",
+              "direction": "input",
+              "category": "bool",
+              "subcategory": "",
+              "default_value": "false",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_1",
+                  "pin_id": "53308BB9445AE260A52E5FB4F084958F"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:DeactivateLevel2Presentation.K2Node_CallFunction_2'"
+        },
+        {
+          "id": "K2Node_CallFunction_1",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "SetActorEnableCollision",
+          "meta": {
+            "function_name": "SetActorEnableCollision",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "id": "D482D33D4A2C7919F08A20AFFD0DDA18",
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "pin_id": "49CB6C7B4024E6CDA13D9D9C122915B4"
+                }
+              ]
+            },
+            {
+              "id": "53308BB9445AE260A52E5FB4F084958F",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_2",
+                  "pin_id": "CD834B0F4896F795278BD09B94840291"
+                }
+              ]
+            },
+            {
+              "id": "04422D5E40A2D27048FA1392A879BF01",
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "A753F971491EA9CD5CB99F882768A290",
+              "name": "bNewActorEnableCollision",
+              "direction": "input",
+              "category": "bool",
+              "subcategory": "",
+              "default_value": "false",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "pin_id": "49CB6C7B4024E6CDA13D9D9C122915B4"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:DeactivateLevel2Presentation.K2Node_CallFunction_1'"
+        },
+        {
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "SetActorHiddenInGame",
+          "meta": {
+            "function_name": "SetActorHiddenInGame",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "id": "905A3D044C760E3E7F39018F162D5DB7",
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "D26AA3E244732D2DD475D29328D7E947"
+                }
+              ]
+            },
+            {
+              "id": "49CB6C7B4024E6CDA13D9D9C122915B4",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_1",
+                  "pin_id": "D482D33D4A2C7919F08A20AFFD0DDA18"
+                }
+              ]
+            },
+            {
+              "id": "CEE2F42A46D53F78EB661A8E40F021DD",
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "4E68A2CA4BB3A09D0D8604A9D61C2435",
+              "name": "bNewHidden",
+              "direction": "input",
+              "category": "bool",
+              "subcategory": "",
+              "default_value": "true",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "D26AA3E244732D2DD475D29328D7E947"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "bNewHidden",
+              "category": "bool",
+              "default_value": "true",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:DeactivateLevel2Presentation.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "DeactivateLevel2Presentation",
+          "meta": {
+            "function_name": "DeactivateLevel2Presentation"
+          },
+          "pins": [
+            {
+              "id": "D26AA3E244732D2DD475D29328D7E947",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "pin_id": "905A3D044C760E3E7F39018F162D5DB7"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/BP_ShowcaseModel.BP_ShowcaseModel:DeactivateLevel2Presentation.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_CallFunction_0",
+            "pin_name": "then",
+            "pin_id": "49CB6C7B4024E6CDA13D9D9C122915B4"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_1",
+            "pin_name": "execute",
+            "pin_id": "D482D33D4A2C7919F08A20AFFD0DDA18"
+          },
+          "category": "exec"
+        },
+        {
+          "from": {
+            "node": "K2Node_CallFunction_1",
+            "pin_name": "then",
+            "pin_id": "53308BB9445AE260A52E5FB4F084958F"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_2",
+            "pin_name": "execute",
+            "pin_id": "CD834B0F4896F795278BD09B94840291"
+          },
+          "category": "exec"
+        },
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "pin_name": "then",
+            "pin_id": "D26AA3E244732D2DD475D29328D7E947"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "pin_name": "execute",
+            "pin_id": "905A3D044C760E3E7F39018F162D5DB7"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "DeactivateLevel2Presentation",
+          "SetActorHiddenInGame",
+          "SetActorEnableCollision",
+          "SetActorTickEnabled"
+        ]
+      ]
+    },
     {
       "name": "FocusTargetById",
       "schema": "BlueprintGraph.EdGraphSchema_K2",
@@ -5836,7 +5619,7 @@
           },
           "pins": [
             {
-              "id": "501D2546457289FD10153F95C344FCA7",
+              "id": "E39D870440DC2245FB526BBE60314368",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -5846,12 +5629,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "C0911E584C873754FD73C08A85C8263A"
+                  "pin_id": "C837F6A6442B83BC39E0E2833C4C2826"
                 }
               ]
             },
             {
-              "id": "CEE9B0C84B0253EF6CC777A6393DE391",
+              "id": "AE35C94143404CEEC00C0AA50810C2A1",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -5861,7 +5644,7 @@
               "linked_to": []
             },
             {
-              "id": "767FEE7D45A22BF835AAA8B93769572E",
+              "id": "79687A4F4E554ACF892F6A88DEF0D809",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -5871,7 +5654,7 @@
               "linked_to": []
             },
             {
-              "id": "E2A1AF8B4CE871BFEA512B82701DAE11",
+              "id": "20B768C646F3B684BD2B01B6EB36F17E",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -5890,7 +5673,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "C0911E584C873754FD73C08A85C8263A"
+                  "pin_id": "C837F6A6442B83BC39E0E2833C4C2826"
                 }
               ]
             },
@@ -5912,7 +5695,7 @@
           "meta": {},
           "pins": [
             {
-              "id": "869C2A724687203A58F7CD8DD3D8953E",
+              "id": "82D3B8AC48418E2E0CDBD99E612CFE3F",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -5922,12 +5705,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "7476EC1747225AA08DF1C2A453C86EEB"
+                  "pin_id": "AC95F6064B81DE7BB48AD7885EF1DA80"
                 }
               ]
             },
             {
-              "id": "C0911E584C873754FD73C08A85C8263A",
+              "id": "C837F6A6442B83BC39E0E2833C4C2826",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -5937,12 +5720,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "501D2546457289FD10153F95C344FCA7"
+                  "pin_id": "E39D870440DC2245FB526BBE60314368"
                 }
               ]
             },
             {
-              "id": "9A373EFD4750A0358F62F397B11710AE",
+              "id": "B33B3D2E427441A69C52B09F78C0D533",
               "name": "K2Node_CustomEvent_TargetId",
               "direction": "input",
               "category": "name",
@@ -5952,7 +5735,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "912EADFD463F0B0BB5F3188E4B97AD63"
+                  "pin_id": "35F020404117A26BA8E35E8F319FC03B"
                 }
               ]
             }
@@ -5966,7 +5749,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "7476EC1747225AA08DF1C2A453C86EEB"
+                  "pin_id": "AC95F6064B81DE7BB48AD7885EF1DA80"
                 }
               ]
             },
@@ -5978,7 +5761,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "912EADFD463F0B0BB5F3188E4B97AD63"
+                  "pin_id": "35F020404117A26BA8E35E8F319FC03B"
                 }
               ]
             }
@@ -5995,7 +5778,7 @@
           },
           "pins": [
             {
-              "id": "7476EC1747225AA08DF1C2A453C86EEB",
+              "id": "AC95F6064B81DE7BB48AD7885EF1DA80",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -6005,12 +5788,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "869C2A724687203A58F7CD8DD3D8953E"
+                  "pin_id": "82D3B8AC48418E2E0CDBD99E612CFE3F"
                 }
               ]
             },
             {
-              "id": "912EADFD463F0B0BB5F3188E4B97AD63",
+              "id": "35F020404117A26BA8E35E8F319FC03B",
               "name": "TargetId",
               "direction": "output",
               "category": "name",
@@ -6020,7 +5803,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "9A373EFD4750A0358F62F397B11710AE"
+                  "pin_id": "B33B3D2E427441A69C52B09F78C0D533"
                 }
               ]
             }
@@ -6034,12 +5817,12 @@
           "from": {
             "node": "K2Node_FunctionEntry_0",
             "pin_name": "TargetId",
-            "pin_id": "912EADFD463F0B0BB5F3188E4B97AD63"
+            "pin_id": "35F020404117A26BA8E35E8F319FC03B"
           },
           "to": {
             "node": "K2Node_SetVariableOnPersistentFrame_0",
             "pin_name": "K2Node_CustomEvent_TargetId",
-            "pin_id": "9A373EFD4750A0358F62F397B11710AE"
+            "pin_id": "B33B3D2E427441A69C52B09F78C0D533"
           },
           "category": "name"
         },
@@ -6047,12 +5830,12 @@
           "from": {
             "node": "K2Node_FunctionEntry_0",
             "pin_name": "then",
-            "pin_id": "7476EC1747225AA08DF1C2A453C86EEB"
+            "pin_id": "AC95F6064B81DE7BB48AD7885EF1DA80"
           },
           "to": {
             "node": "K2Node_SetVariableOnPersistentFrame_0",
             "pin_name": "execute",
-            "pin_id": "869C2A724687203A58F7CD8DD3D8953E"
+            "pin_id": "82D3B8AC48418E2E0CDBD99E612CFE3F"
           },
           "category": "exec"
         },
@@ -6060,12 +5843,12 @@
           "from": {
             "node": "K2Node_SetVariableOnPersistentFrame_0",
             "pin_name": "then",
-            "pin_id": "C0911E584C873754FD73C08A85C8263A"
+            "pin_id": "C837F6A6442B83BC39E0E2833C4C2826"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
             "pin_name": "execute",
-            "pin_id": "501D2546457289FD10153F95C344FCA7"
+            "pin_id": "E39D870440DC2245FB526BBE60314368"
           },
           "category": "exec"
         }
@@ -6132,7 +5915,7 @@
           },
           "pins": [
             {
-              "id": "2BD885E84D98A5963F2B4FA5E632EF6D",
+              "id": "F885D6FE4A476321C91E22B12E9BF8F6",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -6142,12 +5925,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "004256BD47DBB4F6A36C568C8BF6377E"
+                  "pin_id": "BDC224164C0FCEC52E2A6AAE9CCAB2C2"
                 }
               ]
             },
             {
-              "id": "7318BE40466CD7920277B3B3A744DD41",
+              "id": "402C360F4CA6EF0DBB1A3996AAD62F19",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -6157,7 +5940,7 @@
               "linked_to": []
             },
             {
-              "id": "A9422DCD4006458F1A7B44862C1BC694",
+              "id": "E34BB0074876CF032D1D748DB00D42C9",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -6167,7 +5950,7 @@
               "linked_to": []
             },
             {
-              "id": "8E964F5C4140C3098706298E29008074",
+              "id": "55645E2C41BC1EB01C3FE4803D2943C3",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -6186,7 +5969,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "004256BD47DBB4F6A36C568C8BF6377E"
+                  "pin_id": "BDC224164C0FCEC52E2A6AAE9CCAB2C2"
                 }
               ]
             },
@@ -6210,7 +5993,7 @@
           },
           "pins": [
             {
-              "id": "004256BD47DBB4F6A36C568C8BF6377E",
+              "id": "BDC224164C0FCEC52E2A6AAE9CCAB2C2",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -6220,7 +6003,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "2BD885E84D98A5963F2B4FA5E632EF6D"
+                  "pin_id": "F885D6FE4A476321C91E22B12E9BF8F6"
                 }
               ]
             }
@@ -6234,12 +6017,12 @@
           "from": {
             "node": "K2Node_FunctionEntry_0",
             "pin_name": "then",
-            "pin_id": "004256BD47DBB4F6A36C568C8BF6377E"
+            "pin_id": "BDC224164C0FCEC52E2A6AAE9CCAB2C2"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
             "pin_name": "execute",
-            "pin_id": "2BD885E84D98A5963F2B4FA5E632EF6D"
+            "pin_id": "F885D6FE4A476321C91E22B12E9BF8F6"
           },
           "category": "exec"
         }
@@ -6268,7 +6051,7 @@
           },
           "pins": [
             {
-              "id": "95A7B3184EF12EAE2E89B888818C1820",
+              "id": "95FABA294B25201A3228E198B830F10A",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -6278,12 +6061,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "DEFA025D40507A845144B6B7819EB3B3"
+                  "pin_id": "B53E4947459D2324F9EDD194BFFBE8C2"
                 }
               ]
             },
             {
-              "id": "4552C7B249567E86CF1DB188C3B5FFB2",
+              "id": "FE27C9F74624DB1975744ABF8370D110",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -6293,7 +6076,7 @@
               "linked_to": []
             },
             {
-              "id": "2EA3D6F84E53019EFFC8B09512B4C0DE",
+              "id": "45C603324894B8DC1573A3AA5AEAEBBD",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -6303,7 +6086,7 @@
               "linked_to": []
             },
             {
-              "id": "2E30DC54426A636BE50ADCAEB41B3F85",
+              "id": "6B17CB6C45451C4D4C6E3E81241699AB",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -6322,7 +6105,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "DEFA025D40507A845144B6B7819EB3B3"
+                  "pin_id": "B53E4947459D2324F9EDD194BFFBE8C2"
                 }
               ]
             },
@@ -6346,7 +6129,7 @@
           },
           "pins": [
             {
-              "id": "DEFA025D40507A845144B6B7819EB3B3",
+              "id": "B53E4947459D2324F9EDD194BFFBE8C2",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -6356,7 +6139,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "95A7B3184EF12EAE2E89B888818C1820"
+                  "pin_id": "95FABA294B25201A3228E198B830F10A"
                 }
               ]
             }
@@ -6370,12 +6153,12 @@
           "from": {
             "node": "K2Node_FunctionEntry_0",
             "pin_name": "then",
-            "pin_id": "DEFA025D40507A845144B6B7819EB3B3"
+            "pin_id": "B53E4947459D2324F9EDD194BFFBE8C2"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
             "pin_name": "execute",
-            "pin_id": "95A7B3184EF12EAE2E89B888818C1820"
+            "pin_id": "95FABA294B25201A3228E198B830F10A"
           },
           "category": "exec"
         }
@@ -6404,7 +6187,7 @@
           },
           "pins": [
             {
-              "id": "0381449C477C257266BB10B86953A7FD",
+              "id": "E0A149DF4143133839D361A761C4BED9",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -6414,12 +6197,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "8CB92A214242065DEE1D5087B4109E63"
+                  "pin_id": "569E86DE43BE34F7974B949AAC54AAFD"
                 }
               ]
             },
             {
-              "id": "10B78BC249758AE541F24BA55A213D09",
+              "id": "FDBDF1424D9CDBEF2357BF865FA38C22",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -6429,7 +6212,7 @@
               "linked_to": []
             },
             {
-              "id": "54BF09DB4B54D2AB73D2538F9B34F815",
+              "id": "C3FBA04F4B8D184F755D9AAA05D9A570",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -6439,7 +6222,7 @@
               "linked_to": []
             },
             {
-              "id": "C5C4D339462675F22B5D10BB935B3B85",
+              "id": "692B538E476B50D742008FB2022FDCD4",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -6458,7 +6241,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "8CB92A214242065DEE1D5087B4109E63"
+                  "pin_id": "569E86DE43BE34F7974B949AAC54AAFD"
                 }
               ]
             },
@@ -6482,7 +6265,7 @@
           },
           "pins": [
             {
-              "id": "8CB92A214242065DEE1D5087B4109E63",
+              "id": "569E86DE43BE34F7974B949AAC54AAFD",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -6492,7 +6275,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "0381449C477C257266BB10B86953A7FD"
+                  "pin_id": "E0A149DF4143133839D361A761C4BED9"
                 }
               ]
             }
@@ -6506,12 +6289,12 @@
           "from": {
             "node": "K2Node_FunctionEntry_0",
             "pin_name": "then",
-            "pin_id": "8CB92A214242065DEE1D5087B4109E63"
+            "pin_id": "569E86DE43BE34F7974B949AAC54AAFD"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
             "pin_name": "execute",
-            "pin_id": "0381449C477C257266BB10B86953A7FD"
+            "pin_id": "E0A149DF4143133839D361A761C4BED9"
           },
           "category": "exec"
         }
@@ -6654,16 +6437,9 @@
   "doc_view": {
     "blueprint_name": "BP_ShowcaseModel",
     "blueprint_class": "Blueprint",
-    "module_count": 66,
+    "module_count": 56,
     "connection_count": 66,
-    "component_events": [
-      {
-        "title": "TL_CameraMove.OnComponentActivated",
-        "id": "K2Node_ComponentBoundEvent_0",
-        "component": "TL_CameraMove",
-        "delegate_property": "OnComponentActivated"
-      }
-    ],
+    "component_events": [],
     "exec_traces": [
       [
         "ReceiveTick"
@@ -6673,9 +6449,6 @@
       ],
       [
         "ReceiveBeginPlay"
-      ],
-      [
-        "TL_CameraMove.OnComponentActivated"
       ]
     ],
     "widget_outline": [],

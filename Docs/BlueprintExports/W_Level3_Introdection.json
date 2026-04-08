@@ -1,0 +1,4916 @@
+{
+  "blueprint": {
+    "name": "W_Level3_Introdection",
+    "asset_path": "/Script/UMGEditor.WidgetBlueprint'/Game/UI/W_Level3_Introdection.W_Level3_Introdection'",
+    "blueprint_class": "WidgetBlueprint",
+    "parent_class": "UMG.UserWidget",
+    "generated_class": "W_Level3_Introdection_C",
+    "tick_prediction": null,
+    "tick_prediction_reason": null
+  },
+  "event_graph": {
+    "name": "EventGraph",
+    "schema": "BlueprintGraph.EdGraphSchema_K2",
+    "module_count": 43,
+    "connection_count": 46,
+    "modules": [
+      {
+        "id": "K2Node_CallFunction_12",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "Controller.Possess",
+        "meta": {
+          "function_name": "Possess",
+          "function_owner": "Controller"
+        },
+        "pins": [
+          {
+            "id": "9C8BEC39456685066CBDA59CEDA6F6F6",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_1",
+                "pin_id": "B9C518904436D09840244DA7619196C3"
+              }
+            ]
+          },
+          {
+            "id": "AFC21B984CED0E044FDCB9A71C4AAF71",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "C32457494C769036102959BFF7038D4F",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_1",
+                "pin_id": "C2CAC2DB4961E1DE9B81409ED8FEA8F7"
+              }
+            ]
+          },
+          {
+            "id": "36FEF9024B2B1FA7CBE09491D893D2E7",
+            "name": "InPawn",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_1",
+                "pin_id": "B9C518904436D09840244DA7619196C3"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_1",
+                "pin_id": "C2CAC2DB4961E1DE9B81409ED8FEA8F7"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallFunction_12'"
+      },
+      {
+        "id": "K2Node_DynamicCast_1",
+        "class": "K2Node_DynamicCast",
+        "kind": "dynamic_cast",
+        "title": "Cast To CaissonPlayerController",
+        "meta": {
+          "target_type": "CaissonPlayerController"
+        },
+        "pins": [
+          {
+            "id": "70C2A1AF40522C828F8EA89F9E1797EF",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_10",
+                "pin_id": "66BE0699491ACF2FEA9FD3B8CDEDBB0F"
+              }
+            ]
+          },
+          {
+            "id": "B9C518904436D09840244DA7619196C3",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_12",
+                "pin_id": "9C8BEC39456685066CBDA59CEDA6F6F6"
+              }
+            ]
+          },
+          {
+            "id": "CDC0C55C4EF21BF2611A31AB90CD0D00",
+            "name": "CastFailed",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "C43FBB724AB3B45857BAE2AA37759E9F",
+            "name": "Object",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_11",
+                "pin_id": "3F07D8344DD1EAE09CDC7CBA63ED3FF6"
+              }
+            ]
+          },
+          {
+            "id": "C2CAC2DB4961E1DE9B81409ED8FEA8F7",
+            "name": "AsCaisson Player Controller",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_12",
+                "pin_id": "C32457494C769036102959BFF7038D4F"
+              }
+            ]
+          },
+          {
+            "id": "BD67E602466AEE27FB4CB3BE5DC9862C",
+            "name": "bSuccess",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_10",
+                "pin_id": "66BE0699491ACF2FEA9FD3B8CDEDBB0F"
+              }
+            ]
+          },
+          {
+            "name": "Object",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_11",
+                "pin_id": "3F07D8344DD1EAE09CDC7CBA63ED3FF6"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_DynamicCast'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_DynamicCast_1'"
+      },
+      {
+        "id": "K2Node_CallFunction_11",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "GameplayStatics.GetPlayerController",
+        "meta": {
+          "function_name": "GetPlayerController",
+          "function_owner": "GameplayStatics"
+        },
+        "pins": [
+          {
+            "id": "F1F5904D488C53DFC280AAABBD55FC12",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": "/Script/Engine.Default__GameplayStatics",
+            "linked_to": []
+          },
+          {
+            "id": "E16F39804990907CE58649A7B360AA7B",
+            "name": "WorldContextObject",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "9FDE71314D5F7CF6069929AF29737ED3",
+            "name": "PlayerIndex",
+            "direction": "input",
+            "category": "int",
+            "subcategory": "",
+            "default_value": "0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "3F07D8344DD1EAE09CDC7CBA63ED3FF6",
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_1",
+                "pin_id": "C43FBB724AB3B45857BAE2AA37759E9F"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": "/Script/Engine.Default__GameplayStatics",
+            "linked_to": []
+          },
+          {
+            "name": "PlayerIndex",
+            "category": "int",
+            "default_value": "0",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallFunction_11'"
+      },
+      {
+        "id": "K2Node_CallFunction_10",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "BP_ShowcaseModel_Level3_C.ActivateLevel3Presentation",
+        "meta": {
+          "function_name": "ActivateLevel3Presentation",
+          "function_owner": "BP_ShowcaseModel_Level3_C"
+        },
+        "pins": [
+          {
+            "id": "372A85654380621C9317AFBE25577907",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_2",
+                "pin_id": "5AB84F144FFBF61D20049F9F9E4E7EBE"
+              }
+            ]
+          },
+          {
+            "id": "66BE0699491ACF2FEA9FD3B8CDEDBB0F",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_1",
+                "pin_id": "70C2A1AF40522C828F8EA89F9E1797EF"
+              }
+            ]
+          },
+          {
+            "id": "6DA6DEBC4216B75100B2C0891BFA5CA0",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_2",
+                "pin_id": "CD47A5564E64276ED4C04F911F44F355"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_2",
+                "pin_id": "5AB84F144FFBF61D20049F9F9E4E7EBE"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_2",
+                "pin_id": "CD47A5564E64276ED4C04F911F44F355"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallFunction_10'"
+      },
+      {
+        "id": "K2Node_VariableSet_2",
+        "class": "K2Node_VariableSet",
+        "kind": "variable_set",
+        "title": "Set Level3ShowcaseRef",
+        "meta": {
+          "variable_name": "Level3ShowcaseRef"
+        },
+        "pins": [
+          {
+            "id": "55D50E7845881E0C0044ECAC3AD44D46",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_SpawnActorFromClass_1",
+                "pin_id": "FADE407D44411F343FD2B1930E0DC9CF"
+              }
+            ]
+          },
+          {
+            "id": "5AB84F144FFBF61D20049F9F9E4E7EBE",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_10",
+                "pin_id": "372A85654380621C9317AFBE25577907"
+              }
+            ]
+          },
+          {
+            "id": "0D2318BB413E2A63417B1C8F203D0338",
+            "name": "Level3ShowcaseRef",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_SpawnActorFromClass_1",
+                "pin_id": "393DBAAC4946DBEF5CEDA8A8C67471D5"
+              }
+            ]
+          },
+          {
+            "id": "CD47A5564E64276ED4C04F911F44F355",
+            "name": "Output_Get",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_10",
+                "pin_id": "6DA6DEBC4216B75100B2C0891BFA5CA0"
+              }
+            ]
+          },
+          {
+            "id": "D646A15144B1B4DCB1C6C0A3D02FF1C2",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_SpawnActorFromClass_1",
+                "pin_id": "FADE407D44411F343FD2B1930E0DC9CF"
+              }
+            ]
+          },
+          {
+            "name": "Level3ShowcaseRef",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_SpawnActorFromClass_1",
+                "pin_id": "393DBAAC4946DBEF5CEDA8A8C67471D5"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_VariableSet_2'"
+      },
+      {
+        "id": "K2Node_SpawnActorFromClass_1",
+        "class": "K2Node_SpawnActorFromClass",
+        "kind": "spawn_actor",
+        "title": "SpawnActor BP_ShowcaseModel_Level3_C",
+        "meta": {
+          "spawn_class": "BP_ShowcaseModel_Level3_C"
+        },
+        "pins": [
+          {
+            "id": "0B1F6AF3450D1E61AAF6F495208E6E43",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_0",
+                "pin_id": "43FD9AFC41223AF94F791D9440C46666"
+              }
+            ]
+          },
+          {
+            "id": "FADE407D44411F343FD2B1930E0DC9CF",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_2",
+                "pin_id": "55D50E7845881E0C0044ECAC3AD44D46"
+              }
+            ]
+          },
+          {
+            "id": "B4804F5C4D3A378B674F1681C11F7A34",
+            "name": "Class",
+            "direction": "input",
+            "category": "class",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": "/Game/UI/BP_ShowcaseModel_Level3.BP_ShowcaseModel_Level3_C",
+            "linked_to": []
+          },
+          {
+            "id": "393DBAAC4946DBEF5CEDA8A8C67471D5",
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_2",
+                "pin_id": "0D2318BB413E2A63417B1C8F203D0338"
+              }
+            ]
+          },
+          {
+            "id": "C0BD25AF4FA0C0E23F0E4E848480FCCE",
+            "name": "SpawnTransform",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "38B2DFE541BC712BC4615D95BDF85A99",
+            "name": "SpawnTransform_Location",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "9E43ABB541CD30477AF7A49FA3EB8FE5",
+            "name": "SpawnTransform_Rotation",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "64E18F514388A2847743579876C8BAFF",
+            "name": "SpawnTransform_Scale",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "1.000000,1.000000,1.000000",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "F351B6FF484100A4036556BCAA35BF28",
+            "name": "CollisionHandlingOverride",
+            "direction": "input",
+            "category": "byte",
+            "subcategory": "",
+            "default_value": "AlwaysSpawn",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "A0D0AFBF49D5F6F95F94D28C91777061",
+            "name": "TransformScaleMethod",
+            "direction": "input",
+            "category": "byte",
+            "subcategory": "",
+            "default_value": "MultiplyWithRoot",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "6485E2C24CA8C80C92C3B0A9DF582EC2",
+            "name": "Owner",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "51CD7BF447AE28B83B9C0297E034B1DC",
+            "name": "Instigator",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_0",
+                "pin_id": "43FD9AFC41223AF94F791D9440C46666"
+              }
+            ]
+          },
+          {
+            "name": "Class",
+            "category": "class",
+            "default_value": null,
+            "default_object": "/Game/UI/BP_ShowcaseModel_Level3.BP_ShowcaseModel_Level3_C",
+            "linked_to": []
+          },
+          {
+            "name": "SpawnTransform_Location",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "SpawnTransform_Rotation",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "SpawnTransform_Scale",
+            "category": "struct",
+            "default_value": "1.000000,1.000000,1.000000",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "CollisionHandlingOverride",
+            "category": "byte",
+            "default_value": "AlwaysSpawn",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "TransformScaleMethod",
+            "category": "byte",
+            "default_value": "MultiplyWithRoot",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_SpawnActorFromClass'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_SpawnActorFromClass_1'"
+      },
+      {
+        "id": "K2Node_CallFunction_8",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "BP_ShowcaseModel_Level3_C.ActivateLevel3Presentation",
+        "meta": {
+          "function_name": "ActivateLevel3Presentation",
+          "function_owner": "BP_ShowcaseModel_Level3_C"
+        },
+        "pins": [
+          {
+            "id": "4A5003A444C971FF9107BEAEAFB5AD2D",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_0",
+                "pin_id": "5C1ED2E54C339B9F9DE2A5B58C81E919"
+              }
+            ]
+          },
+          {
+            "id": "2D2D0512459FE1E92FFEFC9BA83F4306",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "A921AF154B76FA5969B257BB67C5470E",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_0",
+                "pin_id": "7E80D2274C2231C02C1D6A997A087A88"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_0",
+                "pin_id": "5C1ED2E54C339B9F9DE2A5B58C81E919"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_0",
+                "pin_id": "7E80D2274C2231C02C1D6A997A087A88"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallFunction_8'"
+      },
+      {
+        "id": "K2Node_VariableSet_0",
+        "class": "K2Node_VariableSet",
+        "kind": "variable_set",
+        "title": "Set Level3ShowcaseRef",
+        "meta": {
+          "variable_name": "Level3ShowcaseRef"
+        },
+        "pins": [
+          {
+            "id": "F360FCA94C4C16EE1AFE6F9B7864037B",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_0",
+                "pin_id": "F977DC8F4EC16BA13EC3909DE2F46191"
+              }
+            ]
+          },
+          {
+            "id": "5C1ED2E54C339B9F9DE2A5B58C81E919",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_8",
+                "pin_id": "4A5003A444C971FF9107BEAEAFB5AD2D"
+              }
+            ]
+          },
+          {
+            "id": "1DD5DF3C4359E9F9ABC7D599D88C328A",
+            "name": "Level3ShowcaseRef",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_GetArrayItem_0",
+                "pin_id": "7289516547BE1F4869CD08AD364FE87F"
+              }
+            ]
+          },
+          {
+            "id": "7E80D2274C2231C02C1D6A997A087A88",
+            "name": "Output_Get",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_8",
+                "pin_id": "A921AF154B76FA5969B257BB67C5470E"
+              }
+            ]
+          },
+          {
+            "id": "FC0252204794875707F5BA8312F8C405",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_0",
+                "pin_id": "F977DC8F4EC16BA13EC3909DE2F46191"
+              }
+            ]
+          },
+          {
+            "name": "Level3ShowcaseRef",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_GetArrayItem_0",
+                "pin_id": "7289516547BE1F4869CD08AD364FE87F"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_VariableSet_0'"
+      },
+      {
+        "id": "K2Node_GetArrayItem_0",
+        "class": "K2Node_GetArrayItem",
+        "kind": "K2Node_GetArrayItem",
+        "title": "K2Node_GetArrayItem_0",
+        "meta": {},
+        "pins": [
+          {
+            "id": "C9B63EB74611DC377799B380FBFD23BE",
+            "name": "Array",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_7",
+                "pin_id": "7B3223D448C348E00910E0829DDD9119"
+              }
+            ]
+          },
+          {
+            "id": "9482872146D9A60D9C90E484F9488207",
+            "name": "Dimension 1",
+            "direction": "input",
+            "category": "int",
+            "subcategory": "",
+            "default_value": "0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "7289516547BE1F4869CD08AD364FE87F",
+            "name": "Output",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_0",
+                "pin_id": "1DD5DF3C4359E9F9ABC7D599D88C328A"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "Array",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_7",
+                "pin_id": "7B3223D448C348E00910E0829DDD9119"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_GetArrayItem'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_GetArrayItem_0'"
+      },
+      {
+        "id": "K2Node_IfThenElse_0",
+        "class": "K2Node_IfThenElse",
+        "kind": "K2Node_IfThenElse",
+        "title": "K2Node_IfThenElse_0",
+        "meta": {},
+        "pins": [
+          {
+            "id": "361C8BCC4D1D4007D744F2B7AB28BDBE",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_7",
+                "pin_id": "14CF6C9F4F00543BF0C514B53E25F828"
+              }
+            ]
+          },
+          {
+            "id": "9B1FBBD044832AC4C3619AB038D6A11E",
+            "name": "Condition",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_PromotableOperator_0",
+                "pin_id": "E75CCF6C4DDB3F416969A7BB9747F039"
+              }
+            ]
+          },
+          {
+            "id": "F977DC8F4EC16BA13EC3909DE2F46191",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_0",
+                "pin_id": "F360FCA94C4C16EE1AFE6F9B7864037B"
+              }
+            ]
+          },
+          {
+            "id": "43FD9AFC41223AF94F791D9440C46666",
+            "name": "else",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_SpawnActorFromClass_1",
+                "pin_id": "0B1F6AF3450D1E61AAF6F495208E6E43"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_7",
+                "pin_id": "14CF6C9F4F00543BF0C514B53E25F828"
+              }
+            ]
+          },
+          {
+            "name": "Condition",
+            "category": "bool",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_PromotableOperator_0",
+                "pin_id": "E75CCF6C4DDB3F416969A7BB9747F039"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_IfThenElse'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_IfThenElse_0'"
+      },
+      {
+        "id": "K2Node_PromotableOperator_0",
+        "class": "K2Node_PromotableOperator",
+        "kind": "K2Node_PromotableOperator",
+        "title": "K2Node_PromotableOperator_0",
+        "meta": {},
+        "pins": [
+          {
+            "id": "8F53CB6646474D9796293AB93C282B53",
+            "name": "A",
+            "direction": "input",
+            "category": "int",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallArrayFunction_0",
+                "pin_id": "C085E47A43202EAA8CEA05BB9C4933C4"
+              }
+            ]
+          },
+          {
+            "id": "5DBC74114AFB51A78FDC64A6100E6558",
+            "name": "B",
+            "direction": "input",
+            "category": "int",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "E75CCF6C4DDB3F416969A7BB9747F039",
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_0",
+                "pin_id": "9B1FBBD044832AC4C3619AB038D6A11E"
+              }
+            ]
+          },
+          {
+            "id": "7F80FA4146D7A23CF93716A99904E1E3",
+            "name": "ErrorTolerance",
+            "direction": "input",
+            "category": "",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "A",
+            "category": "int",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallArrayFunction_0",
+                "pin_id": "C085E47A43202EAA8CEA05BB9C4933C4"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_PromotableOperator'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_PromotableOperator_0'"
+      },
+      {
+        "id": "K2Node_CallArrayFunction_0",
+        "class": "K2Node_CallArrayFunction",
+        "kind": "K2Node_CallArrayFunction",
+        "title": "K2Node_CallArrayFunction_0",
+        "meta": {},
+        "pins": [
+          {
+            "id": "7A082A7641172180BB9F42B605BB8450",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": "/Script/Engine.Default__KismetArrayLibrary",
+            "linked_to": []
+          },
+          {
+            "id": "69E25BAF474438743E007DB00FB36016",
+            "name": "TargetArray",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_7",
+                "pin_id": "7B3223D448C348E00910E0829DDD9119"
+              }
+            ]
+          },
+          {
+            "id": "C085E47A43202EAA8CEA05BB9C4933C4",
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "int",
+            "subcategory": "",
+            "default_value": "0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_PromotableOperator_0",
+                "pin_id": "8F53CB6646474D9796293AB93C282B53"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": "/Script/Engine.Default__KismetArrayLibrary",
+            "linked_to": []
+          },
+          {
+            "name": "TargetArray",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_7",
+                "pin_id": "7B3223D448C348E00910E0829DDD9119"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallArrayFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallArrayFunction_0'"
+      },
+      {
+        "id": "K2Node_CallFunction_7",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "GameplayStatics.GetAllActorsOfClass",
+        "meta": {
+          "function_name": "GetAllActorsOfClass",
+          "function_owner": "GameplayStatics"
+        },
+        "pins": [
+          {
+            "id": "A9AF40EC4F3E99E83B9706A1CC620F37",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "pin_id": "C676F6EF4129D378B154AC91AD9DD1F8"
+              }
+            ]
+          },
+          {
+            "id": "14CF6C9F4F00543BF0C514B53E25F828",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_0",
+                "pin_id": "361C8BCC4D1D4007D744F2B7AB28BDBE"
+              }
+            ]
+          },
+          {
+            "id": "9231B352499ACA10E24BCB88CC0CC7A7",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": "/Script/Engine.Default__GameplayStatics",
+            "linked_to": []
+          },
+          {
+            "id": "797B648345F7889886E6D8AFAA280877",
+            "name": "WorldContextObject",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "DC52FF284136432EE6D60BAA43B221EF",
+            "name": "ActorClass",
+            "direction": "input",
+            "category": "class",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": "/Game/UI/BP_ShowcaseModel_Level3.BP_ShowcaseModel_Level3_C",
+            "linked_to": []
+          },
+          {
+            "id": "7B3223D448C348E00910E0829DDD9119",
+            "name": "OutActors",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallArrayFunction_0",
+                "pin_id": "69E25BAF474438743E007DB00FB36016"
+              },
+              {
+                "node": "K2Node_GetArrayItem_0",
+                "pin_id": "C9B63EB74611DC377799B380FBFD23BE"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "pin_id": "C676F6EF4129D378B154AC91AD9DD1F8"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": "/Script/Engine.Default__GameplayStatics",
+            "linked_to": []
+          },
+          {
+            "name": "ActorClass",
+            "category": "class",
+            "default_value": null,
+            "default_object": "/Game/UI/BP_ShowcaseModel_Level3.BP_ShowcaseModel_Level3_C",
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallFunction_7'"
+      },
+      {
+        "id": "K2Node_CallFunction_0",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+        "meta": {
+          "function_name": "SetLevelTargetInteractionEnabled",
+          "function_owner": "CaissonPlayerController"
+        },
+        "pins": [
+          {
+            "id": "E43EA077418A9B26B937B89D980E5C38",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "pin_id": "F0459EAF406994D215DE75B9767B72C7"
+              }
+            ]
+          },
+          {
+            "id": "AC579EAE477F22614598439082F26C72",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_16",
+                "pin_id": "C89C763F498A615919C03080312AD334"
+              }
+            ]
+          },
+          {
+            "id": "0FEFBB4846ACEB35FC93E7A03F2FD447",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+              }
+            ]
+          },
+          {
+            "id": "78CC6A5646451B8AF85543A1F7DFE43A",
+            "name": "bHoverEnabled",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "092392184FB0BBF5090A86BB2189FFF2",
+            "name": "bClickEnabled",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "pin_id": "F0459EAF406994D215DE75B9767B72C7"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+              }
+            ]
+          },
+          {
+            "name": "bHoverEnabled",
+            "category": "bool",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "bClickEnabled",
+            "category": "bool",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallFunction_0'"
+      },
+      {
+        "id": "K2Node_CallFunction_17",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "CaissonPlayerController.OpenCaissonWidget",
+        "meta": {
+          "function_name": "OpenCaissonWidget",
+          "function_owner": "CaissonPlayerController"
+        },
+        "pins": [
+          {
+            "id": "A9DB4648486ECBC62DF1B79F9E02EE37",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_16",
+                "pin_id": "509F82B84C19CAEB2F46B99B780FDAED"
+              }
+            ]
+          },
+          {
+            "id": "8459F1294FE53E2535140F9363850CE2",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "5FC864A84270F03B40172889DFA2E24D",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+              }
+            ]
+          },
+          {
+            "id": "2F7BF28F4ABC088AEC97C5ACCEDE1FC2",
+            "name": "WidgetClass",
+            "direction": "input",
+            "category": "class",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": "/Game/UI/W_Level3.W_Level3_C",
+            "linked_to": []
+          },
+          {
+            "id": "9A8D74CA4D9FECE8E9DE8BAA90B5F20E",
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_16",
+                "pin_id": "509F82B84C19CAEB2F46B99B780FDAED"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+              }
+            ]
+          },
+          {
+            "name": "WidgetClass",
+            "category": "class",
+            "default_value": null,
+            "default_object": "/Game/UI/W_Level3.W_Level3_C",
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallFunction_17'"
+      },
+      {
+        "id": "K2Node_Self_0",
+        "class": "K2Node_Self",
+        "kind": "self",
+        "title": "Self",
+        "meta": {},
+        "pins": [
+          {
+            "id": "519B00C347A935453DD435868B6337CA",
+            "name": "self",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "self",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_16",
+                "pin_id": "7D0D979049AA3CB7AB81A89298E17948"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Self'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_Self_0'"
+      },
+      {
+        "id": "K2Node_ComponentBoundEvent_2",
+        "class": "K2Node_ComponentBoundEvent",
+        "kind": "component_bound_event",
+        "title": "按钮-关闭.OnClicked",
+        "meta": {
+          "component": "按钮-关闭",
+          "delegate_property": "OnClicked",
+          "custom_function_name": "BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature"
+        },
+        "pins": [
+          {
+            "id": "2F3142DD4A722CDFE800FEBF8DF108FD",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "62FE810648185BDEDB646494C34A95AD",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "pin_id": "0F28A00645E9BC477D47CD8E3868C822"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_ComponentBoundEvent_2'"
+      },
+      {
+        "id": "K2Node_CallFunction_16",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "CaissonPlayerController.CloseCaissonWidget",
+        "meta": {
+          "function_name": "CloseCaissonWidget",
+          "function_owner": "CaissonPlayerController"
+        },
+        "pins": [
+          {
+            "id": "C89C763F498A615919C03080312AD334",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_0",
+                "pin_id": "AC579EAE477F22614598439082F26C72"
+              }
+            ]
+          },
+          {
+            "id": "509F82B84C19CAEB2F46B99B780FDAED",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_17",
+                "pin_id": "A9DB4648486ECBC62DF1B79F9E02EE37"
+              }
+            ]
+          },
+          {
+            "id": "F85151354DB59DA2E502C3A8CA511434",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+              }
+            ]
+          },
+          {
+            "id": "7D0D979049AA3CB7AB81A89298E17948",
+            "name": "WidgetToClose",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Self_0",
+                "pin_id": "519B00C347A935453DD435868B6337CA"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_0",
+                "pin_id": "AC579EAE477F22614598439082F26C72"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+              }
+            ]
+          },
+          {
+            "name": "WidgetToClose",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Self_0",
+                "pin_id": "519B00C347A935453DD435868B6337CA"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallFunction_16'"
+      },
+      {
+        "id": "K2Node_DynamicCast_0",
+        "class": "K2Node_DynamicCast",
+        "kind": "dynamic_cast",
+        "title": "Cast To CaissonPlayerController",
+        "meta": {
+          "target_type": "CaissonPlayerController"
+        },
+        "pins": [
+          {
+            "id": "0F28A00645E9BC477D47CD8E3868C822",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_ComponentBoundEvent_2",
+                "pin_id": "62FE810648185BDEDB646494C34A95AD"
+              }
+            ]
+          },
+          {
+            "id": "F0459EAF406994D215DE75B9767B72C7",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_0",
+                "pin_id": "E43EA077418A9B26B937B89D980E5C38"
+              }
+            ]
+          },
+          {
+            "id": "F7A644944B6CA88D60FACD812E284C6A",
+            "name": "CastFailed",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "62E58D1E42D4A9A127FEAEA52FF92941",
+            "name": "Object",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_15",
+                "pin_id": "BB4B50554C1032ACA297849394D6087E"
+              }
+            ]
+          },
+          {
+            "id": "3FE36DB34BD8D55D7DCD549192D81E8C",
+            "name": "AsCaisson Player Controller",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_16",
+                "pin_id": "F85151354DB59DA2E502C3A8CA511434"
+              },
+              {
+                "node": "K2Node_CallFunction_17",
+                "pin_id": "5FC864A84270F03B40172889DFA2E24D"
+              },
+              {
+                "node": "K2Node_CallFunction_0",
+                "pin_id": "0FEFBB4846ACEB35FC93E7A03F2FD447"
+              }
+            ]
+          },
+          {
+            "id": "785AD87F48D9075F00579EB7C091F6D2",
+            "name": "bSuccess",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_ComponentBoundEvent_2",
+                "pin_id": "62FE810648185BDEDB646494C34A95AD"
+              }
+            ]
+          },
+          {
+            "name": "Object",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_15",
+                "pin_id": "BB4B50554C1032ACA297849394D6087E"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_DynamicCast'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_DynamicCast_0'"
+      },
+      {
+        "id": "K2Node_CallFunction_15",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "GameplayStatics.GetPlayerController",
+        "meta": {
+          "function_name": "GetPlayerController",
+          "function_owner": "GameplayStatics"
+        },
+        "pins": [
+          {
+            "id": "775282654270E3C9D2C2DF8BB9EDEA8E",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": "/Script/Engine.Default__GameplayStatics",
+            "linked_to": []
+          },
+          {
+            "id": "7390FB64480E9AFB39A61EABE1ABADDA",
+            "name": "WorldContextObject",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "F22B6B42413960567D54158F19761DE8",
+            "name": "PlayerIndex",
+            "direction": "input",
+            "category": "int",
+            "subcategory": "",
+            "default_value": "0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "BB4B50554C1032ACA297849394D6087E",
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "pin_id": "62E58D1E42D4A9A127FEAEA52FF92941"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": "/Script/Engine.Default__GameplayStatics",
+            "linked_to": []
+          },
+          {
+            "name": "PlayerIndex",
+            "category": "int",
+            "default_value": "0",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallFunction_15'"
+      },
+      {
+        "id": "K2Node_VariableGet_15",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_15",
+        "meta": {},
+        "pins": [
+          {
+            "id": "0862C385452AFCECB5BD86B1349D6B14",
+            "name": "按钮-上一个",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+              }
+            ]
+          },
+          {
+            "id": "977600DC4A0F7D5054200FB6398F9D28",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_VariableGet_15'"
+      },
+      {
+        "id": "K2Node_VariableGet_14",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_14",
+        "meta": {},
+        "pins": [
+          {
+            "id": "0862C385452AFCECB5BD86B1349D6B14",
+            "name": "按钮-上一个",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_5",
+                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+              }
+            ]
+          },
+          {
+            "id": "977600DC4A0F7D5054200FB6398F9D28",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_VariableGet_14'"
+      },
+      {
+        "id": "K2Node_VariableGet_16",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_16",
+        "meta": {},
+        "pins": [
+          {
+            "id": "0862C385452AFCECB5BD86B1349D6B14",
+            "name": "按钮-上一个",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_4",
+                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+              }
+            ]
+          },
+          {
+            "id": "977600DC4A0F7D5054200FB6398F9D28",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_VariableGet_16'"
+      },
+      {
+        "id": "K2Node_VariableGet_4",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_4",
+        "meta": {},
+        "pins": [
+          {
+            "id": "F2C1A0294C7228E8B071C58A116DBC89",
+            "name": "按钮-关闭",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+              }
+            ]
+          },
+          {
+            "id": "E898900E4AB412C0C589C6B0A30C3998",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_VariableGet_4'"
+      },
+      {
+        "id": "K2Node_VariableGet_2",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_2",
+        "meta": {},
+        "pins": [
+          {
+            "id": "367310E84EBE9ADA9E2FEBA7CD42774E",
+            "name": "介绍2",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+              }
+            ]
+          },
+          {
+            "id": "27C0CF014C7508E9527ADEB9A154523D",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_VariableGet_2'"
+      },
+      {
+        "id": "K2Node_CallFunction_1",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SetVisibility",
+        "meta": {
+          "function_name": "SetVisibility",
+          "function_owner": null
+        },
+        "pins": [
+          {
+            "id": "4B8E712B470E5870A24059BAF164BA58",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Event_1",
+                "pin_id": "4F5E7494491F7411842DCEA2B1774F27"
+              }
+            ]
+          },
+          {
+            "id": "C676F6EF4129D378B154AC91AD9DD1F8",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_7",
+                "pin_id": "A9AF40EC4F3E99E83B9706A1CC620F37"
+              }
+            ]
+          },
+          {
+            "id": "59247FE14D539F49AF0D0984D2DA613F",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_2",
+                "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+              },
+              {
+                "node": "K2Node_VariableGet_4",
+                "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+              },
+              {
+                "node": "K2Node_VariableGet_15",
+                "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+              }
+            ]
+          },
+          {
+            "id": "42A59421477F936C6C2927B4C1A95BA9",
+            "name": "InVisibility",
+            "direction": "input",
+            "category": "byte",
+            "subcategory": "",
+            "default_value": "Hidden",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Event_1",
+                "pin_id": "4F5E7494491F7411842DCEA2B1774F27"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_2",
+                "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+              },
+              {
+                "node": "K2Node_VariableGet_4",
+                "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+              },
+              {
+                "node": "K2Node_VariableGet_15",
+                "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+              }
+            ]
+          },
+          {
+            "name": "InVisibility",
+            "category": "byte",
+            "default_value": "Hidden",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallFunction_1'"
+      },
+      {
+        "id": "K2Node_VariableGet_9",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_9",
+        "meta": {},
+        "pins": [
+          {
+            "id": "A121E5B646056B2CBE211E9C8C6FEBA5",
+            "name": "按钮-下一个",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_2",
+                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+              }
+            ]
+          },
+          {
+            "id": "75590E0545B7F535745EC98955027548",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_VariableGet_9'"
+      },
+      {
+        "id": "K2Node_VariableGet_10",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_10",
+        "meta": {},
+        "pins": [
+          {
+            "id": "A121E5B646056B2CBE211E9C8C6FEBA5",
+            "name": "按钮-下一个",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+              }
+            ]
+          },
+          {
+            "id": "75590E0545B7F535745EC98955027548",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_VariableGet_10'"
+      },
+      {
+        "id": "K2Node_VariableGet_13",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_13",
+        "meta": {},
+        "pins": [
+          {
+            "id": "F2C1A0294C7228E8B071C58A116DBC89",
+            "name": "按钮-关闭",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_5",
+                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+              }
+            ]
+          },
+          {
+            "id": "E898900E4AB412C0C589C6B0A30C3998",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_VariableGet_13'"
+      },
+      {
+        "id": "K2Node_CallFunction_2",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SetVisibility",
+        "meta": {
+          "function_name": "SetVisibility",
+          "function_owner": null
+        },
+        "pins": [
+          {
+            "id": "4B8E712B470E5870A24059BAF164BA58",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_5",
+                "pin_id": "C676F6EF4129D378B154AC91AD9DD1F8"
+              }
+            ]
+          },
+          {
+            "id": "C676F6EF4129D378B154AC91AD9DD1F8",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "59247FE14D539F49AF0D0984D2DA613F",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_1",
+                "pin_id": "272E81AE49874AD167E84BB5F35FAAED"
+              },
+              {
+                "node": "K2Node_VariableGet_9",
+                "pin_id": "A121E5B646056B2CBE211E9C8C6FEBA5"
+              }
+            ]
+          },
+          {
+            "id": "42A59421477F936C6C2927B4C1A95BA9",
+            "name": "InVisibility",
+            "direction": "input",
+            "category": "byte",
+            "subcategory": "",
+            "default_value": "Visible",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_5",
+                "pin_id": "C676F6EF4129D378B154AC91AD9DD1F8"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_1",
+                "pin_id": "272E81AE49874AD167E84BB5F35FAAED"
+              },
+              {
+                "node": "K2Node_VariableGet_9",
+                "pin_id": "A121E5B646056B2CBE211E9C8C6FEBA5"
+              }
+            ]
+          },
+          {
+            "name": "InVisibility",
+            "category": "byte",
+            "default_value": "Visible",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallFunction_2'"
+      },
+      {
+        "id": "K2Node_VariableGet_11",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_11",
+        "meta": {},
+        "pins": [
+          {
+            "id": "367310E84EBE9ADA9E2FEBA7CD42774E",
+            "name": "介绍2",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_5",
+                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+              }
+            ]
+          },
+          {
+            "id": "27C0CF014C7508E9527ADEB9A154523D",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_VariableGet_11'"
+      },
+      {
+        "id": "K2Node_CallFunction_5",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SetVisibility",
+        "meta": {
+          "function_name": "SetVisibility",
+          "function_owner": null
+        },
+        "pins": [
+          {
+            "id": "4B8E712B470E5870A24059BAF164BA58",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_ComponentBoundEvent_1",
+                "pin_id": "F80E7DB54B9B1DFCE78EC996ED5362BB"
+              }
+            ]
+          },
+          {
+            "id": "C676F6EF4129D378B154AC91AD9DD1F8",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_2",
+                "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+              }
+            ]
+          },
+          {
+            "id": "59247FE14D539F49AF0D0984D2DA613F",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_11",
+                "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+              },
+              {
+                "node": "K2Node_VariableGet_13",
+                "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+              },
+              {
+                "node": "K2Node_VariableGet_14",
+                "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+              }
+            ]
+          },
+          {
+            "id": "42A59421477F936C6C2927B4C1A95BA9",
+            "name": "InVisibility",
+            "direction": "input",
+            "category": "byte",
+            "subcategory": "",
+            "default_value": "Hidden",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_ComponentBoundEvent_1",
+                "pin_id": "F80E7DB54B9B1DFCE78EC996ED5362BB"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_11",
+                "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+              },
+              {
+                "node": "K2Node_VariableGet_13",
+                "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+              },
+              {
+                "node": "K2Node_VariableGet_14",
+                "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+              }
+            ]
+          },
+          {
+            "name": "InVisibility",
+            "category": "byte",
+            "default_value": "Hidden",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallFunction_5'"
+      },
+      {
+        "id": "K2Node_VariableGet_1",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_1",
+        "meta": {},
+        "pins": [
+          {
+            "id": "272E81AE49874AD167E84BB5F35FAAED",
+            "name": "介绍1",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_2",
+                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+              }
+            ]
+          },
+          {
+            "id": "DDD0280C427146829E710C92E292E72D",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_VariableGet_1'"
+      },
+      {
+        "id": "K2Node_ComponentBoundEvent_1",
+        "class": "K2Node_ComponentBoundEvent",
+        "kind": "component_bound_event",
+        "title": "按钮-上一个.OnClicked",
+        "meta": {
+          "component": "按钮-上一个",
+          "delegate_property": "OnClicked",
+          "custom_function_name": "BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature"
+        },
+        "pins": [
+          {
+            "id": "732BAF1D48461554A1D3A781F7BBD04F",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "F80E7DB54B9B1DFCE78EC996ED5362BB",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_5",
+                "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_ComponentBoundEvent_1'"
+      },
+      {
+        "id": "K2Node_VariableGet_8",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_8",
+        "meta": {},
+        "pins": [
+          {
+            "id": "F2C1A0294C7228E8B071C58A116DBC89",
+            "name": "按钮-关闭",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_4",
+                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+              }
+            ]
+          },
+          {
+            "id": "E898900E4AB412C0C589C6B0A30C3998",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_VariableGet_8'"
+      },
+      {
+        "id": "K2Node_CallFunction_4",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SetVisibility",
+        "meta": {
+          "function_name": "SetVisibility",
+          "function_owner": null
+        },
+        "pins": [
+          {
+            "id": "4B8E712B470E5870A24059BAF164BA58",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "pin_id": "C676F6EF4129D378B154AC91AD9DD1F8"
+              }
+            ]
+          },
+          {
+            "id": "C676F6EF4129D378B154AC91AD9DD1F8",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "59247FE14D539F49AF0D0984D2DA613F",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_6",
+                "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+              },
+              {
+                "node": "K2Node_VariableGet_8",
+                "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+              },
+              {
+                "node": "K2Node_VariableGet_16",
+                "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+              }
+            ]
+          },
+          {
+            "id": "42A59421477F936C6C2927B4C1A95BA9",
+            "name": "InVisibility",
+            "direction": "input",
+            "category": "byte",
+            "subcategory": "",
+            "default_value": "Visible",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "pin_id": "C676F6EF4129D378B154AC91AD9DD1F8"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_6",
+                "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+              },
+              {
+                "node": "K2Node_VariableGet_8",
+                "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+              },
+              {
+                "node": "K2Node_VariableGet_16",
+                "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+              }
+            ]
+          },
+          {
+            "name": "InVisibility",
+            "category": "byte",
+            "default_value": "Visible",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallFunction_4'"
+      },
+      {
+        "id": "K2Node_VariableGet_6",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_6",
+        "meta": {},
+        "pins": [
+          {
+            "id": "367310E84EBE9ADA9E2FEBA7CD42774E",
+            "name": "介绍2",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_4",
+                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+              }
+            ]
+          },
+          {
+            "id": "27C0CF014C7508E9527ADEB9A154523D",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_VariableGet_6'"
+      },
+      {
+        "id": "K2Node_CallFunction_3",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SetVisibility",
+        "meta": {
+          "function_name": "SetVisibility",
+          "function_owner": null
+        },
+        "pins": [
+          {
+            "id": "4B8E712B470E5870A24059BAF164BA58",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_ComponentBoundEvent_0",
+                "pin_id": "21211C9E4B53DD1081FF3690B83ED497"
+              }
+            ]
+          },
+          {
+            "id": "C676F6EF4129D378B154AC91AD9DD1F8",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_4",
+                "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+              }
+            ]
+          },
+          {
+            "id": "59247FE14D539F49AF0D0984D2DA613F",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_5",
+                "pin_id": "272E81AE49874AD167E84BB5F35FAAED"
+              },
+              {
+                "node": "K2Node_VariableGet_10",
+                "pin_id": "A121E5B646056B2CBE211E9C8C6FEBA5"
+              }
+            ]
+          },
+          {
+            "id": "42A59421477F936C6C2927B4C1A95BA9",
+            "name": "InVisibility",
+            "direction": "input",
+            "category": "byte",
+            "subcategory": "",
+            "default_value": "Hidden",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_ComponentBoundEvent_0",
+                "pin_id": "21211C9E4B53DD1081FF3690B83ED497"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_5",
+                "pin_id": "272E81AE49874AD167E84BB5F35FAAED"
+              },
+              {
+                "node": "K2Node_VariableGet_10",
+                "pin_id": "A121E5B646056B2CBE211E9C8C6FEBA5"
+              }
+            ]
+          },
+          {
+            "name": "InVisibility",
+            "category": "byte",
+            "default_value": "Hidden",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallFunction_3'"
+      },
+      {
+        "id": "K2Node_VariableGet_5",
+        "class": "K2Node_VariableGet",
+        "kind": "K2Node_VariableGet",
+        "title": "K2Node_VariableGet_5",
+        "meta": {},
+        "pins": [
+          {
+            "id": "272E81AE49874AD167E84BB5F35FAAED",
+            "name": "介绍1",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+              }
+            ]
+          },
+          {
+            "id": "DDD0280C427146829E710C92E292E72D",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_VariableGet_5'"
+      },
+      {
+        "id": "K2Node_ComponentBoundEvent_0",
+        "class": "K2Node_ComponentBoundEvent",
+        "kind": "component_bound_event",
+        "title": "按钮-下一个.OnClicked",
+        "meta": {
+          "component": "按钮-下一个",
+          "delegate_property": "OnClicked",
+          "custom_function_name": "BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature"
+        },
+        "pins": [
+          {
+            "id": "1441C45048C5F64991E9419330D369FA",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "21211C9E4B53DD1081FF3690B83ED497",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_ComponentBoundEvent_0'"
+      },
+      {
+        "id": "K2Node_Event_2",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "Tick",
+        "meta": {
+          "event_name": "Tick"
+        },
+        "pins": [
+          {
+            "id": "4C9CD04F4E93841BFA056FACEE66BE79",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "12062FC14BC3DFF6E39DC9A9429C955C",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "2AAEF61D45D7D253CF573499121A4810",
+            "name": "MyGeometry",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "313F470F4C9D3B234185E9A628783280",
+            "name": "InDeltaTime",
+            "direction": "output",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_Event_2'"
+      },
+      {
+        "id": "K2Node_Event_1",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "Construct",
+        "meta": {
+          "event_name": "Construct"
+        },
+        "pins": [
+          {
+            "id": "BDE517EB49F39880495DD1B46D74C0D3",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "4F5E7494491F7411842DCEA2B1774F27",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_Event_1'"
+      },
+      {
+        "id": "K2Node_Event_0",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "PreConstruct",
+        "meta": {
+          "event_name": "PreConstruct"
+        },
+        "pins": [
+          {
+            "id": "26DFF8104766FED73285B690C98582BD",
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "280517D54A692FF9915793AE2937D77B",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "id": "08D3CE73476A1AC9C2438EA6CF94E272",
+            "name": "IsDesignTime",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_Event_0'"
+      }
+    ],
+    "connections": [
+      {
+        "from": {
+          "node": "K2Node_CallArrayFunction_0",
+          "pin_name": "ReturnValue",
+          "pin_id": "C085E47A43202EAA8CEA05BB9C4933C4"
+        },
+        "to": {
+          "node": "K2Node_PromotableOperator_0",
+          "pin_name": "A",
+          "pin_id": "8F53CB6646474D9796293AB93C282B53"
+        },
+        "category": "int"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_0",
+          "pin_name": "then",
+          "pin_id": "AC579EAE477F22614598439082F26C72"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_16",
+          "pin_name": "execute",
+          "pin_id": "C89C763F498A615919C03080312AD334"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_1",
+          "pin_name": "then",
+          "pin_id": "C676F6EF4129D378B154AC91AD9DD1F8"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_7",
+          "pin_name": "execute",
+          "pin_id": "A9AF40EC4F3E99E83B9706A1CC620F37"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_10",
+          "pin_name": "then",
+          "pin_id": "66BE0699491ACF2FEA9FD3B8CDEDBB0F"
+        },
+        "to": {
+          "node": "K2Node_DynamicCast_1",
+          "pin_name": "execute",
+          "pin_id": "70C2A1AF40522C828F8EA89F9E1797EF"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_11",
+          "pin_name": "ReturnValue",
+          "pin_id": "3F07D8344DD1EAE09CDC7CBA63ED3FF6"
+        },
+        "to": {
+          "node": "K2Node_DynamicCast_1",
+          "pin_name": "Object",
+          "pin_id": "C43FBB724AB3B45857BAE2AA37759E9F"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_15",
+          "pin_name": "ReturnValue",
+          "pin_id": "BB4B50554C1032ACA297849394D6087E"
+        },
+        "to": {
+          "node": "K2Node_DynamicCast_0",
+          "pin_name": "Object",
+          "pin_id": "62E58D1E42D4A9A127FEAEA52FF92941"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_16",
+          "pin_name": "then",
+          "pin_id": "509F82B84C19CAEB2F46B99B780FDAED"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_17",
+          "pin_name": "execute",
+          "pin_id": "A9DB4648486ECBC62DF1B79F9E02EE37"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_3",
+          "pin_name": "then",
+          "pin_id": "C676F6EF4129D378B154AC91AD9DD1F8"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_4",
+          "pin_name": "execute",
+          "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_5",
+          "pin_name": "then",
+          "pin_id": "C676F6EF4129D378B154AC91AD9DD1F8"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_2",
+          "pin_name": "execute",
+          "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_7",
+          "pin_name": "OutActors",
+          "pin_id": "7B3223D448C348E00910E0829DDD9119"
+        },
+        "to": {
+          "node": "K2Node_CallArrayFunction_0",
+          "pin_name": "TargetArray",
+          "pin_id": "69E25BAF474438743E007DB00FB36016"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_7",
+          "pin_name": "OutActors",
+          "pin_id": "7B3223D448C348E00910E0829DDD9119"
+        },
+        "to": {
+          "node": "K2Node_GetArrayItem_0",
+          "pin_name": "Array",
+          "pin_id": "C9B63EB74611DC377799B380FBFD23BE"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_7",
+          "pin_name": "then",
+          "pin_id": "14CF6C9F4F00543BF0C514B53E25F828"
+        },
+        "to": {
+          "node": "K2Node_IfThenElse_0",
+          "pin_name": "execute",
+          "pin_id": "361C8BCC4D1D4007D744F2B7AB28BDBE"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_ComponentBoundEvent_0",
+          "pin_name": "then",
+          "pin_id": "21211C9E4B53DD1081FF3690B83ED497"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_3",
+          "pin_name": "execute",
+          "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_ComponentBoundEvent_1",
+          "pin_name": "then",
+          "pin_id": "F80E7DB54B9B1DFCE78EC996ED5362BB"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_5",
+          "pin_name": "execute",
+          "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_ComponentBoundEvent_2",
+          "pin_name": "then",
+          "pin_id": "62FE810648185BDEDB646494C34A95AD"
+        },
+        "to": {
+          "node": "K2Node_DynamicCast_0",
+          "pin_name": "execute",
+          "pin_id": "0F28A00645E9BC477D47CD8E3868C822"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_DynamicCast_0",
+          "pin_name": "AsCaisson Player Controller",
+          "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_0",
+          "pin_name": "self",
+          "pin_id": "0FEFBB4846ACEB35FC93E7A03F2FD447"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_DynamicCast_0",
+          "pin_name": "then",
+          "pin_id": "F0459EAF406994D215DE75B9767B72C7"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_0",
+          "pin_name": "execute",
+          "pin_id": "E43EA077418A9B26B937B89D980E5C38"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_DynamicCast_0",
+          "pin_name": "AsCaisson Player Controller",
+          "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_16",
+          "pin_name": "self",
+          "pin_id": "F85151354DB59DA2E502C3A8CA511434"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_DynamicCast_0",
+          "pin_name": "AsCaisson Player Controller",
+          "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_17",
+          "pin_name": "self",
+          "pin_id": "5FC864A84270F03B40172889DFA2E24D"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_DynamicCast_1",
+          "pin_name": "AsCaisson Player Controller",
+          "pin_id": "C2CAC2DB4961E1DE9B81409ED8FEA8F7"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_12",
+          "pin_name": "self",
+          "pin_id": "C32457494C769036102959BFF7038D4F"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_DynamicCast_1",
+          "pin_name": "then",
+          "pin_id": "B9C518904436D09840244DA7619196C3"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_12",
+          "pin_name": "execute",
+          "pin_id": "9C8BEC39456685066CBDA59CEDA6F6F6"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_Event_1",
+          "pin_name": "then",
+          "pin_id": "4F5E7494491F7411842DCEA2B1774F27"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_1",
+          "pin_name": "execute",
+          "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_GetArrayItem_0",
+          "pin_name": "Output",
+          "pin_id": "7289516547BE1F4869CD08AD364FE87F"
+        },
+        "to": {
+          "node": "K2Node_VariableSet_0",
+          "pin_name": "Level3ShowcaseRef",
+          "pin_id": "1DD5DF3C4359E9F9ABC7D599D88C328A"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_IfThenElse_0",
+          "pin_name": "else",
+          "pin_id": "43FD9AFC41223AF94F791D9440C46666"
+        },
+        "to": {
+          "node": "K2Node_SpawnActorFromClass_1",
+          "pin_name": "execute",
+          "pin_id": "0B1F6AF3450D1E61AAF6F495208E6E43"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_IfThenElse_0",
+          "pin_name": "then",
+          "pin_id": "F977DC8F4EC16BA13EC3909DE2F46191"
+        },
+        "to": {
+          "node": "K2Node_VariableSet_0",
+          "pin_name": "execute",
+          "pin_id": "F360FCA94C4C16EE1AFE6F9B7864037B"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_PromotableOperator_0",
+          "pin_name": "ReturnValue",
+          "pin_id": "E75CCF6C4DDB3F416969A7BB9747F039"
+        },
+        "to": {
+          "node": "K2Node_IfThenElse_0",
+          "pin_name": "Condition",
+          "pin_id": "9B1FBBD044832AC4C3619AB038D6A11E"
+        },
+        "category": "bool"
+      },
+      {
+        "from": {
+          "node": "K2Node_Self_0",
+          "pin_name": "self",
+          "pin_id": "519B00C347A935453DD435868B6337CA"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_16",
+          "pin_name": "WidgetToClose",
+          "pin_id": "7D0D979049AA3CB7AB81A89298E17948"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_SpawnActorFromClass_1",
+          "pin_name": "ReturnValue",
+          "pin_id": "393DBAAC4946DBEF5CEDA8A8C67471D5"
+        },
+        "to": {
+          "node": "K2Node_VariableSet_2",
+          "pin_name": "Level3ShowcaseRef",
+          "pin_id": "0D2318BB413E2A63417B1C8F203D0338"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_SpawnActorFromClass_1",
+          "pin_name": "then",
+          "pin_id": "FADE407D44411F343FD2B1930E0DC9CF"
+        },
+        "to": {
+          "node": "K2Node_VariableSet_2",
+          "pin_name": "execute",
+          "pin_id": "55D50E7845881E0C0044ECAC3AD44D46"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_1",
+          "pin_name": "介绍1",
+          "pin_id": "272E81AE49874AD167E84BB5F35FAAED"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_2",
+          "pin_name": "self",
+          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_10",
+          "pin_name": "按钮-下一个",
+          "pin_id": "A121E5B646056B2CBE211E9C8C6FEBA5"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_3",
+          "pin_name": "self",
+          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_11",
+          "pin_name": "介绍2",
+          "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_5",
+          "pin_name": "self",
+          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_13",
+          "pin_name": "按钮-关闭",
+          "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_5",
+          "pin_name": "self",
+          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_14",
+          "pin_name": "按钮-上一个",
+          "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_5",
+          "pin_name": "self",
+          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_15",
+          "pin_name": "按钮-上一个",
+          "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_1",
+          "pin_name": "self",
+          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_16",
+          "pin_name": "按钮-上一个",
+          "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_4",
+          "pin_name": "self",
+          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_2",
+          "pin_name": "介绍2",
+          "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_1",
+          "pin_name": "self",
+          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_4",
+          "pin_name": "按钮-关闭",
+          "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_1",
+          "pin_name": "self",
+          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_5",
+          "pin_name": "介绍1",
+          "pin_id": "272E81AE49874AD167E84BB5F35FAAED"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_3",
+          "pin_name": "self",
+          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_6",
+          "pin_name": "介绍2",
+          "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_4",
+          "pin_name": "self",
+          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_8",
+          "pin_name": "按钮-关闭",
+          "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_4",
+          "pin_name": "self",
+          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_9",
+          "pin_name": "按钮-下一个",
+          "pin_id": "A121E5B646056B2CBE211E9C8C6FEBA5"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_2",
+          "pin_name": "self",
+          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableSet_0",
+          "pin_name": "Output_Get",
+          "pin_id": "7E80D2274C2231C02C1D6A997A087A88"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_8",
+          "pin_name": "self",
+          "pin_id": "A921AF154B76FA5969B257BB67C5470E"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableSet_0",
+          "pin_name": "then",
+          "pin_id": "5C1ED2E54C339B9F9DE2A5B58C81E919"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_8",
+          "pin_name": "execute",
+          "pin_id": "4A5003A444C971FF9107BEAEAFB5AD2D"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableSet_2",
+          "pin_name": "Output_Get",
+          "pin_id": "CD47A5564E64276ED4C04F911F44F355"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_10",
+          "pin_name": "self",
+          "pin_id": "6DA6DEBC4216B75100B2C0891BFA5CA0"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableSet_2",
+          "pin_name": "then",
+          "pin_id": "5AB84F144FFBF61D20049F9F9E4E7EBE"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_10",
+          "pin_name": "execute",
+          "pin_id": "372A85654380621C9317AFBE25577907"
+        },
+        "category": "exec"
+      }
+    ],
+    "exec_traces": [
+      [
+        "按钮-关闭.OnClicked",
+        "Cast To CaissonPlayerController",
+        "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+        "CaissonPlayerController.CloseCaissonWidget",
+        "CaissonPlayerController.OpenCaissonWidget"
+      ],
+      [
+        "按钮-上一个.OnClicked",
+        "SetVisibility",
+        "SetVisibility"
+      ],
+      [
+        "按钮-下一个.OnClicked",
+        "SetVisibility",
+        "SetVisibility"
+      ],
+      [
+        "Tick"
+      ],
+      [
+        "Construct",
+        "SetVisibility",
+        "GameplayStatics.GetAllActorsOfClass",
+        "K2Node_IfThenElse_0",
+        "SpawnActor BP_ShowcaseModel_Level3_C",
+        "Set Level3ShowcaseRef",
+        "BP_ShowcaseModel_Level3_C.ActivateLevel3Presentation",
+        "Cast To CaissonPlayerController",
+        "Controller.Possess"
+      ],
+      [
+        "Construct",
+        "SetVisibility",
+        "GameplayStatics.GetAllActorsOfClass",
+        "K2Node_IfThenElse_0",
+        "Set Level3ShowcaseRef",
+        "BP_ShowcaseModel_Level3_C.ActivateLevel3Presentation"
+      ],
+      [
+        "PreConstruct"
+      ]
+    ]
+  },
+  "other_graphs": [
+    {
+      "name": "BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 2,
+      "connection_count": 1,
+      "modules": [
+        {
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "ExecuteUbergraph_W_Level3_Introdection",
+          "meta": {
+            "function_name": "ExecuteUbergraph_W_Level3_Introdection",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "id": "97E8E7D245D3827514FA3693480A9178",
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "01F83F984D4E39BA28765E8223950458"
+                }
+              ]
+            },
+            {
+              "id": "0E3CC40B49608437ECA4DF9B9C435DA7",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "E28D88BD4B2FDC9F3FAC0EA227A990CE",
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "self",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "74FD357C484B07E8E969479EFAE037B1",
+              "name": "EntryPoint",
+              "direction": "input",
+              "category": "int",
+              "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "01F83F984D4E39BA28765E8223950458"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature"
+          },
+          "pins": [
+            {
+              "id": "01F83F984D4E39BA28765E8223950458",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "pin_id": "97E8E7D245D3827514FA3693480A9178"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "pin_name": "then",
+            "pin_id": "01F83F984D4E39BA28765E8223950458"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "pin_name": "execute",
+            "pin_id": "97E8E7D245D3827514FA3693480A9178"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
+          "ExecuteUbergraph_W_Level3_Introdection"
+        ]
+      ]
+    },
+    {
+      "name": "BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 2,
+      "connection_count": 1,
+      "modules": [
+        {
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "ExecuteUbergraph_W_Level3_Introdection",
+          "meta": {
+            "function_name": "ExecuteUbergraph_W_Level3_Introdection",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "id": "75BA71EB4466DA923F7C01AB5A497B47",
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "FBDD213A4DB301EA5FD8DFBCFFB77AF0"
+                }
+              ]
+            },
+            {
+              "id": "070887524DBE7FFE0F65B299DEA815BB",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "91CA44694FF3D7B4054E74ACBCB9D9A7",
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "self",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "E4D18CE84A4E8CFA95E540ADA5B6E3AF",
+              "name": "EntryPoint",
+              "direction": "input",
+              "category": "int",
+              "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "FBDD213A4DB301EA5FD8DFBCFFB77AF0"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature"
+          },
+          "pins": [
+            {
+              "id": "FBDD213A4DB301EA5FD8DFBCFFB77AF0",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "pin_id": "75BA71EB4466DA923F7C01AB5A497B47"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "pin_name": "then",
+            "pin_id": "FBDD213A4DB301EA5FD8DFBCFFB77AF0"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "pin_name": "execute",
+            "pin_id": "75BA71EB4466DA923F7C01AB5A497B47"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+          "ExecuteUbergraph_W_Level3_Introdection"
+        ]
+      ]
+    },
+    {
+      "name": "BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 2,
+      "connection_count": 1,
+      "modules": [
+        {
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "ExecuteUbergraph_W_Level3_Introdection",
+          "meta": {
+            "function_name": "ExecuteUbergraph_W_Level3_Introdection",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "id": "EB609E08485BCA8B14F23693BBAD2122",
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "491EE1C1462D3AF61E446DB1F39BCD3F"
+                }
+              ]
+            },
+            {
+              "id": "C4AF27CF40C53E1874F3788BA5AE2B51",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "5BFE961F4D7CF731064E0A9D44B8D070",
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "self",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "3F5B53AF436DD5FA78EF4AA5D7CEE44F",
+              "name": "EntryPoint",
+              "direction": "input",
+              "category": "int",
+              "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "491EE1C1462D3AF61E446DB1F39BCD3F"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature"
+          },
+          "pins": [
+            {
+              "id": "491EE1C1462D3AF61E446DB1F39BCD3F",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "pin_id": "EB609E08485BCA8B14F23693BBAD2122"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "pin_name": "then",
+            "pin_id": "491EE1C1462D3AF61E446DB1F39BCD3F"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "pin_name": "execute",
+            "pin_id": "EB609E08485BCA8B14F23693BBAD2122"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature",
+          "ExecuteUbergraph_W_Level3_Introdection"
+        ]
+      ]
+    },
+    {
+      "name": "Construct",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 2,
+      "connection_count": 1,
+      "modules": [
+        {
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "ExecuteUbergraph_W_Level3_Introdection",
+          "meta": {
+            "function_name": "ExecuteUbergraph_W_Level3_Introdection",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "id": "8084CF3742AA04FF8DE1298EE72A2B88",
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "07AA10CB469ED65E048F73ABE24FCFDC"
+                }
+              ]
+            },
+            {
+              "id": "341B98B5473C93C5FA55E98143A09374",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "D04DF47C45EA157028095C8663AC2B23",
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "self",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "id": "7A5CB6D549863A80CFFEA4847A78E2C6",
+              "name": "EntryPoint",
+              "direction": "input",
+              "category": "int",
+              "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "pin_id": "07AA10CB469ED65E048F73ABE24FCFDC"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:Construct.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "Construct",
+          "meta": {
+            "function_name": "Construct"
+          },
+          "pins": [
+            {
+              "id": "07AA10CB469ED65E048F73ABE24FCFDC",
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "pin_id": "8084CF3742AA04FF8DE1298EE72A2B88"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:Construct.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "pin_name": "then",
+            "pin_id": "07AA10CB469ED65E048F73ABE24FCFDC"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "pin_name": "execute",
+            "pin_id": "8084CF3742AA04FF8DE1298EE72A2B88"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "Construct",
+          "ExecuteUbergraph_W_Level3_Introdection"
+        ]
+      ]
+    }
+  ],
+  "widget_tree": {
+    "root_widget": "CanvasPanel_16",
+    "widgets": [
+      {
+        "name": "介绍2",
+        "class": "Image",
+        "display_label": "介绍2",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_6",
+        "parent": "CanvasPanel_16",
+        "children": [],
+        "properties": {
+          "Brush": "(ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/新手引导2.新手引导2'\")",
+          "Visibility": "SelfHitTestInvisible"
+        }
+      },
+      {
+        "name": "介绍1",
+        "class": "Image",
+        "display_label": "介绍1",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_3",
+        "parent": "CanvasPanel_16",
+        "children": [],
+        "properties": {
+          "Brush": "(ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/新手引导1.新手引导1'\")",
+          "Visibility": "SelfHitTestInvisible"
+        }
+      },
+      {
+        "name": "Image_77",
+        "class": "Image",
+        "display_label": "Image_77",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_2",
+        "parent": "CanvasPanel_16",
+        "children": [],
+        "properties": {
+          "Brush": "(TintColor=(SpecifiedColor=(R=0.158482,G=0.158482,B=0.158482,A=0.500000)))",
+          "Visibility": "SelfHitTestInvisible"
+        }
+      },
+      {
+        "name": "按钮-关闭",
+        "class": "Button",
+        "display_label": "按钮-关闭",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_8",
+        "parent": "CanvasPanel_16",
+        "children": [],
+        "properties": {}
+      },
+      {
+        "name": "按钮-下一个",
+        "class": "Button",
+        "display_label": "按钮-下一个",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_5",
+        "parent": "CanvasPanel_16",
+        "children": [],
+        "properties": {}
+      },
+      {
+        "name": "按钮-上一个",
+        "class": "Button",
+        "display_label": "按钮-上一个",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_7",
+        "parent": "CanvasPanel_16",
+        "children": [],
+        "properties": {}
+      },
+      {
+        "name": "CanvasPanel_16",
+        "class": "CanvasPanel",
+        "display_label": "CanvasPanel_16",
+        "is_variable": false,
+        "slot": null,
+        "parent": null,
+        "children": [
+          "介绍2",
+          "介绍1",
+          "Image_77",
+          "按钮-关闭",
+          "按钮-下一个",
+          "按钮-上一个",
+          "BackgroundBlur_64"
+        ],
+        "properties": {
+          "bExpandedInDesigner": "True"
+        }
+      },
+      {
+        "name": "BackgroundBlur_64",
+        "class": "BackgroundBlur",
+        "display_label": "BackgroundBlur_64",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_0",
+        "parent": "CanvasPanel_16",
+        "children": [],
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "slot_name": "CanvasPanelSlot_6",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_16",
+        "child": "介绍2",
+        "layout_data": "(Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_3",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_16",
+        "child": "介绍1",
+        "layout_data": "(Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_2",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_16",
+        "child": "Image_77",
+        "layout_data": "(Offsets=(Left=168.000000,Top=-16.000000,Right=-168.000000,Bottom=16.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_8",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_16",
+        "child": "按钮-关闭",
+        "layout_data": "(Offsets=(Left=-101.921875,Top=224.000000,Bottom=100.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_5",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_16",
+        "child": "按钮-下一个",
+        "layout_data": "(Offsets=(Left=-101.921875,Top=-56.540527,Right=1.921875,Bottom=102.072067),Anchors=(Minimum=(X=1.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_7",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_16",
+        "child": "按钮-上一个",
+        "layout_data": "(Offsets=(Top=-32.540527,Right=104.881973,Bottom=102.072067),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=0.000000,Y=0.500000)))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_0",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_16",
+        "child": "BackgroundBlur_64",
+        "layout_data": "(Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
+      }
+    ]
+  },
+  "variables": {
+    "new_variables": [
+      {
+        "name": "Level3ShowcaseRef",
+        "guid": "2268ABD044399E2C9D54C8BB935EFF9E",
+        "friendly_name": "Level 3Showcase Ref",
+        "category": "NSLOCTEXT(\"KismetSchema\", \"Default\", \"Default\")",
+        "property_flags": "67589",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/Engine.BlueprintGeneratedClass'/Game/UI/BP_ShowcaseModel_Level3.BP_ShowcaseModel_Level3_C'"
+        },
+        "metadata": null
+      }
+    ],
+    "generated_variables": [
+      {
+        "name": "按钮-关闭",
+        "guid": "AF7C63244F488421FA2AA0BA9948DE7D",
+        "friendly_name": "按钮-关闭",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Button'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level3_Introdection\")"
+        }
+      },
+      {
+        "name": "按钮-下一个",
+        "guid": "5BA00188477BF6099D731688FE23B477",
+        "friendly_name": "按钮-下一个",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Button'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level3_Introdection\")"
+        }
+      },
+      {
+        "name": "按钮-上一个",
+        "guid": "DD289FB94658A0A32602D0A5AD1E455B",
+        "friendly_name": "按钮-上一个",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Button'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level3_Introdection\")"
+        }
+      },
+      {
+        "name": "介绍2",
+        "guid": "65B55C7C4775A82887368982919E7105",
+        "friendly_name": "介绍2",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Image'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level3_Introdection\")"
+        }
+      },
+      {
+        "name": "介绍1",
+        "guid": "53300C914CE5152DB554C5B4B238E7C0",
+        "friendly_name": "介绍1",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Image'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level3_Introdection\")"
+        }
+      }
+    ],
+    "widget_variable_guid_map": {
+      "CanvasPanel_16": "1104B6734AC35A8B8216A0BBF04AAF4C",
+      "BackgroundBlur_64": "365755BD4FF40AF46D0D278589D7BC60",
+      "Image_77": "31067AA64E4811C08EBA848855B60F62",
+      "介绍1": "53300C914CE5152DB554C5B4B238E7C0",
+      "按钮-下一个": "5BA00188477BF6099D731688FE23B477",
+      "介绍2": "65B55C7C4775A82887368982919E7105",
+      "按钮-上一个": "DD289FB94658A0A32602D0A5AD1E455B",
+      "按钮-关闭": "AF7C63244F488421FA2AA0BA9948DE7D"
+    }
+  },
+  "special_settings": [
+    {
+      "target": "介绍2",
+      "property": "Brush",
+      "value": "(ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/新手引导2.新手引导2'\")"
+    },
+    {
+      "target": "介绍2",
+      "property": "Visibility",
+      "value": "SelfHitTestInvisible"
+    },
+    {
+      "target": "介绍1",
+      "property": "Brush",
+      "value": "(ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/新手引导1.新手引导1'\")"
+    },
+    {
+      "target": "介绍1",
+      "property": "Visibility",
+      "value": "SelfHitTestInvisible"
+    },
+    {
+      "target": "Image_77",
+      "property": "Brush",
+      "value": "(TintColor=(SpecifiedColor=(R=0.158482,G=0.158482,B=0.158482,A=0.500000)))"
+    },
+    {
+      "target": "Image_77",
+      "property": "Visibility",
+      "value": "SelfHitTestInvisible"
+    },
+    {
+      "target": "介绍2",
+      "property": "LayoutData",
+      "value": "(Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
+    },
+    {
+      "target": "介绍1",
+      "property": "LayoutData",
+      "value": "(Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
+    },
+    {
+      "target": "Image_77",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=168.000000,Top=-16.000000,Right=-168.000000,Bottom=16.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
+    },
+    {
+      "target": "按钮-关闭",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=-101.921875,Top=224.000000,Bottom=100.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))"
+    },
+    {
+      "target": "按钮-下一个",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=-101.921875,Top=-56.540527,Right=1.921875,Bottom=102.072067),Anchors=(Minimum=(X=1.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
+    },
+    {
+      "target": "按钮-上一个",
+      "property": "LayoutData",
+      "value": "(Offsets=(Top=-32.540527,Right=104.881973,Bottom=102.072067),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=0.000000,Y=0.500000)))"
+    },
+    {
+      "target": "BackgroundBlur_64",
+      "property": "LayoutData",
+      "value": "(Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
+    }
+  ],
+  "doc_view": {
+    "blueprint_name": "W_Level3_Introdection",
+    "blueprint_class": "WidgetBlueprint",
+    "module_count": 43,
+    "connection_count": 46,
+    "component_events": [
+      {
+        "title": "按钮-关闭.OnClicked",
+        "id": "K2Node_ComponentBoundEvent_2",
+        "component": "按钮-关闭",
+        "delegate_property": "OnClicked"
+      },
+      {
+        "title": "按钮-上一个.OnClicked",
+        "id": "K2Node_ComponentBoundEvent_1",
+        "component": "按钮-上一个",
+        "delegate_property": "OnClicked"
+      },
+      {
+        "title": "按钮-下一个.OnClicked",
+        "id": "K2Node_ComponentBoundEvent_0",
+        "component": "按钮-下一个",
+        "delegate_property": "OnClicked"
+      }
+    ],
+    "exec_traces": [
+      [
+        "按钮-关闭.OnClicked",
+        "Cast To CaissonPlayerController",
+        "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+        "CaissonPlayerController.CloseCaissonWidget",
+        "CaissonPlayerController.OpenCaissonWidget"
+      ],
+      [
+        "按钮-上一个.OnClicked",
+        "SetVisibility",
+        "SetVisibility"
+      ],
+      [
+        "按钮-下一个.OnClicked",
+        "SetVisibility",
+        "SetVisibility"
+      ],
+      [
+        "Tick"
+      ],
+      [
+        "Construct",
+        "SetVisibility",
+        "GameplayStatics.GetAllActorsOfClass",
+        "K2Node_IfThenElse_0",
+        "SpawnActor BP_ShowcaseModel_Level3_C",
+        "Set Level3ShowcaseRef",
+        "BP_ShowcaseModel_Level3_C.ActivateLevel3Presentation",
+        "Cast To CaissonPlayerController",
+        "Controller.Possess"
+      ],
+      [
+        "Construct",
+        "SetVisibility",
+        "GameplayStatics.GetAllActorsOfClass",
+        "K2Node_IfThenElse_0",
+        "Set Level3ShowcaseRef",
+        "BP_ShowcaseModel_Level3_C.ActivateLevel3Presentation"
+      ],
+      [
+        "PreConstruct"
+      ]
+    ],
+    "widget_outline": [
+      {
+        "name": "介绍2",
+        "class": "Image",
+        "parent": "CanvasPanel_16",
+        "children": []
+      },
+      {
+        "name": "介绍1",
+        "class": "Image",
+        "parent": "CanvasPanel_16",
+        "children": []
+      },
+      {
+        "name": "Image_77",
+        "class": "Image",
+        "parent": "CanvasPanel_16",
+        "children": []
+      },
+      {
+        "name": "按钮-关闭",
+        "class": "Button",
+        "parent": "CanvasPanel_16",
+        "children": []
+      },
+      {
+        "name": "按钮-下一个",
+        "class": "Button",
+        "parent": "CanvasPanel_16",
+        "children": []
+      },
+      {
+        "name": "按钮-上一个",
+        "class": "Button",
+        "parent": "CanvasPanel_16",
+        "children": []
+      },
+      {
+        "name": "CanvasPanel_16",
+        "class": "CanvasPanel",
+        "parent": null,
+        "children": [
+          "介绍2",
+          "介绍1",
+          "Image_77",
+          "按钮-关闭",
+          "按钮-下一个",
+          "按钮-上一个",
+          "BackgroundBlur_64"
+        ]
+      },
+      {
+        "name": "BackgroundBlur_64",
+        "class": "BackgroundBlur",
+        "parent": "CanvasPanel_16",
+        "children": []
+      }
+    ],
+    "notices": [
+      "This export is built from full asset text, so it includes EventGraph, other detailed graphs, member variables, and generated variables that are serialized into the asset.",
+      "WidgetBlueprint exports also include WidgetTree structure and widget-specific designer properties.",
+      "Runtime-only state and values not serialized into the asset cannot be reconstructed from this exporter."
+    ]
+  }
+}

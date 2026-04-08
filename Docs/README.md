@@ -2,6 +2,8 @@
 
 本目录用于集中描述当前项目的开发阶段、蓝图职责、蓝图导出文档以及维护入口，方便开发者和 AI 在接手时快速找到“当前真实状态”。
 
+如果是第一次接手项目，或者 AI 刚开始分析项目，请先从根目录的 [README.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/README.md) 开始，再顺着本页继续往下读。
+
 ## 1. 先看哪几份文档
 
 如果要理解当前项目的整体开发状态，建议按下面顺序阅读：
@@ -33,10 +35,13 @@
 
 1. [W_Level2.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level2.md)
 2. [BP_ShowcaseModel.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_ShowcaseModel.md)
-3. [BP_CaissonController.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_CaissonController.md)
-4. [W_Level2.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/W_Level2.json)
-5. [BP_ShowcaseModel.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/BP_ShowcaseModel.json)
-6. [BP_CaissonController.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/BP_CaissonController.json)
+3. [BP_ShowcaseModel_Level3.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_ShowcaseModel_Level3.md)
+4. [W_Level3_Introdection.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level3_Introdection.md)
+5. [BP_CaissonController.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_CaissonController.md)
+6. [W_Level2.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/W_Level2.json)
+7. [BP_ShowcaseModel.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/BP_ShowcaseModel.json)
+8. [BP_ShowcaseModel_Level3.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/BP_ShowcaseModel_Level3.json)
+9. [W_Level3_Introdection.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/W_Level3_Introdection.json)
 
 ## 3. 当前项目所处阶段
 
@@ -46,11 +51,13 @@
 2. `Level1` 已切换到真实世界模型展示链路。
 3. `Level2 Step 1` 的顺序点击三处目标已跑通。
 4. `Level2` 已接通“正确点击目标 -> 镜头拉近 -> 显示介绍 UI -> 点击介绍 UI -> 回原视角”的流程闭环。
-5. `Level2` 当前下一步重点是：
-   - 收尾悬停高亮
-   - 收尾正式点亮
-   - 补齐第三次完成后的继续提示
-   - 完成 `Level3` 跳转联调
+5. `W_Level2` 当前已新增继续提示容器，并已接通 `Level2 -> W_Level3_Introdection` 跳转链路。
+6. `BP_ShowcaseModel` 当前已新增 `DeactivateLevel2Presentation`，用于 `Level2` 退场。
+7. `BP_ShowcaseModel_Level3` 与 `W_Level3_Introdection` 当前已经建立，可在 `Level3` 介绍页中生成或复用第三关展示模型。
+8. 当前下一步重点是：
+   - 收尾 `Level2` 的悬停高亮与正式点亮
+   - 继续联调 `Level2` 退场与 `Level3` 入口体验
+   - 在已建立的 `Level3` 介绍页基础上进入新的玩法开发
 
 ## 4. 蓝图文档如何更新
 
@@ -71,7 +78,27 @@ powershell -ExecutionPolicy Bypass -File Docs\generate_blueprint_docs.ps1
 powershell -ExecutionPolicy Bypass -File Docs\generate_blueprint_docs.ps1 --sync-all-docs
 ```
 
-## 5. 当前建议的接手入口
+## 5. 标准协作开发流
+
+以后默认采用下面这套流程：
+
+1. 用户提出本次开发目标
+2. AI 先阅读项目文档和相关蓝图文档
+3. AI 先输出计划
+4. 用户确认计划后，AI 负责修改代码
+5. AI 引导开发者在 UE 里手动完成蓝图接线、资源配置和摆放
+6. 开发完成后，AI 负责更新相关文档
+7. AI 引导开发者只导出这次新改过的蓝图 `.T3D`
+8. AI 引导开发者执行增量更新脚本，只更新新的蓝图文档
+
+如果开发中卡住，或者 AI 需要确认蓝图当前真实接线，流程改为：
+
+1. AI 指定需要查看的蓝图
+2. 开发者从 UE 手动导出这些蓝图 `.T3D`
+3. 只更新这些新的蓝图文档
+4. AI 基于新的 `md/json` 继续分析和调试
+
+## 6. 当前建议的接手入口
 
 如果后续开发或 AI 需要继续接手 `Level2`，建议从下面顺序开始：
 
@@ -80,9 +107,11 @@ powershell -ExecutionPolicy Bypass -File Docs\generate_blueprint_docs.ps1 --sync
 3. 再查看：
    - [W_Level2.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level2.md)
    - [BP_ShowcaseModel.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_ShowcaseModel.md)
+   - [BP_ShowcaseModel_Level3.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_ShowcaseModel_Level3.md)
+   - [W_Level3_Introdection.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level3_Introdection.md)
 4. 如果需要确认详细节点，再回看对应 `json`
 
-## 6. 文档维护约定
+## 7. 文档维护约定
 
 后续每次改完蓝图或蓝图导出脚本，建议至少同步更新：
 

@@ -23,16 +23,11 @@
 
 ## 5. 事件图主链
 
-### 5.1 组件事件
-
-1. TL_CameraMove -> OnComponentActivated
-
 ### 5.2 主执行链
 
 1. ReceiveTick
 1. ReceiveActorBeginOverlap
 1. ReceiveBeginPlay
-1. TL_CameraMove.OnComponentActivated
 
 ## 6. 关键变量
 
@@ -64,7 +59,23 @@
 
 ## 8. 其他图表
 
-### 8.1 FocusTargetById
+### 8.1 DeactivateLevel2Presentation
+
+1. 图类型：BlueprintGraph.EdGraphSchema_K2
+1. 模块数：4
+1. 连接数：3
+1. 执行链：DeactivateLevel2Presentation -> SetActorHiddenInGame -> SetActorEnableCollision -> SetActorTickEnabled
+1. 关键节点：
+   - SetActorTickEnabled
+     输入：execute <- K2Node_CallFunction_1:53308BB9445AE260A52E5FB4F084958F
+   - SetActorEnableCollision
+     输入：execute <- K2Node_CallFunction_0:49CB6C7B4024E6CDA13D9D9C122915B4
+   - SetActorHiddenInGame
+     输入：execute <- K2Node_FunctionEntry_0:D26AA3E244732D2DD475D29328D7E947
+     输入：bNewHidden = true
+   - DeactivateLevel2Presentation
+
+### 8.2 FocusTargetById
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：3
@@ -72,10 +83,10 @@
 1. 执行链：FocusTargetById -> SetVariableOnPersistentFrame -> ExecuteUbergraph_BP_ShowcaseModel
 1. 关键节点：
    - ExecuteUbergraph_BP_ShowcaseModel
-     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:C0911E584C873754FD73C08A85C8263A
+     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:C837F6A6442B83BC39E0E2833C4C2826
    - FocusTargetById
 
-### 8.2 OnReturnToDefaultFinished
+### 8.3 OnReturnToDefaultFinished
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：1
@@ -84,7 +95,7 @@
 1. 关键节点：
    - OnReturnToDefaultFinished
 
-### 8.3 ReturnToDefaultView
+### 8.4 ReturnToDefaultView
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -92,10 +103,10 @@
 1. 执行链：ReturnToDefaultView -> ExecuteUbergraph_BP_ShowcaseModel
 1. 关键节点：
    - ExecuteUbergraph_BP_ShowcaseModel
-     输入：execute <- K2Node_FunctionEntry_0:004256BD47DBB4F6A36C568C8BF6377E
+     输入：execute <- K2Node_FunctionEntry_0:BDC224164C0FCEC52E2A6AAE9CCAB2C2
    - ReturnToDefaultView
 
-### 8.4 TL_CameraMove__FinishedFunc
+### 8.5 TL_CameraMove__FinishedFunc
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -103,10 +114,10 @@
 1. 执行链：TL_CameraMove__FinishedFunc -> ExecuteUbergraph_BP_ShowcaseModel
 1. 关键节点：
    - ExecuteUbergraph_BP_ShowcaseModel
-     输入：execute <- K2Node_FunctionEntry_0:DEFA025D40507A845144B6B7819EB3B3
+     输入：execute <- K2Node_FunctionEntry_0:B53E4947459D2324F9EDD194BFFBE8C2
    - TL_CameraMove__FinishedFunc
 
-### 8.5 TL_CameraMove__UpdateFunc
+### 8.6 TL_CameraMove__UpdateFunc
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -114,10 +125,10 @@
 1. 执行链：TL_CameraMove__UpdateFunc -> ExecuteUbergraph_BP_ShowcaseModel
 1. 关键节点：
    - ExecuteUbergraph_BP_ShowcaseModel
-     输入：execute <- K2Node_FunctionEntry_0:8CB92A214242065DEE1D5087B4109E63
+     输入：execute <- K2Node_FunctionEntry_0:569E86DE43BE34F7974B949AAC54AAFD
    - TL_CameraMove__UpdateFunc
 
-### 8.6 UserConstructionScript
+### 8.7 UserConstructionScript
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：1

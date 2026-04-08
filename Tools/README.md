@@ -130,6 +130,7 @@ py Tools\ue_asset_doc_exporter_fixed_v3.py --generate-md-from-json
 3. 检查对应的：
    - `Docs/BlueprintExports/*.json`
    - `Docs/Blueprints/*.md`
+4. 只更新这次新导出的蓝图，不默认全量重建
 
 ### 4.2 脚本升级后
 
@@ -139,6 +140,18 @@ py Tools\ue_asset_doc_exporter_fixed_v3.py --generate-md-from-json
    - `W_Level2`
    - `BP_ShowcaseModel`
    - `BP_CaissonController`
+
+### 4.3 调试时的推荐用法
+
+如果 AI 或开发者只是想确认当前蓝图现状，不是做全量整理，推荐这样做：
+
+1. 明确当前需要检查的蓝图
+2. 只从 UE 导出这些蓝图的 `.T3D`
+3. 执行默认增量更新
+4. AI 再阅读新生成的：
+   - `Docs/Blueprints/*.md`
+   - `Docs/BlueprintExports/*.json`
+5. 再继续分析和调试
 
 ## 5. 运行输出说明
 

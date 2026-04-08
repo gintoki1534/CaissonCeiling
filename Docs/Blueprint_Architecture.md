@@ -14,13 +14,15 @@
 
 1. [开发流程.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/开发流程.md)
    - 说明当前开发阶段、Level2 进度和后续开发顺序
-2. [CaissonCeiling_Migration_Guide.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/CaissonCeiling_Migration_Guide.md)
+2. [../README.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/README.md)
+   - 项目根入口，约定 AI 与开发者的标准协作开发流
+3. [CaissonCeiling_Migration_Guide.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/CaissonCeiling_Migration_Guide.md)
    - 说明当前 C++/蓝图职责边界和重构原则
-3. [README.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/README.md)
+4. [README.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/README.md)
    - 文档总索引，方便定位当前蓝图状态、导出文档和维护入口
-4. `Docs/BlueprintExports/`
+5. `Docs/BlueprintExports/`
    - 存放原始蓝图导出 `json`
-5. `Docs/Blueprints/`
+6. `Docs/Blueprints/`
    - 存放按蓝图拆分后的可读文档
 
 ## 2. 当前项目结构总览
@@ -55,17 +57,19 @@
 1. `BP_CaissonController`
 2. `BP_CaissonGameMode`
 3. `BP_ShowcaseModel`
-4. `BP_ShowcaseModel_BC2`
-5. `MainMenu`
-6. `W_MainMenu`
-7. `W_Level1`
-8. `W_Level1_Introdection`
-9. `W_Level2`
-10. `W_Level3`
-11. `背景`
-12. `M_UI_Model`
-13. `RT_ModelViewer`
-14. `LevelTargets/`
+4. `BP_ShowcaseModel_Level3`
+5. `BP_ShowcaseModel_BC2`
+6. `MainMenu`
+7. `W_MainMenu`
+8. `W_Level1`
+9. `W_Level1_Introdection`
+10. `W_Level2`
+11. `W_Level3`
+12. `W_Level3_Introdection`
+13. `背景`
+14. `M_UI_Model`
+15. `RT_ModelViewer`
+16. `LevelTargets/`
 
 `Content/UI/LevelTargets/` 下当前目标蓝图：
 
@@ -282,7 +286,13 @@
    - `OnReturnToDefaultFinished`
 7. 当前按钮点击后会调用 `BP_ShowcaseModel.ReturnToDefaultView`
 8. 当前回原视角完成后会通过 `CompleteLevel2InspectPresentation` 继续放开关卡流程
-9. 第三次完成后的继续提示和 `Level3` 跳转仍需要最终联调确认
+9. 当前已新增 `continue` 容器，默认隐藏，用于显示“点击屏幕以继续”
+10. 当前 `HandleFinalContinuePromptRequested` 已用于显示继续提示
+11. 当前 `HandleNextLevelRequested` 已接入：
+   - `BP_ShowcaseModel.DeactivateLevel2Presentation`
+   - `CloseCaissonWidget`
+   - `OpenCaissonWidget(W_Level3_Introdection)`
+12. `Level2 -> Level3` 的入口链路已经建立，但仍需要继续联调整体验证
 
 ### 5.5 `BP_ShowcaseModel`
 
@@ -324,7 +334,32 @@
    - `OnReturnToDefaultFinished`
    - `TL_CameraMove__UpdateFunc`
    - `TL_CameraMove__FinishedFunc`
-6. 当前 `BP_ShowcaseModel` 已承担 `Level2` 镜头拉近和回原位演出，不再只是静态展示 Pawn
+6. 当前已新增：
+   - `DeactivateLevel2Presentation`
+7. `DeactivateLevel2Presentation` 当前用于 `Level2` 退场，执行：
+   - `SetActorHiddenInGame(true)`
+   - `SetActorEnableCollision(false)`
+   - `SetActorTickEnabled(false)`
+8. 当前 `BP_ShowcaseModel` 已承担 `Level2` 镜头拉近、回原位演出以及退场隐藏，不再只是静态展示 Pawn
+
+### 5.5.1 `BP_ShowcaseModel_Level3`
+
+定位：
+
+1. `Level3` 当前的新展示 Pawn 蓝图
+2. 复制自 `BP_ShowcaseModel` 后用于承载第三关介绍阶段与后续展示模型
+
+当前已确认的结构结论：
+
+1. 其父类当前仍为 `CaissonCeiling.CaissonPawn`
+2. 当前已新增：
+   - `ActivateLevel3Presentation`
+3. `ActivateLevel3Presentation` 当前用于 `Level3` 展示模型激活，执行：
+   - `SetActorHiddenInGame(false)`
+   - `SetActorEnableCollision(...)`
+   - `SetActorTickEnabled(true)`
+4. 当前不把它视为“Level3 玩法逻辑蓝图”，而视为 `Level3` 的展示载体入口
+5. 后续如果 `Level3` 建立新的 C++ 流程类，再决定是否需要调整父类或进一步拆职责
 
 `BP_ShowcaseModel_BC2`：
 
@@ -398,6 +433,23 @@ BP_CaissonGameMode
 -> W_Level1 / W_Level2 只叠 UI，不再叠模型贴图
 ```
 
+补充：
+
+```text
+W_Level3_Introdection
+-> 构造时 GetAllActorsOfClass(BP_ShowcaseModel_Level3)
+-> 若已有则复用
+-> 若无则 SpawnActor(BP_ShowcaseModel_Level3)
+-> Set Level3ShowcaseRef
+-> ActivateLevel3Presentation
+-> CaissonPlayerController.Possess
+```
+
+这条链路说明：
+
+1. `Level3` 介绍页当前已能在半透明 UI 背后显示第三关模型
+2. `W_Level3_Introdection` 当前承担 `Level3` 展示 Pawn 的创建或复用入口
+
 ### 6.3 Level2 当前主链路
 
 ```text
@@ -467,7 +519,9 @@ PlayerTick
 2. `BP_CaissonController`
 3. `W_Level2`
 4. `BP_ShowcaseModel`
-5. `LevelTargets/` 下 3 个目标蓝图
+5. `BP_ShowcaseModel_Level3`
+6. `W_Level3_Introdection`
+7. `LevelTargets/` 下 3 个目标蓝图
 
 ### 7.2 已存在，但仍应谨慎修改的资产
 
@@ -486,6 +540,13 @@ PlayerTick
 1. 修改前先在编辑器确认当前接线
 2. 如果接线经过验收，请把结果补写回本文档
 3. 在未确认前，不要让 AI 把它们当成“已稳定定稿”的结构
+
+补充说明：
+
+1. `W_Level3` 当前从导出结构看仍是占位页，不应视为已进入正式玩法开发状态
+2. 当前项目里已实际建立的介绍页资产名为 `W_Level3_Introdection`
+3. `W_Level3_Introdection` 当前已经完成基础接线，可作为 `Level3` 入口继续维护
+4. 不建议继续直接复用 `W_Level1_Introdection` 原资产，因为它原本关闭后会打开 `W_Level2`
 
 ## 8. 后续新增蓝图时的标准写法
 
@@ -541,6 +602,12 @@ PlayerTick
 3. 关键接线链路是什么
 
 如果没有经过运行验证，就不要写“已确认可用”。
+
+如果当前蓝图现状不明确，先不要凭经验补文档，而应先：
+
+1. 导出当前需要确认的蓝图 `.T3D`
+2. 更新对应 `json/md`
+3. 再回写本文档
 
 ## 10. 当前结论
 

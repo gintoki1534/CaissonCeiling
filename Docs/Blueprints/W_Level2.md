@@ -25,12 +25,27 @@
 1. 根控件：CanvasPanel_38
 
 ```text
+TextBlock_1 [TextBlock] | parent=Introducing_3 | children=无
+Image [Image] | parent=Introducing_3 | children=无
+TextBlock [TextBlock] | parent=Introducing_2 | children=无
+Image_2 [Image] | parent=Introducing_2 | children=无
+TextBlock_71 [TextBlock] | parent=Introducing_1 | children=无
+Image_1 [Image] | parent=Introducing_1 | children=无
+TextBlock_2 [TextBlock] | parent=continue | children=无
 Highlight_1 [Image] | parent=CanvasPanel_38 | children=无
+EditableTextBox_290 [EditableTextBox] | parent=CanvasPanel_38 | children=无
 云纹框架 [Image] | parent=CanvasPanel_38 | children=无
+云纹框架-标题 [EditableTextBox] | parent=CanvasPanel_38 | children=无
+StepNum_3 [EditableTextBox] | parent=CanvasPanel_38 | children=无
 CurrentStepBackGround_1 [Image] | parent=CanvasPanel_38 | children=无
 CurrentStepBackGround_2 [Image] | parent=CanvasPanel_38 | children=无
+StepNum_2 [EditableTextBox] | parent=CanvasPanel_38 | children=无
 Finish_3 [Image] | parent=CanvasPanel_38 | children=无
+StepNum_1 [EditableTextBox] | parent=CanvasPanel_38 | children=无
+Step2_content [EditableTextBox] | parent=CanvasPanel_38 | children=无
+Step3_content [EditableTextBox] | parent=CanvasPanel_38 | children=无
 Finish_2 [Image] | parent=CanvasPanel_38 | children=无
+Step1_content [EditableTextBox] | parent=CanvasPanel_38 | children=无
 CurrentStepBackGround [Image] | parent=CanvasPanel_38 | children=无
 Finish_1 [Image] | parent=CanvasPanel_38 | children=无
 Highlight_3 [Image] | parent=CanvasPanel_38 | children=无
@@ -40,27 +55,14 @@ StepFinish [Image] | parent=CanvasPanel_38 | children=无
 Circle_2 [Image] | parent=CanvasPanel_38 | children=无
 Highlight_2 [Image] | parent=CanvasPanel_38 | children=无
 Circle_3 [Image] | parent=CanvasPanel_38 | children=无
-云纹框架-标题 [EditableTextBox] | parent=CanvasPanel_38 | children=无
-StepNum_3 [EditableTextBox] | parent=CanvasPanel_38 | children=无
-StepNum_2 [EditableTextBox] | parent=CanvasPanel_38 | children=无
-StepNum_1 [EditableTextBox] | parent=CanvasPanel_38 | children=无
-Step3_content [EditableTextBox] | parent=CanvasPanel_38 | children=无
-Step2_content [EditableTextBox] | parent=CanvasPanel_38 | children=无
-Step1_content [EditableTextBox] | parent=CanvasPanel_38 | children=无
-EditableTextBox_290 [EditableTextBox] | parent=CanvasPanel_38 | children=无
-CanvasPanel_38 [CanvasPanel] | parent=ROOT | children=Highlight_1, EditableTextBox_290, 云纹框架, 云纹框架-标题, CurrentStepBackGround_1, CurrentStepBackGround_2, StepNum_2, Finish_3, StepNum_1, Step2_content, Step3_content, Finish_2, Step1_content, Finish_1, Highlight_3, StepFinish_2, StepFinish_1, StepFinish, Circle_2, Highlight_2, Circle_3, CurrentStepBackGround, Introducing_1, StepNum_3, Introducing_3, Introducing_2
-Introducing_1 [CanvasPanel] | parent=CanvasPanel_38 | children=Image_1, TextBlock_71, Indtro_Button1
-Image_1 [Image] | parent=Introducing_1 | children=无
-Introducing_3 [CanvasPanel] | parent=CanvasPanel_38 | children=Indtro_Button3, TextBlock_1, Image
-Image [Image] | parent=Introducing_3 | children=无
-Introducing_2 [CanvasPanel] | parent=CanvasPanel_38 | children=Image_2, Indtro_Button2, TextBlock
-Image_2 [Image] | parent=Introducing_2 | children=无
-TextBlock_71 [TextBlock] | parent=Introducing_1 | children=无
-Indtro_Button1 [Button] | parent=Introducing_1 | children=无
-Indtro_Button2 [Button] | parent=Introducing_2 | children=无
+Introducing_3 [CanvasPanel] | parent=CanvasPanel_38 | children=TextBlock_1, Image, Indtro_Button3
+Introducing_2 [CanvasPanel] | parent=CanvasPanel_38 | children=TextBlock, Image_2, Indtro_Button2
+Introducing_1 [CanvasPanel] | parent=CanvasPanel_38 | children=TextBlock_71, Image_1, Indtro_Button1
+continue [CanvasPanel] | parent=CanvasPanel_38 | children=TextBlock_2
+CanvasPanel_38 [CanvasPanel] | parent=ROOT | children=continue, Introducing_3, Introducing_2, Introducing_1, StepNum_3, StepNum_2, StepNum_1, Step3_content, Step2_content, Step1_content, CurrentStepBackGround_2, CurrentStepBackGround_1, CurrentStepBackGround, StepFinish_2, StepFinish_1, StepFinish, Finish_3, Finish_2, Finish_1, Circle_3, Circle_2, Highlight_3, Highlight_2, Highlight_1, EditableTextBox_290, 云纹框架-标题, 云纹框架
 Indtro_Button3 [Button] | parent=Introducing_3 | children=无
-TextBlock [TextBlock] | parent=Introducing_2 | children=无
-TextBlock_1 [TextBlock] | parent=Introducing_3 | children=无
+Indtro_Button2 [Button] | parent=Introducing_2 | children=无
+Indtro_Button1 [Button] | parent=Introducing_1 | children=无
 ```
 
 ## 5. 事件图主链
@@ -70,16 +72,14 @@ TextBlock_1 [TextBlock] | parent=Introducing_3 | children=无
 1. Indtro_Button3 -> OnClicked
 1. Indtro_Button2 -> OnClicked
 1. Indtro_Button1 -> OnClicked
-1. Button_1 -> OnClicked
 
 ### 5.2 主执行链
 
-1. OnFocusLost
-1. Construct -> SetVisibility -> SetVisibility -> Cast To CaissonPlayerController -> Set CaissonControllerRef -> KismetSystemLibrary.ControlScreensaver -> K2Node_AddDelegate_1 -> Cast To BP_ShowcaseModel_C -> Set ShowcaseRef -> K2Node_AddDelegate_0 -> K2Node_AddDelegate_2 -> K2Node_AddDelegate_3 -> K2Node_AddDelegate_4
 1. Indtro_Button3.OnClicked -> SetVisibility -> BP_ShowcaseModel_C.ReturnToDefaultView -> KismetSystemLibrary.PrintString
 1. Indtro_Button2.OnClicked -> SetVisibility -> BP_ShowcaseModel_C.ReturnToDefaultView -> KismetSystemLibrary.PrintString
 1. Indtro_Button1.OnClicked -> SetVisibility -> BP_ShowcaseModel_C.ReturnToDefaultView -> KismetSystemLibrary.PrintString
-1. Button_1.OnClicked
+1. OnFocusLost
+1. Construct -> SetVisibility -> SetVisibility -> Cast To CaissonPlayerController -> Set CaissonControllerRef -> KismetSystemLibrary.ControlScreensaver -> K2Node_AddDelegate_1 -> Cast To BP_ShowcaseModel_C -> Set ShowcaseRef -> K2Node_AddDelegate_0 -> K2Node_AddDelegate_2 -> K2Node_AddDelegate_3 -> K2Node_AddDelegate_4
 
 ## 6. 关键变量
 
@@ -160,6 +160,7 @@ TextBlock_1 [TextBlock] | parent=Introducing_3 | children=无
 1. CurrentStepBackGround_2 -> /Script/CoreUObject.Class'/Script/UMG.Image'
 1. CurrentStepBackGround_1 -> /Script/CoreUObject.Class'/Script/UMG.Image'
 1. CurrentStepBackGround -> /Script/CoreUObject.Class'/Script/UMG.Image'
+1. continue -> /Script/CoreUObject.Class'/Script/UMG.CanvasPanel'
 1. Circle_3 -> /Script/CoreUObject.Class'/Script/UMG.Image'
 1. Circle_2 -> /Script/CoreUObject.Class'/Script/UMG.Image'
 1. Anim_Glow_1 -> /Script/CoreUObject.Class'/Script/UMG.WidgetAnimation'
@@ -170,12 +171,30 @@ TextBlock_1 [TextBlock] | parent=Introducing_3 | children=无
 
 1. W_Level2.TickPrediction = OnDemand
    原因：Anim
+1. TextBlock_1.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "9E60DED647D1CDD732F04484EAA7D1EE", "介绍3")
+1. TextBlock_1.ColorAndOpacity = (SpecifiedColor=(R=0.000000,G=0.000000,B=0.000000,A=1.000000))
+1. Image.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/对话框底部.对话框底部'")
+1. TextBlock.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "226173854CE71E150C4664B242F564D9", "介绍2")
+1. TextBlock.ColorAndOpacity = (SpecifiedColor=(R=0.000000,G=0.000000,B=0.000000,A=1.000000))
+1. Image_2.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/对话框底部.对话框底部'")
+1. TextBlock_71.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "42557600434EDB78BA1E72936E75B267", "介绍1")
+1. TextBlock_71.ColorAndOpacity = (SpecifiedColor=(R=0.000000,G=0.000000,B=0.000000,A=1.000000))
+1. Image_1.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/对话框底部.对话框底部'")
+1. TextBlock_2.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "562B9E9B4B9734D98D8C93A56FDD4931", "点击屏幕以继续")
 1. Highlight_1.Brush = (ImageType=FullColor,ImageSize=(X=77.000000,Y=77.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/Ellipse_27.Ellipse_27'")
+1. EditableTextBox_290.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "1EEF58504002B4647869D0ADF90D534B", "修复步骤")
 1. 云纹框架.Brush = (ImageType=FullColor,ImageSize=(X=1520.000000,Y=1278.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/新手引导2.新手引导2'")
+1. 云纹框架-标题.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "048C76F54EF8E8D50E91C0B6956301D0", "云纹框架")
+1. StepNum_3.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "B3E45590466898AFAA3F7690F96D7322", "3")
 1. CurrentStepBackGround_1.Brush = (ImageType=FullColor,ImageSize=(X=905.000000,Y=92.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/高亮显示背景.高亮显示背景'")
 1. CurrentStepBackGround_2.Brush = (ImageType=FullColor,ImageSize=(X=905.000000,Y=92.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/高亮显示背景.高亮显示背景'")
+1. StepNum_2.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "0D25CA1D4BAFFBE3D14EA388B70B947B", "2")
 1. Finish_3.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/对勾.对勾'")
+1. StepNum_1.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "57BEF76E48FA6F4A3A374A84DE5AB292", "1")
+1. Step2_content.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "D4EE6B6B48163347E55A648812F847EF", "寻找[云纹雕饰]")
+1. Step3_content.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "4D805242469EAB002BFB32A5C8E2594F", "寻找[唐代星空图]")
 1. Finish_2.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/对勾.对勾'")
+1. Step1_content.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "CCC45BDA47F3DBD432AD998CF34DFDB8", "寻找[天宫楼阁]")
 1. CurrentStepBackGround.Brush = (ImageType=FullColor,ImageSize=(X=905.000000,Y=92.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/高亮显示背景.高亮显示背景'")
 1. Finish_1.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/对勾.对勾'")
 1. Highlight_3.Brush = (ImageType=FullColor,ImageSize=(X=77.000000,Y=77.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/Ellipse_27.Ellipse_27'")
@@ -185,67 +204,53 @@ TextBlock_1 [TextBlock] | parent=Introducing_3 | children=无
 1. Circle_2.Brush = (ImageType=FullColor,ImageSize=(X=37.000000,Y=36.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/Ellipse_28.Ellipse_28'")
 1. Highlight_2.Brush = (ImageType=FullColor,ImageSize=(X=77.000000,Y=77.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/Ellipse_27.Ellipse_27'")
 1. Circle_3.Brush = (ImageType=FullColor,ImageSize=(X=37.000000,Y=36.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/Ellipse_28.Ellipse_28'")
-1. 云纹框架-标题.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "048C76F54EF8E8D50E91C0B6956301D0", "云纹框架")
-1. StepNum_3.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "B3E45590466898AFAA3F7690F96D7322", "3")
-1. StepNum_2.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "0D25CA1D4BAFFBE3D14EA388B70B947B", "2")
-1. StepNum_1.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "57BEF76E48FA6F4A3A374A84DE5AB292", "1")
-1. Step3_content.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "4D805242469EAB002BFB32A5C8E2594F", "寻找[唐代星空图]")
-1. Step2_content.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "D4EE6B6B48163347E55A648812F847EF", "寻找[云纹雕饰]")
-1. Step1_content.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "CCC45BDA47F3DBD432AD998CF34DFDB8", "寻找[天宫楼阁]")
-1. EditableTextBox_290.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "1EEF58504002B4647869D0ADF90D534B", "修复步骤")
-1. Introducing_1.Visibility = Collapsed
-1. Image_1.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/对话框底部.对话框底部'")
 1. Introducing_3.Visibility = Collapsed
-1. Image.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/对话框底部.对话框底部'")
 1. Introducing_2.Visibility = Collapsed
-1. Image_2.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/对话框底部.对话框底部'")
-1. TextBlock_71.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "42557600434EDB78BA1E72936E75B267", "介绍1")
-1. TextBlock_71.ColorAndOpacity = (SpecifiedColor=(R=0.000000,G=0.000000,B=0.000000,A=1.000000))
-1. Indtro_Button1.BackgroundColor = (R=1.000000,G=1.000000,B=1.000000,A=0.000000)
-1. Indtro_Button1.ColorAndOpacity = (R=1.000000,G=1.000000,B=1.000000,A=0.000000)
-1. Indtro_Button2.BackgroundColor = (R=1.000000,G=1.000000,B=1.000000,A=0.000000)
-1. Indtro_Button2.ColorAndOpacity = (R=1.000000,G=1.000000,B=1.000000,A=0.000000)
+1. Introducing_1.Visibility = Collapsed
+1. continue.Visibility = Collapsed
 1. Indtro_Button3.BackgroundColor = (R=1.000000,G=1.000000,B=1.000000,A=0.000000)
 1. Indtro_Button3.ColorAndOpacity = (R=1.000000,G=1.000000,B=1.000000,A=0.000000)
-1. TextBlock.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "226173854CE71E150C4664B242F564D9", "介绍2")
-1. TextBlock.ColorAndOpacity = (SpecifiedColor=(R=0.000000,G=0.000000,B=0.000000,A=1.000000))
-1. TextBlock_1.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "9E60DED647D1CDD732F04484EAA7D1EE", "介绍3")
-1. TextBlock_1.ColorAndOpacity = (SpecifiedColor=(R=0.000000,G=0.000000,B=0.000000,A=1.000000))
-1. Highlight_1.LayoutData = (Offsets=(Left=97.000000,Top=244.000000,Right=36.000000,Bottom=36.000000))
-1. EditableTextBox_290.LayoutData = (Offsets=(Left=96.000000,Top=182.000000,Right=388.000000,Bottom=40.000000))
-1. 云纹框架.LayoutData = (Offsets=(Left=46.000000,Top=87.000000,Right=484.000000,Bottom=344.000000))
-1. 云纹框架-标题.LayoutData = (Offsets=(Left=96.000000,Top=133.000000,Right=388.000000,Bottom=40.000000))
-1. CurrentStepBackGround_1.LayoutData = (Offsets=(Left=63.000000,Top=288.000000,Right=424.000000,Bottom=43.000000))
-1. CurrentStepBackGround_2.LayoutData = (Offsets=(Left=63.000000,Top=340.000000,Right=424.000000,Bottom=43.000000))
+1. Indtro_Button2.BackgroundColor = (R=1.000000,G=1.000000,B=1.000000,A=0.000000)
+1. Indtro_Button2.ColorAndOpacity = (R=1.000000,G=1.000000,B=1.000000,A=0.000000)
+1. Indtro_Button1.BackgroundColor = (R=1.000000,G=1.000000,B=1.000000,A=0.000000)
+1. Indtro_Button1.ColorAndOpacity = (R=1.000000,G=1.000000,B=1.000000,A=0.000000)
+1. TextBlock_1.LayoutData = (Offsets=(Left=399.067078,Top=207.623611))
+1. Image.LayoutData = (Offsets=(Right=1000.000000,Bottom=400.000000))
+1. Indtro_Button3.LayoutData = (Offsets=(Top=4.000000,Right=1000.000000,Bottom=400.000000))
+1. TextBlock.LayoutData = (Offsets=(Left=324.166382,Top=175.063156))
+1. Image_2.LayoutData = (Offsets=(Top=4.000000,Right=1000.000000,Bottom=400.000000))
+1. Indtro_Button2.LayoutData = (Offsets=(Right=1000.000000,Bottom=400.000000))
+1. TextBlock_71.LayoutData = (Offsets=(Left=304.024353,Top=162.480881))
+1. Image_1.LayoutData = (Offsets=(Top=4.000000,Right=1000.000000,Bottom=400.000000))
+1. Indtro_Button1.LayoutData = (Offsets=(Right=1000.000000,Bottom=400.000000))
+1. TextBlock_2.LayoutData = (Offsets=(Left=529.087097,Top=53.893749,Right=813.856689,Bottom=127.812096))
+1. continue.LayoutData = (Offsets=(Right=1922.393799,Bottom=1079.896973))
+1. Introducing_3.LayoutData = (Offsets=(Left=428.000000,Top=636.000000,Right=1028.356934,Bottom=422.668365))
+1. Introducing_2.LayoutData = (Offsets=(Left=432.000000,Top=636.000000,Right=1028.356934,Bottom=422.668365))
+1. Introducing_1.LayoutData = (Offsets=(Left=432.000000,Top=636.000000,Right=1028.356934,Bottom=422.668365))
+1. StepNum_3.LayoutData = (Offsets=(Left=104.000000,Top=348.000000,Right=27.241528))
 1. StepNum_2.LayoutData = (Offsets=(Left=104.000000,Top=296.000000,Right=26.097527))
-1. Finish_3.LayoutData = (Offsets=(Left=91.000000,Top=337.675690,Right=49.069069,Bottom=51.531532))
 1. StepNum_1.LayoutData = (Offsets=(Left=104.000000,Top=248.000000,Right=27.241528))
-1. Step2_content.LayoutData = (Offsets=(Left=152.000000,Top=296.000000,Right=128.142426))
 1. Step3_content.LayoutData = (Offsets=(Left=152.000000,Top=348.000000,Right=156.971252))
-1. Finish_2.LayoutData = (Offsets=(Left=91.000000,Top=285.875641,Right=49.069069,Bottom=51.531532))
+1. Step2_content.LayoutData = (Offsets=(Left=152.000000,Top=296.000000,Right=128.142426))
 1. Step1_content.LayoutData = (Offsets=(Left=152.000000,Top=248.000000,Right=128.142426))
-1. Finish_1.LayoutData = (Offsets=(Left=91.000000,Top=237.273270,Right=49.069069,Bottom=51.531532))
-1. Highlight_3.LayoutData = (Offsets=(Left=97.000000,Top=343.000000,Right=36.000000,Bottom=36.000000))
+1. CurrentStepBackGround_2.LayoutData = (Offsets=(Left=63.000000,Top=340.000000,Right=424.000000,Bottom=43.000000))
+1. CurrentStepBackGround_1.LayoutData = (Offsets=(Left=63.000000,Top=288.000000,Right=424.000000,Bottom=43.000000))
+1. CurrentStepBackGround.LayoutData = (Offsets=(Left=63.000000,Top=240.000000,Right=424.000000,Bottom=43.000000))
 1. StepFinish_2.LayoutData = (Offsets=(Left=97.000000,Top=343.000000,Right=36.000000,Bottom=36.000000))
 1. StepFinish_1.LayoutData = (Offsets=(Left=97.000000,Top=292.000000,Right=36.000000,Bottom=36.000000))
 1. StepFinish.LayoutData = (Offsets=(Left=97.000000,Top=244.000000,Right=36.000000,Bottom=36.000000))
-1. Circle_2.LayoutData = (Offsets=(Left=97.000000,Top=292.000000,Right=36.000000,Bottom=36.000000))
-1. Highlight_2.LayoutData = (Offsets=(Left=97.000000,Top=292.000000,Right=36.000000,Bottom=36.000000))
+1. Finish_3.LayoutData = (Offsets=(Left=91.000000,Top=337.675690,Right=49.069069,Bottom=51.531532))
+1. Finish_2.LayoutData = (Offsets=(Left=91.000000,Top=285.875641,Right=49.069069,Bottom=51.531532))
+1. Finish_1.LayoutData = (Offsets=(Left=91.000000,Top=237.273270,Right=49.069069,Bottom=51.531532))
 1. Circle_3.LayoutData = (Offsets=(Left=97.000000,Top=343.000000,Right=36.000000,Bottom=36.000000))
-1. CurrentStepBackGround.LayoutData = (Offsets=(Left=63.000000,Top=240.000000,Right=424.000000,Bottom=43.000000))
-1. Introducing_1.LayoutData = (Offsets=(Left=432.000000,Top=636.000000,Right=1028.356934,Bottom=422.668365))
-1. StepNum_3.LayoutData = (Offsets=(Left=104.000000,Top=348.000000,Right=27.241528))
-1. Introducing_3.LayoutData = (Offsets=(Left=428.000000,Top=636.000000,Right=1028.356934,Bottom=422.668365))
-1. Introducing_2.LayoutData = (Offsets=(Left=432.000000,Top=636.000000,Right=1028.356934,Bottom=422.668365))
-1. Image_1.LayoutData = (Offsets=(Top=4.000000,Right=1000.000000,Bottom=400.000000))
-1. TextBlock_71.LayoutData = (Offsets=(Left=304.024353,Top=162.480881))
-1. Indtro_Button1.LayoutData = (Offsets=(Right=1000.000000,Bottom=400.000000))
-1. Indtro_Button3.LayoutData = (Offsets=(Top=4.000000,Right=1000.000000,Bottom=400.000000))
-1. TextBlock_1.LayoutData = (Offsets=(Left=399.067078,Top=207.623611))
-1. Image.LayoutData = (Offsets=(Right=1000.000000,Bottom=400.000000))
-1. Image_2.LayoutData = (Offsets=(Top=4.000000,Right=1000.000000,Bottom=400.000000))
-1. Indtro_Button2.LayoutData = (Offsets=(Right=1000.000000,Bottom=400.000000))
-1. TextBlock.LayoutData = (Offsets=(Left=324.166382,Top=175.063156))
+1. Circle_2.LayoutData = (Offsets=(Left=97.000000,Top=292.000000,Right=36.000000,Bottom=36.000000))
+1. Highlight_3.LayoutData = (Offsets=(Left=97.000000,Top=343.000000,Right=36.000000,Bottom=36.000000))
+1. Highlight_2.LayoutData = (Offsets=(Left=97.000000,Top=292.000000,Right=36.000000,Bottom=36.000000))
+1. Highlight_1.LayoutData = (Offsets=(Left=97.000000,Top=244.000000,Right=36.000000,Bottom=36.000000))
+1. EditableTextBox_290.LayoutData = (Offsets=(Left=96.000000,Top=182.000000,Right=388.000000,Bottom=40.000000))
+1. 云纹框架-标题.LayoutData = (Offsets=(Left=96.000000,Top=133.000000,Right=388.000000,Bottom=40.000000))
+1. 云纹框架.LayoutData = (Offsets=(Left=46.000000,Top=87.000000,Right=484.000000,Bottom=344.000000))
 
 ## 8. 其他图表
 
@@ -257,7 +262,7 @@ TextBlock_1 [TextBlock] | parent=Introducing_3 | children=无
 1. 执行链：BndEvt__W_Level2_Indtro_Button1_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_FunctionEntry_0:7CEA7D914DAA51979B0D2AABF398CDB5
+     输入：execute <- K2Node_FunctionEntry_0:7C179A3849BD5214222A8DAB55D476D6
    - BndEvt__W_Level2_Indtro_Button1_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 
 ### 8.2 BndEvt__W_Level2_Indtro_Button2_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
@@ -268,7 +273,7 @@ TextBlock_1 [TextBlock] | parent=Introducing_3 | children=无
 1. 执行链：BndEvt__W_Level2_Indtro_Button2_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_FunctionEntry_0:A20B1DC64BA8B4A98D4D16B3E99643FA
+     输入：execute <- K2Node_FunctionEntry_0:1A365790451F16EBC7D92D86719308C6
    - BndEvt__W_Level2_Indtro_Button2_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
 
 ### 8.3 BndEvt__W_Level2_Indtro_Button3_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
@@ -279,7 +284,7 @@ TextBlock_1 [TextBlock] | parent=Introducing_3 | children=无
 1. 执行链：BndEvt__W_Level2_Indtro_Button3_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_FunctionEntry_0:21BC51724BDF8A3B1D4F48AFAA3B456B
+     输入：execute <- K2Node_FunctionEntry_0:6E9A2FAC4D33D8B17733889B3C2065E1
    - BndEvt__W_Level2_Indtro_Button3_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
 
 ### 8.4 Construct
@@ -290,7 +295,7 @@ TextBlock_1 [TextBlock] | parent=Introducing_3 | children=无
 1. 执行链：Construct -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_FunctionEntry_0:848F60AF4BF720AF14C753907F50AF23
+     输入：execute <- K2Node_FunctionEntry_0:ED293FEA4E1F8ACAA87F8A8AA2E827C0
    - Construct
 
 ### 8.5 HandleFinalContinuePromptRequested
@@ -301,7 +306,7 @@ TextBlock_1 [TextBlock] | parent=Introducing_3 | children=无
 1. 执行链：HandleFinalContinuePromptRequested -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_FunctionEntry_0:3F9C726148108571D9322DB2FC35B46F
+     输入：execute <- K2Node_FunctionEntry_0:9D9F6A4C464678C86BEFC88011285C7F
    - HandleFinalContinuePromptRequested
 
 ### 8.6 HandleLevel2InspectStarted
@@ -312,7 +317,7 @@ TextBlock_1 [TextBlock] | parent=Introducing_3 | children=无
 1. 执行链：HandleLevel2InspectStarted -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:C4B2CF1A4478F4AF260863B7A74469CC
+     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:DB15BEF149206BDAD46F6483579F760F
    - HandleLevel2InspectStarted
 
 ### 8.7 HandleNextLevelRequested
@@ -323,7 +328,7 @@ TextBlock_1 [TextBlock] | parent=Introducing_3 | children=无
 1. 执行链：HandleNextLevelRequested -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_FunctionEntry_0:AAC98E184CFC54D213DF7E92DBBE3129
+     输入：execute <- K2Node_FunctionEntry_0:E41CD6DD41E01DC480E16592B17FF84E
    - HandleNextLevelRequested
 
 ### 8.8 HandleReturnToDefaultFinished
@@ -334,7 +339,7 @@ TextBlock_1 [TextBlock] | parent=Introducing_3 | children=无
 1. 执行链：HandleReturnToDefaultFinished -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_FunctionEntry_0:9A0C2F1E44E3D04DC2F407A6C40239F7
+     输入：execute <- K2Node_FunctionEntry_0:F0A17BCE41AA8F61A76E6CBFBE7C6D79
    - HandleReturnToDefaultFinished
 
 ### 8.9 OnFocusLost
@@ -345,7 +350,7 @@ TextBlock_1 [TextBlock] | parent=Introducing_3 | children=无
 1. 执行链：OnFocusLost -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:B595A7454E90F75A791D9A9383C478C0
+     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:88DA0CDF4F4A5B586590CC8A88D67F4A
    - OnFocusLost
 
 ### 8.10 新函数
@@ -365,7 +370,7 @@ TextBlock_1 [TextBlock] | parent=Introducing_3 | children=无
 1. 执行链：自定义事件_0 -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:84B66EA2481B9FA538FC56AA07373C66
+     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:48212D094B72BE94F7A2A88F63766131
    - 自定义事件_0
 
 ## 9. 当前可直接确认的结论
