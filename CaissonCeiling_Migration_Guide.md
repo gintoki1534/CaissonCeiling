@@ -74,6 +74,12 @@
 
 - `UCaissonUserWidget`
   - 作为 UI 蓝图的 C++ 基类扩展点
+- `ULevel3FlowComponent`
+  - `Level3` 第一阶段独立流程与评分状态机
+- `ULevel3RepairAreaComponent`
+  - `Level3` 修复区域覆盖率累计组件
+- `ALevel3RepairRegionActor`
+  - 供蓝图挂网格和修复区域组件的 `Level3` 区域壳层
 
 ### 3.3 输入体系切换为 Enhanced Input
 
@@ -297,6 +303,15 @@
 - C++ 维护真实点击、顺序和流程状态
 - `W_Level2` 承接介绍 UI、步骤 UI 和回位完成回调
 - `BP_ShowcaseModel` 承接镜头拉近和回原位演出
+
+同时，`Level3` 第一阶段当前也已经建立了新的独立代码入口：
+
+- `ACaissonPlayerController` 只负责输入宿主与转发
+- `ULevel3FlowComponent` 维护 `Level3` 真状态
+- `ULevel3RepairAreaComponent` 负责区域命中与覆盖率
+- `ALevel3RepairRegionActor` 作为 UE 蓝图摆放入口
+
+这意味着后续 `Level3` 不需要复用 `Level2` 的 `CurrentStep / RequiredLevel2TargetIds / ELevel2FlowState` 逻辑。
 
 后续工作的重点不是“继续机械地把更多蓝图搬到 C++”，而是：
 

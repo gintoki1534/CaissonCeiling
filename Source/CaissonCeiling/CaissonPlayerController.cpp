@@ -3,6 +3,7 @@
 #include "Blueprint/UserWidget.h"
 #include "CaissonInteractComponent.h"
 #include "CaissonPawn.h"
+#include "Level3FlowComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "Framework/Application/SlateApplication.h"
@@ -26,6 +27,7 @@ ACaissonPlayerController::ACaissonPlayerController()
 	bRightMouseLookHeld = false;
 	bCachedHoverEnabledBeforeInspect = false;
 	bCachedClickEnabledBeforeInspect = false;
+	Level3FlowComponent = CreateDefaultSubobject<ULevel3FlowComponent>(TEXT("Level3FlowComponent"));
 }
 
 void ACaissonPlayerController::BeginPlay()
@@ -63,8 +65,9 @@ void ACaissonPlayerController::SetupInputComponent()
 
 		if (ClickAction)
 		{
-			// 鼠标左键点击用 Started 更稳，避免按下后被 UI 或拖拽状态吞掉。
-			EnhancedInputComponent->BindAction(ClickAction, ETriggerEvent::Started, this, &ACaissonPlayerController::OnInteract);
+			EnhancedInputComponent->BindAction(ClickAction, ETriggerEvent::Started, this, &ACaissonPlayerController::OnPrimaryInteractPressed);
+			EnhancedInputComponent->BindAction(ClickAction, ETriggerEvent::Completed, this, &ACaissonPlayerController::OnPrimaryInteractReleased);
+			EnhancedInputComponent->BindAction(ClickAction, ETriggerEvent::Canceled, this, &ACaissonPlayerController::OnPrimaryInteractReleased);
 		}
 
 		if (RightClickAction)
@@ -174,8 +177,18 @@ void ACaissonPlayerController::Look(const FInputActionValue& Value)
 	MyPawn->SetActorRotation(CurrentRotation);
 }
 
-void ACaissonPlayerController::OnInteract()
+void ACaissonPlayerController::OnPrimaryInteractPressed()
 {
+	if (Level3FlowComponent && Level3FlowComponent->IsLevel3SessionActive())
+	{
+		FHitResult Level3HitResult;
+		if (GetCursorHitResult(Level3HitResult))
+		{
+			Level3FlowComponent->ApplySelectedToolToHit(Level3HitResult);
+		}
+		return;
+	}
+
 	if (Level2FlowState == ELevel2FlowState::WaitingAnyClickToContinue)
 	{
 		Level2FlowState = ELevel2FlowState::TransitionRequested;
@@ -228,6 +241,11 @@ void ACaissonPlayerController::OnInteract()
 	UE_LOG(LogTemp, Log, TEXT("[交互] 射线命中对象：%s"), *InteractComp->GetOwner()->GetName());
 
 	HandleLevel2Interaction(InteractComp);
+}
+
+void ACaissonPlayerController::OnPrimaryInteractReleased()
+{
+	// Level3 当前改为“单击结算”，释放左键时无需额外处理。
 }
 
 bool ACaissonPlayerController::HandleLevel2Interaction(UCaissonInteractComponent* InteractComp)
@@ -363,6 +381,16 @@ bool ACaissonPlayerController::IsLevel2WaitingForAnyClickToContinue() const
 
 void ACaissonPlayerController::UpdateHoveredInteractable()
 {
+	if (Level3FlowComponent && Level3FlowComponent->IsLevel3SessionActive())
+	{
+		if (CurrentHoveredInteractComponent)
+		{
+			CurrentHoveredInteractComponent->SetHoverHighlight(false);
+			CurrentHoveredInteractComponent = nullptr;
+		}
+		return;
+	}
+
 	if (!bEnableLevelTargetHover)
 	{
 		if (CurrentHoveredInteractComponent)
@@ -398,6 +426,11 @@ void ACaissonPlayerController::UpdateHoveredInteractable()
 		}
 		CurrentHoveredInteractComponent->SetHoverHighlight(true);
 	}
+}
+
+bool ACaissonPlayerController::GetCursorHitResult(FHitResult& OutHitResult) const
+{
+	return GetHitResultUnderCursorByChannel(UEngineTypes::ConvertToTraceType(ECC_Visibility), true, OutHitResult);
 }
 
 UCaissonInteractComponent* ACaissonPlayerController::GetInteractComponentUnderCursor() const
@@ -458,4 +491,38 @@ void ACaissonPlayerController::CloseCaissonWidget(UUserWidget* WidgetToClose)
 	FInputModeGameOnly InputMode;
 	SetInputMode(InputMode);
 	FSlateApplication::Get().SetAllUserFocusToGameViewport();
+}
+
+void ACaissonPlayerController::StartLevel3Dusting()
+{
+	if (Level3FlowComponent)
+	{
+		Level3FlowComponent->StartLevel3Dusting();
+	}
+}
+
+void ACaissonPlayerController::ResetLevel3Dusting()
+{
+	if (Level3FlowComponent)
+	{
+		Level3FlowComponent->ResetLevel3State();
+	}
+}
+
+bool ACaissonPlayerController::SelectLevel3Tool(FName ToolId)
+{
+	return Level3FlowComponent ? Level3FlowComponent->SelectTool(ToolId) : false;
+}
+
+void ACaissonPlayerController::CompleteLevel3ResultPresentation()
+{
+	if (Level3FlowComponent)
+	{
+		Level3FlowComponent->CompleteResultPresentation();
+	}
+}
+
+ULevel3FlowComponent* ACaissonPlayerController::GetLevel3FlowComponent() const
+{
+	return Level3FlowComponent;
 }

@@ -8,6 +8,7 @@
 class UCaissonInteractComponent;
 class UInputAction;
 class UInputMappingContext;
+class ULevel3FlowComponent;
 class UUserWidget;
 
 UENUM(BlueprintType)
@@ -52,10 +53,12 @@ protected:
 	UInputAction* RightClickAction;
 
 	void Look(const FInputActionValue& Value);
-	void OnInteract();
+	void OnPrimaryInteractPressed();
+	void OnPrimaryInteractReleased();
 	void OnRightMousePressed();
 	void OnRightMouseReleased();
 	bool HandleLevel2Interaction(UCaissonInteractComponent* InteractComp);
+	bool GetCursorHitResult(FHitResult& OutHitResult) const;
 	void UpdateHoveredInteractable();
 	UCaissonInteractComponent* GetInteractComponentUnderCursor() const;
 
@@ -142,6 +145,21 @@ public:
 	UFUNCTION(BlueprintCallable, Category="CaissonUI")
 	void CloseCaissonWidget(UUserWidget* WidgetToClose);
 
+	UFUNCTION(BlueprintCallable, Category="Level3")
+	void StartLevel3Dusting();
+
+	UFUNCTION(BlueprintCallable, Category="Level3")
+	void ResetLevel3Dusting();
+
+	UFUNCTION(BlueprintCallable, Category="Level3")
+	bool SelectLevel3Tool(FName ToolId);
+
+	UFUNCTION(BlueprintCallable, Category="Level3")
+	void CompleteLevel3ResultPresentation();
+
+	UFUNCTION(BlueprintPure, Category="Level3")
+	ULevel3FlowComponent* GetLevel3FlowComponent() const;
+
 private:
 	UPROPERTY(Transient)
 	TSet<FName> ActivatedLevel2TargetIds;
@@ -151,6 +169,9 @@ private:
 
 	UPROPERTY(Transient)
 	FName ActiveInspectTargetId;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Level3", meta=(AllowPrivateAccess="true"))
+	TObjectPtr<ULevel3FlowComponent> Level3FlowComponent;
 
 	bool bRightMouseLookHeld;
 	bool bCachedHoverEnabledBeforeInspect;

@@ -49,6 +49,20 @@
    - 悬停/点击/高亮状态入口
 5. `UCaissonUserWidget`
    - UI 蓝图基类扩展点
+6. `ULevel3FlowComponent`
+   - `Level3` 第一阶段独立状态机
+   - 工具选择、除尘进度、评分和结果广播
+7. `ULevel3RepairAreaComponent`
+   - `Level3` 修复区域命中与覆盖率累计
+8. `ALevel3RepairRegionActor`
+   - `Level3` 修复区域蓝图壳层入口
+6. `ULevel3FlowComponent`
+   - `Level3` 第一阶段独立状态机
+   - 工具选择、除尘进度、评分和结果广播
+7. `ULevel3RepairAreaComponent`
+   - `Level3` 修复区域命中与覆盖率累计
+8. `ALevel3RepairRegionActor`
+   - `Level3` 修复区域蓝图壳层入口
 
 ### 2.2 当前主要蓝图资产
 

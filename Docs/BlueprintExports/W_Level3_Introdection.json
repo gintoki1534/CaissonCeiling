@@ -11,9 +11,93 @@
   "event_graph": {
     "name": "EventGraph",
     "schema": "BlueprintGraph.EdGraphSchema_K2",
-    "module_count": 43,
-    "connection_count": 46,
+    "module_count": 44,
+    "connection_count": 48,
     "modules": [
+      {
+        "id": "K2Node_CallFunction_9",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "CaissonPlayerController.StartLevel3Dusting",
+        "meta": {
+          "function_name": "StartLevel3Dusting",
+          "function_owner": "CaissonPlayerController"
+        },
+        "pins": [
+          {
+            "id": "81E2681E453CC5A074E512A3BA6326CE",
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "pin_id": "F0459EAF406994D215DE75B9767B72C7"
+              }
+            ]
+          },
+          {
+            "id": "0A5E9AAB461C733A24053C8305D2EAD9",
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_0",
+                "pin_id": "E43EA077418A9B26B937B89D980E5C38"
+              }
+            ]
+          },
+          {
+            "id": "AC2FA1E047B25D027BB5679FE9439389",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "pin_id": "F0459EAF406994D215DE75B9767B72C7"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallFunction_9'"
+      },
       {
         "id": "K2Node_CallFunction_12",
         "class": "K2Node_CallFunction",
@@ -1099,7 +1183,7 @@
             ]
           },
           {
-            "id": "7F80FA4146D7A23CF93716A99904E1E3",
+            "id": "2BDD75B24773E56FBFBADC9BED823F6B",
             "name": "ErrorTolerance",
             "direction": "input",
             "category": "",
@@ -1336,8 +1420,8 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_DynamicCast_0",
-                "pin_id": "F0459EAF406994D215DE75B9767B72C7"
+                "node": "K2Node_CallFunction_9",
+                "pin_id": "0A5E9AAB461C733A24053C8305D2EAD9"
               }
             ]
           },
@@ -1377,7 +1461,7 @@
             "direction": "input",
             "category": "bool",
             "subcategory": "",
-            "default_value": "true",
+            "default_value": "false",
             "default_object": null,
             "linked_to": []
           },
@@ -1387,7 +1471,7 @@
             "direction": "input",
             "category": "bool",
             "subcategory": "",
-            "default_value": "true",
+            "default_value": "false",
             "default_object": null,
             "linked_to": []
           }
@@ -1400,8 +1484,8 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_DynamicCast_0",
-                "pin_id": "F0459EAF406994D215DE75B9767B72C7"
+                "node": "K2Node_CallFunction_9",
+                "pin_id": "0A5E9AAB461C733A24053C8305D2EAD9"
               }
             ]
           },
@@ -1416,20 +1500,6 @@
                 "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
               }
             ]
-          },
-          {
-            "name": "bHoverEnabled",
-            "category": "bool",
-            "default_value": "true",
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "bClickEnabled",
-            "category": "bool",
-            "default_value": "true",
-            "default_object": null,
-            "linked_to": []
           }
         ],
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level3_Introdection.W_Level3_Introdection:EventGraph.K2Node_CallFunction_0'"
@@ -1751,8 +1821,8 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_0",
-                "pin_id": "E43EA077418A9B26B937B89D980E5C38"
+                "node": "K2Node_CallFunction_9",
+                "pin_id": "81E2681E453CC5A074E512A3BA6326CE"
               }
             ]
           },
@@ -1801,6 +1871,10 @@
               {
                 "node": "K2Node_CallFunction_0",
                 "pin_id": "0FEFBB4846ACEB35FC93E7A03F2FD447"
+              },
+              {
+                "node": "K2Node_CallFunction_9",
+                "pin_id": "AC2FA1E047B25D027BB5679FE9439389"
               }
             ]
           },
@@ -3422,6 +3496,19 @@
       },
       {
         "from": {
+          "node": "K2Node_CallFunction_9",
+          "pin_name": "then",
+          "pin_id": "0A5E9AAB461C733A24053C8305D2EAD9"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_0",
+          "pin_name": "execute",
+          "pin_id": "E43EA077418A9B26B937B89D980E5C38"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
           "node": "K2Node_ComponentBoundEvent_0",
           "pin_name": "then",
           "pin_id": "21211C9E4B53DD1081FF3690B83ED497"
@@ -3475,19 +3562,6 @@
       {
         "from": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "then",
-          "pin_id": "F0459EAF406994D215DE75B9767B72C7"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_0",
-          "pin_name": "execute",
-          "pin_id": "E43EA077418A9B26B937B89D980E5C38"
-        },
-        "category": "exec"
-      },
-      {
-        "from": {
-          "node": "K2Node_DynamicCast_0",
           "pin_name": "AsCaisson Player Controller",
           "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
         },
@@ -3510,6 +3584,32 @@
           "pin_id": "5FC864A84270F03B40172889DFA2E24D"
         },
         "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_DynamicCast_0",
+          "pin_name": "AsCaisson Player Controller",
+          "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_9",
+          "pin_name": "self",
+          "pin_id": "AC2FA1E047B25D027BB5679FE9439389"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_DynamicCast_0",
+          "pin_name": "then",
+          "pin_id": "F0459EAF406994D215DE75B9767B72C7"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_9",
+          "pin_name": "execute",
+          "pin_id": "81E2681E453CC5A074E512A3BA6326CE"
+        },
+        "category": "exec"
       },
       {
         "from": {
@@ -3867,6 +3967,7 @@
       [
         "按钮-关闭.OnClicked",
         "Cast To CaissonPlayerController",
+        "CaissonPlayerController.StartLevel3Dusting",
         "CaissonPlayerController.SetLevelTargetInteractionEnabled",
         "CaissonPlayerController.CloseCaissonWidget",
         "CaissonPlayerController.OpenCaissonWidget"
@@ -3926,7 +4027,7 @@
           },
           "pins": [
             {
-              "id": "97E8E7D245D3827514FA3693480A9178",
+              "id": "CB2DEAE14C9E0A05214992B58568798D",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -3936,12 +4037,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "01F83F984D4E39BA28765E8223950458"
+                  "pin_id": "22E3EC884349B7D94DF447A31CA1D019"
                 }
               ]
             },
             {
-              "id": "0E3CC40B49608437ECA4DF9B9C435DA7",
+              "id": "44CF2B444171118A7A741FBBD002C896",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -3951,7 +4052,7 @@
               "linked_to": []
             },
             {
-              "id": "E28D88BD4B2FDC9F3FAC0EA227A990CE",
+              "id": "BAF710D64B56F06BC5F9D2A2B0376DBB",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -3961,7 +4062,7 @@
               "linked_to": []
             },
             {
-              "id": "74FD357C484B07E8E969479EFAE037B1",
+              "id": "A6D8A7B246578D1BE1E4F793CAA60B87",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -3980,7 +4081,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "01F83F984D4E39BA28765E8223950458"
+                  "pin_id": "22E3EC884349B7D94DF447A31CA1D019"
                 }
               ]
             },
@@ -4004,7 +4105,7 @@
           },
           "pins": [
             {
-              "id": "01F83F984D4E39BA28765E8223950458",
+              "id": "22E3EC884349B7D94DF447A31CA1D019",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -4014,7 +4115,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "97E8E7D245D3827514FA3693480A9178"
+                  "pin_id": "CB2DEAE14C9E0A05214992B58568798D"
                 }
               ]
             }
@@ -4028,12 +4129,12 @@
           "from": {
             "node": "K2Node_FunctionEntry_0",
             "pin_name": "then",
-            "pin_id": "01F83F984D4E39BA28765E8223950458"
+            "pin_id": "22E3EC884349B7D94DF447A31CA1D019"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
             "pin_name": "execute",
-            "pin_id": "97E8E7D245D3827514FA3693480A9178"
+            "pin_id": "CB2DEAE14C9E0A05214992B58568798D"
           },
           "category": "exec"
         }
@@ -4062,7 +4163,7 @@
           },
           "pins": [
             {
-              "id": "75BA71EB4466DA923F7C01AB5A497B47",
+              "id": "5D4799294A0F626ABFE19DA7C4D7B8C9",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -4072,12 +4173,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "FBDD213A4DB301EA5FD8DFBCFFB77AF0"
+                  "pin_id": "91077E5E4181F863F4FC8EAF5293DD70"
                 }
               ]
             },
             {
-              "id": "070887524DBE7FFE0F65B299DEA815BB",
+              "id": "9AAC72994A286A4D53C657824E3D167C",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -4087,7 +4188,7 @@
               "linked_to": []
             },
             {
-              "id": "91CA44694FF3D7B4054E74ACBCB9D9A7",
+              "id": "F13FF76D447D0F2BD2C6DCA5985034B8",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -4097,7 +4198,7 @@
               "linked_to": []
             },
             {
-              "id": "E4D18CE84A4E8CFA95E540ADA5B6E3AF",
+              "id": "1AA509864A1298C46F817299F70D4431",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -4116,7 +4217,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "FBDD213A4DB301EA5FD8DFBCFFB77AF0"
+                  "pin_id": "91077E5E4181F863F4FC8EAF5293DD70"
                 }
               ]
             },
@@ -4140,7 +4241,7 @@
           },
           "pins": [
             {
-              "id": "FBDD213A4DB301EA5FD8DFBCFFB77AF0",
+              "id": "91077E5E4181F863F4FC8EAF5293DD70",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -4150,7 +4251,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "75BA71EB4466DA923F7C01AB5A497B47"
+                  "pin_id": "5D4799294A0F626ABFE19DA7C4D7B8C9"
                 }
               ]
             }
@@ -4164,12 +4265,12 @@
           "from": {
             "node": "K2Node_FunctionEntry_0",
             "pin_name": "then",
-            "pin_id": "FBDD213A4DB301EA5FD8DFBCFFB77AF0"
+            "pin_id": "91077E5E4181F863F4FC8EAF5293DD70"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
             "pin_name": "execute",
-            "pin_id": "75BA71EB4466DA923F7C01AB5A497B47"
+            "pin_id": "5D4799294A0F626ABFE19DA7C4D7B8C9"
           },
           "category": "exec"
         }
@@ -4198,7 +4299,7 @@
           },
           "pins": [
             {
-              "id": "EB609E08485BCA8B14F23693BBAD2122",
+              "id": "D0BC4CF045652488321E61802A01F85B",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -4208,12 +4309,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "491EE1C1462D3AF61E446DB1F39BCD3F"
+                  "pin_id": "0EF8785A44FC31B77EB1EC8CBAC735D6"
                 }
               ]
             },
             {
-              "id": "C4AF27CF40C53E1874F3788BA5AE2B51",
+              "id": "516206EE435BFFDA86E489A73F493BAD",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -4223,7 +4324,7 @@
               "linked_to": []
             },
             {
-              "id": "5BFE961F4D7CF731064E0A9D44B8D070",
+              "id": "540BC76941D1D1A749CEC0978C97B5CE",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -4233,7 +4334,7 @@
               "linked_to": []
             },
             {
-              "id": "3F5B53AF436DD5FA78EF4AA5D7CEE44F",
+              "id": "C322A45D42D6001382AE53AF1855AC0C",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -4252,7 +4353,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "491EE1C1462D3AF61E446DB1F39BCD3F"
+                  "pin_id": "0EF8785A44FC31B77EB1EC8CBAC735D6"
                 }
               ]
             },
@@ -4276,7 +4377,7 @@
           },
           "pins": [
             {
-              "id": "491EE1C1462D3AF61E446DB1F39BCD3F",
+              "id": "0EF8785A44FC31B77EB1EC8CBAC735D6",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -4286,7 +4387,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "EB609E08485BCA8B14F23693BBAD2122"
+                  "pin_id": "D0BC4CF045652488321E61802A01F85B"
                 }
               ]
             }
@@ -4300,12 +4401,12 @@
           "from": {
             "node": "K2Node_FunctionEntry_0",
             "pin_name": "then",
-            "pin_id": "491EE1C1462D3AF61E446DB1F39BCD3F"
+            "pin_id": "0EF8785A44FC31B77EB1EC8CBAC735D6"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
             "pin_name": "execute",
-            "pin_id": "EB609E08485BCA8B14F23693BBAD2122"
+            "pin_id": "D0BC4CF045652488321E61802A01F85B"
           },
           "category": "exec"
         }
@@ -4334,7 +4435,7 @@
           },
           "pins": [
             {
-              "id": "8084CF3742AA04FF8DE1298EE72A2B88",
+              "id": "6CF637CF49C832B19E3F0685E9BCEEE8",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -4344,12 +4445,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "07AA10CB469ED65E048F73ABE24FCFDC"
+                  "pin_id": "0B264358477F3CC919BCA0A1B1E3BA40"
                 }
               ]
             },
             {
-              "id": "341B98B5473C93C5FA55E98143A09374",
+              "id": "6D5B8AE840CF7F196445F8B26990478F",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -4359,7 +4460,7 @@
               "linked_to": []
             },
             {
-              "id": "D04DF47C45EA157028095C8663AC2B23",
+              "id": "09C8A6424196093A6D50DC8981DAD83F",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -4369,7 +4470,7 @@
               "linked_to": []
             },
             {
-              "id": "7A5CB6D549863A80CFFEA4847A78E2C6",
+              "id": "280E06B940A64A4A3940A6959E27623F",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -4388,7 +4489,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "07AA10CB469ED65E048F73ABE24FCFDC"
+                  "pin_id": "0B264358477F3CC919BCA0A1B1E3BA40"
                 }
               ]
             },
@@ -4412,7 +4513,7 @@
           },
           "pins": [
             {
-              "id": "07AA10CB469ED65E048F73ABE24FCFDC",
+              "id": "0B264358477F3CC919BCA0A1B1E3BA40",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -4422,7 +4523,7 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "8084CF3742AA04FF8DE1298EE72A2B88"
+                  "pin_id": "6CF637CF49C832B19E3F0685E9BCEEE8"
                 }
               ]
             }
@@ -4436,12 +4537,12 @@
           "from": {
             "node": "K2Node_FunctionEntry_0",
             "pin_name": "then",
-            "pin_id": "07AA10CB469ED65E048F73ABE24FCFDC"
+            "pin_id": "0B264358477F3CC919BCA0A1B1E3BA40"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
             "pin_name": "execute",
-            "pin_id": "8084CF3742AA04FF8DE1298EE72A2B88"
+            "pin_id": "6CF637CF49C832B19E3F0685E9BCEEE8"
           },
           "category": "exec"
         }
@@ -4497,6 +4598,26 @@
         }
       },
       {
+        "name": "CanvasPanel_16",
+        "class": "CanvasPanel",
+        "display_label": "CanvasPanel_16",
+        "is_variable": false,
+        "slot": null,
+        "parent": null,
+        "children": [
+          "按钮-关闭",
+          "按钮-上一个",
+          "介绍2",
+          "按钮-下一个",
+          "介绍1",
+          "Image_77",
+          "BackgroundBlur_64"
+        ],
+        "properties": {
+          "bExpandedInDesigner": "True"
+        }
+      },
+      {
         "name": "按钮-关闭",
         "class": "Button",
         "display_label": "按钮-关闭",
@@ -4527,26 +4648,6 @@
         "properties": {}
       },
       {
-        "name": "CanvasPanel_16",
-        "class": "CanvasPanel",
-        "display_label": "CanvasPanel_16",
-        "is_variable": false,
-        "slot": null,
-        "parent": null,
-        "children": [
-          "介绍2",
-          "介绍1",
-          "Image_77",
-          "按钮-关闭",
-          "按钮-下一个",
-          "按钮-上一个",
-          "BackgroundBlur_64"
-        ],
-        "properties": {
-          "bExpandedInDesigner": "True"
-        }
-      },
-      {
         "name": "BackgroundBlur_64",
         "class": "BackgroundBlur",
         "display_label": "BackgroundBlur_64",
@@ -4559,11 +4660,32 @@
     ],
     "relationships": [
       {
+        "slot_name": "CanvasPanelSlot_8",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_16",
+        "child": "按钮-关闭",
+        "layout_data": "(Offsets=(Left=-101.921875,Top=224.000000,Bottom=100.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_7",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_16",
+        "child": "按钮-上一个",
+        "layout_data": "(Offsets=(Top=-32.540527,Right=104.881973,Bottom=102.072067),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=0.000000,Y=0.500000)))"
+      },
+      {
         "slot_name": "CanvasPanelSlot_6",
         "slot_class": "CanvasPanelSlot",
         "parent": "CanvasPanel_16",
         "child": "介绍2",
         "layout_data": "(Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_5",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_16",
+        "child": "按钮-下一个",
+        "layout_data": "(Offsets=(Left=-101.921875,Top=-56.540527,Right=1.921875,Bottom=102.072067),Anchors=(Minimum=(X=1.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
       },
       {
         "slot_name": "CanvasPanelSlot_3",
@@ -4578,27 +4700,6 @@
         "parent": "CanvasPanel_16",
         "child": "Image_77",
         "layout_data": "(Offsets=(Left=168.000000,Top=-16.000000,Right=-168.000000,Bottom=16.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
-      },
-      {
-        "slot_name": "CanvasPanelSlot_8",
-        "slot_class": "CanvasPanelSlot",
-        "parent": "CanvasPanel_16",
-        "child": "按钮-关闭",
-        "layout_data": "(Offsets=(Left=-101.921875,Top=224.000000,Bottom=100.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))"
-      },
-      {
-        "slot_name": "CanvasPanelSlot_5",
-        "slot_class": "CanvasPanelSlot",
-        "parent": "CanvasPanel_16",
-        "child": "按钮-下一个",
-        "layout_data": "(Offsets=(Left=-101.921875,Top=-56.540527,Right=1.921875,Bottom=102.072067),Anchors=(Minimum=(X=1.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
-      },
-      {
-        "slot_name": "CanvasPanelSlot_7",
-        "slot_class": "CanvasPanelSlot",
-        "parent": "CanvasPanel_16",
-        "child": "按钮-上一个",
-        "layout_data": "(Offsets=(Top=-32.540527,Right=104.881973,Bottom=102.072067),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=0.000000,Y=0.500000)))"
       },
       {
         "slot_name": "CanvasPanelSlot_0",
@@ -4745,9 +4846,24 @@
       "value": "SelfHitTestInvisible"
     },
     {
+      "target": "按钮-关闭",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=-101.921875,Top=224.000000,Bottom=100.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))"
+    },
+    {
+      "target": "按钮-上一个",
+      "property": "LayoutData",
+      "value": "(Offsets=(Top=-32.540527,Right=104.881973,Bottom=102.072067),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=0.000000,Y=0.500000)))"
+    },
+    {
       "target": "介绍2",
       "property": "LayoutData",
       "value": "(Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
+    },
+    {
+      "target": "按钮-下一个",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=-101.921875,Top=-56.540527,Right=1.921875,Bottom=102.072067),Anchors=(Minimum=(X=1.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
     },
     {
       "target": "介绍1",
@@ -4760,21 +4876,6 @@
       "value": "(Offsets=(Left=168.000000,Top=-16.000000,Right=-168.000000,Bottom=16.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
     },
     {
-      "target": "按钮-关闭",
-      "property": "LayoutData",
-      "value": "(Offsets=(Left=-101.921875,Top=224.000000,Bottom=100.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))"
-    },
-    {
-      "target": "按钮-下一个",
-      "property": "LayoutData",
-      "value": "(Offsets=(Left=-101.921875,Top=-56.540527,Right=1.921875,Bottom=102.072067),Anchors=(Minimum=(X=1.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
-    },
-    {
-      "target": "按钮-上一个",
-      "property": "LayoutData",
-      "value": "(Offsets=(Top=-32.540527,Right=104.881973,Bottom=102.072067),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=0.000000,Y=0.500000)))"
-    },
-    {
       "target": "BackgroundBlur_64",
       "property": "LayoutData",
       "value": "(Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
@@ -4783,8 +4884,8 @@
   "doc_view": {
     "blueprint_name": "W_Level3_Introdection",
     "blueprint_class": "WidgetBlueprint",
-    "module_count": 43,
-    "connection_count": 46,
+    "module_count": 44,
+    "connection_count": 48,
     "component_events": [
       {
         "title": "按钮-关闭.OnClicked",
@@ -4809,6 +4910,7 @@
       [
         "按钮-关闭.OnClicked",
         "Cast To CaissonPlayerController",
+        "CaissonPlayerController.StartLevel3Dusting",
         "CaissonPlayerController.SetLevelTargetInteractionEnabled",
         "CaissonPlayerController.CloseCaissonWidget",
         "CaissonPlayerController.OpenCaissonWidget"
@@ -4869,6 +4971,20 @@
         "children": []
       },
       {
+        "name": "CanvasPanel_16",
+        "class": "CanvasPanel",
+        "parent": null,
+        "children": [
+          "按钮-关闭",
+          "按钮-上一个",
+          "介绍2",
+          "按钮-下一个",
+          "介绍1",
+          "Image_77",
+          "BackgroundBlur_64"
+        ]
+      },
+      {
         "name": "按钮-关闭",
         "class": "Button",
         "parent": "CanvasPanel_16",
@@ -4885,20 +5001,6 @@
         "class": "Button",
         "parent": "CanvasPanel_16",
         "children": []
-      },
-      {
-        "name": "CanvasPanel_16",
-        "class": "CanvasPanel",
-        "parent": null,
-        "children": [
-          "介绍2",
-          "介绍1",
-          "Image_77",
-          "按钮-关闭",
-          "按钮-下一个",
-          "按钮-上一个",
-          "BackgroundBlur_64"
-        ]
       },
       {
         "name": "BackgroundBlur_64",

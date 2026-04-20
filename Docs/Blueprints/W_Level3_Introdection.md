@@ -26,10 +26,10 @@
 介绍2 [Image] | parent=CanvasPanel_16 | children=无
 介绍1 [Image] | parent=CanvasPanel_16 | children=无
 Image_77 [Image] | parent=CanvasPanel_16 | children=无
+CanvasPanel_16 [CanvasPanel] | parent=ROOT | children=按钮-关闭, 按钮-上一个, 介绍2, 按钮-下一个, 介绍1, Image_77, BackgroundBlur_64
 按钮-关闭 [Button] | parent=CanvasPanel_16 | children=无
 按钮-下一个 [Button] | parent=CanvasPanel_16 | children=无
 按钮-上一个 [Button] | parent=CanvasPanel_16 | children=无
-CanvasPanel_16 [CanvasPanel] | parent=ROOT | children=介绍2, 介绍1, Image_77, 按钮-关闭, 按钮-下一个, 按钮-上一个, BackgroundBlur_64
 BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 ```
 
@@ -43,7 +43,7 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 
 ### 5.2 主执行链
 
-1. 按钮-关闭.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.SetLevelTargetInteractionEnabled -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
+1. 按钮-关闭.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.StartLevel3Dusting -> CaissonPlayerController.SetLevelTargetInteractionEnabled -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
 1. 按钮-上一个.OnClicked -> SetVisibility -> SetVisibility
 1. 按钮-下一个.OnClicked -> SetVisibility -> SetVisibility
 1. Tick
@@ -75,12 +75,12 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 1. 介绍1.Visibility = SelfHitTestInvisible
 1. Image_77.Brush = (TintColor=(SpecifiedColor=(R=0.158482,G=0.158482,B=0.158482,A=0.500000)))
 1. Image_77.Visibility = SelfHitTestInvisible
+1. 按钮-关闭.LayoutData = (Offsets=(Left=-101.921875,Top=224.000000,Bottom=100.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))
+1. 按钮-上一个.LayoutData = (Offsets=(Top=-32.540527,Right=104.881973,Bottom=102.072067),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=0.000000,Y=0.500000)))
 1. 介绍2.LayoutData = (Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
+1. 按钮-下一个.LayoutData = (Offsets=(Left=-101.921875,Top=-56.540527,Right=1.921875,Bottom=102.072067),Anchors=(Minimum=(X=1.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
 1. 介绍1.LayoutData = (Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
 1. Image_77.LayoutData = (Offsets=(Left=168.000000,Top=-16.000000,Right=-168.000000,Bottom=16.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
-1. 按钮-关闭.LayoutData = (Offsets=(Left=-101.921875,Top=224.000000,Bottom=100.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))
-1. 按钮-下一个.LayoutData = (Offsets=(Left=-101.921875,Top=-56.540527,Right=1.921875,Bottom=102.072067),Anchors=(Minimum=(X=1.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
-1. 按钮-上一个.LayoutData = (Offsets=(Top=-32.540527,Right=104.881973,Bottom=102.072067),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=0.000000,Y=0.500000)))
 1. BackgroundBlur_64.LayoutData = (Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
 
 ## 8. 其他图表
@@ -93,7 +93,7 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 1. 执行链：BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3_Introdection
 1. 关键节点：
    - ExecuteUbergraph_W_Level3_Introdection
-     输入：execute <- K2Node_FunctionEntry_0:01F83F984D4E39BA28765E8223950458
+     输入：execute <- K2Node_FunctionEntry_0:22E3EC884349B7D94DF447A31CA1D019
    - BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
 
 ### 8.2 BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
@@ -104,7 +104,7 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 1. 执行链：BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3_Introdection
 1. 关键节点：
    - ExecuteUbergraph_W_Level3_Introdection
-     输入：execute <- K2Node_FunctionEntry_0:FBDD213A4DB301EA5FD8DFBCFFB77AF0
+     输入：execute <- K2Node_FunctionEntry_0:91077E5E4181F863F4FC8EAF5293DD70
    - BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 
 ### 8.3 BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
@@ -115,7 +115,7 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 1. 执行链：BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3_Introdection
 1. 关键节点：
    - ExecuteUbergraph_W_Level3_Introdection
-     输入：execute <- K2Node_FunctionEntry_0:491EE1C1462D3AF61E446DB1F39BCD3F
+     输入：execute <- K2Node_FunctionEntry_0:0EF8785A44FC31B77EB1EC8CBAC735D6
    - BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
 
 ### 8.4 Construct
@@ -126,7 +126,7 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 1. 执行链：Construct -> ExecuteUbergraph_W_Level3_Introdection
 1. 关键节点：
    - ExecuteUbergraph_W_Level3_Introdection
-     输入：execute <- K2Node_FunctionEntry_0:07AA10CB469ED65E048F73ABE24FCFDC
+     输入：execute <- K2Node_FunctionEntry_0:0B264358477F3CC919BCA0A1B1E3BA40
    - Construct
 
 ## 9. 当前可直接确认的结论
