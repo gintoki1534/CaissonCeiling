@@ -37,11 +37,14 @@
 2. [BP_ShowcaseModel.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_ShowcaseModel.md)
 3. [BP_ShowcaseModel_Level3.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_ShowcaseModel_Level3.md)
 4. [W_Level3_Introdection.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level3_Introdection.md)
-5. [BP_CaissonController.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_CaissonController.md)
-6. [W_Level2.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/W_Level2.json)
-7. [BP_ShowcaseModel.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/BP_ShowcaseModel.json)
-8. [BP_ShowcaseModel_Level3.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/BP_ShowcaseModel_Level3.json)
-9. [W_Level3_Introdection.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/W_Level3_Introdection.json)
+5. [W_Level3.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level3.md)
+6. [BP_Level3RepairRegion_Dusting.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_Level3RepairRegion_Dusting.md)
+7. [BP_CaissonController.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_CaissonController.md)
+8. [W_Level2.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/W_Level2.json)
+9. [BP_ShowcaseModel.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/BP_ShowcaseModel.json)
+10. [BP_ShowcaseModel_Level3.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/BP_ShowcaseModel_Level3.json)
+11. [W_Level3_Introdection.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/W_Level3_Introdection.json)
+12. [W_Level3.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/W_Level3.json)
 
 ## 3. 当前项目所处阶段
 
@@ -54,10 +57,18 @@
 5. `W_Level2` 当前已新增继续提示容器，并已接通 `Level2 -> W_Level3_Introdection` 跳转链路。
 6. `BP_ShowcaseModel` 当前已新增 `DeactivateLevel2Presentation`，用于 `Level2` 退场。
 7. `BP_ShowcaseModel_Level3` 与 `W_Level3_Introdection` 当前已经建立，可在 `Level3` 介绍页中生成或复用第三关展示模型。
-8. 当前下一步重点是：
+8. `Level3` 第一阶段“云纹框架除尘”已经跑通最小玩法闭环：
 
-   - 继续联调 `Level2` 退场与 `Level3` 入口体验
-   - 在已建立的 `Level3` 介绍页基础上进入新的玩法开发
+   - `W_Level3_Introdection -> W_Level3`
+   - 5 个工具互斥选择
+   - 左键点击修复区域一次结算一次工具效果
+   - 左下角三维数值、进度条和圆点实时刷新
+   - 结果面板与继续按钮已接通
+9. `Level3` 当前采用占位数值和占位打印调试，真实灰尘材质与最终视觉效果尚未接入。
+10. 当前下一步重点是：
+
+   - 把 `BP_ShowcaseModel_Level3 / BP_Level3RepairRegion_Dusting` 接到真实灰尘材质参数
+   - 在已跑通的除尘闭环上继续推进 `Level3` 后续子玩法
 
 ## 4. 蓝图文档如何更新
 
@@ -100,15 +111,15 @@ powershell -ExecutionPolicy Bypass -File Docs\generate_blueprint_docs.ps1 --sync
 
 ## 6. 当前建议的接手入口
 
-如果后续开发或 AI 需要继续接手 `Level2`，建议从下面顺序开始：
+如果后续开发或 AI 需要继续接手 `Level3`，建议从下面顺序开始：
 
 1. 先读 [开发流程.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/开发流程.md)
 2. 再读 [Blueprint_Architecture.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprint_Architecture.md)
 3. 再查看：
-   - [W_Level2.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level2.md)
-   - [BP_ShowcaseModel.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_ShowcaseModel.md)
    - [BP_ShowcaseModel_Level3.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_ShowcaseModel_Level3.md)
    - [W_Level3_Introdection.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level3_Introdection.md)
+   - [W_Level3.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level3.md)
+   - [BP_Level3RepairRegion_Dusting.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_Level3RepairRegion_Dusting.md)
 4. 如果需要确认详细节点，再回看对应 `json`
 
 ## 7. 文档维护约定

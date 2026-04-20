@@ -9,12 +9,13 @@ ULevel3FlowComponent::ULevel3FlowComponent()
 
 	bLevel3SessionActive = false;
 	CompletionThreshold = 1.0f;
+	MinMetricValue = -2.0f;
 	MaxMetricValue = 2.0f;
 
 	FLevel3ToolSpec Tool1WideBrush;
 	Tool1WideBrush.ToolId = TEXT("Tool_1_WideBrush");
 	Tool1WideBrush.DisplayName = FText::FromString(TEXT("WideBrush"));
-	Tool1WideBrush.CleanlinessDelta = 1.0f;
+	Tool1WideBrush.CleanlinessDelta = 2.0f;
 	Tool1WideBrush.IntegrityDelta = 0.0f;
 	Tool1WideBrush.AestheticsDelta = -1.0f;
 	AvailableDustTools.Add(Tool1WideBrush);
@@ -23,32 +24,32 @@ ULevel3FlowComponent::ULevel3FlowComponent()
 	Tool2RoundSoftBrush.ToolId = TEXT("Tool_2_RoundSoftBrush");
 	Tool2RoundSoftBrush.DisplayName = FText::FromString(TEXT("RoundSoftBrush"));
 	Tool2RoundSoftBrush.CleanlinessDelta = 1.0f;
-	Tool2RoundSoftBrush.IntegrityDelta = -1.0f;
+	Tool2RoundSoftBrush.IntegrityDelta = 0.0f;
 	Tool2RoundSoftBrush.AestheticsDelta = 1.0f;
 	AvailableDustTools.Add(Tool2RoundSoftBrush);
 
 	FLevel3ToolSpec Tool3FineLineBrush;
 	Tool3FineLineBrush.ToolId = TEXT("Tool_3_FineLineBrush");
 	Tool3FineLineBrush.DisplayName = FText::FromString(TEXT("FineLineBrush"));
-	Tool3FineLineBrush.CleanlinessDelta = 0.0f;
-	Tool3FineLineBrush.IntegrityDelta = 1.0f;
-	Tool3FineLineBrush.AestheticsDelta = 1.0f;
+	Tool3FineLineBrush.CleanlinessDelta = -1.0f;
+	Tool3FineLineBrush.IntegrityDelta = 0.0f;
+	Tool3FineLineBrush.AestheticsDelta = 2.0f;
 	AvailableDustTools.Add(Tool3FineLineBrush);
 
 	FLevel3ToolSpec Tool4CurvedGapBrush;
 	Tool4CurvedGapBrush.ToolId = TEXT("Tool_4_CurvedGapBrush");
 	Tool4CurvedGapBrush.DisplayName = FText::FromString(TEXT("CurvedGapBrush"));
-	Tool4CurvedGapBrush.CleanlinessDelta = -1.0f;
-	Tool4CurvedGapBrush.IntegrityDelta = 1.0f;
-	Tool4CurvedGapBrush.AestheticsDelta = 0.0f;
+	Tool4CurvedGapBrush.CleanlinessDelta = 0.0f;
+	Tool4CurvedGapBrush.IntegrityDelta = 2.0f;
+	Tool4CurvedGapBrush.AestheticsDelta = -1.0f;
 	AvailableDustTools.Add(Tool4CurvedGapBrush);
 
 	FLevel3ToolSpec Tool5FinishingBrush;
 	Tool5FinishingBrush.ToolId = TEXT("Tool_5_FinishingBrush");
 	Tool5FinishingBrush.DisplayName = FText::FromString(TEXT("FinishingBrush"));
-	Tool5FinishingBrush.CleanlinessDelta = 1.0f;
+	Tool5FinishingBrush.CleanlinessDelta = 0.0f;
 	Tool5FinishingBrush.IntegrityDelta = 1.0f;
-	Tool5FinishingBrush.AestheticsDelta = -1.0f;
+	Tool5FinishingBrush.AestheticsDelta = 1.0f;
 	AvailableDustTools.Add(Tool5FinishingBrush);
 
 	ProgressState.Phase = ELevel3Phase::Introduction;
@@ -137,9 +138,9 @@ bool ULevel3FlowComponent::ApplySelectedToolToHit(const FHitResult& HitResult)
 		SetPhase(ELevel3Phase::Repairing);
 	}
 
-	ProgressState.CleanlinessPercent = FMath::Clamp(ProgressState.CleanlinessPercent + ToolSpec->CleanlinessDelta, 0.0f, MaxMetricValue);
-	ProgressState.IntegrityPercent = FMath::Clamp(ProgressState.IntegrityPercent + ToolSpec->IntegrityDelta, 0.0f, MaxMetricValue);
-	ProgressState.AestheticsPercent = FMath::Clamp(ProgressState.AestheticsPercent + ToolSpec->AestheticsDelta, 0.0f, MaxMetricValue);
+	ProgressState.CleanlinessPercent = FMath::Clamp(ProgressState.CleanlinessPercent + ToolSpec->CleanlinessDelta, MinMetricValue, MaxMetricValue);
+	ProgressState.IntegrityPercent = FMath::Clamp(ProgressState.IntegrityPercent + ToolSpec->IntegrityDelta, MinMetricValue, MaxMetricValue);
+	ProgressState.AestheticsPercent = FMath::Clamp(ProgressState.AestheticsPercent + ToolSpec->AestheticsDelta, MinMetricValue, MaxMetricValue);
 	ProgressState.bIsRepairStrokeActive = false;
 	ProgressState.RepairCoveragePercent = 0.0f;
 

@@ -28,6 +28,9 @@ public:
 	float CompletionThreshold;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3|Rules")
+	float MinMetricValue;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3|Rules")
 	float MaxMetricValue;
 
 	UPROPERTY(BlueprintAssignable, Category="Level3")
