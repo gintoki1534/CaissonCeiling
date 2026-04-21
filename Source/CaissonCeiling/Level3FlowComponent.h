@@ -8,6 +8,7 @@
 class ULevel3RepairAreaComponent;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLevel3PhaseChanged, ELevel3Phase, NewPhase);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLevel3SubStageChanged, ELevel3SubStage, NewSubStage);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLevel3ToolSelected, FName, ToolId);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLevel3ProgressChanged, const FLevel3ProgressState&, ProgressState);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLevel3RepairAreaUpdated, const FLevel3RepairAreaState&, AreaState);
@@ -21,8 +22,11 @@ class CAISSONCEILING_API ULevel3FlowComponent : public UActorComponent
 public:
 	ULevel3FlowComponent();
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3|Tools")
-	TArray<FLevel3ToolSpec> AvailableDustTools;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3|Stages")
+	FLevel3StageConfig DustingStageConfig;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3|Stages")
+	FLevel3StageConfig OilingStageConfig;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3|Rules")
 	float CompletionThreshold;
@@ -35,6 +39,9 @@ public:
 
 	UPROPERTY(BlueprintAssignable, Category="Level3")
 	FOnLevel3PhaseChanged OnLevel3PhaseChanged;
+
+	UPROPERTY(BlueprintAssignable, Category="Level3")
+	FOnLevel3SubStageChanged OnLevel3SubStageChanged;
 
 	UPROPERTY(BlueprintAssignable, Category="Level3")
 	FOnLevel3ToolSelected OnLevel3ToolSelected;
@@ -50,6 +57,12 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category="Level3")
 	void StartLevel3Dusting();
+
+	UFUNCTION(BlueprintCallable, Category="Level3")
+	void StartLevel3Oiling();
+
+	UFUNCTION(BlueprintCallable, Category="Level3")
+	void AdvanceToOilingStage();
 
 	UFUNCTION(BlueprintCallable, Category="Level3")
 	void ResetLevel3State();
@@ -82,6 +95,9 @@ public:
 	ELevel3Phase GetCurrentPhase() const;
 
 	UFUNCTION(BlueprintPure, Category="Level3")
+	ELevel3SubStage GetCurrentSubStage() const;
+
+	UFUNCTION(BlueprintPure, Category="Level3")
 	FLevel3ProgressState GetProgressState() const;
 
 	UFUNCTION(BlueprintPure, Category="Level3")
@@ -89,6 +105,12 @@ public:
 
 	UFUNCTION(BlueprintPure, Category="Level3")
 	TArray<FLevel3ToolSpec> GetAvailableDustTools() const;
+
+	UFUNCTION(BlueprintPure, Category="Level3")
+	TArray<FLevel3ToolSpec> GetAvailableCurrentStageTools() const;
+
+	UFUNCTION(BlueprintPure, Category="Level3")
+	FLevel3StageConfig GetCurrentStageConfig() const;
 
 private:
 	UPROPERTY(Transient)
@@ -103,10 +125,17 @@ private:
 	UPROPERTY(Transient)
 	TObjectPtr<ULevel3RepairAreaComponent> ActiveRepairArea;
 
+	const FLevel3StageConfig* FindStageConfig(ELevel3SubStage SubStage) const;
+	const FLevel3StageConfig* GetActiveStageConfig() const;
 	const FLevel3ToolSpec* FindToolSpec(FName ToolId) const;
+	void StartStage(ELevel3SubStage SubStage);
+	void ResetProgressForStage(const FLevel3StageConfig& StageConfig);
 	ULevel3RepairAreaComponent* ResolveRepairAreaFromHit(const FHitResult& HitResult) const;
+	void RefreshStageVisualState();
 	void RefreshDustState();
+	void RefreshOilState();
 	void SetPhase(ELevel3Phase NewPhase);
+	void SetSubStage(ELevel3SubStage NewSubStage);
 	void BroadcastProgress();
 	void HandleRepairAreaUpdated(ULevel3RepairAreaComponent* RepairArea);
 	void ResetAllRepairAreas();

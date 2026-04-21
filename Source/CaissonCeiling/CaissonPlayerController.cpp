@@ -501,6 +501,22 @@ void ACaissonPlayerController::StartLevel3Dusting()
 	}
 }
 
+void ACaissonPlayerController::StartLevel3Oiling()
+{
+	if (Level3FlowComponent)
+	{
+		Level3FlowComponent->StartLevel3Oiling();
+	}
+}
+
+void ACaissonPlayerController::AdvanceLevel3ToOiling()
+{
+	if (Level3FlowComponent)
+	{
+		Level3FlowComponent->AdvanceToOilingStage();
+	}
+}
+
 void ACaissonPlayerController::ResetLevel3Dusting()
 {
 	if (Level3FlowComponent)
@@ -514,12 +530,25 @@ bool ACaissonPlayerController::SelectLevel3Tool(FName ToolId)
 	return Level3FlowComponent ? Level3FlowComponent->SelectTool(ToolId) : false;
 }
 
+void ACaissonPlayerController::ContinueLevel3AfterResult()
+{
+	if (Level3FlowComponent)
+	{
+		Level3FlowComponent->CompleteResultPresentation();
+	}
+}
+
 void ACaissonPlayerController::CompleteLevel3ResultPresentation()
 {
 	if (Level3FlowComponent)
 	{
 		Level3FlowComponent->CompleteResultPresentation();
 	}
+}
+
+ELevel3SubStage ACaissonPlayerController::GetCurrentLevel3SubStage() const
+{
+	return Level3FlowComponent ? Level3FlowComponent->GetCurrentSubStage() : ELevel3SubStage::None;
 }
 
 ULevel3FlowComponent* ACaissonPlayerController::GetLevel3FlowComponent() const

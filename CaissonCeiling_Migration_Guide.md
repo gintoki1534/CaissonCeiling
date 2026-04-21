@@ -75,7 +75,7 @@
 - `UCaissonUserWidget`
   - 作为 UI 蓝图的 C++ 基类扩展点
 - `ULevel3FlowComponent`
-  - `Level3` 第一阶段独立流程与评分状态机
+  - `Level3` 双子阶段独立流程与评分状态机
 - `ULevel3RepairAreaComponent`
   - `Level3` 修复区域覆盖率累计组件
 - `ALevel3RepairRegionActor`
@@ -190,9 +190,9 @@
 
 ### 5.2 仍需注意的事项
 
-- `W_Level3` 已完成第一阶段除尘玩法的基础接线
+- `W_Level3` 已完成 `Dusting + Oiling` 双子阶段玩法的基础接线
   - 当前状态是“占位数值 + 占位视觉调试”
-  - 真实灰尘材质和最终视觉效果仍需后续接入
+  - 真实灰尘、桐油材质和最终视觉效果仍需后续接入
 
 - 蓝图资产的最新职责与接线，请以 `Docs/Blueprint_Architecture.md` 为准
   - 该文档面向后续开发者与 AI
@@ -304,7 +304,7 @@
 - `W_Level2` 承接介绍 UI、步骤 UI 和回位完成回调
 - `BP_ShowcaseModel` 承接镜头拉近和回原位演出
 
-同时，`Level3` 第一阶段当前也已经建立了新的独立代码入口，并且已经接通到真实蓝图：
+同时，`Level3` 当前也已经建立了新的独立代码入口，并且已经接通到真实蓝图：
 
 - `ACaissonPlayerController` 只负责输入宿主与转发
 - `ULevel3FlowComponent` 维护 `Level3` 真状态
@@ -314,12 +314,17 @@
 当前这条链路已经进一步落地为：
 
 - `W_Level3_Introdection -> W_Level3` 页面入口
-- `W_Level3` 中 5 个工具按钮互斥选择
+- `W_Level3` 继续复用同一页面承载 `Dusting + Oiling` 双子阶段
+- `Dusting` 阶段 5 个工具按钮互斥选择
+- `Oiling` 阶段 4 个工具按钮互斥选择，并隐藏第 5 个工具槽
 - 左键点击修复区域一次，结算一次工具效果
 - 三维数值当前支持 `-2 ~ 2`
 - 左下角数值、进度条和圆点已实时刷新
 - `BP_ShowcaseModel_Level3.UpdateDustVisual` 当前先使用占位 `PrintString` 调试
-- 真实灰尘材质待后续接入
+- `BP_ShowcaseModel_Level3.UpdateOilVisual` 当前先使用占位 `PrintString` 调试
+- `Dusting` 结果点击“下一步”后进入 `Oiling`，`W_Level3` 不关闭
+- `Oiling` 完成后进入占位完成态
+- 真实灰尘与桐油材质待后续接入
 
 这意味着后续 `Level3` 不需要复用 `Level2` 的 `CurrentStep / RequiredLevel2TargetIds / ELevel2FlowState` 逻辑。
 

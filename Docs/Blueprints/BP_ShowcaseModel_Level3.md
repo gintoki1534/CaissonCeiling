@@ -25,9 +25,9 @@
 
 ### 5.2 主执行链
 
-1. ReceiveTick
-1. ReceiveActorBeginOverlap
 1. ReceiveBeginPlay
+1. ReceiveActorBeginOverlap
+1. ReceiveTick
 
 ## 6. 关键变量
 
@@ -66,14 +66,14 @@
 1. 连接数：3
 1. 执行链：ActivateLevel3Presentation -> SetActorHiddenInGame -> SetActorEnableCollision -> SetActorTickEnabled
 1. 关键节点：
+   - ActivateLevel3Presentation
+   - SetActorHiddenInGame
+     输入：execute <- K2Node_FunctionEntry_0:4E8F13D24F25A96BA36C64A3F1D647E7
+   - SetActorEnableCollision
+     输入：execute <- K2Node_CallFunction_0:259AF0FA4A9697E4C94B37BABB617AC4
    - SetActorTickEnabled
      输入：execute <- K2Node_CallFunction_1:5859C35E463EBCE4B332CEB87A99D779
      输入：bEnabled = true
-   - SetActorEnableCollision
-     输入：execute <- K2Node_CallFunction_0:259AF0FA4A9697E4C94B37BABB617AC4
-   - SetActorHiddenInGame
-     输入：execute <- K2Node_FunctionEntry_0:4E8F13D24F25A96BA36C64A3F1D647E7
-   - ActivateLevel3Presentation
 
 ### 8.2 ActivateRepairPresentation
 
@@ -82,16 +82,16 @@
 1. 连接数：7
 1. 执行链：ActivateRepairPresentation -> Set TargetArmLength -> SceneComponent.K2_SetWorldLocationAndRotation
 1. 关键节点：
+   - ActivateRepairPresentation
+   - Set TargetArmLength
+     输入：execute <- K2Node_FunctionEntry_0:7A83F4FD43C18B2C7F2F3B8FC92048A5
+     输入：TargetArmLength <- K2Node_VariableGet_2:D940AE7A41F9D6C85F4BE7BDC19FAFFB
+     输入：self <- K2Node_VariableGet_1:E8DBDB134F09998A978E7B807FD4EE31
    - SceneComponent.K2_SetWorldLocationAndRotation
      输入：execute <- K2Node_VariableSet_1:3BC707704DA3E43B612C9692B4884296
      输入：self <- K2Node_VariableGet_1:E8DBDB134F09998A978E7B807FD4EE31
      输入：NewLocation <- K2Node_VariableGet_4:EAF5292A438967282229F09271D5F746
      输入：NewRotation <- K2Node_VariableGet_3:EDA2F53940AA0E01DA9E0C8DD1E805B5
-   - Set TargetArmLength
-     输入：execute <- K2Node_FunctionEntry_0:7A83F4FD43C18B2C7F2F3B8FC92048A5
-     输入：TargetArmLength <- K2Node_VariableGet_2:D940AE7A41F9D6C85F4BE7BDC19FAFFB
-     输入：self <- K2Node_VariableGet_1:E8DBDB134F09998A978E7B807FD4EE31
-   - ActivateRepairPresentation
 
 ### 8.3 ReturnToLevel3DefaultView
 
@@ -100,45 +100,52 @@
 1. 连接数：7
 1. 执行链：ReturnToLevel3DefaultView -> Set TargetArmLength -> SceneComponent.K2_SetWorldLocationAndRotation
 1. 关键节点：
+   - ReturnToLevel3DefaultView
+   - Set TargetArmLength
+     输入：execute <- K2Node_FunctionEntry_1:220A429E4D58B89C21CC988D993F7D50
+     输入：TargetArmLength <- K2Node_VariableGet_0:F606E57846AC2B2EF0ACD8B2A49EE9E7
+     输入：self <- K2Node_VariableGet_1:E8DBDB134F09998A978E7B807FD4EE31
    - SceneComponent.K2_SetWorldLocationAndRotation
      输入：execute <- K2Node_VariableSet_1:3BC707704DA3E43B612C9692B4884296
      输入：self <- K2Node_VariableGet_1:E8DBDB134F09998A978E7B807FD4EE31
      输入：NewLocation <- K2Node_VariableGet_6:F5714FBF47059AF964EB179C21B824CC
      输入：NewRotation <- K2Node_VariableGet_5:C6B95B62449F30B9F01A55BFDD5ADFF4
-   - Set TargetArmLength
-     输入：execute <- K2Node_FunctionEntry_1:220A429E4D58B89C21CC988D993F7D50
-     输入：TargetArmLength <- K2Node_VariableGet_0:F606E57846AC2B2EF0ACD8B2A49EE9E7
-     输入：self <- K2Node_VariableGet_1:E8DBDB134F09998A978E7B807FD4EE31
-   - ReturnToLevel3DefaultView
 
 ### 8.4 UpdateDustVisual
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：6
+1. 模块数：4
 1. 连接数：4
 1. 执行链：UpdateDustVisual -> KismetSystemLibrary.PrintString
 1. 关键节点：
-   - WidgetBlueprintLibrary.DrawTextFormatted
-     输入：self = /Script/UMG.Default__WidgetBlueprintLibrary
-     输入：FontSize = 16.000000
-     输入：FontTypeFace = Regular
-     输入：Tint = (R=1.000000,G=1.000000,B=1.000000,A=1.000000)
    - UpdateDustVisual
-   - KismetSystemLibrary.PrintString
-     输入：self = /Script/Engine.Default__KismetSystemLibrary
-     输入：InString = UpdateDustVisual Called
-     输入：bPrintToScreen = true
-     输入：bPrintToLog = true
-   - KismetTextLibrary.Conv_TextToString
-     输入：self = /Script/Engine.Default__KismetTextLibrary
-     输入：InText <- K2Node_FormatText_0:A522094D408D6DE1A3032BA372EBDCBB
    - KismetSystemLibrary.PrintString
      输入：execute <- K2Node_FunctionEntry_0:E94A690044B052E0297E889A6CF34635
      输入：self = /Script/Engine.Default__KismetSystemLibrary
      输入：InString <- K2Node_CallFunction_4:BB6F1E7343252D7A7131E3A0F897D263
      输入：bPrintToScreen = true
+   - KismetTextLibrary.Conv_TextToString
+     输入：self = /Script/Engine.Default__KismetTextLibrary
+     输入：InText <- K2Node_FormatText_0:A522094D408D6DE1A3032BA372EBDCBB
 
-### 8.5 UserConstructionScript
+### 8.5 UpdateOilVisual
+
+1. 图类型：BlueprintGraph.EdGraphSchema_K2
+1. 模块数：4
+1. 连接数：4
+1. 执行链：UpdateOilVisual -> KismetSystemLibrary.PrintString
+1. 关键节点：
+   - UpdateOilVisual
+   - KismetSystemLibrary.PrintString
+     输入：execute <- K2Node_FunctionEntry_0:E94A690044B052E0297E889A6CF34635
+     输入：self = /Script/Engine.Default__KismetSystemLibrary
+     输入：InString <- K2Node_CallFunction_4:BB6F1E7343252D7A7131E3A0F897D263
+     输入：bPrintToScreen = true
+   - KismetTextLibrary.Conv_TextToString
+     输入：self = /Script/Engine.Default__KismetTextLibrary
+     输入：InText <- K2Node_FormatText_0:A522094D408D6DE1A3032BA372EBDCBB
+
+### 8.6 UserConstructionScript
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：1

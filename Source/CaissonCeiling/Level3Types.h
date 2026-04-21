@@ -13,6 +13,14 @@ enum class ELevel3Phase : uint8
 	Completed UMETA(DisplayName="Completed")
 };
 
+UENUM(BlueprintType)
+enum class ELevel3SubStage : uint8
+{
+	None UMETA(DisplayName="None"),
+	Dusting UMETA(DisplayName="Dusting"),
+	Oiling UMETA(DisplayName="Oiling")
+};
+
 USTRUCT(BlueprintType)
 struct FLevel3ToolSpec
 {
@@ -32,6 +40,51 @@ struct FLevel3ToolSpec
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
 	float AestheticsDelta = 0.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	int32 ToolSlotIndex = INDEX_NONE;
+};
+
+USTRUCT(BlueprintType)
+struct FLevel3StageConfig
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	ELevel3SubStage SubStage = ELevel3SubStage::None;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	FText StageTitle;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	FText ToolPanelTitle;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	FText ResultTitle;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	int32 VisibleToolCount = 0;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	float RequiredMetricValue = 2.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	float InitialDustReveal01 = 0.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	float InitialDustConcentration01 = 1.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	float InitialOilBlend01 = 0.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	bool bUsesDustVisual = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	bool bUsesOilVisual = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	TArray<FLevel3ToolSpec> Tools;
 };
 
 USTRUCT(BlueprintType)
@@ -53,6 +106,9 @@ struct FLevel3ProgressState
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
 	ELevel3Phase Phase = ELevel3Phase::Introduction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	ELevel3SubStage SubStage = ELevel3SubStage::None;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
 	FName SelectedToolId = NAME_None;
@@ -80,12 +136,30 @@ struct FLevel3ProgressState
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
 	float DustConcentration01 = 1.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	float OilBlend01 = 0.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	FText StageTitle;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	FText ToolPanelTitle;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	FText ResultTitle;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	int32 VisibleToolCount = 0;
 };
 
 USTRUCT(BlueprintType)
 struct FLevel3ResultState
 {
 	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	ELevel3SubStage SubStage = ELevel3SubStage::None;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
 	bool bSucceeded = false;
@@ -113,4 +187,10 @@ struct FLevel3ResultState
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
 	float FinalDustConcentration01 = 1.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	float FinalOilBlend01 = 0.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	FText ResultTitle;
 };

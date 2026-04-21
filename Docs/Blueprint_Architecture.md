@@ -50,8 +50,8 @@
 5. `UCaissonUserWidget`
    - UI 蓝图基类扩展点
 6. `ULevel3FlowComponent`
-   - `Level3` 第一阶段独立状态机
-   - 工具选择、除尘进度、评分和结果广播
+   - `Level3` 当前双子阶段独立状态机
+   - 工具选择、子阶段切换、进度、评分和结果广播
 7. `ULevel3RepairAreaComponent`
    - `Level3` 修复区域命中与覆盖率累计
 8. `ALevel3RepairRegionActor`
@@ -370,12 +370,13 @@
    - `ActivateRepairPresentation`
    - `ReturnToLevel3DefaultView`
    - `UpdateDustVisual`
+   - `UpdateOilVisual`
 3. `ActivateLevel3Presentation` 当前用于 `Level3` 展示模型激活，执行：
    - `SetActorHiddenInGame(false)`
    - `SetActorEnableCollision(...)`
    - `SetActorTickEnabled(true)`
-4. `ActivateRepairPresentation / ReturnToLevel3DefaultView` 当前用于 `Level3` 除尘阶段的近景视角切换
-5. `UpdateDustVisual` 当前已经接通，但仍使用占位 `PrintString` 调试，真实灰尘材质参数尚未接入
+4. `ActivateRepairPresentation / ReturnToLevel3DefaultView` 当前用于 `Level3` 修复子阶段的近景视角切换
+5. `UpdateDustVisual / UpdateOilVisual` 当前已经接通，但仍使用占位 `PrintString` 调试，真实灰尘与桐油材质参数尚未接入
 6. 当前不把它视为“Level3 玩法逻辑蓝图”，而视为 `Level3` 的展示载体入口
 7. 后续如果 `Level3` 建立新的 C++ 流程类，再决定是否需要调整父类或进一步拆职责
 
@@ -475,7 +476,7 @@ W_Level3_Introdection
 1. `Level3` 介绍页当前已能在半透明 UI 背后显示第三关模型
 2. `W_Level3_Introdection` 当前承担 `Level3` 展示 Pawn 的创建或复用入口
 
-### 6.2.1 Level3 当前除尘主链路
+### 6.2.1 Level3 当前双子阶段主链路
 
 ```text
 W_Level3_Introdection.按钮-关闭
@@ -487,7 +488,9 @@ W_Level3.Construct
 -> 绑定 OnLevel3PhaseChanged / OnLevel3ToolSelected / OnLevel3ProgressChanged / OnLevel3ResultReady
 -> 手动刷新当前 Phase 与 Progress
 
-W_Level3.Button_Tool1~5
+W_Level3.Dusting 阶段
+-> 显示 Dusting 工具面板
+-> Button_Tool1~5
 -> RequestSelectTool
 -> CaissonPlayerController.SelectLevel3Tool(ToolId)
 
@@ -499,14 +502,46 @@ W_Level3.Button_Tool1~5
 -> W_Level3 刷新左下角数值 / 进度条 / 圆点
 -> BP_ShowcaseModel_Level3.UpdateDustVisual()
 -> 当前仅做占位 PrintString 调试
+
+Dusting 达成结果
+-> W_Level3.Button_Continue
+-> BP_ShowcaseModel_Level3.ReturnToLevel3DefaultView()
+-> CaissonPlayerController.AdvanceLevel3ToOiling()
+-> W_Level3 不关闭
+-> 右侧切换为 Oiling 工具面板
+-> 重置三维数值 / 进度条 / 当前选中工具
+
+W_Level3.Oiling 阶段
+-> 显示 Oiling 工具面板
+-> Button_Tool1~4
+-> 隐藏 Button_Tool5 / Tools_5_Selected / Tools_5_Unselected
+-> RequestSelectTool
+-> CaissonPlayerController.SelectLevel3Tool(ToolId)
+
+鼠标左键点击修复区域
+-> ACaissonPlayerController::OnPrimaryInteractPressed()
+-> ULevel3FlowComponent::ApplySelectedToolToHit()
+-> 结算当前工具的三维数值
+-> 广播 OnLevel3ProgressChanged
+-> W_Level3 刷新左下角数值 / 进度条 / 圆点
+-> BP_ShowcaseModel_Level3.UpdateOilVisual()
+-> 当前仅做占位 PrintString 调试
+
+Oiling 达成结果
+-> W_Level3.Button_Continue
+-> BP_ShowcaseModel_Level3.ReturnToLevel3DefaultView()
+-> CaissonPlayerController.CompleteLevel3ResultPresentation()
+-> 进入 Completed 占位完成态
 ```
 
 这条链路说明：
 
 1. `Level3` 当前已经不再使用旧的“按住刷 + Tick 持续除尘”方案
 2. 当前真实玩法是“选工具后单击模型一次，结算一次工具效果”
-3. `W_Level3` 当前已经进入正式玩法开发状态，不再是纯占位页
-4. `BP_Level3RepairRegion_Dusting` 当前仍是区域摆放壳层，真实灰尘材质尚未接入
+3. `Level3` 当前通过 `ELevel3SubStage` 在同一套 `W_Level3` 中切换 `Dusting / Oiling`
+4. `BP_Level3RepairRegion_Dusting` 当前仍复用为单区域命中壳层
+5. `W_Level3` 当前已经进入正式玩法开发状态，不再是纯占位页
+6. 真实灰尘与桐油材质尚未接入
 
 ### 6.3 Level2 当前主链路
 
@@ -602,7 +637,7 @@ PlayerTick
 
 补充说明：
 
-1. `W_Level3` 当前已完成 `Level3` 第一阶段除尘 UI 的基础接线，但真实灰尘材质仍未接入
+1. `W_Level3` 当前已完成 `Level3` 的 `Dusting + Oiling` 双子阶段 UI 接线，但真实灰尘与桐油材质仍未接入
 2. 当前项目里已实际建立的介绍页资产名为 `W_Level3_Introdection`
 3. `W_Level3_Introdection` 当前已经完成基础接线，可作为 `Level3` 入口继续维护
 4. 不建议继续直接复用 `W_Level1_Introdection` 原资产，因为它原本关闭后会打开 `W_Level2`

@@ -57,18 +57,20 @@
 5. `W_Level2` 当前已新增继续提示容器，并已接通 `Level2 -> W_Level3_Introdection` 跳转链路。
 6. `BP_ShowcaseModel` 当前已新增 `DeactivateLevel2Presentation`，用于 `Level2` 退场。
 7. `BP_ShowcaseModel_Level3` 与 `W_Level3_Introdection` 当前已经建立，可在 `Level3` 介绍页中生成或复用第三关展示模型。
-8. `Level3` 第一阶段“云纹框架除尘”已经跑通最小玩法闭环：
+8. `Level3` 当前已经从“仅除尘”扩展为同一页面内的双子阶段闭环：
 
    - `W_Level3_Introdection -> W_Level3`
-   - 5 个工具互斥选择
+   - `Dusting` 阶段使用 5 个工具
+   - `Oiling` 阶段使用 4 个工具，并隐藏第 5 个工具槽
    - 左键点击修复区域一次结算一次工具效果
    - 左下角三维数值、进度条和圆点实时刷新
-   - 结果面板与继续按钮已接通
-9. `Level3` 当前采用占位数值和占位打印调试，真实灰尘材质与最终视觉效果尚未接入。
+   - `Dusting` 完成后点击“下一步”不关闭 `W_Level3`，而是切到 `Oiling`
+   - `Oiling` 完成后进入占位完成态
+9. `Level3` 当前采用占位数值和占位打印调试，真实灰尘材质、真实桐油材质与最终视觉效果尚未接入。
 10. 当前下一步重点是：
 
-   - 把 `BP_ShowcaseModel_Level3 / BP_Level3RepairRegion_Dusting` 接到真实灰尘材质参数
-   - 在已跑通的除尘闭环上继续推进 `Level3` 后续子玩法
+   - 把 `BP_ShowcaseModel_Level3 / BP_Level3RepairRegion_Dusting` 接到真实灰尘或桐油材质参数
+   - 在已跑通的 `Dusting + Oiling` 双子阶段闭环上继续推进 `Level3` 后续子玩法
 
 ## 4. 蓝图文档如何更新
 

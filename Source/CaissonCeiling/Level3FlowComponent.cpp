@@ -8,51 +8,108 @@ ULevel3FlowComponent::ULevel3FlowComponent()
 	PrimaryComponentTick.bCanEverTick = false;
 
 	bLevel3SessionActive = false;
-	CompletionThreshold = 1.0f;
+	CompletionThreshold = 2.0f;
 	MinMetricValue = -2.0f;
 	MaxMetricValue = 2.0f;
 
-	FLevel3ToolSpec Tool1WideBrush;
-	Tool1WideBrush.ToolId = TEXT("Tool_1_WideBrush");
-	Tool1WideBrush.DisplayName = FText::FromString(TEXT("WideBrush"));
-	Tool1WideBrush.CleanlinessDelta = 2.0f;
-	Tool1WideBrush.IntegrityDelta = 0.0f;
-	Tool1WideBrush.AestheticsDelta = -1.0f;
-	AvailableDustTools.Add(Tool1WideBrush);
+	DustingStageConfig.SubStage = ELevel3SubStage::Dusting;
+	DustingStageConfig.StageTitle = FText::FromString(TEXT("除尘"));
+	DustingStageConfig.ToolPanelTitle = FText::FromString(TEXT("除尘工具"));
+	DustingStageConfig.ResultTitle = FText::FromString(TEXT("除尘完成"));
+	DustingStageConfig.VisibleToolCount = 5;
+	DustingStageConfig.RequiredMetricValue = CompletionThreshold;
+	DustingStageConfig.InitialDustReveal01 = 0.0f;
+	DustingStageConfig.InitialDustConcentration01 = 1.0f;
+	DustingStageConfig.InitialOilBlend01 = 0.0f;
+	DustingStageConfig.bUsesDustVisual = true;
+	DustingStageConfig.bUsesOilVisual = false;
 
-	FLevel3ToolSpec Tool2RoundSoftBrush;
-	Tool2RoundSoftBrush.ToolId = TEXT("Tool_2_RoundSoftBrush");
-	Tool2RoundSoftBrush.DisplayName = FText::FromString(TEXT("RoundSoftBrush"));
-	Tool2RoundSoftBrush.CleanlinessDelta = 1.0f;
-	Tool2RoundSoftBrush.IntegrityDelta = 0.0f;
-	Tool2RoundSoftBrush.AestheticsDelta = 1.0f;
-	AvailableDustTools.Add(Tool2RoundSoftBrush);
+	FLevel3ToolSpec DustTool1;
+	DustTool1.ToolId = TEXT("Tool_1_WideBrush");
+	DustTool1.DisplayName = FText::FromString(TEXT("宽口羊毛排刷"));
+	DustTool1.CleanlinessDelta = 2.0f;
+	DustTool1.AestheticsDelta = -1.0f;
+	DustTool1.ToolSlotIndex = 1;
+	DustingStageConfig.Tools.Add(DustTool1);
 
-	FLevel3ToolSpec Tool3FineLineBrush;
-	Tool3FineLineBrush.ToolId = TEXT("Tool_3_FineLineBrush");
-	Tool3FineLineBrush.DisplayName = FText::FromString(TEXT("FineLineBrush"));
-	Tool3FineLineBrush.CleanlinessDelta = -1.0f;
-	Tool3FineLineBrush.IntegrityDelta = 0.0f;
-	Tool3FineLineBrush.AestheticsDelta = 2.0f;
-	AvailableDustTools.Add(Tool3FineLineBrush);
+	FLevel3ToolSpec DustTool2;
+	DustTool2.ToolId = TEXT("Tool_2_RoundSoftBrush");
+	DustTool2.DisplayName = FText::FromString(TEXT("圆头除尘软刷"));
+	DustTool2.CleanlinessDelta = 1.0f;
+	DustTool2.AestheticsDelta = 1.0f;
+	DustTool2.ToolSlotIndex = 2;
+	DustingStageConfig.Tools.Add(DustTool2);
 
-	FLevel3ToolSpec Tool4CurvedGapBrush;
-	Tool4CurvedGapBrush.ToolId = TEXT("Tool_4_CurvedGapBrush");
-	Tool4CurvedGapBrush.DisplayName = FText::FromString(TEXT("CurvedGapBrush"));
-	Tool4CurvedGapBrush.CleanlinessDelta = 0.0f;
-	Tool4CurvedGapBrush.IntegrityDelta = 2.0f;
-	Tool4CurvedGapBrush.AestheticsDelta = -1.0f;
-	AvailableDustTools.Add(Tool4CurvedGapBrush);
+	FLevel3ToolSpec DustTool3;
+	DustTool3.ToolId = TEXT("Tool_3_FineLineBrush");
+	DustTool3.DisplayName = FText::FromString(TEXT("极细勾线描刷"));
+	DustTool3.CleanlinessDelta = -1.0f;
+	DustTool3.AestheticsDelta = 2.0f;
+	DustTool3.ToolSlotIndex = 3;
+	DustingStageConfig.Tools.Add(DustTool3);
 
-	FLevel3ToolSpec Tool5FinishingBrush;
-	Tool5FinishingBrush.ToolId = TEXT("Tool_5_FinishingBrush");
-	Tool5FinishingBrush.DisplayName = FText::FromString(TEXT("FinishingBrush"));
-	Tool5FinishingBrush.CleanlinessDelta = 0.0f;
-	Tool5FinishingBrush.IntegrityDelta = 1.0f;
-	Tool5FinishingBrush.AestheticsDelta = 1.0f;
-	AvailableDustTools.Add(Tool5FinishingBrush);
+	FLevel3ToolSpec DustTool4;
+	DustTool4.ToolId = TEXT("Tool_4_CurvedGapBrush");
+	DustTool4.DisplayName = FText::FromString(TEXT("弯曲柄刷"));
+	DustTool4.IntegrityDelta = 2.0f;
+	DustTool4.AestheticsDelta = -1.0f;
+	DustTool4.ToolSlotIndex = 4;
+	DustingStageConfig.Tools.Add(DustTool4);
+
+	FLevel3ToolSpec DustTool5;
+	DustTool5.ToolId = TEXT("Tool_5_FinishingBrush");
+	DustTool5.DisplayName = FText::FromString(TEXT("墩头打磨油刷"));
+	DustTool5.IntegrityDelta = 1.0f;
+	DustTool5.AestheticsDelta = 1.0f;
+	DustTool5.ToolSlotIndex = 5;
+	DustingStageConfig.Tools.Add(DustTool5);
+
+	OilingStageConfig.SubStage = ELevel3SubStage::Oiling;
+	OilingStageConfig.StageTitle = FText::FromString(TEXT("涂油"));
+	OilingStageConfig.ToolPanelTitle = FText::FromString(TEXT("涂油毛刷"));
+	OilingStageConfig.ResultTitle = FText::FromString(TEXT("涂油完成"));
+	OilingStageConfig.VisibleToolCount = 4;
+	OilingStageConfig.RequiredMetricValue = CompletionThreshold;
+	OilingStageConfig.InitialDustReveal01 = 1.0f;
+	OilingStageConfig.InitialDustConcentration01 = 0.0f;
+	OilingStageConfig.InitialOilBlend01 = 0.0f;
+	OilingStageConfig.bUsesDustVisual = false;
+	OilingStageConfig.bUsesOilVisual = true;
+
+	FLevel3ToolSpec OilTool1;
+	OilTool1.ToolId = TEXT("Tool_1_WideBrush");
+	OilTool1.DisplayName = FText::FromString(TEXT("抛光携油团"));
+	OilTool1.CleanlinessDelta = -1.0f;
+	OilTool1.AestheticsDelta = 2.0f;
+	OilTool1.ToolSlotIndex = 1;
+	OilingStageConfig.Tools.Add(OilTool1);
+
+	FLevel3ToolSpec OilTool2;
+	OilTool2.ToolId = TEXT("Tool_2_RoundSoftBrush");
+	OilTool2.DisplayName = FText::FromString(TEXT("去蜡打磨丝瓜络"));
+	OilTool2.IntegrityDelta = 2.0f;
+	OilTool2.AestheticsDelta = -1.0f;
+	OilTool2.ToolSlotIndex = 2;
+	OilingStageConfig.Tools.Add(OilTool2);
+
+	FLevel3ToolSpec OilTool3;
+	OilTool3.ToolId = TEXT("Tool_3_FineLineBrush");
+	OilTool3.DisplayName = FText::FromString(TEXT("斜锋刷角修缮刷"));
+	OilTool3.CleanlinessDelta = 2.0f;
+	OilTool3.IntegrityDelta = -1.0f;
+	OilTool3.ToolSlotIndex = 3;
+	OilingStageConfig.Tools.Add(OilTool3);
+
+	FLevel3ToolSpec OilTool4;
+	OilTool4.ToolId = TEXT("Tool_4_CurvedGapBrush");
+	OilTool4.DisplayName = FText::FromString(TEXT("调油宽托/油托"));
+	OilTool4.IntegrityDelta = 1.0f;
+	OilTool4.AestheticsDelta = 1.0f;
+	OilTool4.ToolSlotIndex = 4;
+	OilingStageConfig.Tools.Add(OilTool4);
 
 	ProgressState.Phase = ELevel3Phase::Introduction;
+	ProgressState.SubStage = ELevel3SubStage::None;
 	ResultState = FLevel3ResultState();
 }
 
@@ -62,21 +119,29 @@ void ULevel3FlowComponent::StartLevel3Dusting()
 	ResultState = FLevel3ResultState();
 	ActiveRepairArea = nullptr;
 	ResetAllRepairAreas();
+	StartStage(ELevel3SubStage::Dusting);
+}
 
-	ProgressState = FLevel3ProgressState();
-	ProgressState.Phase = ELevel3Phase::Introduction;
-	ProgressState.CleanlinessPercent = 0.0f;
-	ProgressState.IntegrityPercent = 0.0f;
-	ProgressState.AestheticsPercent = 0.0f;
-	ProgressState.RepairCoveragePercent = 0.0f;
-	ProgressState.SelectedToolId = NAME_None;
-	ProgressState.ActiveAreaId = NAME_None;
-	ProgressState.bIsRepairStrokeActive = false;
-	ProgressState.DustReveal01 = 0.0f;
-	ProgressState.DustConcentration01 = 1.0f;
+void ULevel3FlowComponent::StartLevel3Oiling()
+{
+	bLevel3SessionActive = true;
+	ResultState = FLevel3ResultState();
+	ActiveRepairArea = nullptr;
+	ResetAllRepairAreas();
+	StartStage(ELevel3SubStage::Oiling);
+}
 
-	SetPhase(ELevel3Phase::ToolSelecting);
-	BroadcastProgress();
+void ULevel3FlowComponent::AdvanceToOilingStage()
+{
+	if (!bLevel3SessionActive || ProgressState.Phase != ELevel3Phase::RepairResult || ProgressState.SubStage != ELevel3SubStage::Dusting)
+	{
+		return;
+	}
+
+	ResultState = FLevel3ResultState();
+	ActiveRepairArea = nullptr;
+	ResetAllRepairAreas();
+	StartStage(ELevel3SubStage::Oiling);
 }
 
 void ULevel3FlowComponent::ResetLevel3State()
@@ -85,16 +150,19 @@ void ULevel3FlowComponent::ResetLevel3State()
 	ActiveRepairArea = nullptr;
 	ResetAllRepairAreas();
 	ProgressState = FLevel3ProgressState();
-	ProgressState.Phase = ELevel3Phase::Introduction;
 	ResultState = FLevel3ResultState();
-
-	SetPhase(ELevel3Phase::Introduction);
+	OnLevel3ToolSelected.Broadcast(NAME_None);
 	BroadcastProgress();
 }
 
 bool ULevel3FlowComponent::SelectTool(FName ToolId)
 {
-	if (!bLevel3SessionActive || ToolId.IsNone() || !FindToolSpec(ToolId))
+	if (!bLevel3SessionActive || ToolId.IsNone() || ProgressState.Phase == ELevel3Phase::RepairResult || ProgressState.Phase == ELevel3Phase::Completed)
+	{
+		return false;
+	}
+
+	if (!FindToolSpec(ToolId))
 	{
 		return false;
 	}
@@ -144,7 +212,7 @@ bool ULevel3FlowComponent::ApplySelectedToolToHit(const FHitResult& HitResult)
 	ProgressState.bIsRepairStrokeActive = false;
 	ProgressState.RepairCoveragePercent = 0.0f;
 
-	RefreshDustState();
+	RefreshStageVisualState();
 	HandleRepairAreaUpdated(RepairArea);
 	BroadcastProgress();
 	TryCompleteRepair();
@@ -174,6 +242,12 @@ void ULevel3FlowComponent::CompleteResultPresentation()
 		return;
 	}
 
+	if (ProgressState.SubStage == ELevel3SubStage::Dusting)
+	{
+		AdvanceToOilingStage();
+		return;
+	}
+
 	SetPhase(ELevel3Phase::Completed);
 	bLevel3SessionActive = false;
 	BroadcastProgress();
@@ -194,6 +268,11 @@ ELevel3Phase ULevel3FlowComponent::GetCurrentPhase() const
 	return ProgressState.Phase;
 }
 
+ELevel3SubStage ULevel3FlowComponent::GetCurrentSubStage() const
+{
+	return ProgressState.SubStage;
+}
+
 FLevel3ProgressState ULevel3FlowComponent::GetProgressState() const
 {
 	return ProgressState;
@@ -206,15 +285,95 @@ FLevel3ResultState ULevel3FlowComponent::GetResultState() const
 
 TArray<FLevel3ToolSpec> ULevel3FlowComponent::GetAvailableDustTools() const
 {
-	return AvailableDustTools;
+	return DustingStageConfig.Tools;
+}
+
+TArray<FLevel3ToolSpec> ULevel3FlowComponent::GetAvailableCurrentStageTools() const
+{
+	if (const FLevel3StageConfig* StageConfig = GetActiveStageConfig())
+	{
+		return StageConfig->Tools;
+	}
+
+	return TArray<FLevel3ToolSpec>();
+}
+
+FLevel3StageConfig ULevel3FlowComponent::GetCurrentStageConfig() const
+{
+	if (const FLevel3StageConfig* StageConfig = GetActiveStageConfig())
+	{
+		return *StageConfig;
+	}
+
+	return FLevel3StageConfig();
+}
+
+const FLevel3StageConfig* ULevel3FlowComponent::FindStageConfig(ELevel3SubStage SubStage) const
+{
+	switch (SubStage)
+	{
+	case ELevel3SubStage::Dusting:
+		return &DustingStageConfig;
+	case ELevel3SubStage::Oiling:
+		return &OilingStageConfig;
+	default:
+		return nullptr;
+	}
+}
+
+const FLevel3StageConfig* ULevel3FlowComponent::GetActiveStageConfig() const
+{
+	return FindStageConfig(ProgressState.SubStage);
 }
 
 const FLevel3ToolSpec* ULevel3FlowComponent::FindToolSpec(FName ToolId) const
 {
-	return AvailableDustTools.FindByPredicate([ToolId](const FLevel3ToolSpec& ToolSpec)
+	const FLevel3StageConfig* StageConfig = GetActiveStageConfig();
+	if (!StageConfig)
+	{
+		return nullptr;
+	}
+
+	return StageConfig->Tools.FindByPredicate([ToolId](const FLevel3ToolSpec& ToolSpec)
 	{
 		return ToolSpec.ToolId == ToolId;
 	});
+}
+
+void ULevel3FlowComponent::StartStage(ELevel3SubStage SubStage)
+{
+	const FLevel3StageConfig* StageConfig = FindStageConfig(SubStage);
+	if (!StageConfig)
+	{
+		return;
+	}
+
+	ResetProgressForStage(*StageConfig);
+	SetSubStage(StageConfig->SubStage);
+	SetPhase(ELevel3Phase::ToolSelecting);
+	OnLevel3ToolSelected.Broadcast(NAME_None);
+	BroadcastProgress();
+}
+
+void ULevel3FlowComponent::ResetProgressForStage(const FLevel3StageConfig& StageConfig)
+{
+	ProgressState = FLevel3ProgressState();
+	ProgressState.Phase = ELevel3Phase::Introduction;
+	ProgressState.SubStage = ELevel3SubStage::None;
+	ProgressState.SelectedToolId = NAME_None;
+	ProgressState.ActiveAreaId = NAME_None;
+	ProgressState.CleanlinessPercent = 0.0f;
+	ProgressState.IntegrityPercent = 0.0f;
+	ProgressState.AestheticsPercent = 0.0f;
+	ProgressState.RepairCoveragePercent = 0.0f;
+	ProgressState.bIsRepairStrokeActive = false;
+	ProgressState.DustReveal01 = StageConfig.InitialDustReveal01;
+	ProgressState.DustConcentration01 = StageConfig.InitialDustConcentration01;
+	ProgressState.OilBlend01 = StageConfig.InitialOilBlend01;
+	ProgressState.StageTitle = StageConfig.StageTitle;
+	ProgressState.ToolPanelTitle = StageConfig.ToolPanelTitle;
+	ProgressState.ResultTitle = StageConfig.ResultTitle;
+	ProgressState.VisibleToolCount = StageConfig.VisibleToolCount;
 }
 
 ULevel3RepairAreaComponent* ULevel3FlowComponent::ResolveRepairAreaFromHit(const FHitResult& HitResult) const
@@ -234,6 +393,50 @@ ULevel3RepairAreaComponent* ULevel3FlowComponent::ResolveRepairAreaFromHit(const
 	return RepairArea;
 }
 
+void ULevel3FlowComponent::RefreshStageVisualState()
+{
+	switch (ProgressState.SubStage)
+	{
+	case ELevel3SubStage::Dusting:
+		RefreshDustState();
+		break;
+	case ELevel3SubStage::Oiling:
+		RefreshOilState();
+		break;
+	default:
+		break;
+	}
+}
+
+void ULevel3FlowComponent::RefreshDustState()
+{
+	const FLevel3StageConfig* StageConfig = GetActiveStageConfig();
+	const float GoalValue = (StageConfig && StageConfig->RequiredMetricValue > KINDA_SMALL_NUMBER)
+		? StageConfig->RequiredMetricValue
+		: CompletionThreshold;
+
+	const float CleanlinessReady01 = FMath::Clamp(ProgressState.CleanlinessPercent / GoalValue, 0.0f, 1.0f);
+	const float IntegrityReady01 = FMath::Clamp(ProgressState.IntegrityPercent / GoalValue, 0.0f, 1.0f);
+	const float AestheticsReady01 = FMath::Clamp(ProgressState.AestheticsPercent / GoalValue, 0.0f, 1.0f);
+
+	ProgressState.DustReveal01 = (CleanlinessReady01 + IntegrityReady01 + AestheticsReady01) / 3.0f;
+	ProgressState.DustConcentration01 = 1.0f - ProgressState.DustReveal01;
+}
+
+void ULevel3FlowComponent::RefreshOilState()
+{
+	const FLevel3StageConfig* StageConfig = GetActiveStageConfig();
+	const float GoalValue = (StageConfig && StageConfig->RequiredMetricValue > KINDA_SMALL_NUMBER)
+		? StageConfig->RequiredMetricValue
+		: CompletionThreshold;
+
+	const float CleanlinessReady01 = FMath::Clamp(ProgressState.CleanlinessPercent / GoalValue, 0.0f, 1.0f);
+	const float IntegrityReady01 = FMath::Clamp(ProgressState.IntegrityPercent / GoalValue, 0.0f, 1.0f);
+	const float AestheticsReady01 = FMath::Clamp(ProgressState.AestheticsPercent / GoalValue, 0.0f, 1.0f);
+
+	ProgressState.OilBlend01 = (CleanlinessReady01 + IntegrityReady01 + AestheticsReady01) / 3.0f;
+}
+
 void ULevel3FlowComponent::SetPhase(ELevel3Phase NewPhase)
 {
 	if (ProgressState.Phase == NewPhase)
@@ -245,14 +448,15 @@ void ULevel3FlowComponent::SetPhase(ELevel3Phase NewPhase)
 	OnLevel3PhaseChanged.Broadcast(NewPhase);
 }
 
-void ULevel3FlowComponent::RefreshDustState()
+void ULevel3FlowComponent::SetSubStage(ELevel3SubStage NewSubStage)
 {
-	const float CleanlinessReady01 = FMath::Clamp(ProgressState.CleanlinessPercent / CompletionThreshold, 0.0f, 1.0f);
-	const float IntegrityReady01 = FMath::Clamp(ProgressState.IntegrityPercent / CompletionThreshold, 0.0f, 1.0f);
-	const float AestheticsReady01 = FMath::Clamp(ProgressState.AestheticsPercent / CompletionThreshold, 0.0f, 1.0f);
+	if (ProgressState.SubStage == NewSubStage)
+	{
+		return;
+	}
 
-	ProgressState.DustReveal01 = (CleanlinessReady01 + IntegrityReady01 + AestheticsReady01) / 3.0f;
-	ProgressState.DustConcentration01 = 1.0f - ProgressState.DustReveal01;
+	ProgressState.SubStage = NewSubStage;
+	OnLevel3SubStageChanged.Broadcast(NewSubStage);
 }
 
 void ULevel3FlowComponent::BroadcastProgress()
@@ -299,15 +503,27 @@ void ULevel3FlowComponent::TryCompleteRepair()
 		return;
 	}
 
-	const bool bCleanEnough = ProgressState.CleanlinessPercent > CompletionThreshold;
-	const bool bIntegritySafe = ProgressState.IntegrityPercent > CompletionThreshold;
-	const bool bLooksAcceptable = ProgressState.AestheticsPercent > CompletionThreshold;
+	const FLevel3StageConfig* StageConfig = GetActiveStageConfig();
+	if (!StageConfig)
+	{
+		return;
+	}
+
+	const float RequiredMetricValue = (StageConfig->RequiredMetricValue > KINDA_SMALL_NUMBER)
+		? StageConfig->RequiredMetricValue
+		: CompletionThreshold;
+
+	const bool bCleanEnough = ProgressState.CleanlinessPercent >= RequiredMetricValue;
+	const bool bIntegritySafe = ProgressState.IntegrityPercent >= RequiredMetricValue;
+	const bool bLooksAcceptable = ProgressState.AestheticsPercent >= RequiredMetricValue;
 
 	if (!bCleanEnough || !bIntegritySafe || !bLooksAcceptable)
 	{
 		return;
 	}
 
+	ResultState = FLevel3ResultState();
+	ResultState.SubStage = StageConfig->SubStage;
 	ResultState.bSucceeded = true;
 	ResultState.SelectedToolId = ProgressState.SelectedToolId;
 	ResultState.FinalCleanlinessPercent = ProgressState.CleanlinessPercent;
@@ -316,6 +532,8 @@ void ULevel3FlowComponent::TryCompleteRepair()
 	ResultState.FinalCoveragePercent = 0.0f;
 	ResultState.FinalDustReveal01 = ProgressState.DustReveal01;
 	ResultState.FinalDustConcentration01 = ProgressState.DustConcentration01;
+	ResultState.FinalOilBlend01 = ProgressState.OilBlend01;
+	ResultState.ResultTitle = StageConfig->ResultTitle;
 	ResultState.CulturalContributionValue = FMath::RoundToInt(
 		(ResultState.FinalCleanlinessPercent + ResultState.FinalIntegrityPercent + ResultState.FinalAestheticsPercent) / 3.0f);
 

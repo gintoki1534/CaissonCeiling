@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
 #include "InputActionValue.h"
+#include "Level3Types.h"
 #include "CaissonPlayerController.generated.h"
 
 class UCaissonInteractComponent;
@@ -149,13 +150,25 @@ public:
 	void StartLevel3Dusting();
 
 	UFUNCTION(BlueprintCallable, Category="Level3")
+	void StartLevel3Oiling();
+
+	UFUNCTION(BlueprintCallable, Category="Level3")
+	void AdvanceLevel3ToOiling();
+
+	UFUNCTION(BlueprintCallable, Category="Level3")
 	void ResetLevel3Dusting();
 
 	UFUNCTION(BlueprintCallable, Category="Level3")
 	bool SelectLevel3Tool(FName ToolId);
 
 	UFUNCTION(BlueprintCallable, Category="Level3")
+	void ContinueLevel3AfterResult();
+
+	UFUNCTION(BlueprintCallable, Category="Level3")
 	void CompleteLevel3ResultPresentation();
+
+	UFUNCTION(BlueprintPure, Category="Level3")
+	ELevel3SubStage GetCurrentLevel3SubStage() const;
 
 	UFUNCTION(BlueprintPure, Category="Level3")
 	ULevel3FlowComponent* GetLevel3FlowComponent() const;
