@@ -262,7 +262,7 @@ Indtro_Button1 [Button] | parent=Introducing_1 | children=无
 1. 执行链：BndEvt__W_Level2_Indtro_Button1_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_FunctionEntry_0:7C179A3849BD5214222A8DAB55D476D6
+     输入：execute <- BndEvt__W_Level2_Indtro_Button1_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature:then
    - BndEvt__W_Level2_Indtro_Button1_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 
 ### 8.2 BndEvt__W_Level2_Indtro_Button2_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
@@ -273,7 +273,7 @@ Indtro_Button1 [Button] | parent=Introducing_1 | children=无
 1. 执行链：BndEvt__W_Level2_Indtro_Button2_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_FunctionEntry_0:1A365790451F16EBC7D92D86719308C6
+     输入：execute <- BndEvt__W_Level2_Indtro_Button2_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature:then
    - BndEvt__W_Level2_Indtro_Button2_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
 
 ### 8.3 BndEvt__W_Level2_Indtro_Button3_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
@@ -284,7 +284,7 @@ Indtro_Button1 [Button] | parent=Introducing_1 | children=无
 1. 执行链：BndEvt__W_Level2_Indtro_Button3_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_FunctionEntry_0:6E9A2FAC4D33D8B17733889B3C2065E1
+     输入：execute <- BndEvt__W_Level2_Indtro_Button3_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature:then
    - BndEvt__W_Level2_Indtro_Button3_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
 
 ### 8.4 Construct
@@ -295,7 +295,7 @@ Indtro_Button1 [Button] | parent=Introducing_1 | children=无
 1. 执行链：Construct -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_FunctionEntry_0:ED293FEA4E1F8ACAA87F8A8AA2E827C0
+     输入：execute <- Construct:then
    - Construct
 
 ### 8.5 HandleFinalContinuePromptRequested
@@ -306,7 +306,7 @@ Indtro_Button1 [Button] | parent=Introducing_1 | children=无
 1. 执行链：HandleFinalContinuePromptRequested -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_FunctionEntry_0:9D9F6A4C464678C86BEFC88011285C7F
+     输入：execute <- HandleFinalContinuePromptRequested:then
    - HandleFinalContinuePromptRequested
 
 ### 8.6 HandleLevel2InspectStarted
@@ -317,7 +317,7 @@ Indtro_Button1 [Button] | parent=Introducing_1 | children=无
 1. 执行链：HandleLevel2InspectStarted -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:DB15BEF149206BDAD46F6483579F760F
+     输入：execute <- SetVariableOnPersistentFrame:then
    - HandleLevel2InspectStarted
 
 ### 8.7 HandleNextLevelRequested
@@ -328,7 +328,7 @@ Indtro_Button1 [Button] | parent=Introducing_1 | children=无
 1. 执行链：HandleNextLevelRequested -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_FunctionEntry_0:E41CD6DD41E01DC480E16592B17FF84E
+     输入：execute <- HandleNextLevelRequested:then
    - HandleNextLevelRequested
 
 ### 8.8 HandleReturnToDefaultFinished
@@ -339,7 +339,7 @@ Indtro_Button1 [Button] | parent=Introducing_1 | children=无
 1. 执行链：HandleReturnToDefaultFinished -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_FunctionEntry_0:F0A17BCE41AA8F61A76E6CBFBE7C6D79
+     输入：execute <- HandleReturnToDefaultFinished:then
    - HandleReturnToDefaultFinished
 
 ### 8.9 OnFocusLost
@@ -350,7 +350,7 @@ Indtro_Button1 [Button] | parent=Introducing_1 | children=无
 1. 执行链：OnFocusLost -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:88DA0CDF4F4A5B586590CC8A88D67F4A
+     输入：execute <- SetVariableOnPersistentFrame:then
    - OnFocusLost
 
 ### 8.10 新函数
@@ -370,7 +370,7 @@ Indtro_Button1 [Button] | parent=Introducing_1 | children=无
 1. 执行链：自定义事件_0 -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level2
 1. 关键节点：
    - ExecuteUbergraph_W_Level2
-     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:48212D094B72BE94F7A2A88F63766131
+     输入：execute <- SetVariableOnPersistentFrame:then
    - 自定义事件_0
 
 ## 9. 当前可直接确认的结论

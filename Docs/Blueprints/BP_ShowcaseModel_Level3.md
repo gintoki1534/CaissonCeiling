@@ -68,11 +68,11 @@
 1. 关键节点：
    - ActivateLevel3Presentation
    - SetActorHiddenInGame
-     输入：execute <- K2Node_FunctionEntry_0:4E8F13D24F25A96BA36C64A3F1D647E7
+     输入：execute <- ActivateLevel3Presentation:then
    - SetActorEnableCollision
-     输入：execute <- K2Node_CallFunction_0:259AF0FA4A9697E4C94B37BABB617AC4
+     输入：execute <- SetActorHiddenInGame:then
    - SetActorTickEnabled
-     输入：execute <- K2Node_CallFunction_1:5859C35E463EBCE4B332CEB87A99D779
+     输入：execute <- SetActorEnableCollision:then
      输入：bEnabled = true
 
 ### 8.2 ActivateRepairPresentation
@@ -84,14 +84,14 @@
 1. 关键节点：
    - ActivateRepairPresentation
    - Set TargetArmLength
-     输入：execute <- K2Node_FunctionEntry_0:7A83F4FD43C18B2C7F2F3B8FC92048A5
-     输入：TargetArmLength <- K2Node_VariableGet_2:D940AE7A41F9D6C85F4BE7BDC19FAFFB
-     输入：self <- K2Node_VariableGet_1:E8DBDB134F09998A978E7B807FD4EE31
+     输入：execute <- ActivateRepairPresentation:then
+     输入：TargetArmLength <- Get RepairArmLength:RepairArmLength
+     输入：self <- Get SpringArmComp:SpringArmComp
    - SceneComponent.K2_SetWorldLocationAndRotation
-     输入：execute <- K2Node_VariableSet_1:3BC707704DA3E43B612C9692B4884296
-     输入：self <- K2Node_VariableGet_1:E8DBDB134F09998A978E7B807FD4EE31
-     输入：NewLocation <- K2Node_VariableGet_4:EAF5292A438967282229F09271D5F746
-     输入：NewRotation <- K2Node_VariableGet_3:EDA2F53940AA0E01DA9E0C8DD1E805B5
+     输入：execute <- Set TargetArmLength:then
+     输入：self <- Get SpringArmComp:SpringArmComp
+     输入：NewLocation <- Get RepairArmLocation:RepairArmLocation
+     输入：NewRotation <- Get RepairArmRotation:RepairArmRotation
 
 ### 8.3 ReturnToLevel3DefaultView
 
@@ -102,14 +102,14 @@
 1. 关键节点：
    - ReturnToLevel3DefaultView
    - Set TargetArmLength
-     输入：execute <- K2Node_FunctionEntry_1:220A429E4D58B89C21CC988D993F7D50
-     输入：TargetArmLength <- K2Node_VariableGet_0:F606E57846AC2B2EF0ACD8B2A49EE9E7
-     输入：self <- K2Node_VariableGet_1:E8DBDB134F09998A978E7B807FD4EE31
+     输入：execute <- ReturnToLevel3DefaultView:then
+     输入：TargetArmLength <- Get DefaultArmLength:DefaultArmLength
+     输入：self <- Get SpringArmComp:SpringArmComp
    - SceneComponent.K2_SetWorldLocationAndRotation
-     输入：execute <- K2Node_VariableSet_1:3BC707704DA3E43B612C9692B4884296
-     输入：self <- K2Node_VariableGet_1:E8DBDB134F09998A978E7B807FD4EE31
-     输入：NewLocation <- K2Node_VariableGet_6:F5714FBF47059AF964EB179C21B824CC
-     输入：NewRotation <- K2Node_VariableGet_5:C6B95B62449F30B9F01A55BFDD5ADFF4
+     输入：execute <- Set TargetArmLength:then
+     输入：self <- Get SpringArmComp:SpringArmComp
+     输入：NewLocation <- Get DefaultArmLocation:DefaultArmLocation
+     输入：NewRotation <- Get DefaultArmRotation:DefaultArmRotation
 
 ### 8.4 UpdateDustVisual
 
@@ -120,13 +120,13 @@
 1. 关键节点：
    - UpdateDustVisual
    - KismetSystemLibrary.PrintString
-     输入：execute <- K2Node_FunctionEntry_0:E94A690044B052E0297E889A6CF34635
+     输入：execute <- UpdateDustVisual:then
      输入：self = /Script/Engine.Default__KismetSystemLibrary
-     输入：InString <- K2Node_CallFunction_4:BB6F1E7343252D7A7131E3A0F897D263
+     输入：InString <- KismetTextLibrary.Conv_TextToString:ReturnValue
      输入：bPrintToScreen = true
    - KismetTextLibrary.Conv_TextToString
      输入：self = /Script/Engine.Default__KismetTextLibrary
-     输入：InText <- K2Node_FormatText_0:A522094D408D6DE1A3032BA372EBDCBB
+     输入：InText <- K2Node_FormatText_0:Result
 
 ### 8.5 UpdateOilVisual
 
@@ -137,13 +137,13 @@
 1. 关键节点：
    - UpdateOilVisual
    - KismetSystemLibrary.PrintString
-     输入：execute <- K2Node_FunctionEntry_0:E94A690044B052E0297E889A6CF34635
+     输入：execute <- UpdateOilVisual:then
      输入：self = /Script/Engine.Default__KismetSystemLibrary
-     输入：InString <- K2Node_CallFunction_4:BB6F1E7343252D7A7131E3A0F897D263
+     输入：InString <- KismetTextLibrary.Conv_TextToString:ReturnValue
      输入：bPrintToScreen = true
    - KismetTextLibrary.Conv_TextToString
      输入：self = /Script/Engine.Default__KismetTextLibrary
-     输入：InText <- K2Node_FormatText_0:A522094D408D6DE1A3032BA372EBDCBB
+     输入：InText <- K2Node_FormatText_0:Result
 
 ### 8.6 UserConstructionScript
 

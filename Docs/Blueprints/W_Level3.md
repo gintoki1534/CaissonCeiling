@@ -374,7 +374,7 @@ CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=TextBlo
 1. 执行链：BndEvt__W_Level3_Button_Continue_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3
 1. 关键节点：
    - ExecuteUbergraph_W_Level3
-     输入：execute <- K2Node_FunctionEntry_0:D016106A4DD2F0FA0F71B4B4B6539E52
+     输入：execute <- BndEvt__W_Level3_Button_Continue_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature:then
    - BndEvt__W_Level3_Button_Continue_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature
 
 ### 8.2 BndEvt__W_Level3_Button_Tool1_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
@@ -385,7 +385,7 @@ CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=TextBlo
 1. 执行链：BndEvt__W_Level3_Button_Tool1_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3
 1. 关键节点：
    - ExecuteUbergraph_W_Level3
-     输入：execute <- K2Node_FunctionEntry_0:67CB7DF84746CD0081BE1987ED4AA58B
+     输入：execute <- BndEvt__W_Level3_Button_Tool1_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature:then
    - BndEvt__W_Level3_Button_Tool1_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
 
 ### 8.3 BndEvt__W_Level3_Button_Tool2_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature
@@ -396,7 +396,7 @@ CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=TextBlo
 1. 执行链：BndEvt__W_Level3_Button_Tool2_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3
 1. 关键节点：
    - ExecuteUbergraph_W_Level3
-     输入：execute <- K2Node_FunctionEntry_0:4663F2F449B989A948B1B5BAC2434E51
+     输入：execute <- BndEvt__W_Level3_Button_Tool2_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature:then
    - BndEvt__W_Level3_Button_Tool2_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature
 
 ### 8.4 BndEvt__W_Level3_Button_Tool3_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature
@@ -407,7 +407,7 @@ CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=TextBlo
 1. 执行链：BndEvt__W_Level3_Button_Tool3_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3
 1. 关键节点：
    - ExecuteUbergraph_W_Level3
-     输入：execute <- K2Node_FunctionEntry_0:B429CBC54A706204536D1593BDD17BB6
+     输入：execute <- BndEvt__W_Level3_Button_Tool3_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature:then
    - BndEvt__W_Level3_Button_Tool3_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature
 
 ### 8.5 BndEvt__W_Level3_Button_Tool4_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature
@@ -418,7 +418,7 @@ CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=TextBlo
 1. 执行链：BndEvt__W_Level3_Button_Tool4_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3
 1. 关键节点：
    - ExecuteUbergraph_W_Level3
-     输入：execute <- K2Node_FunctionEntry_0:816384EC44271F02E1DAE7A0C278F014
+     输入：execute <- BndEvt__W_Level3_Button_Tool4_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature:then
    - BndEvt__W_Level3_Button_Tool4_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature
 
 ### 8.6 BndEvt__W_Level3_Button_Tool5_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature
@@ -429,7 +429,7 @@ CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=TextBlo
 1. 执行链：BndEvt__W_Level3_Button_Tool5_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3
 1. 关键节点：
    - ExecuteUbergraph_W_Level3
-     输入：execute <- K2Node_FunctionEntry_0:F2CE22904FC4715CB3795995F99C8561
+     输入：execute <- BndEvt__W_Level3_Button_Tool5_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature:then
    - BndEvt__W_Level3_Button_Tool5_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature
 
 ### 8.7 Construct
@@ -440,7 +440,7 @@ CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=TextBlo
 1. 执行链：Construct -> ExecuteUbergraph_W_Level3
 1. 关键节点：
    - ExecuteUbergraph_W_Level3
-     输入：execute <- K2Node_FunctionEntry_0:7E883F28430854FC0CF532B2B355A438
+     输入：execute <- Construct:then
    - Construct
 
 ### 8.8 HandleLevel3PhaseChanged
@@ -451,7 +451,7 @@ CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=TextBlo
 1. 执行链：HandleLevel3PhaseChanged -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level3
 1. 关键节点：
    - ExecuteUbergraph_W_Level3
-     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:59FD81AB43C74854C117C79C27B6BA5B
+     输入：execute <- SetVariableOnPersistentFrame:then
    - HandleLevel3PhaseChanged
 
 ### 8.9 HandleLevel3ProgressChanged
@@ -462,7 +462,7 @@ CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=TextBlo
 1. 执行链：HandleLevel3ProgressChanged -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level3
 1. 关键节点：
    - ExecuteUbergraph_W_Level3
-     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:673D2F5348F3F6703D2B4782F2D24F17
+     输入：execute <- SetVariableOnPersistentFrame:then
    - HandleLevel3ProgressChanged
 
 ### 8.10 HandleLevel3ResultReady
@@ -473,7 +473,7 @@ CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=TextBlo
 1. 执行链：HandleLevel3ResultReady -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level3
 1. 关键节点：
    - ExecuteUbergraph_W_Level3
-     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:7F023FF54984C99C7004F6B0E9076E7C
+     输入：execute <- SetVariableOnPersistentFrame:then
    - HandleLevel3ResultReady
 
 ### 8.11 HandleLevel3ToolSelected
@@ -484,7 +484,7 @@ CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=TextBlo
 1. 执行链：HandleLevel3ToolSelected -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level3
 1. 关键节点：
    - ExecuteUbergraph_W_Level3
-     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:C6125650443C84048FD154A9FC738DB9
+     输入：execute <- SetVariableOnPersistentFrame:then
    - HandleLevel3ToolSelected
 
 ### 8.12 NormalizeMetricTo01
@@ -497,7 +497,7 @@ CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=TextBlo
    - NormalizeMetricTo01
    - KismetMathLibrary.FClamp
      输入：self = /Script/Engine.Default__KismetMathLibrary
-     输入：Value <- K2Node_PromotableOperator_2:A7B265EF4398D78AA4163B91E5B5C8CB
+     输入：Value <- K2Node_PromotableOperator_2:ReturnValue
      输入：Max = 1.0
 
 ### 8.13 PreConstruct
@@ -508,7 +508,7 @@ CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=TextBlo
 1. 执行链：PreConstruct -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level3
 1. 关键节点：
    - ExecuteUbergraph_W_Level3
-     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:7DA17A76410C3D32BE47518E1E73768D
+     输入：execute <- SetVariableOnPersistentFrame:then
    - PreConstruct
 
 ### 8.14 RefreshToolSelectionVisuals
@@ -522,46 +522,46 @@ CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=TextBlo
 1. 关键节点：
    - RefreshToolSelectionVisuals
    - SetVisibility
-     输入：execute <- K2Node_IfThenElse_1:D6BAD89943E44D87198C268C51E7F77C
-     输入：self <- K2Node_VariableGet_3:E8749257411AF7EE054E4E90614BC1AF
+     输入：execute <- K2Node_IfThenElse_1:then
+     输入：self <- Get Tools_1_Selected:Tools_1_Selected
      输入：InVisibility = SelfHitTestInvisible
    - SetVisibility
-     输入：execute <- K2Node_IfThenElse_1:D4AA9DF94BC2CC038C0729A15ED2E3B2
-     输入：self <- K2Node_VariableGet_3:E8749257411AF7EE054E4E90614BC1AF
+     输入：execute <- K2Node_IfThenElse_1:else
+     输入：self <- Get Tools_1_Selected:Tools_1_Selected
      输入：InVisibility = Collapsed
    - SetVisibility
-     输入：execute <- K2Node_IfThenElse_4:D6BAD89943E44D87198C268C51E7F77C
-     输入：self <- K2Node_VariableGet_4:2ABA88FE45D32B2E6C1C168388C20D1B
+     输入：execute <- K2Node_IfThenElse_4:then
+     输入：self <- Get Tools_2_Selected:Tools_2_Selected
      输入：InVisibility = SelfHitTestInvisible
    - SetVisibility
-     输入：execute <- K2Node_IfThenElse_4:D4AA9DF94BC2CC038C0729A15ED2E3B2
-     输入：self <- K2Node_VariableGet_4:2ABA88FE45D32B2E6C1C168388C20D1B
+     输入：execute <- K2Node_IfThenElse_4:else
+     输入：self <- Get Tools_2_Selected:Tools_2_Selected
      输入：InVisibility = Collapsed
    - SetVisibility
-     输入：execute <- K2Node_IfThenElse_5:D6BAD89943E44D87198C268C51E7F77C
-     输入：self <- K2Node_VariableGet_10:F4EC7DF7454BEE7C81A2E3BEA2FA5924
+     输入：execute <- K2Node_IfThenElse_5:then
+     输入：self <- Get Tools_3_Selected:Tools_3_Selected
      输入：InVisibility = SelfHitTestInvisible
    - SetVisibility
-     输入：execute <- K2Node_IfThenElse_5:D4AA9DF94BC2CC038C0729A15ED2E3B2
-     输入：self <- K2Node_VariableGet_10:F4EC7DF7454BEE7C81A2E3BEA2FA5924
+     输入：execute <- K2Node_IfThenElse_5:else
+     输入：self <- Get Tools_3_Selected:Tools_3_Selected
      输入：InVisibility = Collapsed
    - SetVisibility
-     输入：execute <- K2Node_IfThenElse_6:D6BAD89943E44D87198C268C51E7F77C
-     输入：self <- K2Node_VariableGet_11:FF7CBD854554C978336E239B1BBC5139
+     输入：execute <- K2Node_IfThenElse_6:then
+     输入：self <- Get Tools_4_Selected:Tools_4_Selected
      输入：InVisibility = SelfHitTestInvisible
    - SetVisibility
-     输入：execute <- K2Node_IfThenElse_6:D4AA9DF94BC2CC038C0729A15ED2E3B2
-     输入：self <- K2Node_VariableGet_11:FF7CBD854554C978336E239B1BBC5139
+     输入：execute <- K2Node_IfThenElse_6:else
+     输入：self <- Get Tools_4_Selected:Tools_4_Selected
      输入：InVisibility = Collapsed
    - SetVisibility
-     输入：self <- K2Node_VariableGet_12:356B1986491258011D37E391CEAF6327
+     输入：self <- Get Tools_5_Selected:Tools_5_Selected
      输入：InVisibility = SelfHitTestInvisible
    - SetVisibility
-     输入：self <- K2Node_VariableGet_12:356B1986491258011D37E391CEAF6327
+     输入：self <- Get Tools_5_Selected:Tools_5_Selected
      输入：InVisibility = Collapsed
    - SetVisibility
-     输入：execute <- K2Node_IfThenElse_2:0ED6E0584FDA6A01C32CBCA52953FF31
-     输入：self <- K2Node_VariableGet_5:D5D44F1149EE17E095C91CB5C90C053F, K2Node_VariableGet_6:805D143D4213F94559BF6DB3292E153A
+     输入：execute <- K2Node_IfThenElse_2:then
+     输入：self <- Get Tools_5_Selected:Tools_5_Selected, Get Tools_5_Unselected:Tools_5_Unselected
      输入：InVisibility = Collapsed
 
 ### 8.15 RequestSelectTool
@@ -573,9 +573,9 @@ CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=TextBlo
 1. 关键节点：
    - RequestSelectTool
    - CaissonPlayerController.SelectLevel3Tool
-     输入：execute <- K2Node_MacroInstance_0:D085256647DD7FAFD1B55AA30E43747D
-     输入：self <- K2Node_VariableGet_4:8D172F024F81794E9FAF488198B32060
-     输入：ToolId <- K2Node_VariableGet_5:E49AF71C4EE3B892347AB1B48ED64EBE
+     输入：execute <- K2Node_MacroInstance_0:Is Valid
+     输入：self <- Get CaissonControllerRef:CaissonControllerRef
+     输入：ToolId <- Get InToolId:InToolId
 
 ## 9. 当前可直接确认的结论
 

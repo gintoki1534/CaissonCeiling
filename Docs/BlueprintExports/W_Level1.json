@@ -24,7 +24,6 @@
         },
         "pins": [
           {
-            "id": "B42A80A6482F1577D37E6BB57E3F1C73",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -34,12 +33,12 @@
             "linked_to": [
               {
                 "node": "K2Node_SpawnActorFromClass_0",
-                "pin_id": "312A81FE4B4268EE701A8B83E6CA2F98"
+                "node_title": "SpawnActor BP_ShowcaseModel_C",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "46D033C8441D572B66643B95B32831AE",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -49,7 +48,6 @@
             "linked_to": []
           },
           {
-            "id": "F93D4635428C42C7BBA47E9B315972C3",
             "name": "ShowcaseActor",
             "direction": "input",
             "category": "object",
@@ -59,7 +57,6 @@
             "linked_to": []
           },
           {
-            "id": "5657F0304BF49547335EB19A51413842",
             "name": "Output_Get",
             "direction": "output",
             "category": "object",
@@ -69,7 +66,6 @@
             "linked_to": []
           },
           {
-            "id": "9B9045B64FCE2EC1AAD73FBBEB1CA76F",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -88,7 +84,8 @@
             "linked_to": [
               {
                 "node": "K2Node_SpawnActorFromClass_0",
-                "pin_id": "312A81FE4B4268EE701A8B83E6CA2F98"
+                "node_title": "SpawnActor BP_ShowcaseModel_C",
+                "pin_name": "then"
               }
             ]
           },
@@ -120,7 +117,6 @@
         },
         "pins": [
           {
-            "id": "41F945CF49CDB517CF779F86D10BDC63",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -130,12 +126,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "9DC85F1F43D28FE60FE2C6A84C445C27"
+                "node_title": "CaissonPlayerController.CloseCaissonWidget",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "DB2323544A25E320BDFB489152423622",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -145,7 +141,6 @@
             "linked_to": []
           },
           {
-            "id": "72956BEB40CEB6F72CA27EA3E7313108",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -155,12 +150,12 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "697BB42F4930413FA5B5BF8F60AF7E84"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "AsCaisson Player Controller"
               }
             ]
           },
           {
-            "id": "4602E43A462861245C2095B537998E09",
             "name": "WidgetClass",
             "direction": "input",
             "category": "class",
@@ -170,7 +165,6 @@
             "linked_to": []
           },
           {
-            "id": "B3FE328F48BCAC4566042BB3BEDBF58D",
             "name": "ReturnValue",
             "direction": "output",
             "category": "object",
@@ -189,7 +183,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "9DC85F1F43D28FE60FE2C6A84C445C27"
+                "node_title": "CaissonPlayerController.CloseCaissonWidget",
+                "pin_name": "then"
               }
             ]
           },
@@ -201,7 +196,8 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "697BB42F4930413FA5B5BF8F60AF7E84"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "AsCaisson Player Controller"
               }
             ]
           },
@@ -223,7 +219,6 @@
         "meta": {},
         "pins": [
           {
-            "id": "1392517344F1ACD5B241768922A5B4D4",
             "name": "self",
             "direction": "output",
             "category": "object",
@@ -233,7 +228,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "7440D94041D57EAB64767EAA0D3F2721"
+                "node_title": "CaissonPlayerController.CloseCaissonWidget",
+                "pin_name": "WidgetToClose"
               }
             ]
           }
@@ -252,7 +248,6 @@
         },
         "pins": [
           {
-            "id": "562990F44918583494E8AD90E1705D00",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -262,12 +257,12 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "18B705A245CFB21090BFD38C3E8624B5"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "9DC85F1F43D28FE60FE2C6A84C445C27",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -277,12 +272,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_5",
-                "pin_id": "41F945CF49CDB517CF779F86D10BDC63"
+                "node_title": "CaissonPlayerController.OpenCaissonWidget",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "B5AA367541FEB1EFBBBF6C82808B455D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -292,12 +287,12 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "697BB42F4930413FA5B5BF8F60AF7E84"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "AsCaisson Player Controller"
               }
             ]
           },
           {
-            "id": "7440D94041D57EAB64767EAA0D3F2721",
             "name": "WidgetToClose",
             "direction": "input",
             "category": "object",
@@ -307,7 +302,8 @@
             "linked_to": [
               {
                 "node": "K2Node_Self_0",
-                "pin_id": "1392517344F1ACD5B241768922A5B4D4"
+                "node_title": "Self",
+                "pin_name": "self"
               }
             ]
           }
@@ -321,7 +317,8 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "18B705A245CFB21090BFD38C3E8624B5"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "then"
               }
             ]
           },
@@ -333,7 +330,8 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "697BB42F4930413FA5B5BF8F60AF7E84"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "AsCaisson Player Controller"
               }
             ]
           },
@@ -345,7 +343,8 @@
             "linked_to": [
               {
                 "node": "K2Node_Self_0",
-                "pin_id": "1392517344F1ACD5B241768922A5B4D4"
+                "node_title": "Self",
+                "pin_name": "self"
               }
             ]
           }
@@ -362,7 +361,6 @@
         },
         "pins": [
           {
-            "id": "3700535A4577E4F5D8882AB3030460E5",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -372,12 +370,12 @@
             "linked_to": [
               {
                 "node": "K2Node_ComponentBoundEvent_1",
-                "pin_id": "37CD8F114DED53F4281F7D8146C7CE8D"
+                "node_title": "Btn_Dialogue.OnClicked",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "18B705A245CFB21090BFD38C3E8624B5",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -387,12 +385,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "562990F44918583494E8AD90E1705D00"
+                "node_title": "CaissonPlayerController.CloseCaissonWidget",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "B67D5A87449CFBFFB10A669F82199D49",
             "name": "CastFailed",
             "direction": "output",
             "category": "exec",
@@ -402,7 +400,6 @@
             "linked_to": []
           },
           {
-            "id": "B5C851B546282A7470E646A6CB1CF8C9",
             "name": "Object",
             "direction": "input",
             "category": "object",
@@ -412,12 +409,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_2",
-                "pin_id": "D4AD6D074C8737B2EEEDE69CCBCE48DB"
+                "node_title": "GameplayStatics.GetPlayerController",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "697BB42F4930413FA5B5BF8F60AF7E84",
             "name": "AsCaisson Player Controller",
             "direction": "output",
             "category": "object",
@@ -427,16 +424,17 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "B5AA367541FEB1EFBBBF6C82808B455D"
+                "node_title": "CaissonPlayerController.CloseCaissonWidget",
+                "pin_name": "self"
               },
               {
                 "node": "K2Node_CallFunction_5",
-                "pin_id": "72956BEB40CEB6F72CA27EA3E7313108"
+                "node_title": "CaissonPlayerController.OpenCaissonWidget",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "F73434C943171E612E45EF8401136FBF",
             "name": "bSuccess",
             "direction": "output",
             "category": "bool",
@@ -455,7 +453,8 @@
             "linked_to": [
               {
                 "node": "K2Node_ComponentBoundEvent_1",
-                "pin_id": "37CD8F114DED53F4281F7D8146C7CE8D"
+                "node_title": "Btn_Dialogue.OnClicked",
+                "pin_name": "then"
               }
             ]
           },
@@ -467,7 +466,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_2",
-                "pin_id": "D4AD6D074C8737B2EEEDE69CCBCE48DB"
+                "node_title": "GameplayStatics.GetPlayerController",
+                "pin_name": "ReturnValue"
               }
             ]
           }
@@ -485,7 +485,6 @@
         },
         "pins": [
           {
-            "id": "D5CF20CE448A362E4A4BB8B47ED14A21",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -495,7 +494,6 @@
             "linked_to": []
           },
           {
-            "id": "BEA4D3434F08F882A21119BAC5F9E2B5",
             "name": "WorldContextObject",
             "direction": "input",
             "category": "object",
@@ -505,7 +503,6 @@
             "linked_to": []
           },
           {
-            "id": "DF9E8669415D6C32AB98A9B8C942B650",
             "name": "PlayerIndex",
             "direction": "input",
             "category": "int",
@@ -515,7 +512,6 @@
             "linked_to": []
           },
           {
-            "id": "D4AD6D074C8737B2EEEDE69CCBCE48DB",
             "name": "ReturnValue",
             "direction": "output",
             "category": "object",
@@ -525,7 +521,8 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "B5C851B546282A7470E646A6CB1CF8C9"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "Object"
               }
             ]
           }
@@ -560,7 +557,6 @@
         },
         "pins": [
           {
-            "id": "015BD578454B8F8B6AB3ABA996F71880",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -570,7 +566,6 @@
             "linked_to": []
           },
           {
-            "id": "37CD8F114DED53F4281F7D8146C7CE8D",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -580,7 +575,8 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "3700535A4577E4F5D8882AB3030460E5"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "execute"
               }
             ]
           }
@@ -598,7 +594,6 @@
         },
         "pins": [
           {
-            "id": "8EB5BFBF4938CCF958F485AE5C89C6E4",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -608,7 +603,6 @@
             "linked_to": []
           },
           {
-            "id": "2E5572F5471691D4F0F631B3ADDC3836",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -618,7 +612,6 @@
             "linked_to": []
           },
           {
-            "id": "786ADFBA4871B23123BBEB80491236AA",
             "name": "InFocusEvent",
             "direction": "output",
             "category": "struct",
@@ -641,7 +634,6 @@
         },
         "pins": [
           {
-            "id": "CD260D5C4B517BB958AB488858529B59",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -651,12 +643,12 @@
             "linked_to": [
               {
                 "node": "K2Node_Event_1",
-                "pin_id": "64EDD2C9470E6F4DB088A2BA6AE24785"
+                "node_title": "Construct",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "312A81FE4B4268EE701A8B83E6CA2F98",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -666,12 +658,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_1",
-                "pin_id": "B42A80A6482F1577D37E6BB57E3F1C73"
+                "node_title": "Set ShowcaseActor",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "FC36A0D646A30C7142537D899FA6D386",
             "name": "Class",
             "direction": "input",
             "category": "class",
@@ -681,7 +673,6 @@
             "linked_to": []
           },
           {
-            "id": "4D3016EB488EF2E71ED91CB14E9F11A7",
             "name": "ReturnValue",
             "direction": "output",
             "category": "object",
@@ -691,7 +682,6 @@
             "linked_to": []
           },
           {
-            "id": "C96C6FA14F49AD6CA28D01869846DA19",
             "name": "SpawnTransform",
             "direction": "input",
             "category": "struct",
@@ -701,7 +691,6 @@
             "linked_to": []
           },
           {
-            "id": "6B1CFF1E4D193204E9C7C0A91AE50F6B",
             "name": "SpawnTransform_Location",
             "direction": "input",
             "category": "struct",
@@ -711,7 +700,6 @@
             "linked_to": []
           },
           {
-            "id": "AFD8D64C4B615E0DA1B743B4A12FC733",
             "name": "SpawnTransform_Rotation",
             "direction": "input",
             "category": "struct",
@@ -721,7 +709,6 @@
             "linked_to": []
           },
           {
-            "id": "D747A48740D6AE674436EABBF172F80B",
             "name": "SpawnTransform_Scale",
             "direction": "input",
             "category": "struct",
@@ -731,7 +718,6 @@
             "linked_to": []
           },
           {
-            "id": "123C6D2149714AA4B6E268B771A52A72",
             "name": "CollisionHandlingOverride",
             "direction": "input",
             "category": "byte",
@@ -741,7 +727,6 @@
             "linked_to": []
           },
           {
-            "id": "D24BCA8B4EB65E6567BF3FAA5BCAEE00",
             "name": "TransformScaleMethod",
             "direction": "input",
             "category": "byte",
@@ -751,7 +736,6 @@
             "linked_to": []
           },
           {
-            "id": "3ACF114A436A7E75F8E10BAA36B395B2",
             "name": "Owner",
             "direction": "input",
             "category": "object",
@@ -761,7 +745,6 @@
             "linked_to": []
           },
           {
-            "id": "CBD3E665420B9BA68BAF0A8681244E9C",
             "name": "Instigator",
             "direction": "input",
             "category": "object",
@@ -780,7 +763,8 @@
             "linked_to": [
               {
                 "node": "K2Node_Event_1",
-                "pin_id": "64EDD2C9470E6F4DB088A2BA6AE24785"
+                "node_title": "Construct",
+                "pin_name": "then"
               }
             ]
           },
@@ -839,7 +823,6 @@
         },
         "pins": [
           {
-            "id": "467A4AE8408EC4B1056F1E8C47724450",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -849,7 +832,6 @@
             "linked_to": []
           },
           {
-            "id": "7CD3AE554E8FF51D4AC25EA074309B72",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -859,7 +841,6 @@
             "linked_to": []
           },
           {
-            "id": "90D372D84EF6FB45377AA7AB8E348C94",
             "name": "MyGeometry",
             "direction": "output",
             "category": "struct",
@@ -869,7 +850,6 @@
             "linked_to": []
           },
           {
-            "id": "0A8763944DBEF34C1D4815BA51EBD1D4",
             "name": "InDeltaTime",
             "direction": "output",
             "category": "real",
@@ -892,7 +872,6 @@
         },
         "pins": [
           {
-            "id": "450D3FE542C019592AEDE1B9465C83DC",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -902,7 +881,6 @@
             "linked_to": []
           },
           {
-            "id": "64EDD2C9470E6F4DB088A2BA6AE24785",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -912,7 +890,8 @@
             "linked_to": [
               {
                 "node": "K2Node_SpawnActorFromClass_0",
-                "pin_id": "CD260D5C4B517BB958AB488858529B59"
+                "node_title": "SpawnActor BP_ShowcaseModel_C",
+                "pin_name": "execute"
               }
             ]
           }
@@ -930,7 +909,6 @@
         },
         "pins": [
           {
-            "id": "880ABBAB4A5E3EB2628A0991CD059D16",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -940,7 +918,6 @@
             "linked_to": []
           },
           {
-            "id": "A174AEBF430CC019D6E40E9CA97C20A9",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -950,7 +927,6 @@
             "linked_to": []
           },
           {
-            "id": "45DF04344FA493787F3F438E9A48EF3E",
             "name": "IsDesignTime",
             "direction": "output",
             "category": "bool",
@@ -968,117 +944,117 @@
       {
         "from": {
           "node": "K2Node_CallFunction_2",
-          "pin_name": "ReturnValue",
-          "pin_id": "D4AD6D074C8737B2EEEDE69CCBCE48DB"
+          "node_title": "GameplayStatics.GetPlayerController",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "Object",
-          "pin_id": "B5C851B546282A7470E646A6CB1CF8C9"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "Object"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "then",
-          "pin_id": "9DC85F1F43D28FE60FE2C6A84C445C27"
+          "node_title": "CaissonPlayerController.CloseCaissonWidget",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_5",
-          "pin_name": "execute",
-          "pin_id": "41F945CF49CDB517CF779F86D10BDC63"
+          "node_title": "CaissonPlayerController.OpenCaissonWidget",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_ComponentBoundEvent_1",
-          "pin_name": "then",
-          "pin_id": "37CD8F114DED53F4281F7D8146C7CE8D"
+          "node_title": "Btn_Dialogue.OnClicked",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "execute",
-          "pin_id": "3700535A4577E4F5D8882AB3030460E5"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "AsCaisson Player Controller",
-          "pin_id": "697BB42F4930413FA5B5BF8F60AF7E84"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "AsCaisson Player Controller"
         },
         "to": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "self",
-          "pin_id": "B5AA367541FEB1EFBBBF6C82808B455D"
+          "node_title": "CaissonPlayerController.CloseCaissonWidget",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "then",
-          "pin_id": "18B705A245CFB21090BFD38C3E8624B5"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "execute",
-          "pin_id": "562990F44918583494E8AD90E1705D00"
+          "node_title": "CaissonPlayerController.CloseCaissonWidget",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "AsCaisson Player Controller",
-          "pin_id": "697BB42F4930413FA5B5BF8F60AF7E84"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "AsCaisson Player Controller"
         },
         "to": {
           "node": "K2Node_CallFunction_5",
-          "pin_name": "self",
-          "pin_id": "72956BEB40CEB6F72CA27EA3E7313108"
+          "node_title": "CaissonPlayerController.OpenCaissonWidget",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_Event_1",
-          "pin_name": "then",
-          "pin_id": "64EDD2C9470E6F4DB088A2BA6AE24785"
+          "node_title": "Construct",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_SpawnActorFromClass_0",
-          "pin_name": "execute",
-          "pin_id": "CD260D5C4B517BB958AB488858529B59"
+          "node_title": "SpawnActor BP_ShowcaseModel_C",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_Self_0",
-          "pin_name": "self",
-          "pin_id": "1392517344F1ACD5B241768922A5B4D4"
+          "node_title": "Self",
+          "pin_name": "self"
         },
         "to": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "WidgetToClose",
-          "pin_id": "7440D94041D57EAB64767EAA0D3F2721"
+          "node_title": "CaissonPlayerController.CloseCaissonWidget",
+          "pin_name": "WidgetToClose"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_SpawnActorFromClass_0",
-          "pin_name": "then",
-          "pin_id": "312A81FE4B4268EE701A8B83E6CA2F98"
+          "node_title": "SpawnActor BP_ShowcaseModel_C",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_VariableSet_1",
-          "pin_name": "execute",
-          "pin_id": "B42A80A6482F1577D37E6BB57E3F1C73"
+          "node_title": "Set ShowcaseActor",
+          "pin_name": "execute"
         },
         "category": "exec"
       }
@@ -1124,7 +1100,6 @@
           },
           "pins": [
             {
-              "id": "B6739D494B75E9356B893F86B183AC46",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -1134,12 +1109,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "E70510F34940CF956CC31E98ADFD6F6A"
+                  "node_title": "BndEvt__W_Level1_Btn_Dialogue_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "89BA68D74BE256A5FCCA9C975B490308",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1149,7 +1124,6 @@
               "linked_to": []
             },
             {
-              "id": "34F5140D42286E1B0BEF5F84982FA21A",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -1159,7 +1133,6 @@
               "linked_to": []
             },
             {
-              "id": "A068ECEA4BBF09997CDB35BA68C67627",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -1178,7 +1151,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "E70510F34940CF956CC31E98ADFD6F6A"
+                  "node_title": "BndEvt__W_Level1_Btn_Dialogue_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -1202,7 +1176,6 @@
           },
           "pins": [
             {
-              "id": "E70510F34940CF956CC31E98ADFD6F6A",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1212,7 +1185,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "B6739D494B75E9356B893F86B183AC46"
+                  "node_title": "ExecuteUbergraph_W_Level1",
+                  "pin_name": "execute"
                 }
               ]
             }
@@ -1225,13 +1199,13 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "E70510F34940CF956CC31E98ADFD6F6A"
+            "node_title": "BndEvt__W_Level1_Btn_Dialogue_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "B6739D494B75E9356B893F86B183AC46"
+            "node_title": "ExecuteUbergraph_W_Level1",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -1260,7 +1234,6 @@
           },
           "pins": [
             {
-              "id": "E044A71E405944051C56C892E11417BC",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -1270,12 +1243,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "07A7349F433EB5F53B1345A12265E1A4"
+                  "node_title": "Construct",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "E30E71AB49A5FC47EB400A846ECE0E6A",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1285,7 +1258,6 @@
               "linked_to": []
             },
             {
-              "id": "6BA65E384247E66893B330A80C25A39A",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -1295,7 +1267,6 @@
               "linked_to": []
             },
             {
-              "id": "10E8B319482E2323EE048E933530B85E",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -1314,7 +1285,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "07A7349F433EB5F53B1345A12265E1A4"
+                  "node_title": "Construct",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -1338,7 +1310,6 @@
           },
           "pins": [
             {
-              "id": "07A7349F433EB5F53B1345A12265E1A4",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1348,7 +1319,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "E044A71E405944051C56C892E11417BC"
+                  "node_title": "ExecuteUbergraph_W_Level1",
+                  "pin_name": "execute"
                 }
               ]
             }
@@ -1361,13 +1333,13 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "07A7349F433EB5F53B1345A12265E1A4"
+            "node_title": "Construct",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "E044A71E405944051C56C892E11417BC"
+            "node_title": "ExecuteUbergraph_W_Level1",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -1396,7 +1368,6 @@
           },
           "pins": [
             {
-              "id": "C61FBEE94326BBE7457A66AB9F150E64",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -1406,12 +1377,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "2331626C4371A3C8B40C19954F93BE5A"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "79B801474A56B47409A4E6844211A291",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1421,7 +1392,6 @@
               "linked_to": []
             },
             {
-              "id": "140335B442836733F4E4F581F6E09E1E",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -1431,7 +1401,6 @@
               "linked_to": []
             },
             {
-              "id": "C12DC1984F4F98FE098D10A599FE70D1",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -1450,7 +1419,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "2331626C4371A3C8B40C19954F93BE5A"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -1472,7 +1442,6 @@
           "meta": {},
           "pins": [
             {
-              "id": "37396AE24852D1D382D55587E200D526",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -1482,12 +1451,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "213FF0F44EC9094EEFA0B0A5DC3165A3"
+                  "node_title": "OnFocusLost",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "2331626C4371A3C8B40C19954F93BE5A",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1497,12 +1466,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "C61FBEE94326BBE7457A66AB9F150E64"
+                  "node_title": "ExecuteUbergraph_W_Level1",
+                  "pin_name": "execute"
                 }
               ]
             },
             {
-              "id": "FBE4EA5144FCC64A256EF8BA4E8FC09F",
               "name": "K2Node_Event_InFocusEvent",
               "direction": "input",
               "category": "struct",
@@ -1512,7 +1481,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "F9CD02AC458D462E5FACB09C39A80955"
+                  "node_title": "OnFocusLost",
+                  "pin_name": "InFocusEvent"
                 }
               ]
             }
@@ -1526,7 +1496,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "213FF0F44EC9094EEFA0B0A5DC3165A3"
+                  "node_title": "OnFocusLost",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -1538,7 +1509,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "F9CD02AC458D462E5FACB09C39A80955"
+                  "node_title": "OnFocusLost",
+                  "pin_name": "InFocusEvent"
                 }
               ]
             }
@@ -1555,7 +1527,6 @@
           },
           "pins": [
             {
-              "id": "213FF0F44EC9094EEFA0B0A5DC3165A3",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1565,12 +1536,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "37396AE24852D1D382D55587E200D526"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "execute"
                 }
               ]
             },
             {
-              "id": "F9CD02AC458D462E5FACB09C39A80955",
               "name": "InFocusEvent",
               "direction": "output",
               "category": "struct",
@@ -1580,7 +1551,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "FBE4EA5144FCC64A256EF8BA4E8FC09F"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "K2Node_Event_InFocusEvent"
                 }
               ]
             }
@@ -1593,39 +1565,39 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "InFocusEvent",
-            "pin_id": "F9CD02AC458D462E5FACB09C39A80955"
+            "node_title": "OnFocusLost",
+            "pin_name": "InFocusEvent"
           },
           "to": {
             "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "pin_name": "K2Node_Event_InFocusEvent",
-            "pin_id": "FBE4EA5144FCC64A256EF8BA4E8FC09F"
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "K2Node_Event_InFocusEvent"
           },
           "category": "struct"
         },
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "213FF0F44EC9094EEFA0B0A5DC3165A3"
+            "node_title": "OnFocusLost",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "pin_name": "execute",
-            "pin_id": "37396AE24852D1D382D55587E200D526"
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "execute"
           },
           "category": "exec"
         },
         {
           "from": {
             "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "pin_name": "then",
-            "pin_id": "2331626C4371A3C8B40C19954F93BE5A"
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "C61FBEE94326BBE7457A66AB9F150E64"
+            "node_title": "ExecuteUbergraph_W_Level1",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -1655,7 +1627,6 @@
           },
           "pins": [
             {
-              "id": "6B229E6C448CED18994BAA925109CA9F",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -1665,12 +1636,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "513A6F2C49D3BB1D68E575A8797387DD"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "0D482B424856089F7D8021A623666A15",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1680,7 +1651,6 @@
               "linked_to": []
             },
             {
-              "id": "47E44ACE4F1901CD53B3FB8135D4D2C6",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -1690,7 +1660,6 @@
               "linked_to": []
             },
             {
-              "id": "5F84B73747633B6E1241D69369D04449",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -1709,7 +1678,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "513A6F2C49D3BB1D68E575A8797387DD"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -1731,7 +1701,6 @@
           "meta": {},
           "pins": [
             {
-              "id": "E8D4794948D8F19AFEC1C4A3D868CCF2",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -1741,12 +1710,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "D76410624959306460F7649E9EE2491E"
+                  "node_title": "PreConstruct",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "513A6F2C49D3BB1D68E575A8797387DD",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1756,12 +1725,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "6B229E6C448CED18994BAA925109CA9F"
+                  "node_title": "ExecuteUbergraph_W_Level1",
+                  "pin_name": "execute"
                 }
               ]
             },
             {
-              "id": "55B7E7744EFC42E058BB04B845E12503",
               "name": "K2Node_Event_IsDesignTime",
               "direction": "input",
               "category": "bool",
@@ -1771,7 +1740,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "B4506F1D4FE8B7330727CDA69FD94315"
+                  "node_title": "PreConstruct",
+                  "pin_name": "IsDesignTime"
                 }
               ]
             }
@@ -1785,7 +1755,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "D76410624959306460F7649E9EE2491E"
+                  "node_title": "PreConstruct",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -1797,7 +1768,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "B4506F1D4FE8B7330727CDA69FD94315"
+                  "node_title": "PreConstruct",
+                  "pin_name": "IsDesignTime"
                 }
               ]
             }
@@ -1814,7 +1786,6 @@
           },
           "pins": [
             {
-              "id": "D76410624959306460F7649E9EE2491E",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1824,12 +1795,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "E8D4794948D8F19AFEC1C4A3D868CCF2"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "execute"
                 }
               ]
             },
             {
-              "id": "B4506F1D4FE8B7330727CDA69FD94315",
               "name": "IsDesignTime",
               "direction": "output",
               "category": "bool",
@@ -1839,7 +1810,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "55B7E7744EFC42E058BB04B845E12503"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "K2Node_Event_IsDesignTime"
                 }
               ]
             }
@@ -1852,39 +1824,39 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "IsDesignTime",
-            "pin_id": "B4506F1D4FE8B7330727CDA69FD94315"
+            "node_title": "PreConstruct",
+            "pin_name": "IsDesignTime"
           },
           "to": {
             "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "pin_name": "K2Node_Event_IsDesignTime",
-            "pin_id": "55B7E7744EFC42E058BB04B845E12503"
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "K2Node_Event_IsDesignTime"
           },
           "category": "bool"
         },
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "D76410624959306460F7649E9EE2491E"
+            "node_title": "PreConstruct",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "pin_name": "execute",
-            "pin_id": "E8D4794948D8F19AFEC1C4A3D868CCF2"
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "execute"
           },
           "category": "exec"
         },
         {
           "from": {
             "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "pin_name": "then",
-            "pin_id": "513A6F2C49D3BB1D68E575A8797387DD"
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "6B229E6C448CED18994BAA925109CA9F"
+            "node_title": "ExecuteUbergraph_W_Level1",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -1914,7 +1886,6 @@
           },
           "pins": [
             {
-              "id": "E16E69CC479017731DBC4F9406298F54",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -1924,12 +1895,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "4977754F46F677A966BF108850391CD1"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "D9179DF54AFC02F35699E5A4895B417F",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1939,7 +1910,6 @@
               "linked_to": []
             },
             {
-              "id": "83E2317749CAFAEE3ED87B9A9D746F2F",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -1949,7 +1919,6 @@
               "linked_to": []
             },
             {
-              "id": "CE433EBA4F282189EED505B3E229ED99",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -1968,7 +1937,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "4977754F46F677A966BF108850391CD1"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -1990,7 +1960,6 @@
           "meta": {},
           "pins": [
             {
-              "id": "4D9A3BDA48F4FE12634FE7B4F040175D",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -2000,12 +1969,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "A3EA1AC940DF9BF8197381BF2B8797A9"
+                  "node_title": "Tick",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "4977754F46F677A966BF108850391CD1",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -2015,12 +1984,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "E16E69CC479017731DBC4F9406298F54"
+                  "node_title": "ExecuteUbergraph_W_Level1",
+                  "pin_name": "execute"
                 }
               ]
             },
             {
-              "id": "302C559649451862877DAFB622C42508",
               "name": "K2Node_Event_MyGeometry",
               "direction": "input",
               "category": "struct",
@@ -2030,12 +1999,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "4CE6C2674326C90EEEDCC6A734E3513B"
+                  "node_title": "Tick",
+                  "pin_name": "MyGeometry"
                 }
               ]
             },
             {
-              "id": "84174D074C1135B7F41E7DA9F07A486A",
               "name": "K2Node_Event_InDeltaTime",
               "direction": "input",
               "category": "real",
@@ -2045,7 +2014,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "720C518B45D1CBBCDADF7AA91CD07F64"
+                  "node_title": "Tick",
+                  "pin_name": "InDeltaTime"
                 }
               ]
             }
@@ -2059,7 +2029,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "A3EA1AC940DF9BF8197381BF2B8797A9"
+                  "node_title": "Tick",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -2071,7 +2042,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "4CE6C2674326C90EEEDCC6A734E3513B"
+                  "node_title": "Tick",
+                  "pin_name": "MyGeometry"
                 }
               ]
             },
@@ -2083,7 +2055,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "720C518B45D1CBBCDADF7AA91CD07F64"
+                  "node_title": "Tick",
+                  "pin_name": "InDeltaTime"
                 }
               ]
             }
@@ -2100,7 +2073,6 @@
           },
           "pins": [
             {
-              "id": "A3EA1AC940DF9BF8197381BF2B8797A9",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -2110,12 +2082,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "4D9A3BDA48F4FE12634FE7B4F040175D"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "execute"
                 }
               ]
             },
             {
-              "id": "4CE6C2674326C90EEEDCC6A734E3513B",
               "name": "MyGeometry",
               "direction": "output",
               "category": "struct",
@@ -2125,12 +2097,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "302C559649451862877DAFB622C42508"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "K2Node_Event_MyGeometry"
                 }
               ]
             },
             {
-              "id": "720C518B45D1CBBCDADF7AA91CD07F64",
               "name": "InDeltaTime",
               "direction": "output",
               "category": "real",
@@ -2140,7 +2112,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "84174D074C1135B7F41E7DA9F07A486A"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "K2Node_Event_InDeltaTime"
                 }
               ]
             }
@@ -2153,52 +2126,52 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "InDeltaTime",
-            "pin_id": "720C518B45D1CBBCDADF7AA91CD07F64"
+            "node_title": "Tick",
+            "pin_name": "InDeltaTime"
           },
           "to": {
             "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "pin_name": "K2Node_Event_InDeltaTime",
-            "pin_id": "84174D074C1135B7F41E7DA9F07A486A"
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "K2Node_Event_InDeltaTime"
           },
           "category": "real"
         },
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "MyGeometry",
-            "pin_id": "4CE6C2674326C90EEEDCC6A734E3513B"
+            "node_title": "Tick",
+            "pin_name": "MyGeometry"
           },
           "to": {
             "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "pin_name": "K2Node_Event_MyGeometry",
-            "pin_id": "302C559649451862877DAFB622C42508"
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "K2Node_Event_MyGeometry"
           },
           "category": "struct"
         },
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "A3EA1AC940DF9BF8197381BF2B8797A9"
+            "node_title": "Tick",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "pin_name": "execute",
-            "pin_id": "4D9A3BDA48F4FE12634FE7B4F040175D"
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "execute"
           },
           "category": "exec"
         },
         {
           "from": {
             "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "pin_name": "then",
-            "pin_id": "4977754F46F677A966BF108850391CD1"
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "E16E69CC479017731DBC4F9406298F54"
+            "node_title": "ExecuteUbergraph_W_Level1",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -2227,7 +2200,6 @@
           },
           "pins": [
             {
-              "id": "ABCB793540E4F046ED467B8EC4BA4761",
               "name": "then",
               "direction": "output",
               "category": "exec",

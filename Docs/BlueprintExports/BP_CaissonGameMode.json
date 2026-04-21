@@ -24,7 +24,6 @@
         },
         "pins": [
           {
-            "id": "124632A740533D088E12FFAB666151BC",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -34,7 +33,6 @@
             "linked_to": []
           },
           {
-            "id": "16F5B2114E9F049DEE3A2F9E397AC698",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -57,7 +55,6 @@
         },
         "pins": [
           {
-            "id": "422B358143C6964CF7307DA222CE6901",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -67,7 +64,6 @@
             "linked_to": []
           },
           {
-            "id": "67345B31400E17F9351FE694C8CD94C0",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -77,7 +73,6 @@
             "linked_to": []
           },
           {
-            "id": "88CF30FF4B079DE4AA7CD1A9C7131456",
             "name": "DeltaSeconds",
             "direction": "output",
             "category": "real",
@@ -127,7 +122,6 @@
           },
           "pins": [
             {
-              "id": "594F77914CE4FC5E1DBB809E230FC5AD",
               "name": "then",
               "direction": "output",
               "category": "exec",

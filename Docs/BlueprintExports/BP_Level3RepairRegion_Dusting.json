@@ -24,7 +24,6 @@
         },
         "pins": [
           {
-            "id": "595EDF6A4A4A0095CA7E529D019B6400",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -34,7 +33,6 @@
             "linked_to": []
           },
           {
-            "id": "839CDBA94EDFA594FB6F53A1A600FBA9",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -44,7 +42,6 @@
             "linked_to": []
           },
           {
-            "id": "1B7779DC42223A44A6DEEC9F7E32E297",
             "name": "DeltaSeconds",
             "direction": "output",
             "category": "real",
@@ -67,7 +64,6 @@
         },
         "pins": [
           {
-            "id": "6B25193C469BA2223E4A85805E3BF10C",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -77,7 +73,6 @@
             "linked_to": []
           },
           {
-            "id": "F68124D7418E43A37EC9C395E3A31B68",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -87,7 +82,6 @@
             "linked_to": []
           },
           {
-            "id": "36F1D66C4D7DE0DF723104928AC65FDA",
             "name": "OtherActor",
             "direction": "output",
             "category": "object",
@@ -110,7 +104,6 @@
         },
         "pins": [
           {
-            "id": "B9F9D200446B8D205921D58811ADF5D4",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -120,7 +113,6 @@
             "linked_to": []
           },
           {
-            "id": "7464A8924463487B2CD9448B380E4CA3",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -164,7 +156,6 @@
           },
           "pins": [
             {
-              "id": "44C35B724EFD178B179CA3BE213C21DF",
               "name": "then",
               "direction": "output",
               "category": "exec",

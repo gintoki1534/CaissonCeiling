@@ -245,7 +245,7 @@ def parse_linked_to(value: Optional[str]) -> List[Dict[str, str]]:
     for item in split_top_level(inner, ","):
         parts = item.strip().split()
         if len(parts) >= 2:
-            result.append({"node": parts[0], "pin_id": parts[1]})
+            result.append({"node": parts[0], "_pin_id": parts[1]})
     return result
 
 
@@ -257,7 +257,7 @@ def parse_pin_line(line: str) -> Dict[str, Any]:
     direction_raw = raw.get("Direction")
     direction = "output" if direction_raw == "EGPD_Output" else "input"
     return {
-        "id": raw.get("PinId"),
+        "_pin_id": raw.get("PinId"),
         "name": raw.get("PinName"),
         "direction": direction,
         "category": raw.get("PinType.PinCategory"),
@@ -325,6 +325,12 @@ def parse_node(obj: UEObject) -> Dict[str, Any]:
         title = f"Set {var_name}" if var_name else title
         kind = "variable_set"
         meta["variable_name"] = var_name
+    elif kind == "K2Node_VariableGet":
+        var_ref = first_line_value(obj.lines, "VariableReference=")
+        var_name = parse_member_name(var_ref)
+        title = f"Get {var_name}" if var_name else title
+        kind = "variable_get"
+        meta["variable_name"] = var_name
     elif kind == "K2Node_SpawnActorFromClass":
         spawn_class = None
         for pin in pins:
@@ -379,7 +385,7 @@ def parse_node(obj: UEObject) -> Dict[str, Any]:
         "meta": meta,
         "pins": [
             {
-                "id": p["id"],
+                "_pin_id": p["_pin_id"],
                 "name": p["name"],
                 "direction": p["direction"],
                 "category": p["category"],
@@ -397,52 +403,199 @@ def parse_node(obj: UEObject) -> Dict[str, Any]:
 
 def build_connections(modules: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     pin_index: Dict[Tuple[str, str], Dict[str, Any]] = {}
+    module_index: Dict[str, Dict[str, Any]] = {
+        module["id"]: module for module in modules if module.get("id")
+    }
     for module in modules:
         for pin in module["pins"]:
-            if module["id"] and pin.get("id"):
-                pin_index[(module["id"], pin["id"])] = {**pin, "node": module["id"]}
+            if module["id"] and pin.get("_pin_id"):
+                pin_index[(module["id"], pin["_pin_id"])] = {
+                    **pin,
+                    "node": module["id"],
+                    "node_title": module.get("title"),
+                }
 
     edges: Dict[Tuple[str, str, str, str], Dict[str, Any]] = {}
 
     for module in modules:
         for pin in module["pins"]:
             for link in pin.get("linked_to", []):
-                other = pin_index.get((link["node"], link["pin_id"]))
+                other = pin_index.get((link["node"], link["_pin_id"]))
                 if pin["direction"] == "output":
                     source_node = module["id"]
                     source_pin = pin["name"]
-                    source_pin_id = pin["id"]
+                    source_pin_id = pin["_pin_id"]
                     target_node = link["node"]
                     target_pin = other["name"] if other else None
-                    target_pin_id = link["pin_id"]
+                    target_pin_id = link["_pin_id"]
                     category = pin.get("category")
                 elif other and other["direction"] == "output":
                     source_node = link["node"]
                     source_pin = other["name"]
-                    source_pin_id = link["pin_id"]
+                    source_pin_id = link["_pin_id"]
                     target_node = module["id"]
                     target_pin = pin["name"]
-                    target_pin_id = pin["id"]
+                    target_pin_id = pin["_pin_id"]
                     category = other.get("category")
                 else:
                     source_node = module["id"]
                     source_pin = pin["name"]
-                    source_pin_id = pin["id"]
+                    source_pin_id = pin["_pin_id"]
                     target_node = link["node"]
                     target_pin = other["name"] if other else None
-                    target_pin_id = link["pin_id"]
+                    target_pin_id = link["_pin_id"]
                     category = pin.get("category")
 
                 if not source_node or not target_node:
                     continue
                 key = (source_node, source_pin_id or "", target_node, target_pin_id or "")
                 edges[key] = {
-                    "from": {"node": source_node, "pin_name": source_pin, "pin_id": source_pin_id},
-                    "to": {"node": target_node, "pin_name": target_pin, "pin_id": target_pin_id},
+                    "from": {
+                        "node": source_node,
+                        "node_title": module_index.get(source_node, {}).get("title"),
+                        "pin_name": source_pin,
+                        "_pin_id": source_pin_id,
+                    },
+                    "to": {
+                        "node": target_node,
+                        "node_title": module_index.get(target_node, {}).get("title"),
+                        "pin_name": target_pin,
+                        "_pin_id": target_pin_id,
+                    },
                     "category": category,
                 }
 
     return sorted(edges.values(), key=lambda x: (x["from"]["node"], x["to"]["node"], x["from"]["pin_name"] or ""))
+
+
+def enrich_module_links(modules: List[Dict[str, Any]]) -> None:
+    module_index: Dict[str, Dict[str, Any]] = {
+        module["id"]: module for module in modules if module.get("id")
+    }
+    pin_index: Dict[Tuple[str, str], Dict[str, Any]] = {}
+
+    for module in modules:
+        for pin in module.get("pins", []):
+            pin_id = pin.get("_pin_id")
+            if module.get("id") and pin_id:
+                pin_index[(module["id"], pin_id)] = {
+                    "name": pin.get("name"),
+                    "direction": pin.get("direction"),
+                    "node_title": module.get("title"),
+                }
+
+    def enrich_link(link: Dict[str, Any]) -> Dict[str, Any]:
+        node_id = link.get("node")
+        enriched = dict(link)
+        module = module_index.get(node_id)
+        if module:
+            enriched["node_title"] = module.get("title")
+        pin_info = pin_index.get((node_id, link.get("_pin_id")))
+        if pin_info:
+            enriched["pin_name"] = pin_info.get("name")
+        return enriched
+
+    for module in modules:
+        for pin in module.get("pins", []):
+            pin["linked_to"] = [enrich_link(link) for link in pin.get("linked_to", [])]
+        for input_info in module.get("important_inputs", []):
+            input_info["linked_to"] = [enrich_link(link) for link in input_info.get("linked_to", [])]
+
+
+def sanitize_link_reference(link: Dict[str, Any], include_opaque_ids: bool) -> Dict[str, Any]:
+    result = {
+        "node": link.get("node"),
+        "node_title": link.get("node_title"),
+        "pin_name": link.get("pin_name"),
+    }
+    if include_opaque_ids:
+        result["pin_id"] = link.get("_pin_id") or link.get("pin_id")
+    return result
+
+
+def sanitize_pin(pin: Dict[str, Any], include_opaque_ids: bool) -> Dict[str, Any]:
+    result = {
+        "name": pin.get("name"),
+        "direction": pin.get("direction"),
+        "category": pin.get("category"),
+        "subcategory": pin.get("subcategory"),
+        "default_value": pin.get("default_value"),
+        "default_object": pin.get("default_object"),
+        "linked_to": [sanitize_link_reference(link, include_opaque_ids) for link in pin.get("linked_to", [])],
+    }
+    if include_opaque_ids:
+        result["id"] = pin.get("_pin_id") or pin.get("id")
+    return result
+
+
+def sanitize_input_summary(input_info: Dict[str, Any], include_opaque_ids: bool) -> Dict[str, Any]:
+    return {
+        "name": input_info.get("name"),
+        "category": input_info.get("category"),
+        "default_value": input_info.get("default_value"),
+        "default_object": input_info.get("default_object"),
+        "linked_to": [sanitize_link_reference(link, include_opaque_ids) for link in input_info.get("linked_to", [])],
+    }
+
+
+def sanitize_module(module: Dict[str, Any], include_opaque_ids: bool) -> Dict[str, Any]:
+    return {
+        "id": module.get("id"),
+        "class": module.get("class"),
+        "kind": module.get("kind"),
+        "title": module.get("title"),
+        "meta": module.get("meta"),
+        "pins": [sanitize_pin(pin, include_opaque_ids) for pin in module.get("pins", [])],
+        "important_inputs": [
+            sanitize_input_summary(input_info, include_opaque_ids)
+            for input_info in module.get("important_inputs", [])
+        ],
+        "raw_export_path": module.get("raw_export_path"),
+    }
+
+
+def sanitize_connection(endpoint: Dict[str, Any], include_opaque_ids: bool) -> Dict[str, Any]:
+    result = {
+        "node": endpoint.get("node"),
+        "node_title": endpoint.get("node_title"),
+        "pin_name": endpoint.get("pin_name"),
+    }
+    if include_opaque_ids:
+        result["pin_id"] = endpoint.get("_pin_id") or endpoint.get("pin_id")
+    return result
+
+
+def sanitize_graph(graph: Optional[Dict[str, Any]], include_opaque_ids: bool) -> Optional[Dict[str, Any]]:
+    if graph is None:
+        return None
+    return {
+        "name": graph.get("name"),
+        "schema": graph.get("schema"),
+        "module_count": graph.get("module_count"),
+        "connection_count": graph.get("connection_count"),
+        "modules": [sanitize_module(module, include_opaque_ids) for module in graph.get("modules", [])],
+        "connections": [
+            {
+                "from": sanitize_connection(connection.get("from", {}), include_opaque_ids),
+                "to": sanitize_connection(connection.get("to", {}), include_opaque_ids),
+                "category": connection.get("category"),
+            }
+            for connection in graph.get("connections", [])
+        ],
+        "exec_traces": graph.get("exec_traces", []),
+    }
+
+
+def sanitize_export_for_output(data: Dict[str, Any], include_opaque_ids: bool) -> Dict[str, Any]:
+    return {
+        "blueprint": data.get("blueprint"),
+        "event_graph": sanitize_graph(data.get("event_graph"), include_opaque_ids),
+        "other_graphs": [sanitize_graph(graph, include_opaque_ids) for graph in data.get("other_graphs", [])],
+        "widget_tree": data.get("widget_tree"),
+        "variables": data.get("variables"),
+        "special_settings": data.get("special_settings", []),
+        "doc_view": data.get("doc_view"),
+    }
 
 
 def build_exec_traces(modules: List[Dict[str, Any]], connections: List[Dict[str, Any]]) -> List[List[str]]:
@@ -493,6 +646,7 @@ def is_detailed_graph(obj: UEObject) -> bool:
 def parse_graph(obj: UEObject) -> Dict[str, Any]:
     nodes = [child for child in obj.children if child.lines]
     modules = [parse_node(node) for node in nodes]
+    enrich_module_links(modules)
     connections = build_connections(modules)
     graph_name = obj.name or short_object_name(obj.export_path) or "UnknownGraph"
     schema = first_line_value(obj.lines, "Schema=")
@@ -774,9 +928,9 @@ def collect_pending_t3d_files(tools_dir: Path, export_dir: Path, doc_dir: Path) 
     return pending
 
 
-def export_t3d_to_json(input_path: Path, output_path: Path, encoding: str) -> Path:
+def export_t3d_to_json(input_path: Path, output_path: Path, encoding: str, include_opaque_ids: bool = False) -> Path:
     text = read_t3d_text(input_path, encoding)
-    data = build_export(text)
+    data = sanitize_export_for_output(build_export(text), include_opaque_ids=include_opaque_ids)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
     return output_path
@@ -790,7 +944,7 @@ def add_numbered_item(lines: List[str], text: str) -> None:
     add_line(lines, f"1. {text}")
 
 
-def build_md_from_json_data(data: Dict[str, Any], json_filename: str) -> str:
+def build_md_from_json_data(data: Dict[str, Any], json_filename: str, include_opaque_ids: bool = False) -> str:
     lines: List[str] = []
 
     blueprint = data["blueprint"]
@@ -919,8 +1073,15 @@ def build_md_from_json_data(data: Dict[str, Any], json_filename: str) -> str:
         default_value = input_info.get("default_value")
 
         if linked_to:
+            def format_link_target(item: Dict[str, Any]) -> str:
+                if include_opaque_ids and item.get("pin_id"):
+                    return f"{item.get('node')}:{item.get('pin_id')}"
+                node_label = item.get("node_title") or item.get("node") or "Unknown"
+                pin_label = item.get("pin_name")
+                return f"{node_label}:{pin_label}" if pin_label else node_label
+
             targets = ", ".join(
-                f"{item.get('node')}:{item.get('pin_name') or item.get('pin_id')}"
+                format_link_target(item)
                 for item in linked_to
             )
             return f"{name} <- {targets}"
@@ -998,9 +1159,9 @@ def build_md_from_json_data(data: Dict[str, Any], json_filename: str) -> str:
     return "\n".join(lines) + "\n"
 
 
-def write_md_from_json(json_path: Path, md_path: Path) -> Path:
+def write_md_from_json(json_path: Path, md_path: Path, include_opaque_ids: bool = False) -> Path:
     data = json.loads(json_path.read_text(encoding="utf-8"))
-    content = build_md_from_json_data(data, json_path.name)
+    content = build_md_from_json_data(data, json_path.name, include_opaque_ids=include_opaque_ids)
     md_path.parent.mkdir(parents=True, exist_ok=True)
     md_path.write_text(content, encoding="utf-8")
     return md_path
@@ -1011,19 +1172,24 @@ def batch_convert_t3d_files(
     repo_root: Path,
     encoding: str,
     output_dir: Optional[Path] = None,
+    include_opaque_ids: bool = False,
 ) -> List[Path]:
     written: List[Path] = []
     for input_path in inputs:
         target_dir = output_dir if output_dir is not None else (repo_root / "Docs" / "BlueprintExports")
         output_path = target_dir / f"{input_path.stem}.json"
-        written.append(export_t3d_to_json(input_path, output_path, encoding))
+        written.append(export_t3d_to_json(input_path, output_path, encoding, include_opaque_ids=include_opaque_ids))
     return written
 
 
-def batch_generate_md_files(json_paths: List[Path], doc_dir: Path) -> List[Path]:
+def batch_generate_md_files(json_paths: List[Path], doc_dir: Path, include_opaque_ids: bool = False) -> List[Path]:
     written: List[Path] = []
     for json_path in json_paths:
-        written.append(write_md_from_json(json_path, default_md_output_path(json_path, doc_dir)))
+        written.append(write_md_from_json(
+            json_path,
+            default_md_output_path(json_path, doc_dir),
+            include_opaque_ids=include_opaque_ids,
+        ))
     return written
 
 
@@ -1040,6 +1206,7 @@ def sync_pending_blueprint_docs(
     doc_dir: Path,
     repo_root: Path,
     encoding: str,
+    include_opaque_ids: bool = False,
     dry_run: bool = False,
 ) -> Dict[str, List[Path]]:
     pending_t3d = collect_pending_t3d_files(tools_dir, export_dir, doc_dir)
@@ -1049,8 +1216,14 @@ def sync_pending_blueprint_docs(
     if dry_run:
         return {"pending_t3d": pending_t3d, "json_written": json_targets, "md_written": md_targets}
 
-    json_written = batch_convert_t3d_files(pending_t3d, repo_root, encoding, export_dir)
-    md_written = batch_generate_md_files(json_written, doc_dir)
+    json_written = batch_convert_t3d_files(
+        pending_t3d,
+        repo_root,
+        encoding,
+        export_dir,
+        include_opaque_ids=include_opaque_ids,
+    )
+    md_written = batch_generate_md_files(json_written, doc_dir, include_opaque_ids=include_opaque_ids)
     print_processed_outputs(pending_t3d, json_written, md_written)
     return {"pending_t3d": pending_t3d, "json_written": json_written, "md_written": md_written}
 
@@ -1061,6 +1234,7 @@ def sync_all_blueprint_docs(
     doc_dir: Path,
     repo_root: Path,
     encoding: str,
+    include_opaque_ids: bool = False,
     dry_run: bool = False,
 ) -> Dict[str, List[Path]]:
     all_t3d = collect_matching_files(tools_dir, ["*.T3D", "*.t3d"])
@@ -1070,8 +1244,14 @@ def sync_all_blueprint_docs(
     if dry_run:
         return {"all_t3d": all_t3d, "json_written": json_targets, "md_written": md_targets}
 
-    json_written = batch_convert_t3d_files(all_t3d, repo_root, encoding, export_dir)
-    md_written = batch_generate_md_files(json_written, doc_dir)
+    json_written = batch_convert_t3d_files(
+        all_t3d,
+        repo_root,
+        encoding,
+        export_dir,
+        include_opaque_ids=include_opaque_ids,
+    )
+    md_written = batch_generate_md_files(json_written, doc_dir, include_opaque_ids=include_opaque_ids)
     print_processed_outputs(all_t3d, json_written, md_written)
     return {"all_t3d": all_t3d, "json_written": json_written, "md_written": md_written}
 
@@ -1221,6 +1401,11 @@ def main() -> None:
         action="store_true",
         help="Rebuild JSON and Markdown docs for all T3D files under tools-dir.",
     )
+    parser.add_argument(
+        "--include-opaque-ids",
+        action="store_true",
+        help="Keep internal PinId-style opaque IDs in generated JSON and Markdown for debugging.",
+    )
     args = parser.parse_args()
 
     tools_dir = Path(args.tools_dir)
@@ -1253,6 +1438,7 @@ def main() -> None:
             doc_dir=doc_dir,
             repo_root=repo_root,
             encoding=args.encoding,
+            include_opaque_ids=args.include_opaque_ids,
             dry_run=args.dry_run,
         )
         if args.dry_run:
@@ -1274,6 +1460,7 @@ def main() -> None:
             doc_dir=doc_dir,
             repo_root=repo_root,
             encoding=args.encoding,
+            include_opaque_ids=args.include_opaque_ids,
             dry_run=args.dry_run,
         )
         if args.dry_run:
@@ -1295,7 +1482,13 @@ def main() -> None:
             for input_path in inputs:
                 print(f"  {input_path}")
             return
-        written = batch_convert_t3d_files(inputs, repo_root, args.encoding, export_dir)
+        written = batch_convert_t3d_files(
+            inputs,
+            repo_root,
+            args.encoding,
+            export_dir,
+            include_opaque_ids=args.include_opaque_ids,
+        )
         print(f"Converted {len(written)} T3D file(s) into {export_dir}")
         return
 
@@ -1306,7 +1499,7 @@ def main() -> None:
             for json_path in json_paths:
                 print(f"  {json_path}")
             return
-        written = batch_generate_md_files(json_paths, doc_dir)
+        written = batch_generate_md_files(json_paths, doc_dir, include_opaque_ids=args.include_opaque_ids)
         print(f"Generated {len(written)} Markdown doc(s) into {doc_dir}")
         return
 
@@ -1318,8 +1511,12 @@ def main() -> None:
     if args.dry_run:
         print(f"Would convert: {input_path} -> {output_path}")
         return
-    export_t3d_to_json(input_path, output_path, args.encoding)
-    md_path = write_md_from_json(output_path, default_md_output_path(output_path, doc_dir))
+    export_t3d_to_json(input_path, output_path, args.encoding, include_opaque_ids=args.include_opaque_ids)
+    md_path = write_md_from_json(
+        output_path,
+        default_md_output_path(output_path, doc_dir),
+        include_opaque_ids=args.include_opaque_ids,
+    )
     print(f"Wrote JSON: {output_path}")
     print(f"Wrote Markdown: {md_path}")
 

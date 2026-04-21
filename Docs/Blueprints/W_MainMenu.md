@@ -72,7 +72,7 @@ B_StartGame [Button] | parent=VerticalBox_0 | children=无
 1. 执行链：BndEvt__MainMenu_B_StartGame_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_MainMenu
 1. 关键节点：
    - ExecuteUbergraph_W_MainMenu
-     输入：execute <- K2Node_FunctionEntry_0:1959A24541683A2F05016485F9847056
+     输入：execute <- BndEvt__MainMenu_B_StartGame_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature:then
    - BndEvt__MainMenu_B_StartGame_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 
 ### 8.2 BndEvt__MainMenu_B_StartGame_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature
@@ -83,7 +83,7 @@ B_StartGame [Button] | parent=VerticalBox_0 | children=无
 1. 执行链：BndEvt__MainMenu_B_StartGame_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature -> ExecuteUbergraph_W_MainMenu
 1. 关键节点：
    - ExecuteUbergraph_W_MainMenu
-     输入：execute <- K2Node_FunctionEntry_0:54BACA8344C44236528307851DC50145
+     输入：execute <- BndEvt__MainMenu_B_StartGame_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature:then
    - BndEvt__MainMenu_B_StartGame_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature
 
 ## 9. 当前可直接确认的结论

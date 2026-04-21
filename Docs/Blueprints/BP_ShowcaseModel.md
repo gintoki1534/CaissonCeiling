@@ -67,11 +67,11 @@
 1. 执行链：DeactivateLevel2Presentation -> SetActorHiddenInGame -> SetActorEnableCollision -> SetActorTickEnabled
 1. 关键节点：
    - SetActorTickEnabled
-     输入：execute <- K2Node_CallFunction_1:53308BB9445AE260A52E5FB4F084958F
+     输入：execute <- SetActorEnableCollision:then
    - SetActorEnableCollision
-     输入：execute <- K2Node_CallFunction_0:49CB6C7B4024E6CDA13D9D9C122915B4
+     输入：execute <- SetActorHiddenInGame:then
    - SetActorHiddenInGame
-     输入：execute <- K2Node_FunctionEntry_0:D26AA3E244732D2DD475D29328D7E947
+     输入：execute <- DeactivateLevel2Presentation:then
      输入：bNewHidden = true
    - DeactivateLevel2Presentation
 
@@ -83,7 +83,7 @@
 1. 执行链：FocusTargetById -> SetVariableOnPersistentFrame -> ExecuteUbergraph_BP_ShowcaseModel
 1. 关键节点：
    - ExecuteUbergraph_BP_ShowcaseModel
-     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:C837F6A6442B83BC39E0E2833C4C2826
+     输入：execute <- SetVariableOnPersistentFrame:then
    - FocusTargetById
 
 ### 8.3 OnReturnToDefaultFinished
@@ -103,7 +103,7 @@
 1. 执行链：ReturnToDefaultView -> ExecuteUbergraph_BP_ShowcaseModel
 1. 关键节点：
    - ExecuteUbergraph_BP_ShowcaseModel
-     输入：execute <- K2Node_FunctionEntry_0:BDC224164C0FCEC52E2A6AAE9CCAB2C2
+     输入：execute <- ReturnToDefaultView:then
    - ReturnToDefaultView
 
 ### 8.5 TL_CameraMove__FinishedFunc
@@ -114,7 +114,7 @@
 1. 执行链：TL_CameraMove__FinishedFunc -> ExecuteUbergraph_BP_ShowcaseModel
 1. 关键节点：
    - ExecuteUbergraph_BP_ShowcaseModel
-     输入：execute <- K2Node_FunctionEntry_0:B53E4947459D2324F9EDD194BFFBE8C2
+     输入：execute <- TL_CameraMove__FinishedFunc:then
    - TL_CameraMove__FinishedFunc
 
 ### 8.6 TL_CameraMove__UpdateFunc
@@ -125,7 +125,7 @@
 1. 执行链：TL_CameraMove__UpdateFunc -> ExecuteUbergraph_BP_ShowcaseModel
 1. 关键节点：
    - ExecuteUbergraph_BP_ShowcaseModel
-     输入：execute <- K2Node_FunctionEntry_0:569E86DE43BE34F7974B949AAC54AAFD
+     输入：execute <- TL_CameraMove__UpdateFunc:then
    - TL_CameraMove__UpdateFunc
 
 ### 8.7 UserConstructionScript

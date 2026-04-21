@@ -22,7 +22,6 @@
         "meta": {},
         "pins": [
           {
-            "id": "49945B804B5A033BEA8FB7829B809E32",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -32,12 +31,12 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_3",
-                "pin_id": "DD50444F451ED51D6AA843884532C1A9"
+                "node_title": "K2Node_IfThenElse_3",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "44A717A94972C2F9EBB8B1A5E4DAFBF8",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -47,7 +46,6 @@
             "linked_to": []
           },
           {
-            "id": "9A187B5C44B9CAFC5C7BF88F00553A07",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -66,7 +64,8 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_3",
-                "pin_id": "DD50444F451ED51D6AA843884532C1A9"
+                "node_title": "K2Node_IfThenElse_3",
+                "pin_name": "then"
               }
             ]
           },
@@ -83,12 +82,13 @@
       {
         "id": "K2Node_VariableGet_13",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_13",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get bReturningToDefault",
+        "meta": {
+          "variable_name": "bReturningToDefault"
+        },
         "pins": [
           {
-            "id": "8E21D9374A5C0BF1C88E2EAE3766FCEE",
             "name": "bReturningToDefault",
             "direction": "output",
             "category": "bool",
@@ -98,12 +98,12 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_3",
-                "pin_id": "DF84B7E24AE87B8B59AF3787BB314FB4"
+                "node_title": "K2Node_IfThenElse_3",
+                "pin_name": "Condition"
               }
             ]
           },
           {
-            "id": "656A4F2145A25E0F8E28BE9B88B603AE",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -132,7 +132,6 @@
         "meta": {},
         "pins": [
           {
-            "id": "CE07B595468DD1627D6BBE9783C938BC",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -142,12 +141,12 @@
             "linked_to": [
               {
                 "node": "K2Node_Timeline_0",
-                "pin_id": "BD11C2014C15CD1D01A005B5B80E1695"
+                "node_title": "K2Node_Timeline_0",
+                "pin_name": "Finished"
               }
             ]
           },
           {
-            "id": "DF84B7E24AE87B8B59AF3787BB314FB4",
             "name": "Condition",
             "direction": "input",
             "category": "bool",
@@ -157,12 +156,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_13",
-                "pin_id": "8E21D9374A5C0BF1C88E2EAE3766FCEE"
+                "node_title": "Get bReturningToDefault",
+                "pin_name": "bReturningToDefault"
               }
             ]
           },
           {
-            "id": "DD50444F451ED51D6AA843884532C1A9",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -172,12 +171,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallDelegate_0",
-                "pin_id": "49945B804B5A033BEA8FB7829B809E32"
+                "node_title": "K2Node_CallDelegate_0",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "165472A44315915006C1029E35FAF16A",
             "name": "else",
             "direction": "output",
             "category": "exec",
@@ -196,7 +195,8 @@
             "linked_to": [
               {
                 "node": "K2Node_Timeline_0",
-                "pin_id": "BD11C2014C15CD1D01A005B5B80E1695"
+                "node_title": "K2Node_Timeline_0",
+                "pin_name": "Finished"
               }
             ]
           },
@@ -208,7 +208,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_13",
-                "pin_id": "8E21D9374A5C0BF1C88E2EAE3766FCEE"
+                "node_title": "Get bReturningToDefault",
+                "pin_name": "bReturningToDefault"
               }
             ]
           }
@@ -225,7 +226,6 @@
         },
         "pins": [
           {
-            "id": "77CE063046DD5BC79B477593498D4F87",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -235,12 +235,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_0",
-                "pin_id": "DBD4719D4E1C631A8C9CADADA0591AC2"
+                "node_title": "Set StartLoc",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "51FEA40C4D9C07B6225F7D88112BFA08",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -250,12 +250,12 @@
             "linked_to": [
               {
                 "node": "K2Node_Timeline_0",
-                "pin_id": "8AB5A27C4B3ABF516F37198C9C2EC01A"
+                "node_title": "K2Node_Timeline_0",
+                "pin_name": "PlayFromStart"
               }
             ]
           },
           {
-            "id": "159737AC433FCBC7CFF3A2A55EF8D486",
             "name": "StartRot",
             "direction": "input",
             "category": "struct",
@@ -265,12 +265,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_12",
-                "pin_id": "22D5A23641552CD84A30659110E35DC8"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "D1F8A1B2424113D443650E94861F9F93",
             "name": "Output_Get",
             "direction": "output",
             "category": "struct",
@@ -280,7 +280,6 @@
             "linked_to": []
           },
           {
-            "id": "410FC1504C5CFCE564304C97DAF25A6D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -299,7 +298,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_0",
-                "pin_id": "DBD4719D4E1C631A8C9CADADA0591AC2"
+                "node_title": "Set StartLoc",
+                "pin_name": "then"
               }
             ]
           },
@@ -311,7 +311,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_12",
-                "pin_id": "22D5A23641552CD84A30659110E35DC8"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
@@ -335,7 +336,6 @@
         },
         "pins": [
           {
-            "id": "763404B54C14154BE4CDBF9A4D036C6F",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -345,12 +345,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_6",
-                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+                "node_title": "Set TargetRot",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "DBD4719D4E1C631A8C9CADADA0591AC2",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -360,12 +360,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_1",
-                "pin_id": "77CE063046DD5BC79B477593498D4F87"
+                "node_title": "Set StartRot",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "EF2159FE4BF1FF34987EF9B59A5E1A4E",
             "name": "StartLoc",
             "direction": "input",
             "category": "struct",
@@ -375,12 +375,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_8",
-                "pin_id": "A610005F426F4F3150E616996E166FD1"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "3439335E42E832E4EA869FB7C63DBE45",
             "name": "Output_Get",
             "direction": "output",
             "category": "struct",
@@ -390,7 +390,6 @@
             "linked_to": []
           },
           {
-            "id": "E3953BF24EB359DC9203D5B8031890E7",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -409,7 +408,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_6",
-                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+                "node_title": "Set TargetRot",
+                "pin_name": "then"
               }
             ]
           },
@@ -421,7 +421,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_8",
-                "pin_id": "A610005F426F4F3150E616996E166FD1"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
@@ -446,7 +447,6 @@
         },
         "pins": [
           {
-            "id": "A22C4E5C4F2472E9567F7FA1F11C2D42",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -456,12 +456,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_12",
-                "pin_id": "058909B34228B5EB2D2565BB17C2E1A0"
+                "node_title": "Get CameraComp",
+                "pin_name": "CameraComp"
               }
             ]
           },
           {
-            "id": "22D5A23641552CD84A30659110E35DC8",
             "name": "ReturnValue",
             "direction": "output",
             "category": "struct",
@@ -471,7 +471,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_1",
-                "pin_id": "159737AC433FCBC7CFF3A2A55EF8D486"
+                "node_title": "Set StartRot",
+                "pin_name": "StartRot"
               }
             ]
           }
@@ -485,7 +486,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_12",
-                "pin_id": "058909B34228B5EB2D2565BB17C2E1A0"
+                "node_title": "Get CameraComp",
+                "pin_name": "CameraComp"
               }
             ]
           }
@@ -503,7 +505,6 @@
         },
         "pins": [
           {
-            "id": "18B2DBC14CEC1A51E8E640869B2A7008",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -513,12 +514,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_12",
-                "pin_id": "058909B34228B5EB2D2565BB17C2E1A0"
+                "node_title": "Get CameraComp",
+                "pin_name": "CameraComp"
               }
             ]
           },
           {
-            "id": "A610005F426F4F3150E616996E166FD1",
             "name": "ReturnValue",
             "direction": "output",
             "category": "struct",
@@ -528,7 +529,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_0",
-                "pin_id": "EF2159FE4BF1FF34987EF9B59A5E1A4E"
+                "node_title": "Set StartLoc",
+                "pin_name": "StartLoc"
               }
             ]
           }
@@ -542,7 +544,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_12",
-                "pin_id": "058909B34228B5EB2D2565BB17C2E1A0"
+                "node_title": "Get CameraComp",
+                "pin_name": "CameraComp"
               }
             ]
           }
@@ -552,12 +555,13 @@
       {
         "id": "K2Node_VariableGet_12",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_12",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get CameraComp",
+        "meta": {
+          "variable_name": "CameraComp"
+        },
         "pins": [
           {
-            "id": "058909B34228B5EB2D2565BB17C2E1A0",
             "name": "CameraComp",
             "direction": "output",
             "category": "object",
@@ -567,16 +571,17 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_8",
-                "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "self"
               },
               {
                 "node": "K2Node_CallFunction_12",
-                "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "6C073FE04673160B68451DA463874CD0",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -607,7 +612,6 @@
         },
         "pins": [
           {
-            "id": "1F1E1CCF4EA01B73B0C02983128FB9C7",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -617,12 +621,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_3",
-                "pin_id": "0F4A59FA4C77C8B449B2949F508257B4"
+                "node_title": "Set TargetLoc",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "D2FC264143B90D358D3AA78CFACF04AF",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -632,12 +636,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_0",
-                "pin_id": "763404B54C14154BE4CDBF9A4D036C6F"
+                "node_title": "Set StartLoc",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "F15CE4AD4F911EE20BD81899F819EDA0",
             "name": "TargetRot",
             "direction": "input",
             "category": "struct",
@@ -647,12 +651,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_18",
-                "pin_id": "22D5A23641552CD84A30659110E35DC8"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "9251F1C446E6E3C1111837A32392DDE2",
             "name": "Output_Get",
             "direction": "output",
             "category": "struct",
@@ -662,7 +666,6 @@
             "linked_to": []
           },
           {
-            "id": "188CE3A148C1D8BECB3B008756C8A064",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -681,7 +684,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_3",
-                "pin_id": "0F4A59FA4C77C8B449B2949F508257B4"
+                "node_title": "Set TargetLoc",
+                "pin_name": "then"
               }
             ]
           },
@@ -693,7 +697,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_18",
-                "pin_id": "22D5A23641552CD84A30659110E35DC8"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
@@ -717,7 +722,6 @@
         },
         "pins": [
           {
-            "id": "0A0D2B2545055D776DAC388F0B6A6BD1",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -727,12 +731,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_9",
-                "pin_id": "153C466A47DDB9202AFF35AD66BFAA06"
+                "node_title": "Set bReturningToDefault",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "0F4A59FA4C77C8B449B2949F508257B4",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -742,12 +746,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_6",
-                "pin_id": "1F1E1CCF4EA01B73B0C02983128FB9C7"
+                "node_title": "Set TargetRot",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "F1A74BAE48286E39395E83BF6C328197",
             "name": "TargetLoc",
             "direction": "input",
             "category": "struct",
@@ -757,12 +761,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_17",
-                "pin_id": "A610005F426F4F3150E616996E166FD1"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "035493B745B577839368B2A84AFEE16F",
             "name": "Output_Get",
             "direction": "output",
             "category": "struct",
@@ -772,7 +776,6 @@
             "linked_to": []
           },
           {
-            "id": "20D2D7EA44AD35FF56EFF890D8267A3D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -791,7 +794,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_9",
-                "pin_id": "153C466A47DDB9202AFF35AD66BFAA06"
+                "node_title": "Set bReturningToDefault",
+                "pin_name": "then"
               }
             ]
           },
@@ -803,7 +807,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_17",
-                "pin_id": "A610005F426F4F3150E616996E166FD1"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
@@ -828,7 +833,6 @@
         },
         "pins": [
           {
-            "id": "A22C4E5C4F2472E9567F7FA1F11C2D42",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -838,12 +842,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_11",
-                "pin_id": "02535F61423ACDE97DA64BA60EF6FF16"
+                "node_title": "Get CamAnchor_Default",
+                "pin_name": "CamAnchor_Default"
               }
             ]
           },
           {
-            "id": "22D5A23641552CD84A30659110E35DC8",
             "name": "ReturnValue",
             "direction": "output",
             "category": "struct",
@@ -853,7 +857,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_6",
-                "pin_id": "F15CE4AD4F911EE20BD81899F819EDA0"
+                "node_title": "Set TargetRot",
+                "pin_name": "TargetRot"
               }
             ]
           }
@@ -867,7 +872,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_11",
-                "pin_id": "02535F61423ACDE97DA64BA60EF6FF16"
+                "node_title": "Get CamAnchor_Default",
+                "pin_name": "CamAnchor_Default"
               }
             ]
           }
@@ -885,7 +891,6 @@
         },
         "pins": [
           {
-            "id": "18B2DBC14CEC1A51E8E640869B2A7008",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -895,12 +900,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_11",
-                "pin_id": "02535F61423ACDE97DA64BA60EF6FF16"
+                "node_title": "Get CamAnchor_Default",
+                "pin_name": "CamAnchor_Default"
               }
             ]
           },
           {
-            "id": "A610005F426F4F3150E616996E166FD1",
             "name": "ReturnValue",
             "direction": "output",
             "category": "struct",
@@ -910,7 +915,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_3",
-                "pin_id": "F1A74BAE48286E39395E83BF6C328197"
+                "node_title": "Set TargetLoc",
+                "pin_name": "TargetLoc"
               }
             ]
           }
@@ -924,7 +930,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_11",
-                "pin_id": "02535F61423ACDE97DA64BA60EF6FF16"
+                "node_title": "Get CamAnchor_Default",
+                "pin_name": "CamAnchor_Default"
               }
             ]
           }
@@ -934,12 +941,13 @@
       {
         "id": "K2Node_VariableGet_11",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_11",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get CamAnchor_Default",
+        "meta": {
+          "variable_name": "CamAnchor_Default"
+        },
         "pins": [
           {
-            "id": "02535F61423ACDE97DA64BA60EF6FF16",
             "name": "CamAnchor_Default",
             "direction": "output",
             "category": "object",
@@ -949,16 +957,17 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_17",
-                "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "self"
               },
               {
                 "node": "K2Node_CallFunction_18",
-                "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "4803E243490C3AA78CF96794A4570B70",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -989,7 +998,6 @@
         },
         "pins": [
           {
-            "id": "90DF0F5E4D434ABD4E7A88A68B664516",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -999,12 +1007,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CustomEvent_1",
-                "pin_id": "6BDC6A5B4D138726029EDBBC212693E7"
+                "node_title": "K2Node_CustomEvent_1",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "153C466A47DDB9202AFF35AD66BFAA06",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1014,12 +1022,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_3",
-                "pin_id": "0A0D2B2545055D776DAC388F0B6A6BD1"
+                "node_title": "Set TargetLoc",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "D3B9FBF94A48DB1B65E128BFC65A78C2",
             "name": "bReturningToDefault",
             "direction": "input",
             "category": "bool",
@@ -1029,7 +1037,6 @@
             "linked_to": []
           },
           {
-            "id": "058EBD564DE397DD6A47D5AC1FFEB239",
             "name": "Output_Get",
             "direction": "output",
             "category": "bool",
@@ -1039,7 +1046,6 @@
             "linked_to": []
           },
           {
-            "id": "BDF369104BDFC0F89FC2C0ACAFA90430",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1058,7 +1064,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CustomEvent_1",
-                "pin_id": "6BDC6A5B4D138726029EDBBC212693E7"
+                "node_title": "K2Node_CustomEvent_1",
+                "pin_name": "then"
               }
             ]
           },
@@ -1087,7 +1094,6 @@
         "meta": {},
         "pins": [
           {
-            "id": "4B261BDE4BADAC765A97F98444522933",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -1097,7 +1103,6 @@
             "linked_to": []
           },
           {
-            "id": "6BDC6A5B4D138726029EDBBC212693E7",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1107,7 +1112,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_9",
-                "pin_id": "90DF0F5E4D434ABD4E7A88A68B664516"
+                "node_title": "Set bReturningToDefault",
+                "pin_name": "execute"
               }
             ]
           }
@@ -1125,7 +1131,6 @@
         },
         "pins": [
           {
-            "id": "1F1E1CCF4EA01B73B0C02983128FB9C7",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -1135,12 +1140,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_10",
-                "pin_id": "0F4A59FA4C77C8B449B2949F508257B4"
+                "node_title": "Set TargetLoc",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "D2FC264143B90D358D3AA78CFACF04AF",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1150,12 +1155,12 @@
             "linked_to": [
               {
                 "node": "K2Node_Timeline_0",
-                "pin_id": "8AB5A27C4B3ABF516F37198C9C2EC01A"
+                "node_title": "K2Node_Timeline_0",
+                "pin_name": "PlayFromStart"
               }
             ]
           },
           {
-            "id": "F15CE4AD4F911EE20BD81899F819EDA0",
             "name": "TargetRot",
             "direction": "input",
             "category": "struct",
@@ -1165,12 +1170,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_16",
-                "pin_id": "22D5A23641552CD84A30659110E35DC8"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "9251F1C446E6E3C1111837A32392DDE2",
             "name": "Output_Get",
             "direction": "output",
             "category": "struct",
@@ -1180,7 +1185,6 @@
             "linked_to": []
           },
           {
-            "id": "188CE3A148C1D8BECB3B008756C8A064",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1199,7 +1203,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_10",
-                "pin_id": "0F4A59FA4C77C8B449B2949F508257B4"
+                "node_title": "Set TargetLoc",
+                "pin_name": "then"
               }
             ]
           },
@@ -1211,7 +1216,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_16",
-                "pin_id": "22D5A23641552CD84A30659110E35DC8"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
@@ -1236,7 +1242,6 @@
         },
         "pins": [
           {
-            "id": "A22C4E5C4F2472E9567F7FA1F11C2D42",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1246,12 +1251,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_7",
-                "pin_id": "E76253B042E0EC8CF08F108E035ADF51"
+                "node_title": "Get CamAnchor_StarMap",
+                "pin_name": "CamAnchor_StarMap"
               }
             ]
           },
           {
-            "id": "22D5A23641552CD84A30659110E35DC8",
             "name": "ReturnValue",
             "direction": "output",
             "category": "struct",
@@ -1261,7 +1266,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_11",
-                "pin_id": "F15CE4AD4F911EE20BD81899F819EDA0"
+                "node_title": "Set TargetRot",
+                "pin_name": "TargetRot"
               }
             ]
           }
@@ -1275,7 +1281,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_7",
-                "pin_id": "E76253B042E0EC8CF08F108E035ADF51"
+                "node_title": "Get CamAnchor_StarMap",
+                "pin_name": "CamAnchor_StarMap"
               }
             ]
           }
@@ -1293,7 +1300,6 @@
         },
         "pins": [
           {
-            "id": "A22C4E5C4F2472E9567F7FA1F11C2D42",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1303,12 +1309,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_10",
-                "pin_id": "CFC636EE495BE8FE2542B181FC249B9C"
+                "node_title": "Get CamAnchor_CloudPattern",
+                "pin_name": "CamAnchor_CloudPattern"
               }
             ]
           },
           {
-            "id": "22D5A23641552CD84A30659110E35DC8",
             "name": "ReturnValue",
             "direction": "output",
             "category": "struct",
@@ -1318,7 +1324,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_8",
-                "pin_id": "F15CE4AD4F911EE20BD81899F819EDA0"
+                "node_title": "Set TargetRot",
+                "pin_name": "TargetRot"
               }
             ]
           }
@@ -1332,7 +1339,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_10",
-                "pin_id": "CFC636EE495BE8FE2542B181FC249B9C"
+                "node_title": "Get CamAnchor_CloudPattern",
+                "pin_name": "CamAnchor_CloudPattern"
               }
             ]
           }
@@ -1349,7 +1357,6 @@
         },
         "pins": [
           {
-            "id": "1F1E1CCF4EA01B73B0C02983128FB9C7",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -1359,12 +1366,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_5",
-                "pin_id": "0F4A59FA4C77C8B449B2949F508257B4"
+                "node_title": "Set TargetLoc",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "D2FC264143B90D358D3AA78CFACF04AF",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1374,12 +1381,12 @@
             "linked_to": [
               {
                 "node": "K2Node_Timeline_0",
-                "pin_id": "8AB5A27C4B3ABF516F37198C9C2EC01A"
+                "node_title": "K2Node_Timeline_0",
+                "pin_name": "PlayFromStart"
               }
             ]
           },
           {
-            "id": "F15CE4AD4F911EE20BD81899F819EDA0",
             "name": "TargetRot",
             "direction": "input",
             "category": "struct",
@@ -1389,12 +1396,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_14",
-                "pin_id": "22D5A23641552CD84A30659110E35DC8"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "9251F1C446E6E3C1111837A32392DDE2",
             "name": "Output_Get",
             "direction": "output",
             "category": "struct",
@@ -1404,7 +1411,6 @@
             "linked_to": []
           },
           {
-            "id": "188CE3A148C1D8BECB3B008756C8A064",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1423,7 +1429,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_5",
-                "pin_id": "0F4A59FA4C77C8B449B2949F508257B4"
+                "node_title": "Set TargetLoc",
+                "pin_name": "then"
               }
             ]
           },
@@ -1435,7 +1442,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_14",
-                "pin_id": "22D5A23641552CD84A30659110E35DC8"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
@@ -1459,7 +1467,6 @@
         },
         "pins": [
           {
-            "id": "1F1E1CCF4EA01B73B0C02983128FB9C7",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -1469,12 +1476,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_4",
-                "pin_id": "0F4A59FA4C77C8B449B2949F508257B4"
+                "node_title": "Set TargetLoc",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "D2FC264143B90D358D3AA78CFACF04AF",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1484,12 +1491,12 @@
             "linked_to": [
               {
                 "node": "K2Node_Timeline_0",
-                "pin_id": "8AB5A27C4B3ABF516F37198C9C2EC01A"
+                "node_title": "K2Node_Timeline_0",
+                "pin_name": "PlayFromStart"
               }
             ]
           },
           {
-            "id": "F15CE4AD4F911EE20BD81899F819EDA0",
             "name": "TargetRot",
             "direction": "input",
             "category": "struct",
@@ -1499,12 +1506,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_13",
-                "pin_id": "22D5A23641552CD84A30659110E35DC8"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "9251F1C446E6E3C1111837A32392DDE2",
             "name": "Output_Get",
             "direction": "output",
             "category": "struct",
@@ -1514,7 +1521,6 @@
             "linked_to": []
           },
           {
-            "id": "188CE3A148C1D8BECB3B008756C8A064",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1533,7 +1539,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_4",
-                "pin_id": "0F4A59FA4C77C8B449B2949F508257B4"
+                "node_title": "Set TargetLoc",
+                "pin_name": "then"
               }
             ]
           },
@@ -1545,7 +1552,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_13",
-                "pin_id": "22D5A23641552CD84A30659110E35DC8"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
@@ -1570,7 +1578,6 @@
         },
         "pins": [
           {
-            "id": "A22C4E5C4F2472E9567F7FA1F11C2D42",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1580,12 +1587,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_9",
-                "pin_id": "151ED2874280C4345D3E38BDC9D83740"
+                "node_title": "Get CamAnchor_TiangongTower",
+                "pin_name": "CamAnchor_TiangongTower"
               }
             ]
           },
           {
-            "id": "22D5A23641552CD84A30659110E35DC8",
             "name": "ReturnValue",
             "direction": "output",
             "category": "struct",
@@ -1595,7 +1602,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_7",
-                "pin_id": "F15CE4AD4F911EE20BD81899F819EDA0"
+                "node_title": "Set TargetRot",
+                "pin_name": "TargetRot"
               }
             ]
           }
@@ -1609,7 +1617,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_9",
-                "pin_id": "151ED2874280C4345D3E38BDC9D83740"
+                "node_title": "Get CamAnchor_TiangongTower",
+                "pin_name": "CamAnchor_TiangongTower"
               }
             ]
           }
@@ -1626,7 +1635,6 @@
         },
         "pins": [
           {
-            "id": "0A0D2B2545055D776DAC388F0B6A6BD1",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -1636,12 +1644,12 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_1",
-                "pin_id": "2134F9674B241D43FD36E5AA2574A280"
+                "node_title": "K2Node_IfThenElse_1",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "0F4A59FA4C77C8B449B2949F508257B4",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1651,12 +1659,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_11",
-                "pin_id": "1F1E1CCF4EA01B73B0C02983128FB9C7"
+                "node_title": "Set TargetRot",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "F1A74BAE48286E39395E83BF6C328197",
             "name": "TargetLoc",
             "direction": "input",
             "category": "struct",
@@ -1666,12 +1674,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_15",
-                "pin_id": "A610005F426F4F3150E616996E166FD1"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "035493B745B577839368B2A84AFEE16F",
             "name": "Output_Get",
             "direction": "output",
             "category": "struct",
@@ -1681,7 +1689,6 @@
             "linked_to": []
           },
           {
-            "id": "20D2D7EA44AD35FF56EFF890D8267A3D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1700,7 +1707,8 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_1",
-                "pin_id": "2134F9674B241D43FD36E5AA2574A280"
+                "node_title": "K2Node_IfThenElse_1",
+                "pin_name": "then"
               }
             ]
           },
@@ -1712,7 +1720,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_15",
-                "pin_id": "A610005F426F4F3150E616996E166FD1"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
@@ -1737,7 +1746,6 @@
         },
         "pins": [
           {
-            "id": "18B2DBC14CEC1A51E8E640869B2A7008",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1747,12 +1755,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_7",
-                "pin_id": "E76253B042E0EC8CF08F108E035ADF51"
+                "node_title": "Get CamAnchor_StarMap",
+                "pin_name": "CamAnchor_StarMap"
               }
             ]
           },
           {
-            "id": "A610005F426F4F3150E616996E166FD1",
             "name": "ReturnValue",
             "direction": "output",
             "category": "struct",
@@ -1762,7 +1770,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_10",
-                "pin_id": "F1A74BAE48286E39395E83BF6C328197"
+                "node_title": "Set TargetLoc",
+                "pin_name": "TargetLoc"
               }
             ]
           }
@@ -1776,7 +1785,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_7",
-                "pin_id": "E76253B042E0EC8CF08F108E035ADF51"
+                "node_title": "Get CamAnchor_StarMap",
+                "pin_name": "CamAnchor_StarMap"
               }
             ]
           }
@@ -1791,7 +1801,6 @@
         "meta": {},
         "pins": [
           {
-            "id": "C4FEAB51433EE43AAC12E6984324C689",
             "name": "A",
             "direction": "input",
             "category": "name",
@@ -1801,12 +1810,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CustomEvent_0",
-                "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
+                "node_title": "K2Node_CustomEvent_0",
+                "pin_name": "TargetId"
               }
             ]
           },
           {
-            "id": "F7927F0D479BB746E36C4EAB41154D9F",
             "name": "B",
             "direction": "input",
             "category": "name",
@@ -1816,7 +1825,6 @@
             "linked_to": []
           },
           {
-            "id": "A53E8C534AD2FB4BBDC3718CC0284441",
             "name": "ReturnValue",
             "direction": "output",
             "category": "bool",
@@ -1826,12 +1834,12 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_1",
-                "pin_id": "D0A18169431458328C8119A3FBEBD678"
+                "node_title": "K2Node_IfThenElse_1",
+                "pin_name": "Condition"
               }
             ]
           },
           {
-            "id": "E8E61C1544A1CB1803CA9D8562997757",
             "name": "ErrorTolerance",
             "direction": "input",
             "category": "",
@@ -1850,7 +1858,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CustomEvent_0",
-                "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
+                "node_title": "K2Node_CustomEvent_0",
+                "pin_name": "TargetId"
               }
             ]
           },
@@ -1872,7 +1881,6 @@
         "meta": {},
         "pins": [
           {
-            "id": "02D60E6642101409F560C58262AEF819",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -1882,12 +1890,12 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_2",
-                "pin_id": "38FB88014665847EFD1BDBB2B9B75F16"
+                "node_title": "K2Node_IfThenElse_2",
+                "pin_name": "else"
               }
             ]
           },
           {
-            "id": "D0A18169431458328C8119A3FBEBD678",
             "name": "Condition",
             "direction": "input",
             "category": "bool",
@@ -1897,12 +1905,12 @@
             "linked_to": [
               {
                 "node": "K2Node_PromotableOperator_5",
-                "pin_id": "A53E8C534AD2FB4BBDC3718CC0284441"
+                "node_title": "K2Node_PromotableOperator_5",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "2134F9674B241D43FD36E5AA2574A280",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1912,12 +1920,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_10",
-                "pin_id": "0A0D2B2545055D776DAC388F0B6A6BD1"
+                "node_title": "Set TargetLoc",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "38FB88014665847EFD1BDBB2B9B75F16",
             "name": "else",
             "direction": "output",
             "category": "exec",
@@ -1936,7 +1944,8 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_2",
-                "pin_id": "38FB88014665847EFD1BDBB2B9B75F16"
+                "node_title": "K2Node_IfThenElse_2",
+                "pin_name": "else"
               }
             ]
           },
@@ -1948,7 +1957,8 @@
             "linked_to": [
               {
                 "node": "K2Node_PromotableOperator_5",
-                "pin_id": "A53E8C534AD2FB4BBDC3718CC0284441"
+                "node_title": "K2Node_PromotableOperator_5",
+                "pin_name": "ReturnValue"
               }
             ]
           }
@@ -1965,7 +1975,6 @@
         },
         "pins": [
           {
-            "id": "0A0D2B2545055D776DAC388F0B6A6BD1",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -1975,12 +1984,12 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_2",
-                "pin_id": "2134F9674B241D43FD36E5AA2574A280"
+                "node_title": "K2Node_IfThenElse_2",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "0F4A59FA4C77C8B449B2949F508257B4",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1990,12 +1999,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_8",
-                "pin_id": "1F1E1CCF4EA01B73B0C02983128FB9C7"
+                "node_title": "Set TargetRot",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "F1A74BAE48286E39395E83BF6C328197",
             "name": "TargetLoc",
             "direction": "input",
             "category": "struct",
@@ -2005,12 +2014,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_10",
-                "pin_id": "A610005F426F4F3150E616996E166FD1"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "035493B745B577839368B2A84AFEE16F",
             "name": "Output_Get",
             "direction": "output",
             "category": "struct",
@@ -2020,7 +2029,6 @@
             "linked_to": []
           },
           {
-            "id": "20D2D7EA44AD35FF56EFF890D8267A3D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -2039,7 +2047,8 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_2",
-                "pin_id": "2134F9674B241D43FD36E5AA2574A280"
+                "node_title": "K2Node_IfThenElse_2",
+                "pin_name": "then"
               }
             ]
           },
@@ -2051,7 +2060,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_10",
-                "pin_id": "A610005F426F4F3150E616996E166FD1"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
@@ -2076,7 +2086,6 @@
         },
         "pins": [
           {
-            "id": "18B2DBC14CEC1A51E8E640869B2A7008",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -2086,12 +2095,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_10",
-                "pin_id": "CFC636EE495BE8FE2542B181FC249B9C"
+                "node_title": "Get CamAnchor_CloudPattern",
+                "pin_name": "CamAnchor_CloudPattern"
               }
             ]
           },
           {
-            "id": "A610005F426F4F3150E616996E166FD1",
             "name": "ReturnValue",
             "direction": "output",
             "category": "struct",
@@ -2101,7 +2110,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_5",
-                "pin_id": "F1A74BAE48286E39395E83BF6C328197"
+                "node_title": "Set TargetLoc",
+                "pin_name": "TargetLoc"
               }
             ]
           }
@@ -2115,7 +2125,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_10",
-                "pin_id": "CFC636EE495BE8FE2542B181FC249B9C"
+                "node_title": "Get CamAnchor_CloudPattern",
+                "pin_name": "CamAnchor_CloudPattern"
               }
             ]
           }
@@ -2130,7 +2141,6 @@
         "meta": {},
         "pins": [
           {
-            "id": "C4FEAB51433EE43AAC12E6984324C689",
             "name": "A",
             "direction": "input",
             "category": "name",
@@ -2140,12 +2150,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CustomEvent_0",
-                "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
+                "node_title": "K2Node_CustomEvent_0",
+                "pin_name": "TargetId"
               }
             ]
           },
           {
-            "id": "F7927F0D479BB746E36C4EAB41154D9F",
             "name": "B",
             "direction": "input",
             "category": "name",
@@ -2155,7 +2165,6 @@
             "linked_to": []
           },
           {
-            "id": "A53E8C534AD2FB4BBDC3718CC0284441",
             "name": "ReturnValue",
             "direction": "output",
             "category": "bool",
@@ -2165,12 +2174,12 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_2",
-                "pin_id": "D0A18169431458328C8119A3FBEBD678"
+                "node_title": "K2Node_IfThenElse_2",
+                "pin_name": "Condition"
               }
             ]
           },
           {
-            "id": "83CE74A24030E59789B0F88383ACFFE1",
             "name": "ErrorTolerance",
             "direction": "input",
             "category": "",
@@ -2189,7 +2198,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CustomEvent_0",
-                "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
+                "node_title": "K2Node_CustomEvent_0",
+                "pin_name": "TargetId"
               }
             ]
           },
@@ -2211,7 +2221,6 @@
         "meta": {},
         "pins": [
           {
-            "id": "02D60E6642101409F560C58262AEF819",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -2221,12 +2230,12 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_0",
-                "pin_id": "BCECF00D426C4968EDD3C28015A18A05"
+                "node_title": "K2Node_IfThenElse_0",
+                "pin_name": "else"
               }
             ]
           },
           {
-            "id": "D0A18169431458328C8119A3FBEBD678",
             "name": "Condition",
             "direction": "input",
             "category": "bool",
@@ -2236,12 +2245,12 @@
             "linked_to": [
               {
                 "node": "K2Node_PromotableOperator_6",
-                "pin_id": "A53E8C534AD2FB4BBDC3718CC0284441"
+                "node_title": "K2Node_PromotableOperator_6",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "2134F9674B241D43FD36E5AA2574A280",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -2251,12 +2260,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_5",
-                "pin_id": "0A0D2B2545055D776DAC388F0B6A6BD1"
+                "node_title": "Set TargetLoc",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "38FB88014665847EFD1BDBB2B9B75F16",
             "name": "else",
             "direction": "output",
             "category": "exec",
@@ -2266,7 +2275,8 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_1",
-                "pin_id": "02D60E6642101409F560C58262AEF819"
+                "node_title": "K2Node_IfThenElse_1",
+                "pin_name": "execute"
               }
             ]
           }
@@ -2280,7 +2290,8 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_0",
-                "pin_id": "BCECF00D426C4968EDD3C28015A18A05"
+                "node_title": "K2Node_IfThenElse_0",
+                "pin_name": "else"
               }
             ]
           },
@@ -2292,7 +2303,8 @@
             "linked_to": [
               {
                 "node": "K2Node_PromotableOperator_6",
-                "pin_id": "A53E8C534AD2FB4BBDC3718CC0284441"
+                "node_title": "K2Node_PromotableOperator_6",
+                "pin_name": "ReturnValue"
               }
             ]
           }
@@ -2309,7 +2321,6 @@
         },
         "pins": [
           {
-            "id": "0A0D2B2545055D776DAC388F0B6A6BD1",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -2319,12 +2330,12 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_0",
-                "pin_id": "01EED2404AF184F84B126183372F8913"
+                "node_title": "K2Node_IfThenElse_0",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "0F4A59FA4C77C8B449B2949F508257B4",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -2334,12 +2345,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_7",
-                "pin_id": "1F1E1CCF4EA01B73B0C02983128FB9C7"
+                "node_title": "Set TargetRot",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "F1A74BAE48286E39395E83BF6C328197",
             "name": "TargetLoc",
             "direction": "input",
             "category": "struct",
@@ -2349,12 +2360,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_9",
-                "pin_id": "A610005F426F4F3150E616996E166FD1"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "035493B745B577839368B2A84AFEE16F",
             "name": "Output_Get",
             "direction": "output",
             "category": "struct",
@@ -2364,7 +2375,6 @@
             "linked_to": []
           },
           {
-            "id": "20D2D7EA44AD35FF56EFF890D8267A3D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -2383,7 +2393,8 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_0",
-                "pin_id": "01EED2404AF184F84B126183372F8913"
+                "node_title": "K2Node_IfThenElse_0",
+                "pin_name": "then"
               }
             ]
           },
@@ -2395,7 +2406,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_9",
-                "pin_id": "A610005F426F4F3150E616996E166FD1"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
@@ -2420,7 +2432,6 @@
         },
         "pins": [
           {
-            "id": "18B2DBC14CEC1A51E8E640869B2A7008",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -2430,12 +2441,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_9",
-                "pin_id": "151ED2874280C4345D3E38BDC9D83740"
+                "node_title": "Get CamAnchor_TiangongTower",
+                "pin_name": "CamAnchor_TiangongTower"
               }
             ]
           },
           {
-            "id": "A610005F426F4F3150E616996E166FD1",
             "name": "ReturnValue",
             "direction": "output",
             "category": "struct",
@@ -2445,7 +2456,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_4",
-                "pin_id": "F1A74BAE48286E39395E83BF6C328197"
+                "node_title": "Set TargetLoc",
+                "pin_name": "TargetLoc"
               }
             ]
           }
@@ -2459,7 +2471,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_9",
-                "pin_id": "151ED2874280C4345D3E38BDC9D83740"
+                "node_title": "Get CamAnchor_TiangongTower",
+                "pin_name": "CamAnchor_TiangongTower"
               }
             ]
           }
@@ -2474,7 +2487,6 @@
         "meta": {},
         "pins": [
           {
-            "id": "D459037F4B2B1B14D97483A22DBDE4D8",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -2484,12 +2496,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_12",
-                "pin_id": "DBD4719D4E1C631A8C9CADADA0591AC2"
+                "node_title": "Set StartLoc",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "2220B0FF4269F2479A5DABA7F88CDEDA",
             "name": "Condition",
             "direction": "input",
             "category": "bool",
@@ -2499,12 +2511,12 @@
             "linked_to": [
               {
                 "node": "K2Node_PromotableOperator_2",
-                "pin_id": "AC56A72249AD70B6F27FD0B117EC26E1"
+                "node_title": "K2Node_PromotableOperator_2",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "01EED2404AF184F84B126183372F8913",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -2514,12 +2526,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_4",
-                "pin_id": "0A0D2B2545055D776DAC388F0B6A6BD1"
+                "node_title": "Set TargetLoc",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "BCECF00D426C4968EDD3C28015A18A05",
             "name": "else",
             "direction": "output",
             "category": "exec",
@@ -2529,7 +2541,8 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_2",
-                "pin_id": "02D60E6642101409F560C58262AEF819"
+                "node_title": "K2Node_IfThenElse_2",
+                "pin_name": "execute"
               }
             ]
           }
@@ -2543,7 +2556,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_12",
-                "pin_id": "DBD4719D4E1C631A8C9CADADA0591AC2"
+                "node_title": "Set StartLoc",
+                "pin_name": "then"
               }
             ]
           },
@@ -2555,7 +2569,8 @@
             "linked_to": [
               {
                 "node": "K2Node_PromotableOperator_2",
-                "pin_id": "AC56A72249AD70B6F27FD0B117EC26E1"
+                "node_title": "K2Node_PromotableOperator_2",
+                "pin_name": "ReturnValue"
               }
             ]
           }
@@ -2570,7 +2585,6 @@
         "meta": {},
         "pins": [
           {
-            "id": "AE39B52145ECA6961BB0BD9B1502F521",
             "name": "A",
             "direction": "input",
             "category": "name",
@@ -2580,12 +2594,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CustomEvent_0",
-                "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
+                "node_title": "K2Node_CustomEvent_0",
+                "pin_name": "TargetId"
               }
             ]
           },
           {
-            "id": "531D73F349A06AE53A34D8B679604C0F",
             "name": "B",
             "direction": "input",
             "category": "name",
@@ -2595,7 +2609,6 @@
             "linked_to": []
           },
           {
-            "id": "AC56A72249AD70B6F27FD0B117EC26E1",
             "name": "ReturnValue",
             "direction": "output",
             "category": "bool",
@@ -2605,12 +2618,12 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_0",
-                "pin_id": "2220B0FF4269F2479A5DABA7F88CDEDA"
+                "node_title": "K2Node_IfThenElse_0",
+                "pin_name": "Condition"
               }
             ]
           },
           {
-            "id": "6A82B7724D9A52B589F443ABE1A717E7",
             "name": "ErrorTolerance",
             "direction": "input",
             "category": "",
@@ -2629,7 +2642,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CustomEvent_0",
-                "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
+                "node_title": "K2Node_CustomEvent_0",
+                "pin_name": "TargetId"
               }
             ]
           },
@@ -2646,12 +2660,13 @@
       {
         "id": "K2Node_VariableGet_9",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_9",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get CamAnchor_TiangongTower",
+        "meta": {
+          "variable_name": "CamAnchor_TiangongTower"
+        },
         "pins": [
           {
-            "id": "151ED2874280C4345D3E38BDC9D83740",
             "name": "CamAnchor_TiangongTower",
             "direction": "output",
             "category": "object",
@@ -2661,16 +2676,17 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_9",
-                "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "self"
               },
               {
                 "node": "K2Node_CallFunction_13",
-                "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "2EFB55D348F6EFE875D204B9932BDFFF",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -2694,12 +2710,13 @@
       {
         "id": "K2Node_VariableGet_10",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_10",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get CamAnchor_CloudPattern",
+        "meta": {
+          "variable_name": "CamAnchor_CloudPattern"
+        },
         "pins": [
           {
-            "id": "CFC636EE495BE8FE2542B181FC249B9C",
             "name": "CamAnchor_CloudPattern",
             "direction": "output",
             "category": "object",
@@ -2709,16 +2726,17 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_10",
-                "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "self"
               },
               {
                 "node": "K2Node_CallFunction_14",
-                "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "3DF72EDB47D31B78C3E8F7B29C7CEDF8",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -2742,12 +2760,13 @@
       {
         "id": "K2Node_VariableGet_7",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_7",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get CamAnchor_StarMap",
+        "meta": {
+          "variable_name": "CamAnchor_StarMap"
+        },
         "pins": [
           {
-            "id": "E76253B042E0EC8CF08F108E035ADF51",
             "name": "CamAnchor_StarMap",
             "direction": "output",
             "category": "object",
@@ -2757,16 +2776,17 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_15",
-                "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "self"
               },
               {
                 "node": "K2Node_CallFunction_16",
-                "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "02112BB64EAC429C136A9196F5B930D8",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -2797,7 +2817,6 @@
         },
         "pins": [
           {
-            "id": "496137A342A407E68A206081A067183E",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -2807,12 +2826,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CustomEvent_0",
-                "pin_id": "B08B718044A414830952BC8524EF8859"
+                "node_title": "K2Node_CustomEvent_0",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "848162B24FBF137A890EBB8AD681F637",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -2822,12 +2841,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_13",
-                "pin_id": "77CE063046DD5BC79B477593498D4F87"
+                "node_title": "Set StartRot",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "A21B37F04774E665406799B3AD659FF8",
             "name": "bReturningToDefault",
             "direction": "input",
             "category": "bool",
@@ -2837,7 +2856,6 @@
             "linked_to": []
           },
           {
-            "id": "5F9D672A4CC7FB49BAF31DB3547AA98B",
             "name": "Output_Get",
             "direction": "output",
             "category": "bool",
@@ -2847,7 +2865,6 @@
             "linked_to": []
           },
           {
-            "id": "0727728240DB57167E797286B5279B0A",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -2866,7 +2883,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CustomEvent_0",
-                "pin_id": "B08B718044A414830952BC8524EF8859"
+                "node_title": "K2Node_CustomEvent_0",
+                "pin_name": "then"
               }
             ]
           },
@@ -2890,7 +2908,6 @@
         },
         "pins": [
           {
-            "id": "77CE063046DD5BC79B477593498D4F87",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -2900,12 +2917,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_2",
-                "pin_id": "848162B24FBF137A890EBB8AD681F637"
+                "node_title": "Set bReturningToDefault",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "51FEA40C4D9C07B6225F7D88112BFA08",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -2915,12 +2932,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_12",
-                "pin_id": "763404B54C14154BE4CDBF9A4D036C6F"
+                "node_title": "Set StartLoc",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "159737AC433FCBC7CFF3A2A55EF8D486",
             "name": "StartRot",
             "direction": "input",
             "category": "struct",
@@ -2930,12 +2947,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_6",
-                "pin_id": "EED2967B4925587074722085C3CF8CFA"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "D1F8A1B2424113D443650E94861F9F93",
             "name": "Output_Get",
             "direction": "output",
             "category": "struct",
@@ -2945,7 +2962,6 @@
             "linked_to": []
           },
           {
-            "id": "410FC1504C5CFCE564304C97DAF25A6D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -2964,7 +2980,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_2",
-                "pin_id": "848162B24FBF137A890EBB8AD681F637"
+                "node_title": "Set bReturningToDefault",
+                "pin_name": "then"
               }
             ]
           },
@@ -2976,7 +2993,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_6",
-                "pin_id": "EED2967B4925587074722085C3CF8CFA"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
@@ -3001,7 +3019,6 @@
         },
         "pins": [
           {
-            "id": "25548AF44F6972ED1F5B80A129BD43CF",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -3011,12 +3028,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_6",
-                "pin_id": "AE0AD8E040E1DFE1801495A51D74351F"
+                "node_title": "Get CameraComp",
+                "pin_name": "CameraComp"
               }
             ]
           },
           {
-            "id": "EED2967B4925587074722085C3CF8CFA",
             "name": "ReturnValue",
             "direction": "output",
             "category": "struct",
@@ -3026,7 +3043,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_13",
-                "pin_id": "159737AC433FCBC7CFF3A2A55EF8D486"
+                "node_title": "Set StartRot",
+                "pin_name": "StartRot"
               }
             ]
           }
@@ -3040,7 +3058,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_6",
-                "pin_id": "AE0AD8E040E1DFE1801495A51D74351F"
+                "node_title": "Get CameraComp",
+                "pin_name": "CameraComp"
               }
             ]
           }
@@ -3057,7 +3076,6 @@
         },
         "pins": [
           {
-            "id": "763404B54C14154BE4CDBF9A4D036C6F",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -3067,12 +3085,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_13",
-                "pin_id": "51FEA40C4D9C07B6225F7D88112BFA08"
+                "node_title": "Set StartRot",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "DBD4719D4E1C631A8C9CADADA0591AC2",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -3082,12 +3100,12 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_0",
-                "pin_id": "D459037F4B2B1B14D97483A22DBDE4D8"
+                "node_title": "K2Node_IfThenElse_0",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "EF2159FE4BF1FF34987EF9B59A5E1A4E",
             "name": "StartLoc",
             "direction": "input",
             "category": "struct",
@@ -3097,12 +3115,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_5",
-                "pin_id": "66170D0C45026B08005827B30B8D05FE"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "3439335E42E832E4EA869FB7C63DBE45",
             "name": "Output_Get",
             "direction": "output",
             "category": "struct",
@@ -3112,7 +3130,6 @@
             "linked_to": []
           },
           {
-            "id": "E3953BF24EB359DC9203D5B8031890E7",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -3131,7 +3148,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_13",
-                "pin_id": "51FEA40C4D9C07B6225F7D88112BFA08"
+                "node_title": "Set StartRot",
+                "pin_name": "then"
               }
             ]
           },
@@ -3143,7 +3161,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_5",
-                "pin_id": "66170D0C45026B08005827B30B8D05FE"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "ReturnValue"
               }
             ]
           },
@@ -3168,7 +3187,6 @@
         },
         "pins": [
           {
-            "id": "3A5292164CF84EE8947153AC2C33FCA2",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -3178,12 +3196,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_6",
-                "pin_id": "AE0AD8E040E1DFE1801495A51D74351F"
+                "node_title": "Get CameraComp",
+                "pin_name": "CameraComp"
               }
             ]
           },
           {
-            "id": "66170D0C45026B08005827B30B8D05FE",
             "name": "ReturnValue",
             "direction": "output",
             "category": "struct",
@@ -3193,7 +3211,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_12",
-                "pin_id": "EF2159FE4BF1FF34987EF9B59A5E1A4E"
+                "node_title": "Set StartLoc",
+                "pin_name": "StartLoc"
               }
             ]
           }
@@ -3207,7 +3226,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_6",
-                "pin_id": "AE0AD8E040E1DFE1801495A51D74351F"
+                "node_title": "Get CameraComp",
+                "pin_name": "CameraComp"
               }
             ]
           }
@@ -3217,12 +3237,13 @@
       {
         "id": "K2Node_VariableGet_6",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_6",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get CameraComp",
+        "meta": {
+          "variable_name": "CameraComp"
+        },
         "pins": [
           {
-            "id": "AE0AD8E040E1DFE1801495A51D74351F",
             "name": "CameraComp",
             "direction": "output",
             "category": "object",
@@ -3232,16 +3253,17 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_5",
-                "pin_id": "3A5292164CF84EE8947153AC2C33FCA2"
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "self"
               },
               {
                 "node": "K2Node_CallFunction_6",
-                "pin_id": "25548AF44F6972ED1F5B80A129BD43CF"
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "E07B41C545A265BD24FF189DA1B0B92D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -3270,7 +3292,6 @@
         "meta": {},
         "pins": [
           {
-            "id": "BC8C7C534F0D7454D06B2F9DDAFA6813",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -3280,7 +3301,6 @@
             "linked_to": []
           },
           {
-            "id": "B08B718044A414830952BC8524EF8859",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -3290,12 +3310,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_2",
-                "pin_id": "496137A342A407E68A206081A067183E"
+                "node_title": "Set bReturningToDefault",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "9697B12C41E2029776D3BE87CD2F5F0A",
             "name": "TargetId",
             "direction": "output",
             "category": "name",
@@ -3305,15 +3325,18 @@
             "linked_to": [
               {
                 "node": "K2Node_PromotableOperator_2",
-                "pin_id": "AE39B52145ECA6961BB0BD9B1502F521"
+                "node_title": "K2Node_PromotableOperator_2",
+                "pin_name": "A"
               },
               {
                 "node": "K2Node_PromotableOperator_6",
-                "pin_id": "C4FEAB51433EE43AAC12E6984324C689"
+                "node_title": "K2Node_PromotableOperator_6",
+                "pin_name": "A"
               },
               {
                 "node": "K2Node_PromotableOperator_5",
-                "pin_id": "C4FEAB51433EE43AAC12E6984324C689"
+                "node_title": "K2Node_PromotableOperator_5",
+                "pin_name": "A"
               }
             ]
           }
@@ -3332,7 +3355,6 @@
         },
         "pins": [
           {
-            "id": "7C2FC47148DC43D7083645909B9A329B",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -3342,12 +3364,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_3",
-                "pin_id": "835C8B024BB29E1F8E0698B759565BA6"
+                "node_title": "SceneComponent.K2_SetWorldLocation",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "1ECDE0284C895A04CD9A87B42315A3B6",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -3357,7 +3379,6 @@
             "linked_to": []
           },
           {
-            "id": "2C74BF9B48A382729FD002A9EC51FA94",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -3367,12 +3388,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_5",
-                "pin_id": "79712991457F221F807F1A8CC7F96106"
+                "node_title": "Get CameraComp",
+                "pin_name": "CameraComp"
               }
             ]
           },
           {
-            "id": "E8822F4D416E99304591B2872B7407F2",
             "name": "NewRotation",
             "direction": "input",
             "category": "struct",
@@ -3382,12 +3403,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_1",
-                "pin_id": "17193C034B2512739ACF789976EB45E1"
+                "node_title": "KismetMathLibrary.RLerp",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "2AE7BDC64F9305F3D764A7AF6603A525",
             "name": "bSweep",
             "direction": "input",
             "category": "bool",
@@ -3397,7 +3418,6 @@
             "linked_to": []
           },
           {
-            "id": "42A3E91F4FA1B5D9C50434AB17C81EE0",
             "name": "SweepHitResult",
             "direction": "output",
             "category": "struct",
@@ -3407,7 +3427,6 @@
             "linked_to": []
           },
           {
-            "id": "E52A1A11409EFE34E8A1F88E64C525FC",
             "name": "bTeleport",
             "direction": "input",
             "category": "bool",
@@ -3426,7 +3445,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_3",
-                "pin_id": "835C8B024BB29E1F8E0698B759565BA6"
+                "node_title": "SceneComponent.K2_SetWorldLocation",
+                "pin_name": "then"
               }
             ]
           },
@@ -3438,7 +3458,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_5",
-                "pin_id": "79712991457F221F807F1A8CC7F96106"
+                "node_title": "Get CameraComp",
+                "pin_name": "CameraComp"
               }
             ]
           },
@@ -3450,7 +3471,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_1",
-                "pin_id": "17193C034B2512739ACF789976EB45E1"
+                "node_title": "KismetMathLibrary.RLerp",
+                "pin_name": "ReturnValue"
               }
             ]
           }
@@ -3468,7 +3490,6 @@
         },
         "pins": [
           {
-            "id": "DF3247874F3E37057E090BA38493D00C",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -3478,12 +3499,12 @@
             "linked_to": [
               {
                 "node": "K2Node_Timeline_0",
-                "pin_id": "8A1724094FA3769B0001869B2B5BAAEE"
+                "node_title": "K2Node_Timeline_0",
+                "pin_name": "Update"
               }
             ]
           },
           {
-            "id": "835C8B024BB29E1F8E0698B759565BA6",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -3493,12 +3514,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "7C2FC47148DC43D7083645909B9A329B"
+                "node_title": "SceneComponent.K2_SetWorldRotation",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "F2A5FED040159C81D14A2CBB8A8B8C2D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -3508,12 +3529,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_5",
-                "pin_id": "79712991457F221F807F1A8CC7F96106"
+                "node_title": "Get CameraComp",
+                "pin_name": "CameraComp"
               }
             ]
           },
           {
-            "id": "E7960AD743EC3C2B3DDFEFB188C3B02C",
             "name": "NewLocation",
             "direction": "input",
             "category": "struct",
@@ -3523,12 +3544,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_0",
-                "pin_id": "99AAEF87426AE51AF02BF98D78DA151C"
+                "node_title": "KismetMathLibrary.VLerp",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "9D935BA94DF003C738643190528E3B9C",
             "name": "bSweep",
             "direction": "input",
             "category": "bool",
@@ -3538,7 +3559,6 @@
             "linked_to": []
           },
           {
-            "id": "42BB16C04E4BFBB958BC4E857C6685A5",
             "name": "SweepHitResult",
             "direction": "output",
             "category": "struct",
@@ -3548,7 +3568,6 @@
             "linked_to": []
           },
           {
-            "id": "5F190E584373F82EA66F35B50EB94C6C",
             "name": "bTeleport",
             "direction": "input",
             "category": "bool",
@@ -3567,7 +3586,8 @@
             "linked_to": [
               {
                 "node": "K2Node_Timeline_0",
-                "pin_id": "8A1724094FA3769B0001869B2B5BAAEE"
+                "node_title": "K2Node_Timeline_0",
+                "pin_name": "Update"
               }
             ]
           },
@@ -3579,7 +3599,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_5",
-                "pin_id": "79712991457F221F807F1A8CC7F96106"
+                "node_title": "Get CameraComp",
+                "pin_name": "CameraComp"
               }
             ]
           },
@@ -3591,7 +3612,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_0",
-                "pin_id": "99AAEF87426AE51AF02BF98D78DA151C"
+                "node_title": "KismetMathLibrary.VLerp",
+                "pin_name": "ReturnValue"
               }
             ]
           }
@@ -3601,12 +3623,13 @@
       {
         "id": "K2Node_VariableGet_5",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_5",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get CameraComp",
+        "meta": {
+          "variable_name": "CameraComp"
+        },
         "pins": [
           {
-            "id": "79712991457F221F807F1A8CC7F96106",
             "name": "CameraComp",
             "direction": "output",
             "category": "object",
@@ -3616,16 +3639,17 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_3",
-                "pin_id": "F2A5FED040159C81D14A2CBB8A8B8C2D"
+                "node_title": "SceneComponent.K2_SetWorldLocation",
+                "pin_name": "self"
               },
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "2C74BF9B48A382729FD002A9EC51FA94"
+                "node_title": "SceneComponent.K2_SetWorldRotation",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "F4356A894C7DFF5E515142A608515F23",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -3649,12 +3673,13 @@
       {
         "id": "K2Node_VariableGet_4",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_4",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get TargetRot",
+        "meta": {
+          "variable_name": "TargetRot"
+        },
         "pins": [
           {
-            "id": "391EECA04CCD2800F17B92821B5C174E",
             "name": "TargetRot",
             "direction": "output",
             "category": "struct",
@@ -3664,12 +3689,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_1",
-                "pin_id": "68AE9E6A407A95C7C61C60B754EF3F75"
+                "node_title": "KismetMathLibrary.RLerp",
+                "pin_name": "B"
               }
             ]
           },
           {
-            "id": "8954C8C04BAAE2E100047C8EC22BAA85",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -3693,12 +3718,13 @@
       {
         "id": "K2Node_VariableGet_3",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_3",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get StartRot",
+        "meta": {
+          "variable_name": "StartRot"
+        },
         "pins": [
           {
-            "id": "658BAA154AB7E4A8C59AD697E4BEC39B",
             "name": "StartRot",
             "direction": "output",
             "category": "struct",
@@ -3708,12 +3734,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_1",
-                "pin_id": "2A55F6AD41ACA829CBF8CF958E2B6759"
+                "node_title": "KismetMathLibrary.RLerp",
+                "pin_name": "A"
               }
             ]
           },
           {
-            "id": "3EFA4C8A4A76BA3DB3EE28B02E9584E3",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -3737,12 +3763,13 @@
       {
         "id": "K2Node_VariableGet_1",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_1",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get TargetLoc",
+        "meta": {
+          "variable_name": "TargetLoc"
+        },
         "pins": [
           {
-            "id": "41F9622E4A747FDE0AEFE09C20DC7B0C",
             "name": "TargetLoc",
             "direction": "output",
             "category": "struct",
@@ -3752,12 +3779,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_0",
-                "pin_id": "739A3F5D4E83D06503CF1E9D97E45E2E"
+                "node_title": "KismetMathLibrary.VLerp",
+                "pin_name": "B"
               }
             ]
           },
           {
-            "id": "0B92535545AAC28E795E21A207B63013",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -3781,12 +3808,13 @@
       {
         "id": "K2Node_VariableGet_0",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_0",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get StartLoc",
+        "meta": {
+          "variable_name": "StartLoc"
+        },
         "pins": [
           {
-            "id": "ED63C79644447127F3D797891B6EBD16",
             "name": "StartLoc",
             "direction": "output",
             "category": "struct",
@@ -3796,12 +3824,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_0",
-                "pin_id": "9B9006E348A33157653D51A454AF4538"
+                "node_title": "KismetMathLibrary.VLerp",
+                "pin_name": "A"
               }
             ]
           },
           {
-            "id": "C512FF774611772BDFD46E83BDBE1664",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -3833,7 +3861,6 @@
         },
         "pins": [
           {
-            "id": "BBDE924E49E30660C81669ABB815382B",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -3843,7 +3870,6 @@
             "linked_to": []
           },
           {
-            "id": "2A55F6AD41ACA829CBF8CF958E2B6759",
             "name": "A",
             "direction": "input",
             "category": "struct",
@@ -3853,12 +3879,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_3",
-                "pin_id": "658BAA154AB7E4A8C59AD697E4BEC39B"
+                "node_title": "Get StartRot",
+                "pin_name": "StartRot"
               }
             ]
           },
           {
-            "id": "68AE9E6A407A95C7C61C60B754EF3F75",
             "name": "B",
             "direction": "input",
             "category": "struct",
@@ -3868,12 +3894,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_4",
-                "pin_id": "391EECA04CCD2800F17B92821B5C174E"
+                "node_title": "Get TargetRot",
+                "pin_name": "TargetRot"
               }
             ]
           },
           {
-            "id": "9B9E86044F34771CCE8560BFC18AE895",
             "name": "Alpha",
             "direction": "input",
             "category": "real",
@@ -3883,12 +3909,12 @@
             "linked_to": [
               {
                 "node": "K2Node_Timeline_0",
-                "pin_id": "BC4481EE4F37EC026B8663B682228D35"
+                "node_title": "K2Node_Timeline_0",
+                "pin_name": "Alpha"
               }
             ]
           },
           {
-            "id": "284C3E2C4AB37C6ABE740CB260606E64",
             "name": "bShortestPath",
             "direction": "input",
             "category": "bool",
@@ -3898,7 +3924,6 @@
             "linked_to": []
           },
           {
-            "id": "17193C034B2512739ACF789976EB45E1",
             "name": "ReturnValue",
             "direction": "output",
             "category": "struct",
@@ -3908,7 +3933,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "E8822F4D416E99304591B2872B7407F2"
+                "node_title": "SceneComponent.K2_SetWorldRotation",
+                "pin_name": "NewRotation"
               }
             ]
           }
@@ -3929,7 +3955,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_3",
-                "pin_id": "658BAA154AB7E4A8C59AD697E4BEC39B"
+                "node_title": "Get StartRot",
+                "pin_name": "StartRot"
               }
             ]
           },
@@ -3941,7 +3968,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_4",
-                "pin_id": "391EECA04CCD2800F17B92821B5C174E"
+                "node_title": "Get TargetRot",
+                "pin_name": "TargetRot"
               }
             ]
           },
@@ -3953,7 +3981,8 @@
             "linked_to": [
               {
                 "node": "K2Node_Timeline_0",
-                "pin_id": "BC4481EE4F37EC026B8663B682228D35"
+                "node_title": "K2Node_Timeline_0",
+                "pin_name": "Alpha"
               }
             ]
           }
@@ -3971,7 +4000,6 @@
         },
         "pins": [
           {
-            "id": "3C8B52BE4137062F6956478D1600AC9D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -3981,7 +4009,6 @@
             "linked_to": []
           },
           {
-            "id": "9B9006E348A33157653D51A454AF4538",
             "name": "A",
             "direction": "input",
             "category": "struct",
@@ -3991,12 +4018,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_0",
-                "pin_id": "ED63C79644447127F3D797891B6EBD16"
+                "node_title": "Get StartLoc",
+                "pin_name": "StartLoc"
               }
             ]
           },
           {
-            "id": "739A3F5D4E83D06503CF1E9D97E45E2E",
             "name": "B",
             "direction": "input",
             "category": "struct",
@@ -4006,12 +4033,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_1",
-                "pin_id": "41F9622E4A747FDE0AEFE09C20DC7B0C"
+                "node_title": "Get TargetLoc",
+                "pin_name": "TargetLoc"
               }
             ]
           },
           {
-            "id": "A86F13264FBAF9F002DFDFBC11C12E11",
             "name": "Alpha",
             "direction": "input",
             "category": "real",
@@ -4021,12 +4048,12 @@
             "linked_to": [
               {
                 "node": "K2Node_Timeline_0",
-                "pin_id": "BC4481EE4F37EC026B8663B682228D35"
+                "node_title": "K2Node_Timeline_0",
+                "pin_name": "Alpha"
               }
             ]
           },
           {
-            "id": "99AAEF87426AE51AF02BF98D78DA151C",
             "name": "ReturnValue",
             "direction": "output",
             "category": "struct",
@@ -4036,7 +4063,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_3",
-                "pin_id": "E7960AD743EC3C2B3DDFEFB188C3B02C"
+                "node_title": "SceneComponent.K2_SetWorldLocation",
+                "pin_name": "NewLocation"
               }
             ]
           }
@@ -4057,7 +4085,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_0",
-                "pin_id": "ED63C79644447127F3D797891B6EBD16"
+                "node_title": "Get StartLoc",
+                "pin_name": "StartLoc"
               }
             ]
           },
@@ -4069,7 +4098,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_1",
-                "pin_id": "41F9622E4A747FDE0AEFE09C20DC7B0C"
+                "node_title": "Get TargetLoc",
+                "pin_name": "TargetLoc"
               }
             ]
           },
@@ -4081,7 +4111,8 @@
             "linked_to": [
               {
                 "node": "K2Node_Timeline_0",
-                "pin_id": "BC4481EE4F37EC026B8663B682228D35"
+                "node_title": "K2Node_Timeline_0",
+                "pin_name": "Alpha"
               }
             ]
           }
@@ -4096,7 +4127,6 @@
         "meta": {},
         "pins": [
           {
-            "id": "BC2F7E3342EE4300AB9E7CB6D926E31D",
             "name": "Play",
             "direction": "input",
             "category": "exec",
@@ -4106,7 +4136,6 @@
             "linked_to": []
           },
           {
-            "id": "8AB5A27C4B3ABF516F37198C9C2EC01A",
             "name": "PlayFromStart",
             "direction": "input",
             "category": "exec",
@@ -4116,24 +4145,27 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_7",
-                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+                "node_title": "Set TargetRot",
+                "pin_name": "then"
               },
               {
                 "node": "K2Node_VariableSet_8",
-                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+                "node_title": "Set TargetRot",
+                "pin_name": "then"
               },
               {
                 "node": "K2Node_VariableSet_11",
-                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+                "node_title": "Set TargetRot",
+                "pin_name": "then"
               },
               {
                 "node": "K2Node_VariableSet_1",
-                "pin_id": "51FEA40C4D9C07B6225F7D88112BFA08"
+                "node_title": "Set StartRot",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "D2024C7D4A8A358301CFE5B34FD00CDF",
             "name": "Stop",
             "direction": "input",
             "category": "exec",
@@ -4143,7 +4175,6 @@
             "linked_to": []
           },
           {
-            "id": "2880EE9A4BF5CA8227F57496D09E879C",
             "name": "Reverse",
             "direction": "input",
             "category": "exec",
@@ -4153,7 +4184,6 @@
             "linked_to": []
           },
           {
-            "id": "E707BAB94245300B13E09393EEF423C6",
             "name": "ReverseFromEnd",
             "direction": "input",
             "category": "exec",
@@ -4163,7 +4193,6 @@
             "linked_to": []
           },
           {
-            "id": "8A1724094FA3769B0001869B2B5BAAEE",
             "name": "Update",
             "direction": "output",
             "category": "exec",
@@ -4173,12 +4202,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_3",
-                "pin_id": "DF3247874F3E37057E090BA38493D00C"
+                "node_title": "SceneComponent.K2_SetWorldLocation",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "BD11C2014C15CD1D01A005B5B80E1695",
             "name": "Finished",
             "direction": "output",
             "category": "exec",
@@ -4188,12 +4217,12 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_3",
-                "pin_id": "CE07B595468DD1627D6BBE9783C938BC"
+                "node_title": "K2Node_IfThenElse_3",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "2CAEE78D4FC9D953C04725A9E8061BBF",
             "name": "SetNewTime",
             "direction": "input",
             "category": "exec",
@@ -4203,7 +4232,6 @@
             "linked_to": []
           },
           {
-            "id": "7496ED6A4704360873200DB44DFD7D89",
             "name": "NewTime",
             "direction": "input",
             "category": "real",
@@ -4213,7 +4241,6 @@
             "linked_to": []
           },
           {
-            "id": "A2BA75254723D314B5748DA3817704A7",
             "name": "Direction",
             "direction": "output",
             "category": "byte",
@@ -4223,7 +4250,6 @@
             "linked_to": []
           },
           {
-            "id": "BC4481EE4F37EC026B8663B682228D35",
             "name": "Alpha",
             "direction": "output",
             "category": "real",
@@ -4233,11 +4259,13 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_0",
-                "pin_id": "A86F13264FBAF9F002DFDFBC11C12E11"
+                "node_title": "KismetMathLibrary.VLerp",
+                "pin_name": "Alpha"
               },
               {
                 "node": "K2Node_CallFunction_1",
-                "pin_id": "9B9E86044F34771CCE8560BFC18AE895"
+                "node_title": "KismetMathLibrary.RLerp",
+                "pin_name": "Alpha"
               }
             ]
           }
@@ -4251,19 +4279,23 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_7",
-                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+                "node_title": "Set TargetRot",
+                "pin_name": "then"
               },
               {
                 "node": "K2Node_VariableSet_8",
-                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+                "node_title": "Set TargetRot",
+                "pin_name": "then"
               },
               {
                 "node": "K2Node_VariableSet_11",
-                "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+                "node_title": "Set TargetRot",
+                "pin_name": "then"
               },
               {
                 "node": "K2Node_VariableSet_1",
-                "pin_id": "51FEA40C4D9C07B6225F7D88112BFA08"
+                "node_title": "Set StartRot",
+                "pin_name": "then"
               }
             ]
           }
@@ -4280,7 +4312,6 @@
         },
         "pins": [
           {
-            "id": "6C49C85A46E49FDEEA5290BF82194DE3",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -4290,7 +4321,6 @@
             "linked_to": []
           },
           {
-            "id": "265BF4F44E867AE2FF584D8A74BF6330",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -4300,7 +4330,6 @@
             "linked_to": []
           },
           {
-            "id": "69B4D9EB467C33B3F8B021B952A193E2",
             "name": "DeltaSeconds",
             "direction": "output",
             "category": "real",
@@ -4323,7 +4352,6 @@
         },
         "pins": [
           {
-            "id": "F92178C84329575DC5C1BA850E1A6DA8",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -4333,7 +4361,6 @@
             "linked_to": []
           },
           {
-            "id": "B4F6AF324743788CB3A15DAA7A33FD06",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -4343,7 +4370,6 @@
             "linked_to": []
           },
           {
-            "id": "A66D74EA434477D427E53297BE998F0D",
             "name": "OtherActor",
             "direction": "output",
             "category": "object",
@@ -4366,7 +4392,6 @@
         },
         "pins": [
           {
-            "id": "E303F3314533A46BA7D66EA4973B5796",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -4376,7 +4401,6 @@
             "linked_to": []
           },
           {
-            "id": "A24B35AC49622E5D4CFA31A9C9B1E72B",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -4394,858 +4418,858 @@
       {
         "from": {
           "node": "K2Node_CallFunction_0",
-          "pin_name": "ReturnValue",
-          "pin_id": "99AAEF87426AE51AF02BF98D78DA151C"
+          "node_title": "KismetMathLibrary.VLerp",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_CallFunction_3",
-          "pin_name": "NewLocation",
-          "pin_id": "E7960AD743EC3C2B3DDFEFB188C3B02C"
+          "node_title": "SceneComponent.K2_SetWorldLocation",
+          "pin_name": "NewLocation"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_1",
-          "pin_name": "ReturnValue",
-          "pin_id": "17193C034B2512739ACF789976EB45E1"
+          "node_title": "KismetMathLibrary.RLerp",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "NewRotation",
-          "pin_id": "E8822F4D416E99304591B2872B7407F2"
+          "node_title": "SceneComponent.K2_SetWorldRotation",
+          "pin_name": "NewRotation"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_10",
-          "pin_name": "ReturnValue",
-          "pin_id": "A610005F426F4F3150E616996E166FD1"
+          "node_title": "SceneComponent.K2_GetComponentLocation",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_VariableSet_5",
-          "pin_name": "TargetLoc",
-          "pin_id": "F1A74BAE48286E39395E83BF6C328197"
+          "node_title": "Set TargetLoc",
+          "pin_name": "TargetLoc"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_12",
-          "pin_name": "ReturnValue",
-          "pin_id": "22D5A23641552CD84A30659110E35DC8"
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_VariableSet_1",
-          "pin_name": "StartRot",
-          "pin_id": "159737AC433FCBC7CFF3A2A55EF8D486"
+          "node_title": "Set StartRot",
+          "pin_name": "StartRot"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_13",
-          "pin_name": "ReturnValue",
-          "pin_id": "22D5A23641552CD84A30659110E35DC8"
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_VariableSet_7",
-          "pin_name": "TargetRot",
-          "pin_id": "F15CE4AD4F911EE20BD81899F819EDA0"
+          "node_title": "Set TargetRot",
+          "pin_name": "TargetRot"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_14",
-          "pin_name": "ReturnValue",
-          "pin_id": "22D5A23641552CD84A30659110E35DC8"
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_VariableSet_8",
-          "pin_name": "TargetRot",
-          "pin_id": "F15CE4AD4F911EE20BD81899F819EDA0"
+          "node_title": "Set TargetRot",
+          "pin_name": "TargetRot"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_15",
-          "pin_name": "ReturnValue",
-          "pin_id": "A610005F426F4F3150E616996E166FD1"
+          "node_title": "SceneComponent.K2_GetComponentLocation",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_VariableSet_10",
-          "pin_name": "TargetLoc",
-          "pin_id": "F1A74BAE48286E39395E83BF6C328197"
+          "node_title": "Set TargetLoc",
+          "pin_name": "TargetLoc"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_16",
-          "pin_name": "ReturnValue",
-          "pin_id": "22D5A23641552CD84A30659110E35DC8"
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_VariableSet_11",
-          "pin_name": "TargetRot",
-          "pin_id": "F15CE4AD4F911EE20BD81899F819EDA0"
+          "node_title": "Set TargetRot",
+          "pin_name": "TargetRot"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_17",
-          "pin_name": "ReturnValue",
-          "pin_id": "A610005F426F4F3150E616996E166FD1"
+          "node_title": "SceneComponent.K2_GetComponentLocation",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_VariableSet_3",
-          "pin_name": "TargetLoc",
-          "pin_id": "F1A74BAE48286E39395E83BF6C328197"
+          "node_title": "Set TargetLoc",
+          "pin_name": "TargetLoc"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_18",
-          "pin_name": "ReturnValue",
-          "pin_id": "22D5A23641552CD84A30659110E35DC8"
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_VariableSet_6",
-          "pin_name": "TargetRot",
-          "pin_id": "F15CE4AD4F911EE20BD81899F819EDA0"
+          "node_title": "Set TargetRot",
+          "pin_name": "TargetRot"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_3",
-          "pin_name": "then",
-          "pin_id": "835C8B024BB29E1F8E0698B759565BA6"
+          "node_title": "SceneComponent.K2_SetWorldLocation",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "execute",
-          "pin_id": "7C2FC47148DC43D7083645909B9A329B"
+          "node_title": "SceneComponent.K2_SetWorldRotation",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_5",
-          "pin_name": "ReturnValue",
-          "pin_id": "66170D0C45026B08005827B30B8D05FE"
+          "node_title": "SceneComponent.K2_GetComponentLocation",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_VariableSet_12",
-          "pin_name": "StartLoc",
-          "pin_id": "EF2159FE4BF1FF34987EF9B59A5E1A4E"
+          "node_title": "Set StartLoc",
+          "pin_name": "StartLoc"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_6",
-          "pin_name": "ReturnValue",
-          "pin_id": "EED2967B4925587074722085C3CF8CFA"
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_VariableSet_13",
-          "pin_name": "StartRot",
-          "pin_id": "159737AC433FCBC7CFF3A2A55EF8D486"
+          "node_title": "Set StartRot",
+          "pin_name": "StartRot"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_8",
-          "pin_name": "ReturnValue",
-          "pin_id": "A610005F426F4F3150E616996E166FD1"
+          "node_title": "SceneComponent.K2_GetComponentLocation",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_VariableSet_0",
-          "pin_name": "StartLoc",
-          "pin_id": "EF2159FE4BF1FF34987EF9B59A5E1A4E"
+          "node_title": "Set StartLoc",
+          "pin_name": "StartLoc"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_9",
-          "pin_name": "ReturnValue",
-          "pin_id": "A610005F426F4F3150E616996E166FD1"
+          "node_title": "SceneComponent.K2_GetComponentLocation",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_VariableSet_4",
-          "pin_name": "TargetLoc",
-          "pin_id": "F1A74BAE48286E39395E83BF6C328197"
+          "node_title": "Set TargetLoc",
+          "pin_name": "TargetLoc"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_CustomEvent_0",
-          "pin_name": "TargetId",
-          "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
+          "node_title": "K2Node_CustomEvent_0",
+          "pin_name": "TargetId"
         },
         "to": {
           "node": "K2Node_PromotableOperator_2",
-          "pin_name": "A",
-          "pin_id": "AE39B52145ECA6961BB0BD9B1502F521"
+          "node_title": "K2Node_PromotableOperator_2",
+          "pin_name": "A"
         },
         "category": "name"
       },
       {
         "from": {
           "node": "K2Node_CustomEvent_0",
-          "pin_name": "TargetId",
-          "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
+          "node_title": "K2Node_CustomEvent_0",
+          "pin_name": "TargetId"
         },
         "to": {
           "node": "K2Node_PromotableOperator_5",
-          "pin_name": "A",
-          "pin_id": "C4FEAB51433EE43AAC12E6984324C689"
+          "node_title": "K2Node_PromotableOperator_5",
+          "pin_name": "A"
         },
         "category": "name"
       },
       {
         "from": {
           "node": "K2Node_CustomEvent_0",
-          "pin_name": "TargetId",
-          "pin_id": "9697B12C41E2029776D3BE87CD2F5F0A"
+          "node_title": "K2Node_CustomEvent_0",
+          "pin_name": "TargetId"
         },
         "to": {
           "node": "K2Node_PromotableOperator_6",
-          "pin_name": "A",
-          "pin_id": "C4FEAB51433EE43AAC12E6984324C689"
+          "node_title": "K2Node_PromotableOperator_6",
+          "pin_name": "A"
         },
         "category": "name"
       },
       {
         "from": {
           "node": "K2Node_CustomEvent_0",
-          "pin_name": "then",
-          "pin_id": "B08B718044A414830952BC8524EF8859"
+          "node_title": "K2Node_CustomEvent_0",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_VariableSet_2",
-          "pin_name": "execute",
-          "pin_id": "496137A342A407E68A206081A067183E"
+          "node_title": "Set bReturningToDefault",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_CustomEvent_1",
-          "pin_name": "then",
-          "pin_id": "6BDC6A5B4D138726029EDBBC212693E7"
+          "node_title": "K2Node_CustomEvent_1",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_VariableSet_9",
-          "pin_name": "execute",
-          "pin_id": "90DF0F5E4D434ABD4E7A88A68B664516"
+          "node_title": "Set bReturningToDefault",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_IfThenElse_0",
-          "pin_name": "else",
-          "pin_id": "BCECF00D426C4968EDD3C28015A18A05"
+          "node_title": "K2Node_IfThenElse_0",
+          "pin_name": "else"
         },
         "to": {
           "node": "K2Node_IfThenElse_2",
-          "pin_name": "execute",
-          "pin_id": "02D60E6642101409F560C58262AEF819"
+          "node_title": "K2Node_IfThenElse_2",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_IfThenElse_0",
-          "pin_name": "then",
-          "pin_id": "01EED2404AF184F84B126183372F8913"
+          "node_title": "K2Node_IfThenElse_0",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_VariableSet_4",
-          "pin_name": "execute",
-          "pin_id": "0A0D2B2545055D776DAC388F0B6A6BD1"
+          "node_title": "Set TargetLoc",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_IfThenElse_1",
-          "pin_name": "then",
-          "pin_id": "2134F9674B241D43FD36E5AA2574A280"
+          "node_title": "K2Node_IfThenElse_1",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_VariableSet_10",
-          "pin_name": "execute",
-          "pin_id": "0A0D2B2545055D776DAC388F0B6A6BD1"
+          "node_title": "Set TargetLoc",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_IfThenElse_2",
-          "pin_name": "else",
-          "pin_id": "38FB88014665847EFD1BDBB2B9B75F16"
+          "node_title": "K2Node_IfThenElse_2",
+          "pin_name": "else"
         },
         "to": {
           "node": "K2Node_IfThenElse_1",
-          "pin_name": "execute",
-          "pin_id": "02D60E6642101409F560C58262AEF819"
+          "node_title": "K2Node_IfThenElse_1",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_IfThenElse_2",
-          "pin_name": "then",
-          "pin_id": "2134F9674B241D43FD36E5AA2574A280"
+          "node_title": "K2Node_IfThenElse_2",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_VariableSet_5",
-          "pin_name": "execute",
-          "pin_id": "0A0D2B2545055D776DAC388F0B6A6BD1"
+          "node_title": "Set TargetLoc",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_IfThenElse_3",
-          "pin_name": "then",
-          "pin_id": "DD50444F451ED51D6AA843884532C1A9"
+          "node_title": "K2Node_IfThenElse_3",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallDelegate_0",
-          "pin_name": "execute",
-          "pin_id": "49945B804B5A033BEA8FB7829B809E32"
+          "node_title": "K2Node_CallDelegate_0",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_PromotableOperator_2",
-          "pin_name": "ReturnValue",
-          "pin_id": "AC56A72249AD70B6F27FD0B117EC26E1"
+          "node_title": "K2Node_PromotableOperator_2",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_IfThenElse_0",
-          "pin_name": "Condition",
-          "pin_id": "2220B0FF4269F2479A5DABA7F88CDEDA"
+          "node_title": "K2Node_IfThenElse_0",
+          "pin_name": "Condition"
         },
         "category": "bool"
       },
       {
         "from": {
           "node": "K2Node_PromotableOperator_5",
-          "pin_name": "ReturnValue",
-          "pin_id": "A53E8C534AD2FB4BBDC3718CC0284441"
+          "node_title": "K2Node_PromotableOperator_5",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_IfThenElse_1",
-          "pin_name": "Condition",
-          "pin_id": "D0A18169431458328C8119A3FBEBD678"
+          "node_title": "K2Node_IfThenElse_1",
+          "pin_name": "Condition"
         },
         "category": "bool"
       },
       {
         "from": {
           "node": "K2Node_PromotableOperator_6",
-          "pin_name": "ReturnValue",
-          "pin_id": "A53E8C534AD2FB4BBDC3718CC0284441"
+          "node_title": "K2Node_PromotableOperator_6",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_IfThenElse_2",
-          "pin_name": "Condition",
-          "pin_id": "D0A18169431458328C8119A3FBEBD678"
+          "node_title": "K2Node_IfThenElse_2",
+          "pin_name": "Condition"
         },
         "category": "bool"
       },
       {
         "from": {
           "node": "K2Node_Timeline_0",
-          "pin_name": "Alpha",
-          "pin_id": "BC4481EE4F37EC026B8663B682228D35"
+          "node_title": "K2Node_Timeline_0",
+          "pin_name": "Alpha"
         },
         "to": {
           "node": "K2Node_CallFunction_0",
-          "pin_name": "Alpha",
-          "pin_id": "A86F13264FBAF9F002DFDFBC11C12E11"
+          "node_title": "KismetMathLibrary.VLerp",
+          "pin_name": "Alpha"
         },
         "category": "real"
       },
       {
         "from": {
           "node": "K2Node_Timeline_0",
-          "pin_name": "Alpha",
-          "pin_id": "BC4481EE4F37EC026B8663B682228D35"
+          "node_title": "K2Node_Timeline_0",
+          "pin_name": "Alpha"
         },
         "to": {
           "node": "K2Node_CallFunction_1",
-          "pin_name": "Alpha",
-          "pin_id": "9B9E86044F34771CCE8560BFC18AE895"
+          "node_title": "KismetMathLibrary.RLerp",
+          "pin_name": "Alpha"
         },
         "category": "real"
       },
       {
         "from": {
           "node": "K2Node_Timeline_0",
-          "pin_name": "Update",
-          "pin_id": "8A1724094FA3769B0001869B2B5BAAEE"
+          "node_title": "K2Node_Timeline_0",
+          "pin_name": "Update"
         },
         "to": {
           "node": "K2Node_CallFunction_3",
-          "pin_name": "execute",
-          "pin_id": "DF3247874F3E37057E090BA38493D00C"
+          "node_title": "SceneComponent.K2_SetWorldLocation",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_Timeline_0",
-          "pin_name": "Finished",
-          "pin_id": "BD11C2014C15CD1D01A005B5B80E1695"
+          "node_title": "K2Node_Timeline_0",
+          "pin_name": "Finished"
         },
         "to": {
           "node": "K2Node_IfThenElse_3",
-          "pin_name": "execute",
-          "pin_id": "CE07B595468DD1627D6BBE9783C938BC"
+          "node_title": "K2Node_IfThenElse_3",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_0",
-          "pin_name": "StartLoc",
-          "pin_id": "ED63C79644447127F3D797891B6EBD16"
+          "node_title": "Get StartLoc",
+          "pin_name": "StartLoc"
         },
         "to": {
           "node": "K2Node_CallFunction_0",
-          "pin_name": "A",
-          "pin_id": "9B9006E348A33157653D51A454AF4538"
+          "node_title": "KismetMathLibrary.VLerp",
+          "pin_name": "A"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_1",
-          "pin_name": "TargetLoc",
-          "pin_id": "41F9622E4A747FDE0AEFE09C20DC7B0C"
+          "node_title": "Get TargetLoc",
+          "pin_name": "TargetLoc"
         },
         "to": {
           "node": "K2Node_CallFunction_0",
-          "pin_name": "B",
-          "pin_id": "739A3F5D4E83D06503CF1E9D97E45E2E"
+          "node_title": "KismetMathLibrary.VLerp",
+          "pin_name": "B"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_10",
-          "pin_name": "CamAnchor_CloudPattern",
-          "pin_id": "CFC636EE495BE8FE2542B181FC249B9C"
+          "node_title": "Get CamAnchor_CloudPattern",
+          "pin_name": "CamAnchor_CloudPattern"
         },
         "to": {
           "node": "K2Node_CallFunction_10",
-          "pin_name": "self",
-          "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
+          "node_title": "SceneComponent.K2_GetComponentLocation",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_10",
-          "pin_name": "CamAnchor_CloudPattern",
-          "pin_id": "CFC636EE495BE8FE2542B181FC249B9C"
+          "node_title": "Get CamAnchor_CloudPattern",
+          "pin_name": "CamAnchor_CloudPattern"
         },
         "to": {
           "node": "K2Node_CallFunction_14",
-          "pin_name": "self",
-          "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_11",
-          "pin_name": "CamAnchor_Default",
-          "pin_id": "02535F61423ACDE97DA64BA60EF6FF16"
+          "node_title": "Get CamAnchor_Default",
+          "pin_name": "CamAnchor_Default"
         },
         "to": {
           "node": "K2Node_CallFunction_17",
-          "pin_name": "self",
-          "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
+          "node_title": "SceneComponent.K2_GetComponentLocation",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_11",
-          "pin_name": "CamAnchor_Default",
-          "pin_id": "02535F61423ACDE97DA64BA60EF6FF16"
+          "node_title": "Get CamAnchor_Default",
+          "pin_name": "CamAnchor_Default"
         },
         "to": {
           "node": "K2Node_CallFunction_18",
-          "pin_name": "self",
-          "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_12",
-          "pin_name": "CameraComp",
-          "pin_id": "058909B34228B5EB2D2565BB17C2E1A0"
+          "node_title": "Get CameraComp",
+          "pin_name": "CameraComp"
         },
         "to": {
           "node": "K2Node_CallFunction_12",
-          "pin_name": "self",
-          "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_12",
-          "pin_name": "CameraComp",
-          "pin_id": "058909B34228B5EB2D2565BB17C2E1A0"
+          "node_title": "Get CameraComp",
+          "pin_name": "CameraComp"
         },
         "to": {
           "node": "K2Node_CallFunction_8",
-          "pin_name": "self",
-          "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
+          "node_title": "SceneComponent.K2_GetComponentLocation",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_13",
-          "pin_name": "bReturningToDefault",
-          "pin_id": "8E21D9374A5C0BF1C88E2EAE3766FCEE"
+          "node_title": "Get bReturningToDefault",
+          "pin_name": "bReturningToDefault"
         },
         "to": {
           "node": "K2Node_IfThenElse_3",
-          "pin_name": "Condition",
-          "pin_id": "DF84B7E24AE87B8B59AF3787BB314FB4"
+          "node_title": "K2Node_IfThenElse_3",
+          "pin_name": "Condition"
         },
         "category": "bool"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_3",
-          "pin_name": "StartRot",
-          "pin_id": "658BAA154AB7E4A8C59AD697E4BEC39B"
+          "node_title": "Get StartRot",
+          "pin_name": "StartRot"
         },
         "to": {
           "node": "K2Node_CallFunction_1",
-          "pin_name": "A",
-          "pin_id": "2A55F6AD41ACA829CBF8CF958E2B6759"
+          "node_title": "KismetMathLibrary.RLerp",
+          "pin_name": "A"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_4",
-          "pin_name": "TargetRot",
-          "pin_id": "391EECA04CCD2800F17B92821B5C174E"
+          "node_title": "Get TargetRot",
+          "pin_name": "TargetRot"
         },
         "to": {
           "node": "K2Node_CallFunction_1",
-          "pin_name": "B",
-          "pin_id": "68AE9E6A407A95C7C61C60B754EF3F75"
+          "node_title": "KismetMathLibrary.RLerp",
+          "pin_name": "B"
         },
         "category": "struct"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_5",
-          "pin_name": "CameraComp",
-          "pin_id": "79712991457F221F807F1A8CC7F96106"
+          "node_title": "Get CameraComp",
+          "pin_name": "CameraComp"
         },
         "to": {
           "node": "K2Node_CallFunction_3",
-          "pin_name": "self",
-          "pin_id": "F2A5FED040159C81D14A2CBB8A8B8C2D"
+          "node_title": "SceneComponent.K2_SetWorldLocation",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_5",
-          "pin_name": "CameraComp",
-          "pin_id": "79712991457F221F807F1A8CC7F96106"
+          "node_title": "Get CameraComp",
+          "pin_name": "CameraComp"
         },
         "to": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "self",
-          "pin_id": "2C74BF9B48A382729FD002A9EC51FA94"
+          "node_title": "SceneComponent.K2_SetWorldRotation",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_6",
-          "pin_name": "CameraComp",
-          "pin_id": "AE0AD8E040E1DFE1801495A51D74351F"
+          "node_title": "Get CameraComp",
+          "pin_name": "CameraComp"
         },
         "to": {
           "node": "K2Node_CallFunction_5",
-          "pin_name": "self",
-          "pin_id": "3A5292164CF84EE8947153AC2C33FCA2"
+          "node_title": "SceneComponent.K2_GetComponentLocation",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_6",
-          "pin_name": "CameraComp",
-          "pin_id": "AE0AD8E040E1DFE1801495A51D74351F"
+          "node_title": "Get CameraComp",
+          "pin_name": "CameraComp"
         },
         "to": {
           "node": "K2Node_CallFunction_6",
-          "pin_name": "self",
-          "pin_id": "25548AF44F6972ED1F5B80A129BD43CF"
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_7",
-          "pin_name": "CamAnchor_StarMap",
-          "pin_id": "E76253B042E0EC8CF08F108E035ADF51"
+          "node_title": "Get CamAnchor_StarMap",
+          "pin_name": "CamAnchor_StarMap"
         },
         "to": {
           "node": "K2Node_CallFunction_15",
-          "pin_name": "self",
-          "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
+          "node_title": "SceneComponent.K2_GetComponentLocation",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_7",
-          "pin_name": "CamAnchor_StarMap",
-          "pin_id": "E76253B042E0EC8CF08F108E035ADF51"
+          "node_title": "Get CamAnchor_StarMap",
+          "pin_name": "CamAnchor_StarMap"
         },
         "to": {
           "node": "K2Node_CallFunction_16",
-          "pin_name": "self",
-          "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_9",
-          "pin_name": "CamAnchor_TiangongTower",
-          "pin_id": "151ED2874280C4345D3E38BDC9D83740"
+          "node_title": "Get CamAnchor_TiangongTower",
+          "pin_name": "CamAnchor_TiangongTower"
         },
         "to": {
           "node": "K2Node_CallFunction_13",
-          "pin_name": "self",
-          "pin_id": "A22C4E5C4F2472E9567F7FA1F11C2D42"
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_9",
-          "pin_name": "CamAnchor_TiangongTower",
-          "pin_id": "151ED2874280C4345D3E38BDC9D83740"
+          "node_title": "Get CamAnchor_TiangongTower",
+          "pin_name": "CamAnchor_TiangongTower"
         },
         "to": {
           "node": "K2Node_CallFunction_9",
-          "pin_name": "self",
-          "pin_id": "18B2DBC14CEC1A51E8E640869B2A7008"
+          "node_title": "SceneComponent.K2_GetComponentLocation",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableSet_0",
-          "pin_name": "then",
-          "pin_id": "DBD4719D4E1C631A8C9CADADA0591AC2"
+          "node_title": "Set StartLoc",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_VariableSet_1",
-          "pin_name": "execute",
-          "pin_id": "77CE063046DD5BC79B477593498D4F87"
+          "node_title": "Set StartRot",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_VariableSet_1",
-          "pin_name": "then",
-          "pin_id": "51FEA40C4D9C07B6225F7D88112BFA08"
+          "node_title": "Set StartRot",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_Timeline_0",
-          "pin_name": "PlayFromStart",
-          "pin_id": "8AB5A27C4B3ABF516F37198C9C2EC01A"
+          "node_title": "K2Node_Timeline_0",
+          "pin_name": "PlayFromStart"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_VariableSet_10",
-          "pin_name": "then",
-          "pin_id": "0F4A59FA4C77C8B449B2949F508257B4"
+          "node_title": "Set TargetLoc",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_VariableSet_11",
-          "pin_name": "execute",
-          "pin_id": "1F1E1CCF4EA01B73B0C02983128FB9C7"
+          "node_title": "Set TargetRot",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_VariableSet_11",
-          "pin_name": "then",
-          "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+          "node_title": "Set TargetRot",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_Timeline_0",
-          "pin_name": "PlayFromStart",
-          "pin_id": "8AB5A27C4B3ABF516F37198C9C2EC01A"
+          "node_title": "K2Node_Timeline_0",
+          "pin_name": "PlayFromStart"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_VariableSet_12",
-          "pin_name": "then",
-          "pin_id": "DBD4719D4E1C631A8C9CADADA0591AC2"
+          "node_title": "Set StartLoc",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_IfThenElse_0",
-          "pin_name": "execute",
-          "pin_id": "D459037F4B2B1B14D97483A22DBDE4D8"
+          "node_title": "K2Node_IfThenElse_0",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_VariableSet_13",
-          "pin_name": "then",
-          "pin_id": "51FEA40C4D9C07B6225F7D88112BFA08"
+          "node_title": "Set StartRot",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_VariableSet_12",
-          "pin_name": "execute",
-          "pin_id": "763404B54C14154BE4CDBF9A4D036C6F"
+          "node_title": "Set StartLoc",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_VariableSet_2",
-          "pin_name": "then",
-          "pin_id": "848162B24FBF137A890EBB8AD681F637"
+          "node_title": "Set bReturningToDefault",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_VariableSet_13",
-          "pin_name": "execute",
-          "pin_id": "77CE063046DD5BC79B477593498D4F87"
+          "node_title": "Set StartRot",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_VariableSet_3",
-          "pin_name": "then",
-          "pin_id": "0F4A59FA4C77C8B449B2949F508257B4"
+          "node_title": "Set TargetLoc",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_VariableSet_6",
-          "pin_name": "execute",
-          "pin_id": "1F1E1CCF4EA01B73B0C02983128FB9C7"
+          "node_title": "Set TargetRot",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_VariableSet_4",
-          "pin_name": "then",
-          "pin_id": "0F4A59FA4C77C8B449B2949F508257B4"
+          "node_title": "Set TargetLoc",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_VariableSet_7",
-          "pin_name": "execute",
-          "pin_id": "1F1E1CCF4EA01B73B0C02983128FB9C7"
+          "node_title": "Set TargetRot",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_VariableSet_5",
-          "pin_name": "then",
-          "pin_id": "0F4A59FA4C77C8B449B2949F508257B4"
+          "node_title": "Set TargetLoc",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_VariableSet_8",
-          "pin_name": "execute",
-          "pin_id": "1F1E1CCF4EA01B73B0C02983128FB9C7"
+          "node_title": "Set TargetRot",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_VariableSet_6",
-          "pin_name": "then",
-          "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+          "node_title": "Set TargetRot",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_VariableSet_0",
-          "pin_name": "execute",
-          "pin_id": "763404B54C14154BE4CDBF9A4D036C6F"
+          "node_title": "Set StartLoc",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_VariableSet_7",
-          "pin_name": "then",
-          "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+          "node_title": "Set TargetRot",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_Timeline_0",
-          "pin_name": "PlayFromStart",
-          "pin_id": "8AB5A27C4B3ABF516F37198C9C2EC01A"
+          "node_title": "K2Node_Timeline_0",
+          "pin_name": "PlayFromStart"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_VariableSet_8",
-          "pin_name": "then",
-          "pin_id": "D2FC264143B90D358D3AA78CFACF04AF"
+          "node_title": "Set TargetRot",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_Timeline_0",
-          "pin_name": "PlayFromStart",
-          "pin_id": "8AB5A27C4B3ABF516F37198C9C2EC01A"
+          "node_title": "K2Node_Timeline_0",
+          "pin_name": "PlayFromStart"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_VariableSet_9",
-          "pin_name": "then",
-          "pin_id": "153C466A47DDB9202AFF35AD66BFAA06"
+          "node_title": "Set bReturningToDefault",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_VariableSet_3",
-          "pin_name": "execute",
-          "pin_id": "0A0D2B2545055D776DAC388F0B6A6BD1"
+          "node_title": "Set TargetLoc",
+          "pin_name": "execute"
         },
         "category": "exec"
       }
@@ -5280,7 +5304,6 @@
           },
           "pins": [
             {
-              "id": "CD834B0F4896F795278BD09B94840291",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -5290,12 +5313,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_1",
-                  "pin_id": "53308BB9445AE260A52E5FB4F084958F"
+                  "node_title": "SetActorEnableCollision",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "7C9546224C3CE449CBCE2E88621C8D67",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -5305,7 +5328,6 @@
               "linked_to": []
             },
             {
-              "id": "F5E0B26C4DD7D339F33147B5F59D3C2A",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -5315,7 +5337,6 @@
               "linked_to": []
             },
             {
-              "id": "1CF15FB040488D4B871B55B44D05EE2D",
               "name": "bEnabled",
               "direction": "input",
               "category": "bool",
@@ -5334,7 +5355,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_1",
-                  "pin_id": "53308BB9445AE260A52E5FB4F084958F"
+                  "node_title": "SetActorEnableCollision",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -5359,7 +5381,6 @@
           },
           "pins": [
             {
-              "id": "D482D33D4A2C7919F08A20AFFD0DDA18",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -5369,12 +5390,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "49CB6C7B4024E6CDA13D9D9C122915B4"
+                  "node_title": "SetActorHiddenInGame",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "53308BB9445AE260A52E5FB4F084958F",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -5384,12 +5405,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_2",
-                  "pin_id": "CD834B0F4896F795278BD09B94840291"
+                  "node_title": "SetActorTickEnabled",
+                  "pin_name": "execute"
                 }
               ]
             },
             {
-              "id": "04422D5E40A2D27048FA1392A879BF01",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -5399,7 +5420,6 @@
               "linked_to": []
             },
             {
-              "id": "A753F971491EA9CD5CB99F882768A290",
               "name": "bNewActorEnableCollision",
               "direction": "input",
               "category": "bool",
@@ -5418,7 +5438,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "49CB6C7B4024E6CDA13D9D9C122915B4"
+                  "node_title": "SetActorHiddenInGame",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -5443,7 +5464,6 @@
           },
           "pins": [
             {
-              "id": "905A3D044C760E3E7F39018F162D5DB7",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -5453,12 +5473,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "D26AA3E244732D2DD475D29328D7E947"
+                  "node_title": "DeactivateLevel2Presentation",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "49CB6C7B4024E6CDA13D9D9C122915B4",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -5468,12 +5488,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_1",
-                  "pin_id": "D482D33D4A2C7919F08A20AFFD0DDA18"
+                  "node_title": "SetActorEnableCollision",
+                  "pin_name": "execute"
                 }
               ]
             },
             {
-              "id": "CEE2F42A46D53F78EB661A8E40F021DD",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -5483,7 +5503,6 @@
               "linked_to": []
             },
             {
-              "id": "4E68A2CA4BB3A09D0D8604A9D61C2435",
               "name": "bNewHidden",
               "direction": "input",
               "category": "bool",
@@ -5502,7 +5521,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "D26AA3E244732D2DD475D29328D7E947"
+                  "node_title": "DeactivateLevel2Presentation",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -5533,7 +5553,6 @@
           },
           "pins": [
             {
-              "id": "D26AA3E244732D2DD475D29328D7E947",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -5543,7 +5562,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "905A3D044C760E3E7F39018F162D5DB7"
+                  "node_title": "SetActorHiddenInGame",
+                  "pin_name": "execute"
                 }
               ]
             }
@@ -5556,39 +5576,39 @@
         {
           "from": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "then",
-            "pin_id": "49CB6C7B4024E6CDA13D9D9C122915B4"
+            "node_title": "SetActorHiddenInGame",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_1",
-            "pin_name": "execute",
-            "pin_id": "D482D33D4A2C7919F08A20AFFD0DDA18"
+            "node_title": "SetActorEnableCollision",
+            "pin_name": "execute"
           },
           "category": "exec"
         },
         {
           "from": {
             "node": "K2Node_CallFunction_1",
-            "pin_name": "then",
-            "pin_id": "53308BB9445AE260A52E5FB4F084958F"
+            "node_title": "SetActorEnableCollision",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_2",
-            "pin_name": "execute",
-            "pin_id": "CD834B0F4896F795278BD09B94840291"
+            "node_title": "SetActorTickEnabled",
+            "pin_name": "execute"
           },
           "category": "exec"
         },
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "D26AA3E244732D2DD475D29328D7E947"
+            "node_title": "DeactivateLevel2Presentation",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "905A3D044C760E3E7F39018F162D5DB7"
+            "node_title": "SetActorHiddenInGame",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -5619,7 +5639,6 @@
           },
           "pins": [
             {
-              "id": "E39D870440DC2245FB526BBE60314368",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -5629,12 +5648,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "C837F6A6442B83BC39E0E2833C4C2826"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "AE35C94143404CEEC00C0AA50810C2A1",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -5644,7 +5663,6 @@
               "linked_to": []
             },
             {
-              "id": "79687A4F4E554ACF892F6A88DEF0D809",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -5654,7 +5672,6 @@
               "linked_to": []
             },
             {
-              "id": "20B768C646F3B684BD2B01B6EB36F17E",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -5673,7 +5690,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "C837F6A6442B83BC39E0E2833C4C2826"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -5695,7 +5713,6 @@
           "meta": {},
           "pins": [
             {
-              "id": "82D3B8AC48418E2E0CDBD99E612CFE3F",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -5705,12 +5722,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "AC95F6064B81DE7BB48AD7885EF1DA80"
+                  "node_title": "FocusTargetById",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "C837F6A6442B83BC39E0E2833C4C2826",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -5720,12 +5737,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "E39D870440DC2245FB526BBE60314368"
+                  "node_title": "ExecuteUbergraph_BP_ShowcaseModel",
+                  "pin_name": "execute"
                 }
               ]
             },
             {
-              "id": "B33B3D2E427441A69C52B09F78C0D533",
               "name": "K2Node_CustomEvent_TargetId",
               "direction": "input",
               "category": "name",
@@ -5735,7 +5752,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "35F020404117A26BA8E35E8F319FC03B"
+                  "node_title": "FocusTargetById",
+                  "pin_name": "TargetId"
                 }
               ]
             }
@@ -5749,7 +5767,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "AC95F6064B81DE7BB48AD7885EF1DA80"
+                  "node_title": "FocusTargetById",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -5761,7 +5780,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "35F020404117A26BA8E35E8F319FC03B"
+                  "node_title": "FocusTargetById",
+                  "pin_name": "TargetId"
                 }
               ]
             }
@@ -5778,7 +5798,6 @@
           },
           "pins": [
             {
-              "id": "AC95F6064B81DE7BB48AD7885EF1DA80",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -5788,12 +5807,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "82D3B8AC48418E2E0CDBD99E612CFE3F"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "execute"
                 }
               ]
             },
             {
-              "id": "35F020404117A26BA8E35E8F319FC03B",
               "name": "TargetId",
               "direction": "output",
               "category": "name",
@@ -5803,7 +5822,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "pin_id": "B33B3D2E427441A69C52B09F78C0D533"
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "K2Node_CustomEvent_TargetId"
                 }
               ]
             }
@@ -5816,39 +5836,39 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "TargetId",
-            "pin_id": "35F020404117A26BA8E35E8F319FC03B"
+            "node_title": "FocusTargetById",
+            "pin_name": "TargetId"
           },
           "to": {
             "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "pin_name": "K2Node_CustomEvent_TargetId",
-            "pin_id": "B33B3D2E427441A69C52B09F78C0D533"
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "K2Node_CustomEvent_TargetId"
           },
           "category": "name"
         },
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "AC95F6064B81DE7BB48AD7885EF1DA80"
+            "node_title": "FocusTargetById",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "pin_name": "execute",
-            "pin_id": "82D3B8AC48418E2E0CDBD99E612CFE3F"
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "execute"
           },
           "category": "exec"
         },
         {
           "from": {
             "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "pin_name": "then",
-            "pin_id": "C837F6A6442B83BC39E0E2833C4C2826"
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "E39D870440DC2245FB526BBE60314368"
+            "node_title": "ExecuteUbergraph_BP_ShowcaseModel",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -5877,7 +5897,6 @@
           },
           "pins": [
             {
-              "id": "B13F42E94C143D11BDF8A6A6D42D41DB",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -5915,7 +5934,6 @@
           },
           "pins": [
             {
-              "id": "F885D6FE4A476321C91E22B12E9BF8F6",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -5925,12 +5943,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "BDC224164C0FCEC52E2A6AAE9CCAB2C2"
+                  "node_title": "ReturnToDefaultView",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "402C360F4CA6EF0DBB1A3996AAD62F19",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -5940,7 +5958,6 @@
               "linked_to": []
             },
             {
-              "id": "E34BB0074876CF032D1D748DB00D42C9",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -5950,7 +5967,6 @@
               "linked_to": []
             },
             {
-              "id": "55645E2C41BC1EB01C3FE4803D2943C3",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -5969,7 +5985,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "BDC224164C0FCEC52E2A6AAE9CCAB2C2"
+                  "node_title": "ReturnToDefaultView",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -5993,7 +6010,6 @@
           },
           "pins": [
             {
-              "id": "BDC224164C0FCEC52E2A6AAE9CCAB2C2",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -6003,7 +6019,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "F885D6FE4A476321C91E22B12E9BF8F6"
+                  "node_title": "ExecuteUbergraph_BP_ShowcaseModel",
+                  "pin_name": "execute"
                 }
               ]
             }
@@ -6016,13 +6033,13 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "BDC224164C0FCEC52E2A6AAE9CCAB2C2"
+            "node_title": "ReturnToDefaultView",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "F885D6FE4A476321C91E22B12E9BF8F6"
+            "node_title": "ExecuteUbergraph_BP_ShowcaseModel",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -6051,7 +6068,6 @@
           },
           "pins": [
             {
-              "id": "95FABA294B25201A3228E198B830F10A",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -6061,12 +6077,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "B53E4947459D2324F9EDD194BFFBE8C2"
+                  "node_title": "TL_CameraMove__FinishedFunc",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "FE27C9F74624DB1975744ABF8370D110",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -6076,7 +6092,6 @@
               "linked_to": []
             },
             {
-              "id": "45C603324894B8DC1573A3AA5AEAEBBD",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -6086,7 +6101,6 @@
               "linked_to": []
             },
             {
-              "id": "6B17CB6C45451C4D4C6E3E81241699AB",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -6105,7 +6119,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "B53E4947459D2324F9EDD194BFFBE8C2"
+                  "node_title": "TL_CameraMove__FinishedFunc",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -6129,7 +6144,6 @@
           },
           "pins": [
             {
-              "id": "B53E4947459D2324F9EDD194BFFBE8C2",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -6139,7 +6153,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "95FABA294B25201A3228E198B830F10A"
+                  "node_title": "ExecuteUbergraph_BP_ShowcaseModel",
+                  "pin_name": "execute"
                 }
               ]
             }
@@ -6152,13 +6167,13 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "B53E4947459D2324F9EDD194BFFBE8C2"
+            "node_title": "TL_CameraMove__FinishedFunc",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "95FABA294B25201A3228E198B830F10A"
+            "node_title": "ExecuteUbergraph_BP_ShowcaseModel",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -6187,7 +6202,6 @@
           },
           "pins": [
             {
-              "id": "E0A149DF4143133839D361A761C4BED9",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -6197,12 +6211,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "569E86DE43BE34F7974B949AAC54AAFD"
+                  "node_title": "TL_CameraMove__UpdateFunc",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "FDBDF1424D9CDBEF2357BF865FA38C22",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -6212,7 +6226,6 @@
               "linked_to": []
             },
             {
-              "id": "C3FBA04F4B8D184F755D9AAA05D9A570",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -6222,7 +6235,6 @@
               "linked_to": []
             },
             {
-              "id": "692B538E476B50D742008FB2022FDCD4",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -6241,7 +6253,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "569E86DE43BE34F7974B949AAC54AAFD"
+                  "node_title": "TL_CameraMove__UpdateFunc",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -6265,7 +6278,6 @@
           },
           "pins": [
             {
-              "id": "569E86DE43BE34F7974B949AAC54AAFD",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -6275,7 +6287,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "E0A149DF4143133839D361A761C4BED9"
+                  "node_title": "ExecuteUbergraph_BP_ShowcaseModel",
+                  "pin_name": "execute"
                 }
               ]
             }
@@ -6288,13 +6301,13 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "569E86DE43BE34F7974B949AAC54AAFD"
+            "node_title": "TL_CameraMove__UpdateFunc",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "E0A149DF4143133839D361A761C4BED9"
+            "node_title": "ExecuteUbergraph_BP_ShowcaseModel",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -6322,7 +6335,6 @@
           },
           "pins": [
             {
-              "id": "DA4639D84E64F9CB6D2AED80874735D4",
               "name": "then",
               "direction": "output",
               "category": "exec",

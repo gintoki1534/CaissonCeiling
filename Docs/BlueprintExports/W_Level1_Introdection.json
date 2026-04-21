@@ -25,7 +25,6 @@
         },
         "pins": [
           {
-            "id": "E43EA077418A9B26B937B89D980E5C38",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -35,12 +34,12 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "F0459EAF406994D215DE75B9767B72C7"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "AC579EAE477F22614598439082F26C72",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -50,12 +49,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_16",
-                "pin_id": "C89C763F498A615919C03080312AD334"
+                "node_title": "CaissonPlayerController.CloseCaissonWidget",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "0FEFBB4846ACEB35FC93E7A03F2FD447",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -65,12 +64,12 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "AsCaisson Player Controller"
               }
             ]
           },
           {
-            "id": "78CC6A5646451B8AF85543A1F7DFE43A",
             "name": "bHoverEnabled",
             "direction": "input",
             "category": "bool",
@@ -80,7 +79,6 @@
             "linked_to": []
           },
           {
-            "id": "092392184FB0BBF5090A86BB2189FFF2",
             "name": "bClickEnabled",
             "direction": "input",
             "category": "bool",
@@ -99,7 +97,8 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "F0459EAF406994D215DE75B9767B72C7"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "then"
               }
             ]
           },
@@ -111,7 +110,8 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "AsCaisson Player Controller"
               }
             ]
           },
@@ -143,7 +143,6 @@
         },
         "pins": [
           {
-            "id": "A9DB4648486ECBC62DF1B79F9E02EE37",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -153,12 +152,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_16",
-                "pin_id": "509F82B84C19CAEB2F46B99B780FDAED"
+                "node_title": "CaissonPlayerController.CloseCaissonWidget",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "8459F1294FE53E2535140F9363850CE2",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -168,7 +167,6 @@
             "linked_to": []
           },
           {
-            "id": "5FC864A84270F03B40172889DFA2E24D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -178,12 +176,12 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "AsCaisson Player Controller"
               }
             ]
           },
           {
-            "id": "2F7BF28F4ABC088AEC97C5ACCEDE1FC2",
             "name": "WidgetClass",
             "direction": "input",
             "category": "class",
@@ -193,7 +191,6 @@
             "linked_to": []
           },
           {
-            "id": "9A8D74CA4D9FECE8E9DE8BAA90B5F20E",
             "name": "ReturnValue",
             "direction": "output",
             "category": "object",
@@ -212,7 +209,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_16",
-                "pin_id": "509F82B84C19CAEB2F46B99B780FDAED"
+                "node_title": "CaissonPlayerController.CloseCaissonWidget",
+                "pin_name": "then"
               }
             ]
           },
@@ -224,7 +222,8 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "AsCaisson Player Controller"
               }
             ]
           },
@@ -246,7 +245,6 @@
         "meta": {},
         "pins": [
           {
-            "id": "519B00C347A935453DD435868B6337CA",
             "name": "self",
             "direction": "output",
             "category": "object",
@@ -256,7 +254,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_16",
-                "pin_id": "7D0D979049AA3CB7AB81A89298E17948"
+                "node_title": "CaissonPlayerController.CloseCaissonWidget",
+                "pin_name": "WidgetToClose"
               }
             ]
           }
@@ -276,7 +275,6 @@
         },
         "pins": [
           {
-            "id": "2F3142DD4A722CDFE800FEBF8DF108FD",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -286,7 +284,6 @@
             "linked_to": []
           },
           {
-            "id": "62FE810648185BDEDB646494C34A95AD",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -296,7 +293,8 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "0F28A00645E9BC477D47CD8E3868C822"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "execute"
               }
             ]
           }
@@ -315,7 +313,6 @@
         },
         "pins": [
           {
-            "id": "C89C763F498A615919C03080312AD334",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -325,12 +322,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_0",
-                "pin_id": "AC579EAE477F22614598439082F26C72"
+                "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "509F82B84C19CAEB2F46B99B780FDAED",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -340,12 +337,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_17",
-                "pin_id": "A9DB4648486ECBC62DF1B79F9E02EE37"
+                "node_title": "CaissonPlayerController.OpenCaissonWidget",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "F85151354DB59DA2E502C3A8CA511434",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -355,12 +352,12 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "AsCaisson Player Controller"
               }
             ]
           },
           {
-            "id": "7D0D979049AA3CB7AB81A89298E17948",
             "name": "WidgetToClose",
             "direction": "input",
             "category": "object",
@@ -370,7 +367,8 @@
             "linked_to": [
               {
                 "node": "K2Node_Self_0",
-                "pin_id": "519B00C347A935453DD435868B6337CA"
+                "node_title": "Self",
+                "pin_name": "self"
               }
             ]
           }
@@ -384,7 +382,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_0",
-                "pin_id": "AC579EAE477F22614598439082F26C72"
+                "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+                "pin_name": "then"
               }
             ]
           },
@@ -396,7 +395,8 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "AsCaisson Player Controller"
               }
             ]
           },
@@ -408,7 +408,8 @@
             "linked_to": [
               {
                 "node": "K2Node_Self_0",
-                "pin_id": "519B00C347A935453DD435868B6337CA"
+                "node_title": "Self",
+                "pin_name": "self"
               }
             ]
           }
@@ -425,7 +426,6 @@
         },
         "pins": [
           {
-            "id": "0F28A00645E9BC477D47CD8E3868C822",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -435,12 +435,12 @@
             "linked_to": [
               {
                 "node": "K2Node_ComponentBoundEvent_2",
-                "pin_id": "62FE810648185BDEDB646494C34A95AD"
+                "node_title": "按钮-关闭.OnClicked",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "F0459EAF406994D215DE75B9767B72C7",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -450,12 +450,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_0",
-                "pin_id": "E43EA077418A9B26B937B89D980E5C38"
+                "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "F7A644944B6CA88D60FACD812E284C6A",
             "name": "CastFailed",
             "direction": "output",
             "category": "exec",
@@ -465,7 +465,6 @@
             "linked_to": []
           },
           {
-            "id": "62E58D1E42D4A9A127FEAEA52FF92941",
             "name": "Object",
             "direction": "input",
             "category": "object",
@@ -475,12 +474,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_15",
-                "pin_id": "BB4B50554C1032ACA297849394D6087E"
+                "node_title": "GameplayStatics.GetPlayerController",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "3FE36DB34BD8D55D7DCD549192D81E8C",
             "name": "AsCaisson Player Controller",
             "direction": "output",
             "category": "object",
@@ -490,20 +489,22 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_16",
-                "pin_id": "F85151354DB59DA2E502C3A8CA511434"
+                "node_title": "CaissonPlayerController.CloseCaissonWidget",
+                "pin_name": "self"
               },
               {
                 "node": "K2Node_CallFunction_17",
-                "pin_id": "5FC864A84270F03B40172889DFA2E24D"
+                "node_title": "CaissonPlayerController.OpenCaissonWidget",
+                "pin_name": "self"
               },
               {
                 "node": "K2Node_CallFunction_0",
-                "pin_id": "0FEFBB4846ACEB35FC93E7A03F2FD447"
+                "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "785AD87F48D9075F00579EB7C091F6D2",
             "name": "bSuccess",
             "direction": "output",
             "category": "bool",
@@ -522,7 +523,8 @@
             "linked_to": [
               {
                 "node": "K2Node_ComponentBoundEvent_2",
-                "pin_id": "62FE810648185BDEDB646494C34A95AD"
+                "node_title": "按钮-关闭.OnClicked",
+                "pin_name": "then"
               }
             ]
           },
@@ -534,7 +536,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_15",
-                "pin_id": "BB4B50554C1032ACA297849394D6087E"
+                "node_title": "GameplayStatics.GetPlayerController",
+                "pin_name": "ReturnValue"
               }
             ]
           }
@@ -552,7 +555,6 @@
         },
         "pins": [
           {
-            "id": "775282654270E3C9D2C2DF8BB9EDEA8E",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -562,7 +564,6 @@
             "linked_to": []
           },
           {
-            "id": "7390FB64480E9AFB39A61EABE1ABADDA",
             "name": "WorldContextObject",
             "direction": "input",
             "category": "object",
@@ -572,7 +573,6 @@
             "linked_to": []
           },
           {
-            "id": "F22B6B42413960567D54158F19761DE8",
             "name": "PlayerIndex",
             "direction": "input",
             "category": "int",
@@ -582,7 +582,6 @@
             "linked_to": []
           },
           {
-            "id": "BB4B50554C1032ACA297849394D6087E",
             "name": "ReturnValue",
             "direction": "output",
             "category": "object",
@@ -592,7 +591,8 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "62E58D1E42D4A9A127FEAEA52FF92941"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "Object"
               }
             ]
           }
@@ -618,12 +618,13 @@
       {
         "id": "K2Node_VariableGet_15",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_15",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get 按钮-上一个",
+        "meta": {
+          "variable_name": "按钮-上一个"
+        },
         "pins": [
           {
-            "id": "0862C385452AFCECB5BD86B1349D6B14",
             "name": "按钮-上一个",
             "direction": "output",
             "category": "object",
@@ -633,12 +634,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_1",
-                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+                "node_title": "SetVisibility",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "977600DC4A0F7D5054200FB6398F9D28",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -662,12 +663,13 @@
       {
         "id": "K2Node_VariableGet_14",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_14",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get 按钮-上一个",
+        "meta": {
+          "variable_name": "按钮-上一个"
+        },
         "pins": [
           {
-            "id": "0862C385452AFCECB5BD86B1349D6B14",
             "name": "按钮-上一个",
             "direction": "output",
             "category": "object",
@@ -677,12 +679,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_5",
-                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+                "node_title": "SetVisibility",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "977600DC4A0F7D5054200FB6398F9D28",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -706,12 +708,13 @@
       {
         "id": "K2Node_VariableGet_16",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_16",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get 按钮-上一个",
+        "meta": {
+          "variable_name": "按钮-上一个"
+        },
         "pins": [
           {
-            "id": "0862C385452AFCECB5BD86B1349D6B14",
             "name": "按钮-上一个",
             "direction": "output",
             "category": "object",
@@ -721,12 +724,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+                "node_title": "SetVisibility",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "977600DC4A0F7D5054200FB6398F9D28",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -750,12 +753,13 @@
       {
         "id": "K2Node_VariableGet_4",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_4",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get 按钮-关闭",
+        "meta": {
+          "variable_name": "按钮-关闭"
+        },
         "pins": [
           {
-            "id": "F2C1A0294C7228E8B071C58A116DBC89",
             "name": "按钮-关闭",
             "direction": "output",
             "category": "object",
@@ -765,12 +769,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_1",
-                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+                "node_title": "SetVisibility",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "E898900E4AB412C0C589C6B0A30C3998",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -794,12 +798,13 @@
       {
         "id": "K2Node_VariableGet_2",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_2",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get 介绍2",
+        "meta": {
+          "variable_name": "介绍2"
+        },
         "pins": [
           {
-            "id": "367310E84EBE9ADA9E2FEBA7CD42774E",
             "name": "介绍2",
             "direction": "output",
             "category": "object",
@@ -809,12 +814,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_1",
-                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+                "node_title": "SetVisibility",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "27C0CF014C7508E9527ADEB9A154523D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -846,7 +851,6 @@
         },
         "pins": [
           {
-            "id": "4B8E712B470E5870A24059BAF164BA58",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -856,12 +860,12 @@
             "linked_to": [
               {
                 "node": "K2Node_Event_1",
-                "pin_id": "4F5E7494491F7411842DCEA2B1774F27"
+                "node_title": "Construct",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "C676F6EF4129D378B154AC91AD9DD1F8",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -871,7 +875,6 @@
             "linked_to": []
           },
           {
-            "id": "59247FE14D539F49AF0D0984D2DA613F",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -881,20 +884,22 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_2",
-                "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+                "node_title": "Get 介绍2",
+                "pin_name": "介绍2"
               },
               {
                 "node": "K2Node_VariableGet_4",
-                "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+                "node_title": "Get 按钮-关闭",
+                "pin_name": "按钮-关闭"
               },
               {
                 "node": "K2Node_VariableGet_15",
-                "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+                "node_title": "Get 按钮-上一个",
+                "pin_name": "按钮-上一个"
               }
             ]
           },
           {
-            "id": "42A59421477F936C6C2927B4C1A95BA9",
             "name": "InVisibility",
             "direction": "input",
             "category": "byte",
@@ -913,7 +918,8 @@
             "linked_to": [
               {
                 "node": "K2Node_Event_1",
-                "pin_id": "4F5E7494491F7411842DCEA2B1774F27"
+                "node_title": "Construct",
+                "pin_name": "then"
               }
             ]
           },
@@ -925,15 +931,18 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_2",
-                "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+                "node_title": "Get 介绍2",
+                "pin_name": "介绍2"
               },
               {
                 "node": "K2Node_VariableGet_4",
-                "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+                "node_title": "Get 按钮-关闭",
+                "pin_name": "按钮-关闭"
               },
               {
                 "node": "K2Node_VariableGet_15",
-                "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+                "node_title": "Get 按钮-上一个",
+                "pin_name": "按钮-上一个"
               }
             ]
           },
@@ -950,12 +959,13 @@
       {
         "id": "K2Node_VariableGet_9",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_9",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get 按钮-下一个",
+        "meta": {
+          "variable_name": "按钮-下一个"
+        },
         "pins": [
           {
-            "id": "A121E5B646056B2CBE211E9C8C6FEBA5",
             "name": "按钮-下一个",
             "direction": "output",
             "category": "object",
@@ -965,12 +975,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_2",
-                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+                "node_title": "SetVisibility",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "75590E0545B7F535745EC98955027548",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -994,12 +1004,13 @@
       {
         "id": "K2Node_VariableGet_10",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_10",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get 按钮-下一个",
+        "meta": {
+          "variable_name": "按钮-下一个"
+        },
         "pins": [
           {
-            "id": "A121E5B646056B2CBE211E9C8C6FEBA5",
             "name": "按钮-下一个",
             "direction": "output",
             "category": "object",
@@ -1009,12 +1020,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_3",
-                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+                "node_title": "SetVisibility",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "75590E0545B7F535745EC98955027548",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1038,12 +1049,13 @@
       {
         "id": "K2Node_VariableGet_13",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_13",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get 按钮-关闭",
+        "meta": {
+          "variable_name": "按钮-关闭"
+        },
         "pins": [
           {
-            "id": "F2C1A0294C7228E8B071C58A116DBC89",
             "name": "按钮-关闭",
             "direction": "output",
             "category": "object",
@@ -1053,12 +1065,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_5",
-                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+                "node_title": "SetVisibility",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "E898900E4AB412C0C589C6B0A30C3998",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1090,7 +1102,6 @@
         },
         "pins": [
           {
-            "id": "4B8E712B470E5870A24059BAF164BA58",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -1100,12 +1111,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_5",
-                "pin_id": "C676F6EF4129D378B154AC91AD9DD1F8"
+                "node_title": "SetVisibility",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "C676F6EF4129D378B154AC91AD9DD1F8",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1115,7 +1126,6 @@
             "linked_to": []
           },
           {
-            "id": "59247FE14D539F49AF0D0984D2DA613F",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1125,16 +1135,17 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_1",
-                "pin_id": "272E81AE49874AD167E84BB5F35FAAED"
+                "node_title": "Get 介绍1",
+                "pin_name": "介绍1"
               },
               {
                 "node": "K2Node_VariableGet_9",
-                "pin_id": "A121E5B646056B2CBE211E9C8C6FEBA5"
+                "node_title": "Get 按钮-下一个",
+                "pin_name": "按钮-下一个"
               }
             ]
           },
           {
-            "id": "42A59421477F936C6C2927B4C1A95BA9",
             "name": "InVisibility",
             "direction": "input",
             "category": "byte",
@@ -1153,7 +1164,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_5",
-                "pin_id": "C676F6EF4129D378B154AC91AD9DD1F8"
+                "node_title": "SetVisibility",
+                "pin_name": "then"
               }
             ]
           },
@@ -1165,11 +1177,13 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_1",
-                "pin_id": "272E81AE49874AD167E84BB5F35FAAED"
+                "node_title": "Get 介绍1",
+                "pin_name": "介绍1"
               },
               {
                 "node": "K2Node_VariableGet_9",
-                "pin_id": "A121E5B646056B2CBE211E9C8C6FEBA5"
+                "node_title": "Get 按钮-下一个",
+                "pin_name": "按钮-下一个"
               }
             ]
           },
@@ -1186,12 +1200,13 @@
       {
         "id": "K2Node_VariableGet_11",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_11",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get 介绍2",
+        "meta": {
+          "variable_name": "介绍2"
+        },
         "pins": [
           {
-            "id": "367310E84EBE9ADA9E2FEBA7CD42774E",
             "name": "介绍2",
             "direction": "output",
             "category": "object",
@@ -1201,12 +1216,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_5",
-                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+                "node_title": "SetVisibility",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "27C0CF014C7508E9527ADEB9A154523D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1238,7 +1253,6 @@
         },
         "pins": [
           {
-            "id": "4B8E712B470E5870A24059BAF164BA58",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -1248,12 +1262,12 @@
             "linked_to": [
               {
                 "node": "K2Node_ComponentBoundEvent_1",
-                "pin_id": "F80E7DB54B9B1DFCE78EC996ED5362BB"
+                "node_title": "按钮-上一个.OnClicked",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "C676F6EF4129D378B154AC91AD9DD1F8",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1263,12 +1277,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_2",
-                "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+                "node_title": "SetVisibility",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "59247FE14D539F49AF0D0984D2DA613F",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1278,20 +1292,22 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_11",
-                "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+                "node_title": "Get 介绍2",
+                "pin_name": "介绍2"
               },
               {
                 "node": "K2Node_VariableGet_13",
-                "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+                "node_title": "Get 按钮-关闭",
+                "pin_name": "按钮-关闭"
               },
               {
                 "node": "K2Node_VariableGet_14",
-                "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+                "node_title": "Get 按钮-上一个",
+                "pin_name": "按钮-上一个"
               }
             ]
           },
           {
-            "id": "42A59421477F936C6C2927B4C1A95BA9",
             "name": "InVisibility",
             "direction": "input",
             "category": "byte",
@@ -1310,7 +1326,8 @@
             "linked_to": [
               {
                 "node": "K2Node_ComponentBoundEvent_1",
-                "pin_id": "F80E7DB54B9B1DFCE78EC996ED5362BB"
+                "node_title": "按钮-上一个.OnClicked",
+                "pin_name": "then"
               }
             ]
           },
@@ -1322,15 +1339,18 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_11",
-                "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+                "node_title": "Get 介绍2",
+                "pin_name": "介绍2"
               },
               {
                 "node": "K2Node_VariableGet_13",
-                "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+                "node_title": "Get 按钮-关闭",
+                "pin_name": "按钮-关闭"
               },
               {
                 "node": "K2Node_VariableGet_14",
-                "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+                "node_title": "Get 按钮-上一个",
+                "pin_name": "按钮-上一个"
               }
             ]
           },
@@ -1347,12 +1367,13 @@
       {
         "id": "K2Node_VariableGet_1",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_1",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get 介绍1",
+        "meta": {
+          "variable_name": "介绍1"
+        },
         "pins": [
           {
-            "id": "272E81AE49874AD167E84BB5F35FAAED",
             "name": "介绍1",
             "direction": "output",
             "category": "object",
@@ -1362,12 +1383,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_2",
-                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+                "node_title": "SetVisibility",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "DDD0280C427146829E710C92E292E72D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1400,7 +1421,6 @@
         },
         "pins": [
           {
-            "id": "732BAF1D48461554A1D3A781F7BBD04F",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -1410,7 +1430,6 @@
             "linked_to": []
           },
           {
-            "id": "F80E7DB54B9B1DFCE78EC996ED5362BB",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1420,7 +1439,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_5",
-                "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+                "node_title": "SetVisibility",
+                "pin_name": "execute"
               }
             ]
           }
@@ -1431,12 +1451,13 @@
       {
         "id": "K2Node_VariableGet_8",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_8",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get 按钮-关闭",
+        "meta": {
+          "variable_name": "按钮-关闭"
+        },
         "pins": [
           {
-            "id": "F2C1A0294C7228E8B071C58A116DBC89",
             "name": "按钮-关闭",
             "direction": "output",
             "category": "object",
@@ -1446,12 +1467,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+                "node_title": "SetVisibility",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "E898900E4AB412C0C589C6B0A30C3998",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1483,7 +1504,6 @@
         },
         "pins": [
           {
-            "id": "4B8E712B470E5870A24059BAF164BA58",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -1493,12 +1513,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_3",
-                "pin_id": "C676F6EF4129D378B154AC91AD9DD1F8"
+                "node_title": "SetVisibility",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "C676F6EF4129D378B154AC91AD9DD1F8",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1508,7 +1528,6 @@
             "linked_to": []
           },
           {
-            "id": "59247FE14D539F49AF0D0984D2DA613F",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1518,20 +1537,22 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_6",
-                "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+                "node_title": "Get 介绍2",
+                "pin_name": "介绍2"
               },
               {
                 "node": "K2Node_VariableGet_8",
-                "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+                "node_title": "Get 按钮-关闭",
+                "pin_name": "按钮-关闭"
               },
               {
                 "node": "K2Node_VariableGet_16",
-                "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+                "node_title": "Get 按钮-上一个",
+                "pin_name": "按钮-上一个"
               }
             ]
           },
           {
-            "id": "42A59421477F936C6C2927B4C1A95BA9",
             "name": "InVisibility",
             "direction": "input",
             "category": "byte",
@@ -1550,7 +1571,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_3",
-                "pin_id": "C676F6EF4129D378B154AC91AD9DD1F8"
+                "node_title": "SetVisibility",
+                "pin_name": "then"
               }
             ]
           },
@@ -1562,15 +1584,18 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_6",
-                "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+                "node_title": "Get 介绍2",
+                "pin_name": "介绍2"
               },
               {
                 "node": "K2Node_VariableGet_8",
-                "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+                "node_title": "Get 按钮-关闭",
+                "pin_name": "按钮-关闭"
               },
               {
                 "node": "K2Node_VariableGet_16",
-                "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+                "node_title": "Get 按钮-上一个",
+                "pin_name": "按钮-上一个"
               }
             ]
           },
@@ -1587,12 +1612,13 @@
       {
         "id": "K2Node_VariableGet_6",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_6",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get 介绍2",
+        "meta": {
+          "variable_name": "介绍2"
+        },
         "pins": [
           {
-            "id": "367310E84EBE9ADA9E2FEBA7CD42774E",
             "name": "介绍2",
             "direction": "output",
             "category": "object",
@@ -1602,12 +1628,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+                "node_title": "SetVisibility",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "27C0CF014C7508E9527ADEB9A154523D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1639,7 +1665,6 @@
         },
         "pins": [
           {
-            "id": "4B8E712B470E5870A24059BAF164BA58",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -1649,12 +1674,12 @@
             "linked_to": [
               {
                 "node": "K2Node_ComponentBoundEvent_0",
-                "pin_id": "21211C9E4B53DD1081FF3690B83ED497"
+                "node_title": "按钮-下一个.OnClicked",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "C676F6EF4129D378B154AC91AD9DD1F8",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1664,12 +1689,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+                "node_title": "SetVisibility",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "59247FE14D539F49AF0D0984D2DA613F",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1679,16 +1704,17 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_5",
-                "pin_id": "272E81AE49874AD167E84BB5F35FAAED"
+                "node_title": "Get 介绍1",
+                "pin_name": "介绍1"
               },
               {
                 "node": "K2Node_VariableGet_10",
-                "pin_id": "A121E5B646056B2CBE211E9C8C6FEBA5"
+                "node_title": "Get 按钮-下一个",
+                "pin_name": "按钮-下一个"
               }
             ]
           },
           {
-            "id": "42A59421477F936C6C2927B4C1A95BA9",
             "name": "InVisibility",
             "direction": "input",
             "category": "byte",
@@ -1707,7 +1733,8 @@
             "linked_to": [
               {
                 "node": "K2Node_ComponentBoundEvent_0",
-                "pin_id": "21211C9E4B53DD1081FF3690B83ED497"
+                "node_title": "按钮-下一个.OnClicked",
+                "pin_name": "then"
               }
             ]
           },
@@ -1719,11 +1746,13 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_5",
-                "pin_id": "272E81AE49874AD167E84BB5F35FAAED"
+                "node_title": "Get 介绍1",
+                "pin_name": "介绍1"
               },
               {
                 "node": "K2Node_VariableGet_10",
-                "pin_id": "A121E5B646056B2CBE211E9C8C6FEBA5"
+                "node_title": "Get 按钮-下一个",
+                "pin_name": "按钮-下一个"
               }
             ]
           },
@@ -1740,12 +1769,13 @@
       {
         "id": "K2Node_VariableGet_5",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_5",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get 介绍1",
+        "meta": {
+          "variable_name": "介绍1"
+        },
         "pins": [
           {
-            "id": "272E81AE49874AD167E84BB5F35FAAED",
             "name": "介绍1",
             "direction": "output",
             "category": "object",
@@ -1755,12 +1785,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_3",
-                "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+                "node_title": "SetVisibility",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "DDD0280C427146829E710C92E292E72D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -1793,7 +1823,6 @@
         },
         "pins": [
           {
-            "id": "1441C45048C5F64991E9419330D369FA",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -1803,7 +1832,6 @@
             "linked_to": []
           },
           {
-            "id": "21211C9E4B53DD1081FF3690B83ED497",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1813,7 +1841,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_3",
-                "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+                "node_title": "SetVisibility",
+                "pin_name": "execute"
               }
             ]
           }
@@ -1831,7 +1860,6 @@
         },
         "pins": [
           {
-            "id": "4C9CD04F4E93841BFA056FACEE66BE79",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -1841,7 +1869,6 @@
             "linked_to": []
           },
           {
-            "id": "12062FC14BC3DFF6E39DC9A9429C955C",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1851,7 +1878,6 @@
             "linked_to": []
           },
           {
-            "id": "2AAEF61D45D7D253CF573499121A4810",
             "name": "MyGeometry",
             "direction": "output",
             "category": "struct",
@@ -1861,7 +1887,6 @@
             "linked_to": []
           },
           {
-            "id": "313F470F4C9D3B234185E9A628783280",
             "name": "InDeltaTime",
             "direction": "output",
             "category": "real",
@@ -1884,7 +1909,6 @@
         },
         "pins": [
           {
-            "id": "BDE517EB49F39880495DD1B46D74C0D3",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -1894,7 +1918,6 @@
             "linked_to": []
           },
           {
-            "id": "4F5E7494491F7411842DCEA2B1774F27",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1904,7 +1927,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_1",
-                "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+                "node_title": "SetVisibility",
+                "pin_name": "execute"
               }
             ]
           }
@@ -1922,7 +1946,6 @@
         },
         "pins": [
           {
-            "id": "26DFF8104766FED73285B690C98582BD",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -1932,7 +1955,6 @@
             "linked_to": []
           },
           {
-            "id": "280517D54A692FF9915793AE2937D77B",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1942,7 +1964,6 @@
             "linked_to": []
           },
           {
-            "id": "08D3CE73476A1AC9C2438EA6CF94E272",
             "name": "IsDesignTime",
             "direction": "output",
             "category": "bool",
@@ -1960,351 +1981,351 @@
       {
         "from": {
           "node": "K2Node_CallFunction_0",
-          "pin_name": "then",
-          "pin_id": "AC579EAE477F22614598439082F26C72"
+          "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_16",
-          "pin_name": "execute",
-          "pin_id": "C89C763F498A615919C03080312AD334"
+          "node_title": "CaissonPlayerController.CloseCaissonWidget",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_15",
-          "pin_name": "ReturnValue",
-          "pin_id": "BB4B50554C1032ACA297849394D6087E"
+          "node_title": "GameplayStatics.GetPlayerController",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "Object",
-          "pin_id": "62E58D1E42D4A9A127FEAEA52FF92941"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "Object"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_16",
-          "pin_name": "then",
-          "pin_id": "509F82B84C19CAEB2F46B99B780FDAED"
+          "node_title": "CaissonPlayerController.CloseCaissonWidget",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_17",
-          "pin_name": "execute",
-          "pin_id": "A9DB4648486ECBC62DF1B79F9E02EE37"
+          "node_title": "CaissonPlayerController.OpenCaissonWidget",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_3",
-          "pin_name": "then",
-          "pin_id": "C676F6EF4129D378B154AC91AD9DD1F8"
+          "node_title": "SetVisibility",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "execute",
-          "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+          "node_title": "SetVisibility",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_5",
-          "pin_name": "then",
-          "pin_id": "C676F6EF4129D378B154AC91AD9DD1F8"
+          "node_title": "SetVisibility",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_2",
-          "pin_name": "execute",
-          "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+          "node_title": "SetVisibility",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_ComponentBoundEvent_0",
-          "pin_name": "then",
-          "pin_id": "21211C9E4B53DD1081FF3690B83ED497"
+          "node_title": "按钮-下一个.OnClicked",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_3",
-          "pin_name": "execute",
-          "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+          "node_title": "SetVisibility",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_ComponentBoundEvent_1",
-          "pin_name": "then",
-          "pin_id": "F80E7DB54B9B1DFCE78EC996ED5362BB"
+          "node_title": "按钮-上一个.OnClicked",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_5",
-          "pin_name": "execute",
-          "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+          "node_title": "SetVisibility",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_ComponentBoundEvent_2",
-          "pin_name": "then",
-          "pin_id": "62FE810648185BDEDB646494C34A95AD"
+          "node_title": "按钮-关闭.OnClicked",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "execute",
-          "pin_id": "0F28A00645E9BC477D47CD8E3868C822"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "AsCaisson Player Controller",
-          "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "AsCaisson Player Controller"
         },
         "to": {
           "node": "K2Node_CallFunction_0",
-          "pin_name": "self",
-          "pin_id": "0FEFBB4846ACEB35FC93E7A03F2FD447"
+          "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "then",
-          "pin_id": "F0459EAF406994D215DE75B9767B72C7"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_0",
-          "pin_name": "execute",
-          "pin_id": "E43EA077418A9B26B937B89D980E5C38"
+          "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "AsCaisson Player Controller",
-          "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "AsCaisson Player Controller"
         },
         "to": {
           "node": "K2Node_CallFunction_16",
-          "pin_name": "self",
-          "pin_id": "F85151354DB59DA2E502C3A8CA511434"
+          "node_title": "CaissonPlayerController.CloseCaissonWidget",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "AsCaisson Player Controller",
-          "pin_id": "3FE36DB34BD8D55D7DCD549192D81E8C"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "AsCaisson Player Controller"
         },
         "to": {
           "node": "K2Node_CallFunction_17",
-          "pin_name": "self",
-          "pin_id": "5FC864A84270F03B40172889DFA2E24D"
+          "node_title": "CaissonPlayerController.OpenCaissonWidget",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_Event_1",
-          "pin_name": "then",
-          "pin_id": "4F5E7494491F7411842DCEA2B1774F27"
+          "node_title": "Construct",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_1",
-          "pin_name": "execute",
-          "pin_id": "4B8E712B470E5870A24059BAF164BA58"
+          "node_title": "SetVisibility",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_Self_0",
-          "pin_name": "self",
-          "pin_id": "519B00C347A935453DD435868B6337CA"
+          "node_title": "Self",
+          "pin_name": "self"
         },
         "to": {
           "node": "K2Node_CallFunction_16",
-          "pin_name": "WidgetToClose",
-          "pin_id": "7D0D979049AA3CB7AB81A89298E17948"
+          "node_title": "CaissonPlayerController.CloseCaissonWidget",
+          "pin_name": "WidgetToClose"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_1",
-          "pin_name": "介绍1",
-          "pin_id": "272E81AE49874AD167E84BB5F35FAAED"
+          "node_title": "Get 介绍1",
+          "pin_name": "介绍1"
         },
         "to": {
           "node": "K2Node_CallFunction_2",
-          "pin_name": "self",
-          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+          "node_title": "SetVisibility",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_10",
-          "pin_name": "按钮-下一个",
-          "pin_id": "A121E5B646056B2CBE211E9C8C6FEBA5"
+          "node_title": "Get 按钮-下一个",
+          "pin_name": "按钮-下一个"
         },
         "to": {
           "node": "K2Node_CallFunction_3",
-          "pin_name": "self",
-          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+          "node_title": "SetVisibility",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_11",
-          "pin_name": "介绍2",
-          "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+          "node_title": "Get 介绍2",
+          "pin_name": "介绍2"
         },
         "to": {
           "node": "K2Node_CallFunction_5",
-          "pin_name": "self",
-          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+          "node_title": "SetVisibility",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_13",
-          "pin_name": "按钮-关闭",
-          "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+          "node_title": "Get 按钮-关闭",
+          "pin_name": "按钮-关闭"
         },
         "to": {
           "node": "K2Node_CallFunction_5",
-          "pin_name": "self",
-          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+          "node_title": "SetVisibility",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_14",
-          "pin_name": "按钮-上一个",
-          "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+          "node_title": "Get 按钮-上一个",
+          "pin_name": "按钮-上一个"
         },
         "to": {
           "node": "K2Node_CallFunction_5",
-          "pin_name": "self",
-          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+          "node_title": "SetVisibility",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_15",
-          "pin_name": "按钮-上一个",
-          "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+          "node_title": "Get 按钮-上一个",
+          "pin_name": "按钮-上一个"
         },
         "to": {
           "node": "K2Node_CallFunction_1",
-          "pin_name": "self",
-          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+          "node_title": "SetVisibility",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_16",
-          "pin_name": "按钮-上一个",
-          "pin_id": "0862C385452AFCECB5BD86B1349D6B14"
+          "node_title": "Get 按钮-上一个",
+          "pin_name": "按钮-上一个"
         },
         "to": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "self",
-          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+          "node_title": "SetVisibility",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_2",
-          "pin_name": "介绍2",
-          "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+          "node_title": "Get 介绍2",
+          "pin_name": "介绍2"
         },
         "to": {
           "node": "K2Node_CallFunction_1",
-          "pin_name": "self",
-          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+          "node_title": "SetVisibility",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_4",
-          "pin_name": "按钮-关闭",
-          "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+          "node_title": "Get 按钮-关闭",
+          "pin_name": "按钮-关闭"
         },
         "to": {
           "node": "K2Node_CallFunction_1",
-          "pin_name": "self",
-          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+          "node_title": "SetVisibility",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_5",
-          "pin_name": "介绍1",
-          "pin_id": "272E81AE49874AD167E84BB5F35FAAED"
+          "node_title": "Get 介绍1",
+          "pin_name": "介绍1"
         },
         "to": {
           "node": "K2Node_CallFunction_3",
-          "pin_name": "self",
-          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+          "node_title": "SetVisibility",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_6",
-          "pin_name": "介绍2",
-          "pin_id": "367310E84EBE9ADA9E2FEBA7CD42774E"
+          "node_title": "Get 介绍2",
+          "pin_name": "介绍2"
         },
         "to": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "self",
-          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+          "node_title": "SetVisibility",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_8",
-          "pin_name": "按钮-关闭",
-          "pin_id": "F2C1A0294C7228E8B071C58A116DBC89"
+          "node_title": "Get 按钮-关闭",
+          "pin_name": "按钮-关闭"
         },
         "to": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "self",
-          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+          "node_title": "SetVisibility",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_9",
-          "pin_name": "按钮-下一个",
-          "pin_id": "A121E5B646056B2CBE211E9C8C6FEBA5"
+          "node_title": "Get 按钮-下一个",
+          "pin_name": "按钮-下一个"
         },
         "to": {
           "node": "K2Node_CallFunction_2",
-          "pin_name": "self",
-          "pin_id": "59247FE14D539F49AF0D0984D2DA613F"
+          "node_title": "SetVisibility",
+          "pin_name": "self"
         },
         "category": "object"
       }
@@ -2357,7 +2378,6 @@
           },
           "pins": [
             {
-              "id": "23583C2C4F98AB34E5A221A285936657",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -2367,12 +2387,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "6F9CE07F420385AE5BED3BA28A1E4ED4"
+                  "node_title": "BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "3D1DD634475CD0F8A8DA0BA4D4A95409",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -2382,7 +2402,6 @@
               "linked_to": []
             },
             {
-              "id": "E28FA7FC446D88BF6F6BCAB01DAF8270",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -2392,7 +2411,6 @@
               "linked_to": []
             },
             {
-              "id": "161DB97645FD2067F412E585FFB7DBEC",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -2411,7 +2429,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "6F9CE07F420385AE5BED3BA28A1E4ED4"
+                  "node_title": "BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -2435,7 +2454,6 @@
           },
           "pins": [
             {
-              "id": "6F9CE07F420385AE5BED3BA28A1E4ED4",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -2445,7 +2463,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "23583C2C4F98AB34E5A221A285936657"
+                  "node_title": "ExecuteUbergraph_W_Level1_Introdection",
+                  "pin_name": "execute"
                 }
               ]
             }
@@ -2458,13 +2477,13 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "6F9CE07F420385AE5BED3BA28A1E4ED4"
+            "node_title": "BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "23583C2C4F98AB34E5A221A285936657"
+            "node_title": "ExecuteUbergraph_W_Level1_Introdection",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -2493,7 +2512,6 @@
           },
           "pins": [
             {
-              "id": "E913A8DD46CC26F7522A2B914EA93AD0",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -2503,12 +2521,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "723FD4F4425F613B25BC909E137DC331"
+                  "node_title": "BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "A500675A424E5E410841F3B28D98BAF5",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -2518,7 +2536,6 @@
               "linked_to": []
             },
             {
-              "id": "17552EC346B11AF450664FB78BF36A59",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -2528,7 +2545,6 @@
               "linked_to": []
             },
             {
-              "id": "B0C8B265430A2690CAE11589E9250D20",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -2547,7 +2563,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "723FD4F4425F613B25BC909E137DC331"
+                  "node_title": "BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -2571,7 +2588,6 @@
           },
           "pins": [
             {
-              "id": "723FD4F4425F613B25BC909E137DC331",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -2581,7 +2597,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "E913A8DD46CC26F7522A2B914EA93AD0"
+                  "node_title": "ExecuteUbergraph_W_Level1_Introdection",
+                  "pin_name": "execute"
                 }
               ]
             }
@@ -2594,13 +2611,13 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "723FD4F4425F613B25BC909E137DC331"
+            "node_title": "BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "E913A8DD46CC26F7522A2B914EA93AD0"
+            "node_title": "ExecuteUbergraph_W_Level1_Introdection",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -2629,7 +2646,6 @@
           },
           "pins": [
             {
-              "id": "F93D08F8426E730024D701A1ABB57CAC",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -2639,12 +2655,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "4633E43E4E941E7E427CBA99C0B67B2F"
+                  "node_title": "BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "B684BB5E4496D5218DC35695A68D173B",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -2654,7 +2670,6 @@
               "linked_to": []
             },
             {
-              "id": "01024EBD4395948E6EEA1A958C63FEF7",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -2664,7 +2679,6 @@
               "linked_to": []
             },
             {
-              "id": "3AFBEA5F49A526DA4D6250BB29C11CA0",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -2683,7 +2697,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "4633E43E4E941E7E427CBA99C0B67B2F"
+                  "node_title": "BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -2707,7 +2722,6 @@
           },
           "pins": [
             {
-              "id": "4633E43E4E941E7E427CBA99C0B67B2F",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -2717,7 +2731,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "F93D08F8426E730024D701A1ABB57CAC"
+                  "node_title": "ExecuteUbergraph_W_Level1_Introdection",
+                  "pin_name": "execute"
                 }
               ]
             }
@@ -2730,13 +2745,13 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "4633E43E4E941E7E427CBA99C0B67B2F"
+            "node_title": "BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "F93D08F8426E730024D701A1ABB57CAC"
+            "node_title": "ExecuteUbergraph_W_Level1_Introdection",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -2765,7 +2780,6 @@
           },
           "pins": [
             {
-              "id": "49E7E6B74E83C0B994B7918AC148D858",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -2775,12 +2789,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "954E638F41106BC7899E1A8F1D78A485"
+                  "node_title": "Construct",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "726AD165485C48A04B10BB83E43BDD2F",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -2790,7 +2804,6 @@
               "linked_to": []
             },
             {
-              "id": "196EFA32474679C9FDB71385FA85E595",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -2800,7 +2813,6 @@
               "linked_to": []
             },
             {
-              "id": "E3133AB9468C3813483B9E9E3981D6AB",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -2819,7 +2831,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "954E638F41106BC7899E1A8F1D78A485"
+                  "node_title": "Construct",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -2843,7 +2856,6 @@
           },
           "pins": [
             {
-              "id": "954E638F41106BC7899E1A8F1D78A485",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -2853,7 +2865,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "49E7E6B74E83C0B994B7918AC148D858"
+                  "node_title": "ExecuteUbergraph_W_Level1_Introdection",
+                  "pin_name": "execute"
                 }
               ]
             }
@@ -2866,13 +2879,13 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "954E638F41106BC7899E1A8F1D78A485"
+            "node_title": "Construct",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "49E7E6B74E83C0B994B7918AC148D858"
+            "node_title": "ExecuteUbergraph_W_Level1_Introdection",
+            "pin_name": "execute"
           },
           "category": "exec"
         }

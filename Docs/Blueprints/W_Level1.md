@@ -101,7 +101,7 @@ Btn_Dialogue [Button] | parent=CanvasPanel_38 | children=无
 1. 执行链：BndEvt__W_Level1_Btn_Dialogue_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level1
 1. 关键节点：
    - ExecuteUbergraph_W_Level1
-     输入：execute <- K2Node_FunctionEntry_0:E70510F34940CF956CC31E98ADFD6F6A
+     输入：execute <- BndEvt__W_Level1_Btn_Dialogue_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature:then
    - BndEvt__W_Level1_Btn_Dialogue_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
 
 ### 8.2 Construct
@@ -112,7 +112,7 @@ Btn_Dialogue [Button] | parent=CanvasPanel_38 | children=无
 1. 执行链：Construct -> ExecuteUbergraph_W_Level1
 1. 关键节点：
    - ExecuteUbergraph_W_Level1
-     输入：execute <- K2Node_FunctionEntry_0:07A7349F433EB5F53B1345A12265E1A4
+     输入：execute <- Construct:then
    - Construct
 
 ### 8.3 OnFocusLost
@@ -123,7 +123,7 @@ Btn_Dialogue [Button] | parent=CanvasPanel_38 | children=无
 1. 执行链：OnFocusLost -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level1
 1. 关键节点：
    - ExecuteUbergraph_W_Level1
-     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:2331626C4371A3C8B40C19954F93BE5A
+     输入：execute <- SetVariableOnPersistentFrame:then
    - OnFocusLost
 
 ### 8.4 PreConstruct
@@ -134,7 +134,7 @@ Btn_Dialogue [Button] | parent=CanvasPanel_38 | children=无
 1. 执行链：PreConstruct -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level1
 1. 关键节点：
    - ExecuteUbergraph_W_Level1
-     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:513A6F2C49D3BB1D68E575A8797387DD
+     输入：execute <- SetVariableOnPersistentFrame:then
    - PreConstruct
 
 ### 8.5 Tick
@@ -145,7 +145,7 @@ Btn_Dialogue [Button] | parent=CanvasPanel_38 | children=无
 1. 执行链：Tick -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level1
 1. 关键节点：
    - ExecuteUbergraph_W_Level1
-     输入：execute <- K2Node_SetVariableOnPersistentFrame_0:4977754F46F677A966BF108850391CD1
+     输入：execute <- SetVariableOnPersistentFrame:then
    - Tick
 
 ### 8.6 新函数

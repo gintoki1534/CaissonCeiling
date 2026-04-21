@@ -17,12 +17,13 @@
       {
         "id": "K2Node_VariableGet_9",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_9",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get ActivatedLight",
+        "meta": {
+          "variable_name": "ActivatedLight"
+        },
         "pins": [
           {
-            "id": "50D786F24CCCF3B1858E71A1EF71BAF0",
             "name": "ActivatedLight",
             "direction": "output",
             "category": "object",
@@ -32,12 +33,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_1",
-                "pin_id": "DE57F8D74C855E969EA36794D9A597EA"
+                "node_title": "LightComponent.SetIntensity",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "E0A9D840431F0B2AF428F986CE64059E",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -69,7 +70,6 @@
         },
         "pins": [
           {
-            "id": "D9C2D7C845A704002D8D598A8B67E808",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -79,12 +79,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "7269742249D29204A7398AAFC1F0A5BA"
+                "node_title": "LightComponent.SetIntensity",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "7269742249D29204A7398AAFC1F0A5BA",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -94,7 +94,6 @@
             "linked_to": []
           },
           {
-            "id": "DE57F8D74C855E969EA36794D9A597EA",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -104,12 +103,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_9",
-                "pin_id": "50D786F24CCCF3B1858E71A1EF71BAF0"
+                "node_title": "Get ActivatedLight",
+                "pin_name": "ActivatedLight"
               }
             ]
           },
           {
-            "id": "A56D1EF44280F9685CA602AF21475654",
             "name": "NewIntensity",
             "direction": "input",
             "category": "real",
@@ -128,7 +127,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "7269742249D29204A7398AAFC1F0A5BA"
+                "node_title": "LightComponent.SetIntensity",
+                "pin_name": "then"
               }
             ]
           },
@@ -140,7 +140,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_9",
-                "pin_id": "50D786F24CCCF3B1858E71A1EF71BAF0"
+                "node_title": "Get ActivatedLight",
+                "pin_name": "ActivatedLight"
               }
             ]
           },
@@ -164,7 +165,6 @@
         },
         "pins": [
           {
-            "id": "B304B4D0456F21CA3DE565AF0A71F5FA",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -174,12 +174,12 @@
             "linked_to": [
               {
                 "node": "K2Node_ComponentBoundEvent_6",
-                "pin_id": "D07DB4724D0FC495BCEFC5B8E198C811"
+                "node_title": "CaissonInteract.OnInteractClicked",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "675F031141D60A82C549339F6CCD9886",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -189,12 +189,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "D9C2D7C845A704002D8D598A8B67E808"
+                "node_title": "LightComponent.SetIntensity",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "4B5A308A48233D11F4F193B5259EB666",
             "name": "bIsActivated",
             "direction": "input",
             "category": "bool",
@@ -204,7 +204,6 @@
             "linked_to": []
           },
           {
-            "id": "6530F34440238F462E2583A50A8CE5FA",
             "name": "Output_Get",
             "direction": "output",
             "category": "bool",
@@ -214,7 +213,6 @@
             "linked_to": []
           },
           {
-            "id": "1A15F62F4A0E497299CD50AFD1E0E087",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -233,7 +231,8 @@
             "linked_to": [
               {
                 "node": "K2Node_ComponentBoundEvent_6",
-                "pin_id": "D07DB4724D0FC495BCEFC5B8E198C811"
+                "node_title": "CaissonInteract.OnInteractClicked",
+                "pin_name": "then"
               }
             ]
           },
@@ -265,7 +264,6 @@
         },
         "pins": [
           {
-            "id": "D9C2D7C845A704002D8D598A8B67E808",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -275,12 +273,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_0",
-                "pin_id": "675F031141D60A82C549339F6CCD9886"
+                "node_title": "Set bIsActivated",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "7269742249D29204A7398AAFC1F0A5BA",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -290,12 +288,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_1",
-                "pin_id": "D9C2D7C845A704002D8D598A8B67E808"
+                "node_title": "LightComponent.SetIntensity",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "DE57F8D74C855E969EA36794D9A597EA",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -305,12 +303,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_8",
-                "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+                "node_title": "Get HoverLight",
+                "pin_name": "HoverLight"
               }
             ]
           },
           {
-            "id": "A56D1EF44280F9685CA602AF21475654",
             "name": "NewIntensity",
             "direction": "input",
             "category": "real",
@@ -329,7 +327,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_0",
-                "pin_id": "675F031141D60A82C549339F6CCD9886"
+                "node_title": "Set bIsActivated",
+                "pin_name": "then"
               }
             ]
           },
@@ -341,7 +340,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_8",
-                "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+                "node_title": "Get HoverLight",
+                "pin_name": "HoverLight"
               }
             ]
           }
@@ -351,12 +351,13 @@
       {
         "id": "K2Node_VariableGet_8",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_8",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get HoverLight",
+        "meta": {
+          "variable_name": "HoverLight"
+        },
         "pins": [
           {
-            "id": "F1B0B67D405C43704D6FF9B267608465",
             "name": "HoverLight",
             "direction": "output",
             "category": "object",
@@ -366,12 +367,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "DE57F8D74C855E969EA36794D9A597EA"
+                "node_title": "LightComponent.SetIntensity",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "6C3F058D4BD66941402718924C276886",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -404,7 +405,6 @@
         },
         "pins": [
           {
-            "id": "F92B397A4CD453E02F954C8CCB1085CE",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -414,7 +414,6 @@
             "linked_to": []
           },
           {
-            "id": "D07DB4724D0FC495BCEFC5B8E198C811",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -424,7 +423,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableSet_0",
-                "pin_id": "B304B4D0456F21CA3DE565AF0A71F5FA"
+                "node_title": "Set bIsActivated",
+                "pin_name": "execute"
               }
             ]
           }
@@ -443,7 +443,6 @@
         },
         "pins": [
           {
-            "id": "D9C2D7C845A704002D8D598A8B67E808",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -453,12 +452,12 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_2",
-                "pin_id": "0A0A85604D62623B02B36D8B82C7434B"
+                "node_title": "K2Node_IfThenElse_2",
+                "pin_name": "else"
               }
             ]
           },
           {
-            "id": "7269742249D29204A7398AAFC1F0A5BA",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -468,7 +467,6 @@
             "linked_to": []
           },
           {
-            "id": "DE57F8D74C855E969EA36794D9A597EA",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -478,12 +476,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_7",
-                "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+                "node_title": "Get HoverLight",
+                "pin_name": "HoverLight"
               }
             ]
           },
           {
-            "id": "A56D1EF44280F9685CA602AF21475654",
             "name": "NewIntensity",
             "direction": "input",
             "category": "real",
@@ -502,7 +500,8 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_2",
-                "pin_id": "0A0A85604D62623B02B36D8B82C7434B"
+                "node_title": "K2Node_IfThenElse_2",
+                "pin_name": "else"
               }
             ]
           },
@@ -514,7 +513,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_7",
-                "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+                "node_title": "Get HoverLight",
+                "pin_name": "HoverLight"
               }
             ]
           }
@@ -524,12 +524,13 @@
       {
         "id": "K2Node_VariableGet_7",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_7",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get HoverLight",
+        "meta": {
+          "variable_name": "HoverLight"
+        },
         "pins": [
           {
-            "id": "F1B0B67D405C43704D6FF9B267608465",
             "name": "HoverLight",
             "direction": "output",
             "category": "object",
@@ -539,12 +540,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_3",
-                "pin_id": "DE57F8D74C855E969EA36794D9A597EA"
+                "node_title": "LightComponent.SetIntensity",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "6C3F058D4BD66941402718924C276886",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -573,7 +574,6 @@
         "meta": {},
         "pins": [
           {
-            "id": "D638D86B4E708F0496E5A4A69BEA1B00",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -583,12 +583,12 @@
             "linked_to": [
               {
                 "node": "K2Node_ComponentBoundEvent_5",
-                "pin_id": "C7E469194B365BAE74850E980BD9064F"
+                "node_title": "CaissonInteract.OnHoverEnd",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "033FE04C41E2107157C8D2A85A212792",
             "name": "Condition",
             "direction": "input",
             "category": "bool",
@@ -598,12 +598,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_6",
-                "pin_id": "DC5DD74E45E0B4E85A3E74A1A28E0478"
+                "node_title": "Get bIsActivated",
+                "pin_name": "bIsActivated"
               }
             ]
           },
           {
-            "id": "F1A8394940EF7C4EFB15D9B34304DFD1",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -613,7 +613,6 @@
             "linked_to": []
           },
           {
-            "id": "0A0A85604D62623B02B36D8B82C7434B",
             "name": "else",
             "direction": "output",
             "category": "exec",
@@ -623,7 +622,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_3",
-                "pin_id": "D9C2D7C845A704002D8D598A8B67E808"
+                "node_title": "LightComponent.SetIntensity",
+                "pin_name": "execute"
               }
             ]
           }
@@ -637,7 +637,8 @@
             "linked_to": [
               {
                 "node": "K2Node_ComponentBoundEvent_5",
-                "pin_id": "C7E469194B365BAE74850E980BD9064F"
+                "node_title": "CaissonInteract.OnHoverEnd",
+                "pin_name": "then"
               }
             ]
           },
@@ -649,7 +650,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_6",
-                "pin_id": "DC5DD74E45E0B4E85A3E74A1A28E0478"
+                "node_title": "Get bIsActivated",
+                "pin_name": "bIsActivated"
               }
             ]
           }
@@ -659,12 +661,13 @@
       {
         "id": "K2Node_VariableGet_6",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_6",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get bIsActivated",
+        "meta": {
+          "variable_name": "bIsActivated"
+        },
         "pins": [
           {
-            "id": "DC5DD74E45E0B4E85A3E74A1A28E0478",
             "name": "bIsActivated",
             "direction": "output",
             "category": "bool",
@@ -674,12 +677,12 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_2",
-                "pin_id": "033FE04C41E2107157C8D2A85A212792"
+                "node_title": "K2Node_IfThenElse_2",
+                "pin_name": "Condition"
               }
             ]
           },
           {
-            "id": "57799C5D497CE3E9B7B8C0893215772C",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -712,7 +715,6 @@
         },
         "pins": [
           {
-            "id": "DE7A9C974BAB248BC6991A9645FA5E5F",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -722,7 +724,6 @@
             "linked_to": []
           },
           {
-            "id": "C7E469194B365BAE74850E980BD9064F",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -732,7 +733,8 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_2",
-                "pin_id": "D638D86B4E708F0496E5A4A69BEA1B00"
+                "node_title": "K2Node_IfThenElse_2",
+                "pin_name": "execute"
               }
             ]
           }
@@ -743,12 +745,13 @@
       {
         "id": "K2Node_VariableGet_5",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_5",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get HoverLight",
+        "meta": {
+          "variable_name": "HoverLight"
+        },
         "pins": [
           {
-            "id": "F1B0B67D405C43704D6FF9B267608465",
             "name": "HoverLight",
             "direction": "output",
             "category": "object",
@@ -758,12 +761,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_2",
-                "pin_id": "DE57F8D74C855E969EA36794D9A597EA"
+                "node_title": "LightComponent.SetIntensity",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "6C3F058D4BD66941402718924C276886",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -795,7 +798,6 @@
         },
         "pins": [
           {
-            "id": "D9C2D7C845A704002D8D598A8B67E808",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -805,12 +807,12 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_1",
-                "pin_id": "0A0A85604D62623B02B36D8B82C7434B"
+                "node_title": "K2Node_IfThenElse_1",
+                "pin_name": "else"
               }
             ]
           },
           {
-            "id": "7269742249D29204A7398AAFC1F0A5BA",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -820,7 +822,6 @@
             "linked_to": []
           },
           {
-            "id": "DE57F8D74C855E969EA36794D9A597EA",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -830,12 +831,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_5",
-                "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+                "node_title": "Get HoverLight",
+                "pin_name": "HoverLight"
               }
             ]
           },
           {
-            "id": "A56D1EF44280F9685CA602AF21475654",
             "name": "NewIntensity",
             "direction": "input",
             "category": "real",
@@ -854,7 +855,8 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_1",
-                "pin_id": "0A0A85604D62623B02B36D8B82C7434B"
+                "node_title": "K2Node_IfThenElse_1",
+                "pin_name": "else"
               }
             ]
           },
@@ -866,7 +868,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_5",
-                "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+                "node_title": "Get HoverLight",
+                "pin_name": "HoverLight"
               }
             ]
           },
@@ -883,12 +886,13 @@
       {
         "id": "K2Node_VariableGet_4",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_4",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get bIsActivated",
+        "meta": {
+          "variable_name": "bIsActivated"
+        },
         "pins": [
           {
-            "id": "DC5DD74E45E0B4E85A3E74A1A28E0478",
             "name": "bIsActivated",
             "direction": "output",
             "category": "bool",
@@ -898,12 +902,12 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_1",
-                "pin_id": "033FE04C41E2107157C8D2A85A212792"
+                "node_title": "K2Node_IfThenElse_1",
+                "pin_name": "Condition"
               }
             ]
           },
           {
-            "id": "57799C5D497CE3E9B7B8C0893215772C",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -932,7 +936,6 @@
         "meta": {},
         "pins": [
           {
-            "id": "D638D86B4E708F0496E5A4A69BEA1B00",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -942,12 +945,12 @@
             "linked_to": [
               {
                 "node": "K2Node_ComponentBoundEvent_3",
-                "pin_id": "73F0611B40633AD5C3C4DD8B5A87F745"
+                "node_title": "CaissonInteract.OnHoverBegin",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "033FE04C41E2107157C8D2A85A212792",
             "name": "Condition",
             "direction": "input",
             "category": "bool",
@@ -957,12 +960,12 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_4",
-                "pin_id": "DC5DD74E45E0B4E85A3E74A1A28E0478"
+                "node_title": "Get bIsActivated",
+                "pin_name": "bIsActivated"
               }
             ]
           },
           {
-            "id": "F1A8394940EF7C4EFB15D9B34304DFD1",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -972,7 +975,6 @@
             "linked_to": []
           },
           {
-            "id": "0A0A85604D62623B02B36D8B82C7434B",
             "name": "else",
             "direction": "output",
             "category": "exec",
@@ -982,7 +984,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_2",
-                "pin_id": "D9C2D7C845A704002D8D598A8B67E808"
+                "node_title": "LightComponent.SetIntensity",
+                "pin_name": "execute"
               }
             ]
           }
@@ -996,7 +999,8 @@
             "linked_to": [
               {
                 "node": "K2Node_ComponentBoundEvent_3",
-                "pin_id": "73F0611B40633AD5C3C4DD8B5A87F745"
+                "node_title": "CaissonInteract.OnHoverBegin",
+                "pin_name": "then"
               }
             ]
           },
@@ -1008,7 +1012,8 @@
             "linked_to": [
               {
                 "node": "K2Node_VariableGet_4",
-                "pin_id": "DC5DD74E45E0B4E85A3E74A1A28E0478"
+                "node_title": "Get bIsActivated",
+                "pin_name": "bIsActivated"
               }
             ]
           }
@@ -1027,7 +1032,6 @@
         },
         "pins": [
           {
-            "id": "031703A0467E39D0E393B89188C32063",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -1037,7 +1041,6 @@
             "linked_to": []
           },
           {
-            "id": "73F0611B40633AD5C3C4DD8B5A87F745",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1047,7 +1050,8 @@
             "linked_to": [
               {
                 "node": "K2Node_IfThenElse_1",
-                "pin_id": "D638D86B4E708F0496E5A4A69BEA1B00"
+                "node_title": "K2Node_IfThenElse_1",
+                "pin_name": "execute"
               }
             ]
           }
@@ -1065,7 +1069,6 @@
         },
         "pins": [
           {
-            "id": "2C477F01417DA5CD17D6429FE132BCA0",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -1075,7 +1078,6 @@
             "linked_to": []
           },
           {
-            "id": "DF998095499E312F9612DC80FEE372DE",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1085,7 +1087,6 @@
             "linked_to": []
           },
           {
-            "id": "BE209665496B79B9BECDFC8FEA792E80",
             "name": "DeltaSeconds",
             "direction": "output",
             "category": "real",
@@ -1108,7 +1109,6 @@
         },
         "pins": [
           {
-            "id": "052D8444475CE863DB731296C16895C6",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -1118,7 +1118,6 @@
             "linked_to": []
           },
           {
-            "id": "46A1E8EB4F9F230E99E9CEA2BA29A528",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1128,7 +1127,6 @@
             "linked_to": []
           },
           {
-            "id": "E256E37E4F9DA848FC86A1A933F56982",
             "name": "OtherActor",
             "direction": "output",
             "category": "object",
@@ -1151,7 +1149,6 @@
         },
         "pins": [
           {
-            "id": "9BD53A6E4032BBD35397068B316D6172",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -1161,7 +1158,6 @@
             "linked_to": []
           },
           {
-            "id": "B977A4E64246DC7578B37480457C34A3",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -1179,169 +1175,169 @@
       {
         "from": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "then",
-          "pin_id": "7269742249D29204A7398AAFC1F0A5BA"
+          "node_title": "LightComponent.SetIntensity",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_1",
-          "pin_name": "execute",
-          "pin_id": "D9C2D7C845A704002D8D598A8B67E808"
+          "node_title": "LightComponent.SetIntensity",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_ComponentBoundEvent_3",
-          "pin_name": "then",
-          "pin_id": "73F0611B40633AD5C3C4DD8B5A87F745"
+          "node_title": "CaissonInteract.OnHoverBegin",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_IfThenElse_1",
-          "pin_name": "execute",
-          "pin_id": "D638D86B4E708F0496E5A4A69BEA1B00"
+          "node_title": "K2Node_IfThenElse_1",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_ComponentBoundEvent_5",
-          "pin_name": "then",
-          "pin_id": "C7E469194B365BAE74850E980BD9064F"
+          "node_title": "CaissonInteract.OnHoverEnd",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_IfThenElse_2",
-          "pin_name": "execute",
-          "pin_id": "D638D86B4E708F0496E5A4A69BEA1B00"
+          "node_title": "K2Node_IfThenElse_2",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_ComponentBoundEvent_6",
-          "pin_name": "then",
-          "pin_id": "D07DB4724D0FC495BCEFC5B8E198C811"
+          "node_title": "CaissonInteract.OnInteractClicked",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_VariableSet_0",
-          "pin_name": "execute",
-          "pin_id": "B304B4D0456F21CA3DE565AF0A71F5FA"
+          "node_title": "Set bIsActivated",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_IfThenElse_1",
-          "pin_name": "else",
-          "pin_id": "0A0A85604D62623B02B36D8B82C7434B"
+          "node_title": "K2Node_IfThenElse_1",
+          "pin_name": "else"
         },
         "to": {
           "node": "K2Node_CallFunction_2",
-          "pin_name": "execute",
-          "pin_id": "D9C2D7C845A704002D8D598A8B67E808"
+          "node_title": "LightComponent.SetIntensity",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_IfThenElse_2",
-          "pin_name": "else",
-          "pin_id": "0A0A85604D62623B02B36D8B82C7434B"
+          "node_title": "K2Node_IfThenElse_2",
+          "pin_name": "else"
         },
         "to": {
           "node": "K2Node_CallFunction_3",
-          "pin_name": "execute",
-          "pin_id": "D9C2D7C845A704002D8D598A8B67E808"
+          "node_title": "LightComponent.SetIntensity",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_4",
-          "pin_name": "bIsActivated",
-          "pin_id": "DC5DD74E45E0B4E85A3E74A1A28E0478"
+          "node_title": "Get bIsActivated",
+          "pin_name": "bIsActivated"
         },
         "to": {
           "node": "K2Node_IfThenElse_1",
-          "pin_name": "Condition",
-          "pin_id": "033FE04C41E2107157C8D2A85A212792"
+          "node_title": "K2Node_IfThenElse_1",
+          "pin_name": "Condition"
         },
         "category": "bool"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_5",
-          "pin_name": "HoverLight",
-          "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+          "node_title": "Get HoverLight",
+          "pin_name": "HoverLight"
         },
         "to": {
           "node": "K2Node_CallFunction_2",
-          "pin_name": "self",
-          "pin_id": "DE57F8D74C855E969EA36794D9A597EA"
+          "node_title": "LightComponent.SetIntensity",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_6",
-          "pin_name": "bIsActivated",
-          "pin_id": "DC5DD74E45E0B4E85A3E74A1A28E0478"
+          "node_title": "Get bIsActivated",
+          "pin_name": "bIsActivated"
         },
         "to": {
           "node": "K2Node_IfThenElse_2",
-          "pin_name": "Condition",
-          "pin_id": "033FE04C41E2107157C8D2A85A212792"
+          "node_title": "K2Node_IfThenElse_2",
+          "pin_name": "Condition"
         },
         "category": "bool"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_7",
-          "pin_name": "HoverLight",
-          "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+          "node_title": "Get HoverLight",
+          "pin_name": "HoverLight"
         },
         "to": {
           "node": "K2Node_CallFunction_3",
-          "pin_name": "self",
-          "pin_id": "DE57F8D74C855E969EA36794D9A597EA"
+          "node_title": "LightComponent.SetIntensity",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_8",
-          "pin_name": "HoverLight",
-          "pin_id": "F1B0B67D405C43704D6FF9B267608465"
+          "node_title": "Get HoverLight",
+          "pin_name": "HoverLight"
         },
         "to": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "self",
-          "pin_id": "DE57F8D74C855E969EA36794D9A597EA"
+          "node_title": "LightComponent.SetIntensity",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableGet_9",
-          "pin_name": "ActivatedLight",
-          "pin_id": "50D786F24CCCF3B1858E71A1EF71BAF0"
+          "node_title": "Get ActivatedLight",
+          "pin_name": "ActivatedLight"
         },
         "to": {
           "node": "K2Node_CallFunction_1",
-          "pin_name": "self",
-          "pin_id": "DE57F8D74C855E969EA36794D9A597EA"
+          "node_title": "LightComponent.SetIntensity",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_VariableSet_0",
-          "pin_name": "then",
-          "pin_id": "675F031141D60A82C549339F6CCD9886"
+          "node_title": "Set bIsActivated",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "execute",
-          "pin_id": "D9C2D7C845A704002D8D598A8B67E808"
+          "node_title": "LightComponent.SetIntensity",
+          "pin_name": "execute"
         },
         "category": "exec"
       }
@@ -1392,7 +1388,6 @@
           },
           "pins": [
             {
-              "id": "3AC8C73941DEF8BF3242F8B1D7E730C5",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -1402,12 +1397,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "9123D4F344B7B05BA5582485FEC69685"
+                  "node_title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "05A501EF4742E9A5771D34AC8AFDF129",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1417,7 +1412,6 @@
               "linked_to": []
             },
             {
-              "id": "5E1DE24F48651E0E4EBD3598C137D3B6",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -1427,7 +1421,6 @@
               "linked_to": []
             },
             {
-              "id": "963C48B24F6894E4EADDCB8AFDEDC0F0",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -1446,7 +1439,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "9123D4F344B7B05BA5582485FEC69685"
+                  "node_title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -1470,7 +1464,6 @@
           },
           "pins": [
             {
-              "id": "9123D4F344B7B05BA5582485FEC69685",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1480,7 +1473,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "3AC8C73941DEF8BF3242F8B1D7E730C5"
+                  "node_title": "ExecuteUbergraph_BP_LevelTarget_TiangongTower",
+                  "pin_name": "execute"
                 }
               ]
             }
@@ -1493,13 +1487,13 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "9123D4F344B7B05BA5582485FEC69685"
+            "node_title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "3AC8C73941DEF8BF3242F8B1D7E730C5"
+            "node_title": "ExecuteUbergraph_BP_LevelTarget_TiangongTower",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -1528,7 +1522,6 @@
           },
           "pins": [
             {
-              "id": "2F9D9643407099272046CF8A2FAF8EA5",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -1538,12 +1531,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "41D79EF74EA13A232E09C59CC42EB477"
+                  "node_title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "41DB572641F37343A94C1CB79DC25DEA",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1553,7 +1546,6 @@
               "linked_to": []
             },
             {
-              "id": "748B8C524F0B6D8DFBD06393D1434AC6",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -1563,7 +1555,6 @@
               "linked_to": []
             },
             {
-              "id": "0568DEC042F50B31E728258C4094D378",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -1582,7 +1573,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "41D79EF74EA13A232E09C59CC42EB477"
+                  "node_title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -1606,7 +1598,6 @@
           },
           "pins": [
             {
-              "id": "41D79EF74EA13A232E09C59CC42EB477",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1616,7 +1607,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "2F9D9643407099272046CF8A2FAF8EA5"
+                  "node_title": "ExecuteUbergraph_BP_LevelTarget_TiangongTower",
+                  "pin_name": "execute"
                 }
               ]
             }
@@ -1629,13 +1621,13 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "41D79EF74EA13A232E09C59CC42EB477"
+            "node_title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "2F9D9643407099272046CF8A2FAF8EA5"
+            "node_title": "ExecuteUbergraph_BP_LevelTarget_TiangongTower",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -1664,7 +1656,6 @@
           },
           "pins": [
             {
-              "id": "022486034304D00E12F5748D53F4404E",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -1674,12 +1665,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "8B840F85410BCC43DE024AA64EE467D3"
+                  "node_title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "43495ADA4AF85501D89FB6A5F6375A12",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1689,7 +1680,6 @@
               "linked_to": []
             },
             {
-              "id": "A3D1EC6448250624DACF78BB511A734E",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -1699,7 +1689,6 @@
               "linked_to": []
             },
             {
-              "id": "E2AA49F14A6EDEDB283C0D977B62A99B",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -1718,7 +1707,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "8B840F85410BCC43DE024AA64EE467D3"
+                  "node_title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -1742,7 +1732,6 @@
           },
           "pins": [
             {
-              "id": "8B840F85410BCC43DE024AA64EE467D3",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1752,7 +1741,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "022486034304D00E12F5748D53F4404E"
+                  "node_title": "ExecuteUbergraph_BP_LevelTarget_TiangongTower",
+                  "pin_name": "execute"
                 }
               ]
             }
@@ -1765,13 +1755,13 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "8B840F85410BCC43DE024AA64EE467D3"
+            "node_title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "022486034304D00E12F5748D53F4404E"
+            "node_title": "ExecuteUbergraph_BP_LevelTarget_TiangongTower",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -1799,7 +1789,6 @@
           },
           "pins": [
             {
-              "id": "8BB294FD49EA4BB2975832924937B39A",
               "name": "then",
               "direction": "output",
               "category": "exec",

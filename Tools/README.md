@@ -8,6 +8,8 @@
    - 主脚本
    - 负责把 `Tools/*.T3D` 转成 `Docs/BlueprintExports/*.json`
    - 并进一步生成 `Docs/Blueprints/*.md`
+   - 默认会去掉 `PinId` 一类 opaque ID，优先输出适合 AI/开发阅读的结构化结果
+   - 如需保留这类调试字段，可追加 `--include-opaque-ids`
 2. `ue_export_missing_t3d_unreal.py`
    - 给 UnrealEditor 调用的辅助脚本
    - 用于自动导出缺失的 `.T3D`
@@ -77,6 +79,12 @@ powershell -ExecutionPolicy Bypass -File Docs\generate_blueprint_docs.ps1 --sync
 py Tools\ue_asset_doc_exporter_fixed_v3.py --sync-all-docs
 ```
 
+如果你需要保留调试用的 opaque ID，可追加：
+
+```powershell
+py Tools\ue_asset_doc_exporter_fixed_v3.py --sync-all-docs --include-opaque-ids
+```
+
 ### 3.3 先看会处理哪些文件
 
 增量预览：
@@ -119,6 +127,19 @@ py Tools\ue_asset_doc_exporter_fixed_v3.py Tools\W_Level2.T3D
 
 ```powershell
 py Tools\ue_asset_doc_exporter_fixed_v3.py --generate-md-from-json
+```
+
+### 3.6 调试时保留 opaque ID
+
+适用场景：
+
+1. 需要和 UE 导出文本逐项对照
+2. 需要排查连线解析或 pin 级问题
+
+命令：
+
+```powershell
+py Tools\ue_asset_doc_exporter_fixed_v3.py --sync-pending-docs --include-opaque-ids
 ```
 
 ## 4. 推荐工作流
@@ -188,7 +209,7 @@ Processed: W_Level2.T3D
 
 当前策略是：
 
-1. `json` 保留更完整的结构化数据
+1. `json` 保留更完整的结构化数据，但默认会去掉仅用于内部匹配的 opaque ID
 2. `md` 输出人类可读摘要和关键节点
 
 需要深查时，优先看对应的 `json`。

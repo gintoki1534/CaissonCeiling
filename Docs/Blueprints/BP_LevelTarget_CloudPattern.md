@@ -61,7 +61,7 @@
 1. 执行链：BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature -> ExecuteUbergraph_BP_LevelTarget_CloudPattern
 1. 关键节点：
    - ExecuteUbergraph_BP_LevelTarget_CloudPattern
-     输入：execute <- K2Node_FunctionEntry_0:6E75489E4E2799B50F85848A71AF106B
+     输入：execute <- BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature:then
    - BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature
 
 ### 8.2 BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature
@@ -72,7 +72,7 @@
 1. 执行链：BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature -> ExecuteUbergraph_BP_LevelTarget_CloudPattern
 1. 关键节点：
    - ExecuteUbergraph_BP_LevelTarget_CloudPattern
-     输入：execute <- K2Node_FunctionEntry_0:F028E2CE4BB4EB5FCBEA3CAC05996941
+     输入：execute <- BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature:then
    - BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature
 
 ### 8.3 BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature
@@ -83,7 +83,7 @@
 1. 执行链：BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature -> ExecuteUbergraph_BP_LevelTarget_CloudPattern
 1. 关键节点：
    - ExecuteUbergraph_BP_LevelTarget_CloudPattern
-     输入：execute <- K2Node_FunctionEntry_0:0A66DB45483790FF747CF78C142A9BC7
+     输入：execute <- BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature:then
    - BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature
 
 ### 8.4 UserConstructionScript

@@ -61,7 +61,7 @@
 1. 执行链：BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature -> ExecuteUbergraph_BP_LevelTarget_StarMap
 1. 关键节点：
    - ExecuteUbergraph_BP_LevelTarget_StarMap
-     输入：execute <- K2Node_FunctionEntry_0:4497A62243EB4F1FCF996EB69B1ACF69
+     输入：execute <- BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature:then
    - BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature
 
 ### 8.2 BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature
@@ -72,7 +72,7 @@
 1. 执行链：BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature -> ExecuteUbergraph_BP_LevelTarget_StarMap
 1. 关键节点：
    - ExecuteUbergraph_BP_LevelTarget_StarMap
-     输入：execute <- K2Node_FunctionEntry_0:2D8C9D6E4E7261B72E8B8C9756FA9C1A
+     输入：execute <- BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature:then
    - BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature
 
 ### 8.3 BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature
@@ -83,7 +83,7 @@
 1. 执行链：BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature -> ExecuteUbergraph_BP_LevelTarget_StarMap
 1. 关键节点：
    - ExecuteUbergraph_BP_LevelTarget_StarMap
-     输入：execute <- K2Node_FunctionEntry_0:98C61C5C4B9CF03E09C03A8978030DBC
+     输入：execute <- BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature:then
    - BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature
 
 ### 8.4 UserConstructionScript

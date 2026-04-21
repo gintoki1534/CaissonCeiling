@@ -25,7 +25,6 @@
         },
         "pins": [
           {
-            "id": "E6CB88CB4E0D1A17355D03A36DED9BFA",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -35,12 +34,12 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "18B705A245CFB21090BFD38C3E8624B5"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "056A0473432CE527A3E317B458896825",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -50,12 +49,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "562990F44918583494E8AD90E1705D00"
+                "node_title": "CaissonPlayerController.CloseCaissonWidget",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "94A4457B4D4138F500B86A9485C6A9E2",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -65,12 +64,12 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "697BB42F4930413FA5B5BF8F60AF7E84"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "AsCaisson Player Controller"
               }
             ]
           },
           {
-            "id": "DDFAFD004F06C33B90D77FAAEC63AC0C",
             "name": "bHoverEnabled",
             "direction": "input",
             "category": "bool",
@@ -80,7 +79,6 @@
             "linked_to": []
           },
           {
-            "id": "D26E19B849526FD362F02BAE42E881C2",
             "name": "bClickEnabled",
             "direction": "input",
             "category": "bool",
@@ -99,7 +97,8 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "18B705A245CFB21090BFD38C3E8624B5"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "then"
               }
             ]
           },
@@ -111,7 +110,8 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "697BB42F4930413FA5B5BF8F60AF7E84"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "AsCaisson Player Controller"
               }
             ]
           }
@@ -129,7 +129,6 @@
         },
         "pins": [
           {
-            "id": "41F945CF49CDB517CF779F86D10BDC63",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -139,12 +138,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "9DC85F1F43D28FE60FE2C6A84C445C27"
+                "node_title": "CaissonPlayerController.CloseCaissonWidget",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "DB2323544A25E320BDFB489152423622",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -154,7 +153,6 @@
             "linked_to": []
           },
           {
-            "id": "72956BEB40CEB6F72CA27EA3E7313108",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -164,12 +162,12 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "697BB42F4930413FA5B5BF8F60AF7E84"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "AsCaisson Player Controller"
               }
             ]
           },
           {
-            "id": "4602E43A462861245C2095B537998E09",
             "name": "WidgetClass",
             "direction": "input",
             "category": "class",
@@ -179,7 +177,6 @@
             "linked_to": []
           },
           {
-            "id": "B3FE328F48BCAC4566042BB3BEDBF58D",
             "name": "ReturnValue",
             "direction": "output",
             "category": "object",
@@ -198,7 +195,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "9DC85F1F43D28FE60FE2C6A84C445C27"
+                "node_title": "CaissonPlayerController.CloseCaissonWidget",
+                "pin_name": "then"
               }
             ]
           },
@@ -210,7 +208,8 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "697BB42F4930413FA5B5BF8F60AF7E84"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "AsCaisson Player Controller"
               }
             ]
           },
@@ -232,7 +231,6 @@
         "meta": {},
         "pins": [
           {
-            "id": "1392517344F1ACD5B241768922A5B4D4",
             "name": "self",
             "direction": "output",
             "category": "object",
@@ -242,7 +240,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "7440D94041D57EAB64767EAA0D3F2721"
+                "node_title": "CaissonPlayerController.CloseCaissonWidget",
+                "pin_name": "WidgetToClose"
               }
             ]
           }
@@ -261,7 +260,6 @@
         },
         "pins": [
           {
-            "id": "562990F44918583494E8AD90E1705D00",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -271,12 +269,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_0",
-                "pin_id": "056A0473432CE527A3E317B458896825"
+                "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "9DC85F1F43D28FE60FE2C6A84C445C27",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -286,12 +284,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_5",
-                "pin_id": "41F945CF49CDB517CF779F86D10BDC63"
+                "node_title": "CaissonPlayerController.OpenCaissonWidget",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "B5AA367541FEB1EFBBBF6C82808B455D",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -301,12 +299,12 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "697BB42F4930413FA5B5BF8F60AF7E84"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "AsCaisson Player Controller"
               }
             ]
           },
           {
-            "id": "7440D94041D57EAB64767EAA0D3F2721",
             "name": "WidgetToClose",
             "direction": "input",
             "category": "object",
@@ -316,7 +314,8 @@
             "linked_to": [
               {
                 "node": "K2Node_Self_0",
-                "pin_id": "1392517344F1ACD5B241768922A5B4D4"
+                "node_title": "Self",
+                "pin_name": "self"
               }
             ]
           }
@@ -330,7 +329,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_0",
-                "pin_id": "056A0473432CE527A3E317B458896825"
+                "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+                "pin_name": "then"
               }
             ]
           },
@@ -342,7 +342,8 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "697BB42F4930413FA5B5BF8F60AF7E84"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "AsCaisson Player Controller"
               }
             ]
           },
@@ -354,7 +355,8 @@
             "linked_to": [
               {
                 "node": "K2Node_Self_0",
-                "pin_id": "1392517344F1ACD5B241768922A5B4D4"
+                "node_title": "Self",
+                "pin_name": "self"
               }
             ]
           }
@@ -371,7 +373,6 @@
         },
         "pins": [
           {
-            "id": "3700535A4577E4F5D8882AB3030460E5",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -381,12 +382,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_1",
-                "pin_id": "6ABF0E7546AC35D03D69ABA72236707A"
+                "node_title": "KismetSystemLibrary.PrintText",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "18B705A245CFB21090BFD38C3E8624B5",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -396,12 +397,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_0",
-                "pin_id": "E6CB88CB4E0D1A17355D03A36DED9BFA"
+                "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "B67D5A87449CFBFFB10A669F82199D49",
             "name": "CastFailed",
             "direction": "output",
             "category": "exec",
@@ -411,7 +412,6 @@
             "linked_to": []
           },
           {
-            "id": "B5C851B546282A7470E646A6CB1CF8C9",
             "name": "Object",
             "direction": "input",
             "category": "object",
@@ -421,12 +421,12 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_2",
-                "pin_id": "D4AD6D074C8737B2EEEDE69CCBCE48DB"
+                "node_title": "GameplayStatics.GetPlayerController",
+                "pin_name": "ReturnValue"
               }
             ]
           },
           {
-            "id": "697BB42F4930413FA5B5BF8F60AF7E84",
             "name": "AsCaisson Player Controller",
             "direction": "output",
             "category": "object",
@@ -436,20 +436,22 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_4",
-                "pin_id": "B5AA367541FEB1EFBBBF6C82808B455D"
+                "node_title": "CaissonPlayerController.CloseCaissonWidget",
+                "pin_name": "self"
               },
               {
                 "node": "K2Node_CallFunction_5",
-                "pin_id": "72956BEB40CEB6F72CA27EA3E7313108"
+                "node_title": "CaissonPlayerController.OpenCaissonWidget",
+                "pin_name": "self"
               },
               {
                 "node": "K2Node_CallFunction_0",
-                "pin_id": "94A4457B4D4138F500B86A9485C6A9E2"
+                "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "id": "F73434C943171E612E45EF8401136FBF",
             "name": "bSuccess",
             "direction": "output",
             "category": "bool",
@@ -468,7 +470,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_1",
-                "pin_id": "6ABF0E7546AC35D03D69ABA72236707A"
+                "node_title": "KismetSystemLibrary.PrintText",
+                "pin_name": "then"
               }
             ]
           },
@@ -480,7 +483,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_2",
-                "pin_id": "D4AD6D074C8737B2EEEDE69CCBCE48DB"
+                "node_title": "GameplayStatics.GetPlayerController",
+                "pin_name": "ReturnValue"
               }
             ]
           }
@@ -498,7 +502,6 @@
         },
         "pins": [
           {
-            "id": "D5CF20CE448A362E4A4BB8B47ED14A21",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -508,7 +511,6 @@
             "linked_to": []
           },
           {
-            "id": "BEA4D3434F08F882A21119BAC5F9E2B5",
             "name": "WorldContextObject",
             "direction": "input",
             "category": "object",
@@ -518,7 +520,6 @@
             "linked_to": []
           },
           {
-            "id": "DF9E8669415D6C32AB98A9B8C942B650",
             "name": "PlayerIndex",
             "direction": "input",
             "category": "int",
@@ -528,7 +529,6 @@
             "linked_to": []
           },
           {
-            "id": "D4AD6D074C8737B2EEEDE69CCBCE48DB",
             "name": "ReturnValue",
             "direction": "output",
             "category": "object",
@@ -538,7 +538,8 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "B5C851B546282A7470E646A6CB1CF8C9"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "Object"
               }
             ]
           }
@@ -573,7 +574,6 @@
         },
         "pins": [
           {
-            "id": "FF472F5245CDCD669EC144BEC5E9ACD0",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -583,7 +583,6 @@
             "linked_to": []
           },
           {
-            "id": "B862A4CC48F2A997503F58908067CD4C",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -607,7 +606,6 @@
         },
         "pins": [
           {
-            "id": "C5FB9DE94F3EB06DB3BE40BDCEF8CF19",
             "name": "execute",
             "direction": "input",
             "category": "exec",
@@ -617,12 +615,12 @@
             "linked_to": [
               {
                 "node": "K2Node_ComponentBoundEvent_0",
-                "pin_id": "6EBF79834E0EB5F5CB41B099783B041D"
+                "node_title": "B_StartGame.OnClicked",
+                "pin_name": "then"
               }
             ]
           },
           {
-            "id": "6ABF0E7546AC35D03D69ABA72236707A",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -632,12 +630,12 @@
             "linked_to": [
               {
                 "node": "K2Node_DynamicCast_0",
-                "pin_id": "3700535A4577E4F5D8882AB3030460E5"
+                "node_title": "Cast To CaissonPlayerController",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "id": "C556E96E43616BAC131D97ABF53761CA",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -647,7 +645,6 @@
             "linked_to": []
           },
           {
-            "id": "8FCB5EAC4D6C376A30FEF78E68F72EE7",
             "name": "WorldContextObject",
             "direction": "input",
             "category": "object",
@@ -657,7 +654,6 @@
             "linked_to": []
           },
           {
-            "id": "E6D89CDB4E3A7CBD680A92A86194C9AA",
             "name": "InText",
             "direction": "input",
             "category": "text",
@@ -667,7 +663,6 @@
             "linked_to": []
           },
           {
-            "id": "636C01A74AFEBE3BB94E7CA35A34E5FB",
             "name": "bPrintToScreen",
             "direction": "input",
             "category": "bool",
@@ -677,7 +672,6 @@
             "linked_to": []
           },
           {
-            "id": "8890278E45A839A2611732BFB6A28193",
             "name": "bPrintToLog",
             "direction": "input",
             "category": "bool",
@@ -687,7 +681,6 @@
             "linked_to": []
           },
           {
-            "id": "EDB9730F46F1F76CAE68C3BF9A494099",
             "name": "TextColor",
             "direction": "input",
             "category": "struct",
@@ -697,7 +690,6 @@
             "linked_to": []
           },
           {
-            "id": "8A6F25664B5D1719178C47AF49F29DB7",
             "name": "Duration",
             "direction": "input",
             "category": "real",
@@ -707,7 +699,6 @@
             "linked_to": []
           },
           {
-            "id": "0D2F35D34119483B346BA4AD16AA4C09",
             "name": "Key",
             "direction": "input",
             "category": "name",
@@ -726,7 +717,8 @@
             "linked_to": [
               {
                 "node": "K2Node_ComponentBoundEvent_0",
-                "pin_id": "6EBF79834E0EB5F5CB41B099783B041D"
+                "node_title": "B_StartGame.OnClicked",
+                "pin_name": "then"
               }
             ]
           },
@@ -780,7 +772,6 @@
         },
         "pins": [
           {
-            "id": "0DF9ACEE41831BC1EF165ABEB7C6E677",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -790,7 +781,6 @@
             "linked_to": []
           },
           {
-            "id": "6EBF79834E0EB5F5CB41B099783B041D",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -800,7 +790,8 @@
             "linked_to": [
               {
                 "node": "K2Node_CallFunction_1",
-                "pin_id": "C5FB9DE94F3EB06DB3BE40BDCEF8CF19"
+                "node_title": "KismetSystemLibrary.PrintText",
+                "pin_name": "execute"
               }
             ]
           }
@@ -811,12 +802,13 @@
       {
         "id": "K2Node_VariableGet_0",
         "class": "K2Node_VariableGet",
-        "kind": "K2Node_VariableGet",
-        "title": "K2Node_VariableGet_0",
-        "meta": {},
+        "kind": "variable_get",
+        "title": "Get B_StartGame",
+        "meta": {
+          "variable_name": "B_StartGame"
+        },
         "pins": [
           {
-            "id": "E265479744DABF0C2505FAAC77664C91",
             "name": "B_StartGame",
             "direction": "output",
             "category": "object",
@@ -826,7 +818,6 @@
             "linked_to": []
           },
           {
-            "id": "B5D7D95F4B211AC47EDEC4AA86436A6C",
             "name": "self",
             "direction": "input",
             "category": "object",
@@ -857,7 +848,6 @@
         },
         "pins": [
           {
-            "id": "BD5F30984DECB94C0978618936274166",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -867,7 +857,6 @@
             "linked_to": []
           },
           {
-            "id": "70044A5646B85A73B530CE9838AF6EE3",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -877,7 +866,6 @@
             "linked_to": []
           },
           {
-            "id": "793F7005493EA521266E70B5566DDCEA",
             "name": "MyGeometry",
             "direction": "output",
             "category": "struct",
@@ -887,7 +875,6 @@
             "linked_to": []
           },
           {
-            "id": "4764341B4F398BCF38165D97008D0C1A",
             "name": "InDeltaTime",
             "direction": "output",
             "category": "real",
@@ -910,7 +897,6 @@
         },
         "pins": [
           {
-            "id": "3EBE8070449D6E9C197BDC99A09BB5EB",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -920,7 +906,6 @@
             "linked_to": []
           },
           {
-            "id": "A0144BEE4EFA70DA7F7E37B360259966",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -943,7 +928,6 @@
         },
         "pins": [
           {
-            "id": "DEBFFD2844922BB0DA65A2AC2D2C1DDF",
             "name": "OutputDelegate",
             "direction": "output",
             "category": "delegate",
@@ -953,7 +937,6 @@
             "linked_to": []
           },
           {
-            "id": "6829A8294A0FBF616A23FAB5A11AEB2F",
             "name": "then",
             "direction": "output",
             "category": "exec",
@@ -963,7 +946,6 @@
             "linked_to": []
           },
           {
-            "id": "9B4CDBD64EF84F02532CDD8ED3BBC9AA",
             "name": "IsDesignTime",
             "direction": "output",
             "category": "bool",
@@ -981,130 +963,130 @@
       {
         "from": {
           "node": "K2Node_CallFunction_0",
-          "pin_name": "then",
-          "pin_id": "056A0473432CE527A3E317B458896825"
+          "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "execute",
-          "pin_id": "562990F44918583494E8AD90E1705D00"
+          "node_title": "CaissonPlayerController.CloseCaissonWidget",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_1",
-          "pin_name": "then",
-          "pin_id": "6ABF0E7546AC35D03D69ABA72236707A"
+          "node_title": "KismetSystemLibrary.PrintText",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "execute",
-          "pin_id": "3700535A4577E4F5D8882AB3030460E5"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_2",
-          "pin_name": "ReturnValue",
-          "pin_id": "D4AD6D074C8737B2EEEDE69CCBCE48DB"
+          "node_title": "GameplayStatics.GetPlayerController",
+          "pin_name": "ReturnValue"
         },
         "to": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "Object",
-          "pin_id": "B5C851B546282A7470E646A6CB1CF8C9"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "Object"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "then",
-          "pin_id": "9DC85F1F43D28FE60FE2C6A84C445C27"
+          "node_title": "CaissonPlayerController.CloseCaissonWidget",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_5",
-          "pin_name": "execute",
-          "pin_id": "41F945CF49CDB517CF779F86D10BDC63"
+          "node_title": "CaissonPlayerController.OpenCaissonWidget",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_ComponentBoundEvent_0",
-          "pin_name": "then",
-          "pin_id": "6EBF79834E0EB5F5CB41B099783B041D"
+          "node_title": "B_StartGame.OnClicked",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_1",
-          "pin_name": "execute",
-          "pin_id": "C5FB9DE94F3EB06DB3BE40BDCEF8CF19"
+          "node_title": "KismetSystemLibrary.PrintText",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "AsCaisson Player Controller",
-          "pin_id": "697BB42F4930413FA5B5BF8F60AF7E84"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "AsCaisson Player Controller"
         },
         "to": {
           "node": "K2Node_CallFunction_0",
-          "pin_name": "self",
-          "pin_id": "94A4457B4D4138F500B86A9485C6A9E2"
+          "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "then",
-          "pin_id": "18B705A245CFB21090BFD38C3E8624B5"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "then"
         },
         "to": {
           "node": "K2Node_CallFunction_0",
-          "pin_name": "execute",
-          "pin_id": "E6CB88CB4E0D1A17355D03A36DED9BFA"
+          "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "AsCaisson Player Controller",
-          "pin_id": "697BB42F4930413FA5B5BF8F60AF7E84"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "AsCaisson Player Controller"
         },
         "to": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "self",
-          "pin_id": "B5AA367541FEB1EFBBBF6C82808B455D"
+          "node_title": "CaissonPlayerController.CloseCaissonWidget",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_DynamicCast_0",
-          "pin_name": "AsCaisson Player Controller",
-          "pin_id": "697BB42F4930413FA5B5BF8F60AF7E84"
+          "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "AsCaisson Player Controller"
         },
         "to": {
           "node": "K2Node_CallFunction_5",
-          "pin_name": "self",
-          "pin_id": "72956BEB40CEB6F72CA27EA3E7313108"
+          "node_title": "CaissonPlayerController.OpenCaissonWidget",
+          "pin_name": "self"
         },
         "category": "object"
       },
       {
         "from": {
           "node": "K2Node_Self_0",
-          "pin_name": "self",
-          "pin_id": "1392517344F1ACD5B241768922A5B4D4"
+          "node_title": "Self",
+          "pin_name": "self"
         },
         "to": {
           "node": "K2Node_CallFunction_4",
-          "pin_name": "WidgetToClose",
-          "pin_id": "7440D94041D57EAB64767EAA0D3F2721"
+          "node_title": "CaissonPlayerController.CloseCaissonWidget",
+          "pin_name": "WidgetToClose"
         },
         "category": "object"
       }
@@ -1150,7 +1132,6 @@
           },
           "pins": [
             {
-              "id": "083F3B0940BD4D8DC46B65A4FDD7099C",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -1160,12 +1141,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "1959A24541683A2F05016485F9847056"
+                  "node_title": "BndEvt__MainMenu_B_StartGame_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "AA95F3ED4CE793A59F2255847959E32E",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1175,7 +1156,6 @@
               "linked_to": []
             },
             {
-              "id": "BF15CC5C420685433525C291B8FB0838",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -1185,7 +1165,6 @@
               "linked_to": []
             },
             {
-              "id": "FD1A8EDF4A4208D8303CBA810712D4C4",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -1204,7 +1183,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "1959A24541683A2F05016485F9847056"
+                  "node_title": "BndEvt__MainMenu_B_StartGame_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -1228,7 +1208,6 @@
           },
           "pins": [
             {
-              "id": "1959A24541683A2F05016485F9847056",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1238,7 +1217,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "083F3B0940BD4D8DC46B65A4FDD7099C"
+                  "node_title": "ExecuteUbergraph_W_MainMenu",
+                  "pin_name": "execute"
                 }
               ]
             }
@@ -1251,13 +1231,13 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "1959A24541683A2F05016485F9847056"
+            "node_title": "BndEvt__MainMenu_B_StartGame_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "083F3B0940BD4D8DC46B65A4FDD7099C"
+            "node_title": "ExecuteUbergraph_W_MainMenu",
+            "pin_name": "execute"
           },
           "category": "exec"
         }
@@ -1286,7 +1266,6 @@
           },
           "pins": [
             {
-              "id": "135B7A7B4715CD174079699E09A4376D",
               "name": "execute",
               "direction": "input",
               "category": "exec",
@@ -1296,12 +1275,12 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "54BACA8344C44236528307851DC50145"
+                  "node_title": "BndEvt__MainMenu_B_StartGame_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "id": "40A64D6143C20F4557DBD190207A364D",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1311,7 +1290,6 @@
               "linked_to": []
             },
             {
-              "id": "20235B3541E2C73F8FD07B88196CE3A3",
               "name": "self",
               "direction": "input",
               "category": "object",
@@ -1321,7 +1299,6 @@
               "linked_to": []
             },
             {
-              "id": "358BA18244DDF90675B0218FEA34E147",
               "name": "EntryPoint",
               "direction": "input",
               "category": "int",
@@ -1340,7 +1317,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_FunctionEntry_0",
-                  "pin_id": "54BACA8344C44236528307851DC50145"
+                  "node_title": "BndEvt__MainMenu_B_StartGame_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature",
+                  "pin_name": "then"
                 }
               ]
             },
@@ -1364,7 +1342,6 @@
           },
           "pins": [
             {
-              "id": "54BACA8344C44236528307851DC50145",
               "name": "then",
               "direction": "output",
               "category": "exec",
@@ -1374,7 +1351,8 @@
               "linked_to": [
                 {
                   "node": "K2Node_CallFunction_0",
-                  "pin_id": "135B7A7B4715CD174079699E09A4376D"
+                  "node_title": "ExecuteUbergraph_W_MainMenu",
+                  "pin_name": "execute"
                 }
               ]
             }
@@ -1387,13 +1365,13 @@
         {
           "from": {
             "node": "K2Node_FunctionEntry_0",
-            "pin_name": "then",
-            "pin_id": "54BACA8344C44236528307851DC50145"
+            "node_title": "BndEvt__MainMenu_B_StartGame_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature",
+            "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "pin_name": "execute",
-            "pin_id": "135B7A7B4715CD174079699E09A4376D"
+            "node_title": "ExecuteUbergraph_W_MainMenu",
+            "pin_name": "execute"
           },
           "category": "exec"
         }

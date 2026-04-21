@@ -93,7 +93,7 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 1. 执行链：BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3_Introdection
 1. 关键节点：
    - ExecuteUbergraph_W_Level3_Introdection
-     输入：execute <- K2Node_FunctionEntry_0:22E3EC884349B7D94DF447A31CA1D019
+     输入：execute <- BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature:then
    - BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
 
 ### 8.2 BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
@@ -104,7 +104,7 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 1. 执行链：BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3_Introdection
 1. 关键节点：
    - ExecuteUbergraph_W_Level3_Introdection
-     输入：execute <- K2Node_FunctionEntry_0:91077E5E4181F863F4FC8EAF5293DD70
+     输入：execute <- BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature:then
    - BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 
 ### 8.3 BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
@@ -115,7 +115,7 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 1. 执行链：BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3_Introdection
 1. 关键节点：
    - ExecuteUbergraph_W_Level3_Introdection
-     输入：execute <- K2Node_FunctionEntry_0:0EF8785A44FC31B77EB1EC8CBAC735D6
+     输入：execute <- BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature:then
    - BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
 
 ### 8.4 Construct
@@ -126,7 +126,7 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 1. 执行链：Construct -> ExecuteUbergraph_W_Level3_Introdection
 1. 关键节点：
    - ExecuteUbergraph_W_Level3_Introdection
-     输入：execute <- K2Node_FunctionEntry_0:0B264358477F3CC919BCA0A1B1E3BA40
+     输入：execute <- Construct:then
    - Construct
 
 ## 9. 当前可直接确认的结论
