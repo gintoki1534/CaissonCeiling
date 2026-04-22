@@ -61,7 +61,7 @@ protected:
 	bool HandleLevel2Interaction(UCaissonInteractComponent* InteractComp);
 	bool GetCursorHitResult(FHitResult& OutHitResult) const;
 	void UpdateHoveredInteractable();
-	UCaissonInteractComponent* GetInteractComponentUnderCursor() const;
+	UCaissonInteractComponent* GetInteractComponentUnderCursor(FHitResult* OutHitResult = nullptr) const;
 
 public:
 	UPROPERTY(BlueprintReadOnly, Category="CaissonStep")

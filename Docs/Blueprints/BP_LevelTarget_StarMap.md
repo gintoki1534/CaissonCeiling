@@ -25,18 +25,18 @@
 
 ### 5.1 组件事件
 
-1. CaissonInteract -> OnInteractClicked
-1. CaissonInteract -> OnHoverEnd
 1. CaissonInteract -> OnHoverBegin
+1. CaissonInteract -> OnHoverEnd
+1. CaissonInteract -> OnInteractClicked
 
 ### 5.2 主执行链
 
-1. CaissonInteract.OnInteractClicked -> Set bIsActivated -> LightComponent.SetIntensity -> LightComponent.SetIntensity
-1. CaissonInteract.OnHoverEnd -> K2Node_IfThenElse_2 -> LightComponent.SetIntensity
-1. CaissonInteract.OnHoverBegin -> K2Node_IfThenElse_1 -> LightComponent.SetIntensity
-1. ReceiveTick
-1. ReceiveActorBeginOverlap
 1. ReceiveBeginPlay
+1. ReceiveActorBeginOverlap
+1. ReceiveTick
+1. CaissonInteract.OnHoverBegin
+1. CaissonInteract.OnHoverEnd
+1. CaissonInteract.OnInteractClicked
 
 ## 6. 关键变量
 

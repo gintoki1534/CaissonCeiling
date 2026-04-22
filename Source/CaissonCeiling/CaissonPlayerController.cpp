@@ -8,6 +8,73 @@
 #include "EnhancedInputSubsystems.h"
 #include "Framework/Application/SlateApplication.h"
 
+namespace
+{
+UCaissonInteractComponent* FindInteractComponentOnActorHierarchy(AActor* StartActor)
+{
+	TSet<AActor*> VisitedActors;
+	TArray<AActor*> PendingActors;
+
+	if (StartActor)
+	{
+		PendingActors.Add(StartActor);
+	}
+
+	while (PendingActors.Num() > 0)
+	{
+		AActor* CurrentActor = PendingActors.Pop(EAllowShrinking::No);
+		if (!CurrentActor || VisitedActors.Contains(CurrentActor))
+		{
+			continue;
+		}
+
+		VisitedActors.Add(CurrentActor);
+
+		if (UCaissonInteractComponent* InteractComp = CurrentActor->FindComponentByClass<UCaissonInteractComponent>())
+		{
+			if (InteractComp->bInteractionEnabled)
+			{
+				return InteractComp;
+			}
+		}
+
+		if (AActor* OwnerActor = CurrentActor->GetOwner())
+		{
+			PendingActors.Add(OwnerActor);
+		}
+
+		if (AActor* AttachParentActor = CurrentActor->GetAttachParentActor())
+		{
+			PendingActors.Add(AttachParentActor);
+		}
+
+		if (AActor* ParentActor = CurrentActor->GetParentActor())
+		{
+			PendingActors.Add(ParentActor);
+		}
+	}
+
+	return nullptr;
+}
+
+void ClearHoverTracking(TObjectPtr<UCaissonInteractComponent>& HoveredInteractComponent, bool bClearPersistentTarget)
+{
+	if (!HoveredInteractComponent)
+	{
+		return;
+	}
+
+	HoveredInteractComponent->SetHoverHighlight(false);
+
+	if (bClearPersistentTarget || !HoveredInteractComponent->IsPersistentHighlightEnabled())
+	{
+		HoveredInteractComponent->ClearHighlightTarget();
+	}
+
+	HoveredInteractComponent = nullptr;
+}
+}
+
 ACaissonPlayerController::ACaissonPlayerController()
 {
 	bShowMouseCursor = true;
@@ -110,8 +177,7 @@ void ACaissonPlayerController::ResetLevel2TargetProgress()
 
 	if (CurrentHoveredInteractComponent)
 	{
-		CurrentHoveredInteractComponent->SetHoverHighlight(false);
-		CurrentHoveredInteractComponent = nullptr;
+		ClearHoverTracking(CurrentHoveredInteractComponent, true);
 	}
 
 	OnLevel2TargetProgressChanged.Broadcast(GetFoundLevel2TargetCount(), RequiredLevel2TargetIds.Num());
@@ -129,8 +195,7 @@ void ACaissonPlayerController::SetLevelTargetInteractionEnabled(bool bHoverEnabl
 
 	if (!bEnableLevelTargetHover && CurrentHoveredInteractComponent)
 	{
-		CurrentHoveredInteractComponent->SetHoverHighlight(false);
-		CurrentHoveredInteractComponent = nullptr;
+		ClearHoverTracking(CurrentHoveredInteractComponent, false);
 	}
 }
 
@@ -215,7 +280,8 @@ void ACaissonPlayerController::OnPrimaryInteractPressed()
 		return;
 	}
 
-	UCaissonInteractComponent* InteractComp = GetInteractComponentUnderCursor();
+	FHitResult HitResult;
+	UCaissonInteractComponent* InteractComp = GetInteractComponentUnderCursor(&HitResult);
 	if (!InteractComp || !InteractComp->GetOwner())
 	{
 		FHitResult RawHitResult;
@@ -238,6 +304,7 @@ void ACaissonPlayerController::OnPrimaryInteractPressed()
 		return;
 	}
 
+	InteractComp->SetHighlightTarget(HitResult.GetComponent(), HitResult.GetActor());
 	UE_LOG(LogTemp, Log, TEXT("[交互] 射线命中对象：%s"), *InteractComp->GetOwner()->GetName());
 
 	HandleLevel2Interaction(InteractComp);
@@ -385,8 +452,7 @@ void ACaissonPlayerController::UpdateHoveredInteractable()
 	{
 		if (CurrentHoveredInteractComponent)
 		{
-			CurrentHoveredInteractComponent->SetHoverHighlight(false);
-			CurrentHoveredInteractComponent = nullptr;
+			ClearHoverTracking(CurrentHoveredInteractComponent, false);
 		}
 		return;
 	}
@@ -395,15 +461,19 @@ void ACaissonPlayerController::UpdateHoveredInteractable()
 	{
 		if (CurrentHoveredInteractComponent)
 		{
-			CurrentHoveredInteractComponent->SetHoverHighlight(false);
-			CurrentHoveredInteractComponent = nullptr;
+			ClearHoverTracking(CurrentHoveredInteractComponent, false);
 		}
 		return;
 	}
 
-	UCaissonInteractComponent* NewHoveredInteractComp = GetInteractComponentUnderCursor();
+	FHitResult HitResult;
+	UCaissonInteractComponent* NewHoveredInteractComp = GetInteractComponentUnderCursor(&HitResult);
 	if (CurrentHoveredInteractComponent == NewHoveredInteractComp)
 	{
+		if (CurrentHoveredInteractComponent)
+		{
+			CurrentHoveredInteractComponent->SetHighlightTarget(HitResult.GetComponent(), HitResult.GetActor());
+		}
 		return;
 	}
 
@@ -414,12 +484,17 @@ void ACaissonPlayerController::UpdateHoveredInteractable()
 			UE_LOG(LogTemp, Log, TEXT("[交互调试] 鼠标离开对象：%s"), *CurrentHoveredInteractComponent->GetOwner()->GetName());
 		}
 		CurrentHoveredInteractComponent->SetHoverHighlight(false);
+		if (!CurrentHoveredInteractComponent->IsPersistentHighlightEnabled())
+		{
+			CurrentHoveredInteractComponent->ClearHighlightTarget();
+		}
 	}
 
 	CurrentHoveredInteractComponent = NewHoveredInteractComp;
 
 	if (CurrentHoveredInteractComponent)
 	{
+		CurrentHoveredInteractComponent->SetHighlightTarget(HitResult.GetComponent(), HitResult.GetActor());
 		if (bEnableInteractionDebugLogs && CurrentHoveredInteractComponent->GetOwner())
 		{
 			UE_LOG(LogTemp, Log, TEXT("[交互调试] 鼠标进入对象：%s"), *CurrentHoveredInteractComponent->GetOwner()->GetName());
@@ -433,7 +508,7 @@ bool ACaissonPlayerController::GetCursorHitResult(FHitResult& OutHitResult) cons
 	return GetHitResultUnderCursorByChannel(UEngineTypes::ConvertToTraceType(ECC_Visibility), true, OutHitResult);
 }
 
-UCaissonInteractComponent* ACaissonPlayerController::GetInteractComponentUnderCursor() const
+UCaissonInteractComponent* ACaissonPlayerController::GetInteractComponentUnderCursor(FHitResult* OutHitResult) const
 {
 	FHitResult HitResult;
 	const bool bHit = GetHitResultUnderCursorByChannel(UEngineTypes::ConvertToTraceType(ECC_Visibility), true, HitResult);
@@ -448,13 +523,12 @@ UCaissonInteractComponent* ACaissonPlayerController::GetInteractComponentUnderCu
 		return nullptr;
 	}
 
-	UCaissonInteractComponent* InteractComp = HitActor->FindComponentByClass<UCaissonInteractComponent>();
-	if (!InteractComp || !InteractComp->bInteractionEnabled)
+	if (OutHitResult)
 	{
-		return nullptr;
+		*OutHitResult = HitResult;
 	}
 
-	return InteractComp;
+	return FindInteractComponentOnActorHierarchy(HitActor);
 }
 
 UUserWidget* ACaissonPlayerController::OpenCaissonWidget(TSubclassOf<UUserWidget> WidgetClass)

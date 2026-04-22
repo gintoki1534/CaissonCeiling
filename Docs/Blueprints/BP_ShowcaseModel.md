@@ -25,9 +25,9 @@
 
 ### 5.2 主执行链
 
-1. ReceiveTick
-1. ReceiveActorBeginOverlap
 1. ReceiveBeginPlay
+1. ReceiveActorBeginOverlap
+1. ReceiveTick
 
 ## 6. 关键变量
 
@@ -66,14 +66,14 @@
 1. 连接数：3
 1. 执行链：DeactivateLevel2Presentation -> SetActorHiddenInGame -> SetActorEnableCollision -> SetActorTickEnabled
 1. 关键节点：
-   - SetActorTickEnabled
-     输入：execute <- SetActorEnableCollision:then
-   - SetActorEnableCollision
-     输入：execute <- SetActorHiddenInGame:then
+   - DeactivateLevel2Presentation
    - SetActorHiddenInGame
      输入：execute <- DeactivateLevel2Presentation:then
      输入：bNewHidden = true
-   - DeactivateLevel2Presentation
+   - SetActorEnableCollision
+     输入：execute <- SetActorHiddenInGame:then
+   - SetActorTickEnabled
+     输入：execute <- SetActorEnableCollision:then
 
 ### 8.2 FocusTargetById
 

@@ -11,1061 +11,16 @@
   "event_graph": {
     "name": "EventGraph",
     "schema": "BlueprintGraph.EdGraphSchema_K2",
-    "module_count": 19,
-    "connection_count": 13,
+    "module_count": 6,
+    "connection_count": 0,
     "modules": [
       {
-        "id": "K2Node_VariableGet_9",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get ActivatedLight",
-        "meta": {
-          "variable_name": "ActivatedLight"
-        },
-        "pins": [
-          {
-            "name": "ActivatedLight",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_1",
-                "node_title": "LightComponent.SetIntensity",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_VariableGet_9'"
-      },
-      {
-        "id": "K2Node_CallFunction_1",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "LightComponent.SetIntensity",
-        "meta": {
-          "function_name": "SetIntensity",
-          "function_owner": "LightComponent"
-        },
-        "pins": [
-          {
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_4",
-                "node_title": "LightComponent.SetIntensity",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_9",
-                "node_title": "Get ActivatedLight",
-                "pin_name": "ActivatedLight"
-              }
-            ]
-          },
-          {
-            "name": "NewIntensity",
-            "direction": "input",
-            "category": "real",
-            "subcategory": "float",
-            "default_value": "4000.000000",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_4",
-                "node_title": "LightComponent.SetIntensity",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_9",
-                "node_title": "Get ActivatedLight",
-                "pin_name": "ActivatedLight"
-              }
-            ]
-          },
-          {
-            "name": "NewIntensity",
-            "category": "real",
-            "default_value": "4000.000000",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_CallFunction_1'"
-      },
-      {
-        "id": "K2Node_VariableSet_0",
-        "class": "K2Node_VariableSet",
-        "kind": "variable_set",
-        "title": "Set bIsActivated",
-        "meta": {
-          "variable_name": "bIsActivated"
-        },
-        "pins": [
-          {
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_ComponentBoundEvent_6",
-                "node_title": "CaissonInteract.OnInteractClicked",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_4",
-                "node_title": "LightComponent.SetIntensity",
-                "pin_name": "execute"
-              }
-            ]
-          },
-          {
-            "name": "bIsActivated",
-            "direction": "input",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "true",
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "Output_Get",
-            "direction": "output",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "false",
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_ComponentBoundEvent_6",
-                "node_title": "CaissonInteract.OnInteractClicked",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "bIsActivated",
-            "category": "bool",
-            "default_value": "true",
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_VariableSet_0'"
-      },
-      {
-        "id": "K2Node_CallFunction_4",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "LightComponent.SetIntensity",
-        "meta": {
-          "function_name": "SetIntensity",
-          "function_owner": "LightComponent"
-        },
-        "pins": [
-          {
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_0",
-                "node_title": "Set bIsActivated",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_1",
-                "node_title": "LightComponent.SetIntensity",
-                "pin_name": "execute"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_8",
-                "node_title": "Get HoverLight",
-                "pin_name": "HoverLight"
-              }
-            ]
-          },
-          {
-            "name": "NewIntensity",
-            "direction": "input",
-            "category": "real",
-            "subcategory": "float",
-            "default_value": "0.0",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_0",
-                "node_title": "Set bIsActivated",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_8",
-                "node_title": "Get HoverLight",
-                "pin_name": "HoverLight"
-              }
-            ]
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_CallFunction_4'"
-      },
-      {
-        "id": "K2Node_VariableGet_8",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get HoverLight",
-        "meta": {
-          "variable_name": "HoverLight"
-        },
-        "pins": [
-          {
-            "name": "HoverLight",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_4",
-                "node_title": "LightComponent.SetIntensity",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_VariableGet_8'"
-      },
-      {
-        "id": "K2Node_ComponentBoundEvent_6",
-        "class": "K2Node_ComponentBoundEvent",
-        "kind": "component_bound_event",
-        "title": "CaissonInteract.OnInteractClicked",
-        "meta": {
-          "component": "CaissonInteract",
-          "delegate_property": "OnInteractClicked",
-          "custom_function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature"
-        },
-        "pins": [
-          {
-            "name": "OutputDelegate",
-            "direction": "output",
-            "category": "delegate",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_0",
-                "node_title": "Set bIsActivated",
-                "pin_name": "execute"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_ComponentBoundEvent_6'"
-      },
-      {
-        "id": "K2Node_CallFunction_3",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "LightComponent.SetIntensity",
-        "meta": {
-          "function_name": "SetIntensity",
-          "function_owner": "LightComponent"
-        },
-        "pins": [
-          {
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_2",
-                "node_title": "K2Node_IfThenElse_2",
-                "pin_name": "else"
-              }
-            ]
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_7",
-                "node_title": "Get HoverLight",
-                "pin_name": "HoverLight"
-              }
-            ]
-          },
-          {
-            "name": "NewIntensity",
-            "direction": "input",
-            "category": "real",
-            "subcategory": "float",
-            "default_value": "0.0",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_2",
-                "node_title": "K2Node_IfThenElse_2",
-                "pin_name": "else"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_7",
-                "node_title": "Get HoverLight",
-                "pin_name": "HoverLight"
-              }
-            ]
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_CallFunction_3'"
-      },
-      {
-        "id": "K2Node_VariableGet_7",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get HoverLight",
-        "meta": {
-          "variable_name": "HoverLight"
-        },
-        "pins": [
-          {
-            "name": "HoverLight",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_3",
-                "node_title": "LightComponent.SetIntensity",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_VariableGet_7'"
-      },
-      {
-        "id": "K2Node_IfThenElse_2",
-        "class": "K2Node_IfThenElse",
-        "kind": "K2Node_IfThenElse",
-        "title": "K2Node_IfThenElse_2",
-        "meta": {},
-        "pins": [
-          {
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_ComponentBoundEvent_5",
-                "node_title": "CaissonInteract.OnHoverEnd",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "Condition",
-            "direction": "input",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "true",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_6",
-                "node_title": "Get bIsActivated",
-                "pin_name": "bIsActivated"
-              }
-            ]
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "else",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_3",
-                "node_title": "LightComponent.SetIntensity",
-                "pin_name": "execute"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_ComponentBoundEvent_5",
-                "node_title": "CaissonInteract.OnHoverEnd",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "Condition",
-            "category": "bool",
-            "default_value": "true",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_6",
-                "node_title": "Get bIsActivated",
-                "pin_name": "bIsActivated"
-              }
-            ]
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_IfThenElse'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_IfThenElse_2'"
-      },
-      {
-        "id": "K2Node_VariableGet_6",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get bIsActivated",
-        "meta": {
-          "variable_name": "bIsActivated"
-        },
-        "pins": [
-          {
-            "name": "bIsActivated",
-            "direction": "output",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "false",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_2",
-                "node_title": "K2Node_IfThenElse_2",
-                "pin_name": "Condition"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_VariableGet_6'"
-      },
-      {
-        "id": "K2Node_ComponentBoundEvent_5",
-        "class": "K2Node_ComponentBoundEvent",
-        "kind": "component_bound_event",
-        "title": "CaissonInteract.OnHoverEnd",
-        "meta": {
-          "component": "CaissonInteract",
-          "delegate_property": "OnHoverEnd",
-          "custom_function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature"
-        },
-        "pins": [
-          {
-            "name": "OutputDelegate",
-            "direction": "output",
-            "category": "delegate",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_2",
-                "node_title": "K2Node_IfThenElse_2",
-                "pin_name": "execute"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_ComponentBoundEvent_5'"
-      },
-      {
-        "id": "K2Node_VariableGet_5",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get HoverLight",
-        "meta": {
-          "variable_name": "HoverLight"
-        },
-        "pins": [
-          {
-            "name": "HoverLight",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_2",
-                "node_title": "LightComponent.SetIntensity",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_VariableGet_5'"
-      },
-      {
-        "id": "K2Node_CallFunction_2",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "LightComponent.SetIntensity",
-        "meta": {
-          "function_name": "SetIntensity",
-          "function_owner": "LightComponent"
-        },
-        "pins": [
-          {
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_1",
-                "node_title": "K2Node_IfThenElse_1",
-                "pin_name": "else"
-              }
-            ]
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_5",
-                "node_title": "Get HoverLight",
-                "pin_name": "HoverLight"
-              }
-            ]
-          },
-          {
-            "name": "NewIntensity",
-            "direction": "input",
-            "category": "real",
-            "subcategory": "float",
-            "default_value": "2000.000000",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_1",
-                "node_title": "K2Node_IfThenElse_1",
-                "pin_name": "else"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_5",
-                "node_title": "Get HoverLight",
-                "pin_name": "HoverLight"
-              }
-            ]
-          },
-          {
-            "name": "NewIntensity",
-            "category": "real",
-            "default_value": "2000.000000",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_CallFunction_2'"
-      },
-      {
-        "id": "K2Node_VariableGet_4",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get bIsActivated",
-        "meta": {
-          "variable_name": "bIsActivated"
-        },
-        "pins": [
-          {
-            "name": "bIsActivated",
-            "direction": "output",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "false",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_1",
-                "node_title": "K2Node_IfThenElse_1",
-                "pin_name": "Condition"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_VariableGet_4'"
-      },
-      {
-        "id": "K2Node_IfThenElse_1",
-        "class": "K2Node_IfThenElse",
-        "kind": "K2Node_IfThenElse",
-        "title": "K2Node_IfThenElse_1",
-        "meta": {},
-        "pins": [
-          {
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_ComponentBoundEvent_3",
-                "node_title": "CaissonInteract.OnHoverBegin",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "Condition",
-            "direction": "input",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "true",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_4",
-                "node_title": "Get bIsActivated",
-                "pin_name": "bIsActivated"
-              }
-            ]
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "else",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_2",
-                "node_title": "LightComponent.SetIntensity",
-                "pin_name": "execute"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_ComponentBoundEvent_3",
-                "node_title": "CaissonInteract.OnHoverBegin",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "Condition",
-            "category": "bool",
-            "default_value": "true",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_4",
-                "node_title": "Get bIsActivated",
-                "pin_name": "bIsActivated"
-              }
-            ]
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_IfThenElse'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_IfThenElse_1'"
-      },
-      {
-        "id": "K2Node_ComponentBoundEvent_3",
-        "class": "K2Node_ComponentBoundEvent",
-        "kind": "component_bound_event",
-        "title": "CaissonInteract.OnHoverBegin",
-        "meta": {
-          "component": "CaissonInteract",
-          "delegate_property": "OnHoverBegin",
-          "custom_function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature"
-        },
-        "pins": [
-          {
-            "name": "OutputDelegate",
-            "direction": "output",
-            "category": "delegate",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_1",
-                "node_title": "K2Node_IfThenElse_1",
-                "pin_name": "execute"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_ComponentBoundEvent_3'"
-      },
-      {
-        "id": "K2Node_Event_2",
+        "id": "K2Node_Event_0",
         "class": "K2Node_Event",
         "kind": "event",
-        "title": "ReceiveTick",
+        "title": "ReceiveBeginPlay",
         "meta": {
-          "event_name": "ReceiveTick"
+          "event_name": "ReceiveBeginPlay"
         },
         "pins": [
           {
@@ -1085,19 +40,10 @@
             "default_value": null,
             "default_object": null,
             "linked_to": []
-          },
-          {
-            "name": "DeltaSeconds",
-            "direction": "output",
-            "category": "real",
-            "subcategory": "float",
-            "default_value": "0.0",
-            "default_object": null,
-            "linked_to": []
           }
         ],
         "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_Event_2'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_Event_0'"
       },
       {
         "id": "K2Node_Event_1",
@@ -1140,12 +86,54 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_Event_1'"
       },
       {
-        "id": "K2Node_Event_0",
+        "id": "K2Node_Event_2",
         "class": "K2Node_Event",
         "kind": "event",
-        "title": "ReceiveBeginPlay",
+        "title": "ReceiveTick",
         "meta": {
-          "event_name": "ReceiveBeginPlay"
+          "event_name": "ReceiveTick"
+        },
+        "pins": [
+          {
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "DeltaSeconds",
+            "direction": "output",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_Event_2'"
+      },
+      {
+        "id": "K2Node_ComponentBoundEvent_3",
+        "class": "K2Node_ComponentBoundEvent",
+        "kind": "component_bound_event",
+        "title": "CaissonInteract.OnHoverBegin",
+        "meta": {
+          "component": "CaissonInteract",
+          "delegate_property": "OnHoverBegin",
+          "custom_function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature"
         },
         "pins": [
           {
@@ -1168,205 +156,94 @@
           }
         ],
         "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_Event_0'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_ComponentBoundEvent_3'"
+      },
+      {
+        "id": "K2Node_ComponentBoundEvent_5",
+        "class": "K2Node_ComponentBoundEvent",
+        "kind": "component_bound_event",
+        "title": "CaissonInteract.OnHoverEnd",
+        "meta": {
+          "component": "CaissonInteract",
+          "delegate_property": "OnHoverEnd",
+          "custom_function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature"
+        },
+        "pins": [
+          {
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_ComponentBoundEvent_5'"
+      },
+      {
+        "id": "K2Node_ComponentBoundEvent_6",
+        "class": "K2Node_ComponentBoundEvent",
+        "kind": "component_bound_event",
+        "title": "CaissonInteract.OnInteractClicked",
+        "meta": {
+          "component": "CaissonInteract",
+          "delegate_property": "OnInteractClicked",
+          "custom_function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature"
+        },
+        "pins": [
+          {
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:EventGraph.K2Node_ComponentBoundEvent_6'"
       }
     ],
-    "connections": [
-      {
-        "from": {
-          "node": "K2Node_CallFunction_4",
-          "node_title": "LightComponent.SetIntensity",
-          "pin_name": "then"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_1",
-          "node_title": "LightComponent.SetIntensity",
-          "pin_name": "execute"
-        },
-        "category": "exec"
-      },
-      {
-        "from": {
-          "node": "K2Node_ComponentBoundEvent_3",
-          "node_title": "CaissonInteract.OnHoverBegin",
-          "pin_name": "then"
-        },
-        "to": {
-          "node": "K2Node_IfThenElse_1",
-          "node_title": "K2Node_IfThenElse_1",
-          "pin_name": "execute"
-        },
-        "category": "exec"
-      },
-      {
-        "from": {
-          "node": "K2Node_ComponentBoundEvent_5",
-          "node_title": "CaissonInteract.OnHoverEnd",
-          "pin_name": "then"
-        },
-        "to": {
-          "node": "K2Node_IfThenElse_2",
-          "node_title": "K2Node_IfThenElse_2",
-          "pin_name": "execute"
-        },
-        "category": "exec"
-      },
-      {
-        "from": {
-          "node": "K2Node_ComponentBoundEvent_6",
-          "node_title": "CaissonInteract.OnInteractClicked",
-          "pin_name": "then"
-        },
-        "to": {
-          "node": "K2Node_VariableSet_0",
-          "node_title": "Set bIsActivated",
-          "pin_name": "execute"
-        },
-        "category": "exec"
-      },
-      {
-        "from": {
-          "node": "K2Node_IfThenElse_1",
-          "node_title": "K2Node_IfThenElse_1",
-          "pin_name": "else"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_2",
-          "node_title": "LightComponent.SetIntensity",
-          "pin_name": "execute"
-        },
-        "category": "exec"
-      },
-      {
-        "from": {
-          "node": "K2Node_IfThenElse_2",
-          "node_title": "K2Node_IfThenElse_2",
-          "pin_name": "else"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_3",
-          "node_title": "LightComponent.SetIntensity",
-          "pin_name": "execute"
-        },
-        "category": "exec"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_4",
-          "node_title": "Get bIsActivated",
-          "pin_name": "bIsActivated"
-        },
-        "to": {
-          "node": "K2Node_IfThenElse_1",
-          "node_title": "K2Node_IfThenElse_1",
-          "pin_name": "Condition"
-        },
-        "category": "bool"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_5",
-          "node_title": "Get HoverLight",
-          "pin_name": "HoverLight"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_2",
-          "node_title": "LightComponent.SetIntensity",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_6",
-          "node_title": "Get bIsActivated",
-          "pin_name": "bIsActivated"
-        },
-        "to": {
-          "node": "K2Node_IfThenElse_2",
-          "node_title": "K2Node_IfThenElse_2",
-          "pin_name": "Condition"
-        },
-        "category": "bool"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_7",
-          "node_title": "Get HoverLight",
-          "pin_name": "HoverLight"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_3",
-          "node_title": "LightComponent.SetIntensity",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_8",
-          "node_title": "Get HoverLight",
-          "pin_name": "HoverLight"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_4",
-          "node_title": "LightComponent.SetIntensity",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_9",
-          "node_title": "Get ActivatedLight",
-          "pin_name": "ActivatedLight"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_1",
-          "node_title": "LightComponent.SetIntensity",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableSet_0",
-          "node_title": "Set bIsActivated",
-          "pin_name": "then"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_4",
-          "node_title": "LightComponent.SetIntensity",
-          "pin_name": "execute"
-        },
-        "category": "exec"
-      }
-    ],
+    "connections": [],
     "exec_traces": [
       [
-        "CaissonInteract.OnInteractClicked",
-        "Set bIsActivated",
-        "LightComponent.SetIntensity",
-        "LightComponent.SetIntensity"
-      ],
-      [
-        "CaissonInteract.OnHoverEnd",
-        "K2Node_IfThenElse_2",
-        "LightComponent.SetIntensity"
-      ],
-      [
-        "CaissonInteract.OnHoverBegin",
-        "K2Node_IfThenElse_1",
-        "LightComponent.SetIntensity"
-      ],
-      [
-        "ReceiveTick"
+        "ReceiveBeginPlay"
       ],
       [
         "ReceiveActorBeginOverlap"
       ],
       [
-        "ReceiveBeginPlay"
+        "ReceiveTick"
+      ],
+      [
+        "CaissonInteract.OnHoverBegin"
+      ],
+      [
+        "CaissonInteract.OnHoverEnd"
+      ],
+      [
+        "CaissonInteract.OnInteractClicked"
       ]
     ]
   },
@@ -1838,14 +715,14 @@
   "doc_view": {
     "blueprint_name": "BP_LevelTarget_CloudPattern",
     "blueprint_class": "Blueprint",
-    "module_count": 19,
-    "connection_count": 13,
+    "module_count": 6,
+    "connection_count": 0,
     "component_events": [
       {
-        "title": "CaissonInteract.OnInteractClicked",
-        "id": "K2Node_ComponentBoundEvent_6",
+        "title": "CaissonInteract.OnHoverBegin",
+        "id": "K2Node_ComponentBoundEvent_3",
         "component": "CaissonInteract",
-        "delegate_property": "OnInteractClicked"
+        "delegate_property": "OnHoverBegin"
       },
       {
         "title": "CaissonInteract.OnHoverEnd",
@@ -1854,37 +731,30 @@
         "delegate_property": "OnHoverEnd"
       },
       {
-        "title": "CaissonInteract.OnHoverBegin",
-        "id": "K2Node_ComponentBoundEvent_3",
+        "title": "CaissonInteract.OnInteractClicked",
+        "id": "K2Node_ComponentBoundEvent_6",
         "component": "CaissonInteract",
-        "delegate_property": "OnHoverBegin"
+        "delegate_property": "OnInteractClicked"
       }
     ],
     "exec_traces": [
       [
-        "CaissonInteract.OnInteractClicked",
-        "Set bIsActivated",
-        "LightComponent.SetIntensity",
-        "LightComponent.SetIntensity"
-      ],
-      [
-        "CaissonInteract.OnHoverEnd",
-        "K2Node_IfThenElse_2",
-        "LightComponent.SetIntensity"
-      ],
-      [
-        "CaissonInteract.OnHoverBegin",
-        "K2Node_IfThenElse_1",
-        "LightComponent.SetIntensity"
-      ],
-      [
-        "ReceiveTick"
+        "ReceiveBeginPlay"
       ],
       [
         "ReceiveActorBeginOverlap"
       ],
       [
-        "ReceiveBeginPlay"
+        "ReceiveTick"
+      ],
+      [
+        "CaissonInteract.OnHoverBegin"
+      ],
+      [
+        "CaissonInteract.OnHoverEnd"
+      ],
+      [
+        "CaissonInteract.OnInteractClicked"
       ]
     ],
     "widget_outline": [],

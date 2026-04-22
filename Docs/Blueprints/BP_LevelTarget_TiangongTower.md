@@ -25,18 +25,18 @@
 
 ### 5.1 组件事件
 
-1. CaissonInteract -> OnInteractClicked
-1. CaissonInteract -> OnHoverEnd
 1. CaissonInteract -> OnHoverBegin
+1. CaissonInteract -> OnHoverEnd
+1. CaissonInteract -> OnInteractClicked
 
 ### 5.2 主执行链
 
-1. CaissonInteract.OnInteractClicked -> Set bIsActivated -> LightComponent.SetIntensity -> LightComponent.SetIntensity
-1. CaissonInteract.OnHoverEnd -> K2Node_IfThenElse_2 -> LightComponent.SetIntensity
-1. CaissonInteract.OnHoverBegin -> K2Node_IfThenElse_1 -> LightComponent.SetIntensity
-1. ReceiveTick
-1. ReceiveActorBeginOverlap
 1. ReceiveBeginPlay
+1. ReceiveActorBeginOverlap
+1. ReceiveTick
+1. CaissonInteract.OnHoverBegin
+1. CaissonInteract.OnHoverEnd
+1. CaissonInteract.OnInteractClicked
 
 ## 6. 关键变量
 
@@ -60,9 +60,9 @@
 1. 连接数：1
 1. 执行链：BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature -> ExecuteUbergraph_BP_LevelTarget_TiangongTower
 1. 关键节点：
+   - BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature
    - ExecuteUbergraph_BP_LevelTarget_TiangongTower
      输入：execute <- BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature:then
-   - BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature
 
 ### 8.2 BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature
 
@@ -71,9 +71,9 @@
 1. 连接数：1
 1. 执行链：BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature -> ExecuteUbergraph_BP_LevelTarget_TiangongTower
 1. 关键节点：
+   - BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature
    - ExecuteUbergraph_BP_LevelTarget_TiangongTower
      输入：execute <- BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature:then
-   - BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature
 
 ### 8.3 BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature
 
@@ -82,9 +82,9 @@
 1. 连接数：1
 1. 执行链：BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature -> ExecuteUbergraph_BP_LevelTarget_TiangongTower
 1. 关键节点：
+   - BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature
    - ExecuteUbergraph_BP_LevelTarget_TiangongTower
      输入：execute <- BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature:then
-   - BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature
 
 ### 8.4 UserConstructionScript
 
