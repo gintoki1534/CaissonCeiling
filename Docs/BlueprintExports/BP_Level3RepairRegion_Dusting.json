@@ -15,12 +15,13 @@
     "connection_count": 0,
     "modules": [
       {
-        "id": "K2Node_Event_2",
+        "id": "K2Node_Event_0",
         "class": "K2Node_Event",
         "kind": "event",
-        "title": "ReceiveTick",
+        "title": "ReceiveBeginPlay",
         "meta": {
-          "event_name": "ReceiveTick"
+          "event_name": "ReceiveBeginPlay",
+          "enabled_state": "Disabled"
         },
         "pins": [
           {
@@ -40,19 +41,10 @@
             "default_value": null,
             "default_object": null,
             "linked_to": []
-          },
-          {
-            "name": "DeltaSeconds",
-            "direction": "output",
-            "category": "real",
-            "subcategory": "float",
-            "default_value": "0.0",
-            "default_object": null,
-            "linked_to": []
           }
         ],
         "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_Level3RepairRegion_Dusting.BP_Level3RepairRegion_Dusting:EventGraph.K2Node_Event_2'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_Level3RepairRegion_Dusting.BP_Level3RepairRegion_Dusting:EventGraph.K2Node_Event_0'"
       },
       {
         "id": "K2Node_Event_1",
@@ -60,7 +52,8 @@
         "kind": "event",
         "title": "ReceiveActorBeginOverlap",
         "meta": {
-          "event_name": "ReceiveActorBeginOverlap"
+          "event_name": "ReceiveActorBeginOverlap",
+          "enabled_state": "Disabled"
         },
         "pins": [
           {
@@ -95,12 +88,13 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_Level3RepairRegion_Dusting.BP_Level3RepairRegion_Dusting:EventGraph.K2Node_Event_1'"
       },
       {
-        "id": "K2Node_Event_0",
+        "id": "K2Node_Event_2",
         "class": "K2Node_Event",
         "kind": "event",
-        "title": "ReceiveBeginPlay",
+        "title": "ReceiveTick",
         "meta": {
-          "event_name": "ReceiveBeginPlay"
+          "event_name": "ReceiveTick",
+          "enabled_state": "Disabled"
         },
         "pins": [
           {
@@ -120,26 +114,208 @@
             "default_value": null,
             "default_object": null,
             "linked_to": []
+          },
+          {
+            "name": "DeltaSeconds",
+            "direction": "output",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": []
           }
         ],
         "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_Level3RepairRegion_Dusting.BP_Level3RepairRegion_Dusting:EventGraph.K2Node_Event_0'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_Level3RepairRegion_Dusting.BP_Level3RepairRegion_Dusting:EventGraph.K2Node_Event_2'"
       }
     ],
     "connections": [],
-    "exec_traces": [
-      [
-        "ReceiveTick"
-      ],
-      [
-        "ReceiveActorBeginOverlap"
-      ],
-      [
-        "ReceiveBeginPlay"
-      ]
-    ]
+    "exec_traces": []
   },
   "other_graphs": [
+    {
+      "name": "GetRepairMeshComponent",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 3,
+      "connection_count": 2,
+      "modules": [
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "GetRepairMeshComponent",
+          "meta": {
+            "function_name": "GetRepairMeshComponent"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionResult_0",
+                  "node_title": "K2Node_FunctionResult_0",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/BP_Level3RepairRegion_Dusting.BP_Level3RepairRegion_Dusting:GetRepairMeshComponent.K2Node_FunctionEntry_0'"
+        },
+        {
+          "id": "K2Node_FunctionResult_0",
+          "class": "K2Node_FunctionResult",
+          "kind": "K2Node_FunctionResult",
+          "title": "K2Node_FunctionResult_0",
+          "meta": {},
+          "pins": [
+            {
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "node_title": "GetRepairMeshComponent",
+                  "pin_name": "then"
+                }
+              ]
+            },
+            {
+              "name": "RepairMesh",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_VariableGet_0",
+                  "node_title": "Get SM_RepairMesh",
+                  "pin_name": "SM_RepairMesh"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "node_title": "GetRepairMeshComponent",
+                  "pin_name": "then"
+                }
+              ]
+            },
+            {
+              "name": "RepairMesh",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_VariableGet_0",
+                  "node_title": "Get SM_RepairMesh",
+                  "pin_name": "SM_RepairMesh"
+                }
+              ]
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionResult'/Game/UI/BP_Level3RepairRegion_Dusting.BP_Level3RepairRegion_Dusting:GetRepairMeshComponent.K2Node_FunctionResult_0'"
+        },
+        {
+          "id": "K2Node_VariableGet_0",
+          "class": "K2Node_VariableGet",
+          "kind": "variable_get",
+          "title": "Get SM_RepairMesh",
+          "meta": {
+            "variable_name": "SM_RepairMesh"
+          },
+          "pins": [
+            {
+              "name": "SM_RepairMesh",
+              "direction": "output",
+              "category": "object",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionResult_0",
+                  "node_title": "K2Node_FunctionResult_0",
+                  "pin_name": "RepairMesh"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_Level3RepairRegion_Dusting.BP_Level3RepairRegion_Dusting:GetRepairMeshComponent.K2Node_VariableGet_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "node_title": "GetRepairMeshComponent",
+            "pin_name": "then"
+          },
+          "to": {
+            "node": "K2Node_FunctionResult_0",
+            "node_title": "K2Node_FunctionResult_0",
+            "pin_name": "execute"
+          },
+          "category": "exec"
+        },
+        {
+          "from": {
+            "node": "K2Node_VariableGet_0",
+            "node_title": "Get SM_RepairMesh",
+            "pin_name": "SM_RepairMesh"
+          },
+          "to": {
+            "node": "K2Node_FunctionResult_0",
+            "node_title": "K2Node_FunctionResult_0",
+            "pin_name": "RepairMesh"
+          },
+          "category": "object"
+        }
+      ],
+      "exec_traces": [
+        [
+          "GetRepairMeshComponent",
+          "K2Node_FunctionResult_0"
+        ]
+      ]
+    },
     {
       "name": "UserConstructionScript",
       "schema": "BlueprintGraph.EdGraphSchema_K2",
@@ -194,17 +370,7 @@
     "module_count": 3,
     "connection_count": 0,
     "component_events": [],
-    "exec_traces": [
-      [
-        "ReceiveTick"
-      ],
-      [
-        "ReceiveActorBeginOverlap"
-      ],
-      [
-        "ReceiveBeginPlay"
-      ]
-    ],
+    "exec_traces": [],
     "widget_outline": [],
     "notices": [
       "This export is built from full asset text, so it includes EventGraph, other detailed graphs, member variables, and generated variables that are serialized into the asset.",

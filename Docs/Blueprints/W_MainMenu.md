@@ -41,9 +41,6 @@ B_StartGame [Button] | parent=VerticalBox_0 | children=无
 
 1. B_StartGame.OnReleased
 1. B_StartGame.OnClicked -> KismetSystemLibrary.PrintText -> Cast To CaissonPlayerController -> CaissonPlayerController.SetLevelTargetInteractionEnabled -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
-1. Tick
-1. Construct
-1. PreConstruct
 
 ## 6. 关键变量
 

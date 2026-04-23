@@ -25,9 +25,14 @@
 
 ### 5.2 主执行链
 
-1. ReceiveBeginPlay
-1. ReceiveActorBeginOverlap
-1. ReceiveTick
+1. FocusTargetById -> Set bReturningToDefault -> Set StartRot -> Set StartLoc -> K2Node_IfThenElse_0 -> K2Node_IfThenElse_2 -> K2Node_IfThenElse_1 -> Set TargetLoc -> Set TargetRot -> K2Node_Timeline_1 -> SceneComponent.K2_SetWorldLocation -> SceneComponent.K2_SetWorldRotation
+1. FocusTargetById -> Set bReturningToDefault -> Set StartRot -> Set StartLoc -> K2Node_IfThenElse_0 -> K2Node_IfThenElse_2 -> K2Node_IfThenElse_1 -> Set TargetLoc -> Set TargetRot -> K2Node_Timeline_1 -> K2Node_IfThenElse_3 -> K2Node_CallDelegate_0
+1. FocusTargetById -> Set bReturningToDefault -> Set StartRot -> Set StartLoc -> K2Node_IfThenElse_0 -> K2Node_IfThenElse_2 -> Set TargetLoc -> Set TargetRot -> K2Node_Timeline_1 -> SceneComponent.K2_SetWorldLocation -> SceneComponent.K2_SetWorldRotation
+1. FocusTargetById -> Set bReturningToDefault -> Set StartRot -> Set StartLoc -> K2Node_IfThenElse_0 -> K2Node_IfThenElse_2 -> Set TargetLoc -> Set TargetRot -> K2Node_Timeline_1 -> K2Node_IfThenElse_3 -> K2Node_CallDelegate_0
+1. FocusTargetById -> Set bReturningToDefault -> Set StartRot -> Set StartLoc -> K2Node_IfThenElse_0 -> Set TargetLoc -> Set TargetRot -> K2Node_Timeline_1 -> SceneComponent.K2_SetWorldLocation -> SceneComponent.K2_SetWorldRotation
+1. FocusTargetById -> Set bReturningToDefault -> Set StartRot -> Set StartLoc -> K2Node_IfThenElse_0 -> Set TargetLoc -> Set TargetRot -> K2Node_Timeline_1 -> K2Node_IfThenElse_3 -> K2Node_CallDelegate_0
+1. ReturnToDefaultView -> Set bReturningToDefault -> Set TargetLoc -> Set TargetRot -> Set StartLoc -> Set StartRot -> K2Node_Timeline_1 -> SceneComponent.K2_SetWorldLocation -> SceneComponent.K2_SetWorldRotation
+1. ReturnToDefaultView -> Set bReturningToDefault -> Set TargetLoc -> Set TargetRot -> Set StartLoc -> Set StartRot -> K2Node_Timeline_1 -> K2Node_IfThenElse_3 -> K2Node_CallDelegate_0
 
 ## 6. 关键变量
 

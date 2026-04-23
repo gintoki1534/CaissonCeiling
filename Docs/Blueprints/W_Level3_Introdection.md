@@ -46,10 +46,8 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 1. 按钮-关闭.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.StartLevel3Dusting -> CaissonPlayerController.SetLevelTargetInteractionEnabled -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
 1. 按钮-上一个.OnClicked -> SetVisibility -> SetVisibility
 1. 按钮-下一个.OnClicked -> SetVisibility -> SetVisibility
-1. Tick
 1. Construct -> SetVisibility -> GameplayStatics.GetAllActorsOfClass -> K2Node_IfThenElse_0 -> SpawnActor BP_ShowcaseModel_Level3_C -> Set Level3ShowcaseRef -> BP_ShowcaseModel_Level3_C.ActivateLevel3Presentation -> Cast To CaissonPlayerController -> Controller.Possess
 1. Construct -> SetVisibility -> GameplayStatics.GetAllActorsOfClass -> K2Node_IfThenElse_0 -> Set Level3ShowcaseRef -> BP_ShowcaseModel_Level3_C.ActivateLevel3Presentation
-1. PreConstruct
 
 ## 6. 关键变量
 

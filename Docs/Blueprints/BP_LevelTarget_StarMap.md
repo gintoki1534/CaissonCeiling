@@ -31,9 +31,6 @@
 
 ### 5.2 主执行链
 
-1. ReceiveBeginPlay
-1. ReceiveActorBeginOverlap
-1. ReceiveTick
 1. CaissonInteract.OnHoverBegin
 1. CaissonInteract.OnHoverEnd
 1. CaissonInteract.OnInteractClicked

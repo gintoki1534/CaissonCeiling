@@ -173,6 +173,12 @@ public:
 	UFUNCTION(BlueprintPure, Category="Level3")
 	ULevel3FlowComponent* GetLevel3FlowComponent() const;
 
+	UFUNCTION(BlueprintPure, Category="Level3")
+	bool IsLevel3VisualTransitionActive() const;
+
+	UFUNCTION(BlueprintPure, Category="Level3")
+	float GetLevel3VisualTransitionRemainingSeconds() const;
+
 private:
 	UPROPERTY(Transient)
 	TSet<FName> ActivatedLevel2TargetIds;

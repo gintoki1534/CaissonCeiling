@@ -132,6 +132,15 @@ struct FLevel3ProgressState
 	bool bIsRepairStrokeActive = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	bool bIsVisualTransitionActive = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	float VisualTransitionDurationSeconds = 0.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
+	float VisualTransitionRemainingSeconds = 0.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")
 	float DustReveal01 = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3")

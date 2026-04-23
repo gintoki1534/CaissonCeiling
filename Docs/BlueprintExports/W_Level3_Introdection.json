@@ -3235,7 +3235,8 @@
         "kind": "event",
         "title": "Tick",
         "meta": {
-          "event_name": "Tick"
+          "event_name": "Tick",
+          "enabled_state": "Disabled"
         },
         "pins": [
           {
@@ -3284,7 +3285,8 @@
         "kind": "event",
         "title": "Construct",
         "meta": {
-          "event_name": "Construct"
+          "event_name": "Construct",
+          "enabled_state": "Enabled"
         },
         "pins": [
           {
@@ -3321,7 +3323,8 @@
         "kind": "event",
         "title": "PreConstruct",
         "meta": {
-          "event_name": "PreConstruct"
+          "event_name": "PreConstruct",
+          "enabled_state": "Disabled"
         },
         "pins": [
           {
@@ -4002,9 +4005,6 @@
         "SetVisibility"
       ],
       [
-        "Tick"
-      ],
-      [
         "Construct",
         "SetVisibility",
         "GameplayStatics.GetAllActorsOfClass",
@@ -4022,9 +4022,6 @@
         "K2Node_IfThenElse_0",
         "Set Level3ShowcaseRef",
         "BP_ShowcaseModel_Level3_C.ActivateLevel3Presentation"
-      ],
-      [
-        "PreConstruct"
       ]
     ]
   },
@@ -4937,9 +4934,6 @@
         "SetVisibility"
       ],
       [
-        "Tick"
-      ],
-      [
         "Construct",
         "SetVisibility",
         "GameplayStatics.GetAllActorsOfClass",
@@ -4957,9 +4951,6 @@
         "K2Node_IfThenElse_0",
         "Set Level3ShowcaseRef",
         "BP_ShowcaseModel_Level3_C.ActivateLevel3Presentation"
-      ],
-      [
-        "PreConstruct"
       ]
     ],
     "widget_outline": [

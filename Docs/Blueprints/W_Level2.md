@@ -78,6 +78,12 @@ Indtro_Button1 [Button] | parent=Introducing_1 | children=无
 1. Indtro_Button3.OnClicked -> SetVisibility -> BP_ShowcaseModel_C.ReturnToDefaultView -> KismetSystemLibrary.PrintString
 1. Indtro_Button2.OnClicked -> SetVisibility -> BP_ShowcaseModel_C.ReturnToDefaultView -> KismetSystemLibrary.PrintString
 1. Indtro_Button1.OnClicked -> SetVisibility -> BP_ShowcaseModel_C.ReturnToDefaultView -> KismetSystemLibrary.PrintString
+1. HandleNextLevelRequested -> IsValid -> BP_ShowcaseModel_C.DeactivateLevel2Presentation -> Cast To CaissonPlayerController -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
+1. HandleFinalContinuePromptRequested -> SetVisibility
+1. HandleLevel2InspectStarted -> SetVisibility -> K2Node_SwitchName_0 -> SetVisibility -> BP_ShowcaseModel_C.FocusTargetById
+1. HandleReturnToDefaultFinished -> CaissonPlayerController.CompleteLevel2InspectPresentation
+1. 自定义事件_0 -> K2Node_SwitchInteger_1 -> KismetSystemLibrary.PrintString -> SetVisibility -> SetVisibility
+1. 自定义事件_0 -> K2Node_SwitchInteger_1 -> KismetSystemLibrary.PrintString
 1. OnFocusLost
 1. Construct -> SetVisibility -> SetVisibility -> Cast To CaissonPlayerController -> Set CaissonControllerRef -> KismetSystemLibrary.ControlScreensaver -> K2Node_AddDelegate_1 -> Cast To BP_ShowcaseModel_C -> Set ShowcaseRef -> K2Node_AddDelegate_0 -> K2Node_AddDelegate_2 -> K2Node_AddDelegate_3 -> K2Node_AddDelegate_4
 

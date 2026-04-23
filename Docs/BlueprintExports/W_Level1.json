@@ -590,7 +590,8 @@
         "kind": "event",
         "title": "OnFocusLost",
         "meta": {
-          "event_name": "OnFocusLost"
+          "event_name": "OnFocusLost",
+          "enabled_state": "Enabled"
         },
         "pins": [
           {
@@ -819,7 +820,8 @@
         "kind": "event",
         "title": "Tick",
         "meta": {
-          "event_name": "Tick"
+          "event_name": "Tick",
+          "enabled_state": "Enabled"
         },
         "pins": [
           {
@@ -868,7 +870,8 @@
         "kind": "event",
         "title": "Construct",
         "meta": {
-          "event_name": "Construct"
+          "event_name": "Construct",
+          "enabled_state": "Enabled"
         },
         "pins": [
           {
@@ -905,7 +908,8 @@
         "kind": "event",
         "title": "PreConstruct",
         "meta": {
-          "event_name": "PreConstruct"
+          "event_name": "PreConstruct",
+          "enabled_state": "Enabled"
         },
         "pins": [
           {

@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "TimerManager.h"
 #include "Level3Types.h"
 #include "Level3FlowComponent.generated.h"
 
@@ -36,6 +37,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3|Rules")
 	float MaxMetricValue;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level3|Rules")
+	float VisualTransitionDurationSeconds;
 
 	UPROPERTY(BlueprintAssignable, Category="Level3")
 	FOnLevel3PhaseChanged OnLevel3PhaseChanged;
@@ -92,6 +96,12 @@ public:
 	bool IsRepairStrokeActive() const;
 
 	UFUNCTION(BlueprintPure, Category="Level3")
+	bool IsVisualTransitionActive() const;
+
+	UFUNCTION(BlueprintPure, Category="Level3")
+	float GetVisualTransitionRemainingSeconds() const;
+
+	UFUNCTION(BlueprintPure, Category="Level3")
 	ELevel3Phase GetCurrentPhase() const;
 
 	UFUNCTION(BlueprintPure, Category="Level3")
@@ -125,6 +135,8 @@ private:
 	UPROPERTY(Transient)
 	TObjectPtr<ULevel3RepairAreaComponent> ActiveRepairArea;
 
+	FTimerHandle VisualTransitionTimerHandle;
+
 	const FLevel3StageConfig* FindStageConfig(ELevel3SubStage SubStage) const;
 	const FLevel3StageConfig* GetActiveStageConfig() const;
 	const FLevel3ToolSpec* FindToolSpec(FName ToolId) const;
@@ -134,6 +146,10 @@ private:
 	void RefreshStageVisualState();
 	void RefreshDustState();
 	void RefreshOilState();
+	float QueryVisualTransitionRemainingSeconds() const;
+	void StartVisualTransitionLock();
+	void ClearVisualTransitionLock(bool bBroadcastProgress);
+	void FinishVisualTransitionLock();
 	void SetPhase(ELevel3Phase NewPhase);
 	void SetSubStage(ELevel3SubStage NewSubStage);
 	void BroadcastProgress();

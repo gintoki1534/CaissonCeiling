@@ -629,3 +629,13 @@ ULevel3FlowComponent* ACaissonPlayerController::GetLevel3FlowComponent() const
 {
 	return Level3FlowComponent;
 }
+
+bool ACaissonPlayerController::IsLevel3VisualTransitionActive() const
+{
+	return Level3FlowComponent ? Level3FlowComponent->IsVisualTransitionActive() : false;
+}
+
+float ACaissonPlayerController::GetLevel3VisualTransitionRemainingSeconds() const
+{
+	return Level3FlowComponent ? Level3FlowComponent->GetVisualTransitionRemainingSeconds() : 0.0f;
+}
