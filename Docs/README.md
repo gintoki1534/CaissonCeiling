@@ -66,10 +66,18 @@
    - 左下角三维数值、进度条和圆点实时刷新
    - `Dusting` 完成后点击“下一步”不关闭 `W_Level3`，而是切到 `Oiling`
    - `Oiling` 完成后进入占位完成态
-9. `Level3` 当前采用占位数值和占位打印调试，真实灰尘材质、真实桐油材质与最终视觉效果尚未接入。
+9. `Level3` 当前已经从占位打印推进到真实材质参数表现：
+
+   - `BP_ShowcaseModel_Level3` 从 `BP_Level3RepairRegion_Dusting` 获取真实 `SM_RepairMesh`
+   - 灰尘与桐油表现只驱动真实修复网格的 Slot 0
+   - `M_Dust.DustConcentration01` 负责除尘视觉过渡
+   - `M_Oil.OilBlend01` 负责涂油视觉过渡
+   - 不再把 `SM_DustOverlay / SM_OilOverlay` 作为主表现路径
+
 10. 当前下一步重点是：
 
-   - 把 `BP_ShowcaseModel_Level3 / BP_Level3RepairRegion_Dusting` 接到真实灰尘或桐油材质参数
+   - 完整验收 `Dusting + Oiling` 双子阶段的真实材质表现、5 秒过渡和点击锁定节奏
+   - 收尾 `W_Level3` 的调试输出、正式文案和结果展示
    - 在已跑通的 `Dusting + Oiling` 双子阶段闭环上继续推进 `Level3` 后续子玩法
 
 ## 4. 蓝图文档如何更新

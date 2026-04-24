@@ -365,10 +365,13 @@
 当前已确认的结构结论：
 
 1. 其父类当前仍为 `CaissonCeiling.CaissonPawn`
-2. 当前已新增：
+2. 当前已新增并接通：
    - `ActivateLevel3Presentation`
    - `ActivateRepairPresentation`
    - `ReturnToLevel3DefaultView`
+   - `InitializeLevel3VisualMaterials`
+   - `ApplyDustMaterialToRepairMesh`
+   - `ApplyOilMaterialToRepairMesh`
    - `UpdateDustVisual`
    - `UpdateOilVisual`
 3. `ActivateLevel3Presentation` 当前用于 `Level3` 展示模型激活，执行：
@@ -376,9 +379,13 @@
    - `SetActorEnableCollision(...)`
    - `SetActorTickEnabled(true)`
 4. `ActivateRepairPresentation / ReturnToLevel3DefaultView` 当前用于 `Level3` 修复子阶段的近景视角切换
-5. `UpdateDustVisual / UpdateOilVisual` 当前已经接通，但仍使用占位 `PrintString` 调试，真实灰尘与桐油材质参数尚未接入
-6. 当前不把它视为“Level3 玩法逻辑蓝图”，而视为 `Level3` 的展示载体入口
-7. 后续如果 `Level3` 建立新的 C++ 流程类，再决定是否需要调整父类或进一步拆职责
+5. `InitializeLevel3VisualMaterials` 当前负责从 `BP_Level3RepairRegion_Dusting.GetRepairMeshComponent` 获取真实 `SM_RepairMesh`，并为材质 Slot 0 创建 `DustMID_Slot0 / OilMID_Slot0`
+6. `UpdateDustVisual / UpdateOilVisual` 当前已接入真实材质参数过渡：
+   - Dusting 驱动 `M_Dust.DustConcentration01`
+   - Oiling 驱动 `M_Oil.OilBlend01`
+   - 只改真实修复网格 Slot 0，不改 Slot 1 Cloud 材质
+7. 当前不把它视为“Level3 玩法逻辑蓝图”，而视为 `Level3` 的展示载体入口与视觉材质表现蓝图
+8. 后续如果 `Level3` 建立新的 C++ 流程类，再决定是否需要调整父类或进一步拆职责
 
 `BP_ShowcaseModel_BC2`：
 
@@ -501,7 +508,9 @@ W_Level3.Dusting 阶段
 -> 广播 OnLevel3ProgressChanged
 -> W_Level3 刷新左下角数值 / 进度条 / 圆点
 -> BP_ShowcaseModel_Level3.UpdateDustVisual()
--> 当前仅做占位 PrintString 调试
+-> ApplyDustMaterialToRepairMesh()
+-> 真实 SM_RepairMesh Slot 0 切换到 DustMID_Slot0
+-> 5 秒 Timeline 驱动 DustConcentration01 过渡
 
 Dusting 达成结果
 -> W_Level3.Button_Continue
@@ -525,7 +534,9 @@ W_Level3.Oiling 阶段
 -> 广播 OnLevel3ProgressChanged
 -> W_Level3 刷新左下角数值 / 进度条 / 圆点
 -> BP_ShowcaseModel_Level3.UpdateOilVisual()
--> 当前仅做占位 PrintString 调试
+-> ApplyOilMaterialToRepairMesh()
+-> 真实 SM_RepairMesh Slot 0 切换到 OilMID_Slot0
+-> 5 秒 Timeline 驱动 OilBlend01 过渡
 
 Oiling 达成结果
 -> W_Level3.Button_Continue
@@ -541,7 +552,7 @@ Oiling 达成结果
 3. `Level3` 当前通过 `ELevel3SubStage` 在同一套 `W_Level3` 中切换 `Dusting / Oiling`
 4. `BP_Level3RepairRegion_Dusting` 当前仍复用为单区域命中壳层
 5. `W_Level3` 当前已经进入正式玩法开发状态，不再是纯占位页
-6. 真实灰尘与桐油材质尚未接入
+6. 真实灰尘与桐油材质已经接入 `BP_ShowcaseModel_Level3`，当前采用真实修复网格 Slot 0 材质直驱，不再使用 Dust/Oil Overlay Mesh 作为主表现路径
 
 ### 6.3 Level2 当前主链路
 
@@ -637,7 +648,7 @@ PlayerTick
 
 补充说明：
 
-1. `W_Level3` 当前已完成 `Level3` 的 `Dusting + Oiling` 双子阶段 UI 接线，但真实灰尘与桐油材质仍未接入
+1. `W_Level3` 当前已完成 `Level3` 的 `Dusting + Oiling` 双子阶段 UI 接线，真实灰尘与桐油材质已通过 `BP_ShowcaseModel_Level3` 接入
 2. 当前项目里已实际建立的介绍页资产名为 `W_Level3_Introdection`
 3. `W_Level3_Introdection` 当前已经完成基础接线，可作为 `Level3` 入口继续维护
 4. 不建议继续直接复用 `W_Level1_Introdection` 原资产，因为它原本关闭后会打开 `W_Level2`
