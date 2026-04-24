@@ -284,12 +284,22 @@ def parse_member_parent(payload: Optional[str]) -> Optional[str]:
     return class_short_name(m.group(1)) if m else None
 
 
+def parse_macro_graph_name(payload: Optional[str]) -> Optional[str]:
+    if not payload:
+        return None
+    m = re.search(r"MacroGraph=\"[^\"]*:(.+?)'\"", payload)
+    if m:
+        return m.group(1)
+    return short_object_name(payload)
+
+
 def parse_node(obj: UEObject) -> Dict[str, Any]:
     pins = [parse_pin_line(line) for line in obj.lines if line.startswith("CustomProperties Pin ")]
 
     title = obj.name or "Unknown"
     kind = class_short_name(obj.class_name) or "Unknown"
     meta: Dict[str, Any] = {}
+    enabled_state = first_line_value(obj.lines, "EnabledState=")
 
     if kind == "K2Node_Event":
         event_ref = first_line_value(obj.lines, "EventReference=")
@@ -297,6 +307,13 @@ def parse_node(obj: UEObject) -> Dict[str, Any]:
         title = member_name or title
         kind = "event"
         meta["event_name"] = member_name
+        meta["enabled_state"] = enabled_state or "Enabled"
+    elif kind == "K2Node_CustomEvent":
+        custom_name = strip_quotes(first_line_value(obj.lines, "CustomFunctionName="))
+        title = custom_name or title
+        kind = "custom_event"
+        meta["event_name"] = custom_name
+        meta["enabled_state"] = enabled_state or "Enabled"
     elif kind == "K2Node_ComponentBoundEvent":
         component = strip_quotes(first_line_value(obj.lines, "ComponentPropertyName="))
         delegate = strip_quotes(first_line_value(obj.lines, "DelegatePropertyName="))
@@ -343,6 +360,18 @@ def parse_node(obj: UEObject) -> Dict[str, Any]:
     elif kind == "K2Node_Self":
         title = "Self"
         kind = "self"
+    elif kind == "K2Node_MacroInstance":
+        macro_ref = first_line_value(obj.lines, "MacroGraphReference=")
+        macro_name = parse_macro_graph_name(macro_ref)
+        title = macro_name or title
+        kind = "macro_instance"
+        meta["macro_name"] = macro_name
+    elif kind == "K2Node_SwitchEnum":
+        enum_ref = first_line_value(obj.lines, "Enum=")
+        enum_name = short_object_name(enum_ref)
+        title = f"Switch on {enum_name}" if enum_name else title
+        kind = "switch_enum"
+        meta["enum_name"] = enum_name
     elif kind == "K2Node_FunctionEntry":
         func_name = strip_quotes(first_line_value(obj.lines, "CustomGeneratedFunctionName="))
         if not func_name:
@@ -605,7 +634,12 @@ def build_exec_traces(modules: List[Dict[str, Any]], connections: List[Dict[str,
         if edge.get("category") == "exec":
             exec_edges.setdefault(edge["from"]["node"], []).append(edge["to"]["node"])
 
-    starts = [m["id"] for m in modules if m["kind"] in {"event", "component_bound_event", "function_entry"}]
+    starts = [
+        m["id"]
+        for m in modules
+        if m["kind"] in {"event", "custom_event", "component_bound_event", "function_entry"}
+        and m.get("meta", {}).get("enabled_state") != "Disabled"
+    ]
 
     traces: List[List[str]] = []
 
@@ -1098,13 +1132,32 @@ def build_md_from_json_data(data: Dict[str, Any], json_filename: str, include_op
 
         interesting_kinds = {
             "component_bound_event",
+            "custom_event",
             "call_function",
             "dynamic_cast",
             "variable_set",
             "spawn_actor",
+            "switch_enum",
+            "macro_instance",
             "function_entry",
         }
-        key_modules = [m for m in modules if m.get("kind") in interesting_kinds][:12]
+        connected_node_ids = {
+            endpoint.get("node")
+            for connection in (graph.get("connections") or [])
+            for endpoint in (connection.get("from", {}), connection.get("to", {}))
+            if endpoint.get("node")
+        }
+        key_modules = [
+            m
+            for m in modules
+            if m.get("kind") in interesting_kinds
+            and (
+                not connected_node_ids
+                or m.get("id") in connected_node_ids
+                or m.get("kind") in {"function_entry", "component_bound_event", "custom_event"}
+            )
+            and m.get("meta", {}).get("enabled_state") != "Disabled"
+        ][:12]
         if not key_modules:
             return
 

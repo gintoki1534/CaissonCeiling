@@ -46,9 +46,7 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 1. 按钮-关闭.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.SetLevelTargetInteractionEnabled -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
 1. 按钮-上一个.OnClicked -> SetVisibility -> SetVisibility
 1. 按钮-下一个.OnClicked -> SetVisibility -> SetVisibility
-1. Tick
 1. Construct -> SetVisibility
-1. PreConstruct
 
 ## 6. 关键变量
 

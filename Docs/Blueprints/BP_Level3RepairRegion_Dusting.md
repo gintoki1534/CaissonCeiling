@@ -23,11 +23,7 @@
 
 ## 5. 事件图主链
 
-### 5.2 主执行链
-
-1. ReceiveTick
-1. ReceiveActorBeginOverlap
-1. ReceiveBeginPlay
+1. 当前导出中未发现可整理的主执行链。
 
 ## 6. 关键变量
 
@@ -39,7 +35,16 @@
 
 ## 8. 其他图表
 
-### 8.1 UserConstructionScript
+### 8.1 GetRepairMeshComponent
+
+1. 图类型：BlueprintGraph.EdGraphSchema_K2
+1. 模块数：3
+1. 连接数：2
+1. 执行链：GetRepairMeshComponent -> K2Node_FunctionResult_0
+1. 关键节点：
+   - GetRepairMeshComponent
+
+### 8.2 UserConstructionScript
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：1
@@ -50,7 +55,7 @@
 
 ## 9. 当前可直接确认的结论
 
-1. 本蓝图至少存在上文列出的执行链，可作为后续人工确认和接线补全文档的基础。
+1. 本蓝图当前更适合作为结构记录，真实逻辑仍需人工在编辑器中进一步确认。
 1. Widget 树已经从导出中整理出来，后续可以继续补充哪些控件参与了实际逻辑。
 
 ## 10. 后续补充建议

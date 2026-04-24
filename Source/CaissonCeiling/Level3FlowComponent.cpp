@@ -2,6 +2,7 @@
 
 #include "EngineUtils.h"
 #include "Level3RepairAreaComponent.h"
+#include "TimerManager.h"
 
 ULevel3FlowComponent::ULevel3FlowComponent()
 {
@@ -11,6 +12,7 @@ ULevel3FlowComponent::ULevel3FlowComponent()
 	CompletionThreshold = 2.0f;
 	MinMetricValue = -2.0f;
 	MaxMetricValue = 2.0f;
+	VisualTransitionDurationSeconds = 5.0f;
 
 	DustingStageConfig.SubStage = ELevel3SubStage::Dusting;
 	DustingStageConfig.StageTitle = FText::FromString(TEXT("除尘"));
@@ -118,6 +120,7 @@ void ULevel3FlowComponent::StartLevel3Dusting()
 	bLevel3SessionActive = true;
 	ResultState = FLevel3ResultState();
 	ActiveRepairArea = nullptr;
+	ClearVisualTransitionLock(false);
 	ResetAllRepairAreas();
 	StartStage(ELevel3SubStage::Dusting);
 }
@@ -127,19 +130,24 @@ void ULevel3FlowComponent::StartLevel3Oiling()
 	bLevel3SessionActive = true;
 	ResultState = FLevel3ResultState();
 	ActiveRepairArea = nullptr;
+	ClearVisualTransitionLock(false);
 	ResetAllRepairAreas();
 	StartStage(ELevel3SubStage::Oiling);
 }
 
 void ULevel3FlowComponent::AdvanceToOilingStage()
 {
-	if (!bLevel3SessionActive || ProgressState.Phase != ELevel3Phase::RepairResult || ProgressState.SubStage != ELevel3SubStage::Dusting)
+	if (!bLevel3SessionActive
+		|| ProgressState.Phase != ELevel3Phase::RepairResult
+		|| ProgressState.SubStage != ELevel3SubStage::Dusting
+		|| ProgressState.bIsVisualTransitionActive)
 	{
 		return;
 	}
 
 	ResultState = FLevel3ResultState();
 	ActiveRepairArea = nullptr;
+	ClearVisualTransitionLock(false);
 	ResetAllRepairAreas();
 	StartStage(ELevel3SubStage::Oiling);
 }
@@ -148,6 +156,7 @@ void ULevel3FlowComponent::ResetLevel3State()
 {
 	bLevel3SessionActive = false;
 	ActiveRepairArea = nullptr;
+	ClearVisualTransitionLock(false);
 	ResetAllRepairAreas();
 	ProgressState = FLevel3ProgressState();
 	ResultState = FLevel3ResultState();
@@ -177,6 +186,11 @@ bool ULevel3FlowComponent::SelectTool(FName ToolId)
 bool ULevel3FlowComponent::ApplySelectedToolToHit(const FHitResult& HitResult)
 {
 	if (!bLevel3SessionActive || ProgressState.Phase == ELevel3Phase::RepairResult || ProgressState.Phase == ELevel3Phase::Completed)
+	{
+		return false;
+	}
+
+	if (ProgressState.bIsVisualTransitionActive)
 	{
 		return false;
 	}
@@ -213,6 +227,7 @@ bool ULevel3FlowComponent::ApplySelectedToolToHit(const FHitResult& HitResult)
 	ProgressState.RepairCoveragePercent = 0.0f;
 
 	RefreshStageVisualState();
+	StartVisualTransitionLock();
 	HandleRepairAreaUpdated(RepairArea);
 	BroadcastProgress();
 	TryCompleteRepair();
@@ -237,7 +252,7 @@ void ULevel3FlowComponent::EndRepairStroke()
 
 void ULevel3FlowComponent::CompleteResultPresentation()
 {
-	if (!bLevel3SessionActive || ProgressState.Phase != ELevel3Phase::RepairResult)
+	if (!bLevel3SessionActive || ProgressState.Phase != ELevel3Phase::RepairResult || ProgressState.bIsVisualTransitionActive)
 	{
 		return;
 	}
@@ -263,6 +278,16 @@ bool ULevel3FlowComponent::IsRepairStrokeActive() const
 	return ProgressState.bIsRepairStrokeActive;
 }
 
+bool ULevel3FlowComponent::IsVisualTransitionActive() const
+{
+	return ProgressState.bIsVisualTransitionActive;
+}
+
+float ULevel3FlowComponent::GetVisualTransitionRemainingSeconds() const
+{
+	return QueryVisualTransitionRemainingSeconds();
+}
+
 ELevel3Phase ULevel3FlowComponent::GetCurrentPhase() const
 {
 	return ProgressState.Phase;
@@ -275,7 +300,10 @@ ELevel3SubStage ULevel3FlowComponent::GetCurrentSubStage() const
 
 FLevel3ProgressState ULevel3FlowComponent::GetProgressState() const
 {
-	return ProgressState;
+	FLevel3ProgressState Snapshot = ProgressState;
+	Snapshot.VisualTransitionDurationSeconds = VisualTransitionDurationSeconds;
+	Snapshot.VisualTransitionRemainingSeconds = QueryVisualTransitionRemainingSeconds();
+	return Snapshot;
 }
 
 FLevel3ResultState ULevel3FlowComponent::GetResultState() const
@@ -367,6 +395,9 @@ void ULevel3FlowComponent::ResetProgressForStage(const FLevel3StageConfig& Stage
 	ProgressState.AestheticsPercent = 0.0f;
 	ProgressState.RepairCoveragePercent = 0.0f;
 	ProgressState.bIsRepairStrokeActive = false;
+	ProgressState.bIsVisualTransitionActive = false;
+	ProgressState.VisualTransitionDurationSeconds = VisualTransitionDurationSeconds;
+	ProgressState.VisualTransitionRemainingSeconds = 0.0f;
 	ProgressState.DustReveal01 = StageConfig.InitialDustReveal01;
 	ProgressState.DustConcentration01 = StageConfig.InitialDustConcentration01;
 	ProgressState.OilBlend01 = StageConfig.InitialOilBlend01;
@@ -437,6 +468,73 @@ void ULevel3FlowComponent::RefreshOilState()
 	ProgressState.OilBlend01 = (CleanlinessReady01 + IntegrityReady01 + AestheticsReady01) / 3.0f;
 }
 
+float ULevel3FlowComponent::QueryVisualTransitionRemainingSeconds() const
+{
+	if (!ProgressState.bIsVisualTransitionActive)
+	{
+		return 0.0f;
+	}
+
+	UWorld* World = GetWorld();
+	if (!World)
+	{
+		return FMath::Max(0.0f, ProgressState.VisualTransitionRemainingSeconds);
+	}
+
+	const float TimerRemaining = World->GetTimerManager().GetTimerRemaining(VisualTransitionTimerHandle);
+	return TimerRemaining > 0.0f ? TimerRemaining : 0.0f;
+}
+
+void ULevel3FlowComponent::StartVisualTransitionLock()
+{
+	const float LockDuration = FMath::Max(0.0f, VisualTransitionDurationSeconds);
+	if (LockDuration <= KINDA_SMALL_NUMBER)
+	{
+		ClearVisualTransitionLock(false);
+		return;
+	}
+
+	ProgressState.bIsVisualTransitionActive = true;
+	ProgressState.VisualTransitionDurationSeconds = LockDuration;
+	ProgressState.VisualTransitionRemainingSeconds = LockDuration;
+
+	if (UWorld* World = GetWorld())
+	{
+		World->GetTimerManager().ClearTimer(VisualTransitionTimerHandle);
+		World->GetTimerManager().SetTimer(
+			VisualTransitionTimerHandle,
+			this,
+			&ULevel3FlowComponent::FinishVisualTransitionLock,
+			LockDuration,
+			false);
+	}
+}
+
+void ULevel3FlowComponent::ClearVisualTransitionLock(bool bBroadcastProgress)
+{
+	if (UWorld* World = GetWorld())
+	{
+		World->GetTimerManager().ClearTimer(VisualTransitionTimerHandle);
+	}
+
+	const bool bWasActive = ProgressState.bIsVisualTransitionActive
+		|| ProgressState.VisualTransitionRemainingSeconds > 0.0f;
+
+	ProgressState.bIsVisualTransitionActive = false;
+	ProgressState.VisualTransitionDurationSeconds = VisualTransitionDurationSeconds;
+	ProgressState.VisualTransitionRemainingSeconds = 0.0f;
+
+	if (bBroadcastProgress && bWasActive)
+	{
+		BroadcastProgress();
+	}
+}
+
+void ULevel3FlowComponent::FinishVisualTransitionLock()
+{
+	ClearVisualTransitionLock(true);
+}
+
 void ULevel3FlowComponent::SetPhase(ELevel3Phase NewPhase)
 {
 	if (ProgressState.Phase == NewPhase)
@@ -461,6 +559,8 @@ void ULevel3FlowComponent::SetSubStage(ELevel3SubStage NewSubStage)
 
 void ULevel3FlowComponent::BroadcastProgress()
 {
+	ProgressState.VisualTransitionDurationSeconds = VisualTransitionDurationSeconds;
+	ProgressState.VisualTransitionRemainingSeconds = QueryVisualTransitionRemainingSeconds();
 	OnLevel3ProgressChanged.Broadcast(ProgressState);
 }
 

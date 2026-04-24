@@ -20,7 +20,8 @@
         "kind": "event",
         "title": "ReceiveBeginPlay",
         "meta": {
-          "event_name": "ReceiveBeginPlay"
+          "event_name": "ReceiveBeginPlay",
+          "enabled_state": "Disabled"
         },
         "pins": [
           {
@@ -51,7 +52,8 @@
         "kind": "event",
         "title": "ReceiveTick",
         "meta": {
-          "event_name": "ReceiveTick"
+          "event_name": "ReceiveTick",
+          "enabled_state": "Disabled"
         },
         "pins": [
           {
@@ -87,14 +89,7 @@
       }
     ],
     "connections": [],
-    "exec_traces": [
-      [
-        "ReceiveBeginPlay"
-      ],
-      [
-        "ReceiveTick"
-      ]
-    ]
+    "exec_traces": []
   },
   "other_graphs": [
     {
@@ -160,14 +155,7 @@
     "module_count": 2,
     "connection_count": 0,
     "component_events": [],
-    "exec_traces": [
-      [
-        "ReceiveBeginPlay"
-      ],
-      [
-        "ReceiveTick"
-      ]
-    ],
+    "exec_traces": [],
     "widget_outline": [],
     "notices": [
       "This export is built from full asset text, so it includes EventGraph, other detailed graphs, member variables, and generated variables that are serialized into the asset.",
