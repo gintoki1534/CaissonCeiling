@@ -249,6 +249,34 @@
       "connection_count": 1,
       "modules": [
         {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_BP_LevelTarget_CloudPattern",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature.K2Node_FunctionEntry_0'"
+        },
+        {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
           "kind": "call_function",
@@ -324,34 +352,6 @@
             }
           ],
           "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature.K2Node_CallFunction_0'"
-        },
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature",
-          "meta": {
-            "function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "ExecuteUbergraph_BP_LevelTarget_CloudPattern",
-                  "pin_name": "execute"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [
@@ -382,6 +382,34 @@
       "module_count": 2,
       "connection_count": 1,
       "modules": [
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_BP_LevelTarget_CloudPattern",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature.K2Node_FunctionEntry_0'"
+        },
         {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
@@ -458,34 +486,6 @@
             }
           ],
           "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature.K2Node_CallFunction_0'"
-        },
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature",
-          "meta": {
-            "function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "ExecuteUbergraph_BP_LevelTarget_CloudPattern",
-                  "pin_name": "execute"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [
@@ -516,6 +516,34 @@
       "module_count": 2,
       "connection_count": 1,
       "modules": [
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_BP_LevelTarget_CloudPattern",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature.K2Node_FunctionEntry_0'"
+        },
         {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
@@ -592,34 +620,6 @@
             }
           ],
           "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature.K2Node_CallFunction_0'"
-        },
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature",
-          "meta": {
-            "function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "ExecuteUbergraph_BP_LevelTarget_CloudPattern",
-                  "pin_name": "execute"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [
@@ -640,6 +640,159 @@
       "exec_traces": [
         [
           "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature",
+          "ExecuteUbergraph_BP_LevelTarget_CloudPattern"
+        ]
+      ]
+    },
+    {
+      "name": "ExecuteUbergraph_BP_LevelTarget_CloudPattern",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 4,
+      "connection_count": 0,
+      "modules": [
+        {
+          "id": "K2Node_ComponentBoundEvent_3",
+          "class": "K2Node_ComponentBoundEvent",
+          "kind": "component_bound_event",
+          "title": "CaissonInteract.OnHoverBegin",
+          "meta": {
+            "component": "CaissonInteract",
+            "delegate_property": "OnHoverBegin",
+            "custom_function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_0_OnCaissonHoverSignature__DelegateSignature"
+          },
+          "pins": [
+            {
+              "name": "OutputDelegate",
+              "direction": "output",
+              "category": "delegate",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:ExecuteUbergraph_BP_LevelTarget_CloudPattern.K2Node_ComponentBoundEvent_3'"
+        },
+        {
+          "id": "K2Node_ComponentBoundEvent_5",
+          "class": "K2Node_ComponentBoundEvent",
+          "kind": "component_bound_event",
+          "title": "CaissonInteract.OnHoverEnd",
+          "meta": {
+            "component": "CaissonInteract",
+            "delegate_property": "OnHoverEnd",
+            "custom_function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_5_OnCaissonHoverSignature__DelegateSignature"
+          },
+          "pins": [
+            {
+              "name": "OutputDelegate",
+              "direction": "output",
+              "category": "delegate",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:ExecuteUbergraph_BP_LevelTarget_CloudPattern.K2Node_ComponentBoundEvent_5'"
+        },
+        {
+          "id": "K2Node_ComponentBoundEvent_6",
+          "class": "K2Node_ComponentBoundEvent",
+          "kind": "component_bound_event",
+          "title": "CaissonInteract.OnInteractClicked",
+          "meta": {
+            "component": "CaissonInteract",
+            "delegate_property": "OnInteractClicked",
+            "custom_function_name": "BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature"
+          },
+          "pins": [
+            {
+              "name": "OutputDelegate",
+              "direction": "output",
+              "category": "delegate",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:ExecuteUbergraph_BP_LevelTarget_CloudPattern.K2Node_ComponentBoundEvent_6'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "ExecuteUbergraph_BP_LevelTarget_CloudPattern",
+          "meta": {
+            "function_name": "ExecuteUbergraph_BP_LevelTarget_CloudPattern"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "EntryPoint",
+              "direction": "output",
+              "category": "int",
+              "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:ExecuteUbergraph_BP_LevelTarget_CloudPattern.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [],
+      "exec_traces": [
+        [
+          "CaissonInteract.OnHoverBegin"
+        ],
+        [
+          "CaissonInteract.OnHoverEnd"
+        ],
+        [
+          "CaissonInteract.OnInteractClicked"
+        ],
+        [
           "ExecuteUbergraph_BP_LevelTarget_CloudPattern"
         ]
       ]
@@ -671,6 +824,42 @@
           ],
           "important_inputs": [],
           "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:UserConstructionScript.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [],
+      "exec_traces": [
+        [
+          "UserConstructionScript"
+        ]
+      ]
+    },
+    {
+      "name": "UserConstructionScript_MERGED",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 1,
+      "connection_count": 0,
+      "modules": [
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "UserConstructionScript",
+          "meta": {
+            "function_name": "UserConstructionScript"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/LevelTargets/BP_LevelTarget_CloudPattern.BP_LevelTarget_CloudPattern:UserConstructionScript_MERGED.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [],

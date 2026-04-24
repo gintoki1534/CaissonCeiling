@@ -134,6 +134,15 @@
   },
   "other_graphs": [
     {
+      "name": "ExecuteUbergraph_BP_Level3RepairRegion_Dusting",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 0,
+      "connection_count": 0,
+      "modules": [],
+      "connections": [],
+      "exec_traces": []
+    },
+    {
       "name": "GetRepairMeshComponent",
       "schema": "BlueprintGraph.EdGraphSchema_K2",
       "module_count": 3,
@@ -317,6 +326,189 @@
       ]
     },
     {
+      "name": "GetRepairMeshComponent_MERGED",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 3,
+      "connection_count": 2,
+      "modules": [
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "GetRepairMeshComponent",
+          "meta": {
+            "function_name": "GetRepairMeshComponent"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionResult_0",
+                  "node_title": "K2Node_FunctionResult_0",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/BP_Level3RepairRegion_Dusting.BP_Level3RepairRegion_Dusting:GetRepairMeshComponent_MERGED.K2Node_FunctionEntry_0'"
+        },
+        {
+          "id": "K2Node_FunctionResult_0",
+          "class": "K2Node_FunctionResult",
+          "kind": "K2Node_FunctionResult",
+          "title": "K2Node_FunctionResult_0",
+          "meta": {},
+          "pins": [
+            {
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "node_title": "GetRepairMeshComponent",
+                  "pin_name": "then"
+                }
+              ]
+            },
+            {
+              "name": "RepairMesh",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_VariableGet_0",
+                  "node_title": "Get SM_RepairMesh",
+                  "pin_name": "SM_RepairMesh"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "node_title": "GetRepairMeshComponent",
+                  "pin_name": "then"
+                }
+              ]
+            },
+            {
+              "name": "RepairMesh",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_VariableGet_0",
+                  "node_title": "Get SM_RepairMesh",
+                  "pin_name": "SM_RepairMesh"
+                }
+              ]
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionResult'/Game/UI/BP_Level3RepairRegion_Dusting.BP_Level3RepairRegion_Dusting:GetRepairMeshComponent_MERGED.K2Node_FunctionResult_0'"
+        },
+        {
+          "id": "K2Node_VariableGet_0",
+          "class": "K2Node_VariableGet",
+          "kind": "variable_get",
+          "title": "Get SM_RepairMesh",
+          "meta": {
+            "variable_name": "SM_RepairMesh"
+          },
+          "pins": [
+            {
+              "name": "SM_RepairMesh",
+              "direction": "output",
+              "category": "object",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionResult_0",
+                  "node_title": "K2Node_FunctionResult_0",
+                  "pin_name": "RepairMesh"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_Level3RepairRegion_Dusting.BP_Level3RepairRegion_Dusting:GetRepairMeshComponent_MERGED.K2Node_VariableGet_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "node_title": "GetRepairMeshComponent",
+            "pin_name": "then"
+          },
+          "to": {
+            "node": "K2Node_FunctionResult_0",
+            "node_title": "K2Node_FunctionResult_0",
+            "pin_name": "execute"
+          },
+          "category": "exec"
+        },
+        {
+          "from": {
+            "node": "K2Node_VariableGet_0",
+            "node_title": "Get SM_RepairMesh",
+            "pin_name": "SM_RepairMesh"
+          },
+          "to": {
+            "node": "K2Node_FunctionResult_0",
+            "node_title": "K2Node_FunctionResult_0",
+            "pin_name": "RepairMesh"
+          },
+          "category": "object"
+        }
+      ],
+      "exec_traces": [
+        [
+          "GetRepairMeshComponent",
+          "K2Node_FunctionResult_0"
+        ]
+      ]
+    },
+    {
       "name": "UserConstructionScript",
       "schema": "BlueprintGraph.EdGraphSchema_K2",
       "module_count": 1,
@@ -343,6 +535,42 @@
           ],
           "important_inputs": [],
           "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/BP_Level3RepairRegion_Dusting.BP_Level3RepairRegion_Dusting:UserConstructionScript.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [],
+      "exec_traces": [
+        [
+          "UserConstructionScript"
+        ]
+      ]
+    },
+    {
+      "name": "UserConstructionScript_MERGED",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 1,
+      "connection_count": 0,
+      "modules": [
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "UserConstructionScript",
+          "meta": {
+            "function_name": "UserConstructionScript"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/BP_Level3RepairRegion_Dusting.BP_Level3RepairRegion_Dusting:UserConstructionScript_MERGED.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [],
