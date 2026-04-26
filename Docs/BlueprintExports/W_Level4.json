@@ -1,0 +1,1564 @@
+{
+  "blueprint": {
+    "name": "W_Level4",
+    "asset_path": "/Script/UMGEditor.WidgetBlueprint'/Game/UI/W_Level4.W_Level4'",
+    "blueprint_class": "WidgetBlueprint",
+    "parent_class": "UMG.UserWidget",
+    "generated_class": "W_Level4_C",
+    "tick_prediction": null,
+    "tick_prediction_reason": null
+  },
+  "event_graph": {
+    "name": "EventGraph",
+    "schema": "BlueprintGraph.EdGraphSchema_K2",
+    "module_count": 3,
+    "connection_count": 0,
+    "modules": [
+      {
+        "id": "K2Node_Event_0",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "PreConstruct",
+        "meta": {
+          "event_name": "PreConstruct",
+          "enabled_state": "Disabled"
+        },
+        "pins": [
+          {
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "IsDesignTime",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_Event_0'"
+      },
+      {
+        "id": "K2Node_Event_1",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "Construct",
+        "meta": {
+          "event_name": "Construct",
+          "enabled_state": "Disabled"
+        },
+        "pins": [
+          {
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_Event_1'"
+      },
+      {
+        "id": "K2Node_Event_2",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "Tick",
+        "meta": {
+          "event_name": "Tick",
+          "enabled_state": "Disabled"
+        },
+        "pins": [
+          {
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "MyGeometry",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "InDeltaTime",
+            "direction": "output",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_Event_2'"
+      }
+    ],
+    "connections": [],
+    "exec_traces": []
+  },
+  "other_graphs": [],
+  "widget_tree": {
+    "root_widget": "CanvasPanel_30",
+    "widgets": [
+      {
+        "name": "pices_5_selected",
+        "class": "Image",
+        "display_label": "pices_5_selected",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_5",
+        "parent": "picies_5",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/点击特效_方形）.点击特效_方形）'\")"
+        }
+      },
+      {
+        "name": "pices_1_button",
+        "class": "Button",
+        "display_label": "pices_1_button",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_9",
+        "parent": "picies_1",
+        "children": [],
+        "properties": {
+          "BackgroundColor": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)",
+          "ColorAndOpacity": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)"
+        }
+      },
+      {
+        "name": "pices_4_selected",
+        "class": "Image",
+        "display_label": "pices_4_selected",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_5",
+        "parent": "picies_4",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/点击特效_方形）.点击特效_方形）'\")"
+        }
+      },
+      {
+        "name": "pices_3_selected",
+        "class": "Image",
+        "display_label": "pices_3_selected",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_6",
+        "parent": "picies_3",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/点击特效_方形）.点击特效_方形）'\")"
+        }
+      },
+      {
+        "name": "CanvasPanel_30",
+        "class": "CanvasPanel",
+        "display_label": "CanvasPanel_30",
+        "is_variable": false,
+        "slot": null,
+        "parent": null,
+        "children": [
+          "StepBase",
+          "DifficultyBase",
+          "PiciesBase",
+          "picies_2",
+          "picies_5",
+          "picies_4",
+          "picies_3",
+          "picies_1",
+          "difficuty_base_normal",
+          "difficuty_base_expert",
+          "Difficuty_selected_normal",
+          "Difficuty_selected_expert"
+        ],
+        "properties": {
+          "bExpandedInDesigner": "True"
+        }
+      },
+      {
+        "name": "PiciesBase",
+        "class": "Image",
+        "display_label": "PiciesBase",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_11",
+        "parent": "CanvasPanel_30",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/右侧碎片列表底框.右侧碎片列表底框'\")"
+        }
+      },
+      {
+        "name": "Image_3",
+        "class": "Image",
+        "display_label": "Image_3",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_1",
+        "parent": "picies_1",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/碎片1.碎片1'\")"
+        }
+      },
+      {
+        "name": "StepBase",
+        "class": "Image",
+        "display_label": "StepBase",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_7",
+        "parent": "CanvasPanel_30",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/左上角.左上角'\")"
+        }
+      },
+      {
+        "name": "DifficultyBase",
+        "class": "Image",
+        "display_label": "DifficultyBase",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_9",
+        "parent": "CanvasPanel_30",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/难度选择底框.难度选择底框'\")"
+        }
+      },
+      {
+        "name": "pices_2_selected",
+        "class": "Image",
+        "display_label": "pices_2_selected",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_8",
+        "parent": "picies_2",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/点击特效_方形）.点击特效_方形）'\")"
+        }
+      },
+      {
+        "name": "pices_1_selected",
+        "class": "Image",
+        "display_label": "pices_1_selected",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_11",
+        "parent": "picies_1",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/点击特效_方形）.点击特效_方形）'\")"
+        }
+      },
+      {
+        "name": "picies_5",
+        "class": "CanvasPanel",
+        "display_label": "picies_5",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_15",
+        "parent": "CanvasPanel_30",
+        "children": [
+          "pices_5_selected",
+          "Image_5",
+          "pices_5_button"
+        ],
+        "properties": {
+          "bExpandedInDesigner": "True"
+        }
+      },
+      {
+        "name": "picies_4",
+        "class": "CanvasPanel",
+        "display_label": "picies_4",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_14",
+        "parent": "CanvasPanel_30",
+        "children": [
+          "pices_4_selected",
+          "Image_4",
+          "pices_4_button"
+        ],
+        "properties": {
+          "bExpandedInDesigner": "True"
+        }
+      },
+      {
+        "name": "picies_3",
+        "class": "CanvasPanel",
+        "display_label": "picies_3",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_13",
+        "parent": "CanvasPanel_30",
+        "children": [
+          "pices_3_selected",
+          "Image_1",
+          "pices_3_button"
+        ],
+        "properties": {
+          "bExpandedInDesigner": "True"
+        }
+      },
+      {
+        "name": "Image_0",
+        "class": "Image",
+        "display_label": "Image_0",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_5",
+        "parent": "picies_2",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/碎片2_1.碎片2_1'\")"
+        }
+      },
+      {
+        "name": "Image_1",
+        "class": "Image",
+        "display_label": "Image_1",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_3",
+        "parent": "picies_3",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/碎片3.碎片3'\")"
+        }
+      },
+      {
+        "name": "pices_5_button",
+        "class": "Button",
+        "display_label": "pices_5_button",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_3",
+        "parent": "picies_5",
+        "children": [],
+        "properties": {
+          "BackgroundColor": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)",
+          "ColorAndOpacity": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)"
+        }
+      },
+      {
+        "name": "pices_4_button",
+        "class": "Button",
+        "display_label": "pices_4_button",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_3",
+        "parent": "picies_4",
+        "children": [],
+        "properties": {
+          "BackgroundColor": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)",
+          "ColorAndOpacity": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)"
+        }
+      },
+      {
+        "name": "Image_4",
+        "class": "Image",
+        "display_label": "Image_4",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_2",
+        "parent": "picies_4",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/碎片5.碎片5'\")"
+        }
+      },
+      {
+        "name": "picies_2",
+        "class": "CanvasPanel",
+        "display_label": "picies_2",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_16",
+        "parent": "CanvasPanel_30",
+        "children": [
+          "pices_2_selected",
+          "Image_0",
+          "pices_2_button"
+        ],
+        "properties": {
+          "bExpandedInDesigner": "True"
+        }
+      },
+      {
+        "name": "pices_3_button",
+        "class": "Button",
+        "display_label": "pices_3_button",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_4",
+        "parent": "picies_3",
+        "children": [],
+        "properties": {
+          "BackgroundColor": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)",
+          "ColorAndOpacity": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)"
+        }
+      },
+      {
+        "name": "Image_5",
+        "class": "Image",
+        "display_label": "Image_5",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_2",
+        "parent": "picies_5",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/碎片6.碎片6'\")"
+        }
+      },
+      {
+        "name": "pices_2_button",
+        "class": "Button",
+        "display_label": "pices_2_button",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_6",
+        "parent": "picies_2",
+        "children": [],
+        "properties": {
+          "BackgroundColor": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)",
+          "ColorAndOpacity": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)"
+        }
+      },
+      {
+        "name": "picies_1",
+        "class": "CanvasPanel",
+        "display_label": "picies_1",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_5",
+        "parent": "CanvasPanel_30",
+        "children": [
+          "pices_1_button",
+          "pices_1_selected",
+          "Image_3"
+        ],
+        "properties": {
+          "bExpandedInDesigner": "True"
+        }
+      },
+      {
+        "name": "difficuty_base_normal",
+        "class": "Image",
+        "display_label": "difficuty_base_normal",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_18",
+        "parent": "CanvasPanel_30",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/圆环未选中.圆环未选中'\")"
+        }
+      },
+      {
+        "name": "difficuty_base_expert",
+        "class": "Image",
+        "display_label": "difficuty_base_expert",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_19",
+        "parent": "CanvasPanel_30",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/圆环未选中.圆环未选中'\")"
+        }
+      },
+      {
+        "name": "Image_102",
+        "class": "Image",
+        "display_label": "Image_102",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_1",
+        "parent": "Difficuty_selected_normal",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/圆环选中png.圆环选中png'\")"
+        }
+      },
+      {
+        "name": "Image_104",
+        "class": "Image",
+        "display_label": "Image_104",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_2",
+        "parent": "Difficuty_selected_normal",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/当前选择.当前选择'\")"
+        }
+      },
+      {
+        "name": "Difficuty_selected_normal",
+        "class": "CanvasPanel",
+        "display_label": "Difficuty_selected_normal",
+        "is_variable": true,
+        "slot": "CanvasPanelSlot_23",
+        "parent": "CanvasPanel_30",
+        "children": [
+          "Image_102",
+          "Image_104"
+        ],
+        "properties": {
+          "bExpandedInDesigner": "True"
+        }
+      },
+      {
+        "name": "Difficuty_selected_expert",
+        "class": "CanvasPanel",
+        "display_label": "Difficuty_selected_expert",
+        "is_variable": true,
+        "slot": "CanvasPanelSlot_25",
+        "parent": "CanvasPanel_30",
+        "children": [
+          "Image_2",
+          "Image_6"
+        ],
+        "properties": {
+          "bExpandedInDesigner": "True"
+        }
+      },
+      {
+        "name": "Image_2",
+        "class": "Image",
+        "display_label": "Image_2",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_0",
+        "parent": "Difficuty_selected_expert",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/圆环选中png.圆环选中png'\")"
+        }
+      },
+      {
+        "name": "Image_6",
+        "class": "Image",
+        "display_label": "Image_6",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_1",
+        "parent": "Difficuty_selected_expert",
+        "children": [],
+        "properties": {
+          "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/当前选择.当前选择'\")"
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "slot_name": "CanvasPanelSlot_7",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_30",
+        "child": "StepBase",
+        "layout_data": "(Offsets=(Left=12.000000,Top=88.000000,Right=525.911621,Bottom=429.189178))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_9",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_30",
+        "child": "DifficultyBase",
+        "layout_data": "(Offsets=(Left=64.000000,Top=532.000000,Right=391.491486,Bottom=330.779663))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_11",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_30",
+        "child": "PiciesBase",
+        "layout_data": "(Offsets=(Left=1448.000000,Top=132.000000,Right=452.841705,Bottom=790.261353))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_16",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_30",
+        "child": "picies_2",
+        "layout_data": "(Offsets=(Left=1708.000000,Top=304.000000,Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_15",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_30",
+        "child": "picies_5",
+        "layout_data": "(Offsets=(Left=1540.000000,Top=632.000000,Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_14",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_30",
+        "child": "picies_4",
+        "layout_data": "(Offsets=(Left=1708.000000,Top=468.000000,Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_13",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_30",
+        "child": "picies_3",
+        "layout_data": "(Offsets=(Left=1540.000000,Top=472.000000,Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_5",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_30",
+        "child": "picies_1",
+        "layout_data": "(Offsets=(Left=1540.000000,Top=304.000000,Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_18",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_30",
+        "child": "difficuty_base_normal",
+        "layout_data": "(Offsets=(Left=116.000000,Top=644.000000,Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_19",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_30",
+        "child": "difficuty_base_expert",
+        "layout_data": "(Offsets=(Left=280.000000,Top=640.000000,Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_23",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_30",
+        "child": "Difficuty_selected_normal",
+        "layout_data": "(Offsets=(Left=116.000000,Top=648.000000,Right=120.000000,Bottom=200.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_25",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_30",
+        "child": "Difficuty_selected_expert",
+        "layout_data": "(Offsets=(Left=280.000000,Top=644.000000,Right=120.000000,Bottom=200.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_5",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "picies_5",
+        "child": "pices_5_selected",
+        "layout_data": "(Offsets=(Left=-40.000000,Top=-44.000000,Right=200.000000,Bottom=200.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_2",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "picies_5",
+        "child": "Image_5",
+        "layout_data": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_3",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "picies_5",
+        "child": "pices_5_button",
+        "layout_data": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_5",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "picies_4",
+        "child": "pices_4_selected",
+        "layout_data": "(Offsets=(Left=-40.000000,Top=-40.000000,Right=200.000000,Bottom=200.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_2",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "picies_4",
+        "child": "Image_4",
+        "layout_data": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_3",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "picies_4",
+        "child": "pices_4_button",
+        "layout_data": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_6",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "picies_3",
+        "child": "pices_3_selected",
+        "layout_data": "(Offsets=(Left=-40.000000,Top=-40.000000,Right=200.000000,Bottom=200.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_3",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "picies_3",
+        "child": "Image_1",
+        "layout_data": "(Offsets=(Left=-16.000000,Top=-16.000000,Right=150.000000,Bottom=150.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_4",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "picies_3",
+        "child": "pices_3_button",
+        "layout_data": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_8",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "picies_2",
+        "child": "pices_2_selected",
+        "layout_data": "(Offsets=(Left=-40.000000,Top=-40.000000,Right=200.000000,Bottom=200.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_5",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "picies_2",
+        "child": "Image_0",
+        "layout_data": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_6",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "picies_2",
+        "child": "pices_2_button",
+        "layout_data": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_9",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "picies_1",
+        "child": "pices_1_button",
+        "layout_data": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_11",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "picies_1",
+        "child": "pices_1_selected",
+        "layout_data": "(Offsets=(Left=-40.000000,Top=-40.000000,Right=200.000000,Bottom=200.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_1",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "picies_1",
+        "child": "Image_3",
+        "layout_data": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_1",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "Difficuty_selected_normal",
+        "child": "Image_102",
+        "layout_data": "(Offsets=(Top=-4.000000,Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_2",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "Difficuty_selected_normal",
+        "child": "Image_104",
+        "layout_data": "(Offsets=(Left=10.000000,Top=140.000000,Bottom=40.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_0",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "Difficuty_selected_expert",
+        "child": "Image_2",
+        "layout_data": "(Offsets=(Top=-4.000000,Right=120.000000,Bottom=120.000000))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_1",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "Difficuty_selected_expert",
+        "child": "Image_6",
+        "layout_data": "(Offsets=(Left=10.000000,Top=144.000000,Bottom=40.000000))"
+      }
+    ]
+  },
+  "variables": {
+    "new_variables": [],
+    "generated_variables": [
+      {
+        "name": "pices_5_selected",
+        "guid": "3286D7824563368634FD729C015CA732",
+        "friendly_name": "pices_5_selected",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Image'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level4\")"
+        }
+      },
+      {
+        "name": "pices_5_button",
+        "guid": "80283DB240136CF8CF909AADB6F3C39D",
+        "friendly_name": "pices_5_button",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Button'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level4\")"
+        }
+      },
+      {
+        "name": "pices_4_selected",
+        "guid": "A32732884FC6ADFA2556A782B46CD9A3",
+        "friendly_name": "pices_4_selected",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Image'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level4\")"
+        }
+      },
+      {
+        "name": "pices_4_button",
+        "guid": "A8FC8EA84FAC8AE5D2D1969C7EEE9FA2",
+        "friendly_name": "pices_4_button",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Button'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level4\")"
+        }
+      },
+      {
+        "name": "pices_3_selected",
+        "guid": "427B1B3F49007720ADDD2D94B7EB28F7",
+        "friendly_name": "pices_3_selected",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Image'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level4\")"
+        }
+      },
+      {
+        "name": "pices_3_button",
+        "guid": "5901E651437BAE91363E46B976BB0D24",
+        "friendly_name": "pices_3_button",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Button'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level4\")"
+        }
+      },
+      {
+        "name": "pices_2_selected",
+        "guid": "B877300541035076C14888A7B4E584BE",
+        "friendly_name": "pices_2_selected",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Image'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level4\")"
+        }
+      },
+      {
+        "name": "pices_2_button",
+        "guid": "58A44E184A1C9C3BC351DF9BD0910320",
+        "friendly_name": "pices_2_button",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Button'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level4\")"
+        }
+      },
+      {
+        "name": "pices_1_selected",
+        "guid": "1771249F499C48BC6B95BB8769ACA8A0",
+        "friendly_name": "pices_1_selected",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Image'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level4\")"
+        }
+      },
+      {
+        "name": "pices_1_button",
+        "guid": "681A529F40D7EB616F6C13AE79B730CE",
+        "friendly_name": "pices_1_button",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Button'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level4\")"
+        }
+      },
+      {
+        "name": "Difficuty_selected_normal",
+        "guid": "79CB082340CFEF06FCDD07A24D05C8CC",
+        "friendly_name": "Difficuty_selected_normal",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.CanvasPanel'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level4\")"
+        }
+      },
+      {
+        "name": "Difficuty_selected_expert",
+        "guid": "C6610733474A7E9826411D89D4C8B759",
+        "friendly_name": "Difficuty_selected_expert",
+        "category": null,
+        "property_flags": "562952101494812",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.CanvasPanel'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"W_Level4\")"
+        }
+      }
+    ],
+    "widget_variable_guid_map": {
+      "CanvasPanel_30": "C1BC7B8A46FA44FF9F3FAE982D8B7B00",
+      "Image_3": "CFF80433403F9826F69F54BCE413CC88",
+      "PiciesBase": "F1CC177042F65A51A9058393FAE426B8",
+      "DifficultyBase": "3625E430498E9DA96BEA2C92698FD2FA",
+      "StepBase": "AF198C9E41798E64396993B908DD7770",
+      "Image_0": "26D8243941FA9F09EE8BC59BED748F81",
+      "Image_1": "505911F745D2EE8A129D398FCBBF334D",
+      "Image_4": "05C91D204D62AA353D18B697758AE15E",
+      "Image_5": "3A5593E94217D6E9F6A6719BB9EE789B",
+      "picies_1": "A5F24EE4449259AA837E4AA83023B71E",
+      "picies_2": "B7F68BE84D353E16A47CE8871F18E448",
+      "pices_1_button": "681A529F40D7EB616F6C13AE79B730CE",
+      "picies_3": "1711CBCE4DFFDB7DE93E1AA732A79F84",
+      "picies_4": "004657CB4E0C862C768B3CB6B8ACE3C8",
+      "picies_5": "45BE535B4C86A170F2B0E9B9A01BC857",
+      "pices_2_button": "58A44E184A1C9C3BC351DF9BD0910320",
+      "pices_3_button": "5901E651437BAE91363E46B976BB0D24",
+      "pices_4_button": "A8FC8EA84FAC8AE5D2D1969C7EEE9FA2",
+      "pices_5_button": "80283DB240136CF8CF909AADB6F3C39D",
+      "pices_1_selected": "1771249F499C48BC6B95BB8769ACA8A0",
+      "pices_2_selected": "B877300541035076C14888A7B4E584BE",
+      "pices_3_selected": "427B1B3F49007720ADDD2D94B7EB28F7",
+      "pices_4_selected": "A32732884FC6ADFA2556A782B46CD9A3",
+      "pices_5_selected": "3286D7824563368634FD729C015CA732",
+      "difficuty_base_normal": "098DEDCB4A5B6B5E8A58D7AA7652CE3A",
+      "difficuty_base_expert": "CD6022804F0777ED280C78AF24C6674D",
+      "Image_102": "C2A7F6B54BEF6D7D75BD1A85230D289B",
+      "Image_6": "2BA42D374799BA388964AC948841DD2E",
+      "Image_104": "2AEE3CC14A7D32B23486A9846B8C7514",
+      "Difficuty_selected_normal": "79CB082340CFEF06FCDD07A24D05C8CC",
+      "Difficuty_selected_expert": "C6610733474A7E9826411D89D4C8B759",
+      "Image_2": "DC685C9F40E8471ADD6490940E703DE2"
+    }
+  },
+  "special_settings": [
+    {
+      "target": "pices_5_selected",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/点击特效_方形）.点击特效_方形）'\")"
+    },
+    {
+      "target": "pices_1_button",
+      "property": "BackgroundColor",
+      "value": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)"
+    },
+    {
+      "target": "pices_1_button",
+      "property": "ColorAndOpacity",
+      "value": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)"
+    },
+    {
+      "target": "pices_4_selected",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/点击特效_方形）.点击特效_方形）'\")"
+    },
+    {
+      "target": "pices_3_selected",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/点击特效_方形）.点击特效_方形）'\")"
+    },
+    {
+      "target": "PiciesBase",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/右侧碎片列表底框.右侧碎片列表底框'\")"
+    },
+    {
+      "target": "Image_3",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/碎片1.碎片1'\")"
+    },
+    {
+      "target": "StepBase",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/左上角.左上角'\")"
+    },
+    {
+      "target": "DifficultyBase",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/难度选择底框.难度选择底框'\")"
+    },
+    {
+      "target": "pices_2_selected",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/点击特效_方形）.点击特效_方形）'\")"
+    },
+    {
+      "target": "pices_1_selected",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/点击特效_方形）.点击特效_方形）'\")"
+    },
+    {
+      "target": "Image_0",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/碎片2_1.碎片2_1'\")"
+    },
+    {
+      "target": "Image_1",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/碎片3.碎片3'\")"
+    },
+    {
+      "target": "pices_5_button",
+      "property": "BackgroundColor",
+      "value": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)"
+    },
+    {
+      "target": "pices_5_button",
+      "property": "ColorAndOpacity",
+      "value": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)"
+    },
+    {
+      "target": "pices_4_button",
+      "property": "BackgroundColor",
+      "value": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)"
+    },
+    {
+      "target": "pices_4_button",
+      "property": "ColorAndOpacity",
+      "value": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)"
+    },
+    {
+      "target": "Image_4",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/碎片5.碎片5'\")"
+    },
+    {
+      "target": "pices_3_button",
+      "property": "BackgroundColor",
+      "value": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)"
+    },
+    {
+      "target": "pices_3_button",
+      "property": "ColorAndOpacity",
+      "value": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)"
+    },
+    {
+      "target": "Image_5",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/碎片6.碎片6'\")"
+    },
+    {
+      "target": "pices_2_button",
+      "property": "BackgroundColor",
+      "value": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)"
+    },
+    {
+      "target": "pices_2_button",
+      "property": "ColorAndOpacity",
+      "value": "(R=1.000000,G=1.000000,B=1.000000,A=0.000000)"
+    },
+    {
+      "target": "difficuty_base_normal",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/圆环未选中.圆环未选中'\")"
+    },
+    {
+      "target": "difficuty_base_expert",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/圆环未选中.圆环未选中'\")"
+    },
+    {
+      "target": "Image_102",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/圆环选中png.圆环选中png'\")"
+    },
+    {
+      "target": "Image_104",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/当前选择.当前选择'\")"
+    },
+    {
+      "target": "Image_2",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/圆环选中png.圆环选中png'\")"
+    },
+    {
+      "target": "Image_6",
+      "property": "Brush",
+      "value": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Pinjie/当前选择.当前选择'\")"
+    },
+    {
+      "target": "StepBase",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=12.000000,Top=88.000000,Right=525.911621,Bottom=429.189178))"
+    },
+    {
+      "target": "DifficultyBase",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=64.000000,Top=532.000000,Right=391.491486,Bottom=330.779663))"
+    },
+    {
+      "target": "PiciesBase",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=1448.000000,Top=132.000000,Right=452.841705,Bottom=790.261353))"
+    },
+    {
+      "target": "picies_2",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=1708.000000,Top=304.000000,Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "picies_5",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=1540.000000,Top=632.000000,Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "picies_4",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=1708.000000,Top=468.000000,Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "picies_3",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=1540.000000,Top=472.000000,Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "picies_1",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=1540.000000,Top=304.000000,Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "difficuty_base_normal",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=116.000000,Top=644.000000,Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "difficuty_base_expert",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=280.000000,Top=640.000000,Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "Difficuty_selected_normal",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=116.000000,Top=648.000000,Right=120.000000,Bottom=200.000000))"
+    },
+    {
+      "target": "Difficuty_selected_expert",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=280.000000,Top=644.000000,Right=120.000000,Bottom=200.000000))"
+    },
+    {
+      "target": "pices_5_selected",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=-40.000000,Top=-44.000000,Right=200.000000,Bottom=200.000000))"
+    },
+    {
+      "target": "Image_5",
+      "property": "LayoutData",
+      "value": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "pices_5_button",
+      "property": "LayoutData",
+      "value": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "pices_4_selected",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=-40.000000,Top=-40.000000,Right=200.000000,Bottom=200.000000))"
+    },
+    {
+      "target": "Image_4",
+      "property": "LayoutData",
+      "value": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "pices_4_button",
+      "property": "LayoutData",
+      "value": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "pices_3_selected",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=-40.000000,Top=-40.000000,Right=200.000000,Bottom=200.000000))"
+    },
+    {
+      "target": "Image_1",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=-16.000000,Top=-16.000000,Right=150.000000,Bottom=150.000000))"
+    },
+    {
+      "target": "pices_3_button",
+      "property": "LayoutData",
+      "value": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "pices_2_selected",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=-40.000000,Top=-40.000000,Right=200.000000,Bottom=200.000000))"
+    },
+    {
+      "target": "Image_0",
+      "property": "LayoutData",
+      "value": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "pices_2_button",
+      "property": "LayoutData",
+      "value": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "pices_1_button",
+      "property": "LayoutData",
+      "value": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "pices_1_selected",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=-40.000000,Top=-40.000000,Right=200.000000,Bottom=200.000000))"
+    },
+    {
+      "target": "Image_3",
+      "property": "LayoutData",
+      "value": "(Offsets=(Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "Image_102",
+      "property": "LayoutData",
+      "value": "(Offsets=(Top=-4.000000,Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "Image_104",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=10.000000,Top=140.000000,Bottom=40.000000))"
+    },
+    {
+      "target": "Image_2",
+      "property": "LayoutData",
+      "value": "(Offsets=(Top=-4.000000,Right=120.000000,Bottom=120.000000))"
+    },
+    {
+      "target": "Image_6",
+      "property": "LayoutData",
+      "value": "(Offsets=(Left=10.000000,Top=144.000000,Bottom=40.000000))"
+    }
+  ],
+  "doc_view": {
+    "blueprint_name": "W_Level4",
+    "blueprint_class": "WidgetBlueprint",
+    "module_count": 3,
+    "connection_count": 0,
+    "component_events": [],
+    "exec_traces": [],
+    "widget_outline": [
+      {
+        "name": "pices_5_selected",
+        "class": "Image",
+        "parent": "picies_5",
+        "children": []
+      },
+      {
+        "name": "pices_1_button",
+        "class": "Button",
+        "parent": "picies_1",
+        "children": []
+      },
+      {
+        "name": "pices_4_selected",
+        "class": "Image",
+        "parent": "picies_4",
+        "children": []
+      },
+      {
+        "name": "pices_3_selected",
+        "class": "Image",
+        "parent": "picies_3",
+        "children": []
+      },
+      {
+        "name": "CanvasPanel_30",
+        "class": "CanvasPanel",
+        "parent": null,
+        "children": [
+          "StepBase",
+          "DifficultyBase",
+          "PiciesBase",
+          "picies_2",
+          "picies_5",
+          "picies_4",
+          "picies_3",
+          "picies_1",
+          "difficuty_base_normal",
+          "difficuty_base_expert",
+          "Difficuty_selected_normal",
+          "Difficuty_selected_expert"
+        ]
+      },
+      {
+        "name": "PiciesBase",
+        "class": "Image",
+        "parent": "CanvasPanel_30",
+        "children": []
+      },
+      {
+        "name": "Image_3",
+        "class": "Image",
+        "parent": "picies_1",
+        "children": []
+      },
+      {
+        "name": "StepBase",
+        "class": "Image",
+        "parent": "CanvasPanel_30",
+        "children": []
+      },
+      {
+        "name": "DifficultyBase",
+        "class": "Image",
+        "parent": "CanvasPanel_30",
+        "children": []
+      },
+      {
+        "name": "pices_2_selected",
+        "class": "Image",
+        "parent": "picies_2",
+        "children": []
+      },
+      {
+        "name": "pices_1_selected",
+        "class": "Image",
+        "parent": "picies_1",
+        "children": []
+      },
+      {
+        "name": "picies_5",
+        "class": "CanvasPanel",
+        "parent": "CanvasPanel_30",
+        "children": [
+          "pices_5_selected",
+          "Image_5",
+          "pices_5_button"
+        ]
+      },
+      {
+        "name": "picies_4",
+        "class": "CanvasPanel",
+        "parent": "CanvasPanel_30",
+        "children": [
+          "pices_4_selected",
+          "Image_4",
+          "pices_4_button"
+        ]
+      },
+      {
+        "name": "picies_3",
+        "class": "CanvasPanel",
+        "parent": "CanvasPanel_30",
+        "children": [
+          "pices_3_selected",
+          "Image_1",
+          "pices_3_button"
+        ]
+      },
+      {
+        "name": "Image_0",
+        "class": "Image",
+        "parent": "picies_2",
+        "children": []
+      },
+      {
+        "name": "Image_1",
+        "class": "Image",
+        "parent": "picies_3",
+        "children": []
+      },
+      {
+        "name": "pices_5_button",
+        "class": "Button",
+        "parent": "picies_5",
+        "children": []
+      },
+      {
+        "name": "pices_4_button",
+        "class": "Button",
+        "parent": "picies_4",
+        "children": []
+      },
+      {
+        "name": "Image_4",
+        "class": "Image",
+        "parent": "picies_4",
+        "children": []
+      },
+      {
+        "name": "picies_2",
+        "class": "CanvasPanel",
+        "parent": "CanvasPanel_30",
+        "children": [
+          "pices_2_selected",
+          "Image_0",
+          "pices_2_button"
+        ]
+      },
+      {
+        "name": "pices_3_button",
+        "class": "Button",
+        "parent": "picies_3",
+        "children": []
+      },
+      {
+        "name": "Image_5",
+        "class": "Image",
+        "parent": "picies_5",
+        "children": []
+      },
+      {
+        "name": "pices_2_button",
+        "class": "Button",
+        "parent": "picies_2",
+        "children": []
+      },
+      {
+        "name": "picies_1",
+        "class": "CanvasPanel",
+        "parent": "CanvasPanel_30",
+        "children": [
+          "pices_1_button",
+          "pices_1_selected",
+          "Image_3"
+        ]
+      },
+      {
+        "name": "difficuty_base_normal",
+        "class": "Image",
+        "parent": "CanvasPanel_30",
+        "children": []
+      },
+      {
+        "name": "difficuty_base_expert",
+        "class": "Image",
+        "parent": "CanvasPanel_30",
+        "children": []
+      },
+      {
+        "name": "Image_102",
+        "class": "Image",
+        "parent": "Difficuty_selected_normal",
+        "children": []
+      },
+      {
+        "name": "Image_104",
+        "class": "Image",
+        "parent": "Difficuty_selected_normal",
+        "children": []
+      },
+      {
+        "name": "Difficuty_selected_normal",
+        "class": "CanvasPanel",
+        "parent": "CanvasPanel_30",
+        "children": [
+          "Image_102",
+          "Image_104"
+        ]
+      },
+      {
+        "name": "Difficuty_selected_expert",
+        "class": "CanvasPanel",
+        "parent": "CanvasPanel_30",
+        "children": [
+          "Image_2",
+          "Image_6"
+        ]
+      },
+      {
+        "name": "Image_2",
+        "class": "Image",
+        "parent": "Difficuty_selected_expert",
+        "children": []
+      },
+      {
+        "name": "Image_6",
+        "class": "Image",
+        "parent": "Difficuty_selected_expert",
+        "children": []
+      }
+    ],
+    "notices": [
+      "This export is built from full asset text, so it includes EventGraph, other detailed graphs, member variables, and generated variables that are serialized into the asset.",
+      "WidgetBlueprint exports also include WidgetTree structure and widget-specific designer properties.",
+      "Runtime-only state and values not serialized into the asset cannot be reconstructed from this exporter."
+    ]
+  }
+}
