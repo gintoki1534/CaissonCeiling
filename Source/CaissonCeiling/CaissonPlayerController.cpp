@@ -4,6 +4,7 @@
 #include "CaissonInteractComponent.h"
 #include "CaissonPawn.h"
 #include "Level3FlowComponent.h"
+#include "Level4PuzzleComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "Framework/Application/SlateApplication.h"
@@ -206,6 +207,15 @@ bool ACaissonPlayerController::IsLevel2TargetActivated(FName TargetId) const
 
 void ACaissonPlayerController::OnRightMousePressed()
 {
+	if (ULevel4PuzzleComponent* Level4PuzzleComponent = GetLevel4PuzzleComponent())
+	{
+		if (Level4PuzzleComponent->IsLevel4SessionActive())
+		{
+			Level4PuzzleComponent->RotateSelectedPiece90();
+			return;
+		}
+	}
+
 	bRightMouseLookHeld = true;
 }
 
@@ -216,6 +226,14 @@ void ACaissonPlayerController::OnRightMouseReleased()
 
 void ACaissonPlayerController::Look(const FInputActionValue& Value)
 {
+	if (ULevel4PuzzleComponent* Level4PuzzleComponent = GetLevel4PuzzleComponent())
+	{
+		if (Level4PuzzleComponent->IsLevel4SessionActive())
+		{
+			return;
+		}
+	}
+
 	if (!bRightMouseLookHeld)
 	{
 		return;
@@ -244,6 +262,19 @@ void ACaissonPlayerController::Look(const FInputActionValue& Value)
 
 void ACaissonPlayerController::OnPrimaryInteractPressed()
 {
+	if (ULevel4PuzzleComponent* Level4PuzzleComponent = GetLevel4PuzzleComponent())
+	{
+		if (Level4PuzzleComponent->IsLevel4SessionActive())
+		{
+			FHitResult Level4HitResult;
+			if (GetCursorHitResult(Level4HitResult))
+			{
+				Level4PuzzleComponent->BeginDragSelectedPiece(Level4HitResult, this);
+			}
+			return;
+		}
+	}
+
 	if (Level3FlowComponent && Level3FlowComponent->IsLevel3SessionActive())
 	{
 		FHitResult Level3HitResult;
@@ -312,6 +343,15 @@ void ACaissonPlayerController::OnPrimaryInteractPressed()
 
 void ACaissonPlayerController::OnPrimaryInteractReleased()
 {
+	if (ULevel4PuzzleComponent* Level4PuzzleComponent = GetLevel4PuzzleComponent())
+	{
+		if (Level4PuzzleComponent->IsLevel4SessionActive())
+		{
+			Level4PuzzleComponent->EndDragSelectedPiece();
+			return;
+		}
+	}
+
 	// Level3 当前改为“单击结算”，释放左键时无需额外处理。
 }
 
@@ -638,4 +678,34 @@ bool ACaissonPlayerController::IsLevel3VisualTransitionActive() const
 float ACaissonPlayerController::GetLevel3VisualTransitionRemainingSeconds() const
 {
 	return Level3FlowComponent ? Level3FlowComponent->GetVisualTransitionRemainingSeconds() : 0.0f;
+}
+
+void ACaissonPlayerController::StartLevel4Puzzle(ELevel4Difficulty Difficulty)
+{
+	if (ULevel4PuzzleComponent* Level4PuzzleComponent = GetLevel4PuzzleComponent())
+	{
+		Level4PuzzleComponent->StartLevel4Puzzle(Difficulty);
+	}
+}
+
+void ACaissonPlayerController::SetLevel4Difficulty(ELevel4Difficulty Difficulty)
+{
+	if (ULevel4PuzzleComponent* Level4PuzzleComponent = GetLevel4PuzzleComponent())
+	{
+		Level4PuzzleComponent->SetLevel4Difficulty(Difficulty);
+	}
+}
+
+void ACaissonPlayerController::SelectLevel4Piece(int32 PieceIndex)
+{
+	if (ULevel4PuzzleComponent* Level4PuzzleComponent = GetLevel4PuzzleComponent())
+	{
+		Level4PuzzleComponent->SelectPiece(PieceIndex);
+	}
+}
+
+ULevel4PuzzleComponent* ACaissonPlayerController::GetLevel4PuzzleComponent() const
+{
+	APawn* MyPawn = GetPawn();
+	return MyPawn ? MyPawn->FindComponentByClass<ULevel4PuzzleComponent>() : nullptr;
 }

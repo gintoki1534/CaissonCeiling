@@ -1,0 +1,197 @@
+{
+  "blueprint": {
+    "name": "BP_L4_Layout_CloudFrame1",
+    "asset_path": "/Script/Engine.Blueprint'/Game/UI/Level4/Layouts/BP_L4_Layout_CloudFrame1.BP_L4_Layout_CloudFrame1'",
+    "blueprint_class": "Blueprint",
+    "parent_class": "CaissonCeiling.Level4PuzzleTargetLayoutActor",
+    "generated_class": "BP_L4_Layout_CloudFrame1_C",
+    "tick_prediction": null,
+    "tick_prediction_reason": null
+  },
+  "event_graph": {
+    "name": "EventGraph",
+    "schema": "BlueprintGraph.EdGraphSchema_K2",
+    "module_count": 3,
+    "connection_count": 0,
+    "modules": [
+      {
+        "id": "K2Node_Event_2",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "ReceiveTick",
+        "meta": {
+          "event_name": "ReceiveTick",
+          "enabled_state": "Disabled"
+        },
+        "pins": [
+          {
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "DeltaSeconds",
+            "direction": "output",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/Level4/Layouts/BP_L4_Layout_CloudFrame1.BP_L4_Layout_CloudFrame1:EventGraph.K2Node_Event_2'"
+      },
+      {
+        "id": "K2Node_Event_1",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "ReceiveActorBeginOverlap",
+        "meta": {
+          "event_name": "ReceiveActorBeginOverlap",
+          "enabled_state": "Disabled"
+        },
+        "pins": [
+          {
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "OtherActor",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/Level4/Layouts/BP_L4_Layout_CloudFrame1.BP_L4_Layout_CloudFrame1:EventGraph.K2Node_Event_1'"
+      },
+      {
+        "id": "K2Node_Event_0",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "ReceiveBeginPlay",
+        "meta": {
+          "event_name": "ReceiveBeginPlay",
+          "enabled_state": "Disabled"
+        },
+        "pins": [
+          {
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/Level4/Layouts/BP_L4_Layout_CloudFrame1.BP_L4_Layout_CloudFrame1:EventGraph.K2Node_Event_0'"
+      }
+    ],
+    "connections": [],
+    "exec_traces": []
+  },
+  "other_graphs": [
+    {
+      "name": "UserConstructionScript",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 1,
+      "connection_count": 0,
+      "modules": [
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "UserConstructionScript",
+          "meta": {
+            "function_name": "UserConstructionScript"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/Level4/Layouts/BP_L4_Layout_CloudFrame1.BP_L4_Layout_CloudFrame1:UserConstructionScript.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [],
+      "exec_traces": [
+        [
+          "UserConstructionScript"
+        ]
+      ]
+    }
+  ],
+  "widget_tree": {
+    "root_widget": null,
+    "widgets": [],
+    "relationships": []
+  },
+  "variables": {
+    "new_variables": [],
+    "generated_variables": [],
+    "widget_variable_guid_map": {}
+  },
+  "special_settings": [],
+  "doc_view": {
+    "blueprint_name": "BP_L4_Layout_CloudFrame1",
+    "blueprint_class": "Blueprint",
+    "module_count": 3,
+    "connection_count": 0,
+    "component_events": [],
+    "exec_traces": [],
+    "widget_outline": [],
+    "notices": [
+      "This export is built from full asset text, so it includes EventGraph, other detailed graphs, member variables, and generated variables that are serialized into the asset.",
+      "Runtime-only state and values not serialized into the asset cannot be reconstructed from this exporter."
+    ]
+  }
+}

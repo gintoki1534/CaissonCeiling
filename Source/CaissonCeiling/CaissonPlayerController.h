@@ -4,12 +4,14 @@
 #include "GameFramework/PlayerController.h"
 #include "InputActionValue.h"
 #include "Level3Types.h"
+#include "Level4Types.h"
 #include "CaissonPlayerController.generated.h"
 
 class UCaissonInteractComponent;
 class UInputAction;
 class UInputMappingContext;
 class ULevel3FlowComponent;
+class ULevel4PuzzleComponent;
 class UUserWidget;
 
 UENUM(BlueprintType)
@@ -178,6 +180,18 @@ public:
 
 	UFUNCTION(BlueprintPure, Category="Level3")
 	float GetLevel3VisualTransitionRemainingSeconds() const;
+
+	UFUNCTION(BlueprintCallable, Category="Level4")
+	void StartLevel4Puzzle(ELevel4Difficulty Difficulty);
+
+	UFUNCTION(BlueprintCallable, Category="Level4")
+	void SetLevel4Difficulty(ELevel4Difficulty Difficulty);
+
+	UFUNCTION(BlueprintCallable, Category="Level4")
+	void SelectLevel4Piece(int32 PieceIndex);
+
+	UFUNCTION(BlueprintPure, Category="Level4")
+	ULevel4PuzzleComponent* GetLevel4PuzzleComponent() const;
 
 private:
 	UPROPERTY(Transient)
