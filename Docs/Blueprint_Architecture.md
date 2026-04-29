@@ -56,6 +56,15 @@
    - `Level3` 修复区域命中与覆盖率累计
 8. `ALevel3RepairRegionActor`
    - `Level3` 修复区域蓝图壳层入口
+9. `ULevel4PuzzleComponent`
+   - `Level4` 拼图运行时状态机
+   - 难度、阶段、碎片选择、拖拽、旋转、吸附和完成判定
+10. `ALevel4PuzzlePieceActor`
+   - `Level4` 拼图碎片 Actor 基类
+   - 负责选中表现与相对正确表现事件入口
+11. `ALevel4PuzzleTargetLayoutActor`
+   - `Level4` 目标布局配置壳层
+   - 用蓝图配置每个阶段碎片的正确位置、旋转和资源类
 
 ### 2.2 当前主要蓝图资产
 
@@ -74,10 +83,15 @@
 11. `W_Level2`
 12. `W_Level3`
 13. `W_Level3_Introdection`
-14. `背景`
-15. `M_UI_Model`
-16. `RT_ModelViewer`
-17. `LevelTargets/`
+14. `BP_ShowcaseModel_Level4`
+15. `W_Level4`
+16. `W_Level4_Introdection`
+17. `Level4/Layouts/`
+18. `Level4/Pieces/`
+19. `背景`
+20. `M_UI_Model`
+21. `RT_ModelViewer`
+22. `LevelTargets/`
 
 `Content/UI/LevelTargets/` 下当前目标蓝图：
 
@@ -393,6 +407,75 @@
 2. 视为历史或备用资产
 3. 修改前先确认用途，不要让 AI 默认把它当成主展示蓝图
 
+### 5.5.2 `BP_ShowcaseModel_Level4`
+
+定位：
+
+1. `Level4` 当前展示 Pawn 蓝图
+2. 用于承载第四关拼图阶段的固定相机、展示模型和 `Level4PuzzleComponent`
+
+当前已确认的结构结论：
+
+1. 其父类当前仍为 `CaissonCeiling.CaissonPawn`
+2. 当前应挂载 `Level4PuzzleComponent`
+3. `StageLayoutClasses` 负责配置四个拼图阶段，顺序应为：
+   - `BP_L4_Layout_CloudFrame1`
+   - `BP_L4_Layout_CloudFrame2`
+   - `BP_L4_Layout_StarMap`
+   - `BP_L4_Layout_FinalAssembly`
+4. `Level4` 期间相机视角固定，不允许继续通过右键拖拽旋转观察模型
+5. 碎片的真实生成、拖拽、旋转、吸附和完成判定都由 `Level4PuzzleComponent` 负责
+6. `BP_ShowcaseModel_Level4` 不应重写拼图完成条件，只承担展示 Pawn 和资源配置职责
+
+### 5.5.3 `W_Level4_Introdection`
+
+定位：
+
+1. `Level4` 教学页
+2. 负责在教学阶段生成或复用 `BP_ShowcaseModel_Level4`
+3. 负责让 `CaissonPlayerController` possess 到第四关展示 Pawn
+4. 教学结束后打开 `W_Level4`
+
+当前已确认的结构结论：
+
+1. 与前几关一致，教学界面期间就先生成模型
+2. 教学页不直接承担拼图玩法状态
+3. 真正拼图状态从进入 `W_Level4` 并启动 `Level4PuzzleComponent` 后开始
+
+### 5.5.4 `W_Level4`
+
+定位：
+
+1. `Level4` 拼图主 UI
+2. 负责难度按钮、碎片按钮、阶段完成提示和事件绑定
+
+当前已确认的接线原则：
+
+1. `Construct` 中获取 `BP_ShowcaseModel_Level4` 上的 `Level4PuzzleComponent` 并保存为 `Level4PuzzleComponentRef`
+2. 难度、碎片选择和阶段继续应直接调用 `Level4PuzzleComponentRef`
+3. 不再把 `SetLevel4Difficulty / SelectPiece / ContinueLevel4AfterStageSolved` 绕回 `CaissonPlayerController`
+4. 这样可以避免当前 Pawn 切换后，Controller 从错误 Pawn 上查找组件导致 UI 无变化
+
+当前已确认事件：
+
+1. `OnLevel4DifficultyChanged`
+   - 刷新 `Difficuty_selected_normal / Difficuty_selected_expert`
+2. `OnLevel4StageChanged`
+   - 刷新阶段 UI 与碎片 UI 初始状态
+3. `OnLevel4PieceSelected`
+   - 刷新碎片按钮选中表现
+4. `OnLevel4StageSolved`
+   - 显示 `StageSolved`
+5. `OnLevel4Completed`
+   - 进入最终完成或后续证书流程
+
+当前已确认按钮规则：
+
+1. 普通难度按钮调用 `SetLevel4Difficulty(Normal)`
+2. 专家难度按钮调用 `SetLevel4Difficulty(Expert)`
+3. 碎片按钮调用 `SelectPiece(1..5)`
+4. `Continue_Next` 隐藏 `StageSolved` 后调用 `ContinueLevel4AfterStageSolved`
+
 ### 5.6 `LevelTargets/` 下目标蓝图
 
 当前 3 个目标蓝图：
@@ -554,6 +637,67 @@ Oiling 达成结果
 5. `W_Level3` 当前已经进入正式玩法开发状态，不再是纯占位页
 6. 真实灰尘与桐油材质已经接入 `BP_ShowcaseModel_Level3`，当前采用真实修复网格 Slot 0 材质直驱，不再使用 Dust/Oil Overlay Mesh 作为主表现路径
 
+### 6.2.2 Level4 当前拼图主链路
+
+```text
+W_Level4_Introdection
+-> 查找或生成 BP_ShowcaseModel_Level4
+-> CaissonPlayerController.Possess(BP_ShowcaseModel_Level4)
+-> 打开 W_Level4
+
+W_Level4.Construct
+-> 获取 BP_ShowcaseModel_Level4 上的 Level4PuzzleComponent
+-> Set Level4PuzzleComponentRef
+-> 绑定 OnLevel4DifficultyChanged / OnLevel4StageChanged / OnLevel4PieceSelected / OnLevel4StageSolved / OnLevel4Completed
+-> Level4PuzzleComponent.StartLevel4Puzzle(Normal)
+
+难度按钮
+-> Level4PuzzleComponent.SetLevel4Difficulty(Normal / Expert)
+-> OnLevel4DifficultyChanged
+-> W_Level4 刷新普通/专家高亮
+
+碎片按钮
+-> Level4PuzzleComponent.SelectPiece(PieceIndex)
+-> SpawnPieceIfNeeded
+-> OnLevel4PieceSelected
+-> W_Level4 刷新碎片选中高亮
+
+鼠标左键命中已生成碎片
+-> ACaissonPlayerController::GetLevel4CursorHitResult()
+-> Level4PuzzleComponent.FindSpawnedPieceHitOnRay()
+-> Level4PuzzleComponent.BeginDragSelectedPiece()
+-> Tick 中按当前锁定轴所在平面拖拽
+-> EndDragSelectedPiece()
+-> SnapPieceToBestAnchorIfClose()
+-> EvaluateCurrentStage()
+
+鼠标右键命中已生成碎片
+-> 第一次命中该碎片：选中/预选，不旋转
+-> 再次命中同一碎片：围绕鼠标命中点旋转 90 度
+-> EvaluateCurrentStage()
+
+当前阶段全部碎片相对同一锚点对齐
+-> Level4PuzzleComponent.CompleteCurrentStage()
+-> CurrentPhase = StageCompleted
+-> OnLevel4StageSolved
+-> W_Level4 显示 StageSolved
+
+Continue_Next.OnClicked
+-> W_Level4 隐藏 StageSolved
+-> Level4PuzzleComponent.ContinueLevel4AfterStageSolved()
+-> 普通模式跳过 CloudFrame2
+-> 专家模式进入全部四个阶段
+-> 最后一阶段后 OnLevel4Completed
+```
+
+这条链路说明：
+
+1. `Level4` 当前主玩法已经由 C++ 状态机收口。
+2. `W_Level4` 只刷新 UI 和调用组件公开接口，不保存真拼图状态。
+3. 阶段完成后必须经过 `StageSolved` UI 确认，才会进入下一阶段。
+4. 普通/专家的阶段差异由 `Level4PuzzleComponent.ShouldSkipStage` 决定。
+5. 专家模式碎片新增时生成到拼图宿主原点，普通模式碎片新增时位置已经正确。
+
 ### 6.3 Level2 当前主链路
 
 ```text
@@ -627,7 +771,12 @@ PlayerTick
 6. `W_Level3_Introdection`
 7. `W_Level3`
 8. `BP_Level3RepairRegion_Dusting`
-9. `LevelTargets/` 下 3 个目标蓝图
+9. `BP_ShowcaseModel_Level4`
+10. `W_Level4_Introdection`
+11. `W_Level4`
+12. `Level4/Layouts/` 下四个布局蓝图
+13. `Level4/Pieces/` 下当前已配置的拼图碎片蓝图
+14. `LevelTargets/` 下 3 个目标蓝图
 
 ### 7.2 已存在，但仍应谨慎修改的资产
 
@@ -652,6 +801,8 @@ PlayerTick
 2. 当前项目里已实际建立的介绍页资产名为 `W_Level3_Introdection`
 3. `W_Level3_Introdection` 当前已经完成基础接线，可作为 `Level3` 入口继续维护
 4. 不建议继续直接复用 `W_Level1_Introdection` 原资产，因为它原本关闭后会打开 `W_Level2`
+5. `W_Level4` 当前已经完成主拼图 UI 接线，后续修改时优先保持“直接调用 `Level4PuzzleComponentRef`”的原则
+6. `BP_ShowcaseModel_Level4` 当前是 `Level4PuzzleComponent` 的宿主，后续新增拼图阶段或资源时优先更新 `StageLayoutClasses` 和 `BP_L4_Layout_*`
 
 ## 8. 后续新增蓝图时的标准写法
 
@@ -723,9 +874,12 @@ PlayerTick
 3. `Level1 / Level2` 主模型已经统一回到真实世界模型
 4. `Level2 Step 1` 的点击顺序、推进与点亮链已经收口
 5. `Level2` 当前已经形成“点击目标 -> 镜头拉近 -> 介绍 UI -> 回原视角”的蓝图表现闭环
+6. `Level3` 当前已经形成“除尘 -> 涂油”的双子阶段玩法闭环，并接入真实材质参数表现
+7. `Level4` 当前已经形成“教学页生成展示 Pawn -> 拼图 UI 直接驱动组件 -> 普通/专家阶段流转 -> 阶段完成 UI 确认”的完整主链路
 
 后续 AI 或开发者继续接手时，应优先沿着当前结构扩展，而不是回到：
 
 1. `SceneCapture + UMG 模型显示`
 2. Widget 自己维护步骤状态
 3. 蓝图里同时写输入、状态、流程、页面管理
+4. `W_Level4` 绕回 Controller 查找拼图组件

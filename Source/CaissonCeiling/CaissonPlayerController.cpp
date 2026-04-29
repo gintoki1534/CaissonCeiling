@@ -937,6 +937,14 @@ void ACaissonPlayerController::SelectLevel4Piece(int32 PieceIndex)
 	}
 }
 
+void ACaissonPlayerController::ContinueLevel4AfterStageSolved()
+{
+	if (ULevel4PuzzleComponent* Level4PuzzleComponent = GetLevel4PuzzleComponent())
+	{
+		Level4PuzzleComponent->ContinueLevel4AfterStageSolved();
+	}
+}
+
 ULevel4PuzzleComponent* ACaissonPlayerController::GetLevel4PuzzleComponent() const
 {
 	APawn* MyPawn = GetPawn();

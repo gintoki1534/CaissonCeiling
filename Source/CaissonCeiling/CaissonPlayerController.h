@@ -208,6 +208,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Level4")
 	void SelectLevel4Piece(int32 PieceIndex);
 
+	UFUNCTION(BlueprintCallable, Category="Level4")
+	void ContinueLevel4AfterStageSolved();
+
 	UFUNCTION(BlueprintPure, Category="Level4")
 	ULevel4PuzzleComponent* GetLevel4PuzzleComponent() const;
 

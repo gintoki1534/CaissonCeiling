@@ -13,6 +13,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLevel4DifficultyChanged, ELevel4D
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLevel4PieceSelected, int32, PieceIndex);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnLevel4PieceSpawned, int32, PieceIndex, ALevel4PuzzlePieceActor*, PieceActor);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnLevel4PieceCorrectChanged, int32, PieceIndex, bool, bIsCorrect);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnLevel4StageSolved, ELevel4StageId, SolvedStage, int32, StageIndex);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnLevel4Completed);
 
 UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
@@ -63,6 +64,9 @@ public:
 	FOnLevel4PieceCorrectChanged OnLevel4PieceCorrectChanged;
 
 	UPROPERTY(BlueprintAssignable, Category="Level4|Events")
+	FOnLevel4StageSolved OnLevel4StageSolved;
+
+	UPROPERTY(BlueprintAssignable, Category="Level4|Events")
 	FOnLevel4Completed OnLevel4Completed;
 
 	UFUNCTION(BlueprintCallable, Category="Level4")
@@ -73,6 +77,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category="Level4")
 	void SelectPiece(int32 PieceIndex);
+
+	UFUNCTION(BlueprintCallable, Category="Level4")
+	void ContinueLevel4AfterStageSolved();
 
 	UFUNCTION(BlueprintCallable, Category="Level4")
 	void BeginDragSelectedPiece(const FHitResult& HitResult, APlayerController* PlayerController);
@@ -101,6 +108,12 @@ public:
 	ELevel4StageId GetCurrentStageId() const;
 
 	UFUNCTION(BlueprintPure, Category="Level4")
+	ELevel4PuzzlePhase GetCurrentPhase() const;
+
+	UFUNCTION(BlueprintPure, Category="Level4")
+	bool HasLevel4DifficultySelection() const;
+
+	UFUNCTION(BlueprintPure, Category="Level4")
 	int32 GetSelectedPieceIndex() const;
 
 	UFUNCTION(BlueprintPure, Category="Level4")
@@ -124,6 +137,8 @@ private:
 	void StartStage(int32 NewStageIndex);
 	void CompleteCurrentStage();
 	void EvaluateCurrentStage();
+	void SelectPieceInternal(int32 PieceIndex, bool bUserInitiated);
+	void EnsureDifficultySelected();
 	void SpawnPieceIfNeeded(int32 PieceIndex);
 	void RotateSelectedPiece90AroundPivot(const FVector& PivotLocation);
 	void SnapPieceToBestAnchorIfClose(ALevel4PuzzlePieceActor* PieceActor);
@@ -155,10 +170,12 @@ private:
 	TObjectPtr<ALevel4PuzzlePieceActor> DraggedPiece;
 
 	ELevel4Difficulty CurrentDifficulty = ELevel4Difficulty::Normal;
+	ELevel4PuzzlePhase CurrentPhase = ELevel4PuzzlePhase::Inactive;
 	int32 CurrentStageIndex = INDEX_NONE;
 	int32 SelectedPieceIndex = INDEX_NONE;
 	int32 RightClickPrimedPieceIndex = INDEX_NONE;
 	bool bSessionActive = false;
+	bool bDifficultySelected = false;
 	bool bDragging = false;
 	FVector DragOffset = FVector::ZeroVector;
 	FVector DragPlaneOrigin = FVector::ZeroVector;

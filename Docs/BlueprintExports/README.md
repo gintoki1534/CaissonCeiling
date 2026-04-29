@@ -12,6 +12,13 @@
 6. `BP_LevelTarget_TiangongTower.json`
 7. `BP_LevelTarget_CloudPattern.json`
 8. `BP_LevelTarget_StarMap.json`
+9. `W_Level4_Introdection.json`
+10. `W_Level4.json`
+11. `BP_ShowcaseModel_Level4.json`
+12. `BP_L4_Layout_CloudFrame1.json`
+13. `BP_L4_Layout_CloudFrame2.json`
+14. `BP_L4_Layout_StarMap.json`
+15. `BP_L4_Layout_FinalAssembly.json`
 
 维护约定：
 

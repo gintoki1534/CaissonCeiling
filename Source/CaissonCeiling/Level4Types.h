@@ -30,6 +30,15 @@ enum class ELevel4LockedAxis : uint8
 	Z UMETA(DisplayName="Z")
 };
 
+UENUM(BlueprintType)
+enum class ELevel4PuzzlePhase : uint8
+{
+	Inactive UMETA(DisplayName="Inactive"),
+	Playing UMETA(DisplayName="Playing"),
+	StageCompleted UMETA(DisplayName="StageCompleted"),
+	Completed UMETA(DisplayName="Completed")
+};
+
 USTRUCT(BlueprintType)
 struct FLevel4PuzzlePieceConfig
 {

@@ -96,15 +96,19 @@ void ULevel4PuzzleComponent::StartLevel4Puzzle(ELevel4Difficulty InDifficulty)
 {
 	BuildConfigsFromLayouts();
 	CurrentDifficulty = InDifficulty;
+	bDifficultySelected = false;
 	bSessionActive = true;
-	OnLevel4DifficultyChanged.Broadcast(CurrentDifficulty);
+	CurrentPhase = ELevel4PuzzlePhase::Playing;
 
 	StartStage(0);
 }
 
 void ULevel4PuzzleComponent::SetLevel4Difficulty(ELevel4Difficulty InDifficulty)
 {
-	if (CurrentDifficulty == InDifficulty)
+	const bool bWasDifficultySelected = bDifficultySelected;
+	bDifficultySelected = true;
+
+	if (bWasDifficultySelected && CurrentDifficulty == InDifficulty)
 	{
 		return;
 	}
@@ -115,9 +119,24 @@ void ULevel4PuzzleComponent::SetLevel4Difficulty(ELevel4Difficulty InDifficulty)
 
 void ULevel4PuzzleComponent::SelectPiece(int32 PieceIndex)
 {
+	SelectPieceInternal(PieceIndex, true);
+}
+
+void ULevel4PuzzleComponent::SelectPieceInternal(int32 PieceIndex, bool bUserInitiated)
+{
 	if (!bSessionActive)
 	{
 		return;
+	}
+
+	if (CurrentPhase != ELevel4PuzzlePhase::Playing)
+	{
+		return;
+	}
+
+	if (bUserInitiated)
+	{
+		EnsureDifficultySelected();
 	}
 
 	RightClickPrimedPieceIndex = INDEX_NONE;
@@ -150,12 +169,36 @@ void ULevel4PuzzleComponent::SelectPiece(int32 PieceIndex)
 	OnLevel4PieceSelected.Broadcast(SelectedPieceIndex);
 }
 
-void ULevel4PuzzleComponent::BeginDragSelectedPiece(const FHitResult& HitResult, APlayerController* PlayerController)
+void ULevel4PuzzleComponent::EnsureDifficultySelected()
 {
-	if (!bSessionActive || !PlayerController)
+	if (bDifficultySelected)
 	{
 		return;
 	}
+
+	bDifficultySelected = true;
+	CurrentDifficulty = ELevel4Difficulty::Normal;
+	OnLevel4DifficultyChanged.Broadcast(CurrentDifficulty);
+}
+
+void ULevel4PuzzleComponent::ContinueLevel4AfterStageSolved()
+{
+	if (!bSessionActive || CurrentPhase != ELevel4PuzzlePhase::StageCompleted)
+	{
+		return;
+	}
+
+	StartStage(CurrentStageIndex + 1);
+}
+
+void ULevel4PuzzleComponent::BeginDragSelectedPiece(const FHitResult& HitResult, APlayerController* PlayerController)
+{
+	if (!bSessionActive || CurrentPhase != ELevel4PuzzlePhase::Playing || !PlayerController)
+	{
+		return;
+	}
+
+	EnsureDifficultySelected();
 
 	ALevel4PuzzlePieceActor* HitPiece = ResolveHitPieceActor(HitResult);
 	if (!HitPiece || !IsRuntimePieceActor(HitPiece))
@@ -166,7 +209,7 @@ void ULevel4PuzzleComponent::BeginDragSelectedPiece(const FHitResult& HitResult,
 
 	if (SelectedPieceIndex != HitPiece->PieceIndex)
 	{
-		SelectPiece(HitPiece->PieceIndex);
+		SelectPieceInternal(HitPiece->PieceIndex, false);
 	}
 	RightClickPrimedPieceIndex = INDEX_NONE;
 
@@ -248,10 +291,12 @@ void ULevel4PuzzleComponent::EndDragSelectedPiece()
 
 void ULevel4PuzzleComponent::RotateSelectedPiece90()
 {
-	if (!bSessionActive)
+	if (!bSessionActive || CurrentPhase != ELevel4PuzzlePhase::Playing)
 	{
 		return;
 	}
+
+	EnsureDifficultySelected();
 
 	FRuntimePiece* RuntimePiece = FindRuntimePiece(SelectedPieceIndex);
 	const FLevel4PuzzleStageConfig* StageConfig = GetCurrentStageConfig();
@@ -268,7 +313,7 @@ void ULevel4PuzzleComponent::RotateSelectedPiece90()
 
 void ULevel4PuzzleComponent::RotateSelectedPiece90AroundPivot(const FVector& PivotLocation)
 {
-	if (!bSessionActive)
+	if (!bSessionActive || CurrentPhase != ELevel4PuzzlePhase::Playing)
 	{
 		return;
 	}
@@ -304,10 +349,12 @@ void ULevel4PuzzleComponent::RotateSelectedPiece90AroundPivot(const FVector& Piv
 
 void ULevel4PuzzleComponent::HandleRightClickPiece(const FHitResult& HitResult)
 {
-	if (!bSessionActive)
+	if (!bSessionActive || CurrentPhase != ELevel4PuzzlePhase::Playing)
 	{
 		return;
 	}
+
+	EnsureDifficultySelected();
 
 	ALevel4PuzzlePieceActor* HitPiece = ResolveHitPieceActor(HitResult);
 	if (!HitPiece || !IsRuntimePieceActor(HitPiece))
@@ -328,7 +375,7 @@ void ULevel4PuzzleComponent::HandleRightClickPiece(const FHitResult& HitResult)
 		}
 		if (SelectedPieceIndex != HitPiece->PieceIndex)
 		{
-			SelectPiece(HitPiece->PieceIndex);
+			SelectPieceInternal(HitPiece->PieceIndex, false);
 		}
 		RightClickPrimedPieceIndex = HitPiece->PieceIndex;
 		return;
@@ -362,10 +409,12 @@ void ULevel4PuzzleComponent::HandleRightClickPiece(const FHitResult& HitResult)
 
 void ULevel4PuzzleComponent::MoveSelectedPieceToTargetLocationKeepingRotation()
 {
-	if (!bSessionActive)
+	if (!bSessionActive || CurrentPhase != ELevel4PuzzlePhase::Playing)
 	{
 		return;
 	}
+
+	EnsureDifficultySelected();
 
 	FRuntimePiece* RuntimePiece = FindRuntimePiece(SelectedPieceIndex);
 	if (!RuntimePiece || !RuntimePiece->Actor)
@@ -507,7 +556,7 @@ bool ULevel4PuzzleComponent::FindSpawnedPieceHitOnRay(const FVector& RayStart, c
 
 bool ULevel4PuzzleComponent::IsLevel4SessionActive() const
 {
-	return bSessionActive;
+	return bSessionActive && CurrentPhase != ELevel4PuzzlePhase::Inactive && CurrentPhase != ELevel4PuzzlePhase::Completed;
 }
 
 ELevel4Difficulty ULevel4PuzzleComponent::GetCurrentDifficulty() const
@@ -519,6 +568,16 @@ ELevel4StageId ULevel4PuzzleComponent::GetCurrentStageId() const
 {
 	const FLevel4PuzzleStageConfig* StageConfig = GetCurrentStageConfig();
 	return StageConfig ? StageConfig->StageId : ELevel4StageId::None;
+}
+
+ELevel4PuzzlePhase ULevel4PuzzleComponent::GetCurrentPhase() const
+{
+	return CurrentPhase;
+}
+
+bool ULevel4PuzzleComponent::HasLevel4DifficultySelection() const
+{
+	return bDifficultySelected;
 }
 
 int32 ULevel4PuzzleComponent::GetSelectedPieceIndex() const
@@ -577,6 +636,7 @@ void ULevel4PuzzleComponent::StartStage(int32 NewStageIndex)
 	if (RuntimeStageConfigs.Num() <= 0)
 	{
 		bSessionActive = false;
+		CurrentPhase = ELevel4PuzzlePhase::Completed;
 		OnLevel4Completed.Broadcast();
 		return;
 	}
@@ -589,6 +649,7 @@ void ULevel4PuzzleComponent::StartStage(int32 NewStageIndex)
 	if (!RuntimeStageConfigs.IsValidIndex(NewStageIndex))
 	{
 		bSessionActive = false;
+		CurrentPhase = ELevel4PuzzlePhase::Completed;
 		OnLevel4Completed.Broadcast();
 		return;
 	}
@@ -603,6 +664,7 @@ void ULevel4PuzzleComponent::StartStage(int32 NewStageIndex)
 
 	RuntimePieces.Reset();
 	CurrentStageIndex = NewStageIndex;
+	CurrentPhase = ELevel4PuzzlePhase::Playing;
 	SelectedPieceIndex = INDEX_NONE;
 	RightClickPrimedPieceIndex = INDEX_NONE;
 	bDragging = false;
@@ -620,16 +682,35 @@ void ULevel4PuzzleComponent::StartStage(int32 NewStageIndex)
 	}
 
 	OnLevel4StageChanged.Broadcast(StageConfig.StageId, CurrentStageIndex);
-	SelectPiece(1);
+	SelectPieceInternal(1, false);
 }
 
 void ULevel4PuzzleComponent::CompleteCurrentStage()
 {
-	StartStage(CurrentStageIndex + 1);
+	if (!RuntimeStageConfigs.IsValidIndex(CurrentStageIndex) || CurrentPhase != ELevel4PuzzlePhase::Playing)
+	{
+		return;
+	}
+
+	CurrentPhase = ELevel4PuzzlePhase::StageCompleted;
+	bDragging = false;
+	DraggedPiece = nullptr;
+	DragPlayerController = nullptr;
+	DragOffset = FVector::ZeroVector;
+	DragPlaneOrigin = FVector::ZeroVector;
+	DragActorPlaneOrigin = FVector::ZeroVector;
+
+	const FLevel4PuzzleStageConfig& StageConfig = RuntimeStageConfigs[CurrentStageIndex];
+	OnLevel4StageSolved.Broadcast(StageConfig.StageId, CurrentStageIndex);
 }
 
 void ULevel4PuzzleComponent::EvaluateCurrentStage()
 {
+	if (CurrentPhase != ELevel4PuzzlePhase::Playing)
+	{
+		return;
+	}
+
 	const FLevel4PuzzleStageConfig* StageConfig = GetCurrentStageConfig();
 	if (!StageConfig)
 	{
@@ -1097,12 +1178,11 @@ FTransform ULevel4PuzzleComponent::MakeSpawnTransform(const FLevel4PuzzlePieceCo
 	FVector SpawnLocation = TargetTransform.GetLocation();
 	if (CurrentDifficulty == ELevel4Difficulty::Expert)
 	{
-		const FVector RandomOffset(
-			FMath::FRandRange(StageConfig.ExpertRandomMin.X, StageConfig.ExpertRandomMax.X),
-			FMath::FRandRange(StageConfig.ExpertRandomMin.Y, StageConfig.ExpertRandomMax.Y),
-			FMath::FRandRange(StageConfig.ExpertRandomMin.Z, StageConfig.ExpertRandomMax.Z));
-		SpawnLocation = TargetTransform.GetLocation() + RandomOffset;
-		SpawnLocation = ProjectPointToStagePlane(SpawnLocation, StageConfig, TargetTransform.GetLocation());
+		SpawnLocation = SpawnOrigin;
+		if (bSpawnRelativeToOwner && GetOwner())
+		{
+			SpawnLocation = GetOwner()->GetActorTransform().TransformPosition(SpawnOrigin);
+		}
 	}
 
 	SpawnLocation += GetPlaneNormal(StageConfig) * SpawnHeightOffset;

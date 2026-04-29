@@ -16,7 +16,11 @@
    - 当前蓝图职责边界
    - 已确认接线方式
    - C++ 与蓝图连接关系
-3. [../CaissonCeiling_Migration_Guide.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/CaissonCeiling_Migration_Guide.md)
+3. [Level4_Puzzle.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Level4_Puzzle.md)
+   - `Level4` 拼图当前实现
+   - 普通/专家难度规则
+   - 拼图阶段、吸附、完成 UI 与蓝图接线约定
+4. [../CaissonCeiling_Migration_Guide.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/CaissonCeiling_Migration_Guide.md)
    - 当前重构原则
    - C++/蓝图分层结论
 
@@ -45,6 +49,13 @@
 10. [BP_ShowcaseModel_Level3.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/BP_ShowcaseModel_Level3.json)
 11. [W_Level3_Introdection.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/W_Level3_Introdection.json)
 12. [W_Level3.json](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/BlueprintExports/W_Level3.json)
+13. [W_Level4_Introdection.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level4_Introdection.md)
+14. [W_Level4.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level4.md)
+15. [BP_ShowcaseModel_Level4.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_ShowcaseModel_Level4.md)
+16. [BP_L4_Layout_CloudFrame1.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_L4_Layout_CloudFrame1.md)
+17. [BP_L4_Layout_CloudFrame2.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_L4_Layout_CloudFrame2.md)
+18. [BP_L4_Layout_StarMap.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_L4_Layout_StarMap.md)
+19. [BP_L4_Layout_FinalAssembly.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_L4_Layout_FinalAssembly.md)
 
 ## 3. 当前项目所处阶段
 
@@ -76,9 +87,9 @@
 
 10. 当前下一步重点是：
 
-   - 完整验收 `Dusting + Oiling` 双子阶段的真实材质表现、5 秒过渡和点击锁定节奏
-   - 收尾 `W_Level3` 的调试输出、正式文案和结果展示
-   - 在已跑通的 `Dusting + Oiling` 双子阶段闭环上继续推进 `Level3` 后续子玩法
+   - 继续收尾 `Level4` 拼图的最终美术表现、正式文案、音效和最终结算流转
+   - 完整验收 `Level4` 普通/专家难度下的四阶段配置、吸附容差和完成 UI
+   - 在 `Level4` 完成后推进证书与收尾演出
 
 ## 4. 蓝图文档如何更新
 
@@ -121,16 +132,20 @@ powershell -ExecutionPolicy Bypass -File Docs\generate_blueprint_docs.ps1 --sync
 
 ## 6. 当前建议的接手入口
 
-如果后续开发或 AI 需要继续接手 `Level3`，建议从下面顺序开始：
+如果后续开发或 AI 需要继续接手 `Level4`，建议从下面顺序开始：
 
 1. 先读 [开发流程.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/开发流程.md)
 2. 再读 [Blueprint_Architecture.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprint_Architecture.md)
-3. 再查看：
-   - [BP_ShowcaseModel_Level3.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_ShowcaseModel_Level3.md)
-   - [W_Level3_Introdection.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level3_Introdection.md)
-   - [W_Level3.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level3.md)
-   - [BP_Level3RepairRegion_Dusting.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_Level3RepairRegion_Dusting.md)
-4. 如果需要确认详细节点，再回看对应 `json`
+3. 再读 [Level4_Puzzle.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Level4_Puzzle.md)
+4. 再查看：
+   - [BP_ShowcaseModel_Level4.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_ShowcaseModel_Level4.md)
+   - [W_Level4_Introdection.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level4_Introdection.md)
+   - [W_Level4.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level4.md)
+   - [BP_L4_Layout_CloudFrame1.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_L4_Layout_CloudFrame1.md)
+   - [BP_L4_Layout_CloudFrame2.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_L4_Layout_CloudFrame2.md)
+   - [BP_L4_Layout_StarMap.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_L4_Layout_StarMap.md)
+   - [BP_L4_Layout_FinalAssembly.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_L4_Layout_FinalAssembly.md)
+5. 如果需要确认详细节点，再回看对应 `json`
 
 ## 7. 文档维护约定
 

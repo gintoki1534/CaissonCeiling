@@ -15,7 +15,8 @@
 1. [Docs/README.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/README.md)
 2. [Docs/开发流程.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/开发流程.md)
 3. [Docs/Blueprint_Architecture.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprint_Architecture.md)
-4. [CaissonCeiling_Migration_Guide.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/CaissonCeiling_Migration_Guide.md)
+4. [Docs/Level4_Puzzle.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Level4_Puzzle.md)
+5. [CaissonCeiling_Migration_Guide.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/CaissonCeiling_Migration_Guide.md)
 
 如果要确认某个蓝图当前具体状态，优先查看：
 
