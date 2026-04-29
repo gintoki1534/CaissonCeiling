@@ -91,7 +91,7 @@ GuideDimBackground [Image] | parent=NewbieGuideOverlay | children=无
 1. 自定义事件_0 -> K2Node_SwitchInteger_1 -> KismetSystemLibrary.PrintString -> SetVisibility -> SetVisibility
 1. 自定义事件_0 -> K2Node_SwitchInteger_1 -> KismetSystemLibrary.PrintString
 1. HandleReturnToDefaultFinished -> CaissonPlayerController.CompleteLevel2InspectPresentation
-1. HandleLevel2InspectStarted -> SetVisibility -> K2Node_SwitchName_0 -> SetRenderScale -> CanvasPanelSlot.SetPosition -> SetVisibility -> BP_ShowcaseModel_C.FocusTargetById -> PlayAnimation
+1. HandleLevel2InspectStarted -> SetVisibility -> PlayAnimation -> SetVisibility -> K2Node_SwitchName_0 -> SetRenderScale -> CanvasPanelSlot.SetPosition -> SetVisibility -> BP_ShowcaseModel_C.FocusTargetById -> PlayAnimation
 1. HandleFinalContinuePromptRequested -> SetVisibility
 1. HandleNextLevelRequested -> IsValid -> BP_ShowcaseModel_C.DeactivateLevel2Presentation -> Cast To CaissonPlayerController -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
 1. Indtro_Button1.OnClicked -> SetVisibility -> BP_ShowcaseModel_C.ReturnToDefaultView -> KismetSystemLibrary.PrintString
@@ -249,7 +249,7 @@ GuideDimBackground [Image] | parent=NewbieGuideOverlay | children=无
 1. BackgroundBlur_145.LayoutData = (Offsets=(Right=1940.240112,Bottom=1099.068970))
 1. GuideDimBackground.LayoutData = (Offsets=(Right=1947.447388,Bottom=1089.459473))
 1. Image_274.LayoutData = (Offsets=(Left=510.000000,Top=674.000000,Right=1000.000000,Bottom=305.418762),Anchors=(Minimum=(X=0.500000,Y=1.000000),Maximum=(X=0.500000,Y=1.000000)))
-1. TextBlock_77.LayoutData = (Offsets=(Left=864.000000,Top=856.000000,Right=628.528503,Bottom=63.633633))
+1. TextBlock_77.LayoutData = (Offsets=(Left=864.000000,Top=853.723145,Right=628.528503,Bottom=63.633633))
 1. TextBlock.LayoutData = (Offsets=(Left=864.000000,Top=816.000000))
 1. B_CloseNewbieGuide.LayoutData = (Offsets=(Right=5.705688,Bottom=29.259216),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
 1. InitialTiangongInfo.LayoutData = (Offsets=(Top=-1081.081055,Right=1743.783813,Bottom=1028.808838),Anchors=(Minimum=(X=0.000000,Y=1.000000),Maximum=(X=0.000000,Y=1.000000)))
@@ -282,9 +282,9 @@ GuideDimBackground [Image] | parent=NewbieGuideOverlay | children=无
 1. NewbieGuideOverlay.LayoutData = (Offsets=(Right=1821.921875,Bottom=1051.081055),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
 1. nextstep.LayoutData = (Offsets=(Left=1464.865356,Top=1009.155945,Right=422.000000,Bottom=29.000000))
 1. Indtro_Button1.LayoutData = (Offsets=(Left=-420.420410,Top=-658.258240,Right=1900.900879,Bottom=1058.258301))
-1. Image_295.LayoutData = (Offsets=(Left=524.000000,Top=-628.000000,Right=881.750000,Bottom=1015.500000))
+1. Image_295.LayoutData = (Offsets=(Left=524.000000,Top=-628.000000,Right=762.000000,Bottom=539.000000))
 1. Indtro_Button2.LayoutData = (Offsets=(Left=-415.615601,Top=-670.270264,Right=1900.900879,Bottom=1070.270264))
-1. Image_461.LayoutData = (Offsets=(Left=-247.152603,Top=-576.000000,Right=1802.680420,Bottom=984.376648))
+1. Image_461.LayoutData = (Offsets=(Left=-299.272247,Top=-576.000000,Right=1802.680420,Bottom=984.376648))
 1. Indtro_Button3.LayoutData = (Offsets=(Left=-418.018005,Top=-685.489441,Right=1898.498535,Bottom=1089.489502))
 1. Image_822.LayoutData = (Offsets=(Left=-332.000000,Top=-247.935944,Right=1807.307373,Bottom=644.214233))
 1. TextBlock_2.LayoutData = (Offsets=(Left=529.087097,Top=53.893749,Right=813.856689,Bottom=127.812096))

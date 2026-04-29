@@ -11,8 +11,8 @@
   "event_graph": {
     "name": "EventGraph",
     "schema": "BlueprintGraph.EdGraphSchema_K2",
-    "module_count": 116,
-    "connection_count": 134,
+    "module_count": 121,
+    "connection_count": 139,
     "modules": [
       {
         "id": "K2Node_Event_1",
@@ -4459,7 +4459,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_16",
+                "node": "K2Node_CallFunction_39",
                 "node_title": "SetVisibility",
                 "pin_name": "execute"
               }
@@ -4605,8 +4605,8 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CustomEvent_2",
-                "node_title": "HandleLevel2InspectStarted",
+                "node": "K2Node_CallFunction_40",
+                "node_title": "PlayAnimation",
                 "pin_name": "then"
               }
             ]
@@ -4674,8 +4674,8 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CustomEvent_2",
-                "node_title": "HandleLevel2InspectStarted",
+                "node": "K2Node_CallFunction_40",
+                "node_title": "PlayAnimation",
                 "pin_name": "then"
               }
             ]
@@ -5830,6 +5830,11 @@
                 "node": "K2Node_VariableGet_34",
                 "node_title": "Get Introducing_3",
                 "pin_name": "Introducing_3"
+              },
+              {
+                "node": "K2Node_VariableGet_48",
+                "node_title": "Get nextstep",
+                "pin_name": "nextstep"
               }
             ]
           },
@@ -5887,6 +5892,11 @@
                 "node": "K2Node_VariableGet_34",
                 "node_title": "Get Introducing_3",
                 "pin_name": "Introducing_3"
+              },
+              {
+                "node": "K2Node_VariableGet_48",
+                "node_title": "Get nextstep",
+                "pin_name": "nextstep"
               }
             ]
           },
@@ -9163,6 +9173,420 @@
           }
         ],
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level2.W_Level2:EventGraph.K2Node_CallFunction_21'"
+      },
+      {
+        "id": "K2Node_VariableGet_48",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get nextstep",
+        "meta": {
+          "variable_name": "nextstep"
+        },
+        "pins": [
+          {
+            "name": "nextstep",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_14",
+                "node_title": "SetVisibility",
+                "pin_name": "self"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level2.W_Level2:EventGraph.K2Node_VariableGet_48'"
+      },
+      {
+        "id": "K2Node_CallFunction_39",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SetVisibility",
+        "meta": {
+          "function_name": "SetVisibility",
+          "function_owner": null
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CustomEvent_2",
+                "node_title": "HandleLevel2InspectStarted",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_40",
+                "node_title": "PlayAnimation",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_51",
+                "node_title": "Get nextstep",
+                "pin_name": "nextstep"
+              }
+            ]
+          },
+          {
+            "name": "InVisibility",
+            "direction": "input",
+            "category": "byte",
+            "subcategory": "",
+            "default_value": "Visible",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CustomEvent_2",
+                "node_title": "HandleLevel2InspectStarted",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_51",
+                "node_title": "Get nextstep",
+                "pin_name": "nextstep"
+              }
+            ]
+          },
+          {
+            "name": "InVisibility",
+            "category": "byte",
+            "default_value": "Visible",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level2.W_Level2:EventGraph.K2Node_CallFunction_39'"
+      },
+      {
+        "id": "K2Node_VariableGet_51",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get nextstep",
+        "meta": {
+          "variable_name": "nextstep"
+        },
+        "pins": [
+          {
+            "name": "nextstep",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_39",
+                "node_title": "SetVisibility",
+                "pin_name": "self"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level2.W_Level2:EventGraph.K2Node_VariableGet_51'"
+      },
+      {
+        "id": "K2Node_CallFunction_40",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "PlayAnimation",
+        "meta": {
+          "function_name": "PlayAnimation",
+          "function_owner": null
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_39",
+                "node_title": "SetVisibility",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_16",
+                "node_title": "SetVisibility",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "InAnimation",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_52",
+                "node_title": "Get Anim_Nextstep",
+                "pin_name": "Anim_Nextstep"
+              }
+            ]
+          },
+          {
+            "name": "StartAtTime",
+            "direction": "input",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.000000",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "NumLoopsToPlay",
+            "direction": "input",
+            "category": "int",
+            "subcategory": "",
+            "default_value": "0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "PlayMode",
+            "direction": "input",
+            "category": "byte",
+            "subcategory": "",
+            "default_value": "Forward",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "PlaybackSpeed",
+            "direction": "input",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "1.000000",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "bRestoreState",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_39",
+                "node_title": "SetVisibility",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "InAnimation",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_52",
+                "node_title": "Get Anim_Nextstep",
+                "pin_name": "Anim_Nextstep"
+              }
+            ]
+          },
+          {
+            "name": "StartAtTime",
+            "category": "real",
+            "default_value": "0.000000",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "PlayMode",
+            "category": "byte",
+            "default_value": "Forward",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "PlaybackSpeed",
+            "category": "real",
+            "default_value": "1.000000",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level2.W_Level2:EventGraph.K2Node_CallFunction_40'"
+      },
+      {
+        "id": "K2Node_VariableGet_52",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get Anim_Nextstep",
+        "meta": {
+          "variable_name": "Anim_Nextstep"
+        },
+        "pins": [
+          {
+            "name": "Anim_Nextstep",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_40",
+                "node_title": "PlayAnimation",
+                "pin_name": "InAnimation"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level2.W_Level2:EventGraph.K2Node_VariableGet_52'"
       }
     ],
     "connections": [
@@ -9545,6 +9969,19 @@
       },
       {
         "from": {
+          "node": "K2Node_CallFunction_39",
+          "node_title": "SetVisibility",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_40",
+          "node_title": "PlayAnimation",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
           "node": "K2Node_CallFunction_4",
           "node_title": "KismetSystemLibrary.ControlScreensaver",
           "pin_name": "then"
@@ -9552,6 +9989,19 @@
         "to": {
           "node": "K2Node_CallFunction_37",
           "node_title": "PlayAnimation",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_40",
+          "node_title": "PlayAnimation",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_16",
+          "node_title": "SetVisibility",
           "pin_name": "execute"
         },
         "category": "exec"
@@ -9784,7 +10234,7 @@
           "pin_name": "then"
         },
         "to": {
-          "node": "K2Node_CallFunction_16",
+          "node": "K2Node_CallFunction_39",
           "node_title": "SetVisibility",
           "pin_name": "execute"
         },
@@ -10754,6 +11204,19 @@
       },
       {
         "from": {
+          "node": "K2Node_VariableGet_48",
+          "node_title": "Get nextstep",
+          "pin_name": "nextstep"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_14",
+          "node_title": "SetVisibility",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
           "node": "K2Node_VariableGet_49",
           "node_title": "Get nextstep",
           "pin_name": "nextstep"
@@ -10775,6 +11238,32 @@
           "node": "K2Node_CallFunction_0",
           "node_title": "SetVisibility",
           "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_51",
+          "node_title": "Get nextstep",
+          "pin_name": "nextstep"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_39",
+          "node_title": "SetVisibility",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_52",
+          "node_title": "Get Anim_Nextstep",
+          "pin_name": "Anim_Nextstep"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_40",
+          "node_title": "PlayAnimation",
+          "pin_name": "InAnimation"
         },
         "category": "object"
       },
@@ -10947,6 +11436,8 @@
       ],
       [
         "HandleLevel2InspectStarted",
+        "SetVisibility",
+        "PlayAnimation",
         "SetVisibility",
         "K2Node_SwitchName_0",
         "SetRenderScale",
@@ -12964,8 +13455,7 @@
           "TextBlock"
         ],
         "properties": {
-          "Visibility": "Visible",
-          "bExpandedInDesigner": "True"
+          "Visibility": "Visible"
         }
       },
       {
@@ -13153,7 +13643,9 @@
         "children": [
           "Image"
         ],
-        "properties": {}
+        "properties": {
+          "bExpandedInDesigner": "True"
+        }
       },
       {
         "name": "Circle_3",
@@ -13607,7 +14099,7 @@
         "slot_class": "CanvasPanelSlot",
         "parent": "NewbieGuideOverlay",
         "child": "TextBlock_77",
-        "layout_data": "(Offsets=(Left=864.000000,Top=856.000000,Right=628.528503,Bottom=63.633633))"
+        "layout_data": "(Offsets=(Left=864.000000,Top=853.723145,Right=628.528503,Bottom=63.633633))"
       },
       {
         "slot_name": "CanvasPanelSlot_4",
@@ -13845,7 +14337,7 @@
         "slot_class": "CanvasPanelSlot",
         "parent": "Introducing_1",
         "child": "Image_295",
-        "layout_data": "(Offsets=(Left=524.000000,Top=-628.000000,Right=881.750000,Bottom=1015.500000))"
+        "layout_data": "(Offsets=(Left=524.000000,Top=-628.000000,Right=762.000000,Bottom=539.000000))"
       },
       {
         "slot_name": "CanvasPanelSlot_5",
@@ -13859,7 +14351,7 @@
         "slot_class": "CanvasPanelSlot",
         "parent": "Introducing_2",
         "child": "Image_461",
-        "layout_data": "(Offsets=(Left=-247.152603,Top=-576.000000,Right=1802.680420,Bottom=984.376648))"
+        "layout_data": "(Offsets=(Left=-299.272247,Top=-576.000000,Right=1802.680420,Bottom=984.376648))"
       },
       {
         "slot_name": "CanvasPanelSlot_8",
@@ -14979,7 +15471,7 @@
     {
       "target": "TextBlock_77",
       "property": "LayoutData",
-      "value": "(Offsets=(Left=864.000000,Top=856.000000,Right=628.528503,Bottom=63.633633))"
+      "value": "(Offsets=(Left=864.000000,Top=853.723145,Right=628.528503,Bottom=63.633633))"
     },
     {
       "target": "TextBlock",
@@ -15144,7 +15636,7 @@
     {
       "target": "Image_295",
       "property": "LayoutData",
-      "value": "(Offsets=(Left=524.000000,Top=-628.000000,Right=881.750000,Bottom=1015.500000))"
+      "value": "(Offsets=(Left=524.000000,Top=-628.000000,Right=762.000000,Bottom=539.000000))"
     },
     {
       "target": "Indtro_Button2",
@@ -15154,7 +15646,7 @@
     {
       "target": "Image_461",
       "property": "LayoutData",
-      "value": "(Offsets=(Left=-247.152603,Top=-576.000000,Right=1802.680420,Bottom=984.376648))"
+      "value": "(Offsets=(Left=-299.272247,Top=-576.000000,Right=1802.680420,Bottom=984.376648))"
     },
     {
       "target": "Indtro_Button3",
@@ -15195,8 +15687,8 @@
   "doc_view": {
     "blueprint_name": "W_Level2",
     "blueprint_class": "WidgetBlueprint",
-    "module_count": 116,
-    "connection_count": 134,
+    "module_count": 121,
+    "connection_count": 139,
     "component_events": [
       {
         "title": "Indtro_Button1.OnClicked",
@@ -15261,6 +15753,8 @@
       ],
       [
         "HandleLevel2InspectStarted",
+        "SetVisibility",
+        "PlayAnimation",
         "SetVisibility",
         "K2Node_SwitchName_0",
         "SetRenderScale",
