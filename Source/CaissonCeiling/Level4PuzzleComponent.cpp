@@ -120,6 +120,7 @@ void ULevel4PuzzleComponent::SelectPiece(int32 PieceIndex)
 		return;
 	}
 
+	RightClickPrimedPieceIndex = INDEX_NONE;
 	SpawnPieceIfNeeded(PieceIndex);
 
 	if (SelectedPieceIndex == PieceIndex)
@@ -167,6 +168,7 @@ void ULevel4PuzzleComponent::BeginDragSelectedPiece(const FHitResult& HitResult,
 	{
 		SelectPiece(HitPiece->PieceIndex);
 	}
+	RightClickPrimedPieceIndex = INDEX_NONE;
 
 	FRuntimePiece* RuntimePiece = FindRuntimePiece(HitPiece->PieceIndex);
 	const FLevel4PuzzleStageConfig* StageConfig = GetCurrentStageConfig();
@@ -221,11 +223,13 @@ void ULevel4PuzzleComponent::EndDragSelectedPiece()
 		return;
 	}
 
+	ALevel4PuzzlePieceActor* ReleasedPiece = DraggedPiece;
 	bDragging = false;
 	DragPlayerController = nullptr;
 	DraggedPiece = nullptr;
 	DragOffset = FVector::ZeroVector;
 	DragPlaneOrigin = FVector::ZeroVector;
+	SnapPieceToBestAnchorIfClose(ReleasedPiece);
 	EvaluateCurrentStage();
 }
 
@@ -263,16 +267,21 @@ void ULevel4PuzzleComponent::HandleRightClickPiece(const FHitResult& HitResult)
 		return;
 	}
 
-	if (SelectedPieceIndex != HitPiece->PieceIndex)
+	if (RightClickPrimedPieceIndex != HitPiece->PieceIndex)
 	{
 		if (bEnableLevel4DebugLogs)
 		{
-			UE_LOG(LogTemp, Log, TEXT("[Level4][RightClick] Selecting hit piece. HitPiece=%s HitPieceIndex=%d PreviousSelected=%d"),
+			UE_LOG(LogTemp, Log, TEXT("[Level4][RightClick] Priming hit piece. HitPiece=%s HitPieceIndex=%d PreviousSelected=%d PreviousPrimed=%d"),
 				*GetNameSafe(HitPiece),
 				HitPiece->PieceIndex,
-				SelectedPieceIndex);
+				SelectedPieceIndex,
+				RightClickPrimedPieceIndex);
 		}
-		SelectPiece(HitPiece->PieceIndex);
+		if (SelectedPieceIndex != HitPiece->PieceIndex)
+		{
+			SelectPiece(HitPiece->PieceIndex);
+		}
+		RightClickPrimedPieceIndex = HitPiece->PieceIndex;
 		return;
 	}
 
@@ -479,6 +488,7 @@ void ULevel4PuzzleComponent::StartStage(int32 NewStageIndex)
 	RuntimePieces.Reset();
 	CurrentStageIndex = NewStageIndex;
 	SelectedPieceIndex = INDEX_NONE;
+	RightClickPrimedPieceIndex = INDEX_NONE;
 	bDragging = false;
 	DraggedPiece = nullptr;
 	DragPlayerController = nullptr;
@@ -511,6 +521,45 @@ void ULevel4PuzzleComponent::EvaluateCurrentStage()
 
 	int32 CorrectCount = 0;
 	int32 SpawnedCount = 0;
+	bool bAllPiecesAlignedToSameAnchor = false;
+
+	for (const FRuntimePiece& AnchorPiece : RuntimePieces)
+	{
+		if (!AnchorPiece.Actor)
+		{
+			continue;
+		}
+
+		int32 AlignedToAnchorCount = 1;
+		for (const FRuntimePiece& RuntimePiece : RuntimePieces)
+		{
+			if (!RuntimePiece.Actor || RuntimePiece.Config.PieceIndex == AnchorPiece.Config.PieceIndex)
+			{
+				continue;
+			}
+
+			float PositionError = 0.0f;
+			float RotationError = 0.0f;
+			if (IsPieceAlignedToAnchor(RuntimePiece, AnchorPiece, *StageConfig, PositionError, RotationError))
+			{
+				++AlignedToAnchorCount;
+			}
+		}
+
+		if (bEnableLevel4DebugLogs)
+		{
+			UE_LOG(LogTemp, Log, TEXT("[Level4][Evaluate] Anchor=%d AlignedCount=%d TotalPieces=%d"),
+				AnchorPiece.Config.PieceIndex,
+				AlignedToAnchorCount,
+				RuntimePieces.Num());
+		}
+
+		if (AlignedToAnchorCount == RuntimePieces.Num() && RuntimePieces.Num() > 0)
+		{
+			bAllPiecesAlignedToSameAnchor = true;
+			break;
+		}
+	}
 
 	for (FRuntimePiece& RuntimePiece : RuntimePieces)
 	{
@@ -521,20 +570,32 @@ void ULevel4PuzzleComponent::EvaluateCurrentStage()
 
 		++SpawnedCount;
 
-		FTransform TargetTransform = RuntimePiece.Config.TargetTransform;
-		if (bSpawnRelativeToOwner && GetOwner())
-		{
-			TargetTransform = RuntimePiece.Config.TargetTransform * GetOwner()->GetActorTransform();
-		}
+		bool bNowCorrect = false;
+		float BestPositionError = TNumericLimits<float>::Max();
+		float BestRotationError = TNumericLimits<float>::Max();
 
-		const float PositionError = FVector::Dist(RuntimePiece.Actor->GetActorLocation(), TargetTransform.GetLocation());
-		const float RotationError = GetRotationErrorDegrees(RuntimePiece.Actor->GetActorRotation(), TargetTransform.GetRotation().Rotator());
-		const bool bNowCorrect = PositionError <= StageConfig->PositionTolerance && RotationError <= StageConfig->RotationToleranceDegrees;
-
-		if (bNowCorrect)
+		for (const FRuntimePiece& AnchorPiece : RuntimePieces)
 		{
-			RuntimePiece.Actor->SetActorTransform(TargetTransform);
-			++CorrectCount;
+			if (!AnchorPiece.Actor || AnchorPiece.Config.PieceIndex == RuntimePiece.Config.PieceIndex)
+			{
+				continue;
+			}
+
+			float PositionError = 0.0f;
+			float RotationError = 0.0f;
+			if (IsPieceAlignedToAnchor(RuntimePiece, AnchorPiece, *StageConfig, PositionError, RotationError))
+			{
+				bNowCorrect = true;
+				BestPositionError = PositionError;
+				BestRotationError = RotationError;
+				break;
+			}
+
+			if (PositionError < BestPositionError || (FMath::IsNearlyEqual(PositionError, BestPositionError) && RotationError < BestRotationError))
+			{
+				BestPositionError = PositionError;
+				BestRotationError = RotationError;
+			}
 		}
 
 		if (RuntimePiece.bIsCorrect != bNowCorrect)
@@ -543,10 +604,30 @@ void ULevel4PuzzleComponent::EvaluateCurrentStage()
 			RuntimePiece.Actor->SetCorrectVisual(bNowCorrect);
 			OnLevel4PieceCorrectChanged.Broadcast(RuntimePiece.Config.PieceIndex, bNowCorrect);
 		}
+
+		if (bNowCorrect)
+		{
+			++CorrectCount;
+		}
+
+		if (bEnableLevel4DebugLogs)
+		{
+			UE_LOG(LogTemp, Log, TEXT("[Level4][Evaluate] Piece=%d Correct=%d BestRelativePositionError=%f BestRelativeRotationError=%f Tolerance=(%f,%f)"),
+				RuntimePiece.Config.PieceIndex,
+				bNowCorrect ? 1 : 0,
+				BestPositionError,
+				BestRotationError,
+				StageConfig->PositionTolerance,
+				StageConfig->RotationToleranceDegrees);
+		}
 	}
 
-	if (SpawnedCount == RuntimePieces.Num() && CorrectCount == RuntimePieces.Num() && RuntimePieces.Num() > 0)
+	if (SpawnedCount == RuntimePieces.Num() && bAllPiecesAlignedToSameAnchor && RuntimePieces.Num() > 0)
 	{
+		if (bEnableLevel4DebugLogs)
+		{
+			UE_LOG(LogTemp, Log, TEXT("[Level4][Evaluate] Stage completed by relative alignment. Spawned=%d CorrectVisualPieces=%d StageIndex=%d"), SpawnedCount, CorrectCount, CurrentStageIndex);
+		}
 		CompleteCurrentStage();
 	}
 }
@@ -584,6 +665,86 @@ void ULevel4PuzzleComponent::SpawnPieceIfNeeded(int32 PieceIndex)
 	PieceActor->InitializeLevel4Piece(PieceIndex);
 	OnLevel4PieceSpawned.Broadcast(PieceIndex, PieceActor);
 	EvaluateCurrentStage();
+}
+
+void ULevel4PuzzleComponent::SnapPieceToBestAnchorIfClose(ALevel4PuzzlePieceActor* PieceActor)
+{
+	if (!bEnableSnapOnDragRelease || !PieceActor)
+	{
+		return;
+	}
+
+	FRuntimePiece* RuntimePiece = FindRuntimePiece(PieceActor->PieceIndex);
+	const FLevel4PuzzleStageConfig* StageConfig = GetCurrentStageConfig();
+	if (!RuntimePiece || !RuntimePiece->Actor || !StageConfig)
+	{
+		return;
+	}
+
+	bool bFoundSnapTarget = false;
+	float BestPositionError = TNumericLimits<float>::Max();
+	float BestRotationError = TNumericLimits<float>::Max();
+	int32 BestAnchorPieceIndex = INDEX_NONE;
+	FTransform BestSnapTransform = RuntimePiece->Actor->GetActorTransform();
+
+	for (const FRuntimePiece& AnchorPiece : RuntimePieces)
+	{
+		if (!AnchorPiece.Actor || AnchorPiece.Config.PieceIndex == RuntimePiece->Config.PieceIndex)
+		{
+			continue;
+		}
+
+		float PositionError = 0.0f;
+		float RotationError = 0.0f;
+		if (!IsPieceAlignedToAnchor(*RuntimePiece, AnchorPiece, *StageConfig, PositionError, RotationError))
+		{
+			if (bEnableLevel4DebugLogs)
+			{
+				UE_LOG(LogTemp, Verbose, TEXT("[Level4][Snap] Anchor rejected. Piece=%d Anchor=%d PositionError=%f RotationError=%f Tolerance=(%f,%f)"),
+					RuntimePiece->Config.PieceIndex,
+					AnchorPiece.Config.PieceIndex,
+					PositionError,
+					RotationError,
+					StageConfig->PositionTolerance,
+					StageConfig->RotationToleranceDegrees);
+			}
+			continue;
+		}
+
+		if (PositionError < BestPositionError || (FMath::IsNearlyEqual(PositionError, BestPositionError) && RotationError < BestRotationError))
+		{
+			const FTransform PieceTargetTransform = GetWorldTargetTransform(RuntimePiece->Config);
+			const FTransform AnchorTargetTransform = GetWorldTargetTransform(AnchorPiece.Config);
+			const FTransform PieceTargetRelativeToAnchor = PieceTargetTransform.GetRelativeTransform(AnchorTargetTransform);
+
+			bFoundSnapTarget = true;
+			BestPositionError = PositionError;
+			BestRotationError = RotationError;
+			BestAnchorPieceIndex = AnchorPiece.Config.PieceIndex;
+			BestSnapTransform = PieceTargetRelativeToAnchor * AnchorPiece.Actor->GetActorTransform();
+		}
+	}
+
+	if (!bFoundSnapTarget)
+	{
+		if (bEnableLevel4DebugLogs)
+		{
+			UE_LOG(LogTemp, Log, TEXT("[Level4][Snap] No snap target. Piece=%d"), RuntimePiece->Config.PieceIndex);
+		}
+		return;
+	}
+
+	RuntimePiece->Actor->SetActorTransform(BestSnapTransform);
+
+	if (bEnableLevel4DebugLogs)
+	{
+		UE_LOG(LogTemp, Log, TEXT("[Level4][Snap] Snapped piece to anchor. Piece=%d Anchor=%d PositionError=%f RotationError=%f NewTransform=%s"),
+			RuntimePiece->Config.PieceIndex,
+			BestAnchorPieceIndex,
+			BestPositionError,
+			BestRotationError,
+			*BestSnapTransform.ToHumanReadableString());
+	}
 }
 
 bool ULevel4PuzzleComponent::ShouldSkipStage(ELevel4StageId StageId) const
@@ -698,6 +859,37 @@ void ULevel4PuzzleComponent::LogHitDebug(const TCHAR* Context, const FHitResult&
 		*GetNameSafe(ResolvedPiece),
 		ResolvedPiece ? ResolvedPiece->PieceIndex : INDEX_NONE,
 		SelectedPieceIndex);
+}
+
+FTransform ULevel4PuzzleComponent::GetWorldTargetTransform(const FLevel4PuzzlePieceConfig& PieceConfig) const
+{
+	if (bSpawnRelativeToOwner && GetOwner())
+	{
+		return PieceConfig.TargetTransform * GetOwner()->GetActorTransform();
+	}
+
+	return PieceConfig.TargetTransform;
+}
+
+bool ULevel4PuzzleComponent::IsPieceAlignedToAnchor(const FRuntimePiece& RuntimePiece, const FRuntimePiece& AnchorPiece, const FLevel4PuzzleStageConfig& StageConfig, float& OutPositionError, float& OutRotationError) const
+{
+	OutPositionError = TNumericLimits<float>::Max();
+	OutRotationError = TNumericLimits<float>::Max();
+
+	if (!RuntimePiece.Actor || !AnchorPiece.Actor)
+	{
+		return false;
+	}
+
+	const FTransform PieceTargetTransform = GetWorldTargetTransform(RuntimePiece.Config);
+	const FTransform AnchorTargetTransform = GetWorldTargetTransform(AnchorPiece.Config);
+	const FTransform PieceTargetRelativeToAnchor = PieceTargetTransform.GetRelativeTransform(AnchorTargetTransform);
+	const FTransform ExpectedPieceTransform = PieceTargetRelativeToAnchor * AnchorPiece.Actor->GetActorTransform();
+
+	OutPositionError = FVector::Dist(RuntimePiece.Actor->GetActorLocation(), ExpectedPieceTransform.GetLocation());
+	OutRotationError = GetRotationErrorDegrees(RuntimePiece.Actor->GetActorRotation(), ExpectedPieceTransform.GetRotation().Rotator());
+
+	return OutPositionError <= StageConfig.PositionTolerance && OutRotationError <= StageConfig.RotationToleranceDegrees;
 }
 
 FVector ULevel4PuzzleComponent::GetPlaneNormal(const FLevel4PuzzleStageConfig& StageConfig) const

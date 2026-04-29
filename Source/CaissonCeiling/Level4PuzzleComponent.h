@@ -44,6 +44,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level4|Debug")
 	bool bEnableLevel4DebugLogs = true;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level4|Snap")
+	bool bEnableSnapOnDragRelease = true;
+
 	UPROPERTY(BlueprintAssignable, Category="Level4|Events")
 	FOnLevel4StageChanged OnLevel4StageChanged;
 
@@ -119,6 +122,7 @@ private:
 	void CompleteCurrentStage();
 	void EvaluateCurrentStage();
 	void SpawnPieceIfNeeded(int32 PieceIndex);
+	void SnapPieceToBestAnchorIfClose(ALevel4PuzzlePieceActor* PieceActor);
 	bool ShouldSkipStage(ELevel4StageId StageId) const;
 	FLevel4PuzzleStageConfig* GetCurrentStageConfig();
 	const FLevel4PuzzleStageConfig* GetCurrentStageConfig() const;
@@ -127,6 +131,8 @@ private:
 	ALevel4PuzzlePieceActor* ResolveHitPieceActor(const FHitResult& HitResult) const;
 	bool IsRuntimePieceActor(const ALevel4PuzzlePieceActor* PieceActor) const;
 	void LogHitDebug(const TCHAR* Context, const FHitResult& HitResult, const ALevel4PuzzlePieceActor* ResolvedPiece) const;
+	FTransform GetWorldTargetTransform(const FLevel4PuzzlePieceConfig& PieceConfig) const;
+	bool IsPieceAlignedToAnchor(const FRuntimePiece& RuntimePiece, const FRuntimePiece& AnchorPiece, const FLevel4PuzzleStageConfig& StageConfig, float& OutPositionError, float& OutRotationError) const;
 	FVector GetPlaneNormal(const FLevel4PuzzleStageConfig& StageConfig) const;
 	FVector ProjectPointToStagePlane(const FVector& Point, const FLevel4PuzzleStageConfig& StageConfig, const FVector& PlaneOrigin) const;
 	bool GetCursorIntersectionOnStagePlane(APlayerController* PlayerController, const FLevel4PuzzleStageConfig& StageConfig, const FVector& PlaneOrigin, FVector& OutIntersection, const TCHAR* DebugContext = TEXT("")) const;
@@ -147,6 +153,7 @@ private:
 	ELevel4Difficulty CurrentDifficulty = ELevel4Difficulty::Normal;
 	int32 CurrentStageIndex = INDEX_NONE;
 	int32 SelectedPieceIndex = INDEX_NONE;
+	int32 RightClickPrimedPieceIndex = INDEX_NONE;
 	bool bSessionActive = false;
 	bool bDragging = false;
 	FVector DragOffset = FVector::ZeroVector;
