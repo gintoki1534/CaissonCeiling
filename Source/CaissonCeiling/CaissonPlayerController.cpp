@@ -7,6 +7,7 @@
 #include "Level4PuzzleComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "Engine/World.h"
 #include "Framework/Application/SlateApplication.h"
 #include "InputCoreTypes.h"
 
@@ -225,7 +226,7 @@ void ACaissonPlayerController::OnRightMousePressed()
 		if (Level4PuzzleComponent->IsLevel4SessionActive())
 		{
 			FHitResult Level4HitResult;
-			if (GetCursorHitResult(Level4HitResult))
+			if (GetLevel4CursorHitResult(Level4PuzzleComponent, Level4HitResult))
 			{
 				Level4PuzzleComponent->HandleRightClickPiece(Level4HitResult);
 			}
@@ -288,7 +289,7 @@ void ACaissonPlayerController::OnPrimaryInteractPressed()
 		if (Level4PuzzleComponent->IsLevel4SessionActive())
 		{
 			FHitResult Level4HitResult;
-			if (GetCursorHitResult(Level4HitResult))
+			if (GetLevel4CursorHitResult(Level4PuzzleComponent, Level4HitResult))
 			{
 				Level4PuzzleComponent->BeginDragSelectedPiece(Level4HitResult, this);
 			}
@@ -730,6 +731,24 @@ void ACaissonPlayerController::UpdateHoveredInteractable()
 bool ACaissonPlayerController::GetCursorHitResult(FHitResult& OutHitResult) const
 {
 	return GetHitResultUnderCursorByChannel(UEngineTypes::ConvertToTraceType(ECC_Visibility), true, OutHitResult);
+}
+
+bool ACaissonPlayerController::GetLevel4CursorHitResult(ULevel4PuzzleComponent* Level4PuzzleComponent, FHitResult& OutHitResult) const
+{
+	if (!Level4PuzzleComponent)
+	{
+		return false;
+	}
+
+	FVector WorldDirection;
+	FVector WorldLocation;
+	if (!DeprojectMousePositionToWorld(WorldLocation, WorldDirection))
+	{
+		return false;
+	}
+
+	const FVector RayEnd = WorldLocation + WorldDirection * 100000.0f;
+	return Level4PuzzleComponent->FindSpawnedPieceHitOnRay(WorldLocation, RayEnd, OutHitResult);
 }
 
 UCaissonInteractComponent* ACaissonPlayerController::GetInteractComponentUnderCursor(FHitResult* OutHitResult) const

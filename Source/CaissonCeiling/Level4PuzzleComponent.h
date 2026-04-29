@@ -83,6 +83,8 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Level4")
 	void HandleRightClickPiece(const FHitResult& HitResult);
 
+	bool FindSpawnedPieceHitOnRay(const FVector& RayStart, const FVector& RayEnd, FHitResult& OutHitResult) const;
+
 	UFUNCTION(BlueprintCallable, Category="Level4")
 	bool IsLevel4SessionActive() const;
 

@@ -63,6 +63,7 @@ protected:
 	void OnRightMouseReleased();
 	bool HandleLevel2Interaction(UCaissonInteractComponent* InteractComp);
 	bool GetCursorHitResult(FHitResult& OutHitResult) const;
+	bool GetLevel4CursorHitResult(ULevel4PuzzleComponent* Level4PuzzleComponent, FHitResult& OutHitResult) const;
 	void UpdateHoveredInteractable();
 	UCaissonInteractComponent* GetInteractComponentUnderCursor(FHitResult* OutHitResult = nullptr) const;
 

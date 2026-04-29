@@ -2,8 +2,58 @@
 
 #include "Level4PuzzlePieceActor.h"
 #include "Level4PuzzleTargetLayoutActor.h"
+#include "Components/PrimitiveComponent.h"
 #include "Engine/World.h"
 #include "GameFramework/PlayerController.h"
+
+namespace
+{
+bool IntersectSegmentBox(const FVector& SegmentStart, const FVector& SegmentEnd, const FBox& Box, float& OutDistance)
+{
+	if (!Box.IsValid)
+	{
+		return false;
+	}
+
+	const FVector Segment = SegmentEnd - SegmentStart;
+	float MinTime = 0.0f;
+	float MaxTime = 1.0f;
+
+	for (int32 AxisIndex = 0; AxisIndex < 3; ++AxisIndex)
+	{
+		const float StartValue = SegmentStart[AxisIndex];
+		const float DirectionValue = Segment[AxisIndex];
+		const float MinValue = Box.Min[AxisIndex];
+		const float MaxValue = Box.Max[AxisIndex];
+
+		if (FMath::IsNearlyZero(DirectionValue))
+		{
+			if (StartValue < MinValue || StartValue > MaxValue)
+			{
+				return false;
+			}
+			continue;
+		}
+
+		float NearTime = (MinValue - StartValue) / DirectionValue;
+		float FarTime = (MaxValue - StartValue) / DirectionValue;
+		if (NearTime > FarTime)
+		{
+			Swap(NearTime, FarTime);
+		}
+
+		MinTime = FMath::Max(MinTime, NearTime);
+		MaxTime = FMath::Min(MaxTime, FarTime);
+		if (MinTime > MaxTime)
+		{
+			return false;
+		}
+	}
+
+	OutDistance = Segment.Size() * MinTime;
+	return true;
+}
+}
 
 ULevel4PuzzleComponent::ULevel4PuzzleComponent()
 {
@@ -233,6 +283,101 @@ void ULevel4PuzzleComponent::HandleRightClickPiece(const FHitResult& HitResult)
 			HitPiece->PieceIndex);
 	}
 	RotateSelectedPiece90();
+}
+
+bool ULevel4PuzzleComponent::FindSpawnedPieceHitOnRay(const FVector& RayStart, const FVector& RayEnd, FHitResult& OutHitResult) const
+{
+	bool bFoundHit = false;
+	float BestDistance = TNumericLimits<float>::Max();
+	FHitResult BestHitResult;
+	FString DebugPieces;
+
+	FCollisionQueryParams QueryParams(SCENE_QUERY_STAT(Level4PieceOnlyHit), true);
+	if (const AActor* OwnerActor = GetOwner())
+	{
+		QueryParams.AddIgnoredActor(OwnerActor);
+	}
+
+	for (const FRuntimePiece& RuntimePiece : RuntimePieces)
+	{
+		ALevel4PuzzlePieceActor* PieceActor = RuntimePiece.Actor;
+		if (!PieceActor)
+		{
+			continue;
+		}
+
+		if (UPrimitiveComponent* DragPrimitive = PieceActor->GetDragPrimitive())
+		{
+			FHitResult ComponentHitResult;
+			if (DragPrimitive->LineTraceComponent(ComponentHitResult, RayStart, RayEnd, QueryParams))
+			{
+				const float HitDistance = FVector::Dist(RayStart, ComponentHitResult.ImpactPoint);
+				if (HitDistance < BestDistance)
+				{
+					BestDistance = HitDistance;
+					BestHitResult = ComponentHitResult;
+					bFoundHit = true;
+				}
+				continue;
+			}
+
+			float BoundsDistance = 0.0f;
+			const FBox BoundsBox = DragPrimitive->Bounds.GetBox();
+			if (IntersectSegmentBox(RayStart, RayEnd, BoundsBox, BoundsDistance) && BoundsDistance < BestDistance)
+			{
+				const FVector RayDirection = (RayEnd - RayStart).GetSafeNormal();
+				const FVector HitLocation = RayStart + RayDirection * BoundsDistance;
+				BestDistance = BoundsDistance;
+				BestHitResult = FHitResult(PieceActor, DragPrimitive, HitLocation, -RayDirection);
+				BestHitResult.Distance = BoundsDistance;
+				bFoundHit = true;
+			}
+		}
+
+		if (bEnableLevel4DebugLogs)
+		{
+			const FBox ActorBounds = PieceActor->GetComponentsBoundingBox(true);
+			DebugPieces += FString::Printf(TEXT(" Piece=%s Index=%d Bounds=%s;"),
+				*GetNameSafe(PieceActor),
+				PieceActor->PieceIndex,
+				*ActorBounds.ToString());
+		}
+	}
+
+	if (bFoundHit)
+	{
+		OutHitResult = BestHitResult;
+		if (bEnableLevel4DebugLogs)
+		{
+			ALevel4PuzzlePieceActor* HitPiece = ResolveHitPieceActor(OutHitResult);
+			UE_LOG(LogTemp, Log, TEXT("[Level4][Hit] Piece-only trace selected spawned piece. Piece=%s PieceIndex=%d HitComponent=%s Distance=%f"),
+				*GetNameSafe(HitPiece),
+				HitPiece ? HitPiece->PieceIndex : INDEX_NONE,
+				*GetNameSafe(OutHitResult.GetComponent()),
+				BestDistance);
+		}
+		return true;
+	}
+
+	if (bEnableLevel4DebugLogs)
+	{
+		int32 SpawnedPieceCount = 0;
+		for (const FRuntimePiece& RuntimePiece : RuntimePieces)
+		{
+			if (RuntimePiece.Actor)
+			{
+				++SpawnedPieceCount;
+			}
+		}
+
+		UE_LOG(LogTemp, Warning, TEXT("[Level4][Hit] Piece-only trace found no spawned piece. RayStart=%s RayEnd=%s SpawnedPieces=%d%s"),
+			*RayStart.ToString(),
+			*RayEnd.ToString(),
+			SpawnedPieceCount,
+			*DebugPieces);
+	}
+
+	return false;
 }
 
 bool ULevel4PuzzleComponent::IsLevel4SessionActive() const
