@@ -88,7 +88,7 @@ void ULevel4PuzzleComponent::TickComponent(float DeltaTime, ELevelTick TickType,
 		return;
 	}
 
-	const FVector NewLocation = ProjectPointToStagePlane(Intersection + DragOffset, *StageConfig, DragPlaneOrigin);
+	const FVector NewLocation = ProjectPointToStagePlane(Intersection + DragOffset, *StageConfig, DragActorPlaneOrigin);
 	DraggedPiece->SetActorLocation(NewLocation);
 }
 
@@ -190,7 +190,16 @@ void ULevel4PuzzleComponent::BeginDragSelectedPiece(const FHitResult& HitResult,
 	bDragging = true;
 	DragPlayerController = PlayerController;
 	DraggedPiece = RuntimePiece->Actor;
-	DragPlaneOrigin = RuntimePiece->Actor->GetActorLocation();
+	DragActorPlaneOrigin = RuntimePiece->Actor->GetActorLocation();
+	DragPlaneOrigin = HitResult.ImpactPoint;
+	if (DragPlaneOrigin.ContainsNaN())
+	{
+		DragPlaneOrigin = HitResult.Location;
+	}
+	if (DragPlaneOrigin.ContainsNaN())
+	{
+		DragPlaneOrigin = RuntimePiece->Actor->GetActorLocation();
+	}
 
 	FVector PlaneIntersection;
 	if (!GetCursorIntersectionOnStagePlane(PlayerController, *StageConfig, DragPlaneOrigin, PlaneIntersection, TEXT("BeginDrag")))
@@ -199,6 +208,7 @@ void ULevel4PuzzleComponent::BeginDragSelectedPiece(const FHitResult& HitResult,
 		DragPlayerController = nullptr;
 		DraggedPiece = nullptr;
 		DragPlaneOrigin = FVector::ZeroVector;
+		DragActorPlaneOrigin = FVector::ZeroVector;
 		return;
 	}
 
@@ -206,11 +216,13 @@ void ULevel4PuzzleComponent::BeginDragSelectedPiece(const FHitResult& HitResult,
 
 	if (bEnableLevel4DebugLogs)
 	{
-		UE_LOG(LogTemp, Log, TEXT("[Level4][BeginDrag] Started. Piece=%s PieceIndex=%d LockedAxis=%d PlaneOrigin=%s PlaneIntersection=%s DragOffset=%s"),
+		UE_LOG(LogTemp, Log, TEXT("[Level4][BeginDrag] Started. Piece=%s PieceIndex=%d LockedAxis=%d CursorPlaneOrigin=%s ActorPlaneOrigin=%s HitImpact=%s PlaneIntersection=%s DragOffset=%s"),
 			*GetNameSafe(RuntimePiece->Actor),
 			RuntimePiece->Actor->PieceIndex,
 			static_cast<int32>(StageConfig->LockedAxis),
 			*DragPlaneOrigin.ToString(),
+			*DragActorPlaneOrigin.ToString(),
+			*HitResult.ImpactPoint.ToString(),
 			*PlaneIntersection.ToString(),
 			*DragOffset.ToString());
 	}
@@ -229,6 +241,7 @@ void ULevel4PuzzleComponent::EndDragSelectedPiece()
 	DraggedPiece = nullptr;
 	DragOffset = FVector::ZeroVector;
 	DragPlaneOrigin = FVector::ZeroVector;
+	DragActorPlaneOrigin = FVector::ZeroVector;
 	SnapPieceToBestAnchorIfClose(ReleasedPiece);
 	EvaluateCurrentStage();
 }
@@ -380,9 +393,12 @@ void ULevel4PuzzleComponent::MoveSelectedPieceToTargetLocationKeepingRotation()
 
 bool ULevel4PuzzleComponent::FindSpawnedPieceHitOnRay(const FVector& RayStart, const FVector& RayEnd, FHitResult& OutHitResult) const
 {
-	bool bFoundHit = false;
-	float BestDistance = TNumericLimits<float>::Max();
-	FHitResult BestHitResult;
+	bool bFoundComponentHit = false;
+	bool bFoundBoundsHit = false;
+	float BestComponentDistance = TNumericLimits<float>::Max();
+	float BestBoundsDistance = TNumericLimits<float>::Max();
+	FHitResult BestComponentHitResult;
+	FHitResult BestBoundsHitResult;
 	FString DebugPieces;
 
 	FCollisionQueryParams QueryParams(SCENE_QUERY_STAT(Level4PieceOnlyHit), true);
@@ -405,37 +421,37 @@ bool ULevel4PuzzleComponent::FindSpawnedPieceHitOnRay(const FVector& RayStart, c
 			if (DragPrimitive->LineTraceComponent(ComponentHitResult, RayStart, RayEnd, QueryParams))
 			{
 				const float HitDistance = FVector::Dist(RayStart, ComponentHitResult.ImpactPoint);
-				if (HitDistance < BestDistance)
+				if (HitDistance < BestComponentDistance)
 				{
-					BestDistance = HitDistance;
-					BestHitResult = ComponentHitResult;
-					BestHitResult.bBlockingHit = true;
-					BestHitResult.HitObjectHandle = FActorInstanceHandle(PieceActor);
-					BestHitResult.Component = DragPrimitive;
-					if (BestHitResult.ImpactPoint.IsNearlyZero() && !BestHitResult.Location.IsNearlyZero())
+					BestComponentDistance = HitDistance;
+					BestComponentHitResult = ComponentHitResult;
+					BestComponentHitResult.bBlockingHit = true;
+					BestComponentHitResult.HitObjectHandle = FActorInstanceHandle(PieceActor);
+					BestComponentHitResult.Component = DragPrimitive;
+					if (BestComponentHitResult.ImpactPoint.IsNearlyZero() && !BestComponentHitResult.Location.IsNearlyZero())
 					{
-						BestHitResult.ImpactPoint = BestHitResult.Location;
+						BestComponentHitResult.ImpactPoint = BestComponentHitResult.Location;
 					}
-					bFoundHit = true;
+					bFoundComponentHit = true;
 				}
 				continue;
 			}
 
 			float BoundsDistance = 0.0f;
 			const FBox BoundsBox = DragPrimitive->Bounds.GetBox();
-			if (IntersectSegmentBox(RayStart, RayEnd, BoundsBox, BoundsDistance) && BoundsDistance < BestDistance)
+			if (IntersectSegmentBox(RayStart, RayEnd, BoundsBox, BoundsDistance) && BoundsDistance < BestBoundsDistance)
 			{
 				const FVector RayDirection = (RayEnd - RayStart).GetSafeNormal();
 				const FVector HitLocation = RayStart + RayDirection * BoundsDistance;
-				BestDistance = BoundsDistance;
-				BestHitResult = FHitResult(PieceActor, DragPrimitive, HitLocation, -RayDirection);
-				BestHitResult.bBlockingHit = true;
-				BestHitResult.HitObjectHandle = FActorInstanceHandle(PieceActor);
-				BestHitResult.Component = DragPrimitive;
-				BestHitResult.Location = HitLocation;
-				BestHitResult.ImpactPoint = HitLocation;
-				BestHitResult.Distance = BoundsDistance;
-				bFoundHit = true;
+				BestBoundsDistance = BoundsDistance;
+				BestBoundsHitResult = FHitResult(PieceActor, DragPrimitive, HitLocation, -RayDirection);
+				BestBoundsHitResult.bBlockingHit = true;
+				BestBoundsHitResult.HitObjectHandle = FActorInstanceHandle(PieceActor);
+				BestBoundsHitResult.Component = DragPrimitive;
+				BestBoundsHitResult.Location = HitLocation;
+				BestBoundsHitResult.ImpactPoint = HitLocation;
+				BestBoundsHitResult.Distance = BoundsDistance;
+				bFoundBoundsHit = true;
 			}
 		}
 
@@ -449,17 +465,21 @@ bool ULevel4PuzzleComponent::FindSpawnedPieceHitOnRay(const FVector& RayStart, c
 		}
 	}
 
-	if (bFoundHit)
+	if (bFoundComponentHit || bFoundBoundsHit)
 	{
-		OutHitResult = BestHitResult;
+		const bool bUseComponentHit = bFoundComponentHit;
+		OutHitResult = bUseComponentHit ? BestComponentHitResult : BestBoundsHitResult;
+		const float BestDistance = bUseComponentHit ? BestComponentDistance : BestBoundsDistance;
 		if (bEnableLevel4DebugLogs)
 		{
 			ALevel4PuzzlePieceActor* HitPiece = ResolveHitPieceActor(OutHitResult);
-			UE_LOG(LogTemp, Log, TEXT("[Level4][Hit] Piece-only trace selected spawned piece. Piece=%s PieceIndex=%d HitComponent=%s Distance=%f"),
+			UE_LOG(LogTemp, Log, TEXT("[Level4][Hit] Piece-only trace selected spawned piece. HitType=%s Piece=%s PieceIndex=%d HitComponent=%s Distance=%f ImpactPoint=%s"),
+				bUseComponentHit ? TEXT("Component") : TEXT("BoundsFallback"),
 				*GetNameSafe(HitPiece),
 				HitPiece ? HitPiece->PieceIndex : INDEX_NONE,
 				*GetNameSafe(OutHitResult.GetComponent()),
-				BestDistance);
+				BestDistance,
+				*OutHitResult.ImpactPoint.ToString());
 		}
 		return true;
 	}
@@ -589,6 +609,7 @@ void ULevel4PuzzleComponent::StartStage(int32 NewStageIndex)
 	DraggedPiece = nullptr;
 	DragPlayerController = nullptr;
 	DragPlaneOrigin = FVector::ZeroVector;
+	DragActorPlaneOrigin = FVector::ZeroVector;
 
 	const FLevel4PuzzleStageConfig& StageConfig = RuntimeStageConfigs[CurrentStageIndex];
 	for (const FLevel4PuzzlePieceConfig& PieceConfig : StageConfig.Pieces)

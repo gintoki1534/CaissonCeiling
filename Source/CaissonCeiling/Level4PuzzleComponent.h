@@ -162,4 +162,5 @@ private:
 	bool bDragging = false;
 	FVector DragOffset = FVector::ZeroVector;
 	FVector DragPlaneOrigin = FVector::ZeroVector;
+	FVector DragActorPlaneOrigin = FVector::ZeroVector;
 };
