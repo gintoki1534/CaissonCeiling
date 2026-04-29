@@ -41,6 +41,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level4|Spawn")
 	float SpawnHeightOffset = 0.0f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level4|Debug")
+	bool bEnableLevel4DebugLogs = true;
+
 	UPROPERTY(BlueprintAssignable, Category="Level4|Events")
 	FOnLevel4StageChanged OnLevel4StageChanged;
 
@@ -76,6 +79,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category="Level4")
 	void RotateSelectedPiece90();
+
+	UFUNCTION(BlueprintCallable, Category="Level4")
+	void HandleRightClickPiece(const FHitResult& HitResult);
 
 	UFUNCTION(BlueprintCallable, Category="Level4")
 	bool IsLevel4SessionActive() const;
@@ -116,8 +122,12 @@ private:
 	const FLevel4PuzzleStageConfig* GetCurrentStageConfig() const;
 	FRuntimePiece* FindRuntimePiece(int32 PieceIndex);
 	const FRuntimePiece* FindRuntimePiece(int32 PieceIndex) const;
+	ALevel4PuzzlePieceActor* ResolveHitPieceActor(const FHitResult& HitResult) const;
+	bool IsRuntimePieceActor(const ALevel4PuzzlePieceActor* PieceActor) const;
+	void LogHitDebug(const TCHAR* Context, const FHitResult& HitResult, const ALevel4PuzzlePieceActor* ResolvedPiece) const;
 	FVector GetPlaneNormal(const FLevel4PuzzleStageConfig& StageConfig) const;
 	FVector ProjectPointToStagePlane(const FVector& Point, const FLevel4PuzzleStageConfig& StageConfig, const FVector& PlaneOrigin) const;
+	bool GetCursorIntersectionOnStagePlane(APlayerController* PlayerController, const FLevel4PuzzleStageConfig& StageConfig, const FVector& PlaneOrigin, FVector& OutIntersection, const TCHAR* DebugContext = TEXT("")) const;
 	FTransform MakeSpawnTransform(const FLevel4PuzzlePieceConfig& PieceConfig, const FLevel4PuzzleStageConfig& StageConfig) const;
 	float GetRotationErrorDegrees(const FRotator& A, const FRotator& B) const;
 
@@ -138,4 +148,5 @@ private:
 	bool bSessionActive = false;
 	bool bDragging = false;
 	FVector DragOffset = FVector::ZeroVector;
+	FVector DragPlaneOrigin = FVector::ZeroVector;
 };

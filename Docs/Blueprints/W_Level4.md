@@ -64,28 +64,29 @@ difficuty_button_expert [Button] | parent=CanvasPanel_30 | children=无
 ### 5.1 组件事件
 
 1. pices_5_button -> OnClicked
-1. pices_2_button -> OnClicked
 1. pices_4_button -> OnClicked
 1. pices_3_button -> OnClicked
-1. difficuty_button_expert -> OnClicked
+1. pices_2_button -> OnClicked
 1. pices_1_button -> OnClicked
+1. difficuty_button_expert -> OnClicked
 1. difficuty_button_normal -> OnClicked
 
 ### 5.2 主执行链
 
-1. PreConstruct -> Cast To CaissonPlayerController -> CaissonPlayerController.StartLevel4Puzzle -> Set bLevel4Started -> K2Node_AddDelegate_0 -> K2Node_AddDelegate_1 -> K2Node_AddDelegate_2
+1. HandleLevel4Completed -> KismetSystemLibrary.PrintString
+1. HandleLevel4StageChanged -> SetVisibility -> Switch on ELevel4StageId
+1. HandleLevel4PieceSelected -> SetVisibility -> K2Node_SwitchInteger_0 -> SetVisibility
 1. pices_5_button.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.SelectLevel4Piece
-1. pices_2_button.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.SelectLevel4Piece
 1. pices_4_button.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.SelectLevel4Piece
 1. pices_3_button.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.SelectLevel4Piece
-1. difficuty_button_expert.OnClicked -> Cast To CaissonPlayerController -> K2Node_IfThenElse_0 -> CaissonPlayerController.StartLevel4Puzzle -> Set bLevel4Started -> SetVisibility -> SetVisibility
-1. difficuty_button_expert.OnClicked -> Cast To CaissonPlayerController -> K2Node_IfThenElse_0 -> CaissonPlayerController.StartLevel4Puzzle -> SetVisibility -> SetVisibility
+1. pices_2_button.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.SelectLevel4Piece
 1. pices_1_button.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.SelectLevel4Piece
+1. difficuty_button_expert.OnClicked -> Cast To CaissonPlayerController -> K2Node_IfThenElse_0 -> CaissonPlayerController.SetLevel4Difficulty -> SetVisibility -> SetVisibility
+1. difficuty_button_expert.OnClicked -> Cast To CaissonPlayerController -> K2Node_IfThenElse_0 -> CaissonPlayerController.StartLevel4Puzzle -> Set bLevel4Started -> SetVisibility -> SetVisibility
+1. difficuty_button_normal.OnClicked -> Cast To CaissonPlayerController -> K2Node_IfThenElse_1 -> CaissonPlayerController.SetLevel4Difficulty -> SetVisibility -> SetVisibility
 1. difficuty_button_normal.OnClicked -> Cast To CaissonPlayerController -> K2Node_IfThenElse_1 -> CaissonPlayerController.StartLevel4Puzzle -> Set bLevel4Started -> SetVisibility -> SetVisibility
-1. difficuty_button_normal.OnClicked -> Cast To CaissonPlayerController -> K2Node_IfThenElse_1 -> CaissonPlayerController.StartLevel4Puzzle -> SetVisibility -> SetVisibility
-1. HandleLevel4PieceSelected -> SetVisibility -> K2Node_SwitchInteger_0 -> SetVisibility
-1. HandleLevel4StageChanged -> SetVisibility -> Switch on ELevel4StageId
-1. HandleLevel4Completed -> KismetSystemLibrary.PrintString
+1. Construct -> SetVisibility -> Cast To CaissonPlayerController -> CaissonPlayerController.StartLevel4Puzzle -> Set bLevel4Started -> K2Node_AddDelegate_0 -> K2Node_AddDelegate_1 -> K2Node_AddDelegate_2
+1. PreConstruct
 
 ## 6. 关键变量
 
@@ -260,7 +261,18 @@ difficuty_button_expert [Button] | parent=CanvasPanel_30 | children=无
      输入：execute <- BndEvt__W_Level4_pices_5_button_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature:then
    - BndEvt__W_Level4_pices_5_button_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature
 
-### 8.8 HandleLevel4Completed
+### 8.8 Construct
+
+1. 图类型：BlueprintGraph.EdGraphSchema_K2
+1. 模块数：2
+1. 连接数：1
+1. 执行链：Construct -> ExecuteUbergraph_W_Level4
+1. 关键节点：
+   - ExecuteUbergraph_W_Level4
+     输入：execute <- Construct:then
+   - Construct
+
+### 8.9 HandleLevel4Completed
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -271,7 +283,7 @@ difficuty_button_expert [Button] | parent=CanvasPanel_30 | children=无
      输入：execute <- HandleLevel4Completed:then
    - HandleLevel4Completed
 
-### 8.9 HandleLevel4PieceSelected
+### 8.10 HandleLevel4PieceSelected
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：3
@@ -282,7 +294,7 @@ difficuty_button_expert [Button] | parent=CanvasPanel_30 | children=无
      输入：execute <- SetVariableOnPersistentFrame:then
    - HandleLevel4PieceSelected
 
-### 8.10 HandleLevel4StageChanged
+### 8.11 HandleLevel4StageChanged
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：3
@@ -293,7 +305,7 @@ difficuty_button_expert [Button] | parent=CanvasPanel_30 | children=无
      输入：execute <- SetVariableOnPersistentFrame:then
    - HandleLevel4StageChanged
 
-### 8.11 PreConstruct
+### 8.12 PreConstruct
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：3
