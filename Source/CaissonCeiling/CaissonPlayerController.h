@@ -29,6 +29,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLevel2TargetActivated, FName, Tar
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnLevel2InspectStarted, FName, TargetId, bool, bIsFinalTarget);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnLevel2FinalContinuePromptRequested);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnLevel2NextLevelRequested);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnSkipFlowRequested);
 
 UCLASS()
 class CAISSONCEILING_API ACaissonPlayerController : public APlayerController
@@ -114,6 +115,9 @@ public:
 	UPROPERTY(BlueprintAssignable, Category="Level2|Flow")
 	FOnLevel2NextLevelRequested OnLevel2NextLevelRequested;
 
+	UPROPERTY(BlueprintAssignable, Category="Debug|Skip")
+	FOnSkipFlowRequested OnSkipFlowRequested;
+
 	UPROPERTY(BlueprintReadOnly, Category="Level2|Flow")
 	ELevel2FlowState Level2FlowState;
 
@@ -141,6 +145,18 @@ public:
 
 	UFUNCTION(BlueprintPure, Category="Level2|Flow")
 	bool IsLevel2WaitingForAnyClickToContinue() const;
+
+	UFUNCTION(BlueprintCallable, Category="Debug|Skip")
+	void RequestSkipCurrentFlow();
+
+	UFUNCTION(BlueprintCallable, Category="Debug|Skip")
+	bool SkipLevel1ToLevel2();
+
+	UFUNCTION(BlueprintCallable, Category="Debug|Skip")
+	bool SkipLevel2Flow();
+
+	UFUNCTION(BlueprintCallable, Category="Debug|Skip")
+	bool SkipLevel3Flow();
 
 	UFUNCTION(BlueprintCallable, Category="CaissonUI")
 	UUserWidget* OpenCaissonWidget(TSubclassOf<UUserWidget> WidgetClass);
@@ -203,10 +219,23 @@ private:
 	UPROPERTY(Transient)
 	FName ActiveInspectTargetId;
 
+	UPROPERTY(Transient)
+	FName PendingInspectTargetId;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Level3", meta=(AllowPrivateAccess="true"))
 	TObjectPtr<ULevel3FlowComponent> Level3FlowComponent;
+
+	UPROPERTY(Transient)
+	TObjectPtr<UUserWidget> ActiveCaissonWidget;
 
 	bool bRightMouseLookHeld;
 	bool bCachedHoverEnabledBeforeInspect;
 	bool bCachedClickEnabledBeforeInspect;
+	bool bPendingInspectIsFinalTarget;
+
+	bool IsActiveCaissonWidgetNamed(const TCHAR* WidgetClassBaseName) const;
+	void StartLevel2InspectAfterModelReset(FName TargetId, bool bIsFinalTarget);
+
+	UFUNCTION()
+	void HandleLevel2ModelPivotResetFinished();
 };

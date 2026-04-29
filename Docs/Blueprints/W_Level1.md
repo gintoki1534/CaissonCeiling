@@ -25,11 +25,11 @@
 1. 根控件：CanvasPanel_38
 
 ```text
-TextBlock_0 [TextBlock] | parent=RollBox | children=无
-TalkBox [Image] | parent=CanvasPanel_38 | children=无
-RollBox [ScrollBox] | parent=CanvasPanel_38 | children=TextBlock_0
-CanvasPanel_38 [CanvasPanel] | parent=ROOT | children=TalkBox, RollBox, Btn_Dialogue
 Btn_Dialogue [Button] | parent=CanvasPanel_38 | children=无
+CanvasPanel_38 [CanvasPanel] | parent=ROOT | children=Btn_Dialogue, RollBox, TalkBox
+RollBox [ScrollBox] | parent=CanvasPanel_38 | children=TextBlock_0
+TalkBox [Image] | parent=CanvasPanel_38 | children=无
+TextBlock_0 [TextBlock] | parent=RollBox | children=无
 ```
 
 ## 5. 事件图主链
@@ -40,11 +40,11 @@ Btn_Dialogue [Button] | parent=CanvasPanel_38 | children=无
 
 ### 5.2 主执行链
 
-1. Btn_Dialogue.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
-1. OnFocusLost
-1. Tick
-1. Construct -> SpawnActor BP_ShowcaseModel_C -> Set ShowcaseActor
 1. PreConstruct
+1. Construct -> SpawnActor BP_ShowcaseModel_C -> Set ShowcaseActor
+1. Tick
+1. OnFocusLost
+1. Btn_Dialogue.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
 
 ## 6. 关键变量
 
@@ -82,14 +82,14 @@ Btn_Dialogue [Button] | parent=CanvasPanel_38 | children=无
 
 1. W_Level1.TickPrediction = WillTick
    原因：Script
-1. TextBlock_0.Text = NSLOCTEXT("[54EE08DFC892F2E9E1C6A089C6A3073A]", "A16BE1AA46D033C3B70D5AA3BB947A9A", "欢迎来到王者荣耀!!欢迎来到王者荣耀!!欢迎来到王者荣耀!!欢迎来到王者荣耀!!欢迎来到王者荣耀欢迎来到王者荣耀!!欢迎来到王者荣耀欢迎来到王者荣耀!!欢迎来到王者荣耀")
-1. TextBlock_0.ColorAndOpacity = (SpecifiedColor=(R=0.162029,G=0.114435,B=0.034340,A=1.000000))
-1. TextBlock_0.AutoWrapText = True
-1. TalkBox.Brush = (ImageType=FullColor,ImageSize=(X=1844.000000,Y=581.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/对话框底部.对话框底部'")
 1. Btn_Dialogue.BackgroundColor = (R=1.000000,G=1.000000,B=1.000000,A=0.000000)
-1. TalkBox.LayoutData = (Offsets=(Top=-329.081055,Right=992.320862,Bottom=299.688263),Anchors=(Minimum=(X=0.500000,Y=1.000000),Maximum=(X=0.500000,Y=1.000000)),Alignment=(X=0.500000,Y=0.000000))
-1. RollBox.LayoutData = (Offsets=(Left=768.000000,Top=848.000000,Right=625.096497,Bottom=137.240097))
+1. TalkBox.Brush = (ImageType=FullColor,ImageSize=(X=1844.000000,Y=581.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/对话框底部.对话框底部'")
+1. TextBlock_0.Text = NSLOCTEXT("[54EE08DFC892F2E9E1C6A089C6A3073A]", "A16BE1AA46D033C3B70D5AA3BB947A9A", "你好！我是隆福寺小精灵天天。\r\n天宫藻井，是隆福寺最美轮美奂的建筑杰作，也是国家一级保护文物。现在，跟随我的脚步，一起去了解隆福寺藻井吧！")
+1. TextBlock_0.ColorAndOpacity = (SpecifiedColor=(R=0.000000,G=0.000000,B=0.000000,A=1.000000))
+1. TextBlock_0.AutoWrapText = True
 1. Btn_Dialogue.LayoutData = (Offsets=(Left=465.537537,Top=786.630615,Right=1002.388062,Bottom=263.080200))
+1. RollBox.LayoutData = (Offsets=(Left=768.000000,Top=856.000000,Right=625.096497,Bottom=105.665665))
+1. TalkBox.LayoutData = (Offsets=(Top=-329.081055,Right=992.320862,Bottom=299.688263),Anchors=(Minimum=(X=0.500000,Y=1.000000),Maximum=(X=0.500000,Y=1.000000)),Alignment=(X=0.500000,Y=0.000000))
 
 ## 8. 其他图表
 
@@ -100,9 +100,9 @@ Btn_Dialogue [Button] | parent=CanvasPanel_38 | children=无
 1. 连接数：1
 1. 执行链：BndEvt__W_Level1_Btn_Dialogue_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level1
 1. 关键节点：
+   - BndEvt__W_Level1_Btn_Dialogue_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
    - ExecuteUbergraph_W_Level1
      输入：execute <- BndEvt__W_Level1_Btn_Dialogue_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature:then
-   - BndEvt__W_Level1_Btn_Dialogue_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
 
 ### 8.2 Construct
 
@@ -111,9 +111,9 @@ Btn_Dialogue [Button] | parent=CanvasPanel_38 | children=无
 1. 连接数：1
 1. 执行链：Construct -> ExecuteUbergraph_W_Level1
 1. 关键节点：
+   - Construct
    - ExecuteUbergraph_W_Level1
      输入：execute <- Construct:then
-   - Construct
 
 ### 8.3 OnFocusLost
 
@@ -122,9 +122,9 @@ Btn_Dialogue [Button] | parent=CanvasPanel_38 | children=无
 1. 连接数：3
 1. 执行链：OnFocusLost -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level1
 1. 关键节点：
+   - OnFocusLost
    - ExecuteUbergraph_W_Level1
      输入：execute <- SetVariableOnPersistentFrame:then
-   - OnFocusLost
 
 ### 8.4 PreConstruct
 
@@ -133,9 +133,9 @@ Btn_Dialogue [Button] | parent=CanvasPanel_38 | children=无
 1. 连接数：3
 1. 执行链：PreConstruct -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level1
 1. 关键节点：
+   - PreConstruct
    - ExecuteUbergraph_W_Level1
      输入：execute <- SetVariableOnPersistentFrame:then
-   - PreConstruct
 
 ### 8.5 Tick
 
@@ -144,9 +144,9 @@ Btn_Dialogue [Button] | parent=CanvasPanel_38 | children=无
 1. 连接数：4
 1. 执行链：Tick -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level1
 1. 关键节点：
+   - Tick
    - ExecuteUbergraph_W_Level1
      输入：execute <- SetVariableOnPersistentFrame:then
-   - Tick
 
 ### 8.6 新函数
 

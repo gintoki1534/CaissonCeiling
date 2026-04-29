@@ -268,6 +268,49 @@ void ULevel3FlowComponent::CompleteResultPresentation()
 	BroadcastProgress();
 }
 
+bool ULevel3FlowComponent::SkipCurrentStageByFillingMetrics()
+{
+	if (!bLevel3SessionActive || ProgressState.Phase == ELevel3Phase::Completed)
+	{
+		return false;
+	}
+
+	ClearVisualTransitionLock(false);
+
+	if (ProgressState.Phase == ELevel3Phase::RepairResult)
+	{
+		CompleteResultPresentation();
+		return true;
+	}
+
+	const FLevel3StageConfig* StageConfig = GetActiveStageConfig();
+	if (!StageConfig)
+	{
+		return false;
+	}
+
+	const float RequiredMetricValue = (StageConfig->RequiredMetricValue > KINDA_SMALL_NUMBER)
+		? StageConfig->RequiredMetricValue
+		: CompletionThreshold;
+
+	ProgressState.CleanlinessPercent = FMath::Max(ProgressState.CleanlinessPercent, RequiredMetricValue);
+	ProgressState.IntegrityPercent = FMath::Max(ProgressState.IntegrityPercent, RequiredMetricValue);
+	ProgressState.AestheticsPercent = FMath::Max(ProgressState.AestheticsPercent, RequiredMetricValue);
+	ProgressState.bIsRepairStrokeActive = false;
+	ProgressState.RepairCoveragePercent = 0.0f;
+
+	RefreshStageVisualState();
+
+	if (ProgressState.Phase != ELevel3Phase::Repairing)
+	{
+		SetPhase(ELevel3Phase::Repairing);
+	}
+
+	BroadcastProgress();
+	TryCompleteRepair();
+	return ProgressState.Phase == ELevel3Phase::RepairResult;
+}
+
 bool ULevel3FlowComponent::IsLevel3SessionActive() const
 {
 	return bLevel3SessionActive;

@@ -23,31 +23,31 @@
 1. 根控件：CanvasPanel_16
 
 ```text
-介绍2 [Image] | parent=CanvasPanel_16 | children=无
-介绍1 [Image] | parent=CanvasPanel_16 | children=无
-Image_77 [Image] | parent=CanvasPanel_16 | children=无
-CanvasPanel_16 [CanvasPanel] | parent=ROOT | children=按钮-关闭, 按钮-上一个, 介绍2, 按钮-下一个, 介绍1, Image_77, BackgroundBlur_64
-按钮-关闭 [Button] | parent=CanvasPanel_16 | children=无
-按钮-下一个 [Button] | parent=CanvasPanel_16 | children=无
-按钮-上一个 [Button] | parent=CanvasPanel_16 | children=无
 BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
+CanvasPanel_16 [CanvasPanel] | parent=ROOT | children=BackgroundBlur_64, 按钮-上一个, 按钮-下一个, 按钮-关闭, Image_77, 介绍1, 介绍2
+按钮-上一个 [Button] | parent=CanvasPanel_16 | children=无
+按钮-下一个 [Button] | parent=CanvasPanel_16 | children=无
+按钮-关闭 [Button] | parent=CanvasPanel_16 | children=无
+Image_77 [Image] | parent=CanvasPanel_16 | children=无
+介绍1 [Image] | parent=CanvasPanel_16 | children=无
+介绍2 [Image] | parent=CanvasPanel_16 | children=无
 ```
 
 ## 5. 事件图主链
 
 ### 5.1 组件事件
 
-1. 按钮-关闭 -> OnClicked
-1. 按钮-上一个 -> OnClicked
 1. 按钮-下一个 -> OnClicked
+1. 按钮-上一个 -> OnClicked
+1. 按钮-关闭 -> OnClicked
 
 ### 5.2 主执行链
 
-1. 按钮-关闭.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.StartLevel3Dusting -> CaissonPlayerController.SetLevelTargetInteractionEnabled -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
-1. 按钮-上一个.OnClicked -> SetVisibility -> SetVisibility
-1. 按钮-下一个.OnClicked -> SetVisibility -> SetVisibility
 1. Construct -> SetVisibility -> GameplayStatics.GetAllActorsOfClass -> K2Node_IfThenElse_0 -> SpawnActor BP_ShowcaseModel_Level3_C -> Set Level3ShowcaseRef -> BP_ShowcaseModel_Level3_C.ActivateLevel3Presentation -> Cast To CaissonPlayerController -> Controller.Possess
 1. Construct -> SetVisibility -> GameplayStatics.GetAllActorsOfClass -> K2Node_IfThenElse_0 -> Set Level3ShowcaseRef -> BP_ShowcaseModel_Level3_C.ActivateLevel3Presentation
+1. 按钮-下一个.OnClicked -> SetVisibility -> SetVisibility
+1. 按钮-上一个.OnClicked -> SetVisibility -> SetVisibility
+1. 按钮-关闭.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.StartLevel3Dusting -> CaissonPlayerController.SetLevelTargetInteractionEnabled -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
 
 ## 6. 关键变量
 
@@ -67,19 +67,19 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 
 ## 7. 特殊设置
 
-1. 介绍2.Brush = (ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/新手引导2.新手引导2'")
-1. 介绍2.Visibility = SelfHitTestInvisible
-1. 介绍1.Brush = (ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/新手引导1.新手引导1'")
-1. 介绍1.Visibility = SelfHitTestInvisible
 1. Image_77.Brush = (TintColor=(SpecifiedColor=(R=0.158482,G=0.158482,B=0.158482,A=0.500000)))
 1. Image_77.Visibility = SelfHitTestInvisible
-1. 按钮-关闭.LayoutData = (Offsets=(Left=-101.921875,Top=224.000000,Bottom=100.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))
-1. 按钮-上一个.LayoutData = (Offsets=(Top=-32.540527,Right=104.881973,Bottom=102.072067),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=0.000000,Y=0.500000)))
-1. 介绍2.LayoutData = (Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
-1. 按钮-下一个.LayoutData = (Offsets=(Left=-101.921875,Top=-56.540527,Right=1.921875,Bottom=102.072067),Anchors=(Minimum=(X=1.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
-1. 介绍1.LayoutData = (Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
-1. Image_77.LayoutData = (Offsets=(Left=168.000000,Top=-16.000000,Right=-168.000000,Bottom=16.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
+1. 介绍1.Brush = (ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/新手引导1.新手引导1'")
+1. 介绍1.Visibility = SelfHitTestInvisible
+1. 介绍2.Brush = (ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/新手引导2.新手引导2'")
+1. 介绍2.Visibility = SelfHitTestInvisible
 1. BackgroundBlur_64.LayoutData = (Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
+1. 按钮-上一个.LayoutData = (Offsets=(Top=-32.540527,Right=104.881973,Bottom=102.072067),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=0.000000,Y=0.500000)))
+1. 按钮-下一个.LayoutData = (Offsets=(Left=-101.921875,Top=-56.540527,Right=1.921875,Bottom=102.072067),Anchors=(Minimum=(X=1.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
+1. 按钮-关闭.LayoutData = (Offsets=(Left=-101.921875,Top=224.000000,Bottom=100.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))
+1. Image_77.LayoutData = (Offsets=(Left=4.000000,Top=4.000000,Right=-4.000000,Bottom=-4.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
+1. 介绍1.LayoutData = (Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
+1. 介绍2.LayoutData = (Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
 
 ## 8. 其他图表
 
@@ -90,9 +90,9 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 1. 连接数：1
 1. 执行链：BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3_Introdection
 1. 关键节点：
+   - BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
    - ExecuteUbergraph_W_Level3_Introdection
      输入：execute <- BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature:then
-   - BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
 
 ### 8.2 BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 
@@ -101,9 +101,9 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 1. 连接数：1
 1. 执行链：BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3_Introdection
 1. 关键节点：
+   - BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
    - ExecuteUbergraph_W_Level3_Introdection
      输入：execute <- BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature:then
-   - BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 
 ### 8.3 BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
 
@@ -112,9 +112,9 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 1. 连接数：1
 1. 执行链：BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3_Introdection
 1. 关键节点：
+   - BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
    - ExecuteUbergraph_W_Level3_Introdection
      输入：execute <- BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature:then
-   - BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
 
 ### 8.4 Construct
 
@@ -123,9 +123,9 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 1. 连接数：1
 1. 执行链：Construct -> ExecuteUbergraph_W_Level3_Introdection
 1. 关键节点：
+   - Construct
    - ExecuteUbergraph_W_Level3_Introdection
      输入：execute <- Construct:then
-   - Construct
 
 ## 9. 当前可直接确认的结论
 

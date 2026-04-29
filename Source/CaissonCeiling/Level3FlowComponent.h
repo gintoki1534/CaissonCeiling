@@ -89,6 +89,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Level3")
 	void CompleteResultPresentation();
 
+	UFUNCTION(BlueprintCallable, Category="Level3|Debug")
+	bool SkipCurrentStageByFillingMetrics();
+
 	UFUNCTION(BlueprintPure, Category="Level3")
 	bool IsLevel3SessionActive() const;
 

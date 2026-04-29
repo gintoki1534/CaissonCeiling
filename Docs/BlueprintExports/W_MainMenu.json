@@ -5,14 +5,14 @@
     "blueprint_class": "WidgetBlueprint",
     "parent_class": "UMG.UserWidget",
     "generated_class": "W_MainMenu_C",
-    "tick_prediction": null,
-    "tick_prediction_reason": null
+    "tick_prediction": "OnDemand",
+    "tick_prediction_reason": "Anim"
   },
   "event_graph": {
     "name": "EventGraph",
     "schema": "BlueprintGraph.EdGraphSchema_K2",
-    "module_count": 13,
-    "connection_count": 10,
+    "module_count": 15,
+    "connection_count": 12,
     "modules": [
       {
         "id": "K2Node_Event_0",
@@ -62,7 +62,7 @@
         "title": "Construct",
         "meta": {
           "event_name": "Construct",
-          "enabled_state": "Disabled"
+          "enabled_state": "Enabled"
         },
         "pins": [
           {
@@ -81,7 +81,13 @@
             "subcategory": "",
             "default_value": null,
             "default_object": null,
-            "linked_to": []
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "node_title": "PlayAnimation",
+                "pin_name": "execute"
+              }
+            ]
           }
         ],
         "important_inputs": [],
@@ -960,6 +966,222 @@
           }
         ],
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_MainMenu.W_MainMenu:EventGraph.K2Node_CallFunction_0'"
+      },
+      {
+        "id": "K2Node_VariableGet_1",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get tittle",
+        "meta": {
+          "variable_name": "tittle"
+        },
+        "pins": [
+          {
+            "name": "tittle",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "node_title": "PlayAnimation",
+                "pin_name": "InAnimation"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_MainMenu.W_MainMenu:EventGraph.K2Node_VariableGet_1'"
+      },
+      {
+        "id": "K2Node_CallFunction_3",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "PlayAnimation",
+        "meta": {
+          "function_name": "PlayAnimation",
+          "function_owner": null
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Event_1",
+                "node_title": "Construct",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "InAnimation",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_1",
+                "node_title": "Get tittle",
+                "pin_name": "tittle"
+              }
+            ]
+          },
+          {
+            "name": "StartAtTime",
+            "direction": "input",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.000000",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "NumLoopsToPlay",
+            "direction": "input",
+            "category": "int",
+            "subcategory": "",
+            "default_value": "0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "PlayMode",
+            "direction": "input",
+            "category": "byte",
+            "subcategory": "",
+            "default_value": "Forward",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "PlaybackSpeed",
+            "direction": "input",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "1.000000",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "bRestoreState",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Event_1",
+                "node_title": "Construct",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "InAnimation",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_1",
+                "node_title": "Get tittle",
+                "pin_name": "tittle"
+              }
+            ]
+          },
+          {
+            "name": "StartAtTime",
+            "category": "real",
+            "default_value": "0.000000",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "PlayMode",
+            "category": "byte",
+            "default_value": "Forward",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "PlaybackSpeed",
+            "category": "real",
+            "default_value": "1.000000",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_MainMenu.W_MainMenu:EventGraph.K2Node_CallFunction_3'"
       }
     ],
     "connections": [
@@ -1082,6 +1304,19 @@
       },
       {
         "from": {
+          "node": "K2Node_Event_1",
+          "node_title": "Construct",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_3",
+          "node_title": "PlayAnimation",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
           "node": "K2Node_Self_0",
           "node_title": "Self",
           "pin_name": "self"
@@ -1092,9 +1327,26 @@
           "pin_name": "WidgetToClose"
         },
         "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_1",
+          "node_title": "Get tittle",
+          "pin_name": "tittle"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_3",
+          "node_title": "PlayAnimation",
+          "pin_name": "InAnimation"
+        },
+        "category": "object"
       }
     ],
     "exec_traces": [
+      [
+        "Construct",
+        "PlayAnimation"
+      ],
       [
         "B_StartGame.OnClicked",
         "KismetSystemLibrary.PrintText",
@@ -1378,70 +1630,20 @@
       ]
     },
     {
-      "name": "ExecuteUbergraph_W_MainMenu",
+      "name": "Construct",
       "schema": "BlueprintGraph.EdGraphSchema_K2",
-      "module_count": 11,
-      "connection_count": 10,
+      "module_count": 2,
+      "connection_count": 1,
       "modules": [
         {
-          "id": "K2Node_VariableGet_0",
-          "class": "K2Node_VariableGet",
-          "kind": "variable_get",
-          "title": "Get B_StartGame",
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "Construct",
           "meta": {
-            "variable_name": "B_StartGame"
+            "function_name": "Construct"
           },
           "pins": [
-            {
-              "name": "B_StartGame",
-              "direction": "output",
-              "category": "object",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "self",
-              "direction": "input",
-              "category": "object",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            }
-          ],
-          "important_inputs": [
-            {
-              "name": "self",
-              "category": "object",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            }
-          ],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_MainMenu.W_MainMenu:ExecuteUbergraph_W_MainMenu.K2Node_VariableGet_0'"
-        },
-        {
-          "id": "K2Node_ComponentBoundEvent_0",
-          "class": "K2Node_ComponentBoundEvent",
-          "kind": "component_bound_event",
-          "title": "B_StartGame.OnClicked",
-          "meta": {
-            "component": "B_StartGame",
-            "delegate_property": "OnClicked",
-            "custom_function_name": "BndEvt__MainMenu_B_StartGame_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature"
-          },
-          "pins": [
-            {
-              "name": "OutputDelegate",
-              "direction": "output",
-              "category": "delegate",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            },
             {
               "name": "then",
               "direction": "output",
@@ -1451,783 +1653,62 @@
               "default_object": null,
               "linked_to": [
                 {
-                  "node": "K2Node_CallFunction_1",
-                  "node_title": "KismetSystemLibrary.PrintText",
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_W_MainMenu",
                   "pin_name": "execute"
                 }
               ]
             }
           ],
           "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/W_MainMenu.W_MainMenu:ExecuteUbergraph_W_MainMenu.K2Node_ComponentBoundEvent_0'"
-        },
-        {
-          "id": "K2Node_CallFunction_1",
-          "class": "K2Node_CallFunction",
-          "kind": "call_function",
-          "title": "KismetSystemLibrary.PrintText",
-          "meta": {
-            "function_name": "PrintText",
-            "function_owner": "KismetSystemLibrary"
-          },
-          "pins": [
-            {
-              "name": "execute",
-              "direction": "input",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_ComponentBoundEvent_0",
-                  "node_title": "B_StartGame.OnClicked",
-                  "pin_name": "then"
-                }
-              ]
-            },
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_DynamicCast_0",
-                  "node_title": "Cast To CaissonPlayerController",
-                  "pin_name": "execute"
-                }
-              ]
-            },
-            {
-              "name": "self",
-              "direction": "input",
-              "category": "object",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": "/Script/Engine.Default__KismetSystemLibrary",
-              "linked_to": []
-            },
-            {
-              "name": "WorldContextObject",
-              "direction": "input",
-              "category": "object",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "InText",
-              "direction": "input",
-              "category": "text",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "bPrintToScreen",
-              "direction": "input",
-              "category": "bool",
-              "subcategory": "",
-              "default_value": "true",
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "bPrintToLog",
-              "direction": "input",
-              "category": "bool",
-              "subcategory": "",
-              "default_value": "true",
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "TextColor",
-              "direction": "input",
-              "category": "struct",
-              "subcategory": "",
-              "default_value": "(R=0.000000,G=0.660000,B=1.000000,A=1.000000)",
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "Duration",
-              "direction": "input",
-              "category": "real",
-              "subcategory": "float",
-              "default_value": "2.000000",
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "Key",
-              "direction": "input",
-              "category": "name",
-              "subcategory": "",
-              "default_value": "None",
-              "default_object": null,
-              "linked_to": []
-            }
-          ],
-          "important_inputs": [
-            {
-              "name": "execute",
-              "category": "exec",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_ComponentBoundEvent_0",
-                  "node_title": "B_StartGame.OnClicked",
-                  "pin_name": "then"
-                }
-              ]
-            },
-            {
-              "name": "self",
-              "category": "object",
-              "default_value": null,
-              "default_object": "/Script/Engine.Default__KismetSystemLibrary",
-              "linked_to": []
-            },
-            {
-              "name": "bPrintToScreen",
-              "category": "bool",
-              "default_value": "true",
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "bPrintToLog",
-              "category": "bool",
-              "default_value": "true",
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "TextColor",
-              "category": "struct",
-              "default_value": "(R=0.000000,G=0.660000,B=1.000000,A=1.000000)",
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "Duration",
-              "category": "real",
-              "default_value": "2.000000",
-              "default_object": null,
-              "linked_to": []
-            }
-          ],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_MainMenu.W_MainMenu:ExecuteUbergraph_W_MainMenu.K2Node_CallFunction_1'"
-        },
-        {
-          "id": "K2Node_ComponentBoundEvent_1",
-          "class": "K2Node_ComponentBoundEvent",
-          "kind": "component_bound_event",
-          "title": "B_StartGame.OnReleased",
-          "meta": {
-            "component": "B_StartGame",
-            "delegate_property": "OnReleased",
-            "custom_function_name": "BndEvt__MainMenu_B_StartGame_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature"
-          },
-          "pins": [
-            {
-              "name": "OutputDelegate",
-              "direction": "output",
-              "category": "delegate",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/W_MainMenu.W_MainMenu:ExecuteUbergraph_W_MainMenu.K2Node_ComponentBoundEvent_1'"
-        },
-        {
-          "id": "K2Node_CallFunction_2",
-          "class": "K2Node_CallFunction",
-          "kind": "call_function",
-          "title": "GameplayStatics.GetPlayerController",
-          "meta": {
-            "function_name": "GetPlayerController",
-            "function_owner": "GameplayStatics"
-          },
-          "pins": [
-            {
-              "name": "self",
-              "direction": "input",
-              "category": "object",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": "/Script/Engine.Default__GameplayStatics",
-              "linked_to": []
-            },
-            {
-              "name": "WorldContextObject",
-              "direction": "input",
-              "category": "object",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "PlayerIndex",
-              "direction": "input",
-              "category": "int",
-              "subcategory": "",
-              "default_value": "0",
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "ReturnValue",
-              "direction": "output",
-              "category": "object",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_DynamicCast_0",
-                  "node_title": "Cast To CaissonPlayerController",
-                  "pin_name": "Object"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [
-            {
-              "name": "self",
-              "category": "object",
-              "default_value": null,
-              "default_object": "/Script/Engine.Default__GameplayStatics",
-              "linked_to": []
-            },
-            {
-              "name": "PlayerIndex",
-              "category": "int",
-              "default_value": "0",
-              "default_object": null,
-              "linked_to": []
-            }
-          ],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_MainMenu.W_MainMenu:ExecuteUbergraph_W_MainMenu.K2Node_CallFunction_2'"
-        },
-        {
-          "id": "K2Node_DynamicCast_0",
-          "class": "K2Node_DynamicCast",
-          "kind": "dynamic_cast",
-          "title": "Cast To CaissonPlayerController",
-          "meta": {
-            "target_type": "CaissonPlayerController"
-          },
-          "pins": [
-            {
-              "name": "execute",
-              "direction": "input",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_1",
-                  "node_title": "KismetSystemLibrary.PrintText",
-                  "pin_name": "then"
-                }
-              ]
-            },
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
-                  "pin_name": "execute"
-                }
-              ]
-            },
-            {
-              "name": "CastFailed",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "Object",
-              "direction": "input",
-              "category": "object",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_2",
-                  "node_title": "GameplayStatics.GetPlayerController",
-                  "pin_name": "ReturnValue"
-                }
-              ]
-            },
-            {
-              "name": "AsCaisson Player Controller",
-              "direction": "output",
-              "category": "object",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_4",
-                  "node_title": "CaissonPlayerController.CloseCaissonWidget",
-                  "pin_name": "self"
-                },
-                {
-                  "node": "K2Node_CallFunction_5",
-                  "node_title": "CaissonPlayerController.OpenCaissonWidget",
-                  "pin_name": "self"
-                },
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
-                  "pin_name": "self"
-                }
-              ]
-            },
-            {
-              "name": "bSuccess",
-              "direction": "output",
-              "category": "bool",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            }
-          ],
-          "important_inputs": [
-            {
-              "name": "execute",
-              "category": "exec",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_1",
-                  "node_title": "KismetSystemLibrary.PrintText",
-                  "pin_name": "then"
-                }
-              ]
-            },
-            {
-              "name": "Object",
-              "category": "object",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_2",
-                  "node_title": "GameplayStatics.GetPlayerController",
-                  "pin_name": "ReturnValue"
-                }
-              ]
-            }
-          ],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_DynamicCast'/Game/UI/W_MainMenu.W_MainMenu:ExecuteUbergraph_W_MainMenu.K2Node_DynamicCast_0'"
-        },
-        {
-          "id": "K2Node_CallFunction_4",
-          "class": "K2Node_CallFunction",
-          "kind": "call_function",
-          "title": "CaissonPlayerController.CloseCaissonWidget",
-          "meta": {
-            "function_name": "CloseCaissonWidget",
-            "function_owner": "CaissonPlayerController"
-          },
-          "pins": [
-            {
-              "name": "execute",
-              "direction": "input",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
-                  "pin_name": "then"
-                }
-              ]
-            },
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_5",
-                  "node_title": "CaissonPlayerController.OpenCaissonWidget",
-                  "pin_name": "execute"
-                }
-              ]
-            },
-            {
-              "name": "self",
-              "direction": "input",
-              "category": "object",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_DynamicCast_0",
-                  "node_title": "Cast To CaissonPlayerController",
-                  "pin_name": "AsCaisson Player Controller"
-                }
-              ]
-            },
-            {
-              "name": "WidgetToClose",
-              "direction": "input",
-              "category": "object",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_Self_0",
-                  "node_title": "Self",
-                  "pin_name": "self"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [
-            {
-              "name": "execute",
-              "category": "exec",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
-                  "pin_name": "then"
-                }
-              ]
-            },
-            {
-              "name": "self",
-              "category": "object",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_DynamicCast_0",
-                  "node_title": "Cast To CaissonPlayerController",
-                  "pin_name": "AsCaisson Player Controller"
-                }
-              ]
-            },
-            {
-              "name": "WidgetToClose",
-              "category": "object",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_Self_0",
-                  "node_title": "Self",
-                  "pin_name": "self"
-                }
-              ]
-            }
-          ],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_MainMenu.W_MainMenu:ExecuteUbergraph_W_MainMenu.K2Node_CallFunction_4'"
-        },
-        {
-          "id": "K2Node_Self_0",
-          "class": "K2Node_Self",
-          "kind": "self",
-          "title": "Self",
-          "meta": {},
-          "pins": [
-            {
-              "name": "self",
-              "direction": "output",
-              "category": "object",
-              "subcategory": "self",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_4",
-                  "node_title": "CaissonPlayerController.CloseCaissonWidget",
-                  "pin_name": "WidgetToClose"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_Self'/Game/UI/W_MainMenu.W_MainMenu:ExecuteUbergraph_W_MainMenu.K2Node_Self_0'"
-        },
-        {
-          "id": "K2Node_CallFunction_5",
-          "class": "K2Node_CallFunction",
-          "kind": "call_function",
-          "title": "CaissonPlayerController.OpenCaissonWidget",
-          "meta": {
-            "function_name": "OpenCaissonWidget",
-            "function_owner": "CaissonPlayerController"
-          },
-          "pins": [
-            {
-              "name": "execute",
-              "direction": "input",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_4",
-                  "node_title": "CaissonPlayerController.CloseCaissonWidget",
-                  "pin_name": "then"
-                }
-              ]
-            },
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "self",
-              "direction": "input",
-              "category": "object",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_DynamicCast_0",
-                  "node_title": "Cast To CaissonPlayerController",
-                  "pin_name": "AsCaisson Player Controller"
-                }
-              ]
-            },
-            {
-              "name": "WidgetClass",
-              "direction": "input",
-              "category": "class",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": "/Game/UI/W_Level1.W_Level1_C",
-              "linked_to": []
-            },
-            {
-              "name": "ReturnValue",
-              "direction": "output",
-              "category": "object",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            }
-          ],
-          "important_inputs": [
-            {
-              "name": "execute",
-              "category": "exec",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_4",
-                  "node_title": "CaissonPlayerController.CloseCaissonWidget",
-                  "pin_name": "then"
-                }
-              ]
-            },
-            {
-              "name": "self",
-              "category": "object",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_DynamicCast_0",
-                  "node_title": "Cast To CaissonPlayerController",
-                  "pin_name": "AsCaisson Player Controller"
-                }
-              ]
-            },
-            {
-              "name": "WidgetClass",
-              "category": "class",
-              "default_value": null,
-              "default_object": "/Game/UI/W_Level1.W_Level1_C",
-              "linked_to": []
-            }
-          ],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_MainMenu.W_MainMenu:ExecuteUbergraph_W_MainMenu.K2Node_CallFunction_5'"
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_MainMenu.W_MainMenu:Construct.K2Node_FunctionEntry_0'"
         },
         {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
           "kind": "call_function",
-          "title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
-          "meta": {
-            "function_name": "SetLevelTargetInteractionEnabled",
-            "function_owner": "CaissonPlayerController"
-          },
-          "pins": [
-            {
-              "name": "execute",
-              "direction": "input",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_DynamicCast_0",
-                  "node_title": "Cast To CaissonPlayerController",
-                  "pin_name": "then"
-                }
-              ]
-            },
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_4",
-                  "node_title": "CaissonPlayerController.CloseCaissonWidget",
-                  "pin_name": "execute"
-                }
-              ]
-            },
-            {
-              "name": "self",
-              "direction": "input",
-              "category": "object",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_DynamicCast_0",
-                  "node_title": "Cast To CaissonPlayerController",
-                  "pin_name": "AsCaisson Player Controller"
-                }
-              ]
-            },
-            {
-              "name": "bHoverEnabled",
-              "direction": "input",
-              "category": "bool",
-              "subcategory": "",
-              "default_value": "false",
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "bClickEnabled",
-              "direction": "input",
-              "category": "bool",
-              "subcategory": "",
-              "default_value": "false",
-              "default_object": null,
-              "linked_to": []
-            }
-          ],
-          "important_inputs": [
-            {
-              "name": "execute",
-              "category": "exec",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_DynamicCast_0",
-                  "node_title": "Cast To CaissonPlayerController",
-                  "pin_name": "then"
-                }
-              ]
-            },
-            {
-              "name": "self",
-              "category": "object",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_DynamicCast_0",
-                  "node_title": "Cast To CaissonPlayerController",
-                  "pin_name": "AsCaisson Player Controller"
-                }
-              ]
-            }
-          ],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_MainMenu.W_MainMenu:ExecuteUbergraph_W_MainMenu.K2Node_CallFunction_0'"
-        },
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
           "title": "ExecuteUbergraph_W_MainMenu",
           "meta": {
-            "function_name": "ExecuteUbergraph_W_MainMenu"
+            "function_name": "ExecuteUbergraph_W_MainMenu",
+            "function_owner": null
           },
           "pins": [
+            {
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "node_title": "Construct",
+                  "pin_name": "then"
+                }
+              ]
+            },
             {
               "name": "then",
               "direction": "output",
               "category": "exec",
               "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "self",
               "default_value": null,
               "default_object": null,
               "linked_to": []
             },
             {
               "name": "EntryPoint",
-              "direction": "output",
+              "direction": "input",
               "category": "int",
               "subcategory": "",
               "default_value": "0",
@@ -2235,155 +1716,49 @@
               "linked_to": []
             }
           ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_MainMenu.W_MainMenu:ExecuteUbergraph_W_MainMenu.K2Node_FunctionEntry_0'"
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "node_title": "Construct",
+                  "pin_name": "then"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_MainMenu.W_MainMenu:Construct.K2Node_CallFunction_0'"
         }
       ],
       "connections": [
         {
           "from": {
-            "node": "K2Node_CallFunction_0",
-            "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
-            "pin_name": "then"
-          },
-          "to": {
-            "node": "K2Node_CallFunction_4",
-            "node_title": "CaissonPlayerController.CloseCaissonWidget",
-            "pin_name": "execute"
-          },
-          "category": "exec"
-        },
-        {
-          "from": {
-            "node": "K2Node_CallFunction_1",
-            "node_title": "KismetSystemLibrary.PrintText",
-            "pin_name": "then"
-          },
-          "to": {
-            "node": "K2Node_DynamicCast_0",
-            "node_title": "Cast To CaissonPlayerController",
-            "pin_name": "execute"
-          },
-          "category": "exec"
-        },
-        {
-          "from": {
-            "node": "K2Node_CallFunction_2",
-            "node_title": "GameplayStatics.GetPlayerController",
-            "pin_name": "ReturnValue"
-          },
-          "to": {
-            "node": "K2Node_DynamicCast_0",
-            "node_title": "Cast To CaissonPlayerController",
-            "pin_name": "Object"
-          },
-          "category": "object"
-        },
-        {
-          "from": {
-            "node": "K2Node_CallFunction_4",
-            "node_title": "CaissonPlayerController.CloseCaissonWidget",
-            "pin_name": "then"
-          },
-          "to": {
-            "node": "K2Node_CallFunction_5",
-            "node_title": "CaissonPlayerController.OpenCaissonWidget",
-            "pin_name": "execute"
-          },
-          "category": "exec"
-        },
-        {
-          "from": {
-            "node": "K2Node_ComponentBoundEvent_0",
-            "node_title": "B_StartGame.OnClicked",
-            "pin_name": "then"
-          },
-          "to": {
-            "node": "K2Node_CallFunction_1",
-            "node_title": "KismetSystemLibrary.PrintText",
-            "pin_name": "execute"
-          },
-          "category": "exec"
-        },
-        {
-          "from": {
-            "node": "K2Node_DynamicCast_0",
-            "node_title": "Cast To CaissonPlayerController",
-            "pin_name": "AsCaisson Player Controller"
-          },
-          "to": {
-            "node": "K2Node_CallFunction_0",
-            "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
-            "pin_name": "self"
-          },
-          "category": "object"
-        },
-        {
-          "from": {
-            "node": "K2Node_DynamicCast_0",
-            "node_title": "Cast To CaissonPlayerController",
+            "node": "K2Node_FunctionEntry_0",
+            "node_title": "Construct",
             "pin_name": "then"
           },
           "to": {
             "node": "K2Node_CallFunction_0",
-            "node_title": "CaissonPlayerController.SetLevelTargetInteractionEnabled",
+            "node_title": "ExecuteUbergraph_W_MainMenu",
             "pin_name": "execute"
           },
           "category": "exec"
-        },
-        {
-          "from": {
-            "node": "K2Node_DynamicCast_0",
-            "node_title": "Cast To CaissonPlayerController",
-            "pin_name": "AsCaisson Player Controller"
-          },
-          "to": {
-            "node": "K2Node_CallFunction_4",
-            "node_title": "CaissonPlayerController.CloseCaissonWidget",
-            "pin_name": "self"
-          },
-          "category": "object"
-        },
-        {
-          "from": {
-            "node": "K2Node_DynamicCast_0",
-            "node_title": "Cast To CaissonPlayerController",
-            "pin_name": "AsCaisson Player Controller"
-          },
-          "to": {
-            "node": "K2Node_CallFunction_5",
-            "node_title": "CaissonPlayerController.OpenCaissonWidget",
-            "pin_name": "self"
-          },
-          "category": "object"
-        },
-        {
-          "from": {
-            "node": "K2Node_Self_0",
-            "node_title": "Self",
-            "pin_name": "self"
-          },
-          "to": {
-            "node": "K2Node_CallFunction_4",
-            "node_title": "CaissonPlayerController.CloseCaissonWidget",
-            "pin_name": "WidgetToClose"
-          },
-          "category": "object"
         }
       ],
       "exec_traces": [
         [
-          "B_StartGame.OnClicked",
-          "KismetSystemLibrary.PrintText",
-          "Cast To CaissonPlayerController",
-          "CaissonPlayerController.SetLevelTargetInteractionEnabled",
-          "CaissonPlayerController.CloseCaissonWidget",
-          "CaissonPlayerController.OpenCaissonWidget"
-        ],
-        [
-          "B_StartGame.OnReleased"
-        ],
-        [
+          "Construct",
           "ExecuteUbergraph_W_MainMenu"
         ]
       ]
@@ -2405,20 +1780,6 @@
         }
       },
       {
-        "name": "VerticalBox_0",
-        "class": "VerticalBox",
-        "display_label": "VerticalBox_0",
-        "is_variable": false,
-        "slot": "CanvasPanelSlot_1",
-        "parent": "CanvasPanel_43",
-        "children": [
-          "B_StartGame"
-        ],
-        "properties": {
-          "bExpandedInDesigner": "True"
-        }
-      },
-      {
         "name": "CanvasPanel_43",
         "class": "CanvasPanel",
         "display_label": "CanvasPanel_43",
@@ -2429,6 +1790,20 @@
           "Image_Background",
           "VerticalBox_0",
           "Title_Background"
+        ],
+        "properties": {
+          "bExpandedInDesigner": "True"
+        }
+      },
+      {
+        "name": "VerticalBox_0",
+        "class": "VerticalBox",
+        "display_label": "VerticalBox_0",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_1",
+        "parent": "CanvasPanel_43",
+        "children": [
+          "B_StartGame"
         ],
         "properties": {
           "bExpandedInDesigner": "True"
@@ -2463,13 +1838,6 @@
     ],
     "relationships": [
       {
-        "slot_name": "VerticalBoxSlot_0",
-        "slot_class": "VerticalBoxSlot",
-        "parent": "VerticalBox_0",
-        "child": "B_StartGame",
-        "layout_data": null
-      },
-      {
         "slot_name": "CanvasPanelSlot_0",
         "slot_class": "CanvasPanelSlot",
         "parent": "CanvasPanel_43",
@@ -2489,6 +1857,13 @@
         "parent": "CanvasPanel_43",
         "child": "Title_Background",
         "layout_data": "(Offsets=(Left=43.477478,Top=-412.540527,Right=976.876831,Bottom=604.564575),Anchors=(Minimum=(X=0.500000,Y=0.500000),Maximum=(X=0.500000,Y=0.500000)),Alignment=(X=0.500000,Y=0.000000))"
+      },
+      {
+        "slot_name": "VerticalBoxSlot_0",
+        "slot_class": "VerticalBoxSlot",
+        "parent": "VerticalBox_0",
+        "child": "B_StartGame",
+        "layout_data": null
       }
     ]
   },
@@ -2509,6 +1884,21 @@
         "metadata": {
           "(DataKey": "\"Category\",DataValue=\"W_MainMenu\")"
         }
+      },
+      {
+        "name": "tittle",
+        "guid": "10A0B9A748B9CDA35332FBBF9FEB3951",
+        "friendly_name": "tittle",
+        "category": null,
+        "property_flags": "2147491860",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.WidgetAnimation'"
+        },
+        "metadata": {
+          "(DataKey": "\"Category\",DataValue=\"Animations\")"
+        }
       }
     ],
     "widget_variable_guid_map": {
@@ -2516,10 +1906,17 @@
       "Image_Background": "4EB8FFE848BC56F1D427FB9105C2639A",
       "VerticalBox_0": "A0FA16BE47CCA1E78428C698EF3ADCA6",
       "B_StartGame": "EBB8828949CD7E5E0BEEDA93163A61A4",
-      "Title_Background": "9316280C4C6DF247DB8B2198458862F5"
+      "Title_Background": "9316280C4C6DF247DB8B2198458862F5",
+      "tittle": "10A0B9A748B9CDA35332FBBF9FEB3951"
     }
   },
   "special_settings": [
+    {
+      "target": "W_MainMenu",
+      "property": "TickPrediction",
+      "value": "OnDemand",
+      "reason": "Anim"
+    },
     {
       "target": "B_StartGame",
       "property": "ColorAndOpacity",
@@ -2564,8 +1961,8 @@
   "doc_view": {
     "blueprint_name": "W_MainMenu",
     "blueprint_class": "WidgetBlueprint",
-    "module_count": 13,
-    "connection_count": 10,
+    "module_count": 15,
+    "connection_count": 12,
     "component_events": [
       {
         "title": "B_StartGame.OnClicked",
@@ -2581,6 +1978,10 @@
       }
     ],
     "exec_traces": [
+      [
+        "Construct",
+        "PlayAnimation"
+      ],
       [
         "B_StartGame.OnClicked",
         "KismetSystemLibrary.PrintText",
@@ -2601,14 +2002,6 @@
         "children": []
       },
       {
-        "name": "VerticalBox_0",
-        "class": "VerticalBox",
-        "parent": "CanvasPanel_43",
-        "children": [
-          "B_StartGame"
-        ]
-      },
-      {
         "name": "CanvasPanel_43",
         "class": "CanvasPanel",
         "parent": null,
@@ -2616,6 +2009,14 @@
           "Image_Background",
           "VerticalBox_0",
           "Title_Background"
+        ]
+      },
+      {
+        "name": "VerticalBox_0",
+        "class": "VerticalBox",
+        "parent": "CanvasPanel_43",
+        "children": [
+          "B_StartGame"
         ]
       },
       {

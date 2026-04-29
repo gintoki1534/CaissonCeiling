@@ -8,6 +8,8 @@ class UCameraComponent;
 class USceneComponent;
 class USpringArmComponent;
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnModelPivotRotationResetFinished);
+
 /**
  * 隆福寺藻井 漫游相机 Pawn
  */
@@ -46,7 +48,29 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera|Control")
 	float RotationSensitivity = 1.0f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera|Control")
+	float ModelPivotResetDuration = 0.35f;
+
+	UPROPERTY(BlueprintAssignable, Category = "Camera|Control")
+	FOnModelPivotRotationResetFinished OnModelPivotRotationResetFinished;
+
 	// 接收鼠标输入的接口，供 Controller 调用
 	UFUNCTION(BlueprintCallable, Category = "Camera|Control")
 	void OnLookVectorReceived(const FVector2D& LookAxisVector);
+
+	UFUNCTION(BlueprintCallable, Category = "Camera|Control")
+	bool BeginResetModelPivotRotation(float DurationSeconds = -1.0f);
+
+	UFUNCTION(BlueprintPure, Category = "Camera|Control")
+	bool IsModelPivotRotationResetting() const;
+
+private:
+	bool bModelPivotRotationResetting = false;
+	float ModelPivotResetElapsedSeconds = 0.0f;
+	float ActiveModelPivotResetDuration = 0.0f;
+	FRotator InitialModelPivotRotation = FRotator::ZeroRotator;
+	FRotator ModelPivotResetStartRotation = FRotator::ZeroRotator;
+
+	void UpdateModelPivotRotationReset(float DeltaTime);
+	void FinishModelPivotRotationReset();
 };

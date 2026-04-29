@@ -11,6 +11,8 @@
 1. 蓝图类型：WidgetBlueprint
 1. 父类：UMG.UserWidget
 1. 生成类：W_MainMenu_C
+1. Tick 预测：OnDemand
+1. Tick 原因：Anim
 
 ## 3. 当前状态
 
@@ -24,8 +26,8 @@
 
 ```text
 B_StartGame [Button] | parent=VerticalBox_0 | children=无
-VerticalBox_0 [VerticalBox] | parent=CanvasPanel_43 | children=B_StartGame
 CanvasPanel_43 [CanvasPanel] | parent=ROOT | children=Image_Background, VerticalBox_0, Title_Background
+VerticalBox_0 [VerticalBox] | parent=CanvasPanel_43 | children=B_StartGame
 Image_Background [Image] | parent=CanvasPanel_43 | children=无
 Title_Background [Image] | parent=CanvasPanel_43 | children=无
 ```
@@ -39,6 +41,7 @@ Title_Background [Image] | parent=CanvasPanel_43 | children=无
 
 ### 5.2 主执行链
 
+1. Construct -> PlayAnimation
 1. B_StartGame.OnClicked -> KismetSystemLibrary.PrintText -> Cast To CaissonPlayerController -> CaissonPlayerController.SetLevelTargetInteractionEnabled -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
 1. B_StartGame.OnReleased
 
@@ -47,9 +50,12 @@ Title_Background [Image] | parent=CanvasPanel_43 | children=无
 ### 6.2 自动生成的控件变量
 
 1. B_StartGame -> /Script/CoreUObject.Class'/Script/UMG.Button'
+1. tittle -> /Script/CoreUObject.Class'/Script/UMG.WidgetAnimation'
 
 ## 7. 特殊设置
 
+1. W_MainMenu.TickPrediction = OnDemand
+   原因：Anim
 1. B_StartGame.ColorAndOpacity = (R=1.000000,G=1.000000,B=1.000000,A=0.000000)
 1. Image_Background.Brush = (ImageType=FullColor,ImageSize=(X=4096.000000,Y=2160.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/StartMenu/背景.背景'")
 1. Image_Background.Visibility = SelfHitTestInvisible
@@ -83,40 +89,16 @@ Title_Background [Image] | parent=CanvasPanel_43 | children=无
    - ExecuteUbergraph_W_MainMenu
      输入：execute <- BndEvt__MainMenu_B_StartGame_K2Node_ComponentBoundEvent_1_OnButtonReleasedEvent__DelegateSignature:then
 
-### 8.3 ExecuteUbergraph_W_MainMenu
+### 8.3 Construct
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：11
-1. 连接数：10
-1. 执行链：B_StartGame.OnClicked -> KismetSystemLibrary.PrintText -> Cast To CaissonPlayerController -> CaissonPlayerController.SetLevelTargetInteractionEnabled -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
-1. 执行链：B_StartGame.OnReleased
-1. 执行链：ExecuteUbergraph_W_MainMenu
+1. 模块数：2
+1. 连接数：1
+1. 执行链：Construct -> ExecuteUbergraph_W_MainMenu
 1. 关键节点：
-   - B_StartGame.OnClicked
-   - KismetSystemLibrary.PrintText
-     输入：execute <- B_StartGame.OnClicked:then
-     输入：self = /Script/Engine.Default__KismetSystemLibrary
-     输入：bPrintToScreen = true
-     输入：bPrintToLog = true
-   - B_StartGame.OnReleased
-   - GameplayStatics.GetPlayerController
-     输入：self = /Script/Engine.Default__GameplayStatics
-     输入：PlayerIndex = 0
-   - Cast To CaissonPlayerController
-     输入：execute <- KismetSystemLibrary.PrintText:then
-     输入：Object <- GameplayStatics.GetPlayerController:ReturnValue
-   - CaissonPlayerController.CloseCaissonWidget
-     输入：execute <- CaissonPlayerController.SetLevelTargetInteractionEnabled:then
-     输入：self <- Cast To CaissonPlayerController:AsCaisson Player Controller
-     输入：WidgetToClose <- Self:self
-   - CaissonPlayerController.OpenCaissonWidget
-     输入：execute <- CaissonPlayerController.CloseCaissonWidget:then
-     输入：self <- Cast To CaissonPlayerController:AsCaisson Player Controller
-     输入：WidgetClass = /Game/UI/W_Level1.W_Level1_C
-   - CaissonPlayerController.SetLevelTargetInteractionEnabled
-     输入：execute <- Cast To CaissonPlayerController:then
-     输入：self <- Cast To CaissonPlayerController:AsCaisson Player Controller
+   - Construct
    - ExecuteUbergraph_W_MainMenu
+     输入：execute <- Construct:then
 
 ## 9. 当前可直接确认的结论
 

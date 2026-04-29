@@ -8,6 +8,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "Framework/Application/SlateApplication.h"
+#include "InputCoreTypes.h"
 
 namespace
 {
@@ -92,9 +93,12 @@ ACaissonPlayerController::ACaissonPlayerController()
 	bEnableLevelTargetClick = false;
 	Level2FlowState = ELevel2FlowState::SearchingTargets;
 	ActiveInspectTargetId = NAME_None;
+	PendingInspectTargetId = NAME_None;
 	bRightMouseLookHeld = false;
 	bCachedHoverEnabledBeforeInspect = false;
 	bCachedClickEnabledBeforeInspect = false;
+	bPendingInspectIsFinalTarget = false;
+	ActiveCaissonWidget = nullptr;
 	Level3FlowComponent = CreateDefaultSubobject<ULevel3FlowComponent>(TEXT("Level3FlowComponent"));
 }
 
@@ -145,6 +149,11 @@ void ACaissonPlayerController::SetupInputComponent()
 			EnhancedInputComponent->BindAction(RightClickAction, ETriggerEvent::Canceled, this, &ACaissonPlayerController::OnRightMouseReleased);
 		}
 	}
+
+	if (InputComponent)
+	{
+		InputComponent->BindKey(EKeys::S, IE_Pressed, this, &ACaissonPlayerController::RequestSkipCurrentFlow);
+	}
 }
 
 void ACaissonPlayerController::AdvanceStep()
@@ -165,6 +174,8 @@ void ACaissonPlayerController::ResetSteps()
 	CurrentStep = 0;
 	Level2FlowState = ELevel2FlowState::SearchingTargets;
 	ActiveInspectTargetId = NAME_None;
+	PendingInspectTargetId = NAME_None;
+	bPendingInspectIsFinalTarget = false;
 	SetIgnoreLookInput(false);
 	OnStepChanged.Broadcast(CurrentStep);
 }
@@ -174,6 +185,8 @@ void ACaissonPlayerController::ResetLevel2TargetProgress()
 	ActivatedLevel2TargetIds.Reset();
 	Level2FlowState = ELevel2FlowState::SearchingTargets;
 	ActiveInspectTargetId = NAME_None;
+	PendingInspectTargetId = NAME_None;
+	bPendingInspectIsFinalTarget = false;
 	SetIgnoreLookInput(false);
 
 	if (CurrentHoveredInteractComponent)
@@ -459,9 +472,53 @@ bool ACaissonPlayerController::HandleLevel2Interaction(UCaissonInteractComponent
 	SetIgnoreLookInput(true);
 
 	const bool bIsFinalTarget = (FoundCount >= TargetCount);
-	OnLevel2InspectStarted.Broadcast(TargetId, bIsFinalTarget);
+	StartLevel2InspectAfterModelReset(TargetId, bIsFinalTarget);
 
 	return true;
+}
+
+void ACaissonPlayerController::StartLevel2InspectAfterModelReset(FName TargetId, bool bIsFinalTarget)
+{
+	if (ACaissonPawn* CaissonPawn = Cast<ACaissonPawn>(GetPawn()))
+	{
+		PendingInspectTargetId = TargetId;
+		bPendingInspectIsFinalTarget = bIsFinalTarget;
+		CaissonPawn->OnModelPivotRotationResetFinished.RemoveDynamic(this, &ACaissonPlayerController::HandleLevel2ModelPivotResetFinished);
+		CaissonPawn->OnModelPivotRotationResetFinished.AddDynamic(this, &ACaissonPlayerController::HandleLevel2ModelPivotResetFinished);
+
+		if (CaissonPawn->BeginResetModelPivotRotation())
+		{
+			UE_LOG(LogTemp, Log, TEXT("[Level2] 已点击目标 %s，等待模型旋转复原后进入特写"), *TargetId.ToString());
+			return;
+		}
+
+		CaissonPawn->OnModelPivotRotationResetFinished.RemoveDynamic(this, &ACaissonPlayerController::HandleLevel2ModelPivotResetFinished);
+	}
+
+	PendingInspectTargetId = NAME_None;
+	bPendingInspectIsFinalTarget = false;
+	OnLevel2InspectStarted.Broadcast(TargetId, bIsFinalTarget);
+}
+
+void ACaissonPlayerController::HandleLevel2ModelPivotResetFinished()
+{
+	if (ACaissonPawn* CaissonPawn = Cast<ACaissonPawn>(GetPawn()))
+	{
+		CaissonPawn->OnModelPivotRotationResetFinished.RemoveDynamic(this, &ACaissonPlayerController::HandleLevel2ModelPivotResetFinished);
+	}
+
+	const FName TargetId = PendingInspectTargetId;
+	const bool bIsFinalTarget = bPendingInspectIsFinalTarget;
+	PendingInspectTargetId = NAME_None;
+	bPendingInspectIsFinalTarget = false;
+
+	if (TargetId.IsNone() || Level2FlowState != ELevel2FlowState::ShowingTargetInspect || ActiveInspectTargetId != TargetId)
+	{
+		return;
+	}
+
+	UE_LOG(LogTemp, Log, TEXT("[Level2] 模型旋转已复原，进入目标 %s 特写"), *TargetId.ToString());
+	OnLevel2InspectStarted.Broadcast(TargetId, bIsFinalTarget);
 }
 
 void ACaissonPlayerController::CompleteLevel2InspectPresentation()
@@ -496,6 +553,121 @@ void ACaissonPlayerController::CompleteLevel2InspectPresentation()
 bool ACaissonPlayerController::IsLevel2WaitingForAnyClickToContinue() const
 {
 	return Level2FlowState == ELevel2FlowState::WaitingAnyClickToContinue;
+}
+
+void ACaissonPlayerController::RequestSkipCurrentFlow()
+{
+	OnSkipFlowRequested.Broadcast();
+
+	if (SkipLevel3Flow())
+	{
+		return;
+	}
+
+	if (SkipLevel1ToLevel2())
+	{
+		return;
+	}
+
+	if (SkipLevel2Flow())
+	{
+		return;
+	}
+
+	UE_LOG(LogTemp, Warning, TEXT("[Skip] 当前没有可跳过的前三关流程"));
+}
+
+bool ACaissonPlayerController::SkipLevel1ToLevel2()
+{
+	if (!IsActiveCaissonWidgetNamed(TEXT("W_Level1")) && !IsActiveCaissonWidgetNamed(TEXT("W_Level1_Introdection")))
+	{
+		return false;
+	}
+
+	TSubclassOf<UUserWidget> Level2WidgetClass = LoadClass<UUserWidget>(nullptr, TEXT("/Game/UI/W_Level2.W_Level2_C"));
+	if (!Level2WidgetClass)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("[Skip][Level1] 无法加载 /Game/UI/W_Level2.W_Level2_C"));
+		return false;
+	}
+
+	if (ActiveCaissonWidget)
+	{
+		CloseCaissonWidget(ActiveCaissonWidget);
+	}
+
+	ResetSteps();
+	ResetLevel2TargetProgress();
+	SetLevelTargetInteractionEnabled(true, true);
+	OpenCaissonWidget(Level2WidgetClass);
+	UE_LOG(LogTemp, Log, TEXT("[Skip][Level1] 已跳过第一关流程，打开第二关 UI"));
+	return true;
+}
+
+bool ACaissonPlayerController::SkipLevel2Flow()
+{
+	const bool bLooksLikeLevel2Widget = IsActiveCaissonWidgetNamed(TEXT("W_Level2"));
+	const bool bLevel2InProgress = Level2FlowState != ELevel2FlowState::TransitionRequested
+		&& (RequiredLevel2TargetIds.Num() > 0 || bEnableLevelTargetHover || bEnableLevelTargetClick || CurrentStep > 0);
+
+	if (!bLooksLikeLevel2Widget && !bLevel2InProgress)
+	{
+		return false;
+	}
+
+	if (Level2FlowState == ELevel2FlowState::TransitionRequested)
+	{
+		return true;
+	}
+
+	for (const FName TargetId : RequiredLevel2TargetIds)
+	{
+		if (!TargetId.IsNone() && !ActivatedLevel2TargetIds.Contains(TargetId))
+		{
+			ActivatedLevel2TargetIds.Add(TargetId);
+			OnLevel2TargetActivated.Broadcast(TargetId);
+		}
+	}
+
+	const int32 TargetCount = RequiredLevel2TargetIds.Num();
+	const int32 CompletedStep = TargetCount > 0 ? TargetCount : TotalSteps;
+	CurrentStep = FMath::Max(CurrentStep, CompletedStep);
+	ActiveInspectTargetId = NAME_None;
+	Level2FlowState = ELevel2FlowState::TransitionRequested;
+	SetLevelTargetInteractionEnabled(false, false);
+	SetIgnoreLookInput(false);
+
+	if (CurrentHoveredInteractComponent)
+	{
+		ClearHoverTracking(CurrentHoveredInteractComponent, false);
+	}
+
+	OnStepChanged.Broadcast(CurrentStep);
+	OnLevel2TargetProgressChanged.Broadcast(GetFoundLevel2TargetCount(), TargetCount);
+	UE_LOG(LogTemp, Log, TEXT("[Skip][Level2] 已完成第二关目标并请求进入下一关"));
+	OnLevel2NextLevelRequested.Broadcast();
+	return true;
+}
+
+bool ACaissonPlayerController::SkipLevel3Flow()
+{
+	const bool bLooksLikeLevel3Widget = IsActiveCaissonWidgetNamed(TEXT("W_Level3"));
+	if (!Level3FlowComponent || (!Level3FlowComponent->IsLevel3SessionActive() && !bLooksLikeLevel3Widget))
+	{
+		return false;
+	}
+
+	if (!Level3FlowComponent->IsLevel3SessionActive())
+	{
+		Level3FlowComponent->StartLevel3Dusting();
+	}
+
+	const bool bSkipped = Level3FlowComponent->SkipCurrentStageByFillingMetrics();
+	if (bSkipped)
+	{
+		UE_LOG(LogTemp, Log, TEXT("[Skip][Level3] 已将第三关当前修复指标补满"));
+	}
+	return bSkipped;
 }
 
 void ACaissonPlayerController::UpdateHoveredInteractable()
@@ -594,6 +766,7 @@ UUserWidget* ACaissonPlayerController::OpenCaissonWidget(TSubclassOf<UUserWidget
 	if (NewWidget)
 	{
 		NewWidget->AddToViewport();
+		ActiveCaissonWidget = NewWidget;
 
 		FInputModeGameAndUI InputMode;
 		InputMode.SetWidgetToFocus(NewWidget->TakeWidget());
@@ -614,9 +787,26 @@ void ACaissonPlayerController::CloseCaissonWidget(UUserWidget* WidgetToClose)
 		WidgetToClose->RemoveFromParent();
 	}
 
+	if (!WidgetToClose || WidgetToClose == ActiveCaissonWidget)
+	{
+		ActiveCaissonWidget = nullptr;
+	}
+
 	FInputModeGameOnly InputMode;
 	SetInputMode(InputMode);
 	FSlateApplication::Get().SetAllUserFocusToGameViewport();
+}
+
+bool ACaissonPlayerController::IsActiveCaissonWidgetNamed(const TCHAR* WidgetClassBaseName) const
+{
+	if (!ActiveCaissonWidget || !WidgetClassBaseName)
+	{
+		return false;
+	}
+
+	const FString ClassName = ActiveCaissonWidget->GetClass()->GetName();
+	const FString BaseName(WidgetClassBaseName);
+	return ClassName == BaseName || ClassName == BaseName + TEXT("_C") || ClassName.StartsWith(BaseName + TEXT("_C_"));
 }
 
 void ACaissonPlayerController::StartLevel3Dusting()

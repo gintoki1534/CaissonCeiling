@@ -32,13 +32,18 @@ ACaissonPawn::ACaissonPawn()
 void ACaissonPawn::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	if (ModelPivotComp)
+	{
+		InitialModelPivotRotation = ModelPivotComp->GetRelativeRotation();
+	}
 }
 
 void ACaissonPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	UpdateModelPivotRotationReset(DeltaTime);
 }
 
 void ACaissonPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -48,6 +53,11 @@ void ACaissonPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
 void ACaissonPawn::OnLookVectorReceived(const FVector2D& LookAxisVector)
 {
+	if (bModelPivotRotationResetting)
+	{
+		return;
+	}
+
 	// 确保有输入才计算，避免无意义的运算
 	if (LookAxisVector.IsNearlyZero())
 	{
@@ -74,9 +84,81 @@ void ACaissonPawn::OnLookVectorReceived(const FVector2D& LookAxisVector)
 	CurrentRotation.Pitch = FMath::Clamp(CurrentRotation.Pitch + PitchOffset, -80.0f, 80.0f);
 
 	// 不改变翻滚角 (Roll)
-	CurrentRotation.Roll = 0.0f;
+	CurrentRotation.Roll = InitialModelPivotRotation.Roll;
 
 	// 3. 只把新的旋转应用到模型枢轴，不旋转相机。
 	ModelPivotComp->SetRelativeRotation(CurrentRotation);
 }
 
+bool ACaissonPawn::BeginResetModelPivotRotation(float DurationSeconds)
+{
+	if (!ModelPivotComp)
+	{
+		return false;
+	}
+
+	const FRotator CurrentRotation = ModelPivotComp->GetRelativeRotation();
+	if (CurrentRotation.Equals(InitialModelPivotRotation, 0.1f))
+	{
+		ModelPivotComp->SetRelativeRotation(InitialModelPivotRotation);
+		bModelPivotRotationResetting = false;
+		return false;
+	}
+
+	ModelPivotResetStartRotation = CurrentRotation;
+	ModelPivotResetElapsedSeconds = 0.0f;
+	ActiveModelPivotResetDuration = DurationSeconds > 0.0f ? DurationSeconds : ModelPivotResetDuration;
+
+	if (ActiveModelPivotResetDuration <= KINDA_SMALL_NUMBER)
+	{
+		FinishModelPivotRotationReset();
+		return false;
+	}
+
+	bModelPivotRotationResetting = true;
+	return true;
+}
+
+bool ACaissonPawn::IsModelPivotRotationResetting() const
+{
+	return bModelPivotRotationResetting;
+}
+
+void ACaissonPawn::UpdateModelPivotRotationReset(float DeltaTime)
+{
+	if (!bModelPivotRotationResetting || !ModelPivotComp)
+	{
+		return;
+	}
+
+	ModelPivotResetElapsedSeconds += FMath::Max(0.0f, DeltaTime);
+	const float Alpha = FMath::Clamp(ModelPivotResetElapsedSeconds / ActiveModelPivotResetDuration, 0.0f, 1.0f);
+	const float EasedAlpha = FMath::InterpEaseInOut(0.0f, 1.0f, Alpha, 2.0f);
+	const FQuat StartQuat = ModelPivotResetStartRotation.Quaternion();
+	const FQuat TargetQuat = InitialModelPivotRotation.Quaternion();
+	ModelPivotComp->SetRelativeRotation(FQuat::Slerp(StartQuat, TargetQuat, EasedAlpha).Rotator());
+
+	if (Alpha >= 1.0f)
+	{
+		FinishModelPivotRotationReset();
+	}
+}
+
+void ACaissonPawn::FinishModelPivotRotationReset()
+{
+	if (ModelPivotComp)
+	{
+		ModelPivotComp->SetRelativeRotation(InitialModelPivotRotation);
+	}
+
+	const bool bWasResetting = bModelPivotRotationResetting;
+	bModelPivotRotationResetting = false;
+	ModelPivotResetElapsedSeconds = 0.0f;
+	ActiveModelPivotResetDuration = 0.0f;
+	ModelPivotResetStartRotation = InitialModelPivotRotation;
+
+	if (bWasResetting)
+	{
+		OnModelPivotRotationResetFinished.Broadcast();
+	}
+}

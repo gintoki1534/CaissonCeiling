@@ -29,12 +29,13 @@ Button_Tool2 [Button] | parent=CanvasPanel_30 | children=无
 Button_Tool3 [Button] | parent=CanvasPanel_30 | children=无
 Button_Tool4 [Button] | parent=CanvasPanel_30 | children=无
 Button_Tool5 [Button] | parent=CanvasPanel_30 | children=无
-CanvasPanel_30 [CanvasPanel] | parent=ROOT | children=PB_Clean, Img_CleanMarker, Button_Tool1, Button_Tool2, Button_Tool3, Button_Tool4, Button_Tool5, PB_Integrity, Tools_5_Selected, Tools_1_Unselected, Tools_2_Unselected, Tools_3_Unselected, Tools_4_Unselected, Tools_5_Unselected, Tools_4_Selected, Tools_3_Selected, Tools_2_Selected, Tools_1_Selected, PB_Aesthetics, Text_CleanValue, Text_IntegrityValue, Text_AestheticsValue, CanvasPanel_Result, Img_IntegrityMarker, uibase, Img_AestheticsMarker, CanvasPanel_OilingTools, barbase, barbase1, barbase2, CanvasPanel_DustingTools
+CanvasPanel_30 [CanvasPanel] | parent=ROOT | children=PB_Clean, Img_CleanMarker, Button_Tool1, cloudtittle, Button_Tool2, Button_Tool3, Button_Tool4, Button_Tool5, PB_Integrity, Tools_5_Selected, Tools_1_Unselected, Tools_2_Unselected, Tools_3_Unselected, Tools_4_Unselected, Tools_5_Unselected, Tools_4_Selected, Tools_3_Selected, Tools_2_Selected, Tools_1_Selected, PB_Aesthetics, Text_CleanValue, Text_IntegrityValue, Text_AestheticsValue, CanvasPanel_Result, Img_IntegrityMarker, uibase, Img_AestheticsMarker, CanvasPanel_OilingTools, barbase, barbase1, barbase2, CanvasPanel_DustingTools
 CanvasPanel_DustingTools [CanvasPanel] | parent=CanvasPanel_30 | children=tools_text_2, beauty_1, beauty, Perfect, Perfect_1, Perfect_2, clean, clean_1, clean_2, clean_3, clean_4, tools_text, tools_text_1, tools_text_3, tools_text_4, tools_text_5, tools_text_6, tools_text_7, tools_text_8, tools_text_9, tools, Image_8, Image_9, Image_10, Image_11, TextBlock_0, TextBlock, TextBlock_1, TextBlock_2, TextBlock_3
 CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=tools_text_12, beauty_2, beauty_3, Perfect_3, Perfect_4, clean_5, clean_6, clean_7, clean_9, tools_text_10, tools_text_11, tools_text_13, tools_text_14, tools_text_15, tools_text_16, tools_text_17, tools_1, Image, Image_1, Image_2, TextBlock_4, TextBlock_5, TextBlock_6, TextBlock_7
 CanvasPanel_Result [CanvasPanel] | parent=CanvasPanel_30 | children=Text_Result, Button_Continue
 PB_Clean [ProgressBar] | parent=CanvasPanel_30 | children=无
 Img_CleanMarker [Image] | parent=CanvasPanel_30 | children=无
+cloudtittle [TextBlock] | parent=CanvasPanel_30 | children=无
 PB_Integrity [ProgressBar] | parent=CanvasPanel_30 | children=无
 Tools_5_Selected [Image] | parent=CanvasPanel_30 | children=无
 Tools_1_Unselected [Image] | parent=CanvasPanel_30 | children=无
@@ -137,7 +138,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
 1. Button_Tool3.OnClicked -> RequestSelectTool
 1. Button_Tool4.OnClicked -> RequestSelectTool
 1. Button_Tool5.OnClicked -> RequestSelectTool
-1. Button_Continue.OnClicked -> IsValid -> BP_ShowcaseModel_Level3_C.ReturnToLevel3DefaultView -> Set bRepairViewActivated -> IsValid -> Switch on ELevel3SubStage -> CaissonPlayerController.CompleteLevel3ResultPresentation -> Set Visibility
+1. Button_Continue.OnClicked -> IsValid -> BP_ShowcaseModel_Level3_C.ReturnToLevel3DefaultView -> Set bRepairViewActivated -> IsValid -> Switch on ELevel3SubStage -> CaissonPlayerController.CompleteLevel3ResultPresentation -> BP_ShowcaseModel_Level3_C.DeactivateLevel3Presentation -> Cast To CaissonPlayerController -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
 1. Button_Continue.OnClicked -> IsValid -> BP_ShowcaseModel_Level3_C.ReturnToLevel3DefaultView -> Set bRepairViewActivated -> IsValid -> Switch on ELevel3SubStage -> CaissonPlayerController.AdvanceLevel3ToOiling -> Set Visibility
 1. HandleLevel3ProgressChanged -> Switch on ELevel3SubStage -> SetVisibility -> SetVisibility -> IsValid -> BP_ShowcaseModel_Level3_C.UpdateOilVisual -> KismetSystemLibrary.PrintString -> TextBlock.SetText -> TextBlock.SetText -> TextBlock.SetText -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> CanvasPanelSlot.SetPosition -> CanvasPanelSlot.SetPosition -> CanvasPanelSlot.SetPosition -> Switch on ELevel3Phase -> K2Node_IfThenElse_1 -> SetIsEnabled -> SetVisibility
 1. HandleLevel3ProgressChanged -> Switch on ELevel3SubStage -> IsValid -> BP_ShowcaseModel_Level3_C.UpdateDustVisual -> KismetSystemLibrary.PrintString -> TextBlock.SetText -> TextBlock.SetText -> TextBlock.SetText -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> CanvasPanelSlot.SetPosition -> CanvasPanelSlot.SetPosition -> CanvasPanelSlot.SetPosition -> Switch on ELevel3Phase -> K2Node_IfThenElse_1 -> SetIsEnabled -> SetVisibility
@@ -201,6 +202,8 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
 1. CanvasPanel_Result.Visibility = Collapsed
 1. Img_CleanMarker.ColorAndOpacity = (R=0.850000,G=0.670000,B=0.250000,A=1.000000)
 1. Img_CleanMarker.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/修复程度小圆点.修复程度小圆点'")
+1. cloudtittle.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "3FD0E7474B15EC0079FD338C7CB5B336", "云纹框架")
+1. cloudtittle.ColorAndOpacity = (SpecifiedColor=(R=0.630757,G=0.439657,B=0.230740,A=1.000000))
 1. Tools_5_Selected.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/刷子选择状态背景.刷子选择状态背景'")
 1. Tools_5_Selected.Visibility = Collapsed
 1. Tools_1_Unselected.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/刷子未选择状态背景.刷子未选择状态背景'")
@@ -230,13 +233,13 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
 1. tools_text_2.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "AB4AA4C244DC1790DEA4449A88FB51EA", "+1")
 1. beauty_1.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/美观度ui_1.美观度ui_1'")
 1. beauty.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/美观度ui_1.美观度ui_1'")
-1. Perfect.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/完好度ui_3.完好度ui_3'")
+1. Perfect.Brush = (ImageType=FullColor,ImageSize=(X=271.000000,Y=260.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/美观度ui_1.美观度ui_1'")
 1. Perfect_1.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/完好度ui_3.完好度ui_3'")
 1. Perfect_2.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/完好度ui_3.完好度ui_3'")
 1. clean.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/清洁度ui.清洁度ui'")
 1. clean_1.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/清洁度ui.清洁度ui'")
-1. clean_2.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/清洁度ui.清洁度ui'")
-1. clean_3.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/清洁度ui.清洁度ui'")
+1. clean_2.Brush = (ImageType=FullColor,ImageSize=(X=271.000000,Y=260.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/美观度ui_1.美观度ui_1'")
+1. clean_3.Brush = (ImageType=FullColor,ImageSize=(X=271.000000,Y=260.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/美观度ui_1.美观度ui_1'")
 1. clean_4.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/清洁度ui.清洁度ui'")
 1. tools_text.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "09FDCD344816B2501138099BEF859BE0", "-1")
 1. tools_text_1.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "61C3FDD34CA379775F8BB99719BF96FE", "+2")
@@ -257,22 +260,22 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
 1. TextBlock_1.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "AA61C4CC44A158301832AE99243410F8", "极细勾线尘刷")
 1. TextBlock_2.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "E854B2A848A4A740BEACD99B11222EB5", "弯柄硬鬃隙刷")
 1. TextBlock_3.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "D43FBCA240345C40785434B259002535", "墩头打磨油刷")
-1. tools_text_12.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "AB4AA4C244DC1790DEA4449A88FB51EA", "+1")
-1. beauty_2.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/美观度ui_1.美观度ui_1'")
-1. beauty_3.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/美观度ui_1.美观度ui_1'")
+1. tools_text_12.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "A295B09D4F9F08C1096E92A5CE41F8EA", "+2")
+1. beauty_2.Brush = (ImageType=FullColor,ImageSize=(X=190.000000,Y=207.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/清洁度ui.清洁度ui'")
+1. beauty_3.Brush = (ImageType=FullColor,ImageSize=(X=190.000000,Y=207.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/清洁度ui.清洁度ui'")
 1. Perfect_3.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/完好度ui_3.完好度ui_3'")
 1. Perfect_4.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/完好度ui_3.完好度ui_3'")
-1. clean_5.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/清洁度ui.清洁度ui'")
-1. clean_6.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/清洁度ui.清洁度ui'")
-1. clean_7.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/清洁度ui.清洁度ui'")
-1. clean_9.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/清洁度ui.清洁度ui'")
+1. clean_5.Brush = (ImageType=FullColor,ImageSize=(X=271.000000,Y=260.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/美观度ui_1.美观度ui_1'")
+1. clean_6.Brush = (ImageType=FullColor,ImageSize=(X=239.000000,Y=260.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/完好度ui_3.完好度ui_3'")
+1. clean_7.Brush = (ImageType=FullColor,ImageSize=(X=271.000000,Y=260.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/美观度ui_1.美观度ui_1'")
+1. clean_9.Brush = (ImageType=FullColor,ImageSize=(X=271.000000,Y=260.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/美观度ui_1.美观度ui_1'")
 1. tools_text_10.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "09FDCD344816B2501138099BEF859BE0", "-1")
 1. tools_text_11.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "61C3FDD34CA379775F8BB99719BF96FE", "+2")
-1. tools_text_13.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "B95418BE4BDF05181DA15D8DB9CFFBFB", "+1")
+1. tools_text_13.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "08753E064492996937291385EFD2A75A", "-1")
 1. tools_text_14.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "FB474BB64D856E2B8D6CE8905181BB57", "+2")
 1. tools_text_15.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "7C78B95C4D8A09C0F18301939A9D7A1F", "-1")
-1. tools_text_16.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "A21EABEC4ECA6EDEA0B1D2A3D00B5503", "+2")
-1. tools_text_17.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "E85660A046375AFB9835248C7C894169", "-1")
+1. tools_text_16.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "189B23BC4481C0565FAF69A62D16D2D4", "+1")
+1. tools_text_17.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "B82A1C0941A6E7BC4251A8B9F610E1F5", "+1")
 1. tools_1.Brush = (ImageType=FullColor,ImageSize=(X=921.000000,Y=729.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Tuyou/棉纱推光揩油团.棉纱推光揩油团'")
 1. Image.Brush = (ImageType=FullColor,ImageSize=(X=832.000000,Y=568.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Tuyou/去燥打磨丝瓜络.去燥打磨丝瓜络'")
 1. Image_1.Brush = (ImageType=FullColor,ImageSize=(X=789.000000,Y=674.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Tuyou/斜锋剔角修油刷.斜锋剔角修油刷'")
@@ -285,6 +288,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
 1. PB_Clean.LayoutData = (Offsets=(Left=212.000000,Top=696.000000,Right=200.000000,Bottom=3.000000))
 1. Img_CleanMarker.LayoutData = (Offsets=(Left=304.000000,Top=689.000000,Right=16.000000,Bottom=16.000000))
 1. Button_Tool1.LayoutData = (Offsets=(Left=1512.000000,Top=284.000000,Right=325.000000,Bottom=100.000000))
+1. cloudtittle.LayoutData = (Offsets=(Left=212.400253,Top=189.609375,Right=87.644791,Bottom=22.449593))
 1. Button_Tool2.LayoutData = (Offsets=(Left=1512.000000,Top=396.000000,Right=325.000000,Bottom=100.000000))
 1. Button_Tool3.LayoutData = (Offsets=(Left=1512.000000,Top=508.000000,Right=325.000000,Bottom=100.000000))
 1. Button_Tool4.LayoutData = (Offsets=(Left=1512.000000,Top=620.000000,Right=325.000000,Bottom=100.000000))
@@ -438,55 +442,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- BndEvt__W_Level3_Button_Tool5_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature:then
 
-### 8.7 CREATEDELEGATE_PROXYFUNCTION_0
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：3
-1. 连接数：2
-1. 执行链：CREATEDELEGATE_PROXYFUNCTION_0 -> HandleLevel3ResultReady
-1. 关键节点：
-   - CREATEDELEGATE_PROXYFUNCTION_0
-   - HandleLevel3ResultReady
-     输入：execute <- CREATEDELEGATE_PROXYFUNCTION_0:then
-     输入：ResultState <- CREATEDELEGATE_PROXYFUNCTION_0:ResultState
-
-### 8.8 CREATEDELEGATE_PROXYFUNCTION_0_MERGED
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：3
-1. 连接数：2
-1. 执行链：CREATEDELEGATE_PROXYFUNCTION_0 -> HandleLevel3ResultReady
-1. 关键节点：
-   - CREATEDELEGATE_PROXYFUNCTION_0
-   - HandleLevel3ResultReady
-     输入：execute <- CREATEDELEGATE_PROXYFUNCTION_0:then
-     输入：ResultState <- CREATEDELEGATE_PROXYFUNCTION_0:ResultState
-
-### 8.9 CREATEDELEGATE_PROXYFUNCTION_1
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：3
-1. 连接数：2
-1. 执行链：CREATEDELEGATE_PROXYFUNCTION_1 -> HandleLevel3ProgressChanged
-1. 关键节点：
-   - CREATEDELEGATE_PROXYFUNCTION_1
-   - HandleLevel3ProgressChanged
-     输入：execute <- CREATEDELEGATE_PROXYFUNCTION_1:then
-     输入：ProgressState <- CREATEDELEGATE_PROXYFUNCTION_1:ProgressState
-
-### 8.10 CREATEDELEGATE_PROXYFUNCTION_1_MERGED
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：3
-1. 连接数：2
-1. 执行链：CREATEDELEGATE_PROXYFUNCTION_1 -> HandleLevel3ProgressChanged
-1. 关键节点：
-   - CREATEDELEGATE_PROXYFUNCTION_1
-   - HandleLevel3ProgressChanged
-     输入：execute <- CREATEDELEGATE_PROXYFUNCTION_1:then
-     输入：ProgressState <- CREATEDELEGATE_PROXYFUNCTION_1:ProgressState
-
-### 8.11 Construct
+### 8.7 Construct
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -497,143 +453,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- Construct:then
 
-### 8.12 EdGraph_0
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：4
-1. 连接数：5
-1. 关键节点：
-   - KismetSystemLibrary.IsValid
-     输入：self = /Script/Engine.Default__KismetSystemLibrary
-     输入：Object <- K2Node_Tunnel_90:InputObject
-
-### 8.13 EdGraph_1
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：4
-1. 连接数：5
-1. 关键节点：
-   - KismetSystemLibrary.IsValid
-     输入：self = /Script/Engine.Default__KismetSystemLibrary
-     输入：Object <- K2Node_Tunnel_90:InputObject
-
-### 8.14 EdGraph_2
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：4
-1. 连接数：5
-1. 关键节点：
-   - KismetSystemLibrary.IsValid
-     输入：self = /Script/Engine.Default__KismetSystemLibrary
-     输入：Object <- K2Node_Tunnel_90:InputObject
-
-### 8.15 EdGraph_3
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：4
-1. 连接数：5
-1. 关键节点：
-   - KismetSystemLibrary.IsValid
-     输入：self = /Script/Engine.Default__KismetSystemLibrary
-     输入：Object <- K2Node_Tunnel_90:InputObject
-
-### 8.16 EdGraph_4
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：4
-1. 连接数：5
-1. 关键节点：
-   - KismetSystemLibrary.IsValid
-     输入：self = /Script/Engine.Default__KismetSystemLibrary
-     输入：Object <- K2Node_Tunnel_90:InputObject
-
-### 8.17 EdGraph_5
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：4
-1. 连接数：5
-1. 关键节点：
-   - KismetSystemLibrary.IsValid
-     输入：self = /Script/Engine.Default__KismetSystemLibrary
-     输入：Object <- K2Node_Tunnel_90:InputObject
-
-### 8.18 EdGraph_6
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：4
-1. 连接数：5
-1. 关键节点：
-   - KismetSystemLibrary.IsValid
-     输入：self = /Script/Engine.Default__KismetSystemLibrary
-     输入：Object <- K2Node_Tunnel_90:InputObject
-
-### 8.19 EdGraph_7
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：4
-1. 连接数：5
-1. 关键节点：
-   - KismetSystemLibrary.IsValid
-     输入：self = /Script/Engine.Default__KismetSystemLibrary
-     输入：Object <- K2Node_Tunnel_90:InputObject
-
-### 8.20 ExecuteUbergraph_W_Level3
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：218
-1. 连接数：224
-1. 执行链：PreConstruct
-1. 执行链：Construct -> Cast To BP_ShowcaseModel_Level3_C -> Set Level3ShowcaseRef -> Cast To CaissonPlayerController -> Set CaissonControllerRef -> Set Level3FlowRef -> K2Node_TunnelBoundary_22 -> K2Node_TunnelBoundary_23 -> K2Node_IfThenElse_6 -> K2Node_TunnelBoundary_20 -> K2Node_AddDelegate_0 -> K2Node_AddDelegate_1 -> K2Node_AddDelegate_2 -> K2Node_AddDelegate_3 -> HandleLevel3PhaseChanged -> HandleLevel3ProgressChanged
-1. 执行链：Construct -> Cast To BP_ShowcaseModel_Level3_C -> Set Level3ShowcaseRef -> Cast To CaissonPlayerController -> Set CaissonControllerRef -> Set Level3FlowRef -> K2Node_TunnelBoundary_22 -> K2Node_TunnelBoundary_23 -> K2Node_IfThenElse_6 -> K2Node_TunnelBoundary_21
-1. 执行链：HandleLevel3PhaseChanged -> Switch on ELevel3Phase -> SetVisibility
-1. 执行链：HandleLevel3PhaseChanged -> Switch on ELevel3Phase -> SetVisibility -> TextBlock.SetText -> SetVisibility
-1. 执行链：HandleLevel3ToolSelected -> RefreshToolSelectionVisuals -> K2Node_IfThenElse_0 -> K2Node_TunnelBoundary_18 -> K2Node_TunnelBoundary_19 -> K2Node_IfThenElse_5 -> K2Node_TunnelBoundary_16 -> BP_ShowcaseModel_Level3_C.ActivateRepairPresentation -> Set bRepairViewActivated
-1. 执行链：HandleLevel3ToolSelected -> RefreshToolSelectionVisuals -> K2Node_IfThenElse_0 -> K2Node_TunnelBoundary_18 -> K2Node_TunnelBoundary_19 -> K2Node_IfThenElse_5 -> K2Node_TunnelBoundary_17
-1. 执行链：HandleLevel3ResultReady -> SetVisibility -> TextBlock.SetText
-1. 执行链：Button_Tool1.OnClicked -> RequestSelectTool
-1. 执行链：Button_Tool2.OnClicked -> RequestSelectTool
-1. 执行链：Button_Tool3.OnClicked -> RequestSelectTool
-1. 执行链：Button_Tool4.OnClicked -> RequestSelectTool
-1. 执行链：Button_Tool5.OnClicked -> RequestSelectTool
-1. 执行链：Button_Continue.OnClicked -> K2Node_TunnelBoundary_10 -> K2Node_TunnelBoundary_11 -> K2Node_IfThenElse_3 -> K2Node_TunnelBoundary_8 -> BP_ShowcaseModel_Level3_C.ReturnToLevel3DefaultView -> Set bRepairViewActivated -> K2Node_TunnelBoundary_6 -> K2Node_TunnelBoundary_7 -> K2Node_IfThenElse_2 -> K2Node_TunnelBoundary_4 -> Switch on ELevel3SubStage -> CaissonPlayerController.CompleteLevel3ResultPresentation -> SetVisibility
-1. 执行链：Button_Continue.OnClicked -> K2Node_TunnelBoundary_10 -> K2Node_TunnelBoundary_11 -> K2Node_IfThenElse_3 -> K2Node_TunnelBoundary_8 -> BP_ShowcaseModel_Level3_C.ReturnToLevel3DefaultView -> Set bRepairViewActivated -> K2Node_TunnelBoundary_6 -> K2Node_TunnelBoundary_7 -> K2Node_IfThenElse_2 -> K2Node_TunnelBoundary_4 -> Switch on ELevel3SubStage -> CaissonPlayerController.AdvanceLevel3ToOiling -> SetVisibility
-1. 执行链：Button_Continue.OnClicked -> K2Node_TunnelBoundary_10 -> K2Node_TunnelBoundary_11 -> K2Node_IfThenElse_3 -> K2Node_TunnelBoundary_8 -> BP_ShowcaseModel_Level3_C.ReturnToLevel3DefaultView -> Set bRepairViewActivated -> K2Node_TunnelBoundary_6 -> K2Node_TunnelBoundary_7 -> K2Node_IfThenElse_2 -> K2Node_TunnelBoundary_5
-1. 执行链：Button_Continue.OnClicked -> K2Node_TunnelBoundary_10 -> K2Node_TunnelBoundary_11 -> K2Node_IfThenElse_3 -> K2Node_TunnelBoundary_9
-1. 执行链：HandleLevel3ProgressChanged -> Switch on ELevel3SubStage -> SetVisibility -> SetVisibility -> K2Node_TunnelBoundary_2 -> K2Node_TunnelBoundary_3 -> K2Node_IfThenElse_15 -> K2Node_TunnelBoundary_0 -> BP_ShowcaseModel_Level3_C.UpdateOilVisual -> KismetSystemLibrary.PrintString -> TextBlock.SetText -> TextBlock.SetText -> TextBlock.SetText -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> CanvasPanelSlot.SetPosition -> CanvasPanelSlot.SetPosition -> CanvasPanelSlot.SetPosition -> Switch on ELevel3Phase -> K2Node_IfThenElse_1 -> SetIsEnabled -> SetVisibility
-1. 执行链：HandleLevel3ProgressChanged -> Switch on ELevel3SubStage -> SetVisibility -> SetVisibility -> K2Node_TunnelBoundary_2 -> K2Node_TunnelBoundary_3 -> K2Node_IfThenElse_15 -> K2Node_TunnelBoundary_1
-1. 执行链：HandleLevel3ProgressChanged -> Switch on ELevel3SubStage -> K2Node_TunnelBoundary_14 -> K2Node_TunnelBoundary_15 -> K2Node_IfThenElse_4 -> K2Node_TunnelBoundary_12 -> BP_ShowcaseModel_Level3_C.UpdateDustVisual -> KismetSystemLibrary.PrintString -> TextBlock.SetText -> TextBlock.SetText -> TextBlock.SetText -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> CanvasPanelSlot.SetPosition -> CanvasPanelSlot.SetPosition -> CanvasPanelSlot.SetPosition -> Switch on ELevel3Phase -> K2Node_IfThenElse_1 -> SetIsEnabled -> SetVisibility
-1. 执行链：HandleLevel3ProgressChanged -> Switch on ELevel3SubStage -> K2Node_TunnelBoundary_14 -> K2Node_TunnelBoundary_15 -> K2Node_IfThenElse_4 -> K2Node_TunnelBoundary_13
-1. 执行链：ExecuteUbergraph_W_Level3
-1. 关键节点：
-   - Cast To CaissonPlayerController
-     输入：execute <- Set Level3ShowcaseRef:then
-     输入：Object <- GameplayStatics.GetPlayerController:ReturnValue
-   - GameplayStatics.GetPlayerController
-     输入：self = /Script/Engine.Default__GameplayStatics
-     输入：PlayerIndex = 0
-   - Set CaissonControllerRef
-     输入：execute <- Cast To CaissonPlayerController:then
-     输入：CaissonControllerRef <- Cast To CaissonPlayerController:AsCaisson Player Controller
-   - Set Level3FlowRef
-     输入：execute <- Set CaissonControllerRef:then
-     输入：Level3FlowRef <- Get Level3FlowComponent:Level3FlowComponent
-   - GetOwningPlayerPawn
-   - Cast To BP_ShowcaseModel_Level3_C
-     输入：execute <- Construct:then
-     输入：Object <- GetOwningPlayerPawn:ReturnValue
-   - Set Level3ShowcaseRef
-     输入：execute <- Cast To BP_ShowcaseModel_Level3_C:then
-     输入：Level3ShowcaseRef <- Cast To BP_ShowcaseModel_Level3_C:AsBP Showcase Model Level 3
-   - HandleLevel3PhaseChanged
-   - HandleLevel3ToolSelected
-   - HandleLevel3ResultReady
-   - HandleLevel3PhaseChanged
-     输入：execute <- K2Node_AddDelegate_3:then
-     输入：NewPhase <- Level3FlowComponent.GetCurrentPhase:ReturnValue
-   - Level3FlowComponent.GetCurrentPhase
-     输入：self <- Get Level3FlowRef:Level3FlowRef
-
-### 8.21 HandleLevel3PhaseChanged
+### 8.8 HandleLevel3PhaseChanged
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：3
@@ -644,7 +464,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- SetVariableOnPersistentFrame:then
 
-### 8.22 HandleLevel3ProgressChanged
+### 8.9 HandleLevel3ProgressChanged
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：3
@@ -655,7 +475,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- SetVariableOnPersistentFrame:then
 
-### 8.23 HandleLevel3ResultReady
+### 8.10 HandleLevel3ResultReady
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：3
@@ -666,7 +486,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- SetVariableOnPersistentFrame:then
 
-### 8.24 HandleLevel3ToolSelected
+### 8.11 HandleLevel3ToolSelected
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：3
@@ -677,7 +497,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- SetVariableOnPersistentFrame:then
 
-### 8.25 NormalizeMetricTo01
+### 8.12 NormalizeMetricTo01
 
 1. 图类型：UMGEditor.WidgetGraphSchema
 1. 模块数：5
@@ -690,28 +510,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
      输入：Value <- K2Node_PromotableOperator_2:ReturnValue
      输入：Max = 1.0
 
-### 8.26 NormalizeMetricTo01_MERGED
-
-1. 图类型：UMGEditor.WidgetGraphSchema
-1. 模块数：7
-1. 连接数：5
-1. 执行链：NormalizeMetricTo01 -> K2Node_FunctionResult_0
-1. 关键节点：
-   - NormalizeMetricTo01
-   - KismetMathLibrary.FClamp
-     输入：self = /Script/Engine.Default__KismetMathLibrary
-     输入：Value <- KismetMathLibrary.Divide_DoubleDouble:ReturnValue
-     输入：Max = 1.0
-   - KismetMathLibrary.Add_DoubleDouble
-     输入：self = /Script/Engine.Default__KismetMathLibrary
-     输入：A <- NormalizeMetricTo01:InValue
-     输入：B = 2.000000
-   - KismetMathLibrary.Divide_DoubleDouble
-     输入：self = /Script/Engine.Default__KismetMathLibrary
-     输入：A <- KismetMathLibrary.Add_DoubleDouble:ReturnValue
-     输入：B = 4.000000
-
-### 8.27 PreConstruct
+### 8.13 PreConstruct
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：3
@@ -722,7 +521,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- SetVariableOnPersistentFrame:then
 
-### 8.28 RefreshToolSelectionVisuals
+### 8.14 RefreshToolSelectionVisuals
 
 1. 图类型：UMGEditor.WidgetGraphSchema
 1. 模块数：39
@@ -774,59 +573,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
      输入：exec <- SetVisibility:then, SetVisibility:then
      输入：InputObject <- Get CaissonControllerRef:CaissonControllerRef
 
-### 8.29 RefreshToolSelectionVisuals_MERGED
-
-1. 图类型：UMGEditor.WidgetGraphSchema
-1. 模块数：53
-1. 连接数：50
-1. 执行链：RefreshToolSelectionVisuals -> K2Node_IfThenElse_1 -> SetVisibility -> K2Node_IfThenElse_4 -> SetVisibility -> K2Node_IfThenElse_5 -> SetVisibility -> K2Node_IfThenElse_6 -> SetVisibility -> K2Node_TunnelBoundary_2 -> K2Node_TunnelBoundary_3 -> K2Node_IfThenElse_15 -> K2Node_TunnelBoundary_0 -> K2Node_IfThenElse_2 -> SetVisibility
-1. 执行链：RefreshToolSelectionVisuals -> K2Node_IfThenElse_1 -> SetVisibility -> K2Node_IfThenElse_4 -> SetVisibility -> K2Node_IfThenElse_5 -> SetVisibility -> K2Node_IfThenElse_6 -> SetVisibility -> K2Node_TunnelBoundary_2 -> K2Node_TunnelBoundary_3 -> K2Node_IfThenElse_15 -> K2Node_TunnelBoundary_0 -> K2Node_IfThenElse_2 -> K2Node_IfThenElse_0
-1. 执行链：RefreshToolSelectionVisuals -> K2Node_IfThenElse_1 -> SetVisibility -> K2Node_IfThenElse_4 -> SetVisibility -> K2Node_IfThenElse_5 -> SetVisibility -> K2Node_IfThenElse_6 -> SetVisibility -> K2Node_TunnelBoundary_2 -> K2Node_TunnelBoundary_3 -> K2Node_IfThenElse_15 -> K2Node_TunnelBoundary_1 -> K2Node_IfThenElse_0
-1. 关键节点：
-   - RefreshToolSelectionVisuals
-   - SetVisibility
-     输入：execute <- K2Node_IfThenElse_1:then
-     输入：self <- Get Tools_1_Selected:Tools_1_Selected
-     输入：InVisibility = SelfHitTestInvisible
-   - SetVisibility
-     输入：execute <- K2Node_IfThenElse_1:else
-     输入：self <- Get Tools_1_Selected:Tools_1_Selected
-     输入：InVisibility = Collapsed
-   - SetVisibility
-     输入：execute <- K2Node_IfThenElse_4:then
-     输入：self <- Get Tools_2_Selected:Tools_2_Selected
-     输入：InVisibility = SelfHitTestInvisible
-   - SetVisibility
-     输入：execute <- K2Node_IfThenElse_4:else
-     输入：self <- Get Tools_2_Selected:Tools_2_Selected
-     输入：InVisibility = Collapsed
-   - SetVisibility
-     输入：execute <- K2Node_IfThenElse_5:then
-     输入：self <- Get Tools_3_Selected:Tools_3_Selected
-     输入：InVisibility = SelfHitTestInvisible
-   - SetVisibility
-     输入：execute <- K2Node_IfThenElse_5:else
-     输入：self <- Get Tools_3_Selected:Tools_3_Selected
-     输入：InVisibility = Collapsed
-   - SetVisibility
-     输入：execute <- K2Node_IfThenElse_6:then
-     输入：self <- Get Tools_4_Selected:Tools_4_Selected
-     输入：InVisibility = SelfHitTestInvisible
-   - SetVisibility
-     输入：execute <- K2Node_IfThenElse_6:else
-     输入：self <- Get Tools_4_Selected:Tools_4_Selected
-     输入：InVisibility = Collapsed
-   - CaissonPlayerController.GetCurrentLevel3SubStage
-     输入：self <- Get CaissonControllerRef:CaissonControllerRef
-   - SetVisibility
-     输入：execute <- K2Node_IfThenElse_2:then
-     输入：self <- Get Tools_5_Selected:Tools_5_Selected, Get Tools_5_Unselected:Tools_5_Unselected
-     输入：InVisibility = Collapsed
-   - KismetSystemLibrary.IsValid
-     输入：self = /Script/Engine.Default__KismetSystemLibrary
-     输入：Object <- Get CaissonControllerRef:CaissonControllerRef
-
-### 8.30 RequestSelectTool
+### 8.15 RequestSelectTool
 
 1. 图类型：UMGEditor.WidgetGraphSchema
 1. 模块数：5
@@ -841,23 +588,6 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
      输入：execute <- IsValid:Is Valid
      输入：self <- Get CaissonControllerRef:CaissonControllerRef
      输入：ToolId <- Get InToolId:InToolId
-
-### 8.31 RequestSelectTool_MERGED
-
-1. 图类型：UMGEditor.WidgetGraphSchema
-1. 模块数：13
-1. 连接数：10
-1. 执行链：RequestSelectTool -> K2Node_TunnelBoundary_2 -> K2Node_TunnelBoundary_3 -> K2Node_IfThenElse_15 -> K2Node_TunnelBoundary_0 -> CaissonPlayerController.SelectLevel3Tool
-1. 执行链：RequestSelectTool -> K2Node_TunnelBoundary_2 -> K2Node_TunnelBoundary_3 -> K2Node_IfThenElse_15 -> K2Node_TunnelBoundary_1
-1. 关键节点：
-   - RequestSelectTool
-   - CaissonPlayerController.SelectLevel3Tool
-     输入：execute <- K2Node_TunnelBoundary_0:Is Valid2
-     输入：self <- Get CaissonControllerRef:CaissonControllerRef
-     输入：ToolId <- Get InToolId:InToolId
-   - KismetSystemLibrary.IsValid
-     输入：self = /Script/Engine.Default__KismetSystemLibrary
-     输入：Object <- Get CaissonControllerRef:CaissonControllerRef
 
 ## 9. 当前可直接确认的结论
 
