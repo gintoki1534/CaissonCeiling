@@ -25,10 +25,9 @@
 
 ### 5.2 主执行链
 
-1. BP_OnSelectedVisualChanged
-1. BP_OnCorrectVisualChanged -> K2Node_IfThenElse_1 -> PrimitiveComponent.SetRenderCustomDepth -> PrimitiveComponent.SetCustomDepthStencilValue
 1. BP_OnSelectedVisualChanged -> K2Node_IfThenElse_0 -> PrimitiveComponent.SetRenderCustomDepth -> PrimitiveComponent.SetCustomDepthStencilValue
 1. BP_OnSelectedVisualChanged -> K2Node_IfThenElse_0 -> PrimitiveComponent.SetRenderCustomDepth
+1. BP_OnCorrectVisualChanged -> K2Node_IfThenElse_1 -> PrimitiveComponent.SetRenderCustomDepth -> PrimitiveComponent.SetCustomDepthStencilValue
 
 ## 6. 关键变量
 
@@ -47,9 +46,9 @@
 1. 连接数：3
 1. 执行链：BP_OnCorrectVisualChanged -> SetVariableOnPersistentFrame -> ExecuteUbergraph_BP_L4_CloudFrame1_Piece2
 1. 关键节点：
+   - BP_OnCorrectVisualChanged
    - ExecuteUbergraph_BP_L4_CloudFrame1_Piece2
      输入：execute <- SetVariableOnPersistentFrame:then
-   - BP_OnCorrectVisualChanged
 
 ### 8.2 BP_OnSelectedVisualChanged
 
@@ -58,9 +57,9 @@
 1. 连接数：3
 1. 执行链：BP_OnSelectedVisualChanged -> SetVariableOnPersistentFrame -> ExecuteUbergraph_BP_L4_CloudFrame1_Piece2
 1. 关键节点：
+   - BP_OnSelectedVisualChanged
    - ExecuteUbergraph_BP_L4_CloudFrame1_Piece2
      输入：execute <- SetVariableOnPersistentFrame:then
-   - BP_OnSelectedVisualChanged
 
 ### 8.3 UserConstructionScript
 

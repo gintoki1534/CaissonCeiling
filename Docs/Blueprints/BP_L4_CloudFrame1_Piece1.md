@@ -46,9 +46,9 @@
 1. 连接数：3
 1. 执行链：BP_OnCorrectVisualChanged -> SetVariableOnPersistentFrame -> ExecuteUbergraph_BP_L4_CloudFrame1_Piece1
 1. 关键节点：
+   - BP_OnCorrectVisualChanged
    - ExecuteUbergraph_BP_L4_CloudFrame1_Piece1
      输入：execute <- SetVariableOnPersistentFrame:then
-   - BP_OnCorrectVisualChanged
 
 ### 8.2 BP_OnSelectedVisualChanged
 
@@ -57,9 +57,9 @@
 1. 连接数：3
 1. 执行链：BP_OnSelectedVisualChanged -> SetVariableOnPersistentFrame -> ExecuteUbergraph_BP_L4_CloudFrame1_Piece1
 1. 关键节点：
+   - BP_OnSelectedVisualChanged
    - ExecuteUbergraph_BP_L4_CloudFrame1_Piece1
      输入：execute <- SetVariableOnPersistentFrame:then
-   - BP_OnSelectedVisualChanged
 
 ### 8.3 UserConstructionScript
 
