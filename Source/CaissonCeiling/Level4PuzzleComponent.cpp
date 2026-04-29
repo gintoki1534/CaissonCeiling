@@ -253,6 +253,42 @@ void ULevel4PuzzleComponent::RotateSelectedPiece90()
 	EvaluateCurrentStage();
 }
 
+void ULevel4PuzzleComponent::RotateSelectedPiece90AroundPivot(const FVector& PivotLocation)
+{
+	if (!bSessionActive)
+	{
+		return;
+	}
+
+	FRuntimePiece* RuntimePiece = FindRuntimePiece(SelectedPieceIndex);
+	const FLevel4PuzzleStageConfig* StageConfig = GetCurrentStageConfig();
+	if (!RuntimePiece || !RuntimePiece->Actor || !StageConfig)
+	{
+		return;
+	}
+
+	const FVector Normal = GetPlaneNormal(*StageConfig);
+	const FQuat DeltaRotation(Normal, FMath::DegreesToRadians(90.0f));
+	const FVector OldLocation = RuntimePiece->Actor->GetActorLocation();
+	const FVector NewLocation = PivotLocation + DeltaRotation.RotateVector(OldLocation - PivotLocation);
+	const FQuat NewRotation = DeltaRotation * RuntimePiece->Actor->GetActorQuat();
+
+	RuntimePiece->Actor->SetActorLocationAndRotation(NewLocation, NewRotation.Rotator());
+
+	if (bEnableLevel4DebugLogs)
+	{
+		UE_LOG(LogTemp, Log, TEXT("[Level4][RightClick] Rotated around pivot. Piece=%d Pivot=%s OldLocation=%s NewLocation=%s PivotOldDistance=%f PivotNewDistance=%f"),
+			RuntimePiece->Config.PieceIndex,
+			*PivotLocation.ToString(),
+			*OldLocation.ToString(),
+			*NewLocation.ToString(),
+			FVector::Dist(PivotLocation, OldLocation),
+			FVector::Dist(PivotLocation, NewLocation));
+	}
+
+	EvaluateCurrentStage();
+}
+
 void ULevel4PuzzleComponent::HandleRightClickPiece(const FHitResult& HitResult)
 {
 	if (!bSessionActive)
@@ -291,7 +327,55 @@ void ULevel4PuzzleComponent::HandleRightClickPiece(const FHitResult& HitResult)
 			*GetNameSafe(HitPiece),
 			HitPiece->PieceIndex);
 	}
-	RotateSelectedPiece90();
+	FVector PivotLocation = HitResult.ImpactPoint;
+	if (PivotLocation.ContainsNaN())
+	{
+		PivotLocation = HitPiece->GetActorLocation();
+	}
+	if (bEnableLevel4DebugLogs)
+	{
+		UE_LOG(LogTemp, Log, TEXT("[Level4][RightClick] Rotation pivot chosen. Piece=%s PieceIndex=%d BlockingHit=%d ImpactPoint=%s Location=%s ActorLocation=%s Pivot=%s PivotActorDistance=%f"),
+			*GetNameSafe(HitPiece),
+			HitPiece->PieceIndex,
+			HitResult.bBlockingHit ? 1 : 0,
+			*HitResult.ImpactPoint.ToString(),
+			*HitResult.Location.ToString(),
+			*HitPiece->GetActorLocation().ToString(),
+			*PivotLocation.ToString(),
+			FVector::Dist(PivotLocation, HitPiece->GetActorLocation()));
+	}
+	RotateSelectedPiece90AroundPivot(PivotLocation);
+}
+
+void ULevel4PuzzleComponent::MoveSelectedPieceToTargetLocationKeepingRotation()
+{
+	if (!bSessionActive)
+	{
+		return;
+	}
+
+	FRuntimePiece* RuntimePiece = FindRuntimePiece(SelectedPieceIndex);
+	if (!RuntimePiece || !RuntimePiece->Actor)
+	{
+		if (bEnableLevel4DebugLogs)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("[Level4][MoveToTarget] No spawned selected piece. Selected=%d"), SelectedPieceIndex);
+		}
+		return;
+	}
+
+	const FTransform TargetTransform = GetWorldTargetTransform(RuntimePiece->Config);
+	RuntimePiece->Actor->SetActorLocation(TargetTransform.GetLocation());
+
+	if (bEnableLevel4DebugLogs)
+	{
+		UE_LOG(LogTemp, Log, TEXT("[Level4][MoveToTarget] Moved selected piece to target location. Piece=%d TargetLocation=%s RotationKept=%s"),
+			RuntimePiece->Config.PieceIndex,
+			*TargetTransform.GetLocation().ToString(),
+			*RuntimePiece->Actor->GetActorRotation().ToString());
+	}
+
+	EvaluateCurrentStage();
 }
 
 bool ULevel4PuzzleComponent::FindSpawnedPieceHitOnRay(const FVector& RayStart, const FVector& RayEnd, FHitResult& OutHitResult) const
@@ -325,6 +409,13 @@ bool ULevel4PuzzleComponent::FindSpawnedPieceHitOnRay(const FVector& RayStart, c
 				{
 					BestDistance = HitDistance;
 					BestHitResult = ComponentHitResult;
+					BestHitResult.bBlockingHit = true;
+					BestHitResult.HitObjectHandle = FActorInstanceHandle(PieceActor);
+					BestHitResult.Component = DragPrimitive;
+					if (BestHitResult.ImpactPoint.IsNearlyZero() && !BestHitResult.Location.IsNearlyZero())
+					{
+						BestHitResult.ImpactPoint = BestHitResult.Location;
+					}
 					bFoundHit = true;
 				}
 				continue;
@@ -338,6 +429,11 @@ bool ULevel4PuzzleComponent::FindSpawnedPieceHitOnRay(const FVector& RayStart, c
 				const FVector HitLocation = RayStart + RayDirection * BoundsDistance;
 				BestDistance = BoundsDistance;
 				BestHitResult = FHitResult(PieceActor, DragPrimitive, HitLocation, -RayDirection);
+				BestHitResult.bBlockingHit = true;
+				BestHitResult.HitObjectHandle = FActorInstanceHandle(PieceActor);
+				BestHitResult.Component = DragPrimitive;
+				BestHitResult.Location = HitLocation;
+				BestHitResult.ImpactPoint = HitLocation;
 				BestHitResult.Distance = BoundsDistance;
 				bFoundHit = true;
 			}

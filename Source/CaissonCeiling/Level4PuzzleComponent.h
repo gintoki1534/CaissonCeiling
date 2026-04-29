@@ -86,6 +86,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Level4")
 	void HandleRightClickPiece(const FHitResult& HitResult);
 
+	UFUNCTION(BlueprintCallable, Category="Level4")
+	void MoveSelectedPieceToTargetLocationKeepingRotation();
+
 	bool FindSpawnedPieceHitOnRay(const FVector& RayStart, const FVector& RayEnd, FHitResult& OutHitResult) const;
 
 	UFUNCTION(BlueprintCallable, Category="Level4")
@@ -122,6 +125,7 @@ private:
 	void CompleteCurrentStage();
 	void EvaluateCurrentStage();
 	void SpawnPieceIfNeeded(int32 PieceIndex);
+	void RotateSelectedPiece90AroundPivot(const FVector& PivotLocation);
 	void SnapPieceToBestAnchorIfClose(ALevel4PuzzlePieceActor* PieceActor);
 	bool ShouldSkipStage(ELevel4StageId StageId) const;
 	FLevel4PuzzleStageConfig* GetCurrentStageConfig();

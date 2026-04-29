@@ -154,6 +154,7 @@ void ACaissonPlayerController::SetupInputComponent()
 	if (InputComponent)
 	{
 		InputComponent->BindKey(EKeys::S, IE_Pressed, this, &ACaissonPlayerController::RequestSkipCurrentFlow);
+		InputComponent->BindKey(EKeys::R, IE_Pressed, this, &ACaissonPlayerController::OnLevel4PlaceSelectedPiecePressed);
 	}
 }
 
@@ -244,6 +245,17 @@ void ACaissonPlayerController::OnRightMousePressed()
 void ACaissonPlayerController::OnRightMouseReleased()
 {
 	bRightMouseLookHeld = false;
+}
+
+void ACaissonPlayerController::OnLevel4PlaceSelectedPiecePressed()
+{
+	if (ULevel4PuzzleComponent* Level4PuzzleComponent = GetLevel4PuzzleComponent())
+	{
+		if (Level4PuzzleComponent->IsLevel4SessionActive())
+		{
+			Level4PuzzleComponent->MoveSelectedPieceToTargetLocationKeepingRotation();
+		}
+	}
 }
 
 void ACaissonPlayerController::Look(const FInputActionValue& Value)

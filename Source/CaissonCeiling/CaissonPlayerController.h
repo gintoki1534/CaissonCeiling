@@ -61,6 +61,7 @@ protected:
 	void OnPrimaryInteractReleased();
 	void OnRightMousePressed();
 	void OnRightMouseReleased();
+	void OnLevel4PlaceSelectedPiecePressed();
 	bool HandleLevel2Interaction(UCaissonInteractComponent* InteractComp);
 	bool GetCursorHitResult(FHitResult& OutHitResult) const;
 	bool GetLevel4CursorHitResult(ULevel4PuzzleComponent* Level4PuzzleComponent, FHitResult& OutHitResult) const;
