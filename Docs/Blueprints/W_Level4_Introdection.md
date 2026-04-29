@@ -75,7 +75,7 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
 1. Image_77.Visibility = SelfHitTestInvisible
 1. 介绍2.LayoutData = (Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
 1. 介绍1.LayoutData = (Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
-1. Image_77.LayoutData = (Offsets=(Left=168.000000,Top=-16.000000,Right=-168.000000,Bottom=16.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
+1. Image_77.LayoutData = (Offsets=(Left=4.000000,Top=4.000000,Right=-4.000000,Bottom=-4.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
 1. 按钮-关闭.LayoutData = (Offsets=(Left=-101.921875,Top=224.000000,Bottom=100.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))
 1. 按钮-下一个.LayoutData = (Offsets=(Left=-101.921875,Top=-56.540527,Right=1.921875,Bottom=102.072067),Anchors=(Minimum=(X=1.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
 1. 按钮-上一个.LayoutData = (Offsets=(Top=-32.540527,Right=104.881973,Bottom=102.072067),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=0.000000,Y=0.500000)))
@@ -126,59 +126,6 @@ BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
    - ExecuteUbergraph_W_Level4_Introdection
      输入：execute <- Construct:then
    - Construct
-
-### 8.5 ExecuteUbergraph_W_Level4_Introdection
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：48
-1. 连接数：48
-1. 执行链：ExecuteUbergraph_W_Level4_Introdection
-1. 执行链：按钮-关闭.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
-1. 执行链：按钮-上一个.OnClicked -> SetVisibility -> SetVisibility
-1. 执行链：按钮-下一个.OnClicked -> SetVisibility -> SetVisibility
-1. 执行链：Construct -> SetVisibility -> GameplayStatics.GetAllActorsOfClass -> K2Node_IfThenElse_0 -> GameplayStatics.BeginDeferredActorSpawnFromClass -> GameplayStatics.FinishSpawningActor -> Set Level4ShowcaseRef -> BP_ShowcaseModel_Level4_C.ActivateLevel3Presentation -> Cast To CaissonPlayerController -> Controller.Possess
-1. 执行链：Construct -> SetVisibility -> GameplayStatics.GetAllActorsOfClass -> K2Node_IfThenElse_0 -> Set Level4ShowcaseRef -> BP_ShowcaseModel_Level4_C.ActivateLevel3Presentation
-1. 关键节点：
-   - KismetMathLibrary.Greater_IntInt
-     输入：self = /Script/Engine.Default__KismetMathLibrary
-     输入：A <- K2Node_CallArrayFunction_1:ReturnValue
-   - GameplayStatics.FinishSpawningActor
-     输入：execute <- GameplayStatics.BeginDeferredActorSpawnFromClass:then
-     输入：self = /Script/Engine.Default__GameplayStatics
-     输入：Actor <- GameplayStatics.BeginDeferredActorSpawnFromClass:ReturnValue
-     输入：SpawnTransform <- KismetMathLibrary.MakeTransform:ReturnValue
-   - GameplayStatics.BeginDeferredActorSpawnFromClass
-     输入：execute <- K2Node_IfThenElse_0:else
-     输入：self = /Script/Engine.Default__GameplayStatics
-     输入：ActorClass = /Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4_C
-     输入：SpawnTransform <- KismetMathLibrary.MakeTransform:ReturnValue
-   - KismetMathLibrary.MakeTransform
-     输入：self = /Script/Engine.Default__KismetMathLibrary
-     输入：Location = 0, 0, 0
-     输入：Rotation = 0, 0, 0
-     输入：Scale = 1.000000,1.000000,1.000000
-   - ExecuteUbergraph_W_Level4_Introdection
-   - BP_ShowcaseModel_Level4_C.ActivateLevel3Presentation
-     输入：execute <- Set Level4ShowcaseRef:then
-     输入：self <- Get Level4ShowcaseRef:Level4ShowcaseRef
-   - Set Level4ShowcaseRef
-     输入：execute <- K2Node_IfThenElse_0:then
-     输入：Level4ShowcaseRef <- K2Node_CallArrayFunction_0:Item
-   - BP_ShowcaseModel_Level4_C.ActivateLevel3Presentation
-     输入：execute <- Set Level4ShowcaseRef:then
-     输入：self <- Get Level4ShowcaseRef:Level4ShowcaseRef
-   - Set Level4ShowcaseRef
-     输入：execute <- GameplayStatics.FinishSpawningActor:then
-     输入：Level4ShowcaseRef <- GameplayStatics.FinishSpawningActor:ReturnValue
-   - Controller.Possess
-     输入：execute <- Cast To CaissonPlayerController:then
-     输入：self <- Cast To CaissonPlayerController:AsCaisson Player Controller
-   - Cast To CaissonPlayerController
-     输入：execute <- BP_ShowcaseModel_Level4_C.ActivateLevel3Presentation:then
-     输入：Object <- GameplayStatics.GetPlayerController:ReturnValue
-   - GameplayStatics.GetPlayerController
-     输入：self = /Script/Engine.Default__GameplayStatics
-     输入：PlayerIndex = 0
 
 ## 9. 当前可直接确认的结论
 

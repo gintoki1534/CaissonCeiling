@@ -32,24 +32,14 @@ void ULevel4PuzzleComponent::TickComponent(float DeltaTime, ELevelTick TickType,
 		return;
 	}
 
-	FVector WorldOrigin = RuntimePiece->Config.TargetTransform.GetLocation();
-	if (bSpawnRelativeToOwner && GetOwner())
-	{
-		WorldOrigin = GetOwner()->GetActorTransform().TransformPosition(WorldOrigin);
-	}
-
-	FVector WorldDirection;
-	FVector WorldLocation;
-	if (!DragPlayerController->DeprojectMousePositionToWorld(WorldLocation, WorldDirection))
+	FVector Intersection;
+	if (!GetCursorIntersectionOnStagePlane(DragPlayerController, *StageConfig, DragPlaneOrigin, Intersection))
 	{
 		return;
 	}
 
-	const FVector PlaneNormal = GetPlaneNormal(*StageConfig);
-	const FPlane DragPlane(WorldOrigin, PlaneNormal);
-	const FVector RayEnd = WorldLocation + WorldDirection * 100000.0f;
-	const FVector Intersection = FMath::LinePlaneIntersection(WorldLocation, RayEnd, DragPlane);
-	DraggedPiece->SetActorLocation(Intersection + DragOffset);
+	const FVector NewLocation = ProjectPointToStagePlane(Intersection + DragOffset, *StageConfig, DragPlaneOrigin);
+	DraggedPiece->SetActorLocation(NewLocation);
 }
 
 void ULevel4PuzzleComponent::StartLevel4Puzzle(ELevel4Difficulty InDifficulty)
@@ -116,22 +106,62 @@ void ULevel4PuzzleComponent::BeginDragSelectedPiece(const FHitResult& HitResult,
 		return;
 	}
 
-	FRuntimePiece* RuntimePiece = FindRuntimePiece(SelectedPieceIndex);
-	if (!RuntimePiece || !RuntimePiece->Actor)
+	ALevel4PuzzlePieceActor* HitPiece = ResolveHitPieceActor(HitResult);
+	if (!HitPiece || !IsRuntimePieceActor(HitPiece))
 	{
+		LogHitDebug(TEXT("BeginDrag rejected: hit is not a spawned Level4 piece"), HitResult, HitPiece);
 		return;
 	}
 
-	AActor* HitActor = HitResult.GetActor();
-	if (HitActor != RuntimePiece->Actor)
+	if (SelectedPieceIndex != HitPiece->PieceIndex)
 	{
+		SelectPiece(HitPiece->PieceIndex);
+	}
+
+	FRuntimePiece* RuntimePiece = FindRuntimePiece(HitPiece->PieceIndex);
+	const FLevel4PuzzleStageConfig* StageConfig = GetCurrentStageConfig();
+	if (!RuntimePiece || !RuntimePiece->Actor || !StageConfig)
+	{
+		if (bEnableLevel4DebugLogs)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("[Level4][BeginDrag] Runtime invalid. HitPiece=%s HitPieceIndex=%d RuntimePiece=%s Actor=%s StageConfig=%s Selected=%d"),
+				*GetNameSafe(HitPiece),
+				HitPiece ? HitPiece->PieceIndex : INDEX_NONE,
+				RuntimePiece ? TEXT("Valid") : TEXT("None"),
+				RuntimePiece ? *GetNameSafe(RuntimePiece->Actor) : TEXT("None"),
+				StageConfig ? TEXT("Valid") : TEXT("None"),
+				SelectedPieceIndex);
+		}
 		return;
 	}
 
 	bDragging = true;
 	DragPlayerController = PlayerController;
 	DraggedPiece = RuntimePiece->Actor;
-	DragOffset = RuntimePiece->Actor->GetActorLocation() - HitResult.ImpactPoint;
+	DragPlaneOrigin = RuntimePiece->Actor->GetActorLocation();
+
+	FVector PlaneIntersection;
+	if (!GetCursorIntersectionOnStagePlane(PlayerController, *StageConfig, DragPlaneOrigin, PlaneIntersection, TEXT("BeginDrag")))
+	{
+		bDragging = false;
+		DragPlayerController = nullptr;
+		DraggedPiece = nullptr;
+		DragPlaneOrigin = FVector::ZeroVector;
+		return;
+	}
+
+	DragOffset = RuntimePiece->Actor->GetActorLocation() - PlaneIntersection;
+
+	if (bEnableLevel4DebugLogs)
+	{
+		UE_LOG(LogTemp, Log, TEXT("[Level4][BeginDrag] Started. Piece=%s PieceIndex=%d LockedAxis=%d PlaneOrigin=%s PlaneIntersection=%s DragOffset=%s"),
+			*GetNameSafe(RuntimePiece->Actor),
+			RuntimePiece->Actor->PieceIndex,
+			static_cast<int32>(StageConfig->LockedAxis),
+			*DragPlaneOrigin.ToString(),
+			*PlaneIntersection.ToString(),
+			*DragOffset.ToString());
+	}
 }
 
 void ULevel4PuzzleComponent::EndDragSelectedPiece()
@@ -145,6 +175,7 @@ void ULevel4PuzzleComponent::EndDragSelectedPiece()
 	DragPlayerController = nullptr;
 	DraggedPiece = nullptr;
 	DragOffset = FVector::ZeroVector;
+	DragPlaneOrigin = FVector::ZeroVector;
 	EvaluateCurrentStage();
 }
 
@@ -166,6 +197,42 @@ void ULevel4PuzzleComponent::RotateSelectedPiece90()
 	const FQuat DeltaRotation(Normal, FMath::DegreesToRadians(90.0f));
 	RuntimePiece->Actor->SetActorRotation((DeltaRotation * RuntimePiece->Actor->GetActorQuat()).Rotator());
 	EvaluateCurrentStage();
+}
+
+void ULevel4PuzzleComponent::HandleRightClickPiece(const FHitResult& HitResult)
+{
+	if (!bSessionActive)
+	{
+		return;
+	}
+
+	ALevel4PuzzlePieceActor* HitPiece = ResolveHitPieceActor(HitResult);
+	if (!HitPiece || !IsRuntimePieceActor(HitPiece))
+	{
+		LogHitDebug(TEXT("RightClick rejected: hit is not a spawned Level4 piece"), HitResult, HitPiece);
+		return;
+	}
+
+	if (SelectedPieceIndex != HitPiece->PieceIndex)
+	{
+		if (bEnableLevel4DebugLogs)
+		{
+			UE_LOG(LogTemp, Log, TEXT("[Level4][RightClick] Selecting hit piece. HitPiece=%s HitPieceIndex=%d PreviousSelected=%d"),
+				*GetNameSafe(HitPiece),
+				HitPiece->PieceIndex,
+				SelectedPieceIndex);
+		}
+		SelectPiece(HitPiece->PieceIndex);
+		return;
+	}
+
+	if (bEnableLevel4DebugLogs)
+	{
+		UE_LOG(LogTemp, Log, TEXT("[Level4][RightClick] Rotating selected piece. Piece=%s PieceIndex=%d"),
+			*GetNameSafe(HitPiece),
+			HitPiece->PieceIndex);
+	}
+	RotateSelectedPiece90();
 }
 
 bool ULevel4PuzzleComponent::IsLevel4SessionActive() const
@@ -270,6 +337,7 @@ void ULevel4PuzzleComponent::StartStage(int32 NewStageIndex)
 	bDragging = false;
 	DraggedPiece = nullptr;
 	DragPlayerController = nullptr;
+	DragPlaneOrigin = FVector::ZeroVector;
 
 	const FLevel4PuzzleStageConfig& StageConfig = RuntimeStageConfigs[CurrentStageIndex];
 	for (const FLevel4PuzzlePieceConfig& PieceConfig : StageConfig.Pieces)
@@ -343,8 +411,20 @@ void ULevel4PuzzleComponent::SpawnPieceIfNeeded(int32 PieceIndex)
 	FRuntimePiece* RuntimePiece = FindRuntimePiece(PieceIndex);
 	const FLevel4PuzzleStageConfig* StageConfig = GetCurrentStageConfig();
 	UWorld* World = GetWorld();
-	if (!RuntimePiece || !StageConfig || !World || RuntimePiece->Actor || !RuntimePiece->Config.PieceClass)
+	if (!RuntimePiece)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("[Level4] 当前阶段没有 PieceIndex=%d 的配置，请检查 StageConfig.Pieces 的 PieceIndex 是否为 1..5。"), PieceIndex);
+		return;
+	}
+
+	if (!StageConfig || !World || RuntimePiece->Actor)
+	{
+		return;
+	}
+
+	if (!RuntimePiece->Config.PieceClass)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("[Level4] PieceIndex=%d 的 PieceClass 为空，请在当前 Layout 的 StageConfig.Pieces 中配置碎片蓝图类。"), PieceIndex);
 		return;
 	}
 
@@ -392,6 +472,89 @@ const ULevel4PuzzleComponent::FRuntimePiece* ULevel4PuzzleComponent::FindRuntime
 	});
 }
 
+ALevel4PuzzlePieceActor* ULevel4PuzzleComponent::ResolveHitPieceActor(const FHitResult& HitResult) const
+{
+	TSet<AActor*> VisitedActors;
+	TArray<AActor*> PendingActors;
+
+	if (AActor* HitActor = HitResult.GetActor())
+	{
+		PendingActors.Add(HitActor);
+	}
+
+	if (UActorComponent* HitComponent = HitResult.GetComponent())
+	{
+		if (AActor* ComponentOwner = HitComponent->GetOwner())
+		{
+			PendingActors.Add(ComponentOwner);
+		}
+	}
+
+	while (PendingActors.Num() > 0)
+	{
+		AActor* CurrentActor = PendingActors.Pop(EAllowShrinking::No);
+		if (!CurrentActor || VisitedActors.Contains(CurrentActor))
+		{
+			continue;
+		}
+
+		VisitedActors.Add(CurrentActor);
+
+		if (ALevel4PuzzlePieceActor* PieceActor = Cast<ALevel4PuzzlePieceActor>(CurrentActor))
+		{
+			return PieceActor;
+		}
+
+		if (AActor* OwnerActor = CurrentActor->GetOwner())
+		{
+			PendingActors.Add(OwnerActor);
+		}
+
+		if (AActor* AttachParentActor = CurrentActor->GetAttachParentActor())
+		{
+			PendingActors.Add(AttachParentActor);
+		}
+
+		if (AActor* ParentActor = CurrentActor->GetParentActor())
+		{
+			PendingActors.Add(ParentActor);
+		}
+	}
+
+	return nullptr;
+}
+
+bool ULevel4PuzzleComponent::IsRuntimePieceActor(const ALevel4PuzzlePieceActor* PieceActor) const
+{
+	if (!PieceActor)
+	{
+		return false;
+	}
+
+	const FRuntimePiece* RuntimePiece = FindRuntimePiece(PieceActor->PieceIndex);
+	return RuntimePiece && RuntimePiece->Actor == PieceActor;
+}
+
+void ULevel4PuzzleComponent::LogHitDebug(const TCHAR* Context, const FHitResult& HitResult, const ALevel4PuzzlePieceActor* ResolvedPiece) const
+{
+	if (!bEnableLevel4DebugLogs)
+	{
+		return;
+	}
+
+	const UActorComponent* HitComponent = HitResult.GetComponent();
+	UE_LOG(LogTemp, Warning, TEXT("[Level4][Hit] %s. BlockingHit=%d HitActor=%s HitActorClass=%s HitComponent=%s ComponentOwner=%s ResolvedPiece=%s ResolvedPieceIndex=%d Selected=%d"),
+		Context,
+		HitResult.bBlockingHit ? 1 : 0,
+		*GetNameSafe(HitResult.GetActor()),
+		HitResult.GetActor() ? *GetNameSafe(HitResult.GetActor()->GetClass()) : TEXT("None"),
+		*GetNameSafe(HitComponent),
+		HitComponent ? *GetNameSafe(HitComponent->GetOwner()) : TEXT("None"),
+		*GetNameSafe(ResolvedPiece),
+		ResolvedPiece ? ResolvedPiece->PieceIndex : INDEX_NONE,
+		SelectedPieceIndex);
+}
+
 FVector ULevel4PuzzleComponent::GetPlaneNormal(const FLevel4PuzzleStageConfig& StageConfig) const
 {
 	switch (StageConfig.LockedAxis)
@@ -422,6 +585,51 @@ FVector ULevel4PuzzleComponent::ProjectPointToStagePlane(const FVector& Point, c
 {
 	const FVector Normal = GetPlaneNormal(StageConfig);
 	return Point - FVector::DotProduct(Point - PlaneOrigin, Normal) * Normal;
+}
+
+bool ULevel4PuzzleComponent::GetCursorIntersectionOnStagePlane(APlayerController* PlayerController, const FLevel4PuzzleStageConfig& StageConfig, const FVector& PlaneOrigin, FVector& OutIntersection, const TCHAR* DebugContext) const
+{
+	if (!PlayerController)
+	{
+		if (bEnableLevel4DebugLogs)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("[Level4][Plane] %s failed: PlayerController is null."), DebugContext);
+		}
+		return false;
+	}
+
+	FVector WorldDirection;
+	FVector WorldLocation;
+	if (!PlayerController->DeprojectMousePositionToWorld(WorldLocation, WorldDirection))
+	{
+		if (bEnableLevel4DebugLogs)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("[Level4][Plane] %s failed: DeprojectMousePositionToWorld returned false."), DebugContext);
+		}
+		return false;
+	}
+
+	const FVector PlaneNormal = GetPlaneNormal(StageConfig);
+	const float Denominator = FVector::DotProduct(WorldDirection, PlaneNormal);
+	if (FMath::IsNearlyZero(Denominator))
+	{
+		if (bEnableLevel4DebugLogs)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("[Level4][Plane] %s failed: mouse ray is parallel to movement plane. LockedAxis=%d WorldLocation=%s WorldDirection=%s PlaneOrigin=%s PlaneNormal=%s Denominator=%f"),
+				DebugContext,
+				static_cast<int32>(StageConfig.LockedAxis),
+				*WorldLocation.ToString(),
+				*WorldDirection.ToString(),
+				*PlaneOrigin.ToString(),
+				*PlaneNormal.ToString(),
+				Denominator);
+		}
+		return false;
+	}
+
+	const float Distance = FVector::DotProduct(PlaneOrigin - WorldLocation, PlaneNormal) / Denominator;
+	OutIntersection = WorldLocation + WorldDirection * Distance;
+	return true;
 }
 
 FTransform ULevel4PuzzleComponent::MakeSpawnTransform(const FLevel4PuzzlePieceConfig& PieceConfig, const FLevel4PuzzleStageConfig& StageConfig) const

@@ -211,7 +211,15 @@ void ACaissonPlayerController::OnRightMousePressed()
 	{
 		if (Level4PuzzleComponent->IsLevel4SessionActive())
 		{
-			Level4PuzzleComponent->RotateSelectedPiece90();
+			FHitResult Level4HitResult;
+			if (GetCursorHitResult(Level4HitResult))
+			{
+				Level4PuzzleComponent->HandleRightClickPiece(Level4HitResult);
+			}
+			else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("[Level4][RightClick] Cursor hit test returned false."));
+			}
 			return;
 		}
 	}
@@ -270,6 +278,10 @@ void ACaissonPlayerController::OnPrimaryInteractPressed()
 			if (GetCursorHitResult(Level4HitResult))
 			{
 				Level4PuzzleComponent->BeginDragSelectedPiece(Level4HitResult, this);
+			}
+			else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("[Level4][BeginDrag] Cursor hit test returned false."));
 			}
 			return;
 		}
