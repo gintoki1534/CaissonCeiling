@@ -1,0 +1,65 @@
+level1
+LogTemp: [Level4][TransformSnapshot] Context=EndDrag Stage=CloudFrame1 Difficulty=Normal Phase=Playing StageIndex=0 Selected=5 PieceCount=5
+LogTemp: [Level4][TransformSnapshot] PieceIndex=1 Spawned=1 Location=(X=34.459,Y=142.932,Z=0.000) Rotation=(P=0.000,Y=90.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=2 Spawned=1 Location=(X=106.199,Y=38.410,Z=0.000) Rotation=(P=0.000,Y=90.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=3 Spawned=1 Location=(X=157.020,Y=207.725,Z=0.000) Rotation=(P=0.000,Y=90.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=4 Spawned=1 Location=(X=179.853,Y=120.329,Z=0.000) Rotation=(P=0.000,Y=90.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=5 Spawned=1 Location=(X=657.592,Y=127.338,Z=0.000) Rotation=(P=-0.000,Y=-90.000,R=0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+
+
+LogTemp: [Level4][TransformSnapshot] Context=EndDrag Stage=CloudFrame1 Difficulty=Expert Phase=Playing StageIndex=0 Selected=1 PieceCount=5
+LogTemp: [Level4][TransformSnapshot] PieceIndex=1 Spawned=1 Location=(X=-147.730,Y=420.530,Z=0.000) Rotation=(P=-0.000,Y=-90.000,R=0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=2 Spawned=1 Location=(X=73.323,Y=52.678,Z=0.000) Rotation=(P=0.000,Y=0.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=3 Spawned=1 Location=(X=-49.039,Y=164.011,Z=0.000) Rotation=(P=-0.000,Y=-180.000,R=0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=4 Spawned=1 Location=(X=345.375,Y=-45.749,Z=0.000) Rotation=(P=0.000,Y=0.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=5 Spawned=1 Location=(X=111.854,Y=-33.067,Z=0.000) Rotation=(P=0.000,Y=90.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+
+
+
+level2
+LogTemp: [Level4][TransformSnapshot] Context=EndDrag Stage=CloudFrame2 Difficulty=Normal Phase=Playing StageIndex=1 Selected=5 PieceCount=5
+LogTemp: [Level4][TransformSnapshot] PieceIndex=1 Spawned=1 Location=(X=284.298,Y=-373.766,Z=0.000) Rotation=(P=0.000,Y=0.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=2 Spawned=1 Location=(X=0.077,Y=-36.275,Z=0.000) Rotation=(P=-0.000,Y=-90.000,R=0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=3 Spawned=1 Location=(X=-43.808,Y=43.850,Z=0.000) Rotation=(P=-0.000,Y=-90.000,R=0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=4 Spawned=1 Location=(X=45.863,Y=91.544,Z=0.000) Rotation=(P=-0.000,Y=-90.000,R=0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=5 Spawned=1 Location=(X=118.267,Y=30.584,Z=0.000) Rotation=(P=-0.000,Y=-90.000,R=0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+
+
+
+LogTemp: [Level4][TransformSnapshot] Context=EndDrag Stage=CloudFrame2 Difficulty=Expert Phase=Playing StageIndex=1 Selected=5 PieceCount=5
+LogTemp: [Level4][TransformSnapshot] PieceIndex=1 Spawned=1 Location=(X=318.618,Y=-51.503,Z=0.000) Rotation=(P=0.000,Y=90.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=2 Spawned=1 Location=(X=57.227,Y=-238.448,Z=0.000) Rotation=(P=0.000,Y=90.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=3 Spawned=1 Location=(X=-51.516,Y=-251.857,Z=0.000) Rotation=(P=-0.000,Y=-180.000,R=0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=4 Spawned=1 Location=(X=316.715,Y=150.785,Z=0.000) Rotation=(P=0.000,Y=0.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=5 Spawned=1 Location=(X=-242.254,Y=248.004,Z=0.000) Rotation=(P=-0.000,Y=-180.000,R=0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+
+
+
+
+level3
+LogTemp: [Level4][TransformSnapshot] Context=EndDrag Stage=StarMap Difficulty=Normal Phase=Playing StageIndex=2 Selected=3 PieceCount=5
+LogTemp: [Level4][TransformSnapshot] PieceIndex=1 Spawned=1 Location=(X=46.443,Y=26.359,Z=0.000) Rotation=(P=-0.000,Y=-180.000,R=0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=2 Spawned=1 Location=(X=-171.964,Y=126.776,Z=0.000) Rotation=(P=0.000,Y=0.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=3 Spawned=1 Location=(X=-2.510,Y=-12.552,Z=0.000) Rotation=(P=-0.000,Y=-180.000,R=0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=4 Spawned=1 Location=(X=-33.891,Y=-53.974,Z=0.000) Rotation=(P=-0.000,Y=-180.000,R=0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=5 Spawned=1 Location=(X=38.912,Y=-56.485,Z=0.000) Rotation=(P=-0.000,Y=-180.000,R=0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+
+
+
+LogTemp: [Level4][TransformSnapshot] Context=EndDrag Stage=StarMap Difficulty=Expert Phase=Playing StageIndex=2 Selected=4 PieceCount=5
+LogTemp: [Level4][TransformSnapshot] PieceIndex=1 Spawned=1 Location=(X=-67.782,Y=61.505,Z=0.000) Rotation=(P=-0.000,Y=-90.000,R=0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=2 Spawned=1 Location=(X=-145.605,Y=-138.073,Z=0.000) Rotation=(P=0.000,Y=90.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=3 Spawned=1 Location=(X=-10.042,Y=56.484,Z=0.000) Rotation=(P=0.000,Y=0.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=4 Spawned=1 Location=(X=62.760,Y=-13.807,Z=0.000) Rotation=(P=0.000,Y=0.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=5 Spawned=1 Location=(X=76.568,Y=-97.907,Z=0.000) Rotation=(P=0.000,Y=90.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+
+
+
+
+level4
+LogTemp: [Level4][TransformSnapshot] Context=EndDrag Stage=FinalAssembly Difficulty=Expert Phase=Playing StageIndex=3 Selected=2 PieceCount=5
+LogTemp: [Level4][TransformSnapshot] PieceIndex=1 Spawned=1 Location=(X=-103.120,Y=-61.774,Z=0.000) Rotation=(P=0.000,Y=0.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=2 Spawned=1 Location=(X=-3.504,Y=185.809,Z=0.000) Rotation=(P=0.000,Y=0.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=3 Spawned=1 Location=(X=3.614,Y=-179.940,Z=0.000) Rotation=(P=0.000,Y=0.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=4 Spawned=1 Location=(X=44.325,Y=13.864,Z=0.000) Rotation=(P=0.000,Y=0.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)
+LogTemp: [Level4][TransformSnapshot] PieceIndex=5 Spawned=1 Location=(X=-154.609,Y=101.068,Z=0.000) Rotation=(P=0.000,Y=0.000,R=-0.000) Scale=(X=1.000,Y=1.000,Z=1.000)

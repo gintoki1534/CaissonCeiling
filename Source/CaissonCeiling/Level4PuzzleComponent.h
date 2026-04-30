@@ -43,7 +43,13 @@ public:
 	float SpawnHeightOffset = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level4|Debug")
-	bool bEnableLevel4DebugLogs = true;
+	bool bEnableLevel4DebugLogs = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level4|Debug")
+	bool bEnableLevel4TransformDebugLogs = true;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level4|Debug", meta=(ClampMin="0.05"))
+	float TransformDebugDragLogInterval = 0.25f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level4|Snap")
 	bool bEnableSnapOnDragRelease = true;
@@ -152,6 +158,9 @@ private:
 	bool IsRuntimePieceActor(const ALevel4PuzzlePieceActor* PieceActor) const;
 	void LogHitDebug(const TCHAR* Context, const FHitResult& HitResult, const ALevel4PuzzlePieceActor* ResolvedPiece) const;
 	FTransform GetWorldTargetTransform(const FLevel4PuzzlePieceConfig& PieceConfig) const;
+	FTransform GetConfiguredSpawnTransform(const FLevel4PuzzlePieceConfig& PieceConfig, const FLevel4PuzzleStageConfig& StageConfig, bool& bOutUsedCustomSpawnTransform) const;
+	void LogCurrentPieceTransforms(const TCHAR* Context);
+	FString FormatPieceTransformForConfig(const FRuntimePiece& RuntimePiece) const;
 	bool IsPieceAlignedToAnchor(const FRuntimePiece& RuntimePiece, const FRuntimePiece& AnchorPiece, const FLevel4PuzzleStageConfig& StageConfig, float& OutPositionError, float& OutRotationError) const;
 	FVector GetPlaneNormal(const FLevel4PuzzleStageConfig& StageConfig) const;
 	FVector ProjectPointToStagePlane(const FVector& Point, const FLevel4PuzzleStageConfig& StageConfig, const FVector& PlaneOrigin) const;
@@ -178,6 +187,7 @@ private:
 	bool bSessionActive = false;
 	bool bDifficultySelected = false;
 	bool bDragging = false;
+	float LastTransformDebugLogTime = -FLT_MAX;
 	FVector DragOffset = FVector::ZeroVector;
 	FVector DragPlaneOrigin = FVector::ZeroVector;
 	FVector DragActorPlaneOrigin = FVector::ZeroVector;

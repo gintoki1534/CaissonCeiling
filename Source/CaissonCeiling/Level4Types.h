@@ -52,6 +52,18 @@ struct FLevel4PuzzlePieceConfig
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level4")
 	FTransform TargetTransform = FTransform::Identity;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level4|Spawn")
+	bool bUseCustomNormalSpawnTransform = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level4|Spawn")
+	FTransform NormalSpawnTransform = FTransform::Identity;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level4|Spawn")
+	bool bUseCustomExpertSpawnTransform = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level4|Spawn")
+	FTransform ExpertSpawnTransform = FTransform::Identity;
 };
 
 USTRUCT(BlueprintType)
