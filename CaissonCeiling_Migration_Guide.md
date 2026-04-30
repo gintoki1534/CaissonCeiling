@@ -320,18 +320,30 @@
 - 左键点击修复区域一次，结算一次工具效果
 - 三维数值当前支持 `-2 ~ 2`
 - 左下角数值、进度条和圆点已实时刷新
-- `BP_ShowcaseModel_Level3.UpdateDustVisual` 当前先使用占位 `PrintString` 调试
-- `BP_ShowcaseModel_Level3.UpdateOilVisual` 当前先使用占位 `PrintString` 调试
+- `BP_ShowcaseModel_Level3.UpdateDustVisual` 当前驱动真实修复网格 Slot 0 上的灰尘材质参数
+- `BP_ShowcaseModel_Level3.UpdateOilVisual` 当前驱动真实修复网格 Slot 0 上的桐油材质参数
 - `Dusting` 结果点击“下一步”后进入 `Oiling`，`W_Level3` 不关闭
-- `Oiling` 完成后进入占位完成态
-- 真实灰尘与桐油材质待后续接入
+- `Oiling` 完成后进入 `Level4` 教学和拼图流程
 
 这意味着后续 `Level3` 不需要复用 `Level2` 的 `CurrentStep / RequiredLevel2TargetIds / ELevel2FlowState` 逻辑。
+
+同时，`Level4` 当前已经完成并保持了同样的职责边界：
+
+- `BP_ShowcaseModel_Level4` 作为第四关展示 Pawn，承载 `Level4PuzzleComponent`
+- `W_Level4_Introdection` 负责教学阶段生成或复用第四关展示 Pawn
+- `W_Level4` 只刷新 UI 和调用 `Level4PuzzleComponent` 公开接口
+- `ULevel4PuzzleComponent` 维护难度、阶段、碎片生成、命中、拖拽、旋转、吸附、完成判定和最终完成广播
+- 普通/专家模式均支持每片碎片独立配置固定生成 Transform
+- 普通模式流程为 `CloudFrame1 -> StarMap -> FinalAssembly`
+- 专家模式流程为 `CloudFrame1 -> CloudFrame2 -> StarMap -> FinalAssembly`
+- `FinalAssembly` 阶段禁用旋转，生成方向由配置保证
+- `OnLevel4Completed` 后，`W_Level4` 会关闭第四关展示 Pawn 并进入 `W_Level5` 占位页
 
 后续工作的重点不是“继续机械地把更多蓝图搬到 C++”，而是：
 
 - 保持边界不退化
 - 在需要时继续扩展 C++ 公共接口
 - 让蓝图保持轻量、稳定、可读、可替换
+- 围绕正式文案、音效、视觉表现、结果页、证书和打包验收做整体打磨
 
 只要后续开发继续遵循这份文档，项目就能稳定地沿着“C++ 核心驱动 + 蓝图表现层”的方向演进。

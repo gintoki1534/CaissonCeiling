@@ -6,6 +6,8 @@
 2. 蓝图负责 UI 表现、镜头演出、资源接线和关卡摆放
 3. 蓝图状态说明必须以项目内导出的蓝图文档为准，而不是靠运行时猜测
 
+当前项目主需求已经完整实现，开发重心已经从主玩法搭建转入整体打磨、表现优化、正式文案、音效、结果页和打包前验收。
+
 ## 1. AI / 开发者接手时的第一原则
 
 无论是 AI 还是开发者，在开始分析项目前，都应先阅读项目内文档，而不是直接跳到 `.uasset` 或凭经验推断蓝图状态。
@@ -95,3 +97,29 @@ powershell -ExecutionPolicy Bypass -File Docs\generate_blueprint_docs.ps1 --sync
 2. 先看蓝图导出文档
 3. 先确认真实状态
 4. 再做计划、写代码、指导 UE 手动操作和更新文档
+
+## 7. 当前完整流程状态
+
+当前已跑通的主流程为：
+
+```text
+MainMenu
+-> Level1
+-> Level2
+-> Level3 Dusting
+-> Level3 Oiling
+-> Level4 Introduction
+-> Level4 Puzzle
+-> W_Level5 Placeholder
+```
+
+`Level4` 当前已完成：
+
+1. 普通/专家难度
+2. 四阶段拼图配置，其中普通模式跳过 `CloudFrame2`
+3. 每片碎片普通/专家固定生成 Transform
+4. 鼠标命中、拖拽、右键选择/旋转、吸附和完成判定
+5. `FinalAssembly` 阶段禁用旋转
+6. 完成后关闭 `BP_ShowcaseModel_Level4` 并进入 `W_Level5` 占位页
+
+后续工作应优先围绕打磨和最终交付，不应再返工主玩法架构。

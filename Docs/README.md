@@ -19,7 +19,7 @@
 3. [Level4_Puzzle.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Level4_Puzzle.md)
    - `Level4` 拼图当前实现
    - 普通/专家难度规则
-   - 拼图阶段、吸附、完成 UI 与蓝图接线约定
+   - 固定生成 Transform、拼图阶段、吸附、完成 UI 与 `Level5` 占位流转约定
 4. [../CaissonCeiling_Migration_Guide.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/CaissonCeiling_Migration_Guide.md)
    - 当前重构原则
    - C++/蓝图分层结论
@@ -56,6 +56,7 @@
 17. [BP_L4_Layout_CloudFrame2.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_L4_Layout_CloudFrame2.md)
 18. [BP_L4_Layout_StarMap.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_L4_Layout_StarMap.md)
 19. [BP_L4_Layout_FinalAssembly.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_L4_Layout_FinalAssembly.md)
+20. [W_Level5.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level5.md)
 
 ## 3. 当前项目所处阶段
 
@@ -76,7 +77,7 @@
    - 左键点击修复区域一次结算一次工具效果
    - 左下角三维数值、进度条和圆点实时刷新
    - `Dusting` 完成后点击“下一步”不关闭 `W_Level3`，而是切到 `Oiling`
-   - `Oiling` 完成后进入占位完成态
+   - `Oiling` 完成后进入 `W_Level4_Introdection`，开始第四关拼图流程
 9. `Level3` 当前已经从占位打印推进到真实材质参数表现：
 
    - `BP_ShowcaseModel_Level3` 从 `BP_Level3RepairRegion_Dusting` 获取真实 `SM_RepairMesh`
@@ -85,11 +86,19 @@
    - `M_Oil.OilBlend01` 负责涂油视觉过渡
    - 不再把 `SM_DustOverlay / SM_OilOverlay` 作为主表现路径
 
-10. 当前下一步重点是：
+10. `Level4` 当前已经完整实现拼图主玩法：
 
-   - 继续收尾 `Level4` 拼图的最终美术表现、正式文案、音效和最终结算流转
-   - 完整验收 `Level4` 普通/专家难度下的四阶段配置、吸附容差和完成 UI
-   - 在 `Level4` 完成后推进证书与收尾演出
+   - 普通/专家难度均支持每片固定生成 Transform
+   - 普通模式流程为 `CloudFrame1 -> StarMap -> FinalAssembly`
+   - 专家模式流程为 `CloudFrame1 -> CloudFrame2 -> StarMap -> FinalAssembly`
+   - `FinalAssembly` 禁用旋转，生成方向由配置保证
+   - 最后一阶段完成后关闭 `BP_ShowcaseModel_Level4` 并进入 `W_Level5` 占位页
+
+11. 当前下一步重点是：
+
+   - 全流程打磨 `MainMenu -> Level1 -> Level2 -> Level3 -> Level4 -> W_Level5`
+   - 收尾正式文案、音效、按钮反馈、阶段提示和最终完成反馈
+   - 将 `W_Level5` 占位页推进为正式结果页、证书页或收尾演出
 
 ## 4. 蓝图文档如何更新
 
@@ -145,6 +154,7 @@ powershell -ExecutionPolicy Bypass -File Docs\generate_blueprint_docs.ps1 --sync
    - [BP_L4_Layout_CloudFrame2.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_L4_Layout_CloudFrame2.md)
    - [BP_L4_Layout_StarMap.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_L4_Layout_StarMap.md)
    - [BP_L4_Layout_FinalAssembly.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/BP_L4_Layout_FinalAssembly.md)
+   - [W_Level5.md](D:/xiaojia/CaissonCeiling/CaissonCeiling/Docs/Blueprints/W_Level5.md)
 5. 如果需要确认详细节点，再回看对应 `json`
 
 ## 7. 文档维护约定

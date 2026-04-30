@@ -15,12 +15,12 @@
     "connection_count": 0,
     "modules": [
       {
-        "id": "K2Node_Event_2",
+        "id": "K2Node_Event_0",
         "class": "K2Node_Event",
         "kind": "event",
-        "title": "ReceiveTick",
+        "title": "ReceiveBeginPlay",
         "meta": {
-          "event_name": "ReceiveTick",
+          "event_name": "ReceiveBeginPlay",
           "enabled_state": "Disabled"
         },
         "pins": [
@@ -41,19 +41,10 @@
             "default_value": null,
             "default_object": null,
             "linked_to": []
-          },
-          {
-            "name": "DeltaSeconds",
-            "direction": "output",
-            "category": "real",
-            "subcategory": "float",
-            "default_value": "0.0",
-            "default_object": null,
-            "linked_to": []
           }
         ],
         "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/Level4/Pieces/BP_L4_StarMap_Piece2.BP_L4_StarMap_Piece2:EventGraph.K2Node_Event_2'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/Level4/Pieces/BP_L4_StarMap_Piece2.BP_L4_StarMap_Piece2:EventGraph.K2Node_Event_0'"
       },
       {
         "id": "K2Node_Event_1",
@@ -97,12 +88,12 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/Level4/Pieces/BP_L4_StarMap_Piece2.BP_L4_StarMap_Piece2:EventGraph.K2Node_Event_1'"
       },
       {
-        "id": "K2Node_Event_0",
+        "id": "K2Node_Event_2",
         "class": "K2Node_Event",
         "kind": "event",
-        "title": "ReceiveBeginPlay",
+        "title": "ReceiveTick",
         "meta": {
-          "event_name": "ReceiveBeginPlay",
+          "event_name": "ReceiveTick",
           "enabled_state": "Disabled"
         },
         "pins": [
@@ -123,10 +114,19 @@
             "default_value": null,
             "default_object": null,
             "linked_to": []
+          },
+          {
+            "name": "DeltaSeconds",
+            "direction": "output",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": []
           }
         ],
         "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/Level4/Pieces/BP_L4_StarMap_Piece2.BP_L4_StarMap_Piece2:EventGraph.K2Node_Event_0'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/Level4/Pieces/BP_L4_StarMap_Piece2.BP_L4_StarMap_Piece2:EventGraph.K2Node_Event_2'"
       }
     ],
     "connections": [],

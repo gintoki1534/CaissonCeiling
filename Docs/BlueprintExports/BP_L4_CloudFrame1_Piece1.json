@@ -11,7 +11,7 @@
   "event_graph": {
     "name": "EventGraph",
     "schema": "BlueprintGraph.EdGraphSchema_K2",
-    "module_count": 16,
+    "module_count": 14,
     "connection_count": 14,
     "modules": [
       {
@@ -182,61 +182,6 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_Event_3'"
       },
       {
-        "id": "K2Node_VariableGet_2",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get MeshComponent",
-        "meta": {
-          "variable_name": "MeshComponent"
-        },
-        "pins": [
-          {
-            "name": "MeshComponent",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_0",
-                "node_title": "PrimitiveComponent.SetRenderCustomDepth",
-                "pin_name": "self"
-              },
-              {
-                "node": "K2Node_CallFunction_2",
-                "node_title": "PrimitiveComponent.SetCustomDepthStencilValue",
-                "pin_name": "self"
-              },
-              {
-                "node": "K2Node_CallFunction_3",
-                "node_title": "PrimitiveComponent.SetRenderCustomDepth",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_VariableGet_2'"
-      },
-      {
         "id": "K2Node_IfThenElse_0",
         "class": "K2Node_IfThenElse",
         "kind": "K2Node_IfThenElse",
@@ -333,6 +278,61 @@
           }
         ],
         "raw_export_path": "/Script/BlueprintGraph.K2Node_IfThenElse'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_IfThenElse_0'"
+      },
+      {
+        "id": "K2Node_VariableGet_2",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get MeshComponent",
+        "meta": {
+          "variable_name": "MeshComponent"
+        },
+        "pins": [
+          {
+            "name": "MeshComponent",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_0",
+                "node_title": "PrimitiveComponent.SetRenderCustomDepth",
+                "pin_name": "self"
+              },
+              {
+                "node": "K2Node_CallFunction_2",
+                "node_title": "PrimitiveComponent.SetCustomDepthStencilValue",
+                "pin_name": "self"
+              },
+              {
+                "node": "K2Node_CallFunction_3",
+                "node_title": "PrimitiveComponent.SetRenderCustomDepth",
+                "pin_name": "self"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_VariableGet_2'"
       },
       {
         "id": "K2Node_CallFunction_0",
@@ -435,103 +435,6 @@
           }
         ],
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_CallFunction_0'"
-      },
-      {
-        "id": "K2Node_CallFunction_1",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "PrimitiveComponent.SetCustomDepthStencilValue",
-        "meta": {
-          "function_name": "SetCustomDepthStencilValue",
-          "function_owner": "PrimitiveComponent"
-        },
-        "pins": [
-          {
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "Value",
-            "direction": "input",
-            "category": "int",
-            "subcategory": "",
-            "default_value": "0",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_CallFunction_1'"
-      },
-      {
-        "id": "K2Node_VariableGet_1",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get MeshComponent",
-        "meta": {
-          "variable_name": "MeshComponent"
-        },
-        "pins": [
-          {
-            "name": "MeshComponent",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_VariableGet_1'"
       },
       {
         "id": "K2Node_CallFunction_2",
@@ -719,14 +622,64 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_CallFunction_3'"
       },
       {
-        "id": "K2Node_CallFunction_5",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "PrimitiveComponent.SetCustomDepthStencilValue",
+        "id": "K2Node_Event_4",
+        "class": "K2Node_Event",
+        "kind": "event",
+        "title": "BP_OnCorrectVisualChanged",
         "meta": {
-          "function_name": "SetCustomDepthStencilValue",
-          "function_owner": "PrimitiveComponent"
+          "event_name": "BP_OnCorrectVisualChanged",
+          "enabled_state": "Enabled"
         },
+        "pins": [
+          {
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_1",
+                "node_title": "K2Node_IfThenElse_1",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "bNewCorrect",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_1",
+                "node_title": "K2Node_IfThenElse_1",
+                "pin_name": "Condition"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_Event_4'"
+      },
+      {
+        "id": "K2Node_IfThenElse_1",
+        "class": "K2Node_IfThenElse",
+        "kind": "K2Node_IfThenElse",
+        "title": "K2Node_IfThenElse_1",
+        "meta": {},
         "pins": [
           {
             "name": "execute",
@@ -737,9 +690,24 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_4",
-                "node_title": "PrimitiveComponent.SetRenderCustomDepth",
+                "node": "K2Node_Event_4",
+                "node_title": "BP_OnCorrectVisualChanged",
                 "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "Condition",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Event_4",
+                "node_title": "BP_OnCorrectVisualChanged",
+                "pin_name": "bNewCorrect"
               }
             ]
           },
@@ -750,29 +718,20 @@
             "subcategory": "",
             "default_value": null,
             "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_0",
-                "node_title": "Get MeshComponent",
-                "pin_name": "MeshComponent"
+                "node": "K2Node_CallFunction_4",
+                "node_title": "PrimitiveComponent.SetRenderCustomDepth",
+                "pin_name": "execute"
               }
             ]
           },
           {
-            "name": "Value",
-            "direction": "input",
-            "category": "int",
+            "name": "else",
+            "direction": "output",
+            "category": "exec",
             "subcategory": "",
-            "default_value": "2",
+            "default_value": null,
             "default_object": null,
             "linked_to": []
           }
@@ -785,34 +744,77 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_4",
-                "node_title": "PrimitiveComponent.SetRenderCustomDepth",
+                "node": "K2Node_Event_4",
+                "node_title": "BP_OnCorrectVisualChanged",
                 "pin_name": "then"
               }
             ]
           },
           {
-            "name": "self",
+            "name": "Condition",
+            "category": "bool",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Event_4",
+                "node_title": "BP_OnCorrectVisualChanged",
+                "pin_name": "bNewCorrect"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_IfThenElse'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_IfThenElse_1'"
+      },
+      {
+        "id": "K2Node_VariableGet_0",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get MeshComponent",
+        "meta": {
+          "variable_name": "MeshComponent"
+        },
+        "pins": [
+          {
+            "name": "MeshComponent",
+            "direction": "output",
             "category": "object",
+            "subcategory": "",
             "default_value": null,
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_0",
-                "node_title": "Get MeshComponent",
-                "pin_name": "MeshComponent"
+                "node": "K2Node_CallFunction_4",
+                "node_title": "PrimitiveComponent.SetRenderCustomDepth",
+                "pin_name": "self"
+              },
+              {
+                "node": "K2Node_CallFunction_5",
+                "node_title": "PrimitiveComponent.SetCustomDepthStencilValue",
+                "pin_name": "self"
               }
             ]
           },
           {
-            "name": "Value",
-            "category": "int",
-            "default_value": "2",
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
             "default_object": null,
             "linked_to": []
           }
         ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_CallFunction_5'"
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_VariableGet_0'"
       },
       {
         "id": "K2Node_CallFunction_4",
@@ -917,61 +919,14 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_CallFunction_4'"
       },
       {
-        "id": "K2Node_VariableGet_0",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get MeshComponent",
+        "id": "K2Node_CallFunction_5",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "PrimitiveComponent.SetCustomDepthStencilValue",
         "meta": {
-          "variable_name": "MeshComponent"
+          "function_name": "SetCustomDepthStencilValue",
+          "function_owner": "PrimitiveComponent"
         },
-        "pins": [
-          {
-            "name": "MeshComponent",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_4",
-                "node_title": "PrimitiveComponent.SetRenderCustomDepth",
-                "pin_name": "self"
-              },
-              {
-                "node": "K2Node_CallFunction_5",
-                "node_title": "PrimitiveComponent.SetCustomDepthStencilValue",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_VariableGet_0'"
-      },
-      {
-        "id": "K2Node_IfThenElse_1",
-        "class": "K2Node_IfThenElse",
-        "kind": "K2Node_IfThenElse",
-        "title": "K2Node_IfThenElse_1",
-        "meta": {},
         "pins": [
           {
             "name": "execute",
@@ -982,24 +937,9 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_Event_4",
-                "node_title": "BP_OnCorrectVisualChanged",
+                "node": "K2Node_CallFunction_4",
+                "node_title": "PrimitiveComponent.SetRenderCustomDepth",
                 "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "Condition",
-            "direction": "input",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "true",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_Event_4",
-                "node_title": "BP_OnCorrectVisualChanged",
-                "pin_name": "bNewCorrect"
               }
             ]
           },
@@ -1010,20 +950,29 @@
             "subcategory": "",
             "default_value": null,
             "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_4",
-                "node_title": "PrimitiveComponent.SetRenderCustomDepth",
-                "pin_name": "execute"
+                "node": "K2Node_VariableGet_0",
+                "node_title": "Get MeshComponent",
+                "pin_name": "MeshComponent"
               }
             ]
           },
           {
-            "name": "else",
-            "direction": "output",
-            "category": "exec",
+            "name": "Value",
+            "direction": "input",
+            "category": "int",
             "subcategory": "",
-            "default_value": null,
+            "default_value": "2",
             "default_object": null,
             "linked_to": []
           }
@@ -1036,80 +985,34 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_Event_4",
-                "node_title": "BP_OnCorrectVisualChanged",
+                "node": "K2Node_CallFunction_4",
+                "node_title": "PrimitiveComponent.SetRenderCustomDepth",
                 "pin_name": "then"
               }
             ]
           },
           {
-            "name": "Condition",
-            "category": "bool",
-            "default_value": "true",
+            "name": "self",
+            "category": "object",
+            "default_value": null,
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_Event_4",
-                "node_title": "BP_OnCorrectVisualChanged",
-                "pin_name": "bNewCorrect"
+                "node": "K2Node_VariableGet_0",
+                "node_title": "Get MeshComponent",
+                "pin_name": "MeshComponent"
               }
             ]
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_IfThenElse'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_IfThenElse_1'"
-      },
-      {
-        "id": "K2Node_Event_4",
-        "class": "K2Node_Event",
-        "kind": "event",
-        "title": "BP_OnCorrectVisualChanged",
-        "meta": {
-          "event_name": "BP_OnCorrectVisualChanged",
-          "enabled_state": "Enabled"
-        },
-        "pins": [
+          },
           {
-            "name": "OutputDelegate",
-            "direction": "output",
-            "category": "delegate",
-            "subcategory": "",
-            "default_value": null,
+            "name": "Value",
+            "category": "int",
+            "default_value": "2",
             "default_object": null,
             "linked_to": []
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_1",
-                "node_title": "K2Node_IfThenElse_1",
-                "pin_name": "execute"
-              }
-            ]
-          },
-          {
-            "name": "bNewCorrect",
-            "direction": "output",
-            "category": "bool",
-            "subcategory": "",
-            "default_value": "false",
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_IfThenElse_1",
-                "node_title": "K2Node_IfThenElse_1",
-                "pin_name": "Condition"
-              }
-            ]
           }
         ],
-        "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_Event_4'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:EventGraph.K2Node_CallFunction_5'"
       }
     ],
     "connections": [
@@ -1324,30 +1227,14 @@
       "connection_count": 3,
       "modules": [
         {
-          "id": "K2Node_CallFunction_0",
-          "class": "K2Node_CallFunction",
-          "kind": "call_function",
-          "title": "ExecuteUbergraph_BP_L4_CloudFrame1_Piece1",
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BP_OnCorrectVisualChanged",
           "meta": {
-            "function_name": "ExecuteUbergraph_BP_L4_CloudFrame1_Piece1",
-            "function_owner": null
+            "function_name": "BP_OnCorrectVisualChanged"
           },
           "pins": [
-            {
-              "name": "execute",
-              "direction": "input",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "then"
-                }
-              ]
-            },
             {
               "name": "then",
               "direction": "output",
@@ -1355,50 +1242,32 @@
               "subcategory": "",
               "default_value": null,
               "default_object": null,
-              "linked_to": []
+              "linked_to": [
+                {
+                  "node": "K2Node_SetVariableOnPersistentFrame_0",
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "execute"
+                }
+              ]
             },
             {
-              "name": "self",
-              "direction": "input",
-              "category": "object",
-              "subcategory": "self",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "EntryPoint",
-              "direction": "input",
-              "category": "int",
+              "name": "bNewCorrect",
+              "direction": "output",
+              "category": "bool",
               "subcategory": "",
-              "default_value": "0",
-              "default_object": null,
-              "linked_to": []
-            }
-          ],
-          "important_inputs": [
-            {
-              "name": "execute",
-              "category": "exec",
-              "default_value": null,
+              "default_value": "false",
               "default_object": null,
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
                   "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "then"
+                  "pin_name": "K2Node_Event_bNewCorrect"
                 }
               ]
-            },
-            {
-              "name": "self",
-              "category": "object",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
             }
           ],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:BP_OnCorrectVisualChanged.K2Node_CallFunction_0'"
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:BP_OnCorrectVisualChanged.K2Node_FunctionEntry_0'"
         },
         {
           "id": "K2Node_SetVariableOnPersistentFrame_0",
@@ -1484,105 +1353,6 @@
           "raw_export_path": "/Script/BlueprintGraph.K2Node_SetVariableOnPersistentFrame'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:BP_OnCorrectVisualChanged.K2Node_SetVariableOnPersistentFrame_0'"
         },
         {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "BP_OnCorrectVisualChanged",
-          "meta": {
-            "function_name": "BP_OnCorrectVisualChanged"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "execute"
-                }
-              ]
-            },
-            {
-              "name": "bNewCorrect",
-              "direction": "output",
-              "category": "bool",
-              "subcategory": "",
-              "default_value": "false",
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "K2Node_Event_bNewCorrect"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:BP_OnCorrectVisualChanged.K2Node_FunctionEntry_0'"
-        }
-      ],
-      "connections": [
-        {
-          "from": {
-            "node": "K2Node_FunctionEntry_0",
-            "node_title": "BP_OnCorrectVisualChanged",
-            "pin_name": "bNewCorrect"
-          },
-          "to": {
-            "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "node_title": "SetVariableOnPersistentFrame",
-            "pin_name": "K2Node_Event_bNewCorrect"
-          },
-          "category": "bool"
-        },
-        {
-          "from": {
-            "node": "K2Node_FunctionEntry_0",
-            "node_title": "BP_OnCorrectVisualChanged",
-            "pin_name": "then"
-          },
-          "to": {
-            "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "node_title": "SetVariableOnPersistentFrame",
-            "pin_name": "execute"
-          },
-          "category": "exec"
-        },
-        {
-          "from": {
-            "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "node_title": "SetVariableOnPersistentFrame",
-            "pin_name": "then"
-          },
-          "to": {
-            "node": "K2Node_CallFunction_0",
-            "node_title": "ExecuteUbergraph_BP_L4_CloudFrame1_Piece1",
-            "pin_name": "execute"
-          },
-          "category": "exec"
-        }
-      ],
-      "exec_traces": [
-        [
-          "BP_OnCorrectVisualChanged",
-          "SetVariableOnPersistentFrame",
-          "ExecuteUbergraph_BP_L4_CloudFrame1_Piece1"
-        ]
-      ]
-    },
-    {
-      "name": "BP_OnSelectedVisualChanged",
-      "schema": "BlueprintGraph.EdGraphSchema_K2",
-      "module_count": 3,
-      "connection_count": 3,
-      "modules": [
-        {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
           "kind": "call_function",
@@ -1657,7 +1427,106 @@
               "linked_to": []
             }
           ],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:BP_OnSelectedVisualChanged.K2Node_CallFunction_0'"
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:BP_OnCorrectVisualChanged.K2Node_CallFunction_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "node_title": "BP_OnCorrectVisualChanged",
+            "pin_name": "bNewCorrect"
+          },
+          "to": {
+            "node": "K2Node_SetVariableOnPersistentFrame_0",
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "K2Node_Event_bNewCorrect"
+          },
+          "category": "bool"
+        },
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "node_title": "BP_OnCorrectVisualChanged",
+            "pin_name": "then"
+          },
+          "to": {
+            "node": "K2Node_SetVariableOnPersistentFrame_0",
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "execute"
+          },
+          "category": "exec"
+        },
+        {
+          "from": {
+            "node": "K2Node_SetVariableOnPersistentFrame_0",
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "then"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "node_title": "ExecuteUbergraph_BP_L4_CloudFrame1_Piece1",
+            "pin_name": "execute"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "BP_OnCorrectVisualChanged",
+          "SetVariableOnPersistentFrame",
+          "ExecuteUbergraph_BP_L4_CloudFrame1_Piece1"
+        ]
+      ]
+    },
+    {
+      "name": "BP_OnSelectedVisualChanged",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 3,
+      "connection_count": 3,
+      "modules": [
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BP_OnSelectedVisualChanged",
+          "meta": {
+            "function_name": "BP_OnSelectedVisualChanged"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_SetVariableOnPersistentFrame_0",
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "execute"
+                }
+              ]
+            },
+            {
+              "name": "bNewSelected",
+              "direction": "output",
+              "category": "bool",
+              "subcategory": "",
+              "default_value": "false",
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_SetVariableOnPersistentFrame_0",
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "K2Node_Event_bNewSelected"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:BP_OnSelectedVisualChanged.K2Node_FunctionEntry_0'"
         },
         {
           "id": "K2Node_SetVariableOnPersistentFrame_0",
@@ -1743,17 +1612,18 @@
           "raw_export_path": "/Script/BlueprintGraph.K2Node_SetVariableOnPersistentFrame'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:BP_OnSelectedVisualChanged.K2Node_SetVariableOnPersistentFrame_0'"
         },
         {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "BP_OnSelectedVisualChanged",
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "ExecuteUbergraph_BP_L4_CloudFrame1_Piece1",
           "meta": {
-            "function_name": "BP_OnSelectedVisualChanged"
+            "function_name": "ExecuteUbergraph_BP_L4_CloudFrame1_Piece1",
+            "function_owner": null
           },
           "pins": [
             {
-              "name": "then",
-              "direction": "output",
+              "name": "execute",
+              "direction": "input",
               "category": "exec",
               "subcategory": "",
               "default_value": null,
@@ -1762,28 +1632,61 @@
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
                   "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "execute"
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "name": "bNewSelected",
+              "name": "then",
               "direction": "output",
-              "category": "bool",
+              "category": "exec",
               "subcategory": "",
-              "default_value": "false",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "self",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "EntryPoint",
+              "direction": "input",
+              "category": "int",
+              "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
               "default_object": null,
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
                   "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "K2Node_Event_bNewSelected"
+                  "pin_name": "then"
                 }
               ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
             }
           ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:BP_OnSelectedVisualChanged.K2Node_FunctionEntry_0'"
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/Level4/Pieces/BP_L4_CloudFrame1_Piece1.BP_L4_CloudFrame1_Piece1:BP_OnSelectedVisualChanged.K2Node_CallFunction_0'"
         }
       ],
       "connections": [
@@ -1886,7 +1789,7 @@
   "doc_view": {
     "blueprint_name": "BP_L4_CloudFrame1_Piece1",
     "blueprint_class": "Blueprint",
-    "module_count": 16,
+    "module_count": 14,
     "connection_count": 14,
     "component_events": [],
     "exec_traces": [

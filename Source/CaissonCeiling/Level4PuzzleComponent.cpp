@@ -53,6 +53,52 @@ bool IntersectSegmentBox(const FVector& SegmentStart, const FVector& SegmentEnd,
 	OutDistance = Segment.Size() * MinTime;
 	return true;
 }
+
+const TCHAR* Level4DifficultyToLogName(ELevel4Difficulty Difficulty)
+{
+	switch (Difficulty)
+	{
+	case ELevel4Difficulty::Expert:
+		return TEXT("Expert");
+	case ELevel4Difficulty::Normal:
+	default:
+		return TEXT("Normal");
+	}
+}
+
+const TCHAR* Level4StageToLogName(ELevel4StageId StageId)
+{
+	switch (StageId)
+	{
+	case ELevel4StageId::CloudFrame1:
+		return TEXT("CloudFrame1");
+	case ELevel4StageId::CloudFrame2:
+		return TEXT("CloudFrame2");
+	case ELevel4StageId::StarMap:
+		return TEXT("StarMap");
+	case ELevel4StageId::FinalAssembly:
+		return TEXT("FinalAssembly");
+	case ELevel4StageId::None:
+	default:
+		return TEXT("None");
+	}
+}
+
+const TCHAR* Level4PhaseToLogName(ELevel4PuzzlePhase Phase)
+{
+	switch (Phase)
+	{
+	case ELevel4PuzzlePhase::Playing:
+		return TEXT("Playing");
+	case ELevel4PuzzlePhase::StageCompleted:
+		return TEXT("StageCompleted");
+	case ELevel4PuzzlePhase::Completed:
+		return TEXT("Completed");
+	case ELevel4PuzzlePhase::Inactive:
+	default:
+		return TEXT("Inactive");
+	}
+}
 }
 
 ULevel4PuzzleComponent::ULevel4PuzzleComponent()
@@ -90,6 +136,17 @@ void ULevel4PuzzleComponent::TickComponent(float DeltaTime, ELevelTick TickType,
 
 	const FVector NewLocation = ProjectPointToStagePlane(Intersection + DragOffset, *StageConfig, DragActorPlaneOrigin);
 	DraggedPiece->SetActorLocation(NewLocation);
+
+	if (bEnableLevel4TransformDebugLogs)
+	{
+		const UWorld* World = GetWorld();
+		const float CurrentTime = World ? World->GetTimeSeconds() : 0.0f;
+		if (CurrentTime - LastTransformDebugLogTime >= TransformDebugDragLogInterval)
+		{
+			LastTransformDebugLogTime = CurrentTime;
+			LogCurrentPieceTransforms(TEXT("DragUpdate"));
+		}
+	}
 }
 
 void ULevel4PuzzleComponent::StartLevel4Puzzle(ELevel4Difficulty InDifficulty)
@@ -256,6 +313,8 @@ void ULevel4PuzzleComponent::BeginDragSelectedPiece(const FHitResult& HitResult,
 	}
 
 	DragOffset = RuntimePiece->Actor->GetActorLocation() - PlaneIntersection;
+	LastTransformDebugLogTime = -FLT_MAX;
+	LogCurrentPieceTransforms(TEXT("BeginDrag"));
 
 	if (bEnableLevel4DebugLogs)
 	{
@@ -287,6 +346,7 @@ void ULevel4PuzzleComponent::EndDragSelectedPiece()
 	DragActorPlaneOrigin = FVector::ZeroVector;
 	SnapPieceToBestAnchorIfClose(ReleasedPiece);
 	EvaluateCurrentStage();
+	LogCurrentPieceTransforms(TEXT("EndDrag"));
 }
 
 void ULevel4PuzzleComponent::RotateSelectedPiece90()
@@ -304,11 +364,22 @@ void ULevel4PuzzleComponent::RotateSelectedPiece90()
 	{
 		return;
 	}
+	if (!CanRotateStage(*StageConfig))
+	{
+		if (bEnableLevel4DebugLogs)
+		{
+			UE_LOG(LogTemp, Log, TEXT("[Level4][Rotate] Rotation disabled for current stage. Stage=%d Piece=%d"),
+				static_cast<int32>(StageConfig->StageId),
+				RuntimePiece->Config.PieceIndex);
+		}
+		return;
+	}
 
 	const FVector Normal = GetPlaneNormal(*StageConfig);
 	const FQuat DeltaRotation(Normal, FMath::DegreesToRadians(90.0f));
 	RuntimePiece->Actor->SetActorRotation((DeltaRotation * RuntimePiece->Actor->GetActorQuat()).Rotator());
 	EvaluateCurrentStage();
+	LogCurrentPieceTransforms(TEXT("Rotate90"));
 }
 
 void ULevel4PuzzleComponent::RotateSelectedPiece90AroundPivot(const FVector& PivotLocation)
@@ -322,6 +393,16 @@ void ULevel4PuzzleComponent::RotateSelectedPiece90AroundPivot(const FVector& Piv
 	const FLevel4PuzzleStageConfig* StageConfig = GetCurrentStageConfig();
 	if (!RuntimePiece || !RuntimePiece->Actor || !StageConfig)
 	{
+		return;
+	}
+	if (!CanRotateStage(*StageConfig))
+	{
+		if (bEnableLevel4DebugLogs)
+		{
+			UE_LOG(LogTemp, Log, TEXT("[Level4][RightClick] Rotation disabled for current stage. Stage=%d Piece=%d"),
+				static_cast<int32>(StageConfig->StageId),
+				RuntimePiece->Config.PieceIndex);
+		}
 		return;
 	}
 
@@ -345,6 +426,7 @@ void ULevel4PuzzleComponent::RotateSelectedPiece90AroundPivot(const FVector& Piv
 	}
 
 	EvaluateCurrentStage();
+	LogCurrentPieceTransforms(TEXT("RotateAroundPivot"));
 }
 
 void ULevel4PuzzleComponent::HandleRightClickPiece(const FHitResult& HitResult)
@@ -378,6 +460,19 @@ void ULevel4PuzzleComponent::HandleRightClickPiece(const FHitResult& HitResult)
 			SelectPieceInternal(HitPiece->PieceIndex, false);
 		}
 		RightClickPrimedPieceIndex = HitPiece->PieceIndex;
+		return;
+	}
+
+	const FLevel4PuzzleStageConfig* StageConfig = GetCurrentStageConfig();
+	if (!StageConfig || !CanRotateStage(*StageConfig))
+	{
+		if (bEnableLevel4DebugLogs)
+		{
+			UE_LOG(LogTemp, Log, TEXT("[Level4][RightClick] Rotation disabled after priming. Stage=%d Piece=%s PieceIndex=%d"),
+				StageConfig ? static_cast<int32>(StageConfig->StageId) : INDEX_NONE,
+				*GetNameSafe(HitPiece),
+				HitPiece->PieceIndex);
+		}
 		return;
 	}
 
@@ -438,6 +533,7 @@ void ULevel4PuzzleComponent::MoveSelectedPieceToTargetLocationKeepingRotation()
 	}
 
 	EvaluateCurrentStage();
+	LogCurrentPieceTransforms(TEXT("MoveToTarget"));
 }
 
 bool ULevel4PuzzleComponent::FindSpawnedPieceHitOnRay(const FVector& RayStart, const FVector& RayEnd, FHitResult& OutHitResult) const
@@ -464,10 +560,25 @@ bool ULevel4PuzzleComponent::FindSpawnedPieceHitOnRay(const FVector& RayStart, c
 			continue;
 		}
 
-		if (UPrimitiveComponent* DragPrimitive = PieceActor->GetDragPrimitive())
+		TArray<UPrimitiveComponent*> InteractiveComponents;
+		PieceActor->GetInteractivePrimitiveComponents(InteractiveComponents);
+		if (InteractiveComponents.Num() <= 0)
 		{
+			if (UPrimitiveComponent* DragPrimitive = PieceActor->GetDragPrimitive())
+			{
+				InteractiveComponents.Add(DragPrimitive);
+			}
+		}
+
+		for (UPrimitiveComponent* InteractiveComponent : InteractiveComponents)
+		{
+			if (!IsValid(InteractiveComponent) || !InteractiveComponent->IsVisible())
+			{
+				continue;
+			}
+
 			FHitResult ComponentHitResult;
-			if (DragPrimitive->LineTraceComponent(ComponentHitResult, RayStart, RayEnd, QueryParams))
+			if (InteractiveComponent->LineTraceComponent(ComponentHitResult, RayStart, RayEnd, QueryParams))
 			{
 				const float HitDistance = FVector::Dist(RayStart, ComponentHitResult.ImpactPoint);
 				if (HitDistance < BestComponentDistance)
@@ -476,7 +587,7 @@ bool ULevel4PuzzleComponent::FindSpawnedPieceHitOnRay(const FVector& RayStart, c
 					BestComponentHitResult = ComponentHitResult;
 					BestComponentHitResult.bBlockingHit = true;
 					BestComponentHitResult.HitObjectHandle = FActorInstanceHandle(PieceActor);
-					BestComponentHitResult.Component = DragPrimitive;
+					BestComponentHitResult.Component = InteractiveComponent;
 					if (BestComponentHitResult.ImpactPoint.IsNearlyZero() && !BestComponentHitResult.Location.IsNearlyZero())
 					{
 						BestComponentHitResult.ImpactPoint = BestComponentHitResult.Location;
@@ -487,16 +598,16 @@ bool ULevel4PuzzleComponent::FindSpawnedPieceHitOnRay(const FVector& RayStart, c
 			}
 
 			float BoundsDistance = 0.0f;
-			const FBox BoundsBox = DragPrimitive->Bounds.GetBox();
+			const FBox BoundsBox = InteractiveComponent->Bounds.GetBox();
 			if (IntersectSegmentBox(RayStart, RayEnd, BoundsBox, BoundsDistance) && BoundsDistance < BestBoundsDistance)
 			{
 				const FVector RayDirection = (RayEnd - RayStart).GetSafeNormal();
 				const FVector HitLocation = RayStart + RayDirection * BoundsDistance;
 				BestBoundsDistance = BoundsDistance;
-				BestBoundsHitResult = FHitResult(PieceActor, DragPrimitive, HitLocation, -RayDirection);
+				BestBoundsHitResult = FHitResult(PieceActor, InteractiveComponent, HitLocation, -RayDirection);
 				BestBoundsHitResult.bBlockingHit = true;
 				BestBoundsHitResult.HitObjectHandle = FActorInstanceHandle(PieceActor);
-				BestBoundsHitResult.Component = DragPrimitive;
+				BestBoundsHitResult.Component = InteractiveComponent;
 				BestBoundsHitResult.Location = HitLocation;
 				BestBoundsHitResult.ImpactPoint = HitLocation;
 				BestBoundsHitResult.Distance = BoundsDistance;
@@ -670,6 +781,7 @@ void ULevel4PuzzleComponent::StartStage(int32 NewStageIndex)
 	bDragging = false;
 	DraggedPiece = nullptr;
 	DragPlayerController = nullptr;
+	LastTransformDebugLogTime = -FLT_MAX;
 	DragPlaneOrigin = FVector::ZeroVector;
 	DragActorPlaneOrigin = FVector::ZeroVector;
 
@@ -683,6 +795,7 @@ void ULevel4PuzzleComponent::StartStage(int32 NewStageIndex)
 
 	OnLevel4StageChanged.Broadcast(StageConfig.StageId, CurrentStageIndex);
 	SelectPieceInternal(1, false);
+	LogCurrentPieceTransforms(TEXT("StartStage"));
 }
 
 void ULevel4PuzzleComponent::CompleteCurrentStage()
@@ -862,6 +975,7 @@ void ULevel4PuzzleComponent::SpawnPieceIfNeeded(int32 PieceIndex)
 	RuntimePiece->Actor = PieceActor;
 	PieceActor->InitializeLevel4Piece(PieceIndex);
 	OnLevel4PieceSpawned.Broadcast(PieceIndex, PieceActor);
+	LogCurrentPieceTransforms(TEXT("SpawnPiece"));
 	EvaluateCurrentStage();
 }
 
@@ -933,6 +1047,7 @@ void ULevel4PuzzleComponent::SnapPieceToBestAnchorIfClose(ALevel4PuzzlePieceActo
 	}
 
 	RuntimePiece->Actor->SetActorTransform(BestSnapTransform);
+	LogCurrentPieceTransforms(TEXT("Snap"));
 
 	if (bEnableLevel4DebugLogs)
 	{
@@ -943,6 +1058,11 @@ void ULevel4PuzzleComponent::SnapPieceToBestAnchorIfClose(ALevel4PuzzlePieceActo
 			BestRotationError,
 			*BestSnapTransform.ToHumanReadableString());
 	}
+}
+
+bool ULevel4PuzzleComponent::CanRotateStage(const FLevel4PuzzleStageConfig& StageConfig) const
+{
+	return StageConfig.StageId != ELevel4StageId::FinalAssembly;
 }
 
 bool ULevel4PuzzleComponent::ShouldSkipStage(ELevel4StageId StageId) const
@@ -1069,6 +1189,95 @@ FTransform ULevel4PuzzleComponent::GetWorldTargetTransform(const FLevel4PuzzlePi
 	return PieceConfig.TargetTransform;
 }
 
+FTransform ULevel4PuzzleComponent::GetConfiguredSpawnTransform(const FLevel4PuzzlePieceConfig& PieceConfig, const FLevel4PuzzleStageConfig& StageConfig, bool& bOutUsedCustomSpawnTransform) const
+{
+	bOutUsedCustomSpawnTransform = false;
+
+	FTransform SpawnTransform = PieceConfig.TargetTransform;
+	if (CurrentDifficulty == ELevel4Difficulty::Normal && PieceConfig.bUseCustomNormalSpawnTransform)
+	{
+		SpawnTransform = PieceConfig.NormalSpawnTransform;
+		bOutUsedCustomSpawnTransform = true;
+	}
+	else if (CurrentDifficulty == ELevel4Difficulty::Expert && PieceConfig.bUseCustomExpertSpawnTransform)
+	{
+		SpawnTransform = PieceConfig.ExpertSpawnTransform;
+		bOutUsedCustomSpawnTransform = true;
+	}
+
+	if (bSpawnRelativeToOwner && GetOwner())
+	{
+		SpawnTransform = SpawnTransform * GetOwner()->GetActorTransform();
+	}
+
+	if (CurrentDifficulty == ELevel4Difficulty::Expert && !PieceConfig.bUseCustomExpertSpawnTransform)
+	{
+		FVector SpawnLocation = SpawnOrigin;
+		if (bSpawnRelativeToOwner && GetOwner())
+		{
+			SpawnLocation = GetOwner()->GetActorTransform().TransformPosition(SpawnOrigin);
+		}
+
+		SpawnTransform.SetLocation(SpawnLocation);
+	}
+
+	SpawnTransform.AddToTranslation(GetPlaneNormal(StageConfig) * SpawnHeightOffset);
+	return SpawnTransform;
+}
+
+void ULevel4PuzzleComponent::LogCurrentPieceTransforms(const TCHAR* Context)
+{
+	if (!bEnableLevel4TransformDebugLogs)
+	{
+		return;
+	}
+
+	const FLevel4PuzzleStageConfig* StageConfig = GetCurrentStageConfig();
+	UE_LOG(LogTemp, Log, TEXT("[Level4][TransformSnapshot] Context=%s Stage=%s Difficulty=%s Phase=%s StageIndex=%d Selected=%d PieceCount=%d"),
+		Context ? Context : TEXT("None"),
+		Level4StageToLogName(StageConfig ? StageConfig->StageId : ELevel4StageId::None),
+		Level4DifficultyToLogName(CurrentDifficulty),
+		Level4PhaseToLogName(CurrentPhase),
+		CurrentStageIndex,
+		SelectedPieceIndex,
+		RuntimePieces.Num());
+
+	for (const FRuntimePiece& RuntimePiece : RuntimePieces)
+	{
+		UE_LOG(LogTemp, Log, TEXT("[Level4][TransformSnapshot] %s"), *FormatPieceTransformForConfig(RuntimePiece));
+	}
+}
+
+FString ULevel4PuzzleComponent::FormatPieceTransformForConfig(const FRuntimePiece& RuntimePiece) const
+{
+	if (!RuntimePiece.Actor)
+	{
+		return FString::Printf(TEXT("PieceIndex=%d Spawned=0"), RuntimePiece.Config.PieceIndex);
+	}
+
+	FTransform ActorTransform = RuntimePiece.Actor->GetActorTransform();
+	if (bSpawnRelativeToOwner && GetOwner())
+	{
+		ActorTransform = ActorTransform.GetRelativeTransform(GetOwner()->GetActorTransform());
+	}
+
+	const FVector Location = ActorTransform.GetLocation();
+	const FRotator Rotation = ActorTransform.GetRotation().Rotator();
+	const FVector Scale = ActorTransform.GetScale3D();
+
+	return FString::Printf(TEXT("PieceIndex=%d Spawned=1 Location=(X=%.3f,Y=%.3f,Z=%.3f) Rotation=(P=%.3f,Y=%.3f,R=%.3f) Scale=(X=%.3f,Y=%.3f,Z=%.3f)"),
+		RuntimePiece.Config.PieceIndex,
+		Location.X,
+		Location.Y,
+		Location.Z,
+		Rotation.Pitch,
+		Rotation.Yaw,
+		Rotation.Roll,
+		Scale.X,
+		Scale.Y,
+		Scale.Z);
+}
+
 bool ULevel4PuzzleComponent::IsPieceAlignedToAnchor(const FRuntimePiece& RuntimePiece, const FRuntimePiece& AnchorPiece, const FLevel4PuzzleStageConfig& StageConfig, float& OutPositionError, float& OutRotationError) const
 {
 	OutPositionError = TNumericLimits<float>::Max();
@@ -1169,33 +1378,22 @@ bool ULevel4PuzzleComponent::GetCursorIntersectionOnStagePlane(APlayerController
 
 FTransform ULevel4PuzzleComponent::MakeSpawnTransform(const FLevel4PuzzlePieceConfig& PieceConfig, const FLevel4PuzzleStageConfig& StageConfig) const
 {
-	FTransform TargetTransform = PieceConfig.TargetTransform;
-	if (bSpawnRelativeToOwner && GetOwner())
+	bool bUsedCustomSpawnTransform = false;
+	FTransform SpawnTransform = GetConfiguredSpawnTransform(PieceConfig, StageConfig, bUsedCustomSpawnTransform);
+
+	if (!bUsedCustomSpawnTransform && CanRotateStage(StageConfig))
 	{
-		TargetTransform = PieceConfig.TargetTransform * GetOwner()->GetActorTransform();
+		const int32 QuarterTurns = FMath::RandRange(0, 3);
+		const FQuat RandomRotation(GetPlaneNormal(StageConfig), FMath::DegreesToRadians(90.0f * QuarterTurns));
+		SpawnTransform.SetRotation(RandomRotation * SpawnTransform.GetRotation());
 	}
 
-	FVector SpawnLocation = TargetTransform.GetLocation();
-	if (CurrentDifficulty == ELevel4Difficulty::Expert)
-	{
-		SpawnLocation = SpawnOrigin;
-		if (bSpawnRelativeToOwner && GetOwner())
-		{
-			SpawnLocation = GetOwner()->GetActorTransform().TransformPosition(SpawnOrigin);
-		}
-	}
-
-	SpawnLocation += GetPlaneNormal(StageConfig) * SpawnHeightOffset;
-
-	const int32 QuarterTurns = FMath::RandRange(0, 3);
-	const FQuat RandomRotation(GetPlaneNormal(StageConfig), FMath::DegreesToRadians(90.0f * QuarterTurns));
-	const FQuat SpawnRotation = RandomRotation * TargetTransform.GetRotation();
-
-	return FTransform(SpawnRotation, SpawnLocation, TargetTransform.GetScale3D());
+	return SpawnTransform;
 }
 
 float ULevel4PuzzleComponent::GetRotationErrorDegrees(const FRotator& A, const FRotator& B) const
 {
 	const FQuat Delta = A.Quaternion().Inverse() * B.Quaternion();
-	return FMath::RadiansToDegrees(Delta.GetAngle());
+	const float AngleDegrees = FMath::RadiansToDegrees(Delta.GetAngle());
+	return FMath::Min(AngleDegrees, FMath::Abs(360.0f - AngleDegrees));
 }
