@@ -142,6 +142,7 @@ private:
 	void SpawnPieceIfNeeded(int32 PieceIndex);
 	void RotateSelectedPiece90AroundPivot(const FVector& PivotLocation);
 	void SnapPieceToBestAnchorIfClose(ALevel4PuzzlePieceActor* PieceActor);
+	bool CanRotateStage(const FLevel4PuzzleStageConfig& StageConfig) const;
 	bool ShouldSkipStage(ELevel4StageId StageId) const;
 	FLevel4PuzzleStageConfig* GetCurrentStageConfig();
 	const FLevel4PuzzleStageConfig* GetCurrentStageConfig() const;

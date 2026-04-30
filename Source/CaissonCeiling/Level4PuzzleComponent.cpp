@@ -304,6 +304,16 @@ void ULevel4PuzzleComponent::RotateSelectedPiece90()
 	{
 		return;
 	}
+	if (!CanRotateStage(*StageConfig))
+	{
+		if (bEnableLevel4DebugLogs)
+		{
+			UE_LOG(LogTemp, Log, TEXT("[Level4][Rotate] Rotation disabled for current stage. Stage=%d Piece=%d"),
+				static_cast<int32>(StageConfig->StageId),
+				RuntimePiece->Config.PieceIndex);
+		}
+		return;
+	}
 
 	const FVector Normal = GetPlaneNormal(*StageConfig);
 	const FQuat DeltaRotation(Normal, FMath::DegreesToRadians(90.0f));
@@ -322,6 +332,16 @@ void ULevel4PuzzleComponent::RotateSelectedPiece90AroundPivot(const FVector& Piv
 	const FLevel4PuzzleStageConfig* StageConfig = GetCurrentStageConfig();
 	if (!RuntimePiece || !RuntimePiece->Actor || !StageConfig)
 	{
+		return;
+	}
+	if (!CanRotateStage(*StageConfig))
+	{
+		if (bEnableLevel4DebugLogs)
+		{
+			UE_LOG(LogTemp, Log, TEXT("[Level4][RightClick] Rotation disabled for current stage. Stage=%d Piece=%d"),
+				static_cast<int32>(StageConfig->StageId),
+				RuntimePiece->Config.PieceIndex);
+		}
 		return;
 	}
 
@@ -378,6 +398,19 @@ void ULevel4PuzzleComponent::HandleRightClickPiece(const FHitResult& HitResult)
 			SelectPieceInternal(HitPiece->PieceIndex, false);
 		}
 		RightClickPrimedPieceIndex = HitPiece->PieceIndex;
+		return;
+	}
+
+	const FLevel4PuzzleStageConfig* StageConfig = GetCurrentStageConfig();
+	if (!StageConfig || !CanRotateStage(*StageConfig))
+	{
+		if (bEnableLevel4DebugLogs)
+		{
+			UE_LOG(LogTemp, Log, TEXT("[Level4][RightClick] Rotation disabled after priming. Stage=%d Piece=%s PieceIndex=%d"),
+				StageConfig ? static_cast<int32>(StageConfig->StageId) : INDEX_NONE,
+				*GetNameSafe(HitPiece),
+				HitPiece->PieceIndex);
+		}
 		return;
 	}
 
@@ -960,6 +993,11 @@ void ULevel4PuzzleComponent::SnapPieceToBestAnchorIfClose(ALevel4PuzzlePieceActo
 	}
 }
 
+bool ULevel4PuzzleComponent::CanRotateStage(const FLevel4PuzzleStageConfig& StageConfig) const
+{
+	return StageConfig.StageId != ELevel4StageId::FinalAssembly;
+}
+
 bool ULevel4PuzzleComponent::ShouldSkipStage(ELevel4StageId StageId) const
 {
 	return CurrentDifficulty == ELevel4Difficulty::Normal && StageId == ELevel4StageId::CloudFrame2;
@@ -1202,9 +1240,13 @@ FTransform ULevel4PuzzleComponent::MakeSpawnTransform(const FLevel4PuzzlePieceCo
 
 	SpawnLocation += GetPlaneNormal(StageConfig) * SpawnHeightOffset;
 
-	const int32 QuarterTurns = FMath::RandRange(0, 3);
-	const FQuat RandomRotation(GetPlaneNormal(StageConfig), FMath::DegreesToRadians(90.0f * QuarterTurns));
-	const FQuat SpawnRotation = RandomRotation * TargetTransform.GetRotation();
+	FQuat SpawnRotation = TargetTransform.GetRotation();
+	if (CanRotateStage(StageConfig))
+	{
+		const int32 QuarterTurns = FMath::RandRange(0, 3);
+		const FQuat RandomRotation(GetPlaneNormal(StageConfig), FMath::DegreesToRadians(90.0f * QuarterTurns));
+		SpawnRotation = RandomRotation * SpawnRotation;
+	}
 
 	return FTransform(SpawnRotation, SpawnLocation, TargetTransform.GetScale3D());
 }
