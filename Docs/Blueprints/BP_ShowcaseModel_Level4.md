@@ -27,10 +27,11 @@
 
 1. ReceiveBeginPlay -> InitializeLevel3VisualMaterials
 1. InitializeLevel3VisualMaterials -> GameplayStatics.GetActorOfClass -> Set RepairRegionRef -> BP_Level3RepairRegion_Dusting_C.GetRepairMeshComponent -> Set RepairMeshRef -> PrimitiveComponent.CreateDynamicMaterialInstance -> Set DustMID_Slot0 -> MaterialInstanceDynamic.SetScalarParameterValue -> Set CurrentDustVisual01 -> Set DustTransitionStart01 -> Set DustTransitionTarget01 -> PrimitiveComponent.CreateDynamicMaterialInstance -> Set OilMID_Slot0 -> MaterialInstanceDynamic.SetScalarParameterValue -> Set CurrentOilVisual01 -> Set OilTransitionStart01 -> Set OilTransitionTarget01 -> PrimitiveComponent.SetMaterial
-1. Event_PlayDustTransition -> K2Node_Timeline_1 -> MaterialInstanceDynamic.SetScalarParameterValue -> Set CurrentDustVisual01
-1. Event_PlayDustTransition -> K2Node_Timeline_1 -> Set CurrentDustVisual01
+1. Event_PlayDustTransition -> K2Node_Timeline_2 -> MaterialInstanceDynamic.SetScalarParameterValue -> Set CurrentDustVisual01
+1. Event_PlayDustTransition -> K2Node_Timeline_2 -> Set CurrentDustVisual01
 1. Event_PlayOilTransition -> K2Node_Timeline_0 -> MaterialInstanceDynamic.SetScalarParameterValue -> Set CurrentOilVisual01
 1. Event_PlayOilTransition -> K2Node_Timeline_0 -> Set CurrentOilVisual01
+1. FinalViewChanged -> Set StartLoc -> Set TargetLoc -> Set StartRot -> Set TargetRot -> K2Node_Timeline_1 -> SceneComponent.K2_SetWorldLocation -> SceneComponent.K2_SetWorldRotation
 
 ## 6. 关键变量
 
@@ -90,6 +91,18 @@
 1. OilMaterial
    类型：object -> /Script/CoreUObject.Class'/Script/Engine.MaterialInterface'
    显示名：Oil Material
+1. StartLoc
+   类型：struct -> /Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'
+   显示名：Start Loc
+1. StartRot
+   类型：struct -> /Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'
+   显示名：Start Rot
+1. TargetLoc
+   类型：struct -> /Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'
+   显示名：Target Loc
+1. TargetRot
+   类型：struct -> /Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'
+   显示名：Target Rot
 
 
 ## 7. 特殊设置
@@ -186,7 +199,18 @@
    - ExecuteUbergraph_BP_ShowcaseModel_Level4
      输入：execute <- Event_PlayOilTransition:then
 
-### 8.7 InitializeLevel3VisualMaterials
+### 8.7 FinalViewChanged
+
+1. 图类型：BlueprintGraph.EdGraphSchema_K2
+1. 模块数：2
+1. 连接数：1
+1. 执行链：FinalViewChanged -> ExecuteUbergraph_BP_ShowcaseModel_Level4
+1. 关键节点：
+   - FinalViewChanged
+   - ExecuteUbergraph_BP_ShowcaseModel_Level4
+     输入：execute <- FinalViewChanged:then
+
+### 8.8 InitializeLevel3VisualMaterials
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -197,7 +221,7 @@
    - ExecuteUbergraph_BP_ShowcaseModel_Level4
      输入：execute <- InitializeLevel3VisualMaterials:then
 
-### 8.8 ReceiveBeginPlay
+### 8.9 ReceiveBeginPlay
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -208,7 +232,7 @@
    - ExecuteUbergraph_BP_ShowcaseModel_Level4
      输入：execute <- ReceiveBeginPlay:then
 
-### 8.9 ReturnToLevel3DefaultView
+### 8.10 ReturnToLevel3DefaultView
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：7
@@ -226,7 +250,7 @@
      输入：NewLocation <- Get DefaultArmLocation:DefaultArmLocation
      输入：NewRotation <- Get DefaultArmRotation:DefaultArmRotation
 
-### 8.10 TL_DustTransition_5s__FinishedFunc
+### 8.11 TL_DustTransition_5s__FinishedFunc
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -237,7 +261,7 @@
    - ExecuteUbergraph_BP_ShowcaseModel_Level4
      输入：execute <- TL_DustTransition_5s__FinishedFunc:then
 
-### 8.11 TL_DustTransition_5s__UpdateFunc
+### 8.12 TL_DustTransition_5s__UpdateFunc
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -248,7 +272,7 @@
    - ExecuteUbergraph_BP_ShowcaseModel_Level4
      输入：execute <- TL_DustTransition_5s__UpdateFunc:then
 
-### 8.12 TL_OilTransition_5s__FinishedFunc
+### 8.13 TL_OilTransition_5s__FinishedFunc
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -259,7 +283,7 @@
    - ExecuteUbergraph_BP_ShowcaseModel_Level4
      输入：execute <- TL_OilTransition_5s__FinishedFunc:then
 
-### 8.13 TL_OilTransition_5s__UpdateFunc
+### 8.14 TL_OilTransition_5s__UpdateFunc
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -270,7 +294,7 @@
    - ExecuteUbergraph_BP_ShowcaseModel_Level4
      输入：execute <- TL_OilTransition_5s__UpdateFunc:then
 
-### 8.14 UpdateDustVisual
+### 8.15 UpdateDustVisual
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：9
@@ -296,7 +320,7 @@
    - Event_PlayDustTransition
      输入：execute <- ApplyDustMaterialToRepairMesh:then
 
-### 8.15 UpdateOilVisual
+### 8.16 UpdateOilVisual
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：9
@@ -322,7 +346,7 @@
    - Event_PlayOilTransition
      输入：execute <- ApplyOilMaterialToRepairMesh:then
 
-### 8.16 UserConstructionScript
+### 8.17 UserConstructionScript
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：1
@@ -330,6 +354,28 @@
 1. 执行链：UserConstructionScript
 1. 关键节点：
    - UserConstructionScript
+
+### 8.18 时间轴__FinishedFunc
+
+1. 图类型：BlueprintGraph.EdGraphSchema_K2
+1. 模块数：2
+1. 连接数：1
+1. 执行链：时间轴__FinishedFunc -> ExecuteUbergraph_BP_ShowcaseModel_Level4
+1. 关键节点：
+   - 时间轴__FinishedFunc
+   - ExecuteUbergraph_BP_ShowcaseModel_Level4
+     输入：execute <- 时间轴__FinishedFunc:then
+
+### 8.19 时间轴__UpdateFunc
+
+1. 图类型：BlueprintGraph.EdGraphSchema_K2
+1. 模块数：2
+1. 连接数：1
+1. 执行链：时间轴__UpdateFunc -> ExecuteUbergraph_BP_ShowcaseModel_Level4
+1. 关键节点：
+   - 时间轴__UpdateFunc
+   - ExecuteUbergraph_BP_ShowcaseModel_Level4
+     输入：execute <- 时间轴__UpdateFunc:then
 
 ## 9. 当前可直接确认的结论
 

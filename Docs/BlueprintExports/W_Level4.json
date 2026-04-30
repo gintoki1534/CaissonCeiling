@@ -11,8 +11,8 @@
   "event_graph": {
     "name": "EventGraph",
     "schema": "BlueprintGraph.EdGraphSchema_K2",
-    "module_count": 101,
-    "connection_count": 109,
+    "module_count": 119,
+    "connection_count": 133,
     "modules": [
       {
         "id": "K2Node_Event_0",
@@ -171,7 +171,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_DynamicCast_0",
+                "node": "K2Node_DynamicCast_1",
                 "node_title": "Cast To CaissonPlayerController",
                 "pin_name": "Object"
               }
@@ -190,7 +190,7 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_CallFunction_0'"
       },
       {
-        "id": "K2Node_DynamicCast_0",
+        "id": "K2Node_DynamicCast_1",
         "class": "K2Node_DynamicCast",
         "kind": "dynamic_cast",
         "title": "Cast To CaissonPlayerController",
@@ -310,7 +310,7 @@
             ]
           }
         ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_DynamicCast'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_DynamicCast_0'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_DynamicCast'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_DynamicCast_1'"
       },
       {
         "id": "K2Node_CallFunction_2",
@@ -361,7 +361,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_DynamicCast_0",
+                "node": "K2Node_DynamicCast_1",
                 "node_title": "Cast To CaissonPlayerController",
                 "pin_name": "AsCaisson Player Controller"
               }
@@ -398,7 +398,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_DynamicCast_0",
+                "node": "K2Node_DynamicCast_1",
                 "node_title": "Cast To CaissonPlayerController",
                 "pin_name": "AsCaisson Player Controller"
               }
@@ -1584,7 +1584,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_DynamicCast_0",
+                "node": "K2Node_DynamicCast_1",
                 "node_title": "Cast To CaissonPlayerController",
                 "pin_name": "AsCaisson Player Controller"
               }
@@ -1624,7 +1624,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_DynamicCast_0",
+                "node": "K2Node_DynamicCast_1",
                 "node_title": "Cast To CaissonPlayerController",
                 "pin_name": "AsCaisson Player Controller"
               }
@@ -3901,7 +3901,13 @@
             "subcategory": "",
             "default_value": null,
             "default_object": null,
-            "linked_to": []
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+                "pin_name": "execute"
+              }
+            ]
           },
           {
             "name": "self",
@@ -4069,7 +4075,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_DynamicCast_0",
+                "node": "K2Node_DynamicCast_1",
                 "node_title": "Cast To CaissonPlayerController",
                 "pin_name": "execute"
               }
@@ -4420,7 +4426,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_DynamicCast_0",
+                "node": "K2Node_DynamicCast_1",
                 "node_title": "Cast To CaissonPlayerController",
                 "pin_name": "then"
               }
@@ -4494,7 +4500,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_DynamicCast_0",
+                "node": "K2Node_DynamicCast_1",
                 "node_title": "Cast To CaissonPlayerController",
                 "pin_name": "then"
               }
@@ -4718,7 +4724,13 @@
             "subcategory": "",
             "default_value": "None",
             "default_object": null,
-            "linked_to": []
+            "linked_to": [
+              {
+                "node": "K2Node_SwitchEnum_2",
+                "node_title": "Switch on ELevel4StageId",
+                "pin_name": "Selection"
+              }
+            ]
           },
           {
             "name": "StageIndex",
@@ -4815,7 +4827,13 @@
             "subcategory": "",
             "default_value": null,
             "default_object": null,
-            "linked_to": []
+            "linked_to": [
+              {
+                "node": "K2Node_SwitchEnum_2",
+                "node_title": "Switch on ELevel4StageId",
+                "pin_name": "execute"
+              }
+            ]
           },
           {
             "name": "self",
@@ -5216,7 +5234,13 @@
             "subcategory": "",
             "default_value": null,
             "default_object": null,
-            "linked_to": []
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_0",
+                "node_title": "K2Node_IfThenElse_0",
+                "pin_name": "execute"
+              }
+            ]
           },
           {
             "name": "self",
@@ -7652,6 +7676,1554 @@
           }
         ],
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_CallFunction_20'"
+      },
+      {
+        "id": "K2Node_SwitchEnum_2",
+        "class": "K2Node_SwitchEnum",
+        "kind": "switch_enum",
+        "title": "Switch on ELevel4StageId",
+        "meta": {
+          "enum_name": "ELevel4StageId"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_8",
+                "node_title": "SetVisibility",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "Selection",
+            "direction": "input",
+            "category": "byte",
+            "subcategory": "",
+            "default_value": "None",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CustomEvent_3",
+                "node_title": "EVT_OnLevel4StageSolved",
+                "pin_name": "SolvedStage"
+              }
+            ]
+          },
+          {
+            "name": "NotEqual_ByteByte",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": "/Script/Engine.Default__KismetMathLibrary",
+            "linked_to": []
+          },
+          {
+            "name": null,
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "CloudFrame1",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "CloudFrame2",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "StarMap",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_6",
+                "node_title": "Set viewChangeFlag",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "FinalAssembly",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_8",
+                "node_title": "SetVisibility",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "Selection",
+            "category": "byte",
+            "default_value": "None",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CustomEvent_3",
+                "node_title": "EVT_OnLevel4StageSolved",
+                "pin_name": "SolvedStage"
+              }
+            ]
+          },
+          {
+            "name": "NotEqual_ByteByte",
+            "category": "object",
+            "default_value": null,
+            "default_object": "/Script/Engine.Default__KismetMathLibrary",
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_SwitchEnum'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_SwitchEnum_2'"
+      },
+      {
+        "id": "K2Node_CallFunction_3",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "GetOwningPlayerPawn",
+        "meta": {
+          "function_name": "GetOwningPlayerPawn",
+          "function_owner": null
+        },
+        "pins": [
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_2",
+                "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+                "pin_name": "Object"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_CallFunction_3'"
+      },
+      {
+        "id": "K2Node_DynamicCast_2",
+        "class": "K2Node_DynamicCast",
+        "kind": "dynamic_cast",
+        "title": "Cast To BP_ShowcaseModel_Level4_C",
+        "meta": {
+          "target_type": "BP_ShowcaseModel_Level4_C"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_0",
+                "node_title": "K2Node_IfThenElse_0",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "node_title": "BP_ShowcaseModel_Level4_C.FinalViewChanged",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "CastFailed",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "Object",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "node_title": "GetOwningPlayerPawn",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          },
+          {
+            "name": "AsBP Showcase Model Level 4",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "node_title": "BP_ShowcaseModel_Level4_C.FinalViewChanged",
+                "pin_name": "self"
+              }
+            ]
+          },
+          {
+            "name": "bSuccess",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_0",
+                "node_title": "K2Node_IfThenElse_0",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "Object",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "node_title": "GetOwningPlayerPawn",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_DynamicCast'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_DynamicCast_2'"
+      },
+      {
+        "id": "K2Node_CallFunction_1",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "BP_ShowcaseModel_Level4_C.FinalViewChanged",
+        "meta": {
+          "function_name": "FinalViewChanged",
+          "function_owner": "BP_ShowcaseModel_Level4_C"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_2",
+                "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_1",
+                "node_title": "Set viewChangeFlag",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_2",
+                "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+                "pin_name": "AsBP Showcase Model Level 4"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_2",
+                "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_2",
+                "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+                "pin_name": "AsBP Showcase Model Level 4"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_CallFunction_1'"
+      },
+      {
+        "id": "K2Node_VariableSet_6",
+        "class": "K2Node_VariableSet",
+        "kind": "variable_set",
+        "title": "Set viewChangeFlag",
+        "meta": {
+          "variable_name": "viewChangeFlag"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_SwitchEnum_2",
+                "node_title": "Switch on ELevel4StageId",
+                "pin_name": "StarMap"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "viewChangeFlag",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "Output_Get",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_SwitchEnum_2",
+                "node_title": "Switch on ELevel4StageId",
+                "pin_name": "StarMap"
+              }
+            ]
+          },
+          {
+            "name": "viewChangeFlag",
+            "category": "bool",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_VariableSet_6'"
+      },
+      {
+        "id": "K2Node_IfThenElse_0",
+        "class": "K2Node_IfThenElse",
+        "kind": "K2Node_IfThenElse",
+        "title": "K2Node_IfThenElse_0",
+        "meta": {},
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_33",
+                "node_title": "CaissonPlayerController.ContinueLevel4AfterStageSolved",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "Condition",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_0",
+                "node_title": "Get viewChangeFlag",
+                "pin_name": "viewChangeFlag"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_2",
+                "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "else",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_33",
+                "node_title": "CaissonPlayerController.ContinueLevel4AfterStageSolved",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "Condition",
+            "category": "bool",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_0",
+                "node_title": "Get viewChangeFlag",
+                "pin_name": "viewChangeFlag"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_IfThenElse'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_IfThenElse_0'"
+      },
+      {
+        "id": "K2Node_VariableGet_0",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get viewChangeFlag",
+        "meta": {
+          "variable_name": "viewChangeFlag"
+        },
+        "pins": [
+          {
+            "name": "viewChangeFlag",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_IfThenElse_0",
+                "node_title": "K2Node_IfThenElse_0",
+                "pin_name": "Condition"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_VariableGet_0'"
+      },
+      {
+        "id": "K2Node_VariableSet_1",
+        "class": "K2Node_VariableSet",
+        "kind": "variable_set",
+        "title": "Set viewChangeFlag",
+        "meta": {
+          "variable_name": "viewChangeFlag"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "node_title": "BP_ShowcaseModel_Level4_C.FinalViewChanged",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "viewChangeFlag",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "Output_Get",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "node_title": "BP_ShowcaseModel_Level4_C.FinalViewChanged",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_VariableSet_1'"
+      },
+      {
+        "id": "K2Node_CallFunction_22",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "RemoveFromParent",
+        "meta": {
+          "function_name": "RemoveFromParent",
+          "function_owner": null
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_21",
+                "node_title": "AddToViewport",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_21",
+                "node_title": "AddToViewport",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_CallFunction_22'"
+      },
+      {
+        "id": "K2Node_CallFunction_21",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "AddToViewport",
+        "meta": {
+          "function_name": "AddToViewport",
+          "function_owner": null
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CreateWidget_0",
+                "node_title": "K2Node_CreateWidget_0",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_22",
+                "node_title": "RemoveFromParent",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CreateWidget_0",
+                "node_title": "K2Node_CreateWidget_0",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          },
+          {
+            "name": "ZOrder",
+            "direction": "input",
+            "category": "int",
+            "subcategory": "",
+            "default_value": "0",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CreateWidget_0",
+                "node_title": "K2Node_CreateWidget_0",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CreateWidget_0",
+                "node_title": "K2Node_CreateWidget_0",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_CallFunction_21'"
+      },
+      {
+        "id": "K2Node_CallFunction_4",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "GetOwningPlayer",
+        "meta": {
+          "function_name": "GetOwningPlayer",
+          "function_owner": null
+        },
+        "pins": [
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_5",
+                "node_title": "Controller.K2_GetPawn",
+                "pin_name": "self"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_CallFunction_4'"
+      },
+      {
+        "id": "K2Node_CallFunction_5",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "Controller.K2_GetPawn",
+        "meta": {
+          "function_name": "K2_GetPawn",
+          "function_owner": "Controller"
+        },
+        "pins": [
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_4",
+                "node_title": "GetOwningPlayer",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          },
+          {
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+                "pin_name": "Object"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_4",
+                "node_title": "GetOwningPlayer",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_CallFunction_5'"
+      },
+      {
+        "id": "K2Node_DynamicCast_0",
+        "class": "K2Node_DynamicCast",
+        "kind": "dynamic_cast",
+        "title": "Cast To BP_ShowcaseModel_Level4_C",
+        "meta": {
+          "target_type": "BP_ShowcaseModel_Level4_C"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_32",
+                "node_title": "KismetSystemLibrary.PrintString",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_6",
+                "node_title": "Actor.SetActorHiddenInGame",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "CastFailed",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "Object",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_5",
+                "node_title": "Controller.K2_GetPawn",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          },
+          {
+            "name": "AsBP Showcase Model Level 4",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_6",
+                "node_title": "Actor.SetActorHiddenInGame",
+                "pin_name": "self"
+              },
+              {
+                "node": "K2Node_CallFunction_7",
+                "node_title": "Actor.SetActorEnableCollision",
+                "pin_name": "self"
+              },
+              {
+                "node": "K2Node_CallFunction_13",
+                "node_title": "Actor.SetActorTickEnabled",
+                "pin_name": "self"
+              }
+            ]
+          },
+          {
+            "name": "bSuccess",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_32",
+                "node_title": "KismetSystemLibrary.PrintString",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "Object",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_5",
+                "node_title": "Controller.K2_GetPawn",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_DynamicCast'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_DynamicCast_0'"
+      },
+      {
+        "id": "K2Node_CallFunction_6",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "Actor.SetActorHiddenInGame",
+        "meta": {
+          "function_name": "SetActorHiddenInGame",
+          "function_owner": "Actor"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_7",
+                "node_title": "Actor.SetActorEnableCollision",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+                "pin_name": "AsBP Showcase Model Level 4"
+              }
+            ]
+          },
+          {
+            "name": "bNewHidden",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+                "pin_name": "AsBP Showcase Model Level 4"
+              }
+            ]
+          },
+          {
+            "name": "bNewHidden",
+            "category": "bool",
+            "default_value": "true",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_CallFunction_6'"
+      },
+      {
+        "id": "K2Node_CallFunction_7",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "Actor.SetActorEnableCollision",
+        "meta": {
+          "function_name": "SetActorEnableCollision",
+          "function_owner": "Actor"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_6",
+                "node_title": "Actor.SetActorHiddenInGame",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_13",
+                "node_title": "Actor.SetActorTickEnabled",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+                "pin_name": "AsBP Showcase Model Level 4"
+              }
+            ]
+          },
+          {
+            "name": "bNewActorEnableCollision",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_6",
+                "node_title": "Actor.SetActorHiddenInGame",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+                "pin_name": "AsBP Showcase Model Level 4"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_CallFunction_7'"
+      },
+      {
+        "id": "K2Node_CallFunction_13",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "Actor.SetActorTickEnabled",
+        "meta": {
+          "function_name": "SetActorTickEnabled",
+          "function_owner": "Actor"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_7",
+                "node_title": "Actor.SetActorEnableCollision",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CreateWidget_0",
+                "node_title": "K2Node_CreateWidget_0",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+                "pin_name": "AsBP Showcase Model Level 4"
+              }
+            ]
+          },
+          {
+            "name": "bEnabled",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_7",
+                "node_title": "Actor.SetActorEnableCollision",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_DynamicCast_0",
+                "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+                "pin_name": "AsBP Showcase Model Level 4"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_CallFunction_13'"
+      },
+      {
+        "id": "K2Node_CreateWidget_0",
+        "class": "K2Node_CreateWidget",
+        "kind": "K2Node_CreateWidget",
+        "title": "K2Node_CreateWidget_0",
+        "meta": {},
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_13",
+                "node_title": "Actor.SetActorTickEnabled",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_21",
+                "node_title": "AddToViewport",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "Class",
+            "direction": "input",
+            "category": "class",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": "/Game/UI/W_Level5.W_Level5_C",
+            "linked_to": []
+          },
+          {
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_21",
+                "node_title": "AddToViewport",
+                "pin_name": "self"
+              }
+            ]
+          },
+          {
+            "name": "OwningPlayer",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_14",
+                "node_title": "GetOwningPlayer",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_13",
+                "node_title": "Actor.SetActorTickEnabled",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "Class",
+            "category": "class",
+            "default_value": null,
+            "default_object": "/Game/UI/W_Level5.W_Level5_C",
+            "linked_to": []
+          },
+          {
+            "name": "OwningPlayer",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_14",
+                "node_title": "GetOwningPlayer",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/UMGEditor.K2Node_CreateWidget'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_CreateWidget_0'"
+      },
+      {
+        "id": "K2Node_CallFunction_14",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "GetOwningPlayer",
+        "meta": {
+          "function_name": "GetOwningPlayer",
+          "function_owner": null
+        },
+        "pins": [
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CreateWidget_0",
+                "node_title": "K2Node_CreateWidget_0",
+                "pin_name": "OwningPlayer"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:EventGraph.K2Node_CallFunction_14'"
       }
     ],
     "connections": [
@@ -7714,11 +9286,24 @@
           "pin_name": "ReturnValue"
         },
         "to": {
-          "node": "K2Node_DynamicCast_0",
+          "node": "K2Node_DynamicCast_1",
           "node_title": "Cast To CaissonPlayerController",
           "pin_name": "Object"
         },
         "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_1",
+          "node_title": "BP_ShowcaseModel_Level4_C.FinalViewChanged",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_VariableSet_1",
+          "node_title": "Set viewChangeFlag",
+          "pin_name": "execute"
+        },
+        "category": "exec"
       },
       {
         "from": {
@@ -7745,6 +9330,32 @@
           "pin_name": "execute"
         },
         "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_13",
+          "node_title": "Actor.SetActorTickEnabled",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_CreateWidget_0",
+          "node_title": "K2Node_CreateWidget_0",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_14",
+          "node_title": "GetOwningPlayer",
+          "pin_name": "ReturnValue"
+        },
+        "to": {
+          "node": "K2Node_CreateWidget_0",
+          "node_title": "K2Node_CreateWidget_0",
+          "pin_name": "OwningPlayer"
+        },
+        "category": "object"
       },
       {
         "from": {
@@ -7794,6 +9405,19 @@
         "to": {
           "node": "K2Node_VariableSet_0",
           "node_title": "Set bLevel4Started",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_21",
+          "node_title": "AddToViewport",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_22",
+          "node_title": "RemoveFromParent",
           "pin_name": "execute"
         },
         "category": "exec"
@@ -7852,6 +9476,19 @@
       },
       {
         "from": {
+          "node": "K2Node_CallFunction_3",
+          "node_title": "GetOwningPlayerPawn",
+          "pin_name": "ReturnValue"
+        },
+        "to": {
+          "node": "K2Node_DynamicCast_2",
+          "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+          "pin_name": "Object"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
           "node": "K2Node_CallFunction_30",
           "node_title": "GetOwningPlayer",
           "pin_name": "ReturnValue"
@@ -7870,8 +9507,34 @@
           "pin_name": "then"
         },
         "to": {
-          "node": "K2Node_DynamicCast_0",
+          "node": "K2Node_DynamicCast_1",
           "node_title": "Cast To CaissonPlayerController",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_32",
+          "node_title": "KismetSystemLibrary.PrintString",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_DynamicCast_0",
+          "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_33",
+          "node_title": "CaissonPlayerController.ContinueLevel4AfterStageSolved",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_IfThenElse_0",
+          "node_title": "K2Node_IfThenElse_0",
           "pin_name": "execute"
         },
         "category": "exec"
@@ -7901,6 +9564,19 @@
           "pin_name": "execute"
         },
         "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_4",
+          "node_title": "GetOwningPlayer",
+          "pin_name": "ReturnValue"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_5",
+          "node_title": "Controller.K2_GetPawn",
+          "pin_name": "self"
+        },
+        "category": "object"
       },
       {
         "from": {
@@ -7956,6 +9632,19 @@
       },
       {
         "from": {
+          "node": "K2Node_CallFunction_5",
+          "node_title": "Controller.K2_GetPawn",
+          "pin_name": "ReturnValue"
+        },
+        "to": {
+          "node": "K2Node_DynamicCast_0",
+          "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+          "pin_name": "Object"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
           "node": "K2Node_CallFunction_53",
           "node_title": "GetOwningPlayer",
           "pin_name": "ReturnValue"
@@ -7979,6 +9668,45 @@
           "pin_name": "Object"
         },
         "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_6",
+          "node_title": "Actor.SetActorHiddenInGame",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_7",
+          "node_title": "Actor.SetActorEnableCollision",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_7",
+          "node_title": "Actor.SetActorEnableCollision",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_13",
+          "node_title": "Actor.SetActorTickEnabled",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_8",
+          "node_title": "SetVisibility",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_SwitchEnum_2",
+          "node_title": "Switch on ELevel4StageId",
+          "pin_name": "execute"
+        },
+        "category": "exec"
       },
       {
         "from": {
@@ -8112,6 +9840,32 @@
       },
       {
         "from": {
+          "node": "K2Node_CreateWidget_0",
+          "node_title": "K2Node_CreateWidget_0",
+          "pin_name": "ReturnValue"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_21",
+          "node_title": "AddToViewport",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_CreateWidget_0",
+          "node_title": "K2Node_CreateWidget_0",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_21",
+          "node_title": "AddToViewport",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
           "node": "K2Node_CustomEvent_0",
           "node_title": "HandleLevel4PieceSelected",
           "pin_name": "OutputDelegate"
@@ -8229,6 +9983,19 @@
       },
       {
         "from": {
+          "node": "K2Node_CustomEvent_3",
+          "node_title": "EVT_OnLevel4StageSolved",
+          "pin_name": "SolvedStage"
+        },
+        "to": {
+          "node": "K2Node_SwitchEnum_2",
+          "node_title": "Switch on ELevel4StageId",
+          "pin_name": "Selection"
+        },
+        "category": "byte"
+      },
+      {
+        "from": {
           "node": "K2Node_CustomEvent_4",
           "node_title": "EVT_OnLevel4DifficultyChanged",
           "pin_name": "NewDifficulty"
@@ -8256,6 +10023,58 @@
       {
         "from": {
           "node": "K2Node_DynamicCast_0",
+          "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+          "pin_name": "AsBP Showcase Model Level 4"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_13",
+          "node_title": "Actor.SetActorTickEnabled",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_DynamicCast_0",
+          "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+          "pin_name": "AsBP Showcase Model Level 4"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_6",
+          "node_title": "Actor.SetActorHiddenInGame",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_DynamicCast_0",
+          "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_6",
+          "node_title": "Actor.SetActorHiddenInGame",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_DynamicCast_0",
+          "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+          "pin_name": "AsBP Showcase Model Level 4"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_7",
+          "node_title": "Actor.SetActorEnableCollision",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_DynamicCast_1",
           "node_title": "Cast To CaissonPlayerController",
           "pin_name": "AsCaisson Player Controller"
         },
@@ -8268,7 +10087,7 @@
       },
       {
         "from": {
-          "node": "K2Node_DynamicCast_0",
+          "node": "K2Node_DynamicCast_1",
           "node_title": "Cast To CaissonPlayerController",
           "pin_name": "AsCaisson Player Controller"
         },
@@ -8281,7 +10100,7 @@
       },
       {
         "from": {
-          "node": "K2Node_DynamicCast_0",
+          "node": "K2Node_DynamicCast_1",
           "node_title": "Cast To CaissonPlayerController",
           "pin_name": "then"
         },
@@ -8340,6 +10159,32 @@
         "to": {
           "node": "K2Node_CallFunction_56",
           "node_title": "CaissonPlayerController.SelectLevel4Piece",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_DynamicCast_2",
+          "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+          "pin_name": "AsBP Showcase Model Level 4"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_1",
+          "node_title": "BP_ShowcaseModel_Level4_C.FinalViewChanged",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_DynamicCast_2",
+          "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_1",
+          "node_title": "BP_ShowcaseModel_Level4_C.FinalViewChanged",
           "pin_name": "execute"
         },
         "category": "exec"
@@ -8463,6 +10308,19 @@
       },
       {
         "from": {
+          "node": "K2Node_IfThenElse_0",
+          "node_title": "K2Node_IfThenElse_0",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_DynamicCast_2",
+          "node_title": "Cast To BP_ShowcaseModel_Level4_C",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
           "node": "K2Node_MacroInstance_0",
           "node_title": "IsValid",
           "pin_name": "Is Not Valid"
@@ -8541,6 +10399,19 @@
       },
       {
         "from": {
+          "node": "K2Node_SwitchEnum_2",
+          "node_title": "Switch on ELevel4StageId",
+          "pin_name": "StarMap"
+        },
+        "to": {
+          "node": "K2Node_VariableSet_6",
+          "node_title": "Set viewChangeFlag",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
           "node": "K2Node_SwitchInteger_0",
           "node_title": "K2Node_SwitchInteger_0",
           "pin_name": "5"
@@ -8603,6 +10474,19 @@
           "pin_name": "execute"
         },
         "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_0",
+          "node_title": "Get viewChangeFlag",
+          "pin_name": "viewChangeFlag"
+        },
+        "to": {
+          "node": "K2Node_IfThenElse_0",
+          "node_title": "K2Node_IfThenElse_0",
+          "pin_name": "Condition"
+        },
+        "category": "bool"
       },
       {
         "from": {
@@ -9150,17 +11034,30 @@
       ],
       [
         "HandleLevel4Completed",
-        "KismetSystemLibrary.PrintString"
+        "KismetSystemLibrary.PrintString",
+        "Cast To BP_ShowcaseModel_Level4_C",
+        "Actor.SetActorHiddenInGame",
+        "Actor.SetActorEnableCollision",
+        "Actor.SetActorTickEnabled",
+        "K2Node_CreateWidget_0",
+        "AddToViewport",
+        "RemoveFromParent"
       ],
       [
         "EVT_OnLevel4StageSolved",
-        "SetVisibility"
+        "SetVisibility",
+        "Switch on ELevel4StageId",
+        "Set viewChangeFlag"
       ],
       [
         "Continue_Next.OnClicked",
         "SetVisibility",
         "Cast To CaissonPlayerController",
-        "CaissonPlayerController.ContinueLevel4AfterStageSolved"
+        "CaissonPlayerController.ContinueLevel4AfterStageSolved",
+        "K2Node_IfThenElse_0",
+        "Cast To BP_ShowcaseModel_Level4_C",
+        "BP_ShowcaseModel_Level4_C.FinalViewChanged",
+        "Set viewChangeFlag"
       ],
       [
         "EVT_OnLevel4DifficultyChanged",
@@ -9177,34 +11074,6 @@
       "module_count": 2,
       "connection_count": 1,
       "modules": [
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "BndEvt__W_Level4_Continue_Next_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature",
-          "meta": {
-            "function_name": "BndEvt__W_Level4_Continue_Next_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "ExecuteUbergraph_W_Level4",
-                  "pin_name": "execute"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_Continue_Next_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
-        },
         {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
@@ -9281,6 +11150,34 @@
             }
           ],
           "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_Continue_Next_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__W_Level4_Continue_Next_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__W_Level4_Continue_Next_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_W_Level4",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_Continue_Next_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [
@@ -9311,34 +11208,6 @@
       "module_count": 2,
       "connection_count": 1,
       "modules": [
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "BndEvt__W_Level4_difficuty_button_expert_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
-          "meta": {
-            "function_name": "BndEvt__W_Level4_difficuty_button_expert_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "ExecuteUbergraph_W_Level4",
-                  "pin_name": "execute"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_difficuty_button_expert_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
-        },
         {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
@@ -9415,6 +11284,34 @@
             }
           ],
           "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_difficuty_button_expert_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__W_Level4_difficuty_button_expert_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__W_Level4_difficuty_button_expert_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_W_Level4",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_difficuty_button_expert_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [
@@ -9445,34 +11342,6 @@
       "module_count": 2,
       "connection_count": 1,
       "modules": [
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "BndEvt__W_Level4_difficuty_button_normal_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
-          "meta": {
-            "function_name": "BndEvt__W_Level4_difficuty_button_normal_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "ExecuteUbergraph_W_Level4",
-                  "pin_name": "execute"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_difficuty_button_normal_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
-        },
         {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
@@ -9549,6 +11418,34 @@
             }
           ],
           "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_difficuty_button_normal_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__W_Level4_difficuty_button_normal_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__W_Level4_difficuty_button_normal_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_W_Level4",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_difficuty_button_normal_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [
@@ -9579,34 +11476,6 @@
       "module_count": 2,
       "connection_count": 1,
       "modules": [
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "BndEvt__W_Level4_pices_1_button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature",
-          "meta": {
-            "function_name": "BndEvt__W_Level4_pices_1_button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "ExecuteUbergraph_W_Level4",
-                  "pin_name": "execute"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_pices_1_button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
-        },
         {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
@@ -9683,6 +11552,34 @@
             }
           ],
           "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_pices_1_button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__W_Level4_pices_1_button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__W_Level4_pices_1_button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_W_Level4",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_pices_1_button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [
@@ -9713,34 +11610,6 @@
       "module_count": 2,
       "connection_count": 1,
       "modules": [
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "BndEvt__W_Level4_pices_2_button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature",
-          "meta": {
-            "function_name": "BndEvt__W_Level4_pices_2_button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "ExecuteUbergraph_W_Level4",
-                  "pin_name": "execute"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_pices_2_button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
-        },
         {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
@@ -9817,6 +11686,34 @@
             }
           ],
           "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_pices_2_button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__W_Level4_pices_2_button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__W_Level4_pices_2_button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_W_Level4",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_pices_2_button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [
@@ -9847,34 +11744,6 @@
       "module_count": 2,
       "connection_count": 1,
       "modules": [
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "BndEvt__W_Level4_pices_3_button_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature",
-          "meta": {
-            "function_name": "BndEvt__W_Level4_pices_3_button_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "ExecuteUbergraph_W_Level4",
-                  "pin_name": "execute"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_pices_3_button_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
-        },
         {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
@@ -9951,6 +11820,34 @@
             }
           ],
           "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_pices_3_button_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__W_Level4_pices_3_button_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__W_Level4_pices_3_button_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_W_Level4",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_pices_3_button_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [
@@ -9981,34 +11878,6 @@
       "module_count": 2,
       "connection_count": 1,
       "modules": [
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "BndEvt__W_Level4_pices_4_button_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature",
-          "meta": {
-            "function_name": "BndEvt__W_Level4_pices_4_button_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "ExecuteUbergraph_W_Level4",
-                  "pin_name": "execute"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_pices_4_button_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
-        },
         {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
@@ -10085,6 +11954,34 @@
             }
           ],
           "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_pices_4_button_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__W_Level4_pices_4_button_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__W_Level4_pices_4_button_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_W_Level4",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_pices_4_button_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [
@@ -10115,34 +12012,6 @@
       "module_count": 2,
       "connection_count": 1,
       "modules": [
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "BndEvt__W_Level4_pices_5_button_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature",
-          "meta": {
-            "function_name": "BndEvt__W_Level4_pices_5_button_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "ExecuteUbergraph_W_Level4",
-                  "pin_name": "execute"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_pices_5_button_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
-        },
         {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
@@ -10219,6 +12088,34 @@
             }
           ],
           "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_pices_5_button_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "BndEvt__W_Level4_pices_5_button_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature",
+          "meta": {
+            "function_name": "BndEvt__W_Level4_pices_5_button_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_W_Level4",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:BndEvt__W_Level4_pices_5_button_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [
@@ -10249,34 +12146,6 @@
       "module_count": 2,
       "connection_count": 1,
       "modules": [
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "Construct",
-          "meta": {
-            "function_name": "Construct"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "ExecuteUbergraph_W_Level4",
-                  "pin_name": "execute"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:Construct.K2Node_FunctionEntry_0'"
-        },
         {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
@@ -10353,6 +12222,34 @@
             }
           ],
           "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:Construct.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "Construct",
+          "meta": {
+            "function_name": "Construct"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_W_Level4",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:Construct.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [
@@ -10384,17 +12281,18 @@
       "connection_count": 3,
       "modules": [
         {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "EVT_OnLevel4DifficultyChanged",
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "ExecuteUbergraph_W_Level4",
           "meta": {
-            "function_name": "EVT_OnLevel4DifficultyChanged"
+            "function_name": "ExecuteUbergraph_W_Level4",
+            "function_owner": null
           },
           "pins": [
             {
-              "name": "then",
-              "direction": "output",
+              "name": "execute",
+              "direction": "input",
               "category": "exec",
               "subcategory": "",
               "default_value": null,
@@ -10403,28 +12301,61 @@
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
                   "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "execute"
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "name": "NewDifficulty",
+              "name": "then",
               "direction": "output",
-              "category": "byte",
+              "category": "exec",
               "subcategory": "",
-              "default_value": "Normal",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "self",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "EntryPoint",
+              "direction": "input",
+              "category": "int",
+              "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
               "default_object": null,
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
                   "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "K2Node_CustomEvent_NewDifficulty"
+                  "pin_name": "then"
                 }
               ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
             }
           ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:EVT_OnLevel4DifficultyChanged.K2Node_FunctionEntry_0'"
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:EVT_OnLevel4DifficultyChanged.K2Node_CallFunction_0'"
         },
         {
           "id": "K2Node_SetVariableOnPersistentFrame_0",
@@ -10510,6 +12441,105 @@
           "raw_export_path": "/Script/BlueprintGraph.K2Node_SetVariableOnPersistentFrame'/Game/UI/W_Level4.W_Level4:EVT_OnLevel4DifficultyChanged.K2Node_SetVariableOnPersistentFrame_0'"
         },
         {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "EVT_OnLevel4DifficultyChanged",
+          "meta": {
+            "function_name": "EVT_OnLevel4DifficultyChanged"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_SetVariableOnPersistentFrame_0",
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "execute"
+                }
+              ]
+            },
+            {
+              "name": "NewDifficulty",
+              "direction": "output",
+              "category": "byte",
+              "subcategory": "",
+              "default_value": "Normal",
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_SetVariableOnPersistentFrame_0",
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "K2Node_CustomEvent_NewDifficulty"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:EVT_OnLevel4DifficultyChanged.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "node_title": "EVT_OnLevel4DifficultyChanged",
+            "pin_name": "NewDifficulty"
+          },
+          "to": {
+            "node": "K2Node_SetVariableOnPersistentFrame_0",
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "K2Node_CustomEvent_NewDifficulty"
+          },
+          "category": "byte"
+        },
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "node_title": "EVT_OnLevel4DifficultyChanged",
+            "pin_name": "then"
+          },
+          "to": {
+            "node": "K2Node_SetVariableOnPersistentFrame_0",
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "execute"
+          },
+          "category": "exec"
+        },
+        {
+          "from": {
+            "node": "K2Node_SetVariableOnPersistentFrame_0",
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "then"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "node_title": "ExecuteUbergraph_W_Level4",
+            "pin_name": "execute"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "EVT_OnLevel4DifficultyChanged",
+          "SetVariableOnPersistentFrame",
+          "ExecuteUbergraph_W_Level4"
+        ]
+      ]
+    },
+    {
+      "name": "EVT_OnLevel4StageSolved",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 3,
+      "connection_count": 4,
+      "modules": [
+        {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
           "kind": "call_function",
@@ -10584,121 +12614,7 @@
               "linked_to": []
             }
           ],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:EVT_OnLevel4DifficultyChanged.K2Node_CallFunction_0'"
-        }
-      ],
-      "connections": [
-        {
-          "from": {
-            "node": "K2Node_FunctionEntry_0",
-            "node_title": "EVT_OnLevel4DifficultyChanged",
-            "pin_name": "NewDifficulty"
-          },
-          "to": {
-            "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "node_title": "SetVariableOnPersistentFrame",
-            "pin_name": "K2Node_CustomEvent_NewDifficulty"
-          },
-          "category": "byte"
-        },
-        {
-          "from": {
-            "node": "K2Node_FunctionEntry_0",
-            "node_title": "EVT_OnLevel4DifficultyChanged",
-            "pin_name": "then"
-          },
-          "to": {
-            "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "node_title": "SetVariableOnPersistentFrame",
-            "pin_name": "execute"
-          },
-          "category": "exec"
-        },
-        {
-          "from": {
-            "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "node_title": "SetVariableOnPersistentFrame",
-            "pin_name": "then"
-          },
-          "to": {
-            "node": "K2Node_CallFunction_0",
-            "node_title": "ExecuteUbergraph_W_Level4",
-            "pin_name": "execute"
-          },
-          "category": "exec"
-        }
-      ],
-      "exec_traces": [
-        [
-          "EVT_OnLevel4DifficultyChanged",
-          "SetVariableOnPersistentFrame",
-          "ExecuteUbergraph_W_Level4"
-        ]
-      ]
-    },
-    {
-      "name": "EVT_OnLevel4StageSolved",
-      "schema": "BlueprintGraph.EdGraphSchema_K2",
-      "module_count": 3,
-      "connection_count": 4,
-      "modules": [
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "EVT_OnLevel4StageSolved",
-          "meta": {
-            "function_name": "EVT_OnLevel4StageSolved"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "execute"
-                }
-              ]
-            },
-            {
-              "name": "SolvedStage",
-              "direction": "output",
-              "category": "byte",
-              "subcategory": "",
-              "default_value": "None",
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "K2Node_CustomEvent_SolvedStage"
-                }
-              ]
-            },
-            {
-              "name": "StageIndex",
-              "direction": "output",
-              "category": "int",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "K2Node_CustomEvent_StageIndex"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:EVT_OnLevel4StageSolved.K2Node_FunctionEntry_0'"
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:EVT_OnLevel4StageSolved.K2Node_CallFunction_0'"
         },
         {
           "id": "K2Node_SetVariableOnPersistentFrame_0",
@@ -10812,30 +12728,14 @@
           "raw_export_path": "/Script/BlueprintGraph.K2Node_SetVariableOnPersistentFrame'/Game/UI/W_Level4.W_Level4:EVT_OnLevel4StageSolved.K2Node_SetVariableOnPersistentFrame_0'"
         },
         {
-          "id": "K2Node_CallFunction_0",
-          "class": "K2Node_CallFunction",
-          "kind": "call_function",
-          "title": "ExecuteUbergraph_W_Level4",
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "EVT_OnLevel4StageSolved",
           "meta": {
-            "function_name": "ExecuteUbergraph_W_Level4",
-            "function_owner": null
+            "function_name": "EVT_OnLevel4StageSolved"
           },
           "pins": [
-            {
-              "name": "execute",
-              "direction": "input",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "then"
-                }
-              ]
-            },
             {
               "name": "then",
               "direction": "output",
@@ -10843,50 +12743,47 @@
               "subcategory": "",
               "default_value": null,
               "default_object": null,
-              "linked_to": []
+              "linked_to": [
+                {
+                  "node": "K2Node_SetVariableOnPersistentFrame_0",
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "execute"
+                }
+              ]
             },
             {
-              "name": "self",
-              "direction": "input",
-              "category": "object",
-              "subcategory": "self",
-              "default_value": null,
+              "name": "SolvedStage",
+              "direction": "output",
+              "category": "byte",
+              "subcategory": "",
+              "default_value": "None",
               "default_object": null,
-              "linked_to": []
+              "linked_to": [
+                {
+                  "node": "K2Node_SetVariableOnPersistentFrame_0",
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "K2Node_CustomEvent_SolvedStage"
+                }
+              ]
             },
             {
-              "name": "EntryPoint",
-              "direction": "input",
+              "name": "StageIndex",
+              "direction": "output",
               "category": "int",
               "subcategory": "",
-              "default_value": "0",
-              "default_object": null,
-              "linked_to": []
-            }
-          ],
-          "important_inputs": [
-            {
-              "name": "execute",
-              "category": "exec",
               "default_value": null,
               "default_object": null,
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
                   "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "then"
+                  "pin_name": "K2Node_CustomEvent_StageIndex"
                 }
               ]
-            },
-            {
-              "name": "self",
-              "category": "object",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
             }
           ],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:EVT_OnLevel4StageSolved.K2Node_CallFunction_0'"
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:EVT_OnLevel4StageSolved.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [
@@ -10957,34 +12854,6 @@
       "module_count": 2,
       "connection_count": 1,
       "modules": [
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "HandleLevel4Completed",
-          "meta": {
-            "function_name": "HandleLevel4Completed"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "ExecuteUbergraph_W_Level4",
-                  "pin_name": "execute"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:HandleLevel4Completed.K2Node_FunctionEntry_0'"
-        },
         {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
@@ -11061,6 +12930,34 @@
             }
           ],
           "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:HandleLevel4Completed.K2Node_CallFunction_0'"
+        },
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "HandleLevel4Completed",
+          "meta": {
+            "function_name": "HandleLevel4Completed"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_W_Level4",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:HandleLevel4Completed.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [
@@ -11092,17 +12989,18 @@
       "connection_count": 3,
       "modules": [
         {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "HandleLevel4PieceSelected",
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "ExecuteUbergraph_W_Level4",
           "meta": {
-            "function_name": "HandleLevel4PieceSelected"
+            "function_name": "ExecuteUbergraph_W_Level4",
+            "function_owner": null
           },
           "pins": [
             {
-              "name": "then",
-              "direction": "output",
+              "name": "execute",
+              "direction": "input",
               "category": "exec",
               "subcategory": "",
               "default_value": null,
@@ -11111,28 +13009,61 @@
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
                   "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "execute"
+                  "pin_name": "then"
                 }
               ]
             },
             {
-              "name": "PieceIndex",
+              "name": "then",
               "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "self",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "EntryPoint",
+              "direction": "input",
               "category": "int",
               "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
               "default_value": null,
               "default_object": null,
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
                   "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "K2Node_CustomEvent_PieceIndex"
+                  "pin_name": "then"
                 }
               ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
             }
           ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:HandleLevel4PieceSelected.K2Node_FunctionEntry_0'"
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:HandleLevel4PieceSelected.K2Node_CallFunction_0'"
         },
         {
           "id": "K2Node_SetVariableOnPersistentFrame_0",
@@ -11218,6 +13149,105 @@
           "raw_export_path": "/Script/BlueprintGraph.K2Node_SetVariableOnPersistentFrame'/Game/UI/W_Level4.W_Level4:HandleLevel4PieceSelected.K2Node_SetVariableOnPersistentFrame_0'"
         },
         {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "HandleLevel4PieceSelected",
+          "meta": {
+            "function_name": "HandleLevel4PieceSelected"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_SetVariableOnPersistentFrame_0",
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "execute"
+                }
+              ]
+            },
+            {
+              "name": "PieceIndex",
+              "direction": "output",
+              "category": "int",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_SetVariableOnPersistentFrame_0",
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "K2Node_CustomEvent_PieceIndex"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:HandleLevel4PieceSelected.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "node_title": "HandleLevel4PieceSelected",
+            "pin_name": "PieceIndex"
+          },
+          "to": {
+            "node": "K2Node_SetVariableOnPersistentFrame_0",
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "K2Node_CustomEvent_PieceIndex"
+          },
+          "category": "int"
+        },
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "node_title": "HandleLevel4PieceSelected",
+            "pin_name": "then"
+          },
+          "to": {
+            "node": "K2Node_SetVariableOnPersistentFrame_0",
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "execute"
+          },
+          "category": "exec"
+        },
+        {
+          "from": {
+            "node": "K2Node_SetVariableOnPersistentFrame_0",
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "then"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "node_title": "ExecuteUbergraph_W_Level4",
+            "pin_name": "execute"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "HandleLevel4PieceSelected",
+          "SetVariableOnPersistentFrame",
+          "ExecuteUbergraph_W_Level4"
+        ]
+      ]
+    },
+    {
+      "name": "HandleLevel4StageChanged",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 3,
+      "connection_count": 4,
+      "modules": [
+        {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
           "kind": "call_function",
@@ -11292,121 +13322,7 @@
               "linked_to": []
             }
           ],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:HandleLevel4PieceSelected.K2Node_CallFunction_0'"
-        }
-      ],
-      "connections": [
-        {
-          "from": {
-            "node": "K2Node_FunctionEntry_0",
-            "node_title": "HandleLevel4PieceSelected",
-            "pin_name": "PieceIndex"
-          },
-          "to": {
-            "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "node_title": "SetVariableOnPersistentFrame",
-            "pin_name": "K2Node_CustomEvent_PieceIndex"
-          },
-          "category": "int"
-        },
-        {
-          "from": {
-            "node": "K2Node_FunctionEntry_0",
-            "node_title": "HandleLevel4PieceSelected",
-            "pin_name": "then"
-          },
-          "to": {
-            "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "node_title": "SetVariableOnPersistentFrame",
-            "pin_name": "execute"
-          },
-          "category": "exec"
-        },
-        {
-          "from": {
-            "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "node_title": "SetVariableOnPersistentFrame",
-            "pin_name": "then"
-          },
-          "to": {
-            "node": "K2Node_CallFunction_0",
-            "node_title": "ExecuteUbergraph_W_Level4",
-            "pin_name": "execute"
-          },
-          "category": "exec"
-        }
-      ],
-      "exec_traces": [
-        [
-          "HandleLevel4PieceSelected",
-          "SetVariableOnPersistentFrame",
-          "ExecuteUbergraph_W_Level4"
-        ]
-      ]
-    },
-    {
-      "name": "HandleLevel4StageChanged",
-      "schema": "BlueprintGraph.EdGraphSchema_K2",
-      "module_count": 3,
-      "connection_count": 4,
-      "modules": [
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "HandleLevel4StageChanged",
-          "meta": {
-            "function_name": "HandleLevel4StageChanged"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "execute"
-                }
-              ]
-            },
-            {
-              "name": "NewStage",
-              "direction": "output",
-              "category": "byte",
-              "subcategory": "",
-              "default_value": "None",
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "K2Node_CustomEvent_NewStage"
-                }
-              ]
-            },
-            {
-              "name": "StageIndex",
-              "direction": "output",
-              "category": "int",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "K2Node_CustomEvent_StageIndex_1"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:HandleLevel4StageChanged.K2Node_FunctionEntry_0'"
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:HandleLevel4StageChanged.K2Node_CallFunction_0'"
         },
         {
           "id": "K2Node_SetVariableOnPersistentFrame_0",
@@ -11520,6 +13436,133 @@
           "raw_export_path": "/Script/BlueprintGraph.K2Node_SetVariableOnPersistentFrame'/Game/UI/W_Level4.W_Level4:HandleLevel4StageChanged.K2Node_SetVariableOnPersistentFrame_0'"
         },
         {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "HandleLevel4StageChanged",
+          "meta": {
+            "function_name": "HandleLevel4StageChanged"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_SetVariableOnPersistentFrame_0",
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "execute"
+                }
+              ]
+            },
+            {
+              "name": "NewStage",
+              "direction": "output",
+              "category": "byte",
+              "subcategory": "",
+              "default_value": "None",
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_SetVariableOnPersistentFrame_0",
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "K2Node_CustomEvent_NewStage"
+                }
+              ]
+            },
+            {
+              "name": "StageIndex",
+              "direction": "output",
+              "category": "int",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_SetVariableOnPersistentFrame_0",
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "K2Node_CustomEvent_StageIndex_1"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:HandleLevel4StageChanged.K2Node_FunctionEntry_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "node_title": "HandleLevel4StageChanged",
+            "pin_name": "NewStage"
+          },
+          "to": {
+            "node": "K2Node_SetVariableOnPersistentFrame_0",
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "K2Node_CustomEvent_NewStage"
+          },
+          "category": "byte"
+        },
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "node_title": "HandleLevel4StageChanged",
+            "pin_name": "StageIndex"
+          },
+          "to": {
+            "node": "K2Node_SetVariableOnPersistentFrame_0",
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "K2Node_CustomEvent_StageIndex_1"
+          },
+          "category": "int"
+        },
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "node_title": "HandleLevel4StageChanged",
+            "pin_name": "then"
+          },
+          "to": {
+            "node": "K2Node_SetVariableOnPersistentFrame_0",
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "execute"
+          },
+          "category": "exec"
+        },
+        {
+          "from": {
+            "node": "K2Node_SetVariableOnPersistentFrame_0",
+            "node_title": "SetVariableOnPersistentFrame",
+            "pin_name": "then"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "node_title": "ExecuteUbergraph_W_Level4",
+            "pin_name": "execute"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "HandleLevel4StageChanged",
+          "SetVariableOnPersistentFrame",
+          "ExecuteUbergraph_W_Level4"
+        ]
+      ]
+    },
+    {
+      "name": "PreConstruct",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 3,
+      "connection_count": 3,
+      "modules": [
+        {
           "id": "K2Node_CallFunction_0",
           "class": "K2Node_CallFunction",
           "kind": "call_function",
@@ -11594,119 +13637,7 @@
               "linked_to": []
             }
           ],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:HandleLevel4StageChanged.K2Node_CallFunction_0'"
-        }
-      ],
-      "connections": [
-        {
-          "from": {
-            "node": "K2Node_FunctionEntry_0",
-            "node_title": "HandleLevel4StageChanged",
-            "pin_name": "NewStage"
-          },
-          "to": {
-            "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "node_title": "SetVariableOnPersistentFrame",
-            "pin_name": "K2Node_CustomEvent_NewStage"
-          },
-          "category": "byte"
-        },
-        {
-          "from": {
-            "node": "K2Node_FunctionEntry_0",
-            "node_title": "HandleLevel4StageChanged",
-            "pin_name": "StageIndex"
-          },
-          "to": {
-            "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "node_title": "SetVariableOnPersistentFrame",
-            "pin_name": "K2Node_CustomEvent_StageIndex_1"
-          },
-          "category": "int"
-        },
-        {
-          "from": {
-            "node": "K2Node_FunctionEntry_0",
-            "node_title": "HandleLevel4StageChanged",
-            "pin_name": "then"
-          },
-          "to": {
-            "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "node_title": "SetVariableOnPersistentFrame",
-            "pin_name": "execute"
-          },
-          "category": "exec"
-        },
-        {
-          "from": {
-            "node": "K2Node_SetVariableOnPersistentFrame_0",
-            "node_title": "SetVariableOnPersistentFrame",
-            "pin_name": "then"
-          },
-          "to": {
-            "node": "K2Node_CallFunction_0",
-            "node_title": "ExecuteUbergraph_W_Level4",
-            "pin_name": "execute"
-          },
-          "category": "exec"
-        }
-      ],
-      "exec_traces": [
-        [
-          "HandleLevel4StageChanged",
-          "SetVariableOnPersistentFrame",
-          "ExecuteUbergraph_W_Level4"
-        ]
-      ]
-    },
-    {
-      "name": "PreConstruct",
-      "schema": "BlueprintGraph.EdGraphSchema_K2",
-      "module_count": 3,
-      "connection_count": 3,
-      "modules": [
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "PreConstruct",
-          "meta": {
-            "function_name": "PreConstruct"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "execute"
-                }
-              ]
-            },
-            {
-              "name": "IsDesignTime",
-              "direction": "output",
-              "category": "bool",
-              "subcategory": "",
-              "default_value": "false",
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "K2Node_Event_IsDesignTime"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:PreConstruct.K2Node_FunctionEntry_0'"
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:PreConstruct.K2Node_CallFunction_0'"
         },
         {
           "id": "K2Node_SetVariableOnPersistentFrame_0",
@@ -11792,30 +13723,14 @@
           "raw_export_path": "/Script/BlueprintGraph.K2Node_SetVariableOnPersistentFrame'/Game/UI/W_Level4.W_Level4:PreConstruct.K2Node_SetVariableOnPersistentFrame_0'"
         },
         {
-          "id": "K2Node_CallFunction_0",
-          "class": "K2Node_CallFunction",
-          "kind": "call_function",
-          "title": "ExecuteUbergraph_W_Level4",
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "PreConstruct",
           "meta": {
-            "function_name": "ExecuteUbergraph_W_Level4",
-            "function_owner": null
+            "function_name": "PreConstruct"
           },
           "pins": [
-            {
-              "name": "execute",
-              "direction": "input",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_SetVariableOnPersistentFrame_0",
-                  "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "then"
-                }
-              ]
-            },
             {
               "name": "then",
               "direction": "output",
@@ -11823,50 +13738,32 @@
               "subcategory": "",
               "default_value": null,
               "default_object": null,
-              "linked_to": []
+              "linked_to": [
+                {
+                  "node": "K2Node_SetVariableOnPersistentFrame_0",
+                  "node_title": "SetVariableOnPersistentFrame",
+                  "pin_name": "execute"
+                }
+              ]
             },
             {
-              "name": "self",
-              "direction": "input",
-              "category": "object",
-              "subcategory": "self",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "EntryPoint",
-              "direction": "input",
-              "category": "int",
+              "name": "IsDesignTime",
+              "direction": "output",
+              "category": "bool",
               "subcategory": "",
-              "default_value": "0",
-              "default_object": null,
-              "linked_to": []
-            }
-          ],
-          "important_inputs": [
-            {
-              "name": "execute",
-              "category": "exec",
-              "default_value": null,
+              "default_value": "false",
               "default_object": null,
               "linked_to": [
                 {
                   "node": "K2Node_SetVariableOnPersistentFrame_0",
                   "node_title": "SetVariableOnPersistentFrame",
-                  "pin_name": "then"
+                  "pin_name": "K2Node_Event_IsDesignTime"
                 }
               ]
-            },
-            {
-              "name": "self",
-              "category": "object",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
             }
           ],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4.W_Level4:PreConstruct.K2Node_CallFunction_0'"
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4.W_Level4:PreConstruct.K2Node_FunctionEntry_0'"
         }
       ],
       "connections": [
@@ -12702,6 +14599,19 @@
           "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/CaissonCeiling.Level4PuzzleComponent'"
         },
         "metadata": null
+      },
+      {
+        "name": "viewChangeFlag",
+        "guid": "3669C0AD4B93497327C17ABA0CECAF3E",
+        "friendly_name": "View Change Flag",
+        "category": "NSLOCTEXT(\"KismetSchema\", \"Default\", \"Default\")",
+        "property_flags": "65541",
+        "type": {
+          "pin_category": "bool",
+          "pin_subcategory": null,
+          "pin_subcategory_object": null
+        },
+        "metadata": null
       }
     ],
     "generated_variables": [
@@ -13351,8 +15261,8 @@
   "doc_view": {
     "blueprint_name": "W_Level4",
     "blueprint_class": "WidgetBlueprint",
-    "module_count": 101,
-    "connection_count": 109,
+    "module_count": 119,
+    "connection_count": 133,
     "component_events": [
       {
         "title": "difficuty_button_normal.OnClicked",
@@ -13480,17 +15390,30 @@
       ],
       [
         "HandleLevel4Completed",
-        "KismetSystemLibrary.PrintString"
+        "KismetSystemLibrary.PrintString",
+        "Cast To BP_ShowcaseModel_Level4_C",
+        "Actor.SetActorHiddenInGame",
+        "Actor.SetActorEnableCollision",
+        "Actor.SetActorTickEnabled",
+        "K2Node_CreateWidget_0",
+        "AddToViewport",
+        "RemoveFromParent"
       ],
       [
         "EVT_OnLevel4StageSolved",
-        "SetVisibility"
+        "SetVisibility",
+        "Switch on ELevel4StageId",
+        "Set viewChangeFlag"
       ],
       [
         "Continue_Next.OnClicked",
         "SetVisibility",
         "Cast To CaissonPlayerController",
-        "CaissonPlayerController.ContinueLevel4AfterStageSolved"
+        "CaissonPlayerController.ContinueLevel4AfterStageSolved",
+        "K2Node_IfThenElse_0",
+        "Cast To BP_ShowcaseModel_Level4_C",
+        "BP_ShowcaseModel_Level4_C.FinalViewChanged",
+        "Set viewChangeFlag"
       ],
       [
         "EVT_OnLevel4DifficultyChanged",

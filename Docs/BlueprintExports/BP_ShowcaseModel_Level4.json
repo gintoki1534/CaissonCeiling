@@ -11,8 +11,8 @@
   "event_graph": {
     "name": "EventGraph",
     "schema": "BlueprintGraph.EdGraphSchema_K2",
-    "module_count": 48,
-    "connection_count": 54,
+    "module_count": 69,
+    "connection_count": 79,
     "modules": [
       {
         "id": "K2Node_Event_0",
@@ -42,7 +42,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_0",
+                "node": "K2Node_CallFunction_2",
                 "node_title": "InitializeLevel3VisualMaterials",
                 "pin_name": "execute"
               }
@@ -135,10 +135,10 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_Event_2'"
       },
       {
-        "id": "K2Node_Timeline_1",
+        "id": "K2Node_Timeline_2",
         "class": "K2Node_Timeline",
         "kind": "K2Node_Timeline",
-        "title": "K2Node_Timeline_1",
+        "title": "K2Node_Timeline_2",
         "meta": {},
         "pins": [
           {
@@ -159,7 +159,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CustomEvent_2",
+                "node": "K2Node_CustomEvent_3",
                 "node_title": "Event_PlayDustTransition",
                 "pin_name": "then"
               }
@@ -258,7 +258,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_5",
+                "node": "K2Node_CallFunction_10",
                 "node_title": "KismetMathLibrary.Lerp",
                 "pin_name": "Alpha"
               }
@@ -273,14 +273,14 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CustomEvent_2",
+                "node": "K2Node_CustomEvent_3",
                 "node_title": "Event_PlayDustTransition",
                 "pin_name": "then"
               }
             ]
           }
         ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_Timeline'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_Timeline_1'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Timeline'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_Timeline_2'"
       },
       {
         "id": "K2Node_Timeline_0",
@@ -349,7 +349,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_7",
+                "node": "K2Node_CallFunction_6",
                 "node_title": "MaterialInstanceDynamic.SetScalarParameterValue",
                 "pin_name": "execute"
               }
@@ -364,7 +364,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableSet_12",
+                "node": "K2Node_VariableSet_0",
                 "node_title": "Set CurrentOilVisual01",
                 "pin_name": "execute"
               }
@@ -469,7 +469,7 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CustomEvent'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CustomEvent_0'"
       },
       {
-        "id": "K2Node_CallFunction_0",
+        "id": "K2Node_CallFunction_2",
         "class": "K2Node_CallFunction",
         "kind": "call_function",
         "title": "InitializeLevel3VisualMaterials",
@@ -534,10 +534,10 @@
             "linked_to": []
           }
         ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_0'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_2'"
       },
       {
-        "id": "K2Node_CustomEvent_2",
+        "id": "K2Node_CustomEvent_3",
         "class": "K2Node_CustomEvent",
         "kind": "custom_event",
         "title": "Event_PlayDustTransition",
@@ -564,18 +564,18 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_Timeline_1",
-                "node_title": "K2Node_Timeline_1",
+                "node": "K2Node_Timeline_2",
+                "node_title": "K2Node_Timeline_2",
                 "pin_name": "PlayFromStart"
               }
             ]
           }
         ],
         "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CustomEvent'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CustomEvent_2'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CustomEvent'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CustomEvent_3'"
       },
       {
-        "id": "K2Node_CallFunction_5",
+        "id": "K2Node_CallFunction_10",
         "class": "K2Node_CallFunction",
         "kind": "call_function",
         "title": "KismetMathLibrary.Lerp",
@@ -602,7 +602,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_3",
+                "node": "K2Node_VariableGet_20",
                 "node_title": "Get DustTransitionStart01",
                 "pin_name": "DustTransitionStart01"
               }
@@ -617,7 +617,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_4",
+                "node": "K2Node_VariableGet_23",
                 "node_title": "Get DustTransitionTarget01",
                 "pin_name": "DustTransitionTarget01"
               }
@@ -632,8 +632,8 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_Timeline_1",
-                "node_title": "K2Node_Timeline_1",
+                "node": "K2Node_Timeline_2",
+                "node_title": "K2Node_Timeline_2",
                 "pin_name": "Alpha01"
               }
             ]
@@ -674,7 +674,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_3",
+                "node": "K2Node_VariableGet_20",
                 "node_title": "Get DustTransitionStart01",
                 "pin_name": "DustTransitionStart01"
               }
@@ -687,7 +687,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_4",
+                "node": "K2Node_VariableGet_23",
                 "node_title": "Get DustTransitionTarget01",
                 "pin_name": "DustTransitionTarget01"
               }
@@ -700,14 +700,14 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_Timeline_1",
-                "node_title": "K2Node_Timeline_1",
+                "node": "K2Node_Timeline_2",
+                "node_title": "K2Node_Timeline_2",
                 "pin_name": "Alpha01"
               }
             ]
           }
         ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_5'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_10'"
       },
       {
         "id": "K2Node_VariableSet_8",
@@ -751,7 +751,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_5",
+                "node": "K2Node_CallFunction_10",
                 "node_title": "KismetMathLibrary.Lerp",
                 "pin_name": "ReturnValue"
               }
@@ -797,7 +797,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_5",
+                "node": "K2Node_CallFunction_10",
                 "node_title": "KismetMathLibrary.Lerp",
                 "pin_name": "ReturnValue"
               }
@@ -814,7 +814,7 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableSet_8'"
       },
       {
-        "id": "K2Node_VariableGet_3",
+        "id": "K2Node_VariableGet_20",
         "class": "K2Node_VariableGet",
         "kind": "variable_get",
         "title": "Get DustTransitionStart01",
@@ -831,7 +831,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_5",
+                "node": "K2Node_CallFunction_10",
                 "node_title": "KismetMathLibrary.Lerp",
                 "pin_name": "A"
               }
@@ -856,10 +856,10 @@
             "linked_to": []
           }
         ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_3'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_20'"
       },
       {
-        "id": "K2Node_VariableGet_4",
+        "id": "K2Node_VariableGet_23",
         "class": "K2Node_VariableGet",
         "kind": "variable_get",
         "title": "Get DustTransitionTarget01",
@@ -876,7 +876,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_5",
+                "node": "K2Node_CallFunction_10",
                 "node_title": "KismetMathLibrary.Lerp",
                 "pin_name": "B"
               }
@@ -901,7 +901,7 @@
             "linked_to": []
           }
         ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_4'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_23'"
       },
       {
         "id": "K2Node_VariableGet_6",
@@ -967,8 +967,8 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_Timeline_1",
-                "node_title": "K2Node_Timeline_1",
+                "node": "K2Node_Timeline_2",
+                "node_title": "K2Node_Timeline_2",
                 "pin_name": "Update"
               }
             ]
@@ -1021,7 +1021,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_5",
+                "node": "K2Node_CallFunction_10",
                 "node_title": "KismetMathLibrary.Lerp",
                 "pin_name": "ReturnValue"
               }
@@ -1036,8 +1036,8 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_Timeline_1",
-                "node_title": "K2Node_Timeline_1",
+                "node": "K2Node_Timeline_2",
+                "node_title": "K2Node_Timeline_2",
                 "pin_name": "Update"
               }
             ]
@@ -1069,7 +1069,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_5",
+                "node": "K2Node_CallFunction_10",
                 "node_title": "KismetMathLibrary.Lerp",
                 "pin_name": "ReturnValue"
               }
@@ -1096,8 +1096,8 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_Timeline_1",
-                "node_title": "K2Node_Timeline_1",
+                "node": "K2Node_Timeline_2",
+                "node_title": "K2Node_Timeline_2",
                 "pin_name": "Finished"
               }
             ]
@@ -1153,8 +1153,8 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_Timeline_1",
-                "node_title": "K2Node_Timeline_1",
+                "node": "K2Node_Timeline_2",
+                "node_title": "K2Node_Timeline_2",
                 "pin_name": "Finished"
               }
             ]
@@ -1308,7 +1308,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_0",
+                "node": "K2Node_VariableGet_2",
                 "node_title": "Get OilTransitionTarget01",
                 "pin_name": "OilTransitionTarget01"
               }
@@ -1338,7 +1338,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_7",
+                "node": "K2Node_CallFunction_6",
                 "node_title": "MaterialInstanceDynamic.SetScalarParameterValue",
                 "pin_name": "Value"
               },
@@ -1378,7 +1378,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_0",
+                "node": "K2Node_VariableGet_2",
                 "node_title": "Get OilTransitionTarget01",
                 "pin_name": "OilTransitionTarget01"
               }
@@ -1446,7 +1446,7 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_8'"
       },
       {
-        "id": "K2Node_VariableGet_0",
+        "id": "K2Node_VariableGet_2",
         "class": "K2Node_VariableGet",
         "kind": "variable_get",
         "title": "Get OilTransitionTarget01",
@@ -1488,10 +1488,10 @@
             "linked_to": []
           }
         ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_0'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_2'"
       },
       {
-        "id": "K2Node_CallFunction_7",
+        "id": "K2Node_CallFunction_6",
         "class": "K2Node_CallFunction",
         "kind": "call_function",
         "title": "MaterialInstanceDynamic.SetScalarParameterValue",
@@ -1618,7 +1618,7 @@
             ]
           }
         ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_7'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_6'"
       },
       {
         "id": "K2Node_VariableGet_10",
@@ -1638,7 +1638,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_7",
+                "node": "K2Node_CallFunction_6",
                 "node_title": "MaterialInstanceDynamic.SetScalarParameterValue",
                 "pin_name": "self"
               }
@@ -1683,7 +1683,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_7",
+                "node": "K2Node_CallFunction_6",
                 "node_title": "MaterialInstanceDynamic.SetScalarParameterValue",
                 "pin_name": "then"
               }
@@ -1740,7 +1740,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_7",
+                "node": "K2Node_CallFunction_6",
                 "node_title": "MaterialInstanceDynamic.SetScalarParameterValue",
                 "pin_name": "then"
               }
@@ -1770,7 +1770,7 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableSet_11'"
       },
       {
-        "id": "K2Node_VariableSet_12",
+        "id": "K2Node_VariableSet_0",
         "class": "K2Node_VariableSet",
         "kind": "variable_set",
         "title": "Set CurrentOilVisual01",
@@ -1871,7 +1871,7 @@
             "linked_to": []
           }
         ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableSet_12'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableSet_0'"
       },
       {
         "id": "K2Node_VariableGet_9",
@@ -1891,7 +1891,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableSet_12",
+                "node": "K2Node_VariableSet_0",
                 "node_title": "Set CurrentOilVisual01",
                 "pin_name": "CurrentOilVisual01"
               }
@@ -2911,7 +2911,7 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableSet_18'"
       },
       {
-        "id": "K2Node_VariableGet_15",
+        "id": "K2Node_VariableGet_21",
         "class": "K2Node_VariableGet",
         "kind": "variable_get",
         "title": "Get RepairMeshRef",
@@ -2953,7 +2953,7 @@
             "linked_to": []
           }
         ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_15'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_21'"
       },
       {
         "id": "K2Node_CallFunction_18",
@@ -3004,7 +3004,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_15",
+                "node": "K2Node_VariableGet_21",
                 "node_title": "Get RepairMeshRef",
                 "pin_name": "RepairMeshRef"
               }
@@ -3080,7 +3080,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_15",
+                "node": "K2Node_VariableGet_21",
                 "node_title": "Get RepairMeshRef",
                 "pin_name": "RepairMeshRef"
               }
@@ -3498,7 +3498,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableSet_23",
+                "node": "K2Node_VariableSet_1",
                 "node_title": "Set OilTransitionTarget01",
                 "pin_name": "execute"
               }
@@ -3557,7 +3557,7 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableSet_22'"
       },
       {
-        "id": "K2Node_VariableSet_23",
+        "id": "K2Node_VariableSet_1",
         "class": "K2Node_VariableSet",
         "kind": "variable_set",
         "title": "Set OilTransitionTarget01",
@@ -3645,10 +3645,10 @@
             "linked_to": []
           }
         ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableSet_23'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableSet_1'"
       },
       {
-        "id": "K2Node_VariableGet_17",
+        "id": "K2Node_VariableGet_22",
         "class": "K2Node_VariableGet",
         "kind": "variable_get",
         "title": "Get RepairMeshRef",
@@ -3690,7 +3690,7 @@
             "linked_to": []
           }
         ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_17'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_22'"
       },
       {
         "id": "K2Node_CallFunction_20",
@@ -3711,7 +3711,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableSet_23",
+                "node": "K2Node_VariableSet_1",
                 "node_title": "Set OilTransitionTarget01",
                 "pin_name": "then"
               }
@@ -3735,7 +3735,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_17",
+                "node": "K2Node_VariableGet_22",
                 "node_title": "Get RepairMeshRef",
                 "pin_name": "RepairMeshRef"
               }
@@ -3774,7 +3774,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableSet_23",
+                "node": "K2Node_VariableSet_1",
                 "node_title": "Set OilTransitionTarget01",
                 "pin_name": "then"
               }
@@ -3787,7 +3787,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_17",
+                "node": "K2Node_VariableGet_22",
                 "node_title": "Get RepairMeshRef",
                 "pin_name": "RepairMeshRef"
               }
@@ -4083,9 +4083,1806 @@
           }
         ],
         "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableSet_24'"
+      },
+      {
+        "id": "K2Node_Timeline_1",
+        "class": "K2Node_Timeline",
+        "kind": "K2Node_Timeline",
+        "title": "K2Node_Timeline_1",
+        "meta": {},
+        "pins": [
+          {
+            "name": "Play",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "PlayFromStart",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_6",
+                "node_title": "Set TargetRot",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "Stop",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "Reverse",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "ReverseFromEnd",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "Update",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "node_title": "SceneComponent.K2_SetWorldLocation",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "Finished",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "SetNewTime",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "NewTime",
+            "direction": "input",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "Direction",
+            "direction": "output",
+            "category": "byte",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "Alpha",
+            "direction": "output",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_0",
+                "node_title": "KismetMathLibrary.VLerp",
+                "pin_name": "Alpha"
+              },
+              {
+                "node": "K2Node_CallFunction_1",
+                "node_title": "KismetMathLibrary.RLerp",
+                "pin_name": "Alpha"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "PlayFromStart",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_6",
+                "node_title": "Set TargetRot",
+                "pin_name": "then"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Timeline'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_Timeline_1'"
+      },
+      {
+        "id": "K2Node_CallFunction_0",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "KismetMathLibrary.VLerp",
+        "meta": {
+          "function_name": "VLerp",
+          "function_owner": "KismetMathLibrary"
+        },
+        "pins": [
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": "/Script/Engine.Default__KismetMathLibrary",
+            "linked_to": []
+          },
+          {
+            "name": "A",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_0",
+                "node_title": "Get StartLoc",
+                "pin_name": "StartLoc"
+              }
+            ]
+          },
+          {
+            "name": "B",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_1",
+                "node_title": "Get TargetLoc",
+                "pin_name": "TargetLoc"
+              }
+            ]
+          },
+          {
+            "name": "Alpha",
+            "direction": "input",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Timeline_1",
+                "node_title": "K2Node_Timeline_1",
+                "pin_name": "Alpha"
+              }
+            ]
+          },
+          {
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "node_title": "SceneComponent.K2_SetWorldLocation",
+                "pin_name": "NewLocation"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": "/Script/Engine.Default__KismetMathLibrary",
+            "linked_to": []
+          },
+          {
+            "name": "A",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_0",
+                "node_title": "Get StartLoc",
+                "pin_name": "StartLoc"
+              }
+            ]
+          },
+          {
+            "name": "B",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_1",
+                "node_title": "Get TargetLoc",
+                "pin_name": "TargetLoc"
+              }
+            ]
+          },
+          {
+            "name": "Alpha",
+            "category": "real",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Timeline_1",
+                "node_title": "K2Node_Timeline_1",
+                "pin_name": "Alpha"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_0'"
+      },
+      {
+        "id": "K2Node_CallFunction_1",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "KismetMathLibrary.RLerp",
+        "meta": {
+          "function_name": "RLerp",
+          "function_owner": "KismetMathLibrary"
+        },
+        "pins": [
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": "/Script/Engine.Default__KismetMathLibrary",
+            "linked_to": []
+          },
+          {
+            "name": "A",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_3",
+                "node_title": "Get StartRot",
+                "pin_name": "StartRot"
+              }
+            ]
+          },
+          {
+            "name": "B",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_4",
+                "node_title": "Get TargetRot",
+                "pin_name": "TargetRot"
+              }
+            ]
+          },
+          {
+            "name": "Alpha",
+            "direction": "input",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Timeline_1",
+                "node_title": "K2Node_Timeline_1",
+                "pin_name": "Alpha"
+              }
+            ]
+          },
+          {
+            "name": "bShortestPath",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_4",
+                "node_title": "SceneComponent.K2_SetWorldRotation",
+                "pin_name": "NewRotation"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": "/Script/Engine.Default__KismetMathLibrary",
+            "linked_to": []
+          },
+          {
+            "name": "A",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_3",
+                "node_title": "Get StartRot",
+                "pin_name": "StartRot"
+              }
+            ]
+          },
+          {
+            "name": "B",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_4",
+                "node_title": "Get TargetRot",
+                "pin_name": "TargetRot"
+              }
+            ]
+          },
+          {
+            "name": "Alpha",
+            "category": "real",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Timeline_1",
+                "node_title": "K2Node_Timeline_1",
+                "pin_name": "Alpha"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_1'"
+      },
+      {
+        "id": "K2Node_VariableGet_0",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get StartLoc",
+        "meta": {
+          "variable_name": "StartLoc"
+        },
+        "pins": [
+          {
+            "name": "StartLoc",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_0",
+                "node_title": "KismetMathLibrary.VLerp",
+                "pin_name": "A"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_0'"
+      },
+      {
+        "id": "K2Node_VariableGet_1",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get TargetLoc",
+        "meta": {
+          "variable_name": "TargetLoc"
+        },
+        "pins": [
+          {
+            "name": "TargetLoc",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_0",
+                "node_title": "KismetMathLibrary.VLerp",
+                "pin_name": "B"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_1'"
+      },
+      {
+        "id": "K2Node_VariableGet_3",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get StartRot",
+        "meta": {
+          "variable_name": "StartRot"
+        },
+        "pins": [
+          {
+            "name": "StartRot",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "node_title": "KismetMathLibrary.RLerp",
+                "pin_name": "A"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_3'"
+      },
+      {
+        "id": "K2Node_VariableGet_4",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get TargetRot",
+        "meta": {
+          "variable_name": "TargetRot"
+        },
+        "pins": [
+          {
+            "name": "TargetRot",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "node_title": "KismetMathLibrary.RLerp",
+                "pin_name": "B"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_4'"
+      },
+      {
+        "id": "K2Node_CallFunction_3",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SceneComponent.K2_SetWorldLocation",
+        "meta": {
+          "function_name": "K2_SetWorldLocation",
+          "function_owner": "SceneComponent"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Timeline_1",
+                "node_title": "K2Node_Timeline_1",
+                "pin_name": "Update"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_4",
+                "node_title": "SceneComponent.K2_SetWorldRotation",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_27",
+                "node_title": "Get SpringArmComp",
+                "pin_name": "SpringArmComp"
+              }
+            ]
+          },
+          {
+            "name": "NewLocation",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_0",
+                "node_title": "KismetMathLibrary.VLerp",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          },
+          {
+            "name": "bSweep",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "SweepHitResult",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "bTeleport",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Timeline_1",
+                "node_title": "K2Node_Timeline_1",
+                "pin_name": "Update"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_27",
+                "node_title": "Get SpringArmComp",
+                "pin_name": "SpringArmComp"
+              }
+            ]
+          },
+          {
+            "name": "NewLocation",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_0",
+                "node_title": "KismetMathLibrary.VLerp",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_3'"
+      },
+      {
+        "id": "K2Node_CallFunction_4",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SceneComponent.K2_SetWorldRotation",
+        "meta": {
+          "function_name": "K2_SetWorldRotation",
+          "function_owner": "SceneComponent"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "node_title": "SceneComponent.K2_SetWorldLocation",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_27",
+                "node_title": "Get SpringArmComp",
+                "pin_name": "SpringArmComp"
+              }
+            ]
+          },
+          {
+            "name": "NewRotation",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "node_title": "KismetMathLibrary.RLerp",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          },
+          {
+            "name": "bSweep",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "SweepHitResult",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "bTeleport",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "node_title": "SceneComponent.K2_SetWorldLocation",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_27",
+                "node_title": "Get SpringArmComp",
+                "pin_name": "SpringArmComp"
+              }
+            ]
+          },
+          {
+            "name": "NewRotation",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_1",
+                "node_title": "KismetMathLibrary.RLerp",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_4'"
+      },
+      {
+        "id": "K2Node_CustomEvent_2",
+        "class": "K2Node_CustomEvent",
+        "kind": "custom_event",
+        "title": "FinalViewChanged",
+        "meta": {
+          "event_name": "FinalViewChanged",
+          "enabled_state": "Enabled"
+        },
+        "pins": [
+          {
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_12",
+                "node_title": "Set StartLoc",
+                "pin_name": "execute"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CustomEvent'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CustomEvent_2'"
+      },
+      {
+        "id": "K2Node_CallFunction_5",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SceneComponent.K2_GetComponentLocation",
+        "meta": {
+          "function_name": "K2_GetComponentLocation",
+          "function_owner": "SceneComponent"
+        },
+        "pins": [
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_24",
+                "node_title": "Get ArmAnchor_Final",
+                "pin_name": "ArmAnchor_Final"
+              }
+            ]
+          },
+          {
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_12",
+                "node_title": "Set StartLoc",
+                "pin_name": "StartLoc"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_24",
+                "node_title": "Get ArmAnchor_Final",
+                "pin_name": "ArmAnchor_Final"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_5'"
+      },
+      {
+        "id": "K2Node_VariableSet_12",
+        "class": "K2Node_VariableSet",
+        "kind": "variable_set",
+        "title": "Set StartLoc",
+        "meta": {
+          "variable_name": "StartLoc"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CustomEvent_2",
+                "node_title": "FinalViewChanged",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_23",
+                "node_title": "Set TargetLoc",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "StartLoc",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_5",
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          },
+          {
+            "name": "Output_Get",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CustomEvent_2",
+                "node_title": "FinalViewChanged",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "StartLoc",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_5",
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableSet_12'"
+      },
+      {
+        "id": "K2Node_VariableSet_23",
+        "class": "K2Node_VariableSet",
+        "kind": "variable_set",
+        "title": "Set TargetLoc",
+        "meta": {
+          "variable_name": "TargetLoc"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_12",
+                "node_title": "Set StartLoc",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_5",
+                "node_title": "Set StartRot",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "TargetLoc",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_17",
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          },
+          {
+            "name": "Output_Get",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_12",
+                "node_title": "Set StartLoc",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "TargetLoc",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_17",
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableSet_23'"
+      },
+      {
+        "id": "K2Node_CallFunction_17",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SceneComponent.K2_GetComponentLocation",
+        "meta": {
+          "function_name": "K2_GetComponentLocation",
+          "function_owner": "SceneComponent"
+        },
+        "pins": [
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_25",
+                "node_title": "Get ArmAnchor_Final",
+                "pin_name": "ArmAnchor_Final"
+              }
+            ]
+          },
+          {
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_23",
+                "node_title": "Set TargetLoc",
+                "pin_name": "TargetLoc"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_25",
+                "node_title": "Get ArmAnchor_Final",
+                "pin_name": "ArmAnchor_Final"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_17'"
+      },
+      {
+        "id": "K2Node_VariableGet_24",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get ArmAnchor_Final",
+        "meta": {
+          "variable_name": "ArmAnchor_Final"
+        },
+        "pins": [
+          {
+            "name": "ArmAnchor_Final",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_5",
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "self"
+              },
+              {
+                "node": "K2Node_CallFunction_14",
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "self"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_24'"
+      },
+      {
+        "id": "K2Node_VariableGet_25",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get ArmAnchor_Final",
+        "meta": {
+          "variable_name": "ArmAnchor_Final"
+        },
+        "pins": [
+          {
+            "name": "ArmAnchor_Final",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_17",
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "self"
+              },
+              {
+                "node": "K2Node_CallFunction_12",
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "self"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_25'"
+      },
+      {
+        "id": "K2Node_VariableSet_5",
+        "class": "K2Node_VariableSet",
+        "kind": "variable_set",
+        "title": "Set StartRot",
+        "meta": {
+          "variable_name": "StartRot"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_23",
+                "node_title": "Set TargetLoc",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_6",
+                "node_title": "Set TargetRot",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "StartRot",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_14",
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          },
+          {
+            "name": "Output_Get",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_23",
+                "node_title": "Set TargetLoc",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "StartRot",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_14",
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableSet_5'"
+      },
+      {
+        "id": "K2Node_CallFunction_14",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SceneComponent.K2_GetComponentRotation",
+        "meta": {
+          "function_name": "K2_GetComponentRotation",
+          "function_owner": "SceneComponent"
+        },
+        "pins": [
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_24",
+                "node_title": "Get ArmAnchor_Final",
+                "pin_name": "ArmAnchor_Final"
+              }
+            ]
+          },
+          {
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_5",
+                "node_title": "Set StartRot",
+                "pin_name": "StartRot"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_24",
+                "node_title": "Get ArmAnchor_Final",
+                "pin_name": "ArmAnchor_Final"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_14'"
+      },
+      {
+        "id": "K2Node_CallFunction_12",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SceneComponent.K2_GetComponentRotation",
+        "meta": {
+          "function_name": "K2_GetComponentRotation",
+          "function_owner": "SceneComponent"
+        },
+        "pins": [
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_25",
+                "node_title": "Get ArmAnchor_Final",
+                "pin_name": "ArmAnchor_Final"
+              }
+            ]
+          },
+          {
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_6",
+                "node_title": "Set TargetRot",
+                "pin_name": "TargetRot"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_25",
+                "node_title": "Get ArmAnchor_Final",
+                "pin_name": "ArmAnchor_Final"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_12'"
+      },
+      {
+        "id": "K2Node_VariableGet_27",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get SpringArmComp",
+        "meta": {
+          "variable_name": "SpringArmComp"
+        },
+        "pins": [
+          {
+            "name": "SpringArmComp",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_4",
+                "node_title": "SceneComponent.K2_SetWorldRotation",
+                "pin_name": "self"
+              },
+              {
+                "node": "K2Node_CallFunction_3",
+                "node_title": "SceneComponent.K2_SetWorldLocation",
+                "pin_name": "self"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_27'"
+      },
+      {
+        "id": "K2Node_VariableSet_6",
+        "class": "K2Node_VariableSet",
+        "kind": "variable_set",
+        "title": "Set TargetRot",
+        "meta": {
+          "variable_name": "TargetRot"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_5",
+                "node_title": "Set StartRot",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_Timeline_1",
+                "node_title": "K2Node_Timeline_1",
+                "pin_name": "PlayFromStart"
+              }
+            ]
+          },
+          {
+            "name": "TargetRot",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_12",
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          },
+          {
+            "name": "Output_Get",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_5",
+                "node_title": "Set StartRot",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "TargetRot",
+            "category": "struct",
+            "default_value": "0, 0, 0",
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_12",
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "ReturnValue"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableSet_6'"
       }
     ],
     "connections": [
+      {
+        "from": {
+          "node": "K2Node_CallFunction_0",
+          "node_title": "KismetMathLibrary.VLerp",
+          "pin_name": "ReturnValue"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_3",
+          "node_title": "SceneComponent.K2_SetWorldLocation",
+          "pin_name": "NewLocation"
+        },
+        "category": "struct"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_1",
+          "node_title": "KismetMathLibrary.RLerp",
+          "pin_name": "ReturnValue"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_4",
+          "node_title": "SceneComponent.K2_SetWorldRotation",
+          "pin_name": "NewRotation"
+        },
+        "category": "struct"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_10",
+          "node_title": "KismetMathLibrary.Lerp",
+          "pin_name": "ReturnValue"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_9",
+          "node_title": "MaterialInstanceDynamic.SetScalarParameterValue",
+          "pin_name": "Value"
+        },
+        "category": "real"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_10",
+          "node_title": "KismetMathLibrary.Lerp",
+          "pin_name": "ReturnValue"
+        },
+        "to": {
+          "node": "K2Node_VariableSet_8",
+          "node_title": "Set CurrentDustVisual01",
+          "pin_name": "CurrentDustVisual01"
+        },
+        "category": "real"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_12",
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "ReturnValue"
+        },
+        "to": {
+          "node": "K2Node_VariableSet_6",
+          "node_title": "Set TargetRot",
+          "pin_name": "TargetRot"
+        },
+        "category": "struct"
+      },
       {
         "from": {
           "node": "K2Node_CallFunction_13",
@@ -4111,6 +5908,19 @@
           "pin_name": "execute"
         },
         "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_14",
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "ReturnValue"
+        },
+        "to": {
+          "node": "K2Node_VariableSet_5",
+          "node_title": "Set StartRot",
+          "pin_name": "StartRot"
+        },
+        "category": "struct"
       },
       {
         "from": {
@@ -4150,6 +5960,19 @@
           "pin_name": "execute"
         },
         "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_17",
+          "node_title": "SceneComponent.K2_GetComponentLocation",
+          "pin_name": "ReturnValue"
+        },
+        "to": {
+          "node": "K2Node_VariableSet_23",
+          "node_title": "Set TargetLoc",
+          "pin_name": "TargetLoc"
+        },
+        "category": "struct"
       },
       {
         "from": {
@@ -4218,33 +6041,33 @@
       },
       {
         "from": {
-          "node": "K2Node_CallFunction_5",
-          "node_title": "KismetMathLibrary.Lerp",
-          "pin_name": "ReturnValue"
+          "node": "K2Node_CallFunction_3",
+          "node_title": "SceneComponent.K2_SetWorldLocation",
+          "pin_name": "then"
         },
         "to": {
-          "node": "K2Node_CallFunction_9",
-          "node_title": "MaterialInstanceDynamic.SetScalarParameterValue",
-          "pin_name": "Value"
+          "node": "K2Node_CallFunction_4",
+          "node_title": "SceneComponent.K2_SetWorldRotation",
+          "pin_name": "execute"
         },
-        "category": "real"
+        "category": "exec"
       },
       {
         "from": {
           "node": "K2Node_CallFunction_5",
-          "node_title": "KismetMathLibrary.Lerp",
+          "node_title": "SceneComponent.K2_GetComponentLocation",
           "pin_name": "ReturnValue"
         },
         "to": {
-          "node": "K2Node_VariableSet_8",
-          "node_title": "Set CurrentDustVisual01",
-          "pin_name": "CurrentDustVisual01"
+          "node": "K2Node_VariableSet_12",
+          "node_title": "Set StartLoc",
+          "pin_name": "StartLoc"
         },
-        "category": "real"
+        "category": "struct"
       },
       {
         "from": {
-          "node": "K2Node_CallFunction_7",
+          "node": "K2Node_CallFunction_6",
           "node_title": "MaterialInstanceDynamic.SetScalarParameterValue",
           "pin_name": "then"
         },
@@ -4262,7 +6085,7 @@
           "pin_name": "ReturnValue"
         },
         "to": {
-          "node": "K2Node_CallFunction_7",
+          "node": "K2Node_CallFunction_6",
           "node_title": "MaterialInstanceDynamic.SetScalarParameterValue",
           "pin_name": "Value"
         },
@@ -4323,12 +6146,25 @@
       {
         "from": {
           "node": "K2Node_CustomEvent_2",
+          "node_title": "FinalViewChanged",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_VariableSet_12",
+          "node_title": "Set StartLoc",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CustomEvent_3",
           "node_title": "Event_PlayDustTransition",
           "pin_name": "then"
         },
         "to": {
-          "node": "K2Node_Timeline_1",
-          "node_title": "K2Node_Timeline_1",
+          "node": "K2Node_Timeline_2",
+          "node_title": "K2Node_Timeline_2",
           "pin_name": "PlayFromStart"
         },
         "category": "exec"
@@ -4340,7 +6176,7 @@
           "pin_name": "then"
         },
         "to": {
-          "node": "K2Node_CallFunction_0",
+          "node": "K2Node_CallFunction_2",
           "node_title": "InitializeLevel3VisualMaterials",
           "pin_name": "execute"
         },
@@ -4353,7 +6189,7 @@
           "pin_name": "Update"
         },
         "to": {
-          "node": "K2Node_CallFunction_7",
+          "node": "K2Node_CallFunction_6",
           "node_title": "MaterialInstanceDynamic.SetScalarParameterValue",
           "pin_name": "execute"
         },
@@ -4379,7 +6215,7 @@
           "pin_name": "Finished"
         },
         "to": {
-          "node": "K2Node_VariableSet_12",
+          "node": "K2Node_VariableSet_0",
           "node_title": "Set CurrentOilVisual01",
           "pin_name": "execute"
         },
@@ -4389,11 +6225,24 @@
         "from": {
           "node": "K2Node_Timeline_1",
           "node_title": "K2Node_Timeline_1",
-          "pin_name": "Alpha01"
+          "pin_name": "Alpha"
         },
         "to": {
-          "node": "K2Node_CallFunction_5",
-          "node_title": "KismetMathLibrary.Lerp",
+          "node": "K2Node_CallFunction_0",
+          "node_title": "KismetMathLibrary.VLerp",
+          "pin_name": "Alpha"
+        },
+        "category": "real"
+      },
+      {
+        "from": {
+          "node": "K2Node_Timeline_1",
+          "node_title": "K2Node_Timeline_1",
+          "pin_name": "Alpha"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_1",
+          "node_title": "KismetMathLibrary.RLerp",
           "pin_name": "Alpha"
         },
         "category": "real"
@@ -4405,6 +6254,32 @@
           "pin_name": "Update"
         },
         "to": {
+          "node": "K2Node_CallFunction_3",
+          "node_title": "SceneComponent.K2_SetWorldLocation",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_Timeline_2",
+          "node_title": "K2Node_Timeline_2",
+          "pin_name": "Alpha01"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_10",
+          "node_title": "KismetMathLibrary.Lerp",
+          "pin_name": "Alpha"
+        },
+        "category": "real"
+      },
+      {
+        "from": {
+          "node": "K2Node_Timeline_2",
+          "node_title": "K2Node_Timeline_2",
+          "pin_name": "Update"
+        },
+        "to": {
           "node": "K2Node_CallFunction_9",
           "node_title": "MaterialInstanceDynamic.SetScalarParameterValue",
           "pin_name": "execute"
@@ -4413,8 +6288,8 @@
       },
       {
         "from": {
-          "node": "K2Node_Timeline_1",
-          "node_title": "K2Node_Timeline_1",
+          "node": "K2Node_Timeline_2",
+          "node_title": "K2Node_Timeline_2",
           "pin_name": "Finished"
         },
         "to": {
@@ -4427,15 +6302,28 @@
       {
         "from": {
           "node": "K2Node_VariableGet_0",
-          "node_title": "Get OilTransitionTarget01",
-          "pin_name": "OilTransitionTarget01"
+          "node_title": "Get StartLoc",
+          "pin_name": "StartLoc"
         },
         "to": {
-          "node": "K2Node_CallFunction_8",
-          "node_title": "KismetMathLibrary.Lerp",
+          "node": "K2Node_CallFunction_0",
+          "node_title": "KismetMathLibrary.VLerp",
+          "pin_name": "A"
+        },
+        "category": "struct"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_1",
+          "node_title": "Get TargetLoc",
+          "pin_name": "TargetLoc"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_0",
+          "node_title": "KismetMathLibrary.VLerp",
           "pin_name": "B"
         },
-        "category": "real"
+        "category": "struct"
       },
       {
         "from": {
@@ -4444,7 +6332,7 @@
           "pin_name": "OilMID_Slot0"
         },
         "to": {
-          "node": "K2Node_CallFunction_7",
+          "node": "K2Node_CallFunction_6",
           "node_title": "MaterialInstanceDynamic.SetScalarParameterValue",
           "pin_name": "self"
         },
@@ -4478,19 +6366,6 @@
       },
       {
         "from": {
-          "node": "K2Node_VariableGet_15",
-          "node_title": "Get RepairMeshRef",
-          "pin_name": "RepairMeshRef"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_18",
-          "node_title": "PrimitiveComponent.CreateDynamicMaterialInstance",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
           "node": "K2Node_VariableGet_16",
           "node_title": "Get OilMaterial",
           "pin_name": "OilMaterial"
@@ -4499,19 +6374,6 @@
           "node": "K2Node_CallFunction_18",
           "node_title": "PrimitiveComponent.CreateDynamicMaterialInstance",
           "pin_name": "SourceMaterial"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_17",
-          "node_title": "Get RepairMeshRef",
-          "pin_name": "RepairMeshRef"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_20",
-          "node_title": "PrimitiveComponent.SetMaterial",
-          "pin_name": "self"
         },
         "category": "object"
       },
@@ -4530,12 +6392,25 @@
       },
       {
         "from": {
-          "node": "K2Node_VariableGet_3",
+          "node": "K2Node_VariableGet_2",
+          "node_title": "Get OilTransitionTarget01",
+          "pin_name": "OilTransitionTarget01"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_8",
+          "node_title": "KismetMathLibrary.Lerp",
+          "pin_name": "B"
+        },
+        "category": "real"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_20",
           "node_title": "Get DustTransitionStart01",
           "pin_name": "DustTransitionStart01"
         },
         "to": {
-          "node": "K2Node_CallFunction_5",
+          "node": "K2Node_CallFunction_10",
           "node_title": "KismetMathLibrary.Lerp",
           "pin_name": "A"
         },
@@ -4543,16 +6418,146 @@
       },
       {
         "from": {
-          "node": "K2Node_VariableGet_4",
+          "node": "K2Node_VariableGet_21",
+          "node_title": "Get RepairMeshRef",
+          "pin_name": "RepairMeshRef"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_18",
+          "node_title": "PrimitiveComponent.CreateDynamicMaterialInstance",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_22",
+          "node_title": "Get RepairMeshRef",
+          "pin_name": "RepairMeshRef"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_20",
+          "node_title": "PrimitiveComponent.SetMaterial",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_23",
           "node_title": "Get DustTransitionTarget01",
           "pin_name": "DustTransitionTarget01"
         },
         "to": {
-          "node": "K2Node_CallFunction_5",
+          "node": "K2Node_CallFunction_10",
           "node_title": "KismetMathLibrary.Lerp",
           "pin_name": "B"
         },
         "category": "real"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_24",
+          "node_title": "Get ArmAnchor_Final",
+          "pin_name": "ArmAnchor_Final"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_14",
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_24",
+          "node_title": "Get ArmAnchor_Final",
+          "pin_name": "ArmAnchor_Final"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_5",
+          "node_title": "SceneComponent.K2_GetComponentLocation",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_25",
+          "node_title": "Get ArmAnchor_Final",
+          "pin_name": "ArmAnchor_Final"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_12",
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_25",
+          "node_title": "Get ArmAnchor_Final",
+          "pin_name": "ArmAnchor_Final"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_17",
+          "node_title": "SceneComponent.K2_GetComponentLocation",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_27",
+          "node_title": "Get SpringArmComp",
+          "pin_name": "SpringArmComp"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_3",
+          "node_title": "SceneComponent.K2_SetWorldLocation",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_27",
+          "node_title": "Get SpringArmComp",
+          "pin_name": "SpringArmComp"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_4",
+          "node_title": "SceneComponent.K2_SetWorldRotation",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_3",
+          "node_title": "Get StartRot",
+          "pin_name": "StartRot"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_1",
+          "node_title": "KismetMathLibrary.RLerp",
+          "pin_name": "A"
+        },
+        "category": "struct"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_4",
+          "node_title": "Get TargetRot",
+          "pin_name": "TargetRot"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_1",
+          "node_title": "KismetMathLibrary.RLerp",
+          "pin_name": "B"
+        },
+        "category": "struct"
       },
       {
         "from": {
@@ -4600,11 +6605,37 @@
           "pin_name": "OilTransitionTarget01"
         },
         "to": {
-          "node": "K2Node_VariableSet_12",
+          "node": "K2Node_VariableSet_0",
           "node_title": "Set CurrentOilVisual01",
           "pin_name": "CurrentOilVisual01"
         },
         "category": "real"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableSet_1",
+          "node_title": "Set OilTransitionTarget01",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_20",
+          "node_title": "PrimitiveComponent.SetMaterial",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableSet_12",
+          "node_title": "Set StartLoc",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_VariableSet_23",
+          "node_title": "Set TargetLoc",
+          "pin_name": "execute"
+        },
+        "category": "exec"
       },
       {
         "from": {
@@ -4743,7 +6774,7 @@
           "pin_name": "then"
         },
         "to": {
-          "node": "K2Node_VariableSet_23",
+          "node": "K2Node_VariableSet_1",
           "node_title": "Set OilTransitionTarget01",
           "pin_name": "execute"
         },
@@ -4752,12 +6783,12 @@
       {
         "from": {
           "node": "K2Node_VariableSet_23",
-          "node_title": "Set OilTransitionTarget01",
+          "node_title": "Set TargetLoc",
           "pin_name": "then"
         },
         "to": {
-          "node": "K2Node_CallFunction_20",
-          "node_title": "PrimitiveComponent.SetMaterial",
+          "node": "K2Node_VariableSet_5",
+          "node_title": "Set StartRot",
           "pin_name": "execute"
         },
         "category": "exec"
@@ -4785,6 +6816,32 @@
           "node": "K2Node_CallFunction_13",
           "node_title": "BP_Level3RepairRegion_Dusting_C.GetRepairMeshComponent",
           "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableSet_5",
+          "node_title": "Set StartRot",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_VariableSet_6",
+          "node_title": "Set TargetRot",
+          "pin_name": "execute"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableSet_6",
+          "node_title": "Set TargetRot",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_Timeline_1",
+          "node_title": "K2Node_Timeline_1",
+          "pin_name": "PlayFromStart"
         },
         "category": "exec"
       }
@@ -4816,13 +6873,13 @@
       ],
       [
         "Event_PlayDustTransition",
-        "K2Node_Timeline_1",
+        "K2Node_Timeline_2",
         "MaterialInstanceDynamic.SetScalarParameterValue",
         "Set CurrentDustVisual01"
       ],
       [
         "Event_PlayDustTransition",
-        "K2Node_Timeline_1",
+        "K2Node_Timeline_2",
         "Set CurrentDustVisual01"
       ],
       [
@@ -4835,6 +6892,16 @@
         "Event_PlayOilTransition",
         "K2Node_Timeline_0",
         "Set CurrentOilVisual01"
+      ],
+      [
+        "FinalViewChanged",
+        "Set StartLoc",
+        "Set TargetLoc",
+        "Set StartRot",
+        "Set TargetRot",
+        "K2Node_Timeline_1",
+        "SceneComponent.K2_SetWorldLocation",
+        "SceneComponent.K2_SetWorldRotation"
       ]
     ]
   },
@@ -6876,6 +8943,140 @@
       "exec_traces": [
         [
           "Event_PlayOilTransition",
+          "ExecuteUbergraph_BP_ShowcaseModel_Level4"
+        ]
+      ]
+    },
+    {
+      "name": "FinalViewChanged",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 2,
+      "connection_count": 1,
+      "modules": [
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "FinalViewChanged",
+          "meta": {
+            "function_name": "FinalViewChanged"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_BP_ShowcaseModel_Level4",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:FinalViewChanged.K2Node_FunctionEntry_0'"
+        },
+        {
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "ExecuteUbergraph_BP_ShowcaseModel_Level4",
+          "meta": {
+            "function_name": "ExecuteUbergraph_BP_ShowcaseModel_Level4",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "node_title": "FinalViewChanged",
+                  "pin_name": "then"
+                }
+              ]
+            },
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "self",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "EntryPoint",
+              "direction": "input",
+              "category": "int",
+              "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "node_title": "FinalViewChanged",
+                  "pin_name": "then"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:FinalViewChanged.K2Node_CallFunction_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "node_title": "FinalViewChanged",
+            "pin_name": "then"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "node_title": "ExecuteUbergraph_BP_ShowcaseModel_Level4",
+            "pin_name": "execute"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "FinalViewChanged",
           "ExecuteUbergraph_BP_ShowcaseModel_Level4"
         ]
       ]
@@ -10003,6 +12204,274 @@
           "UserConstructionScript"
         ]
       ]
+    },
+    {
+      "name": "时间轴__FinishedFunc",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 2,
+      "connection_count": 1,
+      "modules": [
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "时间轴__FinishedFunc",
+          "meta": {
+            "function_name": "时间轴__FinishedFunc"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_BP_ShowcaseModel_Level4",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:时间轴__FinishedFunc.K2Node_FunctionEntry_0'"
+        },
+        {
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "ExecuteUbergraph_BP_ShowcaseModel_Level4",
+          "meta": {
+            "function_name": "ExecuteUbergraph_BP_ShowcaseModel_Level4",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "node_title": "时间轴__FinishedFunc",
+                  "pin_name": "then"
+                }
+              ]
+            },
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "self",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "EntryPoint",
+              "direction": "input",
+              "category": "int",
+              "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "node_title": "时间轴__FinishedFunc",
+                  "pin_name": "then"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:时间轴__FinishedFunc.K2Node_CallFunction_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "node_title": "时间轴__FinishedFunc",
+            "pin_name": "then"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "node_title": "ExecuteUbergraph_BP_ShowcaseModel_Level4",
+            "pin_name": "execute"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "时间轴__FinishedFunc",
+          "ExecuteUbergraph_BP_ShowcaseModel_Level4"
+        ]
+      ]
+    },
+    {
+      "name": "时间轴__UpdateFunc",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 2,
+      "connection_count": 1,
+      "modules": [
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "时间轴__UpdateFunc",
+          "meta": {
+            "function_name": "时间轴__UpdateFunc"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_BP_ShowcaseModel_Level4",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:时间轴__UpdateFunc.K2Node_FunctionEntry_0'"
+        },
+        {
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "ExecuteUbergraph_BP_ShowcaseModel_Level4",
+          "meta": {
+            "function_name": "ExecuteUbergraph_BP_ShowcaseModel_Level4",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "node_title": "时间轴__UpdateFunc",
+                  "pin_name": "then"
+                }
+              ]
+            },
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "self",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "EntryPoint",
+              "direction": "input",
+              "category": "int",
+              "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "node_title": "时间轴__UpdateFunc",
+                  "pin_name": "then"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:时间轴__UpdateFunc.K2Node_CallFunction_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "node_title": "时间轴__UpdateFunc",
+            "pin_name": "then"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "node_title": "ExecuteUbergraph_BP_ShowcaseModel_Level4",
+            "pin_name": "execute"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "时间轴__UpdateFunc",
+          "ExecuteUbergraph_BP_ShowcaseModel_Level4"
+        ]
+      ]
     }
   ],
   "widget_tree": {
@@ -10247,6 +12716,58 @@
           "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/Engine.MaterialInterface'"
         },
         "metadata": null
+      },
+      {
+        "name": "StartLoc",
+        "guid": "67075E8F415277EADA1EE5A49101EC51",
+        "friendly_name": "Start Loc",
+        "category": "NSLOCTEXT(\"KismetSchema\", \"Default\", \"Default\")",
+        "property_flags": "65541",
+        "type": {
+          "pin_category": "struct",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'"
+        },
+        "metadata": null
+      },
+      {
+        "name": "StartRot",
+        "guid": "4A971E774AF97E72ED15E4ACC2A0C342",
+        "friendly_name": "Start Rot",
+        "category": "NSLOCTEXT(\"KismetSchema\", \"Default\", \"Default\")",
+        "property_flags": "65541",
+        "type": {
+          "pin_category": "struct",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'"
+        },
+        "metadata": null
+      },
+      {
+        "name": "TargetLoc",
+        "guid": "2FE8793B44655D4864DC6086CF0B83E1",
+        "friendly_name": "Target Loc",
+        "category": "NSLOCTEXT(\"KismetSchema\", \"Default\", \"Default\")",
+        "property_flags": "65541",
+        "type": {
+          "pin_category": "struct",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'"
+        },
+        "metadata": null
+      },
+      {
+        "name": "TargetRot",
+        "guid": "1054A3E648E69547ADBEAB8237A0C49F",
+        "friendly_name": "Target Rot",
+        "category": "NSLOCTEXT(\"KismetSchema\", \"Default\", \"Default\")",
+        "property_flags": "65541",
+        "type": {
+          "pin_category": "struct",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'"
+        },
+        "metadata": null
       }
     ],
     "generated_variables": [],
@@ -10256,8 +12777,8 @@
   "doc_view": {
     "blueprint_name": "BP_ShowcaseModel_Level4",
     "blueprint_class": "Blueprint",
-    "module_count": 48,
-    "connection_count": 54,
+    "module_count": 69,
+    "connection_count": 79,
     "component_events": [],
     "exec_traces": [
       [
@@ -10286,13 +12807,13 @@
       ],
       [
         "Event_PlayDustTransition",
-        "K2Node_Timeline_1",
+        "K2Node_Timeline_2",
         "MaterialInstanceDynamic.SetScalarParameterValue",
         "Set CurrentDustVisual01"
       ],
       [
         "Event_PlayDustTransition",
-        "K2Node_Timeline_1",
+        "K2Node_Timeline_2",
         "Set CurrentDustVisual01"
       ],
       [
@@ -10305,6 +12826,16 @@
         "Event_PlayOilTransition",
         "K2Node_Timeline_0",
         "Set CurrentOilVisual01"
+      ],
+      [
+        "FinalViewChanged",
+        "Set StartLoc",
+        "Set TargetLoc",
+        "Set StartRot",
+        "Set TargetRot",
+        "K2Node_Timeline_1",
+        "SceneComponent.K2_SetWorldLocation",
+        "SceneComponent.K2_SetWorldRotation"
       ]
     ],
     "widget_outline": [],

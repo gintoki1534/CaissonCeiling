@@ -90,9 +90,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. pices_5_button.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.SelectLevel4Piece
 1. HandleLevel4PieceSelected -> SetVisibility -> K2Node_SwitchInteger_0 -> SetVisibility
 1. HandleLevel4StageChanged -> SetVisibility -> Switch on ELevel4StageId
-1. HandleLevel4Completed -> KismetSystemLibrary.PrintString
-1. EVT_OnLevel4StageSolved -> SetVisibility
-1. Continue_Next.OnClicked -> SetVisibility -> Cast To CaissonPlayerController -> CaissonPlayerController.ContinueLevel4AfterStageSolved
+1. HandleLevel4Completed -> KismetSystemLibrary.PrintString -> Cast To BP_ShowcaseModel_Level4_C -> Actor.SetActorHiddenInGame -> Actor.SetActorEnableCollision -> Actor.SetActorTickEnabled -> K2Node_CreateWidget_0 -> AddToViewport -> RemoveFromParent
+1. EVT_OnLevel4StageSolved -> SetVisibility -> Switch on ELevel4StageId -> Set viewChangeFlag
+1. Continue_Next.OnClicked -> SetVisibility -> Cast To CaissonPlayerController -> CaissonPlayerController.ContinueLevel4AfterStageSolved -> K2Node_IfThenElse_0 -> Cast To BP_ShowcaseModel_Level4_C -> BP_ShowcaseModel_Level4_C.FinalViewChanged -> Set viewChangeFlag
 1. EVT_OnLevel4DifficultyChanged -> Switch on ELevel4Difficulty -> SetVisibility -> SetVisibility
 
 ## 6. 关键变量
@@ -105,6 +105,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. Level4PuzzleComponentRef
    类型：object -> /Script/CoreUObject.Class'/Script/CaissonCeiling.Level4PuzzleComponent'
    显示名：Level 4Puzzle Component Ref
+1. viewChangeFlag
+   类型：bool
+   显示名：View Change Flag
 
 ### 6.2 自动生成的控件变量
 
@@ -209,9 +212,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. 连接数：1
 1. 执行链：BndEvt__W_Level4_Continue_Next_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level4
 1. 关键节点：
-   - BndEvt__W_Level4_Continue_Next_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature
    - ExecuteUbergraph_W_Level4
      输入：execute <- BndEvt__W_Level4_Continue_Next_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature:then
+   - BndEvt__W_Level4_Continue_Next_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature
 
 ### 8.2 BndEvt__W_Level4_difficuty_button_expert_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
 
@@ -220,9 +223,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. 连接数：1
 1. 执行链：BndEvt__W_Level4_difficuty_button_expert_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level4
 1. 关键节点：
-   - BndEvt__W_Level4_difficuty_button_expert_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
    - ExecuteUbergraph_W_Level4
      输入：execute <- BndEvt__W_Level4_difficuty_button_expert_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature:then
+   - BndEvt__W_Level4_difficuty_button_expert_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
 
 ### 8.3 BndEvt__W_Level4_difficuty_button_normal_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 
@@ -231,9 +234,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. 连接数：1
 1. 执行链：BndEvt__W_Level4_difficuty_button_normal_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level4
 1. 关键节点：
-   - BndEvt__W_Level4_difficuty_button_normal_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
    - ExecuteUbergraph_W_Level4
      输入：execute <- BndEvt__W_Level4_difficuty_button_normal_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature:then
+   - BndEvt__W_Level4_difficuty_button_normal_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 
 ### 8.4 BndEvt__W_Level4_pices_1_button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
 
@@ -242,9 +245,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. 连接数：1
 1. 执行链：BndEvt__W_Level4_pices_1_button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level4
 1. 关键节点：
-   - BndEvt__W_Level4_pices_1_button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
    - ExecuteUbergraph_W_Level4
      输入：execute <- BndEvt__W_Level4_pices_1_button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature:then
+   - BndEvt__W_Level4_pices_1_button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
 
 ### 8.5 BndEvt__W_Level4_pices_2_button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature
 
@@ -253,9 +256,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. 连接数：1
 1. 执行链：BndEvt__W_Level4_pices_2_button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level4
 1. 关键节点：
-   - BndEvt__W_Level4_pices_2_button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature
    - ExecuteUbergraph_W_Level4
      输入：execute <- BndEvt__W_Level4_pices_2_button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature:then
+   - BndEvt__W_Level4_pices_2_button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature
 
 ### 8.6 BndEvt__W_Level4_pices_3_button_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature
 
@@ -264,9 +267,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. 连接数：1
 1. 执行链：BndEvt__W_Level4_pices_3_button_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level4
 1. 关键节点：
-   - BndEvt__W_Level4_pices_3_button_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature
    - ExecuteUbergraph_W_Level4
      输入：execute <- BndEvt__W_Level4_pices_3_button_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature:then
+   - BndEvt__W_Level4_pices_3_button_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature
 
 ### 8.7 BndEvt__W_Level4_pices_4_button_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature
 
@@ -275,9 +278,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. 连接数：1
 1. 执行链：BndEvt__W_Level4_pices_4_button_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level4
 1. 关键节点：
-   - BndEvt__W_Level4_pices_4_button_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature
    - ExecuteUbergraph_W_Level4
      输入：execute <- BndEvt__W_Level4_pices_4_button_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature:then
+   - BndEvt__W_Level4_pices_4_button_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature
 
 ### 8.8 BndEvt__W_Level4_pices_5_button_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature
 
@@ -286,9 +289,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. 连接数：1
 1. 执行链：BndEvt__W_Level4_pices_5_button_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level4
 1. 关键节点：
-   - BndEvt__W_Level4_pices_5_button_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature
    - ExecuteUbergraph_W_Level4
      输入：execute <- BndEvt__W_Level4_pices_5_button_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature:then
+   - BndEvt__W_Level4_pices_5_button_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature
 
 ### 8.9 Construct
 
@@ -297,9 +300,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. 连接数：1
 1. 执行链：Construct -> ExecuteUbergraph_W_Level4
 1. 关键节点：
-   - Construct
    - ExecuteUbergraph_W_Level4
      输入：execute <- Construct:then
+   - Construct
 
 ### 8.10 EVT_OnLevel4DifficultyChanged
 
@@ -308,9 +311,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. 连接数：3
 1. 执行链：EVT_OnLevel4DifficultyChanged -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level4
 1. 关键节点：
-   - EVT_OnLevel4DifficultyChanged
    - ExecuteUbergraph_W_Level4
      输入：execute <- SetVariableOnPersistentFrame:then
+   - EVT_OnLevel4DifficultyChanged
 
 ### 8.11 EVT_OnLevel4StageSolved
 
@@ -319,9 +322,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. 连接数：4
 1. 执行链：EVT_OnLevel4StageSolved -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level4
 1. 关键节点：
-   - EVT_OnLevel4StageSolved
    - ExecuteUbergraph_W_Level4
      输入：execute <- SetVariableOnPersistentFrame:then
+   - EVT_OnLevel4StageSolved
 
 ### 8.12 HandleLevel4Completed
 
@@ -330,9 +333,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. 连接数：1
 1. 执行链：HandleLevel4Completed -> ExecuteUbergraph_W_Level4
 1. 关键节点：
-   - HandleLevel4Completed
    - ExecuteUbergraph_W_Level4
      输入：execute <- HandleLevel4Completed:then
+   - HandleLevel4Completed
 
 ### 8.13 HandleLevel4PieceSelected
 
@@ -341,9 +344,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. 连接数：3
 1. 执行链：HandleLevel4PieceSelected -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level4
 1. 关键节点：
-   - HandleLevel4PieceSelected
    - ExecuteUbergraph_W_Level4
      输入：execute <- SetVariableOnPersistentFrame:then
+   - HandleLevel4PieceSelected
 
 ### 8.14 HandleLevel4StageChanged
 
@@ -352,9 +355,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. 连接数：4
 1. 执行链：HandleLevel4StageChanged -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level4
 1. 关键节点：
-   - HandleLevel4StageChanged
    - ExecuteUbergraph_W_Level4
      输入：execute <- SetVariableOnPersistentFrame:then
+   - HandleLevel4StageChanged
 
 ### 8.15 PreConstruct
 
@@ -363,9 +366,9 @@ TextBlock_86 [TextBlock] | parent=StageSolved | children=无
 1. 连接数：3
 1. 执行链：PreConstruct -> SetVariableOnPersistentFrame -> ExecuteUbergraph_W_Level4
 1. 关键节点：
-   - PreConstruct
    - ExecuteUbergraph_W_Level4
      输入：execute <- SetVariableOnPersistentFrame:then
+   - PreConstruct
 
 ## 9. 当前可直接确认的结论
 
