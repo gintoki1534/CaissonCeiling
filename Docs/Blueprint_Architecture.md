@@ -58,10 +58,10 @@
    - `Level3` 修复区域蓝图壳层入口
 9. `ULevel4PuzzleComponent`
    - `Level4` 拼图运行时状态机
-   - 难度、阶段、碎片选择、拖拽、旋转、吸附和完成判定
+   - 难度、阶段、碎片选择、固定生成 Transform、拖拽、旋转、吸附和完成判定
 10. `ALevel4PuzzlePieceActor`
    - `Level4` 拼图碎片 Actor 基类
-   - 负责选中表现与相对正确表现事件入口
+   - 负责选中/相对正确的 Overlay 脉冲表现与内部组件命中入口
 11. `ALevel4PuzzleTargetLayoutActor`
    - `Level4` 目标布局配置壳层
    - 用蓝图配置每个阶段碎片的正确位置、旋转和资源类
@@ -86,12 +86,13 @@
 14. `BP_ShowcaseModel_Level4`
 15. `W_Level4`
 16. `W_Level4_Introdection`
-17. `Level4/Layouts/`
-18. `Level4/Pieces/`
-19. `背景`
-20. `M_UI_Model`
-21. `RT_ModelViewer`
-22. `LevelTargets/`
+17. `W_Level5`
+18. `Level4/Layouts/`
+19. `Level4/Pieces/`
+20. `背景`
+21. `M_UI_Model`
+22. `RT_ModelViewer`
+23. `LevelTargets/`
 
 `Content/UI/LevelTargets/` 下当前目标蓝图：
 
@@ -425,7 +426,8 @@
    - `BP_L4_Layout_FinalAssembly`
 4. `Level4` 期间相机视角固定，不允许继续通过右键拖拽旋转观察模型
 5. 碎片的真实生成、拖拽、旋转、吸附和完成判定都由 `Level4PuzzleComponent` 负责
-6. `BP_ShowcaseModel_Level4` 不应重写拼图完成条件，只承担展示 Pawn 和资源配置职责
+6. 碎片生成位置和旋转由各 Layout 中每片的 `NormalSpawnTransform / ExpertSpawnTransform` 优先决定
+7. `BP_ShowcaseModel_Level4` 不应重写拼图完成条件，只承担展示 Pawn 和资源配置职责
 
 ### 5.5.3 `W_Level4_Introdection`
 
@@ -467,7 +469,7 @@
 4. `OnLevel4StageSolved`
    - 显示 `StageSolved`
 5. `OnLevel4Completed`
-   - 进入最终完成或后续证书流程
+   - 关闭第四关展示 Pawn，进入 `W_Level5` 占位页
 
 当前已确认按钮规则：
 
@@ -475,6 +477,19 @@
 2. 专家难度按钮调用 `SetLevel4Difficulty(Expert)`
 3. 碎片按钮调用 `SelectPiece(1..5)`
 4. `Continue_Next` 隐藏 `StageSolved` 后调用 `ContinueLevel4AfterStageSolved`
+5. 最后一阶段完成后，`HandleLevel4Completed` 隐藏 `BP_ShowcaseModel_Level4`，关闭其碰撞和 Tick，创建 `W_Level5` 并移除 `W_Level4`
+
+### 5.5.5 `W_Level5`
+
+定位：
+
+1. `Level5` 当前占位 UI
+2. 用于承接 `Level4` 完成后的后续流程入口
+
+当前已确认的接线结论：
+
+1. 由 `W_Level4.HandleLevel4Completed` 创建并添加到视口
+2. 当前只承担占位显示职责，后续再扩展证书、结果页或最终演出
 
 ### 5.6 `LevelTargets/` 下目标蓝图
 
@@ -625,7 +640,8 @@ Oiling 达成结果
 -> W_Level3.Button_Continue
 -> BP_ShowcaseModel_Level3.ReturnToLevel3DefaultView()
 -> CaissonPlayerController.CompleteLevel3ResultPresentation()
--> 进入 Completed 占位完成态
+-> 打开 W_Level4_Introdection
+-> 进入第四关教学与拼图流程
 ```
 
 这条链路说明：
@@ -674,6 +690,7 @@ W_Level4.Construct
 鼠标右键命中已生成碎片
 -> 第一次命中该碎片：选中/预选，不旋转
 -> 再次命中同一碎片：围绕鼠标命中点旋转 90 度
+-> FinalAssembly 阶段禁用旋转，只保留右键选中
 -> EvaluateCurrentStage()
 
 当前阶段全部碎片相对同一锚点对齐
@@ -688,6 +705,10 @@ Continue_Next.OnClicked
 -> 普通模式跳过 CloudFrame2
 -> 专家模式进入全部四个阶段
 -> 最后一阶段后 OnLevel4Completed
+-> W_Level4.HandleLevel4Completed()
+-> 隐藏 BP_ShowcaseModel_Level4，关闭碰撞和 Tick
+-> 创建 W_Level5
+-> RemoveFromParent(W_Level4)
 ```
 
 这条链路说明：
@@ -696,7 +717,8 @@ Continue_Next.OnClicked
 2. `W_Level4` 只刷新 UI 和调用组件公开接口，不保存真拼图状态。
 3. 阶段完成后必须经过 `StageSolved` UI 确认，才会进入下一阶段。
 4. 普通/专家的阶段差异由 `Level4PuzzleComponent.ShouldSkipStage` 决定。
-5. 专家模式碎片新增时生成到拼图宿主原点，普通模式碎片新增时位置已经正确。
+5. 普通/专家模式碎片新增时优先使用 Layout 中每片独立配置的固定生成 Transform；未启用自定义 Transform 时保留旧兼容逻辑。
+6. `FinalAssembly` 阶段禁用碎片旋转，生成方向应由配置保证正确。
 
 ### 6.3 Level2 当前主链路
 
@@ -774,8 +796,9 @@ PlayerTick
 9. `BP_ShowcaseModel_Level4`
 10. `W_Level4_Introdection`
 11. `W_Level4`
-12. `Level4/Layouts/` 下四个布局蓝图
-13. `Level4/Pieces/` 下当前已配置的拼图碎片蓝图
+12. `W_Level5`
+13. `Level4/Layouts/` 下四个布局蓝图
+14. `Level4/Pieces/` 下当前已配置的拼图碎片蓝图
 14. `LevelTargets/` 下 3 个目标蓝图
 
 ### 7.2 已存在，但仍应谨慎修改的资产
@@ -875,7 +898,7 @@ PlayerTick
 4. `Level2 Step 1` 的点击顺序、推进与点亮链已经收口
 5. `Level2` 当前已经形成“点击目标 -> 镜头拉近 -> 介绍 UI -> 回原视角”的蓝图表现闭环
 6. `Level3` 当前已经形成“除尘 -> 涂油”的双子阶段玩法闭环，并接入真实材质参数表现
-7. `Level4` 当前已经形成“教学页生成展示 Pawn -> 拼图 UI 直接驱动组件 -> 普通/专家阶段流转 -> 阶段完成 UI 确认”的完整主链路
+7. `Level4` 当前已经形成“教学页生成展示 Pawn -> 拼图 UI 直接驱动组件 -> 普通/专家阶段流转 -> 阶段完成 UI 确认 -> Level5 占位页”的完整主链路
 
 后续 AI 或开发者继续接手时，应优先沿着当前结构扩展，而不是回到：
 
