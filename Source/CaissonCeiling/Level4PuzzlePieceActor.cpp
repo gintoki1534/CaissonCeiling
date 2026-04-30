@@ -163,6 +163,11 @@ UPrimitiveComponent* ALevel4PuzzlePieceActor::GetDragPrimitive() const
 	return MeshComponent;
 }
 
+void ALevel4PuzzlePieceActor::GetInteractivePrimitiveComponents(TArray<UPrimitiveComponent*>& OutComponents) const
+{
+	CollectVisualPrimitiveComponents(OutComponents);
+}
+
 void ALevel4PuzzlePieceActor::RefreshVisualState()
 {
 	ApplyCustomDepthVisual();

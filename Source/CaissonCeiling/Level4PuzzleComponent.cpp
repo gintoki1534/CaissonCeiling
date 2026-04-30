@@ -464,10 +464,25 @@ bool ULevel4PuzzleComponent::FindSpawnedPieceHitOnRay(const FVector& RayStart, c
 			continue;
 		}
 
-		if (UPrimitiveComponent* DragPrimitive = PieceActor->GetDragPrimitive())
+		TArray<UPrimitiveComponent*> InteractiveComponents;
+		PieceActor->GetInteractivePrimitiveComponents(InteractiveComponents);
+		if (InteractiveComponents.Num() <= 0)
 		{
+			if (UPrimitiveComponent* DragPrimitive = PieceActor->GetDragPrimitive())
+			{
+				InteractiveComponents.Add(DragPrimitive);
+			}
+		}
+
+		for (UPrimitiveComponent* InteractiveComponent : InteractiveComponents)
+		{
+			if (!IsValid(InteractiveComponent) || !InteractiveComponent->IsVisible())
+			{
+				continue;
+			}
+
 			FHitResult ComponentHitResult;
-			if (DragPrimitive->LineTraceComponent(ComponentHitResult, RayStart, RayEnd, QueryParams))
+			if (InteractiveComponent->LineTraceComponent(ComponentHitResult, RayStart, RayEnd, QueryParams))
 			{
 				const float HitDistance = FVector::Dist(RayStart, ComponentHitResult.ImpactPoint);
 				if (HitDistance < BestComponentDistance)
@@ -476,7 +491,7 @@ bool ULevel4PuzzleComponent::FindSpawnedPieceHitOnRay(const FVector& RayStart, c
 					BestComponentHitResult = ComponentHitResult;
 					BestComponentHitResult.bBlockingHit = true;
 					BestComponentHitResult.HitObjectHandle = FActorInstanceHandle(PieceActor);
-					BestComponentHitResult.Component = DragPrimitive;
+					BestComponentHitResult.Component = InteractiveComponent;
 					if (BestComponentHitResult.ImpactPoint.IsNearlyZero() && !BestComponentHitResult.Location.IsNearlyZero())
 					{
 						BestComponentHitResult.ImpactPoint = BestComponentHitResult.Location;
@@ -487,16 +502,16 @@ bool ULevel4PuzzleComponent::FindSpawnedPieceHitOnRay(const FVector& RayStart, c
 			}
 
 			float BoundsDistance = 0.0f;
-			const FBox BoundsBox = DragPrimitive->Bounds.GetBox();
+			const FBox BoundsBox = InteractiveComponent->Bounds.GetBox();
 			if (IntersectSegmentBox(RayStart, RayEnd, BoundsBox, BoundsDistance) && BoundsDistance < BestBoundsDistance)
 			{
 				const FVector RayDirection = (RayEnd - RayStart).GetSafeNormal();
 				const FVector HitLocation = RayStart + RayDirection * BoundsDistance;
 				BestBoundsDistance = BoundsDistance;
-				BestBoundsHitResult = FHitResult(PieceActor, DragPrimitive, HitLocation, -RayDirection);
+				BestBoundsHitResult = FHitResult(PieceActor, InteractiveComponent, HitLocation, -RayDirection);
 				BestBoundsHitResult.bBlockingHit = true;
 				BestBoundsHitResult.HitObjectHandle = FActorInstanceHandle(PieceActor);
-				BestBoundsHitResult.Component = DragPrimitive;
+				BestBoundsHitResult.Component = InteractiveComponent;
 				BestBoundsHitResult.Location = HitLocation;
 				BestBoundsHitResult.ImpactPoint = HitLocation;
 				BestBoundsHitResult.Distance = BoundsDistance;

@@ -51,6 +51,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Level4")
 	UPrimitiveComponent* GetDragPrimitive() const;
 
+	UFUNCTION(BlueprintCallable, Category="Level4")
+	void GetInteractivePrimitiveComponents(TArray<UPrimitiveComponent*>& OutComponents) const;
+
 	UFUNCTION(BlueprintImplementableEvent, Category="Level4")
 	void BP_OnSelectedVisualChanged(bool bNewSelected);
 
