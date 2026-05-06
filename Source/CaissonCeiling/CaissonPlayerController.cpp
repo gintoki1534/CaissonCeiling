@@ -316,9 +316,21 @@ void ACaissonPlayerController::OnPrimaryInteractPressed()
 	if (Level3FlowComponent && Level3FlowComponent->IsLevel3SessionActive())
 	{
 		FHitResult Level3HitResult;
-		if (GetCursorHitResult(Level3HitResult))
+		const bool bLevel3CursorHit = GetCursorHitResult(Level3HitResult);
+		if (bLevel3CursorHit)
 		{
 			Level3FlowComponent->ApplySelectedToolToHit(Level3HitResult);
+		}
+		else
+		{
+			FVector WorldOrigin;
+			FVector WorldDirection;
+			const bool bCanBuildFallbackRay = DeprojectMousePositionToWorld(WorldOrigin, WorldDirection);
+			const FVector TraceEnd = bCanBuildFallbackRay ? WorldOrigin + WorldDirection * 200000.0f : FVector::ZeroVector;
+			if (bCanBuildFallbackRay)
+			{
+				Level3FlowComponent->ApplySelectedToolToRepairMeshRay(WorldOrigin, TraceEnd);
+			}
 		}
 		return;
 	}

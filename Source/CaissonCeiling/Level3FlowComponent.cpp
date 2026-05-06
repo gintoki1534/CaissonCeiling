@@ -1,8 +1,185 @@
 #include "Level3FlowComponent.h"
 
+#include "Components/PrimitiveComponent.h"
 #include "EngineUtils.h"
 #include "Level3RepairAreaComponent.h"
 #include "TimerManager.h"
+
+namespace
+{
+ULevel3RepairAreaComponent* FindRepairAreaOnActorHierarchy(AActor* StartActor)
+{
+	TSet<AActor*> VisitedActors;
+	TArray<AActor*> PendingActors;
+
+	if (StartActor)
+	{
+		PendingActors.Add(StartActor);
+	}
+
+	while (PendingActors.Num() > 0)
+	{
+		AActor* CurrentActor = PendingActors.Pop(EAllowShrinking::No);
+		if (!CurrentActor || VisitedActors.Contains(CurrentActor))
+		{
+			continue;
+		}
+
+		VisitedActors.Add(CurrentActor);
+		if (ULevel3RepairAreaComponent* RepairArea = CurrentActor->FindComponentByClass<ULevel3RepairAreaComponent>())
+		{
+			return RepairArea;
+		}
+
+		auto AddRelatedActor = [&PendingActors, &VisitedActors](AActor* RelatedActor)
+		{
+			if (RelatedActor && !VisitedActors.Contains(RelatedActor))
+			{
+				PendingActors.Add(RelatedActor);
+			}
+		};
+
+		AddRelatedActor(CurrentActor->GetOwner());
+		AddRelatedActor(CurrentActor->GetAttachParentActor());
+		AddRelatedActor(CurrentActor->GetParentActor());
+	}
+
+	return nullptr;
+}
+
+void GetEnabledRepairAreas(UWorld* World, TArray<ULevel3RepairAreaComponent*>& OutRepairAreas)
+{
+	if (!World)
+	{
+		return;
+	}
+
+	for (TActorIterator<AActor> It(World); It; ++It)
+	{
+		TArray<ULevel3RepairAreaComponent*> ActorRepairAreas;
+		It->GetComponents<ULevel3RepairAreaComponent>(ActorRepairAreas);
+		for (ULevel3RepairAreaComponent* RepairArea : ActorRepairAreas)
+		{
+			if (RepairArea && RepairArea->bAreaEnabled)
+			{
+				OutRepairAreas.Add(RepairArea);
+			}
+		}
+	}
+}
+
+bool IsRepairMeshPrimitive(const UPrimitiveComponent* PrimitiveComponent)
+{
+	if (!PrimitiveComponent)
+	{
+		return false;
+	}
+
+	const FName ComponentName = PrimitiveComponent->GetFName();
+	return ComponentName == TEXT("SM_RepairMesh")
+		|| ComponentName == TEXT("PreviewMeshComp");
+}
+
+bool TraceRepairAreaMesh(ULevel3RepairAreaComponent* RepairArea, const FVector& TraceStart, const FVector& TraceEnd, FHitResult& OutHitResult)
+{
+	AActor* AreaOwner = RepairArea ? RepairArea->GetOwner() : nullptr;
+	if (!AreaOwner)
+	{
+		return false;
+	}
+
+	TArray<UPrimitiveComponent*> PrimitiveComponents;
+	AreaOwner->GetComponents<UPrimitiveComponent>(PrimitiveComponents);
+
+	FHitResult BestHitResult;
+	double BestDistanceSq = TNumericLimits<double>::Max();
+
+	FCollisionQueryParams QueryParams(FName(TEXT("Level3RepairMeshTrace")), true);
+	QueryParams.bTraceComplex = true;
+
+	for (UPrimitiveComponent* PrimitiveComponent : PrimitiveComponents)
+	{
+		if (!IsRepairMeshPrimitive(PrimitiveComponent))
+		{
+			continue;
+		}
+
+		FHitResult ComponentHitResult;
+		if (!PrimitiveComponent->LineTraceComponent(ComponentHitResult, TraceStart, TraceEnd, QueryParams))
+		{
+			continue;
+		}
+
+		const FVector ImpactPoint(ComponentHitResult.ImpactPoint);
+		const double DistanceSq = FVector::DistSquared(TraceStart, ImpactPoint);
+		if (DistanceSq < BestDistanceSq)
+		{
+			BestDistanceSq = DistanceSq;
+			BestHitResult = ComponentHitResult;
+			BestHitResult.TraceStart = TraceStart;
+			BestHitResult.TraceEnd = TraceEnd;
+			BestHitResult.Distance = FVector::Distance(TraceStart, ImpactPoint);
+			BestHitResult.Component = PrimitiveComponent;
+		}
+	}
+
+	if (BestDistanceSq < TNumericLimits<double>::Max())
+	{
+		OutHitResult = BestHitResult;
+		return true;
+	}
+
+	return false;
+}
+
+ULevel3RepairAreaComponent* FindRepairAreaByRepairMeshTrace(UWorld* World, const FVector& TraceStart, const FVector& TraceEnd, FHitResult& OutRepairMeshHit)
+{
+	TArray<ULevel3RepairAreaComponent*> EnabledRepairAreas;
+	GetEnabledRepairAreas(World, EnabledRepairAreas);
+	if (EnabledRepairAreas.Num() == 0)
+	{
+		return nullptr;
+	}
+
+	if (TraceStart.Equals(TraceEnd))
+	{
+		return nullptr;
+	}
+
+	const FVector RayDirection = (TraceEnd - TraceStart).GetSafeNormal();
+	if (RayDirection.IsNearlyZero())
+	{
+		return nullptr;
+	}
+
+	ULevel3RepairAreaComponent* BestRepairArea = nullptr;
+	FHitResult BestHitResult;
+	double BestDistanceSq = TNumericLimits<double>::Max();
+
+	for (ULevel3RepairAreaComponent* RepairArea : EnabledRepairAreas)
+	{
+		FHitResult RepairMeshHit;
+		if (TraceRepairAreaMesh(RepairArea, TraceStart, TraceEnd, RepairMeshHit))
+		{
+			const double DistanceSq = FVector::DistSquared(TraceStart, FVector(RepairMeshHit.ImpactPoint));
+			if (DistanceSq < BestDistanceSq)
+			{
+				BestDistanceSq = DistanceSq;
+				BestRepairArea = RepairArea;
+				BestHitResult = RepairMeshHit;
+			}
+		}
+	}
+
+	if (BestRepairArea)
+	{
+		OutRepairMeshHit = BestHitResult;
+		return BestRepairArea;
+	}
+
+	return nullptr;
+}
+}
 
 ULevel3FlowComponent::ULevel3FlowComponent()
 {
@@ -185,6 +362,43 @@ bool ULevel3FlowComponent::SelectTool(FName ToolId)
 
 bool ULevel3FlowComponent::ApplySelectedToolToHit(const FHitResult& HitResult)
 {
+	const FLevel3ToolSpec* ToolSpec = nullptr;
+	if (!CanApplySelectedTool(ToolSpec))
+	{
+		return false;
+	}
+
+	ULevel3RepairAreaComponent* RepairArea = ResolveRepairAreaFromHit(HitResult);
+	if (!RepairArea)
+	{
+		return false;
+	}
+
+	return ApplyToolSpecToRepairArea(RepairArea, *ToolSpec);
+}
+
+bool ULevel3FlowComponent::ApplySelectedToolToRepairMeshRay(FVector TraceStart, FVector TraceEnd)
+{
+	const FLevel3ToolSpec* ToolSpec = nullptr;
+	if (!CanApplySelectedTool(ToolSpec))
+	{
+		return false;
+	}
+
+	FHitResult RepairMeshHitResult;
+	ULevel3RepairAreaComponent* RepairArea = FindRepairAreaByRepairMeshTrace(GetWorld(), TraceStart, TraceEnd, RepairMeshHitResult);
+	if (!RepairArea)
+	{
+		return false;
+	}
+
+	return ApplyToolSpecToRepairArea(RepairArea, *ToolSpec);
+}
+
+bool ULevel3FlowComponent::CanApplySelectedTool(const FLevel3ToolSpec*& OutToolSpec) const
+{
+	OutToolSpec = nullptr;
+
 	if (!bLevel3SessionActive || ProgressState.Phase == ELevel3Phase::RepairResult || ProgressState.Phase == ELevel3Phase::Completed)
 	{
 		return false;
@@ -200,13 +414,17 @@ bool ULevel3FlowComponent::ApplySelectedToolToHit(const FHitResult& HitResult)
 		return false;
 	}
 
-	const FLevel3ToolSpec* ToolSpec = FindToolSpec(ProgressState.SelectedToolId);
-	if (!ToolSpec)
+	OutToolSpec = FindToolSpec(ProgressState.SelectedToolId);
+	if (!OutToolSpec)
 	{
 		return false;
 	}
 
-	ULevel3RepairAreaComponent* RepairArea = ResolveRepairAreaFromHit(HitResult);
+	return true;
+}
+
+bool ULevel3FlowComponent::ApplyToolSpecToRepairArea(ULevel3RepairAreaComponent* RepairArea, const FLevel3ToolSpec& ToolSpec)
+{
 	if (!RepairArea)
 	{
 		return false;
@@ -220,9 +438,9 @@ bool ULevel3FlowComponent::ApplySelectedToolToHit(const FHitResult& HitResult)
 		SetPhase(ELevel3Phase::Repairing);
 	}
 
-	ProgressState.CleanlinessPercent = FMath::Clamp(ProgressState.CleanlinessPercent + ToolSpec->CleanlinessDelta, MinMetricValue, MaxMetricValue);
-	ProgressState.IntegrityPercent = FMath::Clamp(ProgressState.IntegrityPercent + ToolSpec->IntegrityDelta, MinMetricValue, MaxMetricValue);
-	ProgressState.AestheticsPercent = FMath::Clamp(ProgressState.AestheticsPercent + ToolSpec->AestheticsDelta, MinMetricValue, MaxMetricValue);
+	ProgressState.CleanlinessPercent = FMath::Clamp(ProgressState.CleanlinessPercent + ToolSpec.CleanlinessDelta, MinMetricValue, MaxMetricValue);
+	ProgressState.IntegrityPercent = FMath::Clamp(ProgressState.IntegrityPercent + ToolSpec.IntegrityDelta, MinMetricValue, MaxMetricValue);
+	ProgressState.AestheticsPercent = FMath::Clamp(ProgressState.AestheticsPercent + ToolSpec.AestheticsDelta, MinMetricValue, MaxMetricValue);
 	ProgressState.bIsRepairStrokeActive = false;
 	ProgressState.RepairCoveragePercent = 0.0f;
 
@@ -459,7 +677,23 @@ ULevel3RepairAreaComponent* ULevel3FlowComponent::ResolveRepairAreaFromHit(const
 	}
 
 	ULevel3RepairAreaComponent* RepairArea = HitActor->FindComponentByClass<ULevel3RepairAreaComponent>();
-	if (!RepairArea || !RepairArea->IsHitOnArea(HitResult))
+	if (!RepairArea)
+	{
+		if (ULevel3RepairAreaComponent* RelatedRepairArea = FindRepairAreaOnActorHierarchy(HitActor))
+		{
+			if (RelatedRepairArea->bAreaEnabled)
+			{
+				return RelatedRepairArea;
+			}
+		}
+
+		const FVector TraceStart(HitResult.TraceStart);
+		const FVector TraceEnd(HitResult.TraceEnd);
+		FHitResult RepairMeshHitResult;
+		return FindRepairAreaByRepairMeshTrace(GetWorld(), TraceStart, TraceEnd, RepairMeshHitResult);
+	}
+
+	if (!RepairArea->IsHitOnArea(HitResult))
 	{
 		return nullptr;
 	}

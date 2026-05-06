@@ -78,6 +78,9 @@ public:
 	bool ApplySelectedToolToHit(const FHitResult& HitResult);
 
 	UFUNCTION(BlueprintCallable, Category="Level3")
+	bool ApplySelectedToolToRepairMeshRay(FVector TraceStart, FVector TraceEnd);
+
+	UFUNCTION(BlueprintCallable, Category="Level3")
 	bool BeginRepairStroke(const FHitResult& HitResult);
 
 	UFUNCTION(BlueprintCallable, Category="Level3")
@@ -145,6 +148,8 @@ private:
 	const FLevel3ToolSpec* FindToolSpec(FName ToolId) const;
 	void StartStage(ELevel3SubStage SubStage);
 	void ResetProgressForStage(const FLevel3StageConfig& StageConfig);
+	bool CanApplySelectedTool(const FLevel3ToolSpec*& OutToolSpec) const;
+	bool ApplyToolSpecToRepairArea(ULevel3RepairAreaComponent* RepairArea, const FLevel3ToolSpec& ToolSpec);
 	ULevel3RepairAreaComponent* ResolveRepairAreaFromHit(const FHitResult& HitResult) const;
 	void RefreshStageVisualState();
 	void RefreshDustState();

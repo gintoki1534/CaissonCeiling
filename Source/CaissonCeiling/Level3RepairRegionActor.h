@@ -16,6 +16,9 @@ class CAISSONCEILING_API ALevel3RepairRegionActor : public AActor
 public:
 	ALevel3RepairRegionActor();
 
+	virtual void OnConstruction(const FTransform& Transform) override;
+	virtual void BeginPlay() override;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Level3")
 	TObjectPtr<USceneComponent> SceneRootComp;
 
@@ -24,4 +27,7 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Level3")
 	TObjectPtr<ULevel3RepairAreaComponent> RepairAreaComp;
+
+private:
+	void ConfigureRepairMeshCollision();
 };
