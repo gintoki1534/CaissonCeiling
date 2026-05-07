@@ -56,6 +56,7 @@
    - `Level3` 修复区域命中与覆盖率累计
 8. `ALevel3RepairRegionActor`
    - `Level3` 修复区域蓝图壳层入口
+   - `Level3` 材质过渡锁期间的微弱呼吸提示灯宿主
 9. `ULevel4PuzzleComponent`
    - `Level4` 拼图运行时状态机
    - 难度、阶段、碎片选择、固定生成 Transform、拖拽、旋转、吸附和完成判定
@@ -399,8 +400,9 @@
    - Dusting 驱动 `M_Dust.DustConcentration01`
    - Oiling 驱动 `M_Oil.OilBlend01`
    - 只改真实修复网格 Slot 0，不改 Slot 1 Cloud 材质
-7. 当前不把它视为“Level3 玩法逻辑蓝图”，而视为 `Level3` 的展示载体入口与视觉材质表现蓝图
-8. 后续如果 `Level3` 建立新的 C++ 流程类，再决定是否需要调整父类或进一步拆职责
+7. `ALevel3RepairRegionActor` 当前会在 C++ 视觉过渡锁期间自动打开 `TransitionPulse` 微弱呼吸灯，锁结束或 Level3 重置时自动关闭；`TransitionPulseFadeSeconds` 控制开关灯淡入淡出时长，默认 0.5 秒
+8. 当前不把它视为“Level3 玩法逻辑蓝图”，而视为 `Level3` 的展示载体入口与视觉材质表现蓝图
+9. 后续如果 `Level3` 建立新的 C++ 流程类，再决定是否需要调整父类或进一步拆职责
 
 `BP_ShowcaseModel_BC2`：
 
@@ -652,6 +654,7 @@ Oiling 达成结果
 4. `BP_Level3RepairRegion_Dusting` 当前仍复用为单区域命中壳层
 5. `W_Level3` 当前已经进入正式玩法开发状态，不再是纯占位页
 6. 真实灰尘与桐油材质已经接入 `BP_ShowcaseModel_Level3`，当前采用真实修复网格 Slot 0 材质直驱，不再使用 Dust/Oil Overlay Mesh 作为主表现路径
+7. 材质过渡锁期间，`ULevel3FlowComponent` 会打开当前 `BP_Level3RepairRegion_Dusting` 的过渡呼吸灯；锁结束后关闭，用于提示玩家当前等待材质切换完成
 
 ### 6.2.2 Level4 当前拼图主链路
 

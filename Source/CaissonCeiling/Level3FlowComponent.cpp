@@ -3,6 +3,7 @@
 #include "Components/PrimitiveComponent.h"
 #include "EngineUtils.h"
 #include "Level3RepairAreaComponent.h"
+#include "Level3RepairRegionActor.h"
 #include "TimerManager.h"
 
 namespace
@@ -296,8 +297,8 @@ void ULevel3FlowComponent::StartLevel3Dusting()
 {
 	bLevel3SessionActive = true;
 	ResultState = FLevel3ResultState();
-	ActiveRepairArea = nullptr;
 	ClearVisualTransitionLock(false);
+	ActiveRepairArea = nullptr;
 	ResetAllRepairAreas();
 	StartStage(ELevel3SubStage::Dusting);
 }
@@ -306,8 +307,8 @@ void ULevel3FlowComponent::StartLevel3Oiling()
 {
 	bLevel3SessionActive = true;
 	ResultState = FLevel3ResultState();
-	ActiveRepairArea = nullptr;
 	ClearVisualTransitionLock(false);
+	ActiveRepairArea = nullptr;
 	ResetAllRepairAreas();
 	StartStage(ELevel3SubStage::Oiling);
 }
@@ -332,8 +333,8 @@ void ULevel3FlowComponent::AdvanceToOilingStage()
 void ULevel3FlowComponent::ResetLevel3State()
 {
 	bLevel3SessionActive = false;
-	ActiveRepairArea = nullptr;
 	ClearVisualTransitionLock(false);
+	ActiveRepairArea = nullptr;
 	ResetAllRepairAreas();
 	ProgressState = FLevel3ProgressState();
 	ResultState = FLevel3ResultState();
@@ -774,6 +775,7 @@ void ULevel3FlowComponent::StartVisualTransitionLock()
 	ProgressState.bIsVisualTransitionActive = true;
 	ProgressState.VisualTransitionDurationSeconds = LockDuration;
 	ProgressState.VisualTransitionRemainingSeconds = LockDuration;
+	SetActiveRepairAreaTransitionPulse(true);
 
 	if (UWorld* World = GetWorld())
 	{
@@ -800,6 +802,7 @@ void ULevel3FlowComponent::ClearVisualTransitionLock(bool bBroadcastProgress)
 	ProgressState.bIsVisualTransitionActive = false;
 	ProgressState.VisualTransitionDurationSeconds = VisualTransitionDurationSeconds;
 	ProgressState.VisualTransitionRemainingSeconds = 0.0f;
+	SetActiveRepairAreaTransitionPulse(false);
 
 	if (bBroadcastProgress && bWasActive)
 	{
@@ -810,6 +813,19 @@ void ULevel3FlowComponent::ClearVisualTransitionLock(bool bBroadcastProgress)
 void ULevel3FlowComponent::FinishVisualTransitionLock()
 {
 	ClearVisualTransitionLock(true);
+}
+
+void ULevel3FlowComponent::SetActiveRepairAreaTransitionPulse(bool bActive)
+{
+	if (!ActiveRepairArea)
+	{
+		return;
+	}
+
+	if (ALevel3RepairRegionActor* RepairRegionActor = Cast<ALevel3RepairRegionActor>(ActiveRepairArea->GetOwner()))
+	{
+		RepairRegionActor->SetTransitionPulseActive(bActive);
+	}
 }
 
 void ULevel3FlowComponent::SetPhase(ELevel3Phase NewPhase)

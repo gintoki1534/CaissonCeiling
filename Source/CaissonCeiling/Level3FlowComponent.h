@@ -7,6 +7,7 @@
 #include "Level3FlowComponent.generated.h"
 
 class ULevel3RepairAreaComponent;
+class ALevel3RepairRegionActor;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLevel3PhaseChanged, ELevel3Phase, NewPhase);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLevel3SubStageChanged, ELevel3SubStage, NewSubStage);
@@ -158,6 +159,7 @@ private:
 	void StartVisualTransitionLock();
 	void ClearVisualTransitionLock(bool bBroadcastProgress);
 	void FinishVisualTransitionLock();
+	void SetActiveRepairAreaTransitionPulse(bool bActive);
 	void SetPhase(ELevel3Phase NewPhase);
 	void SetSubStage(ELevel3SubStage NewSubStage);
 	void BroadcastProgress();
