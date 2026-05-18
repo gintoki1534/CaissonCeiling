@@ -27,6 +27,8 @@ ACaissonPawn::ACaissonPawn()
 	// 创建 Camera
 	CameraComp = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraComp"));
 	CameraComp->SetupAttachment(SpringArmComp, USpringArmComponent::SocketName);
+	CameraComp->bConstrainAspectRatio = true;
+	CameraComp->AspectRatio = 16.0f / 9.0f;
 }
 
 void ACaissonPawn::BeginPlay()

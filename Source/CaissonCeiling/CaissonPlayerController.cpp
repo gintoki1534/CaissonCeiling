@@ -9,6 +9,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "Engine/World.h"
 #include "Framework/Application/SlateApplication.h"
+#include "GameFramework/GameUserSettings.h"
 #include "InputCoreTypes.h"
 
 namespace
@@ -99,6 +100,10 @@ ACaissonPlayerController::ACaissonPlayerController()
 	bCachedHoverEnabledBeforeInspect = false;
 	bCachedClickEnabledBeforeInspect = false;
 	bPendingInspectIsFinalTarget = false;
+	Windowed16By9Resolution = FIntPoint(1280, 720);
+	WindowAspectCheckInterval = 0.25f;
+	WindowAspectCheckTimer = 0.0f;
+	bApplyingDisplayMode = false;
 	ActiveCaissonWidget = nullptr;
 	Level3FlowComponent = CreateDefaultSubobject<ULevel3FlowComponent>(TEXT("Level3FlowComponent"));
 }
@@ -122,6 +127,7 @@ void ACaissonPlayerController::PlayerTick(float DeltaTime)
 {
 	Super::PlayerTick(DeltaTime);
 
+	EnforceWindowed16By9(DeltaTime);
 	UpdateHoveredInteractable();
 }
 
@@ -155,7 +161,139 @@ void ACaissonPlayerController::SetupInputComponent()
 	{
 		InputComponent->BindKey(EKeys::S, IE_Pressed, this, &ACaissonPlayerController::RequestSkipCurrentFlow);
 		InputComponent->BindKey(EKeys::R, IE_Pressed, this, &ACaissonPlayerController::OnLevel4PlaceSelectedPiecePressed);
+		InputComponent->BindKey(EKeys::F11, IE_Pressed, this, &ACaissonPlayerController::ToggleFullscreen16By9);
 	}
+}
+
+void ACaissonPlayerController::ToggleFullscreen16By9()
+{
+	UGameUserSettings* Settings = GEngine ? GEngine->GetGameUserSettings() : nullptr;
+	if (!Settings)
+	{
+		return;
+	}
+
+	const bool bCurrentlyFullscreen = Settings->GetFullscreenMode() != EWindowMode::Windowed;
+	ApplyDisplayMode16By9(!bCurrentlyFullscreen);
+}
+
+void ACaissonPlayerController::ApplyDisplayMode16By9(bool bFullscreen)
+{
+	UGameUserSettings* Settings = GEngine ? GEngine->GetGameUserSettings() : nullptr;
+	if (!Settings)
+	{
+		return;
+	}
+
+	bApplyingDisplayMode = true;
+
+	if (bFullscreen)
+	{
+		Settings->SetFullscreenMode(EWindowMode::WindowedFullscreen);
+	}
+	else
+	{
+		Settings->SetFullscreenMode(EWindowMode::Windowed);
+		Settings->SetScreenResolution(Windowed16By9Resolution);
+	}
+
+	Settings->ApplySettings(false);
+	if (GEngine && GEngine->GameViewport)
+	{
+		GEngine->GameViewport->LayoutPlayers();
+	}
+	Settings->SaveSettings();
+
+	bApplyingDisplayMode = false;
+}
+
+void ACaissonPlayerController::EnforceWindowed16By9(float DeltaTime)
+{
+	if (bApplyingDisplayMode)
+	{
+		return;
+	}
+
+	WindowAspectCheckTimer -= DeltaTime;
+	if (WindowAspectCheckTimer > 0.0f)
+	{
+		return;
+	}
+	WindowAspectCheckTimer = FMath::Max(0.05f, WindowAspectCheckInterval);
+
+	UGameUserSettings* Settings = GEngine ? GEngine->GetGameUserSettings() : nullptr;
+	if (!Settings || Settings->GetFullscreenMode() != EWindowMode::Windowed)
+	{
+		return;
+	}
+
+	int32 ViewportWidth = 0;
+	int32 ViewportHeight = 0;
+	GetViewportSize(ViewportWidth, ViewportHeight);
+
+	if (ViewportWidth <= 0 || ViewportHeight <= 0)
+	{
+		return;
+	}
+
+	const int32 AspectError = FMath::Abs(ViewportWidth * 9 - ViewportHeight * 16);
+	if (AspectError <= 8)
+	{
+		return;
+	}
+
+	const FIntPoint CorrectedSize = Calculate16By9SizeInside(ViewportWidth, ViewportHeight);
+	if (CorrectedSize.X < 640 || CorrectedSize.Y < 360)
+	{
+		return;
+	}
+
+	bApplyingDisplayMode = true;
+	Settings->SetFullscreenMode(EWindowMode::Windowed);
+	Settings->SetScreenResolution(CorrectedSize);
+	Settings->ApplySettings(false);
+	if (GEngine && GEngine->GameViewport)
+	{
+		GEngine->GameViewport->LayoutPlayers();
+	}
+	Settings->SaveSettings();
+	bApplyingDisplayMode = false;
+}
+
+FIntPoint ACaissonPlayerController::Calculate16By9SizeInside(int32 SourceWidth, int32 SourceHeight) const
+{
+	int32 Width = SourceWidth;
+	int32 Height = FMath::RoundToInt(static_cast<float>(SourceWidth) * 9.0f / 16.0f);
+
+	if (Height > SourceHeight)
+	{
+		Height = SourceHeight;
+		Width = FMath::RoundToInt(static_cast<float>(SourceHeight) * 16.0f / 9.0f);
+	}
+
+	return FIntPoint(FMath::Max(1, Width), FMath::Max(1, Height));
+}
+
+bool ACaissonPlayerController::IsMouseInside16By9ViewportArea() const
+{
+	int32 ViewportWidth = 0;
+	int32 ViewportHeight = 0;
+	GetViewportSize(ViewportWidth, ViewportHeight);
+
+	float MouseX = 0.0f;
+	float MouseY = 0.0f;
+	if (ViewportWidth <= 0 || ViewportHeight <= 0 || !GetMousePosition(MouseX, MouseY))
+	{
+		return false;
+	}
+
+	const FIntPoint ActiveSize = Calculate16By9SizeInside(ViewportWidth, ViewportHeight);
+	const float MinX = static_cast<float>(ViewportWidth - ActiveSize.X) * 0.5f;
+	const float MinY = static_cast<float>(ViewportHeight - ActiveSize.Y) * 0.5f;
+	const float MaxX = MinX + static_cast<float>(ActiveSize.X);
+	const float MaxY = MinY + static_cast<float>(ActiveSize.Y);
+
+	return MouseX >= MinX && MouseX <= MaxX && MouseY >= MinY && MouseY <= MaxY;
 }
 
 void ACaissonPlayerController::AdvanceStep()
@@ -754,11 +892,21 @@ void ACaissonPlayerController::UpdateHoveredInteractable()
 
 bool ACaissonPlayerController::GetCursorHitResult(FHitResult& OutHitResult) const
 {
+	if (!IsMouseInside16By9ViewportArea())
+	{
+		return false;
+	}
+
 	return GetHitResultUnderCursorByChannel(UEngineTypes::ConvertToTraceType(ECC_Visibility), true, OutHitResult);
 }
 
 bool ACaissonPlayerController::GetLevel4CursorHitResult(ULevel4PuzzleComponent* Level4PuzzleComponent, FHitResult& OutHitResult) const
 {
+	if (!IsMouseInside16By9ViewportArea())
+	{
+		return false;
+	}
+
 	if (!Level4PuzzleComponent)
 	{
 		return false;
@@ -778,7 +926,7 @@ bool ACaissonPlayerController::GetLevel4CursorHitResult(ULevel4PuzzleComponent* 
 UCaissonInteractComponent* ACaissonPlayerController::GetInteractComponentUnderCursor(FHitResult* OutHitResult) const
 {
 	FHitResult HitResult;
-	const bool bHit = GetHitResultUnderCursorByChannel(UEngineTypes::ConvertToTraceType(ECC_Visibility), true, HitResult);
+	const bool bHit = GetCursorHitResult(HitResult);
 	if (!bHit)
 	{
 		return nullptr;
@@ -808,7 +956,7 @@ UUserWidget* ACaissonPlayerController::OpenCaissonWidget(TSubclassOf<UUserWidget
 	UUserWidget* NewWidget = CreateWidget<UUserWidget>(this, WidgetClass);
 	if (NewWidget)
 	{
-		NewWidget->AddToViewport();
+		NewWidget->AddToPlayerScreen();
 		ActiveCaissonWidget = NewWidget;
 
 		FInputModeGameAndUI InputMode;

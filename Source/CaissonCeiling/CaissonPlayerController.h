@@ -62,6 +62,11 @@ protected:
 	void OnRightMousePressed();
 	void OnRightMouseReleased();
 	void OnLevel4PlaceSelectedPiecePressed();
+	void ToggleFullscreen16By9();
+	void ApplyDisplayMode16By9(bool bFullscreen);
+	void EnforceWindowed16By9(float DeltaTime);
+	bool IsMouseInside16By9ViewportArea() const;
+	FIntPoint Calculate16By9SizeInside(int32 SourceWidth, int32 SourceHeight) const;
 	bool HandleLevel2Interaction(UCaissonInteractComponent* InteractComp);
 	bool GetCursorHitResult(FHitResult& OutHitResult) const;
 	bool GetLevel4CursorHitResult(ULevel4PuzzleComponent* Level4PuzzleComponent, FHitResult& OutHitResult) const;
@@ -98,6 +103,14 @@ public:
 	// 是否允许当前阶段进行目标点击交互。
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Level2|Targets")
 	bool bEnableLevelTargetClick;
+
+	// 非全屏模式下使用的固定 16:9 客户区分辨率。
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Display|16:9")
+	FIntPoint Windowed16By9Resolution;
+
+	// 非全屏模式下定期检查窗口是否被拖拽成非 16:9。
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Display|16:9", meta=(ClampMin="0.05"))
+	float WindowAspectCheckInterval;
 
 	UPROPERTY(BlueprintAssignable, Category="Level2|Targets")
 	FOnLevel2TargetProgressChanged OnLevel2TargetProgressChanged;
@@ -237,6 +250,8 @@ private:
 	bool bCachedHoverEnabledBeforeInspect;
 	bool bCachedClickEnabledBeforeInspect;
 	bool bPendingInspectIsFinalTarget;
+	float WindowAspectCheckTimer;
+	bool bApplyingDisplayMode;
 
 	bool IsActiveCaissonWidgetNamed(const TCHAR* WidgetClassBaseName) const;
 	void StartLevel2InspectAfterModelReset(FName TargetId, bool bIsFinalTarget);
