@@ -24,30 +24,25 @@
 
 ```text
 BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
-CanvasPanel_16 [CanvasPanel] | parent=ROOT | children=BackgroundBlur_64, 按钮-上一个, 按钮-下一个, 按钮-关闭, Image_77, 介绍1new, 介绍2
-按钮-上一个 [Button] | parent=CanvasPanel_16 | children=无
-按钮-下一个 [Button] | parent=CanvasPanel_16 | children=无
+CanvasPanel_16 [CanvasPanel] | parent=ROOT | children=BackgroundBlur_64, 按钮-关闭, Image_77, 介绍1new, Video
 按钮-关闭 [Button] | parent=CanvasPanel_16 | children=无
 介绍1new [Image] | parent=CanvasPanel_16 | children=无
 Image_77 [Image] | parent=CanvasPanel_16 | children=无
-介绍2 [Image] | parent=CanvasPanel_16 | children=无
+Video [Image] | parent=CanvasPanel_16 | children=无
 ```
 
 ## 5. 事件图主链
 
 ### 5.1 组件事件
 
-1. 按钮-下一个 -> OnClicked
-1. 按钮-上一个 -> OnClicked
 1. 按钮-关闭 -> OnClicked
 
 ### 5.2 主执行链
 
-1. Construct -> SetVisibility -> GameplayStatics.GetAllActorsOfClass -> K2Node_IfThenElse_0 -> SpawnActor BP_ShowcaseModel_Level3_C -> Set Level3ShowcaseRef -> BP_ShowcaseModel_Level3_C.ActivateLevel3Presentation -> Cast To CaissonPlayerController -> Controller.Possess
-1. Construct -> SetVisibility -> GameplayStatics.GetAllActorsOfClass -> K2Node_IfThenElse_0 -> Set Level3ShowcaseRef -> BP_ShowcaseModel_Level3_C.ActivateLevel3Presentation
-1. 按钮-下一个.OnClicked -> SetVisibility -> SetVisibility
-1. 按钮-上一个.OnClicked -> SetVisibility -> SetVisibility
+1. Construct -> MediaPlayer.OpenSource -> K2Node_AddDelegate_0 -> GameplayStatics.GetAllActorsOfClass -> K2Node_IfThenElse_0 -> SpawnActor BP_ShowcaseModel_Level3_C -> Set Level3ShowcaseRef -> BP_ShowcaseModel_Level3_C.ActivateLevel3Presentation -> Cast To CaissonPlayerController -> Controller.Possess
+1. Construct -> MediaPlayer.OpenSource -> K2Node_AddDelegate_0 -> GameplayStatics.GetAllActorsOfClass -> K2Node_IfThenElse_0 -> Set Level3ShowcaseRef -> BP_ShowcaseModel_Level3_C.ActivateLevel3Presentation
 1. 按钮-关闭.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.StartLevel3Dusting -> CaissonPlayerController.SetLevelTargetInteractionEnabled -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
+1. videoFinished -> SetVisibility
 
 ## 6. 关键变量
 
@@ -56,55 +51,32 @@ Image_77 [Image] | parent=CanvasPanel_16 | children=无
 1. Level3ShowcaseRef
    类型：object -> /Script/Engine.BlueprintGeneratedClass'/Game/UI/BP_ShowcaseModel_Level3.BP_ShowcaseModel_Level3_C'
    显示名：Level 3Showcase Ref
+1. level2v
+   类型：object -> /Script/CoreUObject.Class'/Script/MediaAssets.MediaPlayer'
+   显示名：Level 2v
 
 ### 6.2 自动生成的控件变量
 
 1. 按钮-关闭 -> /Script/CoreUObject.Class'/Script/UMG.Button'
-1. 按钮-下一个 -> /Script/CoreUObject.Class'/Script/UMG.Button'
-1. 按钮-上一个 -> /Script/CoreUObject.Class'/Script/UMG.Button'
-1. 介绍2 -> /Script/CoreUObject.Class'/Script/UMG.Image'
 1. 介绍1new -> /Script/CoreUObject.Class'/Script/UMG.Image'
+1. Video -> /Script/CoreUObject.Class'/Script/UMG.Image'
+1. Image_77 -> /Script/CoreUObject.Class'/Script/UMG.Image'
 
 ## 7. 特殊设置
 
-1. 介绍1new.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/玩法教学-level3.玩法教学-level3'")
+1. 介绍1new.Brush = (ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/玩法教学.玩法教学'")
 1. Image_77.Brush = (TintColor=(SpecifiedColor=(R=0.158482,G=0.158482,B=0.158482,A=0.500000)))
 1. Image_77.Visibility = SelfHitTestInvisible
-1. 介绍2.Brush = (ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/新手引导2.新手引导2'")
-1. 介绍2.Visibility = SelfHitTestInvisible
+1. Video.Brush = (ImageType=FullColor,ResourceObject="/Script/Engine.Material'/Game/Movies/level2_Media_Video_Mat.level2_Media_Video_Mat'")
 1. BackgroundBlur_64.LayoutData = (Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
-1. 按钮-上一个.LayoutData = (Offsets=(Top=-60.000000,Right=104.881973,Bottom=102.072067),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=0.000000,Y=0.500000)))
-1. 按钮-下一个.LayoutData = (Offsets=(Left=-101.921875,Top=-56.540527,Right=1.921875,Bottom=102.072067),Anchors=(Minimum=(X=1.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
 1. 按钮-关闭.LayoutData = (Offsets=(Left=-72.000000,Top=248.000000,Right=40.000000,Bottom=40.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))
 1. Image_77.LayoutData = (Offsets=(Left=4.000000,Top=4.000000,Right=-4.000000,Bottom=-4.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
 1. 介绍1new.LayoutData = (Offsets=(Left=4.000000,Top=227.423416,Right=-4.000000,Bottom=159.363358),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
-1. 介绍2.LayoutData = (Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
+1. Video.LayoutData = (Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
 
 ## 8. 其他图表
 
-### 8.1 BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：2
-1. 连接数：1
-1. 执行链：BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3_Introdection
-1. 关键节点：
-   - BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
-   - ExecuteUbergraph_W_Level3_Introdection
-     输入：execute <- BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature:then
-
-### 8.2 BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：2
-1. 连接数：1
-1. 执行链：BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3_Introdection
-1. 关键节点：
-   - BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
-   - ExecuteUbergraph_W_Level3_Introdection
-     输入：execute <- BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature:then
-
-### 8.3 BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
+### 8.1 BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -115,7 +87,7 @@ Image_77 [Image] | parent=CanvasPanel_16 | children=无
    - ExecuteUbergraph_W_Level3_Introdection
      输入：execute <- BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature:then
 
-### 8.4 Construct
+### 8.2 Construct
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -125,6 +97,17 @@ Image_77 [Image] | parent=CanvasPanel_16 | children=无
    - Construct
    - ExecuteUbergraph_W_Level3_Introdection
      输入：execute <- Construct:then
+
+### 8.3 videoFinished
+
+1. 图类型：BlueprintGraph.EdGraphSchema_K2
+1. 模块数：2
+1. 连接数：1
+1. 执行链：videoFinished -> ExecuteUbergraph_W_Level3_Introdection
+1. 关键节点：
+   - videoFinished
+   - ExecuteUbergraph_W_Level3_Introdection
+     输入：execute <- videoFinished:then
 
 ## 9. 当前可直接确认的结论
 

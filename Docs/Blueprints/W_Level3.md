@@ -11,6 +11,8 @@
 1. 蓝图类型：WidgetBlueprint
 1. 父类：UMG.UserWidget
 1. 生成类：W_Level3_C
+1. Tick 预测：OnDemand
+1. Tick 原因：Anim
 
 ## 3. 当前状态
 
@@ -23,19 +25,34 @@
 1. 根控件：CanvasPanel_30
 
 ```text
+BackgroundBlur_145 [BackgroundBlur] | parent=NewbieGuideOverlay | children=无
+NewbieGuideOverlay [CanvasPanel] | parent=CanvasPanel_30 | children=BackgroundBlur_145, Button_Close_Guide, GuideDimBackground, Image_274, TextBlock_77, TextBlock_8
+Button_Close_Guide [Button] | parent=NewbieGuideOverlay | children=无
 Button_Continue [Button] | parent=CanvasPanel_Result | children=无
+CanvasPanel_Result [CanvasPanel] | parent=CanvasPanel_30 | children=Button_Continue, Text_Result, Image_101
 Button_Tool1 [Button] | parent=CanvasPanel_30 | children=无
+CanvasPanel_30 [CanvasPanel] | parent=ROOT | children=Button_Tool1, Button_Tool2, Button_Tool3, Button_Tool4, Button_Tool5, uibasenew, uibase, uipusu, cloudtittle, Tools_1_Unselected, Tools_2_Unselected, Tools_3_Unselected, Tools_4_Unselected, Tools_5_Unselected, line, stepcirclesmall_1, stepcirclesmall_2, stepcirclecurrent_1, stepcirclecurrent_2, StepNum_1, Step1_2_content, Step1_1_content, Step1_content, Step1_content_1, Step1_1_content_1, Step1_2_content_1, CurrentStepBackGround, CurrentStepBackGround_1, CurrentStepBackGround_2, Finish_1, Highlight_1, Tools_5_Selected, Tools_4_Selected, Tools_3_Selected, Tools_2_Selected, Tools_1_Selected, CanvasPanel_DustingTools, CanvasPanel_OilingTools, barbase, barbase1, barbase2, Text_CleanValue, Text_IntegrityValue, Text_AestheticsValue, PB_Clean, PB_Integrity, PB_Aesthetics, Img_CleanMarker, Img_IntegrityMarker, Img_AestheticsMarker, CanvasPanel_Result, Image_105, Image_5, Image_6, Image_104, Image_3, Image_4, FocusCirclePanel, NewbieGuideOverlay
 Button_Tool2 [Button] | parent=CanvasPanel_30 | children=无
 Button_Tool3 [Button] | parent=CanvasPanel_30 | children=无
 Button_Tool4 [Button] | parent=CanvasPanel_30 | children=无
 Button_Tool5 [Button] | parent=CanvasPanel_30 | children=无
-CanvasPanel_30 [CanvasPanel] | parent=ROOT | children=PB_Clean, Img_CleanMarker, Button_Tool1, cloudtittle, Button_Tool2, Button_Tool3, Button_Tool4, Button_Tool5, PB_Integrity, Tools_5_Selected, Tools_1_Unselected, Tools_2_Unselected, Tools_3_Unselected, Tools_4_Unselected, Tools_5_Unselected, Tools_4_Selected, Tools_3_Selected, Tools_2_Selected, Tools_1_Selected, PB_Aesthetics, Text_CleanValue, Text_IntegrityValue, Text_AestheticsValue, CanvasPanel_Result, Img_IntegrityMarker, uibase, Img_AestheticsMarker, CanvasPanel_OilingTools, barbase, barbase1, barbase2, CanvasPanel_DustingTools
-CanvasPanel_DustingTools [CanvasPanel] | parent=CanvasPanel_30 | children=tools_text_2, beauty_1, beauty, Perfect, Perfect_1, Perfect_2, clean, clean_1, clean_2, clean_3, clean_4, tools_text, tools_text_1, tools_text_3, tools_text_4, tools_text_5, tools_text_6, tools_text_7, tools_text_8, tools_text_9, tools, Image_8, Image_9, Image_10, Image_11, TextBlock_0, TextBlock, TextBlock_1, TextBlock_2, TextBlock_3
-CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=tools_text_12, beauty_2, beauty_3, Perfect_3, Perfect_4, clean_5, clean_6, clean_7, clean_9, tools_text_10, tools_text_11, tools_text_13, tools_text_14, tools_text_15, tools_text_16, tools_text_17, tools_1, Image, Image_1, Image_2, TextBlock_4, TextBlock_5, TextBlock_6, TextBlock_7
-CanvasPanel_Result [CanvasPanel] | parent=CanvasPanel_30 | children=Text_Result, Button_Continue
+CanvasPanel_DustingTools [CanvasPanel] | parent=CanvasPanel_30 | children=beauty_1, beauty, Perfect, Perfect_1, Perfect_2, clean, clean_1, clean_2, clean_3, clean_4, tools_text, tools_text_1, tools_text_2, tools_text_3, tools_text_4, tools_text_5, tools_text_6, tools_text_7, tools_text_8, tools_text_9, tools, Image_8, Image_9, Image_10, Image_11, TextBlock_0, TextBlock, TextBlock_1, TextBlock_2, TextBlock_3
+CanvasPanel_OilingTools [CanvasPanel] | parent=CanvasPanel_30 | children=beauty_2, beauty_3, Perfect_3, Perfect_4, clean_5, clean_6, clean_7, clean_9, tools_text_10, tools_text_11, tools_text_12, tools_text_13, tools_text_14, tools_text_15, tools_text_16, tools_text_17, tools_1, Image, Image_1, Image_2, TextBlock_4, TextBlock_5, TextBlock_6, TextBlock_7
+FocusCirclePanel [CanvasPanel] | parent=CanvasPanel_30 | children=circle, light
 PB_Clean [ProgressBar] | parent=CanvasPanel_30 | children=无
 Img_CleanMarker [Image] | parent=CanvasPanel_30 | children=无
 cloudtittle [TextBlock] | parent=CanvasPanel_30 | children=无
+Highlight_1 [Image] | parent=CanvasPanel_30 | children=无
+Finish_1 [Image] | parent=CanvasPanel_30 | children=无
+CurrentStepBackGround [Image] | parent=CanvasPanel_30 | children=无
+Step1_content [EditableTextBox] | parent=CanvasPanel_30 | children=无
+StepNum_1 [EditableTextBox] | parent=CanvasPanel_30 | children=无
+CurrentStepBackGround_2 [Image] | parent=CanvasPanel_30 | children=无
+stepcirclesmall_1 [Image] | parent=CanvasPanel_30 | children=无
+stepcirclesmall_2 [Image] | parent=CanvasPanel_30 | children=无
+line [Image] | parent=CanvasPanel_30 | children=无
+Step1_1_content [EditableTextBox] | parent=CanvasPanel_30 | children=无
+Step1_2_content [EditableTextBox] | parent=CanvasPanel_30 | children=无
 PB_Integrity [ProgressBar] | parent=CanvasPanel_30 | children=无
 Tools_5_Selected [Image] | parent=CanvasPanel_30 | children=无
 Tools_1_Unselected [Image] | parent=CanvasPanel_30 | children=无
@@ -51,9 +68,23 @@ PB_Aesthetics [ProgressBar] | parent=CanvasPanel_30 | children=无
 Text_CleanValue [TextBlock] | parent=CanvasPanel_30 | children=无
 Text_IntegrityValue [TextBlock] | parent=CanvasPanel_30 | children=无
 Text_AestheticsValue [TextBlock] | parent=CanvasPanel_30 | children=无
+stepcirclecurrent_1 [Image] | parent=CanvasPanel_30 | children=无
+stepcirclecurrent_2 [Image] | parent=CanvasPanel_30 | children=无
 Img_IntegrityMarker [Image] | parent=CanvasPanel_30 | children=无
+Step1_content_1 [EditableTextBox] | parent=CanvasPanel_30 | children=无
+Step1_1_content_1 [EditableTextBox] | parent=CanvasPanel_30 | children=无
+Step1_2_content_1 [EditableTextBox] | parent=CanvasPanel_30 | children=无
+uibasenew [Image] | parent=CanvasPanel_30 | children=无
+Image_104 [Image] | parent=CanvasPanel_30 | children=无
+Image_3 [Image] | parent=CanvasPanel_30 | children=无
 uibase [Image] | parent=CanvasPanel_30 | children=无
+Image_4 [Image] | parent=CanvasPanel_30 | children=无
+Image_105 [Image] | parent=CanvasPanel_30 | children=无
+Image_5 [Image] | parent=CanvasPanel_30 | children=无
+Image_6 [Image] | parent=CanvasPanel_30 | children=无
+uipusu [Image] | parent=CanvasPanel_30 | children=无
 Img_AestheticsMarker [Image] | parent=CanvasPanel_30 | children=无
+CurrentStepBackGround_1 [Image] | parent=CanvasPanel_30 | children=无
 barbase [Image] | parent=CanvasPanel_30 | children=无
 barbase1 [Image] | parent=CanvasPanel_30 | children=无
 barbase2 [Image] | parent=CanvasPanel_30 | children=无
@@ -112,6 +143,13 @@ TextBlock_5 [TextBlock] | parent=CanvasPanel_OilingTools | children=无
 TextBlock_6 [TextBlock] | parent=CanvasPanel_OilingTools | children=无
 TextBlock_7 [TextBlock] | parent=CanvasPanel_OilingTools | children=无
 Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
+Image_101 [Image] | parent=CanvasPanel_Result | children=无
+light [Image] | parent=FocusCirclePanel | children=无
+circle [Image] | parent=FocusCirclePanel | children=无
+Image_274 [Image] | parent=NewbieGuideOverlay | children=无
+TextBlock_77 [TextBlock] | parent=NewbieGuideOverlay | children=无
+TextBlock_8 [TextBlock] | parent=NewbieGuideOverlay | children=无
+GuideDimBackground [Image] | parent=NewbieGuideOverlay | children=无
 ```
 
 ## 5. 事件图主链
@@ -124,24 +162,26 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
 1. Button_Tool4 -> OnClicked
 1. Button_Tool5 -> OnClicked
 1. Button_Continue -> OnClicked
+1. Button_Close_Guide -> OnClicked
 
 ### 5.2 主执行链
 
 1. PreConstruct
-1. Construct -> Cast To BP_ShowcaseModel_Level3_C -> Set Level3ShowcaseRef -> Cast To CaissonPlayerController -> Set CaissonControllerRef -> Set Level3FlowRef -> IsValid -> K2Node_AddDelegate_0 -> K2Node_AddDelegate_1 -> K2Node_AddDelegate_2 -> K2Node_AddDelegate_3 -> HandleLevel3PhaseChanged -> HandleLevel3ProgressChanged
+1. Construct -> PlayAnimation -> Cast To BP_ShowcaseModel_Level3_C -> Set Level3ShowcaseRef -> Cast To CaissonPlayerController -> Set CaissonControllerRef -> Set Level3FlowRef -> IsValid -> K2Node_AddDelegate_0 -> K2Node_AddDelegate_1 -> K2Node_AddDelegate_2 -> K2Node_AddDelegate_3 -> HandleLevel3PhaseChanged -> HandleLevel3ProgressChanged
 1. HandleLevel3PhaseChanged -> Switch on ELevel3Phase -> SetVisibility
-1. HandleLevel3PhaseChanged -> Switch on ELevel3Phase -> SetVisibility -> TextBlock.SetText -> SetVisibility
-1. HandleLevel3ToolSelected -> RefreshToolSelectionVisuals -> K2Node_IfThenElse_0 -> IsValid -> BP_ShowcaseModel_Level3_C.ActivateRepairPresentation -> Set bRepairViewActivated
-1. HandleLevel3ResultReady -> Set Visibility -> TextBlock.SetText
+1. HandleLevel3PhaseChanged -> Switch on ELevel3Phase -> SetVisibility -> TextBlock.SetText
+1. HandleLevel3ToolSelected -> RefreshToolSelectionVisuals -> K2Node_IfThenElse_0 -> IsValid -> BP_ShowcaseModel_Level3_C.ActivateRepairPresentation -> Set bRepairViewActivated -> SetVisibility
+1. HandleLevel3ResultReady -> Set Visibility -> TextBlock.SetText -> Switch on ELevel3SubStage -> SetVisibility -> SetVisibility
 1. Button_Tool1.OnClicked -> RequestSelectTool
 1. Button_Tool2.OnClicked -> RequestSelectTool
 1. Button_Tool3.OnClicked -> RequestSelectTool
 1. Button_Tool4.OnClicked -> RequestSelectTool
 1. Button_Tool5.OnClicked -> RequestSelectTool
 1. Button_Continue.OnClicked -> IsValid -> BP_ShowcaseModel_Level3_C.ReturnToLevel3DefaultView -> Set bRepairViewActivated -> IsValid -> Switch on ELevel3SubStage -> CaissonPlayerController.CompleteLevel3ResultPresentation -> BP_ShowcaseModel_Level3_C.DeactivateLevel3Presentation -> Cast To CaissonPlayerController -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
-1. Button_Continue.OnClicked -> IsValid -> BP_ShowcaseModel_Level3_C.ReturnToLevel3DefaultView -> Set bRepairViewActivated -> IsValid -> Switch on ELevel3SubStage -> CaissonPlayerController.AdvanceLevel3ToOiling -> Set Visibility
-1. HandleLevel3ProgressChanged -> Switch on ELevel3SubStage -> SetVisibility -> SetVisibility -> IsValid -> BP_ShowcaseModel_Level3_C.UpdateOilVisual -> KismetSystemLibrary.PrintString -> TextBlock.SetText -> TextBlock.SetText -> TextBlock.SetText -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> CanvasPanelSlot.SetPosition -> CanvasPanelSlot.SetPosition -> CanvasPanelSlot.SetPosition -> Switch on ELevel3Phase -> K2Node_IfThenElse_1 -> SetIsEnabled -> SetVisibility
-1. HandleLevel3ProgressChanged -> Switch on ELevel3SubStage -> IsValid -> BP_ShowcaseModel_Level3_C.UpdateDustVisual -> KismetSystemLibrary.PrintString -> TextBlock.SetText -> TextBlock.SetText -> TextBlock.SetText -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> CanvasPanelSlot.SetPosition -> CanvasPanelSlot.SetPosition -> CanvasPanelSlot.SetPosition -> Switch on ELevel3Phase -> K2Node_IfThenElse_1 -> SetIsEnabled -> SetVisibility
+1. Button_Continue.OnClicked -> IsValid -> BP_ShowcaseModel_Level3_C.ReturnToLevel3DefaultView -> Set bRepairViewActivated -> IsValid -> Switch on ELevel3SubStage -> CaissonPlayerController.AdvanceLevel3ToOiling -> Set Visibility -> SetVisibility -> SetVisibility
+1. HandleLevel3ProgressChanged -> Switch on ELevel3SubStage -> SetVisibility -> SetVisibility -> IsValid -> BP_ShowcaseModel_Level3_C.UpdateOilVisual -> KismetSystemLibrary.PrintString -> TextBlock.SetText -> TextBlock.SetText -> TextBlock.SetText -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> CanvasPanelSlot.SetPosition -> CanvasPanelSlot.SetPosition -> CanvasPanelSlot.SetPosition -> Switch on ELevel3Phase -> K2Node_IfThenElse_1 -> SetIsEnabled
+1. HandleLevel3ProgressChanged -> Switch on ELevel3SubStage -> IsValid -> BP_ShowcaseModel_Level3_C.UpdateDustVisual -> KismetSystemLibrary.PrintString -> TextBlock.SetText -> TextBlock.SetText -> TextBlock.SetText -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> NormalizeMetricTo01 -> ProgressBar.SetPercent -> CanvasPanelSlot.SetPosition -> CanvasPanelSlot.SetPosition -> CanvasPanelSlot.SetPosition -> Switch on ELevel3Phase -> K2Node_IfThenElse_1 -> SetIsEnabled
+1. Button_Close_Guide.OnClicked -> SetVisibility
 
 ## 6. 关键变量
 
@@ -178,12 +218,25 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
 1. Text_IntegrityValue -> /Script/CoreUObject.Class'/Script/UMG.TextBlock'
 1. Text_CleanValue -> /Script/CoreUObject.Class'/Script/UMG.TextBlock'
 1. Text_AestheticsValue -> /Script/CoreUObject.Class'/Script/UMG.TextBlock'
+1. StepNum_1 -> /Script/CoreUObject.Class'/Script/UMG.EditableTextBox'
+1. stepcirclecurrent_2 -> /Script/CoreUObject.Class'/Script/UMG.Image'
+1. stepcirclecurrent_1 -> /Script/CoreUObject.Class'/Script/UMG.Image'
+1. Step1_content_1 -> /Script/CoreUObject.Class'/Script/UMG.EditableTextBox'
+1. Step1_2_content_1 -> /Script/CoreUObject.Class'/Script/UMG.EditableTextBox'
+1. Step1_1_content_1 -> /Script/CoreUObject.Class'/Script/UMG.EditableTextBox'
 1. PB_Integrity -> /Script/CoreUObject.Class'/Script/UMG.ProgressBar'
 1. PB_Clean -> /Script/CoreUObject.Class'/Script/UMG.ProgressBar'
 1. PB_Aesthetics -> /Script/CoreUObject.Class'/Script/UMG.ProgressBar'
+1. NewbieGuideOverlay -> /Script/CoreUObject.Class'/Script/UMG.CanvasPanel'
 1. Img_IntegrityMarker -> /Script/CoreUObject.Class'/Script/UMG.Image'
 1. Img_CleanMarker -> /Script/CoreUObject.Class'/Script/UMG.Image'
 1. Img_AestheticsMarker -> /Script/CoreUObject.Class'/Script/UMG.Image'
+1. Highlight_1 -> /Script/CoreUObject.Class'/Script/UMG.Image'
+1. FocusCirclePanel -> /Script/CoreUObject.Class'/Script/UMG.CanvasPanel'
+1. Finish_1 -> /Script/CoreUObject.Class'/Script/UMG.Image'
+1. CurrentStepBackGround_2 -> /Script/CoreUObject.Class'/Script/UMG.Image'
+1. CurrentStepBackGround_1 -> /Script/CoreUObject.Class'/Script/UMG.Image'
+1. CurrentStepBackGround -> /Script/CoreUObject.Class'/Script/UMG.Image'
 1. CanvasPanel_Result -> /Script/CoreUObject.Class'/Script/UMG.CanvasPanel'
 1. CanvasPanel_OilingTools -> /Script/CoreUObject.Class'/Script/UMG.CanvasPanel'
 1. CanvasPanel_DustingTools -> /Script/CoreUObject.Class'/Script/UMG.CanvasPanel'
@@ -193,17 +246,42 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
 1. Button_Tool2 -> /Script/CoreUObject.Class'/Script/UMG.Button'
 1. Button_Tool1 -> /Script/CoreUObject.Class'/Script/UMG.Button'
 1. Button_Continue -> /Script/CoreUObject.Class'/Script/UMG.Button'
+1. Button_Close_Guide -> /Script/CoreUObject.Class'/Script/UMG.Button'
+1. Animationfocus -> /Script/CoreUObject.Class'/Script/UMG.WidgetAnimation'
 
 ## 7. 特殊设置
 
-1. Button_Continue.Visibility = Collapsed
+1. W_Level3.TickPrediction = OnDemand
+   原因：Anim
+1. BackgroundBlur_145.Visibility = Collapsed
+1. NewbieGuideOverlay.Visibility = Visible
+1. Button_Close_Guide.BackgroundColor = (R=0.000000,G=0.000000,B=0.000000,A=0.200000)
+1. Button_Close_Guide.ColorAndOpacity = (R=0.000000,G=0.000000,B=0.000000,A=0.000000)
+1. Button_Continue.BackgroundColor = (R=0.000000,G=0.000000,B=0.000000,A=0.529739)
+1. Button_Continue.ColorAndOpacity = (R=0.000000,G=0.000000,B=0.000000,A=0.000000)
+1. CanvasPanel_Result.Visibility = Collapsed
 1. CanvasPanel_DustingTools.Visibility = HitTestInvisible
 1. CanvasPanel_OilingTools.Visibility = Collapsed
-1. CanvasPanel_Result.Visibility = Collapsed
+1. FocusCirclePanel.Visibility = HitTestInvisible
 1. Img_CleanMarker.ColorAndOpacity = (R=0.850000,G=0.670000,B=0.250000,A=1.000000)
 1. Img_CleanMarker.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/修复程度小圆点.修复程度小圆点'")
 1. cloudtittle.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "3FD0E7474B15EC0079FD338C7CB5B336", "云纹框架")
 1. cloudtittle.ColorAndOpacity = (SpecifiedColor=(R=0.630757,G=0.439657,B=0.230740,A=1.000000))
+1. Highlight_1.Brush = (ImageType=FullColor,ImageSize=(X=77.000000,Y=77.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/Ellipse_27.Ellipse_27'")
+1. Finish_1.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/对勾.对勾'")
+1. Finish_1.Visibility = Collapsed
+1. CurrentStepBackGround.Brush = (ImageType=FullColor,ImageSize=(X=905.000000,Y=92.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/高亮显示背景.高亮显示背景'")
+1. Step1_content.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "E4E8E6C54CD78F46BEF2A6AEFE05933C", "云纹框架的小构件修复")
+1. StepNum_1.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "6CD940E44513266CCB0913B335153F6F", "1")
+1. CurrentStepBackGround_2.Brush = (ImageType=FullColor,ImageSize=(X=905.000000,Y=92.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/高亮显示背景.高亮显示背景'")
+1. CurrentStepBackGround_2.Visibility = Hidden
+1. stepcirclesmall_1.ColorAndOpacity = (R=0.287441,G=0.287441,B=0.270498,A=1.000000)
+1. stepcirclesmall_1.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/点击圆圈内部.点击圆圈内部'")
+1. stepcirclesmall_2.ColorAndOpacity = (R=0.287441,G=0.287441,B=0.270498,A=1.000000)
+1. stepcirclesmall_2.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/点击圆圈内部.点击圆圈内部'")
+1. line.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/修复程度横线.修复程度横线'")
+1. Step1_1_content.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "3AA1BF1E46572EE909E273B40AB7902C", "除尘")
+1. Step1_2_content.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "CCAB6A58456644E3D70DB5B2016C05C8", "桐油钻生")
 1. Tools_5_Selected.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/刷子选择状态背景.刷子选择状态背景'")
 1. Tools_5_Selected.Visibility = Collapsed
 1. Tools_1_Unselected.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/刷子未选择状态背景.刷子未选择状态背景'")
@@ -220,13 +298,37 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
 1. Tools_1_Selected.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/刷子选择状态背景.刷子选择状态背景'")
 1. Tools_1_Selected.Visibility = Collapsed
 1. Text_CleanValue.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "1B438C92419C68D7494A319E9E0C0B82", "0")
+1. Text_CleanValue.ColorAndOpacity = (SpecifiedColor=(R=0.930111,G=0.863157,B=0.610496,A=1.000000))
 1. Text_IntegrityValue.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "1B438C92419C68D7494A319E9E0C0B82", "0")
+1. Text_IntegrityValue.ColorAndOpacity = (SpecifiedColor=(R=0.930111,G=0.863157,B=0.610496,A=1.000000))
 1. Text_AestheticsValue.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "1B438C92419C68D7494A319E9E0C0B82", "0")
+1. Text_AestheticsValue.ColorAndOpacity = (SpecifiedColor=(R=0.930111,G=0.863157,B=0.610496,A=1.000000))
+1. stepcirclecurrent_1.ColorAndOpacity = (R=0.930111,G=0.863157,B=0.610496,A=1.000000)
+1. stepcirclecurrent_1.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/点击圆圈内部.点击圆圈内部'")
+1. stepcirclecurrent_2.ColorAndOpacity = (R=0.930111,G=0.863157,B=0.610496,A=1.000000)
+1. stepcirclecurrent_2.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/点击圆圈内部.点击圆圈内部'")
+1. stepcirclecurrent_2.Visibility = Collapsed
 1. Img_IntegrityMarker.ColorAndOpacity = (R=0.900000,G=0.520000,B=0.340000,A=1.000000)
 1. Img_IntegrityMarker.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/修复程度小圆点.修复程度小圆点'")
-1. uibase.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/图层_3.图层_3'")
+1. Step1_content_1.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "E4E8E6C54CD78F46BEF2A6AEFE05933C", "云纹框架的小构件修复")
+1. Step1_content_1.Visibility = Collapsed
+1. Step1_1_content_1.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "3AA1BF1E46572EE909E273B40AB7902C", "除尘")
+1. Step1_1_content_1.Visibility = Collapsed
+1. Step1_2_content_1.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "CCAB6A58456644E3D70DB5B2016C05C8", "桐油钻生")
+1. Step1_2_content_1.Visibility = Collapsed
+1. uibasenew.Brush = (ImageType=FullColor,ImageSize=(X=1959.000000,Y=838.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/不动.不动'")
+1. Image_104.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/清洁度ui.清洁度ui'")
+1. Image_3.Brush = (ImageType=FullColor,ImageSize=(X=239.000000,Y=260.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/完好度ui_3.完好度ui_3'")
+1. uibase.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/背景新除尘.背景新除尘'")
+1. uibase.Visibility = Collapsed
+1. Image_4.Brush = (ImageType=FullColor,ImageSize=(X=271.000000,Y=260.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/美观度ui_1.美观度ui_1'")
+1. Image_105.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/进度条大球.进度条大球'")
+1. Image_5.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/进度条大球.进度条大球'")
+1. Image_6.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/进度条大球.进度条大球'")
+1. uipusu.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/ui框朴素.ui框朴素'")
 1. Img_AestheticsMarker.ColorAndOpacity = (R=0.350000,G=0.820000,B=0.720000,A=1.000000)
 1. Img_AestheticsMarker.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/修复程度小圆点.修复程度小圆点'")
+1. CurrentStepBackGround_1.Brush = (ImageType=FullColor,ImageSize=(X=905.000000,Y=92.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/高亮显示背景.高亮显示背景'")
 1. barbase.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/修复程度横线.修复程度横线'")
 1. barbase1.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/修复程度横线.修复程度横线'")
 1. barbase2.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/修复程度横线.修复程度横线'")
@@ -285,39 +387,88 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
 1. TextBlock_6.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "AA61C4CC44A158301832AE99243410F8", "极细勾线尘刷")
 1. TextBlock_7.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "E854B2A848A4A740BEACD99B11222EB5", "弯柄硬鬃隙刷")
 1. Text_Result.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "A1F6B9AC420CC8E3B898EBA59F6D6625", "除尘完成")
-1. PB_Clean.LayoutData = (Offsets=(Left=212.000000,Top=696.000000,Right=200.000000,Bottom=3.000000))
-1. Img_CleanMarker.LayoutData = (Offsets=(Left=304.000000,Top=689.000000,Right=16.000000,Bottom=16.000000))
+1. Text_Result.Visibility = Hidden
+1. Image_101.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/本部分已修复.本部分已修复'")
+1. Image_101.Visibility = SelfHitTestInvisible
+1. light.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/黄色扩散层.黄色扩散层'")
+1. circle.ColorAndOpacity = (R=1.000000,G=1.000000,B=1.000000,A=0.300000)
+1. circle.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Chuchen/发光外环__1_.发光外环__1_'")
+1. Image_274.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/对话框底部.对话框底部'")
+1. TextBlock_77.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "3102629E4434E1A3E63F4B9DDB28A58A", "注意，每个工具的效果都不同哦，一定要合理搭配，达到最好\r\n的效果吧！")
+1. TextBlock_77.ColorAndOpacity = (SpecifiedColor=(R=0.011612,G=0.011612,B=0.011612,A=1.000000))
+1. TextBlock_77.AutoWrapText = True
+1. TextBlock_8.Text = NSLOCTEXT("[BB8C6375CC95ABC679EF6811644C7252]", "BA9202444214F9A53A138C894E5E980F", "现在，让我们选择合适的刷子，为藻井完成除尘的第一步吧！")
+1. TextBlock_8.ColorAndOpacity = (SpecifiedColor=(R=0.011612,G=0.011612,B=0.011612,A=1.000000))
+1. GuideDimBackground.ColorAndOpacity = (R=0.000000,G=0.000000,B=0.000000,A=0.550000)
+1. GuideDimBackground.Visibility = Collapsed
+1. BackgroundBlur_145.LayoutData = (Offsets=(Right=1940.240112,Bottom=1099.068970))
+1. Button_Close_Guide.LayoutData = (Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
+1. GuideDimBackground.LayoutData = (Offsets=(Right=1947.447388,Bottom=1089.459473))
+1. Image_274.LayoutData = (Offsets=(Left=-392.960938,Top=-381.081055,Right=1000.000000,Bottom=305.418762),Anchors=(Minimum=(X=0.500000,Y=1.000000),Maximum=(X=0.500000,Y=1.000000)))
+1. TextBlock_77.LayoutData = (Offsets=(Left=864.000000,Top=853.723145,Right=628.528503,Bottom=63.633633))
+1. TextBlock_8.LayoutData = (Offsets=(Left=864.000000,Top=816.000000))
+1. Button_Continue.LayoutData = (Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
+1. Text_Result.LayoutData = (Offsets=(Left=280.000000,Top=132.000000,Right=279.836975,Bottom=40.000000))
+1. Image_101.LayoutData = (Offsets=(Left=708.000000,Top=644.000000,Right=580.480469,Bottom=119.289291))
 1. Button_Tool1.LayoutData = (Offsets=(Left=1512.000000,Top=284.000000,Right=325.000000,Bottom=100.000000))
-1. cloudtittle.LayoutData = (Offsets=(Left=212.400253,Top=189.609375,Right=87.644791,Bottom=22.449593))
 1. Button_Tool2.LayoutData = (Offsets=(Left=1512.000000,Top=396.000000,Right=325.000000,Bottom=100.000000))
 1. Button_Tool3.LayoutData = (Offsets=(Left=1512.000000,Top=508.000000,Right=325.000000,Bottom=100.000000))
 1. Button_Tool4.LayoutData = (Offsets=(Left=1512.000000,Top=620.000000,Right=325.000000,Bottom=100.000000))
 1. Button_Tool5.LayoutData = (Offsets=(Left=1512.000000,Top=732.000000,Right=325.000000,Bottom=100.000000))
-1. PB_Integrity.LayoutData = (Offsets=(Left=212.000000,Top=760.000000,Right=200.000000,Bottom=3.000000))
-1. Tools_5_Selected.LayoutData = (Offsets=(Left=1512.000000,Top=732.000000,Right=325.000000,Bottom=100.000000))
+1. uibasenew.LayoutData = (Offsets=(Top=147.987991,Right=1900.000000,Bottom=825.780151))
+1. uibase.LayoutData = (Offsets=(Top=101.655945,Right=1900.000000,Bottom=872.112183))
+1. uipusu.LayoutData = (Offsets=(Top=100.000000,Right=510.410400,Bottom=371.831818))
+1. cloudtittle.LayoutData = (Offsets=(Left=213.935501,Top=174.354233,Right=87.644791,Bottom=22.449593))
 1. Tools_1_Unselected.LayoutData = (Offsets=(Left=1512.000000,Top=284.000000,Right=325.000000,Bottom=100.000000))
 1. Tools_2_Unselected.LayoutData = (Offsets=(Left=1512.000000,Top=396.000000,Right=325.000000,Bottom=100.000000))
 1. Tools_3_Unselected.LayoutData = (Offsets=(Left=1512.000000,Top=508.000000,Right=325.000000,Bottom=100.000000))
 1. Tools_4_Unselected.LayoutData = (Offsets=(Left=1512.000000,Top=620.000000,Right=325.000000,Bottom=100.000000))
 1. Tools_5_Unselected.LayoutData = (Offsets=(Left=1512.000000,Top=732.000000,Right=325.000000,Bottom=100.000000))
+1. line.LayoutData = (Offsets=(Left=85.081673,Top=333.326935,Right=41.801250,Bottom=1.268372))
+1. stepcirclesmall_1.LayoutData = (Offsets=(Left=101.543320,Top=316.000000,Right=9.000000,Bottom=9.000000))
+1. stepcirclesmall_2.LayoutData = (Offsets=(Left=101.543320,Top=342.651611,Right=9.000000,Bottom=9.000000))
+1. stepcirclecurrent_1.LayoutData = (Offsets=(Left=101.543320,Top=316.000000,Right=9.000000,Bottom=9.000000))
+1. stepcirclecurrent_2.LayoutData = (Offsets=(Left=101.543320,Top=342.651611,Right=9.000000,Bottom=9.000000))
+1. StepNum_1.LayoutData = (Offsets=(Left=94.350235,Top=273.885620,Right=27.241528))
+1. Step1_2_content.LayoutData = (Offsets=(Left=129.000000,Top=333.652161,Right=162.013596))
+1. Step1_1_content.LayoutData = (Offsets=(Left=129.000000,Top=305.169220,Right=162.013596))
+1. Step1_content.LayoutData = (Offsets=(Left=129.999969,Top=272.660980,Right=208.211060))
+1. Step1_content_1.LayoutData = (Offsets=(Left=129.999969,Top=272.660980,Right=208.211060))
+1. Step1_1_content_1.LayoutData = (Offsets=(Left=128.000000,Top=305.169220,Right=162.013596))
+1. Step1_2_content_1.LayoutData = (Offsets=(Left=129.000000,Top=333.652161,Right=162.013596))
+1. CurrentStepBackGround.LayoutData = (Offsets=(Left=88.348312,Top=272.000000,Right=331.651642,Bottom=33.390388))
+1. CurrentStepBackGround_1.LayoutData = (Offsets=(Left=88.000000,Top=308.000000,Right=331.651642,Bottom=22.879877))
+1. CurrentStepBackGround_2.LayoutData = (Offsets=(Left=88.000000,Top=336.000000,Right=331.651642,Bottom=22.879877))
+1. Finish_1.LayoutData = (Offsets=(Left=81.342834,Top=265.603210,Right=49.069069,Bottom=51.531532))
+1. Highlight_1.LayoutData = (Offsets=(Left=87.999969,Top=272.000000,Right=33.000000,Bottom=33.000000))
+1. Tools_5_Selected.LayoutData = (Offsets=(Left=1512.000000,Top=732.000000,Right=325.000000,Bottom=100.000000))
 1. Tools_4_Selected.LayoutData = (Offsets=(Left=1512.000000,Top=620.000000,Right=325.000000,Bottom=100.000000))
 1. Tools_3_Selected.LayoutData = (Offsets=(Left=1512.000000,Top=508.000000,Right=325.000000,Bottom=100.000000))
 1. Tools_2_Selected.LayoutData = (Offsets=(Left=1512.000000,Top=396.000000,Right=325.000000,Bottom=100.000000))
 1. Tools_1_Selected.LayoutData = (Offsets=(Left=1512.000000,Top=284.000000,Right=325.000000,Bottom=100.000000))
-1. PB_Aesthetics.LayoutData = (Offsets=(Left=212.000000,Top=828.000000,Right=200.000000,Bottom=3.000000))
-1. Text_CleanValue.LayoutData = (Offsets=(Left=168.000000,Top=676.000000,Bottom=40.000000))
-1. Text_IntegrityValue.LayoutData = (Offsets=(Left=168.000000,Top=744.000000,Bottom=40.000000))
-1. Text_AestheticsValue.LayoutData = (Offsets=(Left=168.000000,Top=808.000000,Bottom=40.000000))
-1. CanvasPanel_Result.LayoutData = (Offsets=(Left=592.000000,Top=244.000000,Right=746.589417,Bottom=590.493286))
-1. Img_IntegrityMarker.LayoutData = (Offsets=(Left=304.000000,Top=753.000000,Right=16.000000,Bottom=16.000000))
-1. uibase.LayoutData = (Offsets=(Top=101.655945,Right=1900.000000,Bottom=872.112183))
-1. Img_AestheticsMarker.LayoutData = (Offsets=(Left=304.000000,Top=821.000000,Right=16.000000,Bottom=16.000000))
-1. CanvasPanel_OilingTools.LayoutData = (Offsets=(Left=1480.816406,Top=164.104416,Right=400.643524,Bottom=786.117554))
-1. barbase.LayoutData = (Offsets=(Left=212.000000,Top=696.000000,Right=200.000000,Bottom=3.000000))
-1. barbase1.LayoutData = (Offsets=(Left=212.000000,Top=760.000000,Right=200.000000,Bottom=3.000000))
-1. barbase2.LayoutData = (Offsets=(Left=212.000000,Top=828.000000,Right=200.000000,Bottom=3.000000))
 1. CanvasPanel_DustingTools.LayoutData = (Offsets=(Left=1480.816406,Top=164.104416,Right=400.643524,Bottom=786.117554))
-1. tools_text_2.LayoutData = (Offsets=(Left=192.000000,Top=284.000000,Right=18.000000,Bottom=18.000000))
+1. CanvasPanel_OilingTools.LayoutData = (Offsets=(Left=1480.816406,Top=164.104416,Right=400.643524,Bottom=786.117554))
+1. barbase.LayoutData = (Offsets=(Left=212.000000,Top=704.000000,Right=200.000000,Bottom=3.000000))
+1. barbase1.LayoutData = (Offsets=(Left=212.000000,Top=766.769714,Right=200.000000,Bottom=3.000000))
+1. barbase2.LayoutData = (Offsets=(Left=212.000000,Top=834.662964,Right=200.000000,Bottom=3.000000))
+1. Text_CleanValue.LayoutData = (Offsets=(Left=396.000000,Top=672.000000,Bottom=40.000000))
+1. Text_IntegrityValue.LayoutData = (Offsets=(Left=396.000000,Top=736.000000,Bottom=40.000000))
+1. Text_AestheticsValue.LayoutData = (Offsets=(Left=396.000000,Top=804.000000,Bottom=40.000000))
+1. PB_Clean.LayoutData = (Offsets=(Left=212.000000,Top=701.749023,Right=200.000000,Bottom=8.000000))
+1. PB_Integrity.LayoutData = (Offsets=(Left=212.000000,Top=764.313660,Right=200.000000,Bottom=8.000000))
+1. PB_Aesthetics.LayoutData = (Offsets=(Left=212.000000,Top=831.995239,Right=200.000000,Bottom=8.000000))
+1. Img_CleanMarker.LayoutData = (Offsets=(Left=304.000000,Top=697.669495,Right=16.000000,Bottom=16.000000))
+1. Img_IntegrityMarker.LayoutData = (Offsets=(Left=304.000000,Top=760.000000,Right=16.000000,Bottom=16.000000))
+1. Img_AestheticsMarker.LayoutData = (Offsets=(Left=304.000000,Top=828.000000,Right=16.000000,Bottom=16.000000))
+1. CanvasPanel_Result.LayoutData = (Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
+1. Image_105.LayoutData = (Offsets=(Left=-753.192078,Top=161.955215,Right=208.228516,Bottom=6.565547),Anchors=(Minimum=(X=0.500000,Y=0.500000),Maximum=(X=0.500000,Y=0.500000)))
+1. Image_5.LayoutData = (Offsets=(Left=-753.553650,Top=224.354172,Right=208.228516,Bottom=6.565547),Anchors=(Minimum=(X=0.500000,Y=0.500000),Maximum=(X=0.500000,Y=0.500000)))
+1. Image_6.LayoutData = (Offsets=(Left=-752.960938,Top=292.389893,Right=208.228516,Bottom=6.565547),Anchors=(Minimum=(X=0.500000,Y=0.500000),Maximum=(X=0.500000,Y=0.500000)))
+1. Image_104.LayoutData = (Offsets=(Left=360.000000,Top=672.000000,Right=26.000000,Bottom=26.000000))
+1. Image_3.LayoutData = (Offsets=(Left=360.000000,Top=734.821472,Right=26.000000,Bottom=26.000000))
+1. Image_4.LayoutData = (Offsets=(Left=360.000000,Top=801.363770,Right=26.000000,Bottom=26.000000))
+1. FocusCirclePanel.LayoutData = (Offsets=(Left=1257.773804,Top=61.777771,Right=590.490479,Bottom=572.542542))
+1. NewbieGuideOverlay.LayoutData = (Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
 1. beauty_1.LayoutData = (Offsets=(Left=168.000000,Top=396.000000,Right=20.000000,Bottom=20.000000))
 1. beauty.LayoutData = (Offsets=(Left=168.000000,Top=172.000000,Right=20.000000,Bottom=20.000000))
 1. Perfect.LayoutData = (Offsets=(Left=168.000000,Top=284.000000,Right=20.000000,Bottom=20.000000))
@@ -330,6 +481,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
 1. clean_4.LayoutData = (Offsets=(Left=244.000000,Top=284.000000,Right=20.000000,Bottom=20.000000))
 1. tools_text.LayoutData = (Offsets=(Left=196.000000,Top=172.000000,Right=18.000000,Bottom=18.000000))
 1. tools_text_1.LayoutData = (Offsets=(Left=272.000000,Top=172.000000,Right=18.000000,Bottom=18.000000))
+1. tools_text_2.LayoutData = (Offsets=(Left=192.000000,Top=284.000000,Right=18.000000,Bottom=18.000000))
 1. tools_text_3.LayoutData = (Offsets=(Left=272.000000,Top=284.000000,Right=18.000000,Bottom=18.000000))
 1. tools_text_4.LayoutData = (Offsets=(Left=192.000000,Top=396.000000,Right=18.000000,Bottom=18.000000))
 1. tools_text_5.LayoutData = (Offsets=(Left=272.000000,Top=396.000000,Right=18.000000,Bottom=18.000000))
@@ -347,7 +499,6 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
 1. TextBlock_1.LayoutData = (Offsets=(Left=144.000000,Top=352.000000))
 1. TextBlock_2.LayoutData = (Offsets=(Left=148.000000,Top=472.000000))
 1. TextBlock_3.LayoutData = (Offsets=(Left=148.000000,Top=580.000000))
-1. tools_text_12.LayoutData = (Offsets=(Left=192.000000,Top=284.000000,Right=18.000000,Bottom=18.000000))
 1. beauty_2.LayoutData = (Offsets=(Left=168.000000,Top=396.000000,Right=20.000000,Bottom=20.000000))
 1. beauty_3.LayoutData = (Offsets=(Left=168.000000,Top=172.000000,Right=20.000000,Bottom=20.000000))
 1. Perfect_3.LayoutData = (Offsets=(Left=168.000000,Top=284.000000,Right=20.000000,Bottom=20.000000))
@@ -358,6 +509,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
 1. clean_9.LayoutData = (Offsets=(Left=244.000000,Top=284.000000,Right=20.000000,Bottom=20.000000))
 1. tools_text_10.LayoutData = (Offsets=(Left=196.000000,Top=172.000000,Right=18.000000,Bottom=18.000000))
 1. tools_text_11.LayoutData = (Offsets=(Left=272.000000,Top=172.000000,Right=18.000000,Bottom=18.000000))
+1. tools_text_12.LayoutData = (Offsets=(Left=192.000000,Top=284.000000,Right=18.000000,Bottom=18.000000))
 1. tools_text_13.LayoutData = (Offsets=(Left=272.000000,Top=284.000000,Right=18.000000,Bottom=18.000000))
 1. tools_text_14.LayoutData = (Offsets=(Left=192.000000,Top=396.000000,Right=18.000000,Bottom=18.000000))
 1. tools_text_15.LayoutData = (Offsets=(Left=272.000000,Top=396.000000,Right=18.000000,Bottom=18.000000))
@@ -371,12 +523,23 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
 1. TextBlock_5.LayoutData = (Offsets=(Left=144.000000,Top=240.000000))
 1. TextBlock_6.LayoutData = (Offsets=(Left=144.000000,Top=352.000000))
 1. TextBlock_7.LayoutData = (Offsets=(Left=148.000000,Top=472.000000))
-1. Text_Result.LayoutData = (Offsets=(Left=280.000000,Top=132.000000,Right=279.836975,Bottom=40.000000))
-1. Button_Continue.LayoutData = (Offsets=(Left=288.000000,Top=344.000000,Bottom=40.000000))
+1. circle.LayoutData = (Offsets=(Left=152.920822,Top=120.192039,Right=300.000000,Bottom=300.000000))
+1. light.LayoutData = (Offsets=(Left=101.502014,Top=70.888290,Right=406.000000,Bottom=406.000000))
 
 ## 8. 其他图表
 
-### 8.1 BndEvt__W_Level3_Button_Continue_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature
+### 8.1 BndEvt__W_Level3_Button_Close_Guide_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
+
+1. 图类型：BlueprintGraph.EdGraphSchema_K2
+1. 模块数：2
+1. 连接数：1
+1. 执行链：BndEvt__W_Level3_Button_Close_Guide_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature -> ExecuteUbergraph_W_Level3
+1. 关键节点：
+   - BndEvt__W_Level3_Button_Close_Guide_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
+   - ExecuteUbergraph_W_Level3
+     输入：execute <- BndEvt__W_Level3_Button_Close_Guide_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature:then
+
+### 8.2 BndEvt__W_Level3_Button_Continue_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -387,7 +550,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- BndEvt__W_Level3_Button_Continue_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature:then
 
-### 8.2 BndEvt__W_Level3_Button_Tool1_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
+### 8.3 BndEvt__W_Level3_Button_Tool1_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -398,7 +561,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- BndEvt__W_Level3_Button_Tool1_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature:then
 
-### 8.3 BndEvt__W_Level3_Button_Tool2_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature
+### 8.4 BndEvt__W_Level3_Button_Tool2_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -409,7 +572,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- BndEvt__W_Level3_Button_Tool2_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature:then
 
-### 8.4 BndEvt__W_Level3_Button_Tool3_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature
+### 8.5 BndEvt__W_Level3_Button_Tool3_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -420,7 +583,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- BndEvt__W_Level3_Button_Tool3_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature:then
 
-### 8.5 BndEvt__W_Level3_Button_Tool4_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature
+### 8.6 BndEvt__W_Level3_Button_Tool4_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -431,7 +594,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- BndEvt__W_Level3_Button_Tool4_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature:then
 
-### 8.6 BndEvt__W_Level3_Button_Tool5_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature
+### 8.7 BndEvt__W_Level3_Button_Tool5_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -442,7 +605,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- BndEvt__W_Level3_Button_Tool5_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature:then
 
-### 8.7 Construct
+### 8.8 Construct
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -453,7 +616,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- Construct:then
 
-### 8.8 HandleLevel3PhaseChanged
+### 8.9 HandleLevel3PhaseChanged
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：3
@@ -464,7 +627,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- SetVariableOnPersistentFrame:then
 
-### 8.9 HandleLevel3ProgressChanged
+### 8.10 HandleLevel3ProgressChanged
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：3
@@ -475,7 +638,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- SetVariableOnPersistentFrame:then
 
-### 8.10 HandleLevel3ResultReady
+### 8.11 HandleLevel3ResultReady
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：3
@@ -486,7 +649,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- SetVariableOnPersistentFrame:then
 
-### 8.11 HandleLevel3ToolSelected
+### 8.12 HandleLevel3ToolSelected
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：3
@@ -497,7 +660,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- SetVariableOnPersistentFrame:then
 
-### 8.12 NormalizeMetricTo01
+### 8.13 NormalizeMetricTo01
 
 1. 图类型：UMGEditor.WidgetGraphSchema
 1. 模块数：5
@@ -510,7 +673,7 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
      输入：Value <- K2Node_PromotableOperator_2:ReturnValue
      输入：Max = 1.0
 
-### 8.13 PreConstruct
+### 8.14 PreConstruct
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：3
@@ -521,14 +684,14 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
    - ExecuteUbergraph_W_Level3
      输入：execute <- SetVariableOnPersistentFrame:then
 
-### 8.14 RefreshToolSelectionVisuals
+### 8.15 RefreshToolSelectionVisuals
 
 1. 图类型：UMGEditor.WidgetGraphSchema
 1. 模块数：39
-1. 连接数：47
-1. 执行链：RefreshToolSelectionVisuals -> K2Node_IfThenElse_1 -> SetVisibility -> K2Node_IfThenElse_4 -> SetVisibility -> K2Node_IfThenElse_5 -> SetVisibility -> K2Node_IfThenElse_6 -> SetVisibility -> IsValid -> K2Node_IfThenElse_0
+1. 连接数：49
+1. 执行链：RefreshToolSelectionVisuals -> K2Node_IfThenElse_1 -> SetVisibility -> K2Node_IfThenElse_4 -> SetVisibility -> K2Node_IfThenElse_5 -> SetVisibility -> K2Node_IfThenElse_6 -> SetVisibility -> IsValid -> K2Node_IfThenElse_0 -> SetVisibility
 1. 执行链：RefreshToolSelectionVisuals -> K2Node_IfThenElse_1 -> SetVisibility -> K2Node_IfThenElse_4 -> SetVisibility -> K2Node_IfThenElse_5 -> SetVisibility -> K2Node_IfThenElse_6 -> SetVisibility -> IsValid -> K2Node_IfThenElse_2 -> SetVisibility
-1. 执行链：RefreshToolSelectionVisuals -> K2Node_IfThenElse_1 -> SetVisibility -> K2Node_IfThenElse_4 -> SetVisibility -> K2Node_IfThenElse_5 -> SetVisibility -> K2Node_IfThenElse_6 -> SetVisibility -> IsValid -> K2Node_IfThenElse_2 -> K2Node_IfThenElse_0
+1. 执行链：RefreshToolSelectionVisuals -> K2Node_IfThenElse_1 -> SetVisibility -> K2Node_IfThenElse_4 -> SetVisibility -> K2Node_IfThenElse_5 -> SetVisibility -> K2Node_IfThenElse_6 -> SetVisibility -> IsValid -> K2Node_IfThenElse_2 -> K2Node_IfThenElse_0 -> SetVisibility
 1. 关键节点：
    - RefreshToolSelectionVisuals
    - SetVisibility
@@ -564,16 +727,18 @@ Text_Result [TextBlock] | parent=CanvasPanel_Result | children=无
      输入：self <- Get Tools_4_Selected:Tools_4_Selected
      输入：InVisibility = Collapsed
    - SetVisibility
+     输入：execute <- K2Node_IfThenElse_0:then
      输入：self <- Get Tools_5_Selected:Tools_5_Selected
      输入：InVisibility = SelfHitTestInvisible
    - SetVisibility
+     输入：execute <- K2Node_IfThenElse_0:else
      输入：self <- Get Tools_5_Selected:Tools_5_Selected
      输入：InVisibility = Collapsed
    - IsValid
      输入：exec <- SetVisibility:then, SetVisibility:then
      输入：InputObject <- Get CaissonControllerRef:CaissonControllerRef
 
-### 8.15 RequestSelectTool
+### 8.16 RequestSelectTool
 
 1. 图类型：UMGEditor.WidgetGraphSchema
 1. 模块数：5

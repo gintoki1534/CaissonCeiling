@@ -12,6 +12,7 @@ class UInputAction;
 class UInputMappingContext;
 class ULevel3FlowComponent;
 class ULevel4PuzzleComponent;
+class USoundBase;
 class UUserWidget;
 
 UENUM(BlueprintType)
@@ -111,6 +112,16 @@ public:
 	// 非全屏模式下定期检查窗口是否被拖拽成非 16:9。
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Display|16:9", meta=(ClampMin="0.05"))
 	float WindowAspectCheckInterval;
+
+	// 全局背景音乐资源。实际播放生命周期由 UCaissonMusicSubsystem 统一托管。
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Audio|BGM")
+	TObjectPtr<USoundBase> GlobalBgm;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Audio|BGM", meta=(ClampMin="0.0"))
+	float GlobalBgmVolume;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Audio|BGM", meta=(ClampMin="0.0"))
+	float GlobalBgmFadeInSeconds;
 
 	UPROPERTY(BlueprintAssignable, Category="Level2|Targets")
 	FOnLevel2TargetProgressChanged OnLevel2TargetProgressChanged;

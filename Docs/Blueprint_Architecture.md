@@ -66,6 +66,9 @@
 11. `ALevel4PuzzleTargetLayoutActor`
    - `Level4` 目标布局配置壳层
    - 用蓝图配置每个阶段碎片的正确位置、旋转和资源类
+12. `UCaissonMusicSubsystem`
+   - 全局 BGM 生命周期管理
+   - 防止 Widget 切换时重复播放背景音乐
 
 ### 2.2 当前主要蓝图资产
 
@@ -111,6 +114,7 @@
 4. 可交互对象命中与广播
 5. Widget 生命周期管理
 6. 跨页面共享状态
+7. 全局 BGM 播放生命周期
 
 ### 3.2 蓝图应负责
 
@@ -119,6 +123,7 @@
 3. 模型资源挂载与关卡摆放
 4. 悬停、点亮、灯光、音效等表现响应
 5. 接收 C++ 委托后刷新 UI
+6. 配置 BGM 音频资源、音量和淡入淡出参数
 
 ### 3.3 不应重新写回蓝图的内容
 
@@ -127,6 +132,7 @@
 3. 在蓝图中重写输入主逻辑
 4. 在 UMG 中直接决定真实通关条件
 5. 用蓝图保存跨页面真状态
+6. 在 Widget 的 `Construct` 中直接 `Play Sound 2D` 播放全局 BGM
 
 ## 4. 当前运行时架构结论
 
@@ -183,6 +189,8 @@
 2. `LookAction -> IA_Look`
 3. `ClickAction -> IA_Click`
 4. `RightClickAction -> IA_RightClick`
+5. `GlobalBgm -> 全局背景音乐 SoundWave 或 SoundCue`
+6. `GlobalBgmVolume / GlobalBgmFadeInSeconds`
 
 当前应配置的关键运行数据：
 

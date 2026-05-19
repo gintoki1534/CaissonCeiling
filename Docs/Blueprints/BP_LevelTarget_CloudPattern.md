@@ -83,31 +83,7 @@
    - ExecuteUbergraph_BP_LevelTarget_CloudPattern
      输入：execute <- BndEvt__BP_LevelTarget_TiangongTower_CaissonInteract_K2Node_ComponentBoundEvent_6_OnCaissonInteractSignature__DelegateSignature:then
 
-### 8.4 ExecuteUbergraph_BP_LevelTarget_CloudPattern
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：4
-1. 连接数：0
-1. 执行链：CaissonInteract.OnHoverBegin
-1. 执行链：CaissonInteract.OnHoverEnd
-1. 执行链：CaissonInteract.OnInteractClicked
-1. 执行链：ExecuteUbergraph_BP_LevelTarget_CloudPattern
-1. 关键节点：
-   - CaissonInteract.OnHoverBegin
-   - CaissonInteract.OnHoverEnd
-   - CaissonInteract.OnInteractClicked
-   - ExecuteUbergraph_BP_LevelTarget_CloudPattern
-
-### 8.5 UserConstructionScript
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：1
-1. 连接数：0
-1. 执行链：UserConstructionScript
-1. 关键节点：
-   - UserConstructionScript
-
-### 8.6 UserConstructionScript_MERGED
+### 8.4 UserConstructionScript
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：1

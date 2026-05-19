@@ -32,6 +32,7 @@
 1. Event_PlayOilTransition -> K2Node_Timeline_0 -> MaterialInstanceDynamic.SetScalarParameterValue -> Set CurrentOilVisual01
 1. Event_PlayOilTransition -> K2Node_Timeline_0 -> Set CurrentOilVisual01
 1. FinalViewChanged -> Set StartLoc -> Set TargetLoc -> Set StartRot -> Set TargetRot -> K2Node_Timeline_1 -> SceneComponent.K2_SetWorldLocation -> SceneComponent.K2_SetWorldRotation
+1. StarMapViewChanged -> SceneComponent.K2_SetWorldLocation
 
 ## 6. 关键变量
 
@@ -250,7 +251,18 @@
      输入：NewLocation <- Get DefaultArmLocation:DefaultArmLocation
      输入：NewRotation <- Get DefaultArmRotation:DefaultArmRotation
 
-### 8.11 TL_DustTransition_5s__FinishedFunc
+### 8.11 StarMapViewChanged
+
+1. 图类型：BlueprintGraph.EdGraphSchema_K2
+1. 模块数：2
+1. 连接数：1
+1. 执行链：StarMapViewChanged -> ExecuteUbergraph_BP_ShowcaseModel_Level4
+1. 关键节点：
+   - StarMapViewChanged
+   - ExecuteUbergraph_BP_ShowcaseModel_Level4
+     输入：execute <- StarMapViewChanged:then
+
+### 8.12 TL_DustTransition_5s__FinishedFunc
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -261,7 +273,7 @@
    - ExecuteUbergraph_BP_ShowcaseModel_Level4
      输入：execute <- TL_DustTransition_5s__FinishedFunc:then
 
-### 8.12 TL_DustTransition_5s__UpdateFunc
+### 8.13 TL_DustTransition_5s__UpdateFunc
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -272,7 +284,7 @@
    - ExecuteUbergraph_BP_ShowcaseModel_Level4
      输入：execute <- TL_DustTransition_5s__UpdateFunc:then
 
-### 8.13 TL_OilTransition_5s__FinishedFunc
+### 8.14 TL_OilTransition_5s__FinishedFunc
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -283,7 +295,7 @@
    - ExecuteUbergraph_BP_ShowcaseModel_Level4
      输入：execute <- TL_OilTransition_5s__FinishedFunc:then
 
-### 8.14 TL_OilTransition_5s__UpdateFunc
+### 8.15 TL_OilTransition_5s__UpdateFunc
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -294,7 +306,7 @@
    - ExecuteUbergraph_BP_ShowcaseModel_Level4
      输入：execute <- TL_OilTransition_5s__UpdateFunc:then
 
-### 8.15 UpdateDustVisual
+### 8.16 UpdateDustVisual
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：9
@@ -320,7 +332,7 @@
    - Event_PlayDustTransition
      输入：execute <- ApplyDustMaterialToRepairMesh:then
 
-### 8.16 UpdateOilVisual
+### 8.17 UpdateOilVisual
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：9
@@ -346,7 +358,7 @@
    - Event_PlayOilTransition
      输入：execute <- ApplyOilMaterialToRepairMesh:then
 
-### 8.17 UserConstructionScript
+### 8.18 UserConstructionScript
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：1
@@ -355,7 +367,7 @@
 1. 关键节点：
    - UserConstructionScript
 
-### 8.18 时间轴__FinishedFunc
+### 8.19 时间轴__FinishedFunc
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2
@@ -366,7 +378,7 @@
    - ExecuteUbergraph_BP_ShowcaseModel_Level4
      输入：execute <- 时间轴__FinishedFunc:then
 
-### 8.19 时间轴__UpdateFunc
+### 8.20 时间轴__UpdateFunc
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：2

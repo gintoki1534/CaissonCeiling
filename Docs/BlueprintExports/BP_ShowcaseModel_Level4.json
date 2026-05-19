@@ -11,8 +11,8 @@
   "event_graph": {
     "name": "EventGraph",
     "schema": "BlueprintGraph.EdGraphSchema_K2",
-    "module_count": 69,
-    "connection_count": 79,
+    "module_count": 73,
+    "connection_count": 81,
     "modules": [
       {
         "id": "K2Node_Event_0",
@@ -4085,153 +4085,6 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableSet_24'"
       },
       {
-        "id": "K2Node_Timeline_1",
-        "class": "K2Node_Timeline",
-        "kind": "K2Node_Timeline",
-        "title": "K2Node_Timeline_1",
-        "meta": {},
-        "pins": [
-          {
-            "name": "Play",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "PlayFromStart",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_6",
-                "node_title": "Set TargetRot",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "Stop",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "Reverse",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "ReverseFromEnd",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "Update",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_3",
-                "node_title": "SceneComponent.K2_SetWorldLocation",
-                "pin_name": "execute"
-              }
-            ]
-          },
-          {
-            "name": "Finished",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "SetNewTime",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "NewTime",
-            "direction": "input",
-            "category": "real",
-            "subcategory": "float",
-            "default_value": "0.0",
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "Direction",
-            "direction": "output",
-            "category": "byte",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "Alpha",
-            "direction": "output",
-            "category": "real",
-            "subcategory": "float",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_0",
-                "node_title": "KismetMathLibrary.VLerp",
-                "pin_name": "Alpha"
-              },
-              {
-                "node": "K2Node_CallFunction_1",
-                "node_title": "KismetMathLibrary.RLerp",
-                "pin_name": "Alpha"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "PlayFromStart",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableSet_6",
-                "node_title": "Set TargetRot",
-                "pin_name": "then"
-              }
-            ]
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_Timeline'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_Timeline_1'"
-      },
-      {
         "id": "K2Node_CallFunction_0",
         "class": "K2Node_CallFunction",
         "kind": "call_function",
@@ -4957,7 +4810,7 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_4'"
       },
       {
-        "id": "K2Node_CustomEvent_2",
+        "id": "K2Node_CustomEvent_4",
         "class": "K2Node_CustomEvent",
         "kind": "custom_event",
         "title": "FinalViewChanged",
@@ -4992,7 +4845,7 @@
           }
         ],
         "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CustomEvent'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CustomEvent_2'"
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CustomEvent'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CustomEvent_4'"
       },
       {
         "id": "K2Node_CallFunction_5",
@@ -5013,9 +4866,9 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_24",
-                "node_title": "Get ArmAnchor_Final",
-                "pin_name": "ArmAnchor_Final"
+                "node": "K2Node_VariableGet_15",
+                "node_title": "Get SpringArmComp",
+                "pin_name": "SpringArmComp"
               }
             ]
           },
@@ -5043,9 +4896,9 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_24",
-                "node_title": "Get ArmAnchor_Final",
-                "pin_name": "ArmAnchor_Final"
+                "node": "K2Node_VariableGet_15",
+                "node_title": "Get SpringArmComp",
+                "pin_name": "SpringArmComp"
               }
             ]
           }
@@ -5070,7 +4923,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CustomEvent_2",
+                "node": "K2Node_CustomEvent_4",
                 "node_title": "FinalViewChanged",
                 "pin_name": "then"
               }
@@ -5133,7 +4986,7 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CustomEvent_2",
+                "node": "K2Node_CustomEvent_4",
                 "node_title": "FinalViewChanged",
                 "pin_name": "then"
               }
@@ -5331,56 +5184,6 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_17'"
       },
       {
-        "id": "K2Node_VariableGet_24",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get ArmAnchor_Final",
-        "meta": {
-          "variable_name": "ArmAnchor_Final"
-        },
-        "pins": [
-          {
-            "name": "ArmAnchor_Final",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_5",
-                "node_title": "SceneComponent.K2_GetComponentLocation",
-                "pin_name": "self"
-              },
-              {
-                "node": "K2Node_CallFunction_14",
-                "node_title": "SceneComponent.K2_GetComponentRotation",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_24'"
-      },
-      {
         "id": "K2Node_VariableGet_25",
         "class": "K2Node_VariableGet",
         "kind": "variable_get",
@@ -5559,9 +5362,9 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_24",
-                "node_title": "Get ArmAnchor_Final",
-                "pin_name": "ArmAnchor_Final"
+                "node": "K2Node_VariableGet_15",
+                "node_title": "Get SpringArmComp",
+                "pin_name": "SpringArmComp"
               }
             ]
           },
@@ -5589,9 +5392,9 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_24",
-                "node_title": "Get ArmAnchor_Final",
-                "pin_name": "ArmAnchor_Final"
+                "node": "K2Node_VariableGet_15",
+                "node_title": "Get SpringArmComp",
+                "pin_name": "SpringArmComp"
               }
             ]
           }
@@ -5815,6 +5618,438 @@
           }
         ],
         "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableSet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableSet_6'"
+      },
+      {
+        "id": "K2Node_CustomEvent_2",
+        "class": "K2Node_CustomEvent",
+        "kind": "custom_event",
+        "title": "StarMapViewChanged",
+        "meta": {
+          "event_name": "StarMapViewChanged",
+          "enabled_state": "Enabled"
+        },
+        "pins": [
+          {
+            "name": "OutputDelegate",
+            "direction": "output",
+            "category": "delegate",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_25",
+                "node_title": "SceneComponent.K2_SetWorldLocation",
+                "pin_name": "execute"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CustomEvent'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CustomEvent_2'"
+      },
+      {
+        "id": "K2Node_VariableGet_15",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get SpringArmComp",
+        "meta": {
+          "variable_name": "SpringArmComp"
+        },
+        "pins": [
+          {
+            "name": "SpringArmComp",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_5",
+                "node_title": "SceneComponent.K2_GetComponentLocation",
+                "pin_name": "self"
+              },
+              {
+                "node": "K2Node_CallFunction_14",
+                "node_title": "SceneComponent.K2_GetComponentRotation",
+                "pin_name": "self"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_15'"
+      },
+      {
+        "id": "K2Node_Knot_0",
+        "class": "K2Node_Knot",
+        "kind": "K2Node_Knot",
+        "title": "K2Node_Knot_0",
+        "meta": {},
+        "pins": [
+          {
+            "name": "InputPin",
+            "direction": "input",
+            "category": "wildcard",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "OutputPin",
+            "direction": "output",
+            "category": "wildcard",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Knot'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_Knot_0'"
+      },
+      {
+        "id": "K2Node_Timeline_1",
+        "class": "K2Node_Timeline",
+        "kind": "K2Node_Timeline",
+        "title": "K2Node_Timeline_1",
+        "meta": {},
+        "pins": [
+          {
+            "name": "Play",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "PlayFromStart",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_6",
+                "node_title": "Set TargetRot",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "Stop",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "Reverse",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "ReverseFromEnd",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "Update",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "node_title": "SceneComponent.K2_SetWorldLocation",
+                "pin_name": "execute"
+              }
+            ]
+          },
+          {
+            "name": "Finished",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "SetNewTime",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "NewTime",
+            "direction": "input",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": "0.0",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "Direction",
+            "direction": "output",
+            "category": "byte",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "Alpha",
+            "direction": "output",
+            "category": "real",
+            "subcategory": "float",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_0",
+                "node_title": "KismetMathLibrary.VLerp",
+                "pin_name": "Alpha"
+              },
+              {
+                "node": "K2Node_CallFunction_1",
+                "node_title": "KismetMathLibrary.RLerp",
+                "pin_name": "Alpha"
+              }
+            ]
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "PlayFromStart",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableSet_6",
+                "node_title": "Set TargetRot",
+                "pin_name": "then"
+              }
+            ]
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_Timeline'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_Timeline_1'"
+      },
+      {
+        "id": "K2Node_VariableGet_5",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get SpringArmComp",
+        "meta": {
+          "variable_name": "SpringArmComp"
+        },
+        "pins": [
+          {
+            "name": "SpringArmComp",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_25",
+                "node_title": "SceneComponent.K2_SetWorldLocation",
+                "pin_name": "self"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_VariableGet_5'"
+      },
+      {
+        "id": "K2Node_CallFunction_25",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "SceneComponent.K2_SetWorldLocation",
+        "meta": {
+          "function_name": "K2_SetWorldLocation",
+          "function_owner": "SceneComponent"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CustomEvent_2",
+                "node_title": "StarMapViewChanged",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_5",
+                "node_title": "Get SpringArmComp",
+                "pin_name": "SpringArmComp"
+              }
+            ]
+          },
+          {
+            "name": "NewLocation",
+            "direction": "input",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": "0.000000,10.000000,-240.000000",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "bSweep",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "SweepHitResult",
+            "direction": "output",
+            "category": "struct",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "bTeleport",
+            "direction": "input",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CustomEvent_2",
+                "node_title": "StarMapViewChanged",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_5",
+                "node_title": "Get SpringArmComp",
+                "pin_name": "SpringArmComp"
+              }
+            ]
+          },
+          {
+            "name": "NewLocation",
+            "category": "struct",
+            "default_value": "0.000000,10.000000,-240.000000",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:EventGraph.K2Node_CallFunction_25'"
       }
     ],
     "connections": [
@@ -6146,12 +6381,12 @@
       {
         "from": {
           "node": "K2Node_CustomEvent_2",
-          "node_title": "FinalViewChanged",
+          "node_title": "StarMapViewChanged",
           "pin_name": "then"
         },
         "to": {
-          "node": "K2Node_VariableSet_12",
-          "node_title": "Set StartLoc",
+          "node": "K2Node_CallFunction_25",
+          "node_title": "SceneComponent.K2_SetWorldLocation",
           "pin_name": "execute"
         },
         "category": "exec"
@@ -6166,6 +6401,19 @@
           "node": "K2Node_Timeline_2",
           "node_title": "K2Node_Timeline_2",
           "pin_name": "PlayFromStart"
+        },
+        "category": "exec"
+      },
+      {
+        "from": {
+          "node": "K2Node_CustomEvent_4",
+          "node_title": "FinalViewChanged",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_VariableSet_12",
+          "node_title": "Set StartLoc",
+          "pin_name": "execute"
         },
         "category": "exec"
       },
@@ -6366,6 +6614,32 @@
       },
       {
         "from": {
+          "node": "K2Node_VariableGet_15",
+          "node_title": "Get SpringArmComp",
+          "pin_name": "SpringArmComp"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_14",
+          "node_title": "SceneComponent.K2_GetComponentRotation",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_15",
+          "node_title": "Get SpringArmComp",
+          "pin_name": "SpringArmComp"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_5",
+          "node_title": "SceneComponent.K2_GetComponentLocation",
+          "pin_name": "self"
+        },
+        "category": "object"
+      },
+      {
+        "from": {
           "node": "K2Node_VariableGet_16",
           "node_title": "Get OilMaterial",
           "pin_name": "OilMaterial"
@@ -6457,32 +6731,6 @@
       },
       {
         "from": {
-          "node": "K2Node_VariableGet_24",
-          "node_title": "Get ArmAnchor_Final",
-          "pin_name": "ArmAnchor_Final"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_14",
-          "node_title": "SceneComponent.K2_GetComponentRotation",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_24",
-          "node_title": "Get ArmAnchor_Final",
-          "pin_name": "ArmAnchor_Final"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_5",
-          "node_title": "SceneComponent.K2_GetComponentLocation",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
           "node": "K2Node_VariableGet_25",
           "node_title": "Get ArmAnchor_Final",
           "pin_name": "ArmAnchor_Final"
@@ -6558,6 +6806,19 @@
           "pin_name": "B"
         },
         "category": "struct"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_5",
+          "node_title": "Get SpringArmComp",
+          "pin_name": "SpringArmComp"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_25",
+          "node_title": "SceneComponent.K2_SetWorldLocation",
+          "pin_name": "self"
+        },
+        "category": "object"
       },
       {
         "from": {
@@ -6902,6 +7163,10 @@
         "K2Node_Timeline_1",
         "SceneComponent.K2_SetWorldLocation",
         "SceneComponent.K2_SetWorldRotation"
+      ],
+      [
+        "StarMapViewChanged",
+        "SceneComponent.K2_SetWorldLocation"
       ]
     ]
   },
@@ -9956,6 +10221,140 @@
       ]
     },
     {
+      "name": "StarMapViewChanged",
+      "schema": "BlueprintGraph.EdGraphSchema_K2",
+      "module_count": 2,
+      "connection_count": 1,
+      "modules": [
+        {
+          "id": "K2Node_FunctionEntry_0",
+          "class": "K2Node_FunctionEntry",
+          "kind": "function_entry",
+          "title": "StarMapViewChanged",
+          "meta": {
+            "function_name": "StarMapViewChanged"
+          },
+          "pins": [
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_CallFunction_0",
+                  "node_title": "ExecuteUbergraph_BP_ShowcaseModel_Level4",
+                  "pin_name": "execute"
+                }
+              ]
+            }
+          ],
+          "important_inputs": [],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:StarMapViewChanged.K2Node_FunctionEntry_0'"
+        },
+        {
+          "id": "K2Node_CallFunction_0",
+          "class": "K2Node_CallFunction",
+          "kind": "call_function",
+          "title": "ExecuteUbergraph_BP_ShowcaseModel_Level4",
+          "meta": {
+            "function_name": "ExecuteUbergraph_BP_ShowcaseModel_Level4",
+            "function_owner": null
+          },
+          "pins": [
+            {
+              "name": "execute",
+              "direction": "input",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "node_title": "StarMapViewChanged",
+                  "pin_name": "then"
+                }
+              ]
+            },
+            {
+              "name": "then",
+              "direction": "output",
+              "category": "exec",
+              "subcategory": "",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "self",
+              "direction": "input",
+              "category": "object",
+              "subcategory": "self",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            },
+            {
+              "name": "EntryPoint",
+              "direction": "input",
+              "category": "int",
+              "subcategory": "",
+              "default_value": "0",
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "important_inputs": [
+            {
+              "name": "execute",
+              "category": "exec",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": [
+                {
+                  "node": "K2Node_FunctionEntry_0",
+                  "node_title": "StarMapViewChanged",
+                  "pin_name": "then"
+                }
+              ]
+            },
+            {
+              "name": "self",
+              "category": "object",
+              "default_value": null,
+              "default_object": null,
+              "linked_to": []
+            }
+          ],
+          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/BP_ShowcaseModel_Level4.BP_ShowcaseModel_Level4:StarMapViewChanged.K2Node_CallFunction_0'"
+        }
+      ],
+      "connections": [
+        {
+          "from": {
+            "node": "K2Node_FunctionEntry_0",
+            "node_title": "StarMapViewChanged",
+            "pin_name": "then"
+          },
+          "to": {
+            "node": "K2Node_CallFunction_0",
+            "node_title": "ExecuteUbergraph_BP_ShowcaseModel_Level4",
+            "pin_name": "execute"
+          },
+          "category": "exec"
+        }
+      ],
+      "exec_traces": [
+        [
+          "StarMapViewChanged",
+          "ExecuteUbergraph_BP_ShowcaseModel_Level4"
+        ]
+      ]
+    },
+    {
       "name": "TL_DustTransition_5s__FinishedFunc",
       "schema": "BlueprintGraph.EdGraphSchema_K2",
       "module_count": 2,
@@ -12777,8 +13176,8 @@
   "doc_view": {
     "blueprint_name": "BP_ShowcaseModel_Level4",
     "blueprint_class": "Blueprint",
-    "module_count": 69,
-    "connection_count": 79,
+    "module_count": 73,
+    "connection_count": 81,
     "component_events": [],
     "exec_traces": [
       [
@@ -12836,6 +13235,10 @@
         "K2Node_Timeline_1",
         "SceneComponent.K2_SetWorldLocation",
         "SceneComponent.K2_SetWorldRotation"
+      ],
+      [
+        "StarMapViewChanged",
+        "SceneComponent.K2_SetWorldLocation"
       ]
     ],
     "widget_outline": [],

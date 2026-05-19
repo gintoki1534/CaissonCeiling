@@ -11,8 +11,8 @@
   "event_graph": {
     "name": "EventGraph",
     "schema": "BlueprintGraph.EdGraphSchema_K2",
-    "module_count": 121,
-    "connection_count": 139,
+    "module_count": 118,
+    "connection_count": 136,
     "modules": [
       {
         "id": "K2Node_Event_1",
@@ -1123,51 +1123,6 @@
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level2.W_Level2:EventGraph.K2Node_CallFunction_33'"
       },
       {
-        "id": "K2Node_VariableGet_1",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get StepFinish",
-        "meta": {
-          "variable_name": "StepFinish"
-        },
-        "pins": [
-          {
-            "name": "StepFinish",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_0",
-                "node_title": "SetVisibility",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level2.W_Level2:EventGraph.K2Node_VariableGet_1'"
-      },
-      {
         "id": "K2Node_CallFunction_0",
         "class": "K2Node_CallFunction",
         "kind": "call_function",
@@ -1216,21 +1171,6 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_1",
-                "node_title": "Get StepFinish",
-                "pin_name": "StepFinish"
-              },
-              {
-                "node": "K2Node_VariableGet_5",
-                "node_title": "Get StepFinish_1",
-                "pin_name": "StepFinish_1"
-              },
-              {
-                "node": "K2Node_VariableGet_3",
-                "node_title": "Get StepFinish_2",
-                "pin_name": "StepFinish_2"
-              },
-              {
                 "node": "K2Node_VariableGet_0",
                 "node_title": "Get Finish_1",
                 "pin_name": "Finish_1"
@@ -1288,21 +1228,6 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_VariableGet_1",
-                "node_title": "Get StepFinish",
-                "pin_name": "StepFinish"
-              },
-              {
-                "node": "K2Node_VariableGet_5",
-                "node_title": "Get StepFinish_1",
-                "pin_name": "StepFinish_1"
-              },
-              {
-                "node": "K2Node_VariableGet_3",
-                "node_title": "Get StepFinish_2",
-                "pin_name": "StepFinish_2"
-              },
-              {
                 "node": "K2Node_VariableGet_0",
                 "node_title": "Get Finish_1",
                 "pin_name": "Finish_1"
@@ -1338,96 +1263,6 @@
           }
         ],
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level2.W_Level2:EventGraph.K2Node_CallFunction_0'"
-      },
-      {
-        "id": "K2Node_VariableGet_5",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get StepFinish_1",
-        "meta": {
-          "variable_name": "StepFinish_1"
-        },
-        "pins": [
-          {
-            "name": "StepFinish_1",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_0",
-                "node_title": "SetVisibility",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level2.W_Level2:EventGraph.K2Node_VariableGet_5'"
-      },
-      {
-        "id": "K2Node_VariableGet_3",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get StepFinish_2",
-        "meta": {
-          "variable_name": "StepFinish_2"
-        },
-        "pins": [
-          {
-            "name": "StepFinish_2",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_0",
-                "node_title": "SetVisibility",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level2.W_Level2:EventGraph.K2Node_VariableGet_3'"
       },
       {
         "id": "K2Node_CallFunction_49",
@@ -10593,19 +10428,6 @@
       },
       {
         "from": {
-          "node": "K2Node_VariableGet_1",
-          "node_title": "Get StepFinish",
-          "pin_name": "StepFinish"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_0",
-          "node_title": "SetVisibility",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
           "node": "K2Node_VariableGet_10",
           "node_title": "Get Circle_2",
           "pin_name": "Circle_2"
@@ -10872,19 +10694,6 @@
         },
         "to": {
           "node": "K2Node_CallFunction_11",
-          "node_title": "SetVisibility",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_3",
-          "node_title": "Get StepFinish_2",
-          "pin_name": "StepFinish_2"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_0",
           "node_title": "SetVisibility",
           "pin_name": "self"
         },
@@ -11223,19 +11032,6 @@
         },
         "to": {
           "node": "K2Node_CallFunction_35",
-          "node_title": "SetVisibility",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_5",
-          "node_title": "Get StepFinish_1",
-          "pin_name": "StepFinish_1"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_0",
           "node_title": "SetVisibility",
           "pin_name": "self"
         },
@@ -13455,7 +13251,8 @@
           "TextBlock"
         ],
         "properties": {
-          "Visibility": "Visible"
+          "Visibility": "Visible",
+          "bExpandedInDesigner": "True"
         }
       },
       {
@@ -13489,9 +13286,6 @@
           "Finish_1",
           "Finish_2",
           "Finish_3",
-          "StepFinish",
-          "StepFinish_1",
-          "StepFinish_2",
           "CurrentStepBackGround",
           "CurrentStepBackGround_1",
           "CurrentStepBackGround_2",
@@ -13643,9 +13437,7 @@
         "children": [
           "Image"
         ],
-        "properties": {
-          "bExpandedInDesigner": "True"
-        }
+        "properties": {}
       },
       {
         "name": "Circle_3",
@@ -13681,43 +13473,6 @@
         "children": [],
         "properties": {
           "Brush": "(ImageType=FullColor,ImageSize=(X=37.000000,Y=36.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/Ellipse_28.Ellipse_28'\")"
-        }
-      },
-      {
-        "name": "StepFinish",
-        "class": "Image",
-        "display_label": "StepFinish",
-        "is_variable": false,
-        "slot": "CanvasPanelSlot_13",
-        "parent": "CanvasPanel_38",
-        "children": [],
-        "properties": {
-          "Brush": "(ImageType=FullColor,ImageSize=(X=53.000000,Y=48.000000))"
-        }
-      },
-      {
-        "name": "StepFinish_1",
-        "class": "Image",
-        "display_label": "StepFinish_1",
-        "is_variable": false,
-        "slot": "CanvasPanelSlot_14",
-        "parent": "CanvasPanel_38",
-        "children": [],
-        "properties": {
-          "Brush": "(ImageType=FullColor,ImageSize=(X=53.000000,Y=48.000000))",
-          "bExpandedInDesigner": "True"
-        }
-      },
-      {
-        "name": "StepFinish_2",
-        "class": "Image",
-        "display_label": "StepFinish_2",
-        "is_variable": false,
-        "slot": "CanvasPanelSlot_15",
-        "parent": "CanvasPanel_38",
-        "children": [],
-        "properties": {
-          "Brush": "(ImageType=FullColor,ImageSize=(X=53.000000,Y=48.000000))"
         }
       },
       {
@@ -13933,7 +13688,8 @@
         "parent": "continue",
         "children": [],
         "properties": {
-          "Text": "NSLOCTEXT(\"[36D278295D84F0200FDE34B5820D24FA]\", \"562B9E9B4B9734D98D8C93A56FDD4931\", \"点击屏幕以继续\")"
+          "Text": "NSLOCTEXT(\"[36D278295D84F0200FDE34B5820D24FA]\", \"562B9E9B4B9734D98D8C93A56FDD4931\", \"点击屏幕以继续\")",
+          "Visibility": "Collapsed"
         }
       },
       {
@@ -14200,27 +13956,6 @@
         "layout_data": "(Offsets=(Left=90.999985,Top=288.000000,Right=49.069069,Bottom=51.531532))"
       },
       {
-        "slot_name": "CanvasPanelSlot_13",
-        "slot_class": "CanvasPanelSlot",
-        "parent": "CanvasPanel_38",
-        "child": "StepFinish",
-        "layout_data": "(Offsets=(Left=-nan(ind),Top=-2147483648.000000,Right=36.000000,Bottom=36.000000))"
-      },
-      {
-        "slot_name": "CanvasPanelSlot_14",
-        "slot_class": "CanvasPanelSlot",
-        "parent": "CanvasPanel_38",
-        "child": "StepFinish_1",
-        "layout_data": "(Offsets=(Left=-nan(ind),Top=-2147483648.000000,Right=36.000000,Bottom=36.000000))"
-      },
-      {
-        "slot_name": "CanvasPanelSlot_15",
-        "slot_class": "CanvasPanelSlot",
-        "parent": "CanvasPanel_38",
-        "child": "StepFinish_2",
-        "layout_data": "(Offsets=(Left=-nan(ind),Top=-2147483648.000000,Right=36.000000,Bottom=36.000000))"
-      },
-      {
         "slot_name": "CanvasPanelSlot_2",
         "slot_class": "CanvasPanelSlot",
         "parent": "CanvasPanel_38",
@@ -14415,7 +14150,7 @@
         "type": {
           "pin_category": "object",
           "pin_subcategory": null,
-          "pin_subcategory_object": "/Script/Engine.BlueprintGeneratedClass'/Game/UI/BP_ShowcaseModel_BC2.BP_ShowcaseModel_BC2_C'"
+          "pin_subcategory_object": null
         },
         "metadata": null
       },
@@ -14669,51 +14404,6 @@
           "pin_category": "object",
           "pin_subcategory": null,
           "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.EditableTextBox'"
-        },
-        "metadata": {
-          "(DataKey": "\"Category\",DataValue=\"W_Level2\")"
-        }
-      },
-      {
-        "name": "StepFinish_2",
-        "guid": "3C2013994BEBDEC0C0FEE4BE64E0143D",
-        "friendly_name": "StepFinish_2",
-        "category": null,
-        "property_flags": "562952101494812",
-        "type": {
-          "pin_category": "object",
-          "pin_subcategory": null,
-          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Image'"
-        },
-        "metadata": {
-          "(DataKey": "\"Category\",DataValue=\"W_Level2\")"
-        }
-      },
-      {
-        "name": "StepFinish_1",
-        "guid": "251795CB48C7DFB258AB5FB7BFC0754D",
-        "friendly_name": "StepFinish_1",
-        "category": null,
-        "property_flags": "562952101494812",
-        "type": {
-          "pin_category": "object",
-          "pin_subcategory": null,
-          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Image'"
-        },
-        "metadata": {
-          "(DataKey": "\"Category\",DataValue=\"W_Level2\")"
-        }
-      },
-      {
-        "name": "StepFinish",
-        "guid": "540059834DFF0E836104A58B9CD9572F",
-        "friendly_name": "StepFinish",
-        "category": null,
-        "property_flags": "562952101494812",
-        "type": {
-          "pin_category": "object",
-          "pin_subcategory": null,
-          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Image'"
         },
         "metadata": {
           "(DataKey": "\"Category\",DataValue=\"W_Level2\")"
@@ -15147,9 +14837,6 @@
       "Highlight_1": "A5501D8549BFF62ACDFFACB6E531F8C3",
       "Circle_3": "5E89020C486C45F23FD1F793862B5BF0",
       "Circle_2": "18001B6643300A5460680ABBDAA5FDEF",
-      "StepFinish": "540059834DFF0E836104A58B9CD9572F",
-      "StepFinish_1": "251795CB48C7DFB258AB5FB7BFC0754D",
-      "StepFinish_2": "3C2013994BEBDEC0C0FEE4BE64E0143D",
       "CurrentStepBackGround": "67B6E427465328C7D7D0F5936BAA5C0E",
       "Step1_content": "817D7DB54CF29F98B2B365B0DBE284FC",
       "Step2_content": "0AF73E55407DC7586AF4E0AA18E5C475",
@@ -15279,21 +14966,6 @@
       "value": "(ImageType=FullColor,ImageSize=(X=37.000000,Y=36.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/Ellipse_28.Ellipse_28'\")"
     },
     {
-      "target": "StepFinish",
-      "property": "Brush",
-      "value": "(ImageType=FullColor,ImageSize=(X=53.000000,Y=48.000000))"
-    },
-    {
-      "target": "StepFinish_1",
-      "property": "Brush",
-      "value": "(ImageType=FullColor,ImageSize=(X=53.000000,Y=48.000000))"
-    },
-    {
-      "target": "StepFinish_2",
-      "property": "Brush",
-      "value": "(ImageType=FullColor,ImageSize=(X=53.000000,Y=48.000000))"
-    },
-    {
       "target": "Highlight_3",
       "property": "Brush",
       "value": "(ImageType=FullColor,ImageSize=(X=77.000000,Y=77.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/Ellipse_27.Ellipse_27'\")"
@@ -15382,6 +15054,11 @@
       "target": "TextBlock_2",
       "property": "Text",
       "value": "NSLOCTEXT(\"[36D278295D84F0200FDE34B5820D24FA]\", \"562B9E9B4B9734D98D8C93A56FDD4931\", \"点击屏幕以继续\")"
+    },
+    {
+      "target": "TextBlock_2",
+      "property": "Visibility",
+      "value": "Collapsed"
     },
     {
       "target": "inner",
@@ -15539,21 +15216,6 @@
       "value": "(Offsets=(Left=90.999985,Top=288.000000,Right=49.069069,Bottom=51.531532))"
     },
     {
-      "target": "StepFinish",
-      "property": "LayoutData",
-      "value": "(Offsets=(Left=-nan(ind),Top=-2147483648.000000,Right=36.000000,Bottom=36.000000))"
-    },
-    {
-      "target": "StepFinish_1",
-      "property": "LayoutData",
-      "value": "(Offsets=(Left=-nan(ind),Top=-2147483648.000000,Right=36.000000,Bottom=36.000000))"
-    },
-    {
-      "target": "StepFinish_2",
-      "property": "LayoutData",
-      "value": "(Offsets=(Left=-nan(ind),Top=-2147483648.000000,Right=36.000000,Bottom=36.000000))"
-    },
-    {
       "target": "CurrentStepBackGround",
       "property": "LayoutData",
       "value": "(Offsets=(Left=63.000015,Top=188.000000,Right=424.000000,Bottom=43.000000))"
@@ -15687,8 +15349,8 @@
   "doc_view": {
     "blueprint_name": "W_Level2",
     "blueprint_class": "WidgetBlueprint",
-    "module_count": 121,
-    "connection_count": 139,
+    "module_count": 118,
+    "connection_count": 136,
     "component_events": [
       {
         "title": "Indtro_Button1.OnClicked",
@@ -15843,9 +15505,6 @@
           "Finish_1",
           "Finish_2",
           "Finish_3",
-          "StepFinish",
-          "StepFinish_1",
-          "StepFinish_2",
           "CurrentStepBackGround",
           "CurrentStepBackGround_1",
           "CurrentStepBackGround_2",
@@ -15948,24 +15607,6 @@
       },
       {
         "name": "Circle_2",
-        "class": "Image",
-        "parent": "CanvasPanel_38",
-        "children": []
-      },
-      {
-        "name": "StepFinish",
-        "class": "Image",
-        "parent": "CanvasPanel_38",
-        "children": []
-      },
-      {
-        "name": "StepFinish_1",
-        "class": "Image",
-        "parent": "CanvasPanel_38",
-        "children": []
-      },
-      {
-        "name": "StepFinish_2",
         "class": "Image",
         "parent": "CanvasPanel_38",
         "children": []

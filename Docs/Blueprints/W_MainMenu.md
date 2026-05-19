@@ -26,9 +26,10 @@
 
 ```text
 B_StartGame [Button] | parent=VerticalBox_0 | children=无
-CanvasPanel_43 [CanvasPanel] | parent=ROOT | children=Image_Background, VerticalBox_0, Title_Background
 VerticalBox_0 [VerticalBox] | parent=CanvasPanel_43 | children=B_StartGame
+CanvasPanel_43 [CanvasPanel] | parent=ROOT | children=Image_Background, Image_82, VerticalBox_0, Title_Background
 Image_Background [Image] | parent=CanvasPanel_43 | children=无
+Image_82 [Image] | parent=CanvasPanel_43 | children=无
 Title_Background [Image] | parent=CanvasPanel_43 | children=无
 ```
 
@@ -41,11 +42,17 @@ Title_Background [Image] | parent=CanvasPanel_43 | children=无
 
 ### 5.2 主执行链
 
-1. Construct -> PlayAnimation
+1. Construct -> PlayAnimation -> MediaPlayer.OpenSource
 1. B_StartGame.OnClicked -> KismetSystemLibrary.PrintText -> Cast To CaissonPlayerController -> CaissonPlayerController.SetLevelTargetInteractionEnabled -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
 1. B_StartGame.OnReleased
 
 ## 6. 关键变量
+
+### 6.1 自定义变量
+
+1. mediaplayer
+   类型：object -> /Script/CoreUObject.Class'/Script/MediaAssets.MediaPlayer'
+   显示名：Mediaplayer
 
 ### 6.2 自动生成的控件变量
 
@@ -57,11 +64,13 @@ Title_Background [Image] | parent=CanvasPanel_43 | children=无
 1. W_MainMenu.TickPrediction = OnDemand
    原因：Anim
 1. B_StartGame.ColorAndOpacity = (R=1.000000,G=1.000000,B=1.000000,A=0.000000)
-1. Image_Background.Brush = (ImageType=FullColor,ImageSize=(X=4096.000000,Y=2160.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/StartMenu/背景.背景'")
-1. Image_Background.Visibility = SelfHitTestInvisible
+1. Image_Background.Brush = (ImageType=FullColor,ImageSize=(X=4096.000000,Y=2160.000000),ResourceObject="/Script/Engine.Material'/Game/Movies/stsrtmenu.stsrtmenu'")
+1. Image_Background.Visibility = Collapsed
+1. Image_82.Brush = (ImageType=FullColor,ResourceObject="/Script/Engine.Material'/Game/Movies/stsrtmenu.stsrtmenu'")
 1. Title_Background.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/StartMenu/tittle.tittle'")
-1. Title_Background.Visibility = SelfHitTestInvisible
-1. Image_Background.LayoutData = (Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
+1. Title_Background.Visibility = Collapsed
+1. Image_Background.LayoutData = (Offsets=(Top=-54.054054,Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
+1. Image_82.LayoutData = (Offsets=(Top=-46.046047,Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
 1. VerticalBox_0.LayoutData = (Offsets=(Top=275.459473,Right=848.176697,Bottom=154.972122),Anchors=(Minimum=(X=0.500000,Y=0.500000),Maximum=(X=0.500000,Y=0.500000)),Alignment=(X=0.500000,Y=0.000000))
 1. Title_Background.LayoutData = (Offsets=(Left=43.477478,Top=-412.540527,Right=976.876831,Bottom=604.564575),Anchors=(Minimum=(X=0.500000,Y=0.500000),Maximum=(X=0.500000,Y=0.500000)),Alignment=(X=0.500000,Y=0.000000))
 

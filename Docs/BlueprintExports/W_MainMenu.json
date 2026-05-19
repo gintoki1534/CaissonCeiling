@@ -11,8 +11,8 @@
   "event_graph": {
     "name": "EventGraph",
     "schema": "BlueprintGraph.EdGraphSchema_K2",
-    "module_count": 15,
-    "connection_count": 12,
+    "module_count": 17,
+    "connection_count": 14,
     "modules": [
       {
         "id": "K2Node_Event_0",
@@ -1044,7 +1044,13 @@
             "subcategory": "",
             "default_value": null,
             "default_object": null,
-            "linked_to": []
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_6",
+                "node_title": "MediaPlayer.OpenSource",
+                "pin_name": "execute"
+              }
+            ]
           },
           {
             "name": "self",
@@ -1182,6 +1188,156 @@
           }
         ],
         "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_MainMenu.W_MainMenu:EventGraph.K2Node_CallFunction_3'"
+      },
+      {
+        "id": "K2Node_VariableGet_2",
+        "class": "K2Node_VariableGet",
+        "kind": "variable_get",
+        "title": "Get mediaplayer",
+        "meta": {
+          "variable_name": "mediaplayer"
+        },
+        "pins": [
+          {
+            "name": "mediaplayer",
+            "direction": "output",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_6",
+                "node_title": "MediaPlayer.OpenSource",
+                "pin_name": "self"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_MainMenu.W_MainMenu:EventGraph.K2Node_VariableGet_2'"
+      },
+      {
+        "id": "K2Node_CallFunction_6",
+        "class": "K2Node_CallFunction",
+        "kind": "call_function",
+        "title": "MediaPlayer.OpenSource",
+        "meta": {
+          "function_name": "OpenSource",
+          "function_owner": "MediaPlayer"
+        },
+        "pins": [
+          {
+            "name": "execute",
+            "direction": "input",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "node_title": "PlayAnimation",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "then",
+            "direction": "output",
+            "category": "exec",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": []
+          },
+          {
+            "name": "self",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_2",
+                "node_title": "Get mediaplayer",
+                "pin_name": "mediaplayer"
+              }
+            ]
+          },
+          {
+            "name": "MediaSource",
+            "direction": "input",
+            "category": "object",
+            "subcategory": "",
+            "default_value": null,
+            "default_object": "/Game/Movies/下载.下载",
+            "linked_to": []
+          },
+          {
+            "name": "ReturnValue",
+            "direction": "output",
+            "category": "bool",
+            "subcategory": "",
+            "default_value": "false",
+            "default_object": null,
+            "linked_to": []
+          }
+        ],
+        "important_inputs": [
+          {
+            "name": "execute",
+            "category": "exec",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_CallFunction_3",
+                "node_title": "PlayAnimation",
+                "pin_name": "then"
+              }
+            ]
+          },
+          {
+            "name": "self",
+            "category": "object",
+            "default_value": null,
+            "default_object": null,
+            "linked_to": [
+              {
+                "node": "K2Node_VariableGet_2",
+                "node_title": "Get mediaplayer",
+                "pin_name": "mediaplayer"
+              }
+            ]
+          },
+          {
+            "name": "MediaSource",
+            "category": "object",
+            "default_value": null,
+            "default_object": "/Game/Movies/下载.下载",
+            "linked_to": []
+          }
+        ],
+        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_MainMenu.W_MainMenu:EventGraph.K2Node_CallFunction_6'"
       }
     ],
     "connections": [
@@ -1223,6 +1379,19 @@
           "pin_name": "Object"
         },
         "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_CallFunction_3",
+          "node_title": "PlayAnimation",
+          "pin_name": "then"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_6",
+          "node_title": "MediaPlayer.OpenSource",
+          "pin_name": "execute"
+        },
+        "category": "exec"
       },
       {
         "from": {
@@ -1340,12 +1509,26 @@
           "pin_name": "InAnimation"
         },
         "category": "object"
+      },
+      {
+        "from": {
+          "node": "K2Node_VariableGet_2",
+          "node_title": "Get mediaplayer",
+          "pin_name": "mediaplayer"
+        },
+        "to": {
+          "node": "K2Node_CallFunction_6",
+          "node_title": "MediaPlayer.OpenSource",
+          "pin_name": "self"
+        },
+        "category": "object"
       }
     ],
     "exec_traces": [
       [
         "Construct",
-        "PlayAnimation"
+        "PlayAnimation",
+        "MediaPlayer.OpenSource"
       ],
       [
         "B_StartGame.OnClicked",
@@ -1780,22 +1963,6 @@
         }
       },
       {
-        "name": "CanvasPanel_43",
-        "class": "CanvasPanel",
-        "display_label": "CanvasPanel_43",
-        "is_variable": false,
-        "slot": null,
-        "parent": null,
-        "children": [
-          "Image_Background",
-          "VerticalBox_0",
-          "Title_Background"
-        ],
-        "properties": {
-          "bExpandedInDesigner": "True"
-        }
-      },
-      {
         "name": "VerticalBox_0",
         "class": "VerticalBox",
         "display_label": "VerticalBox_0",
@@ -1810,6 +1977,23 @@
         }
       },
       {
+        "name": "CanvasPanel_43",
+        "class": "CanvasPanel",
+        "display_label": "CanvasPanel_43",
+        "is_variable": false,
+        "slot": null,
+        "parent": null,
+        "children": [
+          "Image_Background",
+          "Image_82",
+          "VerticalBox_0",
+          "Title_Background"
+        ],
+        "properties": {
+          "bExpandedInDesigner": "True"
+        }
+      },
+      {
         "name": "Image_Background",
         "class": "Image",
         "display_label": "Image_Background",
@@ -1818,8 +2002,20 @@
         "parent": "CanvasPanel_43",
         "children": [],
         "properties": {
-          "Brush": "(ImageType=FullColor,ImageSize=(X=4096.000000,Y=2160.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/StartMenu/背景.背景'\")",
-          "Visibility": "SelfHitTestInvisible"
+          "Brush": "(ImageType=FullColor,ImageSize=(X=4096.000000,Y=2160.000000),ResourceObject=\"/Script/Engine.Material'/Game/Movies/stsrtmenu.stsrtmenu'\")",
+          "Visibility": "Collapsed"
+        }
+      },
+      {
+        "name": "Image_82",
+        "class": "Image",
+        "display_label": "Image_82",
+        "is_variable": false,
+        "slot": "CanvasPanelSlot_2",
+        "parent": "CanvasPanel_43",
+        "children": [],
+        "properties": {
+          "Brush": "(ImageType=FullColor,ResourceObject=\"/Script/Engine.Material'/Game/Movies/stsrtmenu.stsrtmenu'\")"
         }
       },
       {
@@ -1832,17 +2028,31 @@
         "children": [],
         "properties": {
           "Brush": "(ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/StartMenu/tittle.tittle'\")",
-          "Visibility": "SelfHitTestInvisible"
+          "Visibility": "Collapsed"
         }
       }
     ],
     "relationships": [
       {
+        "slot_name": "VerticalBoxSlot_0",
+        "slot_class": "VerticalBoxSlot",
+        "parent": "VerticalBox_0",
+        "child": "B_StartGame",
+        "layout_data": null
+      },
+      {
         "slot_name": "CanvasPanelSlot_0",
         "slot_class": "CanvasPanelSlot",
         "parent": "CanvasPanel_43",
         "child": "Image_Background",
-        "layout_data": "(Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
+        "layout_data": "(Offsets=(Top=-54.054054,Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
+      },
+      {
+        "slot_name": "CanvasPanelSlot_2",
+        "slot_class": "CanvasPanelSlot",
+        "parent": "CanvasPanel_43",
+        "child": "Image_82",
+        "layout_data": "(Offsets=(Top=-46.046047,Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
       },
       {
         "slot_name": "CanvasPanelSlot_1",
@@ -1857,18 +2067,25 @@
         "parent": "CanvasPanel_43",
         "child": "Title_Background",
         "layout_data": "(Offsets=(Left=43.477478,Top=-412.540527,Right=976.876831,Bottom=604.564575),Anchors=(Minimum=(X=0.500000,Y=0.500000),Maximum=(X=0.500000,Y=0.500000)),Alignment=(X=0.500000,Y=0.000000))"
-      },
-      {
-        "slot_name": "VerticalBoxSlot_0",
-        "slot_class": "VerticalBoxSlot",
-        "parent": "VerticalBox_0",
-        "child": "B_StartGame",
-        "layout_data": null
       }
     ]
   },
   "variables": {
-    "new_variables": [],
+    "new_variables": [
+      {
+        "name": "mediaplayer",
+        "guid": "796BB12C46FACE713A937E99871775D6",
+        "friendly_name": "Mediaplayer",
+        "category": "NSLOCTEXT(\"KismetSchema\", \"Default\", \"Default\")",
+        "property_flags": "65541",
+        "type": {
+          "pin_category": "object",
+          "pin_subcategory": null,
+          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/MediaAssets.MediaPlayer'"
+        },
+        "metadata": null
+      }
+    ],
     "generated_variables": [
       {
         "name": "B_StartGame",
@@ -1907,7 +2124,8 @@
       "VerticalBox_0": "A0FA16BE47CCA1E78428C698EF3ADCA6",
       "B_StartGame": "EBB8828949CD7E5E0BEEDA93163A61A4",
       "Title_Background": "9316280C4C6DF247DB8B2198458862F5",
-      "tittle": "10A0B9A748B9CDA35332FBBF9FEB3951"
+      "tittle": "10A0B9A748B9CDA35332FBBF9FEB3951",
+      "Image_82": "1C14D05A43CC3494DA20A9B264CD2806"
     }
   },
   "special_settings": [
@@ -1925,12 +2143,17 @@
     {
       "target": "Image_Background",
       "property": "Brush",
-      "value": "(ImageType=FullColor,ImageSize=(X=4096.000000,Y=2160.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/StartMenu/背景.背景'\")"
+      "value": "(ImageType=FullColor,ImageSize=(X=4096.000000,Y=2160.000000),ResourceObject=\"/Script/Engine.Material'/Game/Movies/stsrtmenu.stsrtmenu'\")"
     },
     {
       "target": "Image_Background",
       "property": "Visibility",
-      "value": "SelfHitTestInvisible"
+      "value": "Collapsed"
+    },
+    {
+      "target": "Image_82",
+      "property": "Brush",
+      "value": "(ImageType=FullColor,ResourceObject=\"/Script/Engine.Material'/Game/Movies/stsrtmenu.stsrtmenu'\")"
     },
     {
       "target": "Title_Background",
@@ -1940,12 +2163,17 @@
     {
       "target": "Title_Background",
       "property": "Visibility",
-      "value": "SelfHitTestInvisible"
+      "value": "Collapsed"
     },
     {
       "target": "Image_Background",
       "property": "LayoutData",
-      "value": "(Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
+      "value": "(Offsets=(Top=-54.054054,Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
+    },
+    {
+      "target": "Image_82",
+      "property": "LayoutData",
+      "value": "(Offsets=(Top=-46.046047,Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
     },
     {
       "target": "VerticalBox_0",
@@ -1961,8 +2189,8 @@
   "doc_view": {
     "blueprint_name": "W_MainMenu",
     "blueprint_class": "WidgetBlueprint",
-    "module_count": 15,
-    "connection_count": 12,
+    "module_count": 17,
+    "connection_count": 14,
     "component_events": [
       {
         "title": "B_StartGame.OnClicked",
@@ -1980,7 +2208,8 @@
     "exec_traces": [
       [
         "Construct",
-        "PlayAnimation"
+        "PlayAnimation",
+        "MediaPlayer.OpenSource"
       ],
       [
         "B_StartGame.OnClicked",
@@ -2002,16 +2231,6 @@
         "children": []
       },
       {
-        "name": "CanvasPanel_43",
-        "class": "CanvasPanel",
-        "parent": null,
-        "children": [
-          "Image_Background",
-          "VerticalBox_0",
-          "Title_Background"
-        ]
-      },
-      {
         "name": "VerticalBox_0",
         "class": "VerticalBox",
         "parent": "CanvasPanel_43",
@@ -2020,7 +2239,24 @@
         ]
       },
       {
+        "name": "CanvasPanel_43",
+        "class": "CanvasPanel",
+        "parent": null,
+        "children": [
+          "Image_Background",
+          "Image_82",
+          "VerticalBox_0",
+          "Title_Background"
+        ]
+      },
+      {
         "name": "Image_Background",
+        "class": "Image",
+        "parent": "CanvasPanel_43",
+        "children": []
+      },
+      {
+        "name": "Image_82",
         "class": "Image",
         "parent": "CanvasPanel_43",
         "children": []

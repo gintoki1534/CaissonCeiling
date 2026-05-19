@@ -24,10 +24,10 @@
 
 ```text
 BackgroundBlur_64 [BackgroundBlur] | parent=CanvasPanel_16 | children=无
-CanvasPanel_16 [CanvasPanel] | parent=ROOT | children=BackgroundBlur_64, 按钮-上一个, 按钮-下一个, 按钮-关闭, Image_77, 介绍1, 介绍2
 按钮-上一个 [Button] | parent=CanvasPanel_16 | children=无
 按钮-下一个 [Button] | parent=CanvasPanel_16 | children=无
 按钮-关闭 [Button] | parent=CanvasPanel_16 | children=无
+CanvasPanel_16 [CanvasPanel] | parent=ROOT | children=BackgroundBlur_64, Image_77, 介绍1, 按钮-下一个, 介绍2, 按钮-上一个, 按钮-关闭
 Image_77 [Image] | parent=CanvasPanel_16 | children=无
 介绍1 [Image] | parent=CanvasPanel_16 | children=无
 介绍2 [Image] | parent=CanvasPanel_16 | children=无
@@ -62,17 +62,17 @@ Image_77 [Image] | parent=CanvasPanel_16 | children=无
 
 1. Image_77.Brush = (TintColor=(SpecifiedColor=(R=0.158482,G=0.158482,B=0.158482,A=0.500000)))
 1. Image_77.Visibility = SelfHitTestInvisible
-1. 介绍1.Brush = (ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/新手引导1.新手引导1'")
+1. 介绍1.Brush = (ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/玩法教学-点三处.玩法教学-点三处'")
 1. 介绍1.Visibility = SelfHitTestInvisible
 1. 介绍2.Brush = (ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/新手引导2.新手引导2'")
 1. 介绍2.Visibility = SelfHitTestInvisible
 1. BackgroundBlur_64.LayoutData = (Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
-1. 按钮-上一个.LayoutData = (Offsets=(Top=-60.000000,Right=104.881973,Bottom=102.072067),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=0.000000,Y=0.500000)))
-1. 按钮-下一个.LayoutData = (Offsets=(Left=-101.921875,Top=-56.540527,Right=1.921875,Bottom=102.072067),Anchors=(Minimum=(X=1.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
-1. 按钮-关闭.LayoutData = (Offsets=(Left=-72.000000,Top=248.000000,Right=40.000000,Bottom=40.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))
 1. Image_77.LayoutData = (Offsets=(Top=4.000000,Right=0.000000,Bottom=-4.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
 1. 介绍1.LayoutData = (Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
+1. 按钮-下一个.LayoutData = (Offsets=(Left=-101.921875,Top=-56.540527,Right=1.921875,Bottom=102.072067),Anchors=(Minimum=(X=1.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
 1. 介绍2.LayoutData = (Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))
+1. 按钮-上一个.LayoutData = (Offsets=(Top=-60.000000,Right=104.881973,Bottom=102.072067),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=0.000000,Y=0.500000)))
+1. 按钮-关闭.LayoutData = (Offsets=(Left=-72.000000,Top=248.000000,Right=40.000000,Bottom=40.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))
 
 ## 8. 其他图表
 

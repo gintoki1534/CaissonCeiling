@@ -35,13 +35,7 @@
 
 ## 8. 其他图表
 
-### 8.1 ExecuteUbergraph_BP_CaissonGameMode
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：0
-1. 连接数：0
-
-### 8.2 UserConstructionScript
+### 8.1 UserConstructionScript
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：1

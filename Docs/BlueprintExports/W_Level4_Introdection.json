@@ -11,8 +11,8 @@
   "event_graph": {
     "name": "EventGraph",
     "schema": "BlueprintGraph.EdGraphSchema_K2",
-    "module_count": 42,
-    "connection_count": 44,
+    "module_count": 22,
+    "connection_count": 26,
     "modules": [
       {
         "id": "K2Node_Event_0",
@@ -83,8 +83,8 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_1",
-                "node_title": "SetVisibility",
+                "node": "K2Node_CallFunction_7",
+                "node_title": "GameplayStatics.GetAllActorsOfClass",
                 "pin_name": "execute"
               }
             ]
@@ -142,1247 +142,6 @@
         ],
         "important_inputs": [],
         "raw_export_path": "/Script/BlueprintGraph.K2Node_Event'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_Event_2'"
-      },
-      {
-        "id": "K2Node_ComponentBoundEvent_0",
-        "class": "K2Node_ComponentBoundEvent",
-        "kind": "component_bound_event",
-        "title": "按钮-下一个.OnClicked",
-        "meta": {
-          "component": "按钮-下一个",
-          "delegate_property": "OnClicked",
-          "custom_function_name": "BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature"
-        },
-        "pins": [
-          {
-            "name": "OutputDelegate",
-            "direction": "output",
-            "category": "delegate",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_3",
-                "node_title": "SetVisibility",
-                "pin_name": "execute"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_ComponentBoundEvent_0'"
-      },
-      {
-        "id": "K2Node_VariableGet_5",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get 介绍1",
-        "meta": {
-          "variable_name": "介绍1"
-        },
-        "pins": [
-          {
-            "name": "介绍1",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_3",
-                "node_title": "SetVisibility",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_VariableGet_5'"
-      },
-      {
-        "id": "K2Node_CallFunction_3",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "SetVisibility",
-        "meta": {
-          "function_name": "SetVisibility",
-          "function_owner": null
-        },
-        "pins": [
-          {
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_ComponentBoundEvent_0",
-                "node_title": "按钮-下一个.OnClicked",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_4",
-                "node_title": "SetVisibility",
-                "pin_name": "execute"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_5",
-                "node_title": "Get 介绍1",
-                "pin_name": "介绍1"
-              },
-              {
-                "node": "K2Node_VariableGet_10",
-                "node_title": "Get 按钮-下一个",
-                "pin_name": "按钮-下一个"
-              }
-            ]
-          },
-          {
-            "name": "InVisibility",
-            "direction": "input",
-            "category": "byte",
-            "subcategory": "",
-            "default_value": "Hidden",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_ComponentBoundEvent_0",
-                "node_title": "按钮-下一个.OnClicked",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_5",
-                "node_title": "Get 介绍1",
-                "pin_name": "介绍1"
-              },
-              {
-                "node": "K2Node_VariableGet_10",
-                "node_title": "Get 按钮-下一个",
-                "pin_name": "按钮-下一个"
-              }
-            ]
-          },
-          {
-            "name": "InVisibility",
-            "category": "byte",
-            "default_value": "Hidden",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_CallFunction_3'"
-      },
-      {
-        "id": "K2Node_VariableGet_6",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get 介绍2",
-        "meta": {
-          "variable_name": "介绍2"
-        },
-        "pins": [
-          {
-            "name": "介绍2",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_4",
-                "node_title": "SetVisibility",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_VariableGet_6'"
-      },
-      {
-        "id": "K2Node_CallFunction_4",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "SetVisibility",
-        "meta": {
-          "function_name": "SetVisibility",
-          "function_owner": null
-        },
-        "pins": [
-          {
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_3",
-                "node_title": "SetVisibility",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_6",
-                "node_title": "Get 介绍2",
-                "pin_name": "介绍2"
-              },
-              {
-                "node": "K2Node_VariableGet_8",
-                "node_title": "Get 按钮-关闭",
-                "pin_name": "按钮-关闭"
-              },
-              {
-                "node": "K2Node_VariableGet_16",
-                "node_title": "Get 按钮-上一个",
-                "pin_name": "按钮-上一个"
-              }
-            ]
-          },
-          {
-            "name": "InVisibility",
-            "direction": "input",
-            "category": "byte",
-            "subcategory": "",
-            "default_value": "Visible",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_3",
-                "node_title": "SetVisibility",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_6",
-                "node_title": "Get 介绍2",
-                "pin_name": "介绍2"
-              },
-              {
-                "node": "K2Node_VariableGet_8",
-                "node_title": "Get 按钮-关闭",
-                "pin_name": "按钮-关闭"
-              },
-              {
-                "node": "K2Node_VariableGet_16",
-                "node_title": "Get 按钮-上一个",
-                "pin_name": "按钮-上一个"
-              }
-            ]
-          },
-          {
-            "name": "InVisibility",
-            "category": "byte",
-            "default_value": "Visible",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_CallFunction_4'"
-      },
-      {
-        "id": "K2Node_VariableGet_8",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get 按钮-关闭",
-        "meta": {
-          "variable_name": "按钮-关闭"
-        },
-        "pins": [
-          {
-            "name": "按钮-关闭",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_4",
-                "node_title": "SetVisibility",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_VariableGet_8'"
-      },
-      {
-        "id": "K2Node_ComponentBoundEvent_1",
-        "class": "K2Node_ComponentBoundEvent",
-        "kind": "component_bound_event",
-        "title": "按钮-上一个.OnClicked",
-        "meta": {
-          "component": "按钮-上一个",
-          "delegate_property": "OnClicked",
-          "custom_function_name": "BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature"
-        },
-        "pins": [
-          {
-            "name": "OutputDelegate",
-            "direction": "output",
-            "category": "delegate",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_5",
-                "node_title": "SetVisibility",
-                "pin_name": "execute"
-              }
-            ]
-          }
-        ],
-        "important_inputs": [],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_ComponentBoundEvent'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_ComponentBoundEvent_1'"
-      },
-      {
-        "id": "K2Node_VariableGet_1",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get 介绍1",
-        "meta": {
-          "variable_name": "介绍1"
-        },
-        "pins": [
-          {
-            "name": "介绍1",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_2",
-                "node_title": "SetVisibility",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_VariableGet_1'"
-      },
-      {
-        "id": "K2Node_CallFunction_5",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "SetVisibility",
-        "meta": {
-          "function_name": "SetVisibility",
-          "function_owner": null
-        },
-        "pins": [
-          {
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_ComponentBoundEvent_1",
-                "node_title": "按钮-上一个.OnClicked",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_2",
-                "node_title": "SetVisibility",
-                "pin_name": "execute"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_11",
-                "node_title": "Get 介绍2",
-                "pin_name": "介绍2"
-              },
-              {
-                "node": "K2Node_VariableGet_13",
-                "node_title": "Get 按钮-关闭",
-                "pin_name": "按钮-关闭"
-              },
-              {
-                "node": "K2Node_VariableGet_14",
-                "node_title": "Get 按钮-上一个",
-                "pin_name": "按钮-上一个"
-              }
-            ]
-          },
-          {
-            "name": "InVisibility",
-            "direction": "input",
-            "category": "byte",
-            "subcategory": "",
-            "default_value": "Hidden",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_ComponentBoundEvent_1",
-                "node_title": "按钮-上一个.OnClicked",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_11",
-                "node_title": "Get 介绍2",
-                "pin_name": "介绍2"
-              },
-              {
-                "node": "K2Node_VariableGet_13",
-                "node_title": "Get 按钮-关闭",
-                "pin_name": "按钮-关闭"
-              },
-              {
-                "node": "K2Node_VariableGet_14",
-                "node_title": "Get 按钮-上一个",
-                "pin_name": "按钮-上一个"
-              }
-            ]
-          },
-          {
-            "name": "InVisibility",
-            "category": "byte",
-            "default_value": "Hidden",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_CallFunction_5'"
-      },
-      {
-        "id": "K2Node_VariableGet_11",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get 介绍2",
-        "meta": {
-          "variable_name": "介绍2"
-        },
-        "pins": [
-          {
-            "name": "介绍2",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_5",
-                "node_title": "SetVisibility",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_VariableGet_11'"
-      },
-      {
-        "id": "K2Node_CallFunction_2",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "SetVisibility",
-        "meta": {
-          "function_name": "SetVisibility",
-          "function_owner": null
-        },
-        "pins": [
-          {
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_5",
-                "node_title": "SetVisibility",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_1",
-                "node_title": "Get 介绍1",
-                "pin_name": "介绍1"
-              },
-              {
-                "node": "K2Node_VariableGet_9",
-                "node_title": "Get 按钮-下一个",
-                "pin_name": "按钮-下一个"
-              }
-            ]
-          },
-          {
-            "name": "InVisibility",
-            "direction": "input",
-            "category": "byte",
-            "subcategory": "",
-            "default_value": "Visible",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_5",
-                "node_title": "SetVisibility",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_1",
-                "node_title": "Get 介绍1",
-                "pin_name": "介绍1"
-              },
-              {
-                "node": "K2Node_VariableGet_9",
-                "node_title": "Get 按钮-下一个",
-                "pin_name": "按钮-下一个"
-              }
-            ]
-          },
-          {
-            "name": "InVisibility",
-            "category": "byte",
-            "default_value": "Visible",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_CallFunction_2'"
-      },
-      {
-        "id": "K2Node_VariableGet_13",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get 按钮-关闭",
-        "meta": {
-          "variable_name": "按钮-关闭"
-        },
-        "pins": [
-          {
-            "name": "按钮-关闭",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_5",
-                "node_title": "SetVisibility",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_VariableGet_13'"
-      },
-      {
-        "id": "K2Node_VariableGet_10",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get 按钮-下一个",
-        "meta": {
-          "variable_name": "按钮-下一个"
-        },
-        "pins": [
-          {
-            "name": "按钮-下一个",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_3",
-                "node_title": "SetVisibility",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_VariableGet_10'"
-      },
-      {
-        "id": "K2Node_VariableGet_9",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get 按钮-下一个",
-        "meta": {
-          "variable_name": "按钮-下一个"
-        },
-        "pins": [
-          {
-            "name": "按钮-下一个",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_2",
-                "node_title": "SetVisibility",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_VariableGet_9'"
-      },
-      {
-        "id": "K2Node_CallFunction_1",
-        "class": "K2Node_CallFunction",
-        "kind": "call_function",
-        "title": "SetVisibility",
-        "meta": {
-          "function_name": "SetVisibility",
-          "function_owner": null
-        },
-        "pins": [
-          {
-            "name": "execute",
-            "direction": "input",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_Event_1",
-                "node_title": "Construct",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "then",
-            "direction": "output",
-            "category": "exec",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_7",
-                "node_title": "GameplayStatics.GetAllActorsOfClass",
-                "pin_name": "execute"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_2",
-                "node_title": "Get 介绍2",
-                "pin_name": "介绍2"
-              },
-              {
-                "node": "K2Node_VariableGet_4",
-                "node_title": "Get 按钮-关闭",
-                "pin_name": "按钮-关闭"
-              },
-              {
-                "node": "K2Node_VariableGet_15",
-                "node_title": "Get 按钮-上一个",
-                "pin_name": "按钮-上一个"
-              }
-            ]
-          },
-          {
-            "name": "InVisibility",
-            "direction": "input",
-            "category": "byte",
-            "subcategory": "",
-            "default_value": "Hidden",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "execute",
-            "category": "exec",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_Event_1",
-                "node_title": "Construct",
-                "pin_name": "then"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_VariableGet_2",
-                "node_title": "Get 介绍2",
-                "pin_name": "介绍2"
-              },
-              {
-                "node": "K2Node_VariableGet_4",
-                "node_title": "Get 按钮-关闭",
-                "pin_name": "按钮-关闭"
-              },
-              {
-                "node": "K2Node_VariableGet_15",
-                "node_title": "Get 按钮-上一个",
-                "pin_name": "按钮-上一个"
-              }
-            ]
-          },
-          {
-            "name": "InVisibility",
-            "category": "byte",
-            "default_value": "Hidden",
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_CallFunction_1'"
-      },
-      {
-        "id": "K2Node_VariableGet_2",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get 介绍2",
-        "meta": {
-          "variable_name": "介绍2"
-        },
-        "pins": [
-          {
-            "name": "介绍2",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_1",
-                "node_title": "SetVisibility",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_VariableGet_2'"
-      },
-      {
-        "id": "K2Node_VariableGet_4",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get 按钮-关闭",
-        "meta": {
-          "variable_name": "按钮-关闭"
-        },
-        "pins": [
-          {
-            "name": "按钮-关闭",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_1",
-                "node_title": "SetVisibility",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_VariableGet_4'"
-      },
-      {
-        "id": "K2Node_VariableGet_16",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get 按钮-上一个",
-        "meta": {
-          "variable_name": "按钮-上一个"
-        },
-        "pins": [
-          {
-            "name": "按钮-上一个",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_4",
-                "node_title": "SetVisibility",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_VariableGet_16'"
-      },
-      {
-        "id": "K2Node_VariableGet_14",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get 按钮-上一个",
-        "meta": {
-          "variable_name": "按钮-上一个"
-        },
-        "pins": [
-          {
-            "name": "按钮-上一个",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_5",
-                "node_title": "SetVisibility",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_VariableGet_14'"
-      },
-      {
-        "id": "K2Node_VariableGet_15",
-        "class": "K2Node_VariableGet",
-        "kind": "variable_get",
-        "title": "Get 按钮-上一个",
-        "meta": {
-          "variable_name": "按钮-上一个"
-        },
-        "pins": [
-          {
-            "name": "按钮-上一个",
-            "direction": "output",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": [
-              {
-                "node": "K2Node_CallFunction_1",
-                "node_title": "SetVisibility",
-                "pin_name": "self"
-              }
-            ]
-          },
-          {
-            "name": "self",
-            "direction": "input",
-            "category": "object",
-            "subcategory": "",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "important_inputs": [
-          {
-            "name": "self",
-            "category": "object",
-            "default_value": null,
-            "default_object": null,
-            "linked_to": []
-          }
-        ],
-        "raw_export_path": "/Script/BlueprintGraph.K2Node_VariableGet'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:EventGraph.K2Node_VariableGet_15'"
       },
       {
         "id": "K2Node_CallFunction_15",
@@ -1881,8 +640,8 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_1",
-                "node_title": "SetVisibility",
+                "node": "K2Node_Event_1",
+                "node_title": "Construct",
                 "pin_name": "then"
               }
             ]
@@ -1958,8 +717,8 @@
             "default_object": null,
             "linked_to": [
               {
-                "node": "K2Node_CallFunction_1",
-                "node_title": "SetVisibility",
+                "node": "K2Node_Event_1",
+                "node_title": "Construct",
                 "pin_name": "then"
               }
             ]
@@ -3175,19 +1934,6 @@
       },
       {
         "from": {
-          "node": "K2Node_CallFunction_1",
-          "node_title": "SetVisibility",
-          "pin_name": "then"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_7",
-          "node_title": "GameplayStatics.GetAllActorsOfClass",
-          "pin_name": "execute"
-        },
-        "category": "exec"
-      },
-      {
-        "from": {
           "node": "K2Node_CallFunction_11",
           "node_title": "GameplayStatics.GetPlayerController",
           "pin_name": "ReturnValue"
@@ -3240,32 +1986,6 @@
       },
       {
         "from": {
-          "node": "K2Node_CallFunction_3",
-          "node_title": "SetVisibility",
-          "pin_name": "then"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_4",
-          "node_title": "SetVisibility",
-          "pin_name": "execute"
-        },
-        "category": "exec"
-      },
-      {
-        "from": {
-          "node": "K2Node_CallFunction_5",
-          "node_title": "SetVisibility",
-          "pin_name": "then"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_2",
-          "node_title": "SetVisibility",
-          "pin_name": "execute"
-        },
-        "category": "exec"
-      },
-      {
-        "from": {
           "node": "K2Node_CallFunction_7",
           "node_title": "GameplayStatics.GetAllActorsOfClass",
           "pin_name": "OutActors"
@@ -3299,32 +2019,6 @@
         "to": {
           "node": "K2Node_IfThenElse_0",
           "node_title": "K2Node_IfThenElse_0",
-          "pin_name": "execute"
-        },
-        "category": "exec"
-      },
-      {
-        "from": {
-          "node": "K2Node_ComponentBoundEvent_0",
-          "node_title": "按钮-下一个.OnClicked",
-          "pin_name": "then"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_3",
-          "node_title": "SetVisibility",
-          "pin_name": "execute"
-        },
-        "category": "exec"
-      },
-      {
-        "from": {
-          "node": "K2Node_ComponentBoundEvent_1",
-          "node_title": "按钮-上一个.OnClicked",
-          "pin_name": "then"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_5",
-          "node_title": "SetVisibility",
           "pin_name": "execute"
         },
         "category": "exec"
@@ -3414,8 +2108,8 @@
           "pin_name": "then"
         },
         "to": {
-          "node": "K2Node_CallFunction_1",
-          "node_title": "SetVisibility",
+          "node": "K2Node_CallFunction_7",
+          "node_title": "GameplayStatics.GetAllActorsOfClass",
           "pin_name": "execute"
         },
         "category": "exec"
@@ -3513,175 +2207,6 @@
       },
       {
         "from": {
-          "node": "K2Node_VariableGet_1",
-          "node_title": "Get 介绍1",
-          "pin_name": "介绍1"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_2",
-          "node_title": "SetVisibility",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_10",
-          "node_title": "Get 按钮-下一个",
-          "pin_name": "按钮-下一个"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_3",
-          "node_title": "SetVisibility",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_11",
-          "node_title": "Get 介绍2",
-          "pin_name": "介绍2"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_5",
-          "node_title": "SetVisibility",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_13",
-          "node_title": "Get 按钮-关闭",
-          "pin_name": "按钮-关闭"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_5",
-          "node_title": "SetVisibility",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_14",
-          "node_title": "Get 按钮-上一个",
-          "pin_name": "按钮-上一个"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_5",
-          "node_title": "SetVisibility",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_15",
-          "node_title": "Get 按钮-上一个",
-          "pin_name": "按钮-上一个"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_1",
-          "node_title": "SetVisibility",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_16",
-          "node_title": "Get 按钮-上一个",
-          "pin_name": "按钮-上一个"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_4",
-          "node_title": "SetVisibility",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_2",
-          "node_title": "Get 介绍2",
-          "pin_name": "介绍2"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_1",
-          "node_title": "SetVisibility",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_4",
-          "node_title": "Get 按钮-关闭",
-          "pin_name": "按钮-关闭"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_1",
-          "node_title": "SetVisibility",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_5",
-          "node_title": "Get 介绍1",
-          "pin_name": "介绍1"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_3",
-          "node_title": "SetVisibility",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_6",
-          "node_title": "Get 介绍2",
-          "pin_name": "介绍2"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_4",
-          "node_title": "SetVisibility",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_8",
-          "node_title": "Get 按钮-关闭",
-          "pin_name": "按钮-关闭"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_4",
-          "node_title": "SetVisibility",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
-          "node": "K2Node_VariableGet_9",
-          "node_title": "Get 按钮-下一个",
-          "pin_name": "按钮-下一个"
-        },
-        "to": {
-          "node": "K2Node_CallFunction_2",
-          "node_title": "SetVisibility",
-          "pin_name": "self"
-        },
-        "category": "object"
-      },
-      {
-        "from": {
           "node": "K2Node_VariableSet_4",
           "node_title": "Set Level4ShowcaseRef",
           "pin_name": "Output_Get"
@@ -3736,7 +2261,6 @@
     "exec_traces": [
       [
         "Construct",
-        "SetVisibility",
         "GameplayStatics.GetAllActorsOfClass",
         "K2Node_IfThenElse_0",
         "SpawnActor BP_ShowcaseModel_Level4_C",
@@ -3747,21 +2271,10 @@
       ],
       [
         "Construct",
-        "SetVisibility",
         "GameplayStatics.GetAllActorsOfClass",
         "K2Node_IfThenElse_0",
         "Set Level4ShowcaseRef",
         "BP_ShowcaseModel_Level4_C.ActivateLevel3Presentation"
-      ],
-      [
-        "按钮-下一个.OnClicked",
-        "SetVisibility",
-        "SetVisibility"
-      ],
-      [
-        "按钮-上一个.OnClicked",
-        "SetVisibility",
-        "SetVisibility"
       ],
       [
         "按钮-关闭.OnClicked",
@@ -3772,274 +2285,6 @@
     ]
   },
   "other_graphs": [
-    {
-      "name": "BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
-      "schema": "BlueprintGraph.EdGraphSchema_K2",
-      "module_count": 2,
-      "connection_count": 1,
-      "modules": [
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
-          "meta": {
-            "function_name": "BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "ExecuteUbergraph_W_Level4_Introdection",
-                  "pin_name": "execute"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
-        },
-        {
-          "id": "K2Node_CallFunction_0",
-          "class": "K2Node_CallFunction",
-          "kind": "call_function",
-          "title": "ExecuteUbergraph_W_Level4_Introdection",
-          "meta": {
-            "function_name": "ExecuteUbergraph_W_Level4_Introdection",
-            "function_owner": null
-          },
-          "pins": [
-            {
-              "name": "execute",
-              "direction": "input",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_FunctionEntry_0",
-                  "node_title": "BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
-                  "pin_name": "then"
-                }
-              ]
-            },
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "self",
-              "direction": "input",
-              "category": "object",
-              "subcategory": "self",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "EntryPoint",
-              "direction": "input",
-              "category": "int",
-              "subcategory": "",
-              "default_value": "0",
-              "default_object": null,
-              "linked_to": []
-            }
-          ],
-          "important_inputs": [
-            {
-              "name": "execute",
-              "category": "exec",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_FunctionEntry_0",
-                  "node_title": "BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
-                  "pin_name": "then"
-                }
-              ]
-            },
-            {
-              "name": "self",
-              "category": "object",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            }
-          ],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature.K2Node_CallFunction_0'"
-        }
-      ],
-      "connections": [
-        {
-          "from": {
-            "node": "K2Node_FunctionEntry_0",
-            "node_title": "BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
-            "pin_name": "then"
-          },
-          "to": {
-            "node": "K2Node_CallFunction_0",
-            "node_title": "ExecuteUbergraph_W_Level4_Introdection",
-            "pin_name": "execute"
-          },
-          "category": "exec"
-        }
-      ],
-      "exec_traces": [
-        [
-          "BndEvt__W_Level1_Introdection_按钮-上一个_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
-          "ExecuteUbergraph_W_Level4_Introdection"
-        ]
-      ]
-    },
-    {
-      "name": "BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
-      "schema": "BlueprintGraph.EdGraphSchema_K2",
-      "module_count": 2,
-      "connection_count": 1,
-      "modules": [
-        {
-          "id": "K2Node_FunctionEntry_0",
-          "class": "K2Node_FunctionEntry",
-          "kind": "function_entry",
-          "title": "BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
-          "meta": {
-            "function_name": "BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature"
-          },
-          "pins": [
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_CallFunction_0",
-                  "node_title": "ExecuteUbergraph_W_Level4_Introdection",
-                  "pin_name": "execute"
-                }
-              ]
-            }
-          ],
-          "important_inputs": [],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature.K2Node_FunctionEntry_0'"
-        },
-        {
-          "id": "K2Node_CallFunction_0",
-          "class": "K2Node_CallFunction",
-          "kind": "call_function",
-          "title": "ExecuteUbergraph_W_Level4_Introdection",
-          "meta": {
-            "function_name": "ExecuteUbergraph_W_Level4_Introdection",
-            "function_owner": null
-          },
-          "pins": [
-            {
-              "name": "execute",
-              "direction": "input",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_FunctionEntry_0",
-                  "node_title": "BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
-                  "pin_name": "then"
-                }
-              ]
-            },
-            {
-              "name": "then",
-              "direction": "output",
-              "category": "exec",
-              "subcategory": "",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "self",
-              "direction": "input",
-              "category": "object",
-              "subcategory": "self",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            },
-            {
-              "name": "EntryPoint",
-              "direction": "input",
-              "category": "int",
-              "subcategory": "",
-              "default_value": "0",
-              "default_object": null,
-              "linked_to": []
-            }
-          ],
-          "important_inputs": [
-            {
-              "name": "execute",
-              "category": "exec",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": [
-                {
-                  "node": "K2Node_FunctionEntry_0",
-                  "node_title": "BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
-                  "pin_name": "then"
-                }
-              ]
-            },
-            {
-              "name": "self",
-              "category": "object",
-              "default_value": null,
-              "default_object": null,
-              "linked_to": []
-            }
-          ],
-          "raw_export_path": "/Script/BlueprintGraph.K2Node_CallFunction'/Game/UI/W_Level4_Introdection.W_Level4_Introdection:BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature.K2Node_CallFunction_0'"
-        }
-      ],
-      "connections": [
-        {
-          "from": {
-            "node": "K2Node_FunctionEntry_0",
-            "node_title": "BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
-            "pin_name": "then"
-          },
-          "to": {
-            "node": "K2Node_CallFunction_0",
-            "node_title": "ExecuteUbergraph_W_Level4_Introdection",
-            "pin_name": "execute"
-          },
-          "category": "exec"
-        }
-      ],
-      "exec_traces": [
-        [
-          "BndEvt__W_Level1_Introdection_按钮-下一个_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
-          "ExecuteUbergraph_W_Level4_Introdection"
-        ]
-      ]
-    },
     {
       "name": "BndEvt__W_Level1_Introdection_按钮-关闭_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature",
       "schema": "BlueprintGraph.EdGraphSchema_K2",
@@ -4323,46 +2568,6 @@
         "properties": {}
       },
       {
-        "name": "CanvasPanel_16",
-        "class": "CanvasPanel",
-        "display_label": "CanvasPanel_16",
-        "is_variable": false,
-        "slot": null,
-        "parent": null,
-        "children": [
-          "BackgroundBlur_64",
-          "按钮-上一个",
-          "按钮-下一个",
-          "按钮-关闭",
-          "Image_77",
-          "介绍1",
-          "介绍2"
-        ],
-        "properties": {
-          "bExpandedInDesigner": "True"
-        }
-      },
-      {
-        "name": "按钮-上一个",
-        "class": "Button",
-        "display_label": "按钮-上一个",
-        "is_variable": false,
-        "slot": "CanvasPanelSlot_7",
-        "parent": "CanvasPanel_16",
-        "children": [],
-        "properties": {}
-      },
-      {
-        "name": "按钮-下一个",
-        "class": "Button",
-        "display_label": "按钮-下一个",
-        "is_variable": false,
-        "slot": "CanvasPanelSlot_5",
-        "parent": "CanvasPanel_16",
-        "children": [],
-        "properties": {}
-      },
-      {
         "name": "按钮-关闭",
         "class": "Button",
         "display_label": "按钮-关闭",
@@ -4371,6 +2576,23 @@
         "parent": "CanvasPanel_16",
         "children": [],
         "properties": {}
+      },
+      {
+        "name": "CanvasPanel_16",
+        "class": "CanvasPanel",
+        "display_label": "CanvasPanel_16",
+        "is_variable": false,
+        "slot": null,
+        "parent": null,
+        "children": [
+          "BackgroundBlur_64",
+          "Image_77",
+          "介绍1",
+          "按钮-关闭"
+        ],
+        "properties": {
+          "bExpandedInDesigner": "True"
+        }
       },
       {
         "name": "Image_77",
@@ -4394,20 +2616,7 @@
         "parent": "CanvasPanel_16",
         "children": [],
         "properties": {
-          "Brush": "(ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/新手引导1.新手引导1'\")",
-          "Visibility": "SelfHitTestInvisible"
-        }
-      },
-      {
-        "name": "介绍2",
-        "class": "Image",
-        "display_label": "介绍2",
-        "is_variable": false,
-        "slot": "CanvasPanelSlot_6",
-        "parent": "CanvasPanel_16",
-        "children": [],
-        "properties": {
-          "Brush": "(ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/新手引导2.新手引导2'\")",
+          "Brush": "(ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/玩法教学拼接.玩法教学拼接'\")",
           "Visibility": "SelfHitTestInvisible"
         }
       }
@@ -4419,27 +2628,6 @@
         "parent": "CanvasPanel_16",
         "child": "BackgroundBlur_64",
         "layout_data": "(Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
-      },
-      {
-        "slot_name": "CanvasPanelSlot_7",
-        "slot_class": "CanvasPanelSlot",
-        "parent": "CanvasPanel_16",
-        "child": "按钮-上一个",
-        "layout_data": "(Offsets=(Top=-62.000000,Right=104.881973,Bottom=102.072067),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=0.000000,Y=0.500000)))"
-      },
-      {
-        "slot_name": "CanvasPanelSlot_5",
-        "slot_class": "CanvasPanelSlot",
-        "parent": "CanvasPanel_16",
-        "child": "按钮-下一个",
-        "layout_data": "(Offsets=(Left=-101.921875,Top=-56.540527,Right=1.921875,Bottom=102.072067),Anchors=(Minimum=(X=1.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
-      },
-      {
-        "slot_name": "CanvasPanelSlot_8",
-        "slot_class": "CanvasPanelSlot",
-        "parent": "CanvasPanel_16",
-        "child": "按钮-关闭",
-        "layout_data": "(Offsets=(Left=-72.000000,Top=248.000000,Right=40.000000,Bottom=40.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))"
       },
       {
         "slot_name": "CanvasPanelSlot_2",
@@ -4456,11 +2644,11 @@
         "layout_data": "(Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
       },
       {
-        "slot_name": "CanvasPanelSlot_6",
+        "slot_name": "CanvasPanelSlot_8",
         "slot_class": "CanvasPanelSlot",
         "parent": "CanvasPanel_16",
-        "child": "介绍2",
-        "layout_data": "(Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
+        "child": "按钮-关闭",
+        "layout_data": "(Offsets=(Left=-72.000000,Top=248.000000,Right=40.000000,Bottom=40.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))"
       }
     ]
   },
@@ -4497,51 +2685,6 @@
         }
       },
       {
-        "name": "按钮-下一个",
-        "guid": "5BA00188477BF6099D731688FE23B477",
-        "friendly_name": "按钮-下一个",
-        "category": null,
-        "property_flags": "562952101494812",
-        "type": {
-          "pin_category": "object",
-          "pin_subcategory": null,
-          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Button'"
-        },
-        "metadata": {
-          "(DataKey": "\"Category\",DataValue=\"W_Level4_Introdection\")"
-        }
-      },
-      {
-        "name": "按钮-上一个",
-        "guid": "DD289FB94658A0A32602D0A5AD1E455B",
-        "friendly_name": "按钮-上一个",
-        "category": null,
-        "property_flags": "562952101494812",
-        "type": {
-          "pin_category": "object",
-          "pin_subcategory": null,
-          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Button'"
-        },
-        "metadata": {
-          "(DataKey": "\"Category\",DataValue=\"W_Level4_Introdection\")"
-        }
-      },
-      {
-        "name": "介绍2",
-        "guid": "65B55C7C4775A82887368982919E7105",
-        "friendly_name": "介绍2",
-        "category": null,
-        "property_flags": "562952101494812",
-        "type": {
-          "pin_category": "object",
-          "pin_subcategory": null,
-          "pin_subcategory_object": "/Script/CoreUObject.Class'/Script/UMG.Image'"
-        },
-        "metadata": {
-          "(DataKey": "\"Category\",DataValue=\"W_Level4_Introdection\")"
-        }
-      },
-      {
         "name": "介绍1",
         "guid": "53300C914CE5152DB554C5B4B238E7C0",
         "friendly_name": "介绍1",
@@ -4562,9 +2705,6 @@
       "BackgroundBlur_64": "365755BD4FF40AF46D0D278589D7BC60",
       "Image_77": "31067AA64E4811C08EBA848855B60F62",
       "介绍1": "53300C914CE5152DB554C5B4B238E7C0",
-      "按钮-下一个": "5BA00188477BF6099D731688FE23B477",
-      "介绍2": "65B55C7C4775A82887368982919E7105",
-      "按钮-上一个": "DD289FB94658A0A32602D0A5AD1E455B",
       "按钮-关闭": "AF7C63244F488421FA2AA0BA9948DE7D"
     }
   },
@@ -4582,7 +2722,7 @@
     {
       "target": "介绍1",
       "property": "Brush",
-      "value": "(ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/新手引导1.新手引导1'\")"
+      "value": "(ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/玩法教学拼接.玩法教学拼接'\")"
     },
     {
       "target": "介绍1",
@@ -4590,34 +2730,9 @@
       "value": "SelfHitTestInvisible"
     },
     {
-      "target": "介绍2",
-      "property": "Brush",
-      "value": "(ImageType=FullColor,ImageSize=(X=4096.000000,Y=1535.000000),ResourceObject=\"/Script/Engine.Texture2D'/Game/assets/Level1/新手引导/新手引导2.新手引导2'\")"
-    },
-    {
-      "target": "介绍2",
-      "property": "Visibility",
-      "value": "SelfHitTestInvisible"
-    },
-    {
       "target": "BackgroundBlur_64",
       "property": "LayoutData",
       "value": "(Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))"
-    },
-    {
-      "target": "按钮-上一个",
-      "property": "LayoutData",
-      "value": "(Offsets=(Top=-62.000000,Right=104.881973,Bottom=102.072067),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=0.000000,Y=0.500000)))"
-    },
-    {
-      "target": "按钮-下一个",
-      "property": "LayoutData",
-      "value": "(Offsets=(Left=-101.921875,Top=-56.540527,Right=1.921875,Bottom=102.072067),Anchors=(Minimum=(X=1.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
-    },
-    {
-      "target": "按钮-关闭",
-      "property": "LayoutData",
-      "value": "(Offsets=(Left=-72.000000,Top=248.000000,Right=40.000000,Bottom=40.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))"
     },
     {
       "target": "Image_77",
@@ -4630,29 +2745,17 @@
       "value": "(Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
     },
     {
-      "target": "介绍2",
+      "target": "按钮-关闭",
       "property": "LayoutData",
-      "value": "(Offsets=(Top=-316.540527,Right=0.000000,Bottom=707.248657),Anchors=(Minimum=(X=0.000000,Y=0.500000),Maximum=(X=1.000000,Y=0.500000)))"
+      "value": "(Offsets=(Left=-72.000000,Top=248.000000,Right=40.000000,Bottom=40.000000),Anchors=(Minimum=(X=1.000000,Y=0.000000),Maximum=(X=1.000000,Y=0.000000)))"
     }
   ],
   "doc_view": {
     "blueprint_name": "W_Level4_Introdection",
     "blueprint_class": "WidgetBlueprint",
-    "module_count": 42,
-    "connection_count": 44,
+    "module_count": 22,
+    "connection_count": 26,
     "component_events": [
-      {
-        "title": "按钮-下一个.OnClicked",
-        "id": "K2Node_ComponentBoundEvent_0",
-        "component": "按钮-下一个",
-        "delegate_property": "OnClicked"
-      },
-      {
-        "title": "按钮-上一个.OnClicked",
-        "id": "K2Node_ComponentBoundEvent_1",
-        "component": "按钮-上一个",
-        "delegate_property": "OnClicked"
-      },
       {
         "title": "按钮-关闭.OnClicked",
         "id": "K2Node_ComponentBoundEvent_2",
@@ -4663,7 +2766,6 @@
     "exec_traces": [
       [
         "Construct",
-        "SetVisibility",
         "GameplayStatics.GetAllActorsOfClass",
         "K2Node_IfThenElse_0",
         "SpawnActor BP_ShowcaseModel_Level4_C",
@@ -4674,21 +2776,10 @@
       ],
       [
         "Construct",
-        "SetVisibility",
         "GameplayStatics.GetAllActorsOfClass",
         "K2Node_IfThenElse_0",
         "Set Level4ShowcaseRef",
         "BP_ShowcaseModel_Level4_C.ActivateLevel3Presentation"
-      ],
-      [
-        "按钮-下一个.OnClicked",
-        "SetVisibility",
-        "SetVisibility"
-      ],
-      [
-        "按钮-上一个.OnClicked",
-        "SetVisibility",
-        "SetVisibility"
       ],
       [
         "按钮-关闭.OnClicked",
@@ -4705,36 +2796,21 @@
         "children": []
       },
       {
+        "name": "按钮-关闭",
+        "class": "Button",
+        "parent": "CanvasPanel_16",
+        "children": []
+      },
+      {
         "name": "CanvasPanel_16",
         "class": "CanvasPanel",
         "parent": null,
         "children": [
           "BackgroundBlur_64",
-          "按钮-上一个",
-          "按钮-下一个",
-          "按钮-关闭",
           "Image_77",
           "介绍1",
-          "介绍2"
+          "按钮-关闭"
         ]
-      },
-      {
-        "name": "按钮-上一个",
-        "class": "Button",
-        "parent": "CanvasPanel_16",
-        "children": []
-      },
-      {
-        "name": "按钮-下一个",
-        "class": "Button",
-        "parent": "CanvasPanel_16",
-        "children": []
-      },
-      {
-        "name": "按钮-关闭",
-        "class": "Button",
-        "parent": "CanvasPanel_16",
-        "children": []
       },
       {
         "name": "Image_77",
@@ -4744,12 +2820,6 @@
       },
       {
         "name": "介绍1",
-        "class": "Image",
-        "parent": "CanvasPanel_16",
-        "children": []
-      },
-      {
-        "name": "介绍2",
         "class": "Image",
         "parent": "CanvasPanel_16",
         "children": []

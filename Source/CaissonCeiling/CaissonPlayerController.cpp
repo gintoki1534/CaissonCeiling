@@ -2,6 +2,7 @@
 
 #include "Blueprint/UserWidget.h"
 #include "CaissonInteractComponent.h"
+#include "CaissonMusicSubsystem.h"
 #include "CaissonPawn.h"
 #include "Level3FlowComponent.h"
 #include "Level4PuzzleComponent.h"
@@ -102,6 +103,9 @@ ACaissonPlayerController::ACaissonPlayerController()
 	bPendingInspectIsFinalTarget = false;
 	Windowed16By9Resolution = FIntPoint(1280, 720);
 	WindowAspectCheckInterval = 0.25f;
+	GlobalBgm = nullptr;
+	GlobalBgmVolume = 0.6f;
+	GlobalBgmFadeInSeconds = 2.0f;
 	WindowAspectCheckTimer = 0.0f;
 	bApplyingDisplayMode = false;
 	ActiveCaissonWidget = nullptr;
@@ -121,6 +125,23 @@ void ACaissonPlayerController::BeginPlay()
 	}
 
 	OnLevel2TargetProgressChanged.Broadcast(GetFoundLevel2TargetCount(), RequiredLevel2TargetIds.Num());
+
+	UE_LOG(LogTemp, Log, TEXT("[BGM] Controller BeginPlay: Class=%s, GlobalBgm=%s, Volume=%.2f, FadeIn=%.2f"),
+		*GetClass()->GetName(),
+		*GetNameSafe(GlobalBgm),
+		GlobalBgmVolume,
+		GlobalBgmFadeInSeconds);
+
+	if (GlobalBgm)
+	{
+		if (UGameInstance* GameInstance = GetGameInstance())
+		{
+			if (UCaissonMusicSubsystem* MusicSubsystem = GameInstance->GetSubsystem<UCaissonMusicSubsystem>())
+			{
+				MusicSubsystem->PlayGlobalBgm(this, GlobalBgm, GlobalBgmVolume, GlobalBgmFadeInSeconds);
+			}
+		}
+	}
 }
 
 void ACaissonPlayerController::PlayerTick(float DeltaTime)

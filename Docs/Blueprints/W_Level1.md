@@ -26,10 +26,9 @@
 
 ```text
 Btn_Dialogue [Button] | parent=CanvasPanel_38 | children=无
-CanvasPanel_38 [CanvasPanel] | parent=ROOT | children=Btn_Dialogue, RollBox, TalkBox
-RollBox [ScrollBox] | parent=CanvasPanel_38 | children=TextBlock_0
+CanvasPanel_38 [CanvasPanel] | parent=ROOT | children=Btn_Dialogue, TalkBox, TextBlock_0
+TextBlock_0 [TextBlock] | parent=CanvasPanel_38 | children=无
 TalkBox [Image] | parent=CanvasPanel_38 | children=无
-TextBlock_0 [TextBlock] | parent=RollBox | children=无
 ```
 
 ## 5. 事件图主链
@@ -41,7 +40,7 @@ TextBlock_0 [TextBlock] | parent=RollBox | children=无
 ### 5.2 主执行链
 
 1. PreConstruct
-1. Construct -> SpawnActor BP_ShowcaseModel_C -> Set ShowcaseActor
+1. Construct -> SpawnActor BP_ShowcaseModel_C
 1. Tick
 1. OnFocusLost
 1. Btn_Dialogue.OnClicked -> Cast To CaissonPlayerController -> CaissonPlayerController.CloseCaissonWidget -> CaissonPlayerController.OpenCaissonWidget
@@ -51,7 +50,7 @@ TextBlock_0 [TextBlock] | parent=RollBox | children=无
 ### 6.1 自定义变量
 
 1. ShowcaseActor
-   类型：object -> /Script/Engine.BlueprintGeneratedClass'/Game/UI/BP_ShowcaseModel_BC2.BP_ShowcaseModel_BC2_C'
+   类型：object
    显示名：Showcase Actor
 1. bIsDragging
    类型：bool
@@ -75,7 +74,6 @@ TextBlock_0 [TextBlock] | parent=RollBox | children=无
 ### 6.2 自动生成的控件变量
 
 1. TalkBox -> /Script/CoreUObject.Class'/Script/UMG.Image'
-1. RollBox -> /Script/CoreUObject.Class'/Script/UMG.ScrollBox'
 1. Btn_Dialogue -> /Script/CoreUObject.Class'/Script/UMG.Button'
 
 ## 7. 特殊设置
@@ -83,13 +81,13 @@ TextBlock_0 [TextBlock] | parent=RollBox | children=无
 1. W_Level1.TickPrediction = WillTick
    原因：Script
 1. Btn_Dialogue.BackgroundColor = (R=1.000000,G=1.000000,B=1.000000,A=0.000000)
-1. TalkBox.Brush = (ImageType=FullColor,ImageSize=(X=1844.000000,Y=581.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/对话框底部.对话框底部'")
 1. TextBlock_0.Text = NSLOCTEXT("[54EE08DFC892F2E9E1C6A089C6A3073A]", "A16BE1AA46D033C3B70D5AA3BB947A9A", "你好！我是隆福寺小精灵天天。\r\n天宫藻井，是隆福寺最美轮美奂的建筑杰作，也是国家一级保护文物。现在，跟随我的脚步，一起去了解隆福寺藻井吧！")
 1. TextBlock_0.ColorAndOpacity = (SpecifiedColor=(R=0.000000,G=0.000000,B=0.000000,A=1.000000))
 1. TextBlock_0.AutoWrapText = True
+1. TalkBox.Brush = (ImageType=FullColor,ImageSize=(X=1844.000000,Y=581.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/对话框底部.对话框底部'")
 1. Btn_Dialogue.LayoutData = (Offsets=(Left=465.537537,Top=786.630615,Right=1002.388062,Bottom=263.080200))
-1. RollBox.LayoutData = (Offsets=(Left=768.000000,Top=856.000000,Right=625.096497,Bottom=105.665665))
 1. TalkBox.LayoutData = (Offsets=(Top=-329.081055,Right=992.320862,Bottom=299.688263),Anchors=(Minimum=(X=0.500000,Y=1.000000),Maximum=(X=0.500000,Y=1.000000)),Alignment=(X=0.500000,Y=0.000000))
+1. TextBlock_0.LayoutData = (Offsets=(Left=767.157532,Top=866.460571,Right=616.173279))
 
 ## 8. 其他图表
 

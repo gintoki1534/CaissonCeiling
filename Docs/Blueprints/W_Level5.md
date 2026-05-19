@@ -25,24 +25,20 @@
 1. 根控件：CanvasPanel_43
 
 ```text
+CanvasPanel_43 [CanvasPanel] | parent=ROOT | children=Image_Background, VerticalBox_0, Title_Background, TextBlock_0, bg, button1, button2
 Image_Background [Image] | parent=CanvasPanel_43 | children=无
 VerticalBox_0 [VerticalBox] | parent=CanvasPanel_43 | children=无
-Title_Background [Image] | parent=CanvasPanel_43 | children=无
-CanvasPanel_43 [CanvasPanel] | parent=ROOT | children=Title_Background, VerticalBox_0, Image_Background, TextBlock_0
 TextBlock_0 [TextBlock] | parent=CanvasPanel_43 | children=无
+Title_Background [Image] | parent=CanvasPanel_43 | children=无
+bg [Image] | parent=CanvasPanel_43 | children=无
+button1 [Image] | parent=CanvasPanel_43 | children=无
+button2 [Image] | parent=CanvasPanel_43 | children=无
 ```
 
 ## 5. 事件图主链
 
-### 5.1 组件事件
-
-1. B_StartGame -> OnReleased
-1. B_StartGame -> OnClicked
-
 ### 5.2 主执行链
 
-1. B_StartGame.OnReleased
-1. B_StartGame.OnClicked
 1. Construct -> PlayAnimation
 
 ## 6. 关键变量
@@ -57,13 +53,19 @@ TextBlock_0 [TextBlock] | parent=CanvasPanel_43 | children=无
    原因：Anim
 1. Image_Background.Brush = (ImageType=FullColor,ImageSize=(X=4096.000000,Y=2160.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/StartMenu/背景.背景'")
 1. Image_Background.Visibility = SelfHitTestInvisible
+1. TextBlock_0.Text = NSLOCTEXT("[85ACFA111C6953EB0CD94B858D340D0A]", "64E68D3440F1915A7B8D6F84E798DED4", "我是证书")
 1. Title_Background.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/StartMenu/tittle.tittle'")
 1. Title_Background.Visibility = SelfHitTestInvisible
-1. TextBlock_0.Text = NSLOCTEXT("[85ACFA111C6953EB0CD94B858D340D0A]", "64E68D3440F1915A7B8D6F84E798DED4", "我是证书")
-1. Title_Background.LayoutData = (Offsets=(Left=43.477478,Top=-412.540527,Right=976.876831,Bottom=604.564575),Anchors=(Minimum=(X=0.500000,Y=0.500000),Maximum=(X=0.500000,Y=0.500000)),Alignment=(X=0.500000,Y=0.000000))
-1. VerticalBox_0.LayoutData = (Offsets=(Top=275.459473,Right=848.176697,Bottom=154.972122),Anchors=(Minimum=(X=0.500000,Y=0.500000),Maximum=(X=0.500000,Y=0.500000)),Alignment=(X=0.500000,Y=0.000000))
+1. bg.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Final/证书界面.证书界面'")
+1. button1.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Final/分享成果.分享成果'")
+1. button2.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Final/重新体验.重新体验'")
 1. Image_Background.LayoutData = (Offsets=(Right=0.000000,Bottom=0.000000),Anchors=(Maximum=(X=1.000000,Y=1.000000)))
+1. VerticalBox_0.LayoutData = (Offsets=(Top=275.459473,Right=848.176697,Bottom=154.972122),Anchors=(Minimum=(X=0.500000,Y=0.500000),Maximum=(X=0.500000,Y=0.500000)),Alignment=(X=0.500000,Y=0.000000))
+1. Title_Background.LayoutData = (Offsets=(Left=43.477478,Top=-412.540527,Right=976.876831,Bottom=604.564575),Anchors=(Minimum=(X=0.500000,Y=0.500000),Maximum=(X=0.500000,Y=0.500000)),Alignment=(X=0.500000,Y=0.000000))
 1. TextBlock_0.LayoutData = (Offsets=(Left=481.117126,Top=759.855835,Right=1231.531616,Bottom=275.435455))
+1. bg.LayoutData = (Offsets=(Right=1952.252197,Bottom=1079.849854))
+1. button1.LayoutData = (Offsets=(Left=1472.000000,Top=956.000000,Right=305.046173,Bottom=89.307564))
+1. button2.LayoutData = (Offsets=(Left=1112.000000,Top=956.000000,Right=305.046173,Bottom=89.307564))
 
 ## 8. 其他图表
 
@@ -74,9 +76,9 @@ TextBlock_0 [TextBlock] | parent=CanvasPanel_43 | children=无
 1. 连接数：1
 1. 执行链：Construct -> ExecuteUbergraph_W_Level5
 1. 关键节点：
+   - Construct
    - ExecuteUbergraph_W_Level5
      输入：execute <- Construct:then
-   - Construct
 
 ## 9. 当前可直接确认的结论
 

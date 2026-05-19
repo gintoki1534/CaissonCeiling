@@ -35,13 +35,7 @@
 
 ## 8. 其他图表
 
-### 8.1 ExecuteUbergraph_BP_Level3RepairRegion_Dusting
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：0
-1. 连接数：0
-
-### 8.2 GetRepairMeshComponent
+### 8.1 GetRepairMeshComponent
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：3
@@ -50,25 +44,7 @@
 1. 关键节点：
    - GetRepairMeshComponent
 
-### 8.3 GetRepairMeshComponent_MERGED
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：3
-1. 连接数：2
-1. 执行链：GetRepairMeshComponent -> K2Node_FunctionResult_0
-1. 关键节点：
-   - GetRepairMeshComponent
-
-### 8.4 UserConstructionScript
-
-1. 图类型：BlueprintGraph.EdGraphSchema_K2
-1. 模块数：1
-1. 连接数：0
-1. 执行链：UserConstructionScript
-1. 关键节点：
-   - UserConstructionScript
-
-### 8.5 UserConstructionScript_MERGED
+### 8.2 UserConstructionScript
 
 1. 图类型：BlueprintGraph.EdGraphSchema_K2
 1. 模块数：1

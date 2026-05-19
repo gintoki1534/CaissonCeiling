@@ -28,7 +28,7 @@
 BackgroundBlur_145 [BackgroundBlur] | parent=NewbieGuideOverlay | children=无
 NewbieGuideOverlay [CanvasPanel] | parent=CanvasPanel_38 | children=BackgroundBlur_145, GuideDimBackground, Image_274, TextBlock_77, TextBlock
 B_CloseNewbieGuide [Button] | parent=CanvasPanel_38 | children=无
-CanvasPanel_38 [CanvasPanel] | parent=ROOT | children=B_CloseNewbieGuide, FocusCirclePanel, InitialTiangongInfo, 云纹框架, 云纹框架-标题, Highlight_1, Highlight_2, Highlight_3, Circle_2, Circle_3, Finish_1, Finish_2, Finish_3, StepFinish, StepFinish_1, StepFinish_2, CurrentStepBackGround, CurrentStepBackGround_1, CurrentStepBackGround_2, Step1_content, Step2_content, Step3_content, StepNum_1, StepNum_2, StepNum_3, Introducing_1, Introducing_2, Introducing_3, continue, NewbieGuideOverlay, nextstep
+CanvasPanel_38 [CanvasPanel] | parent=ROOT | children=B_CloseNewbieGuide, FocusCirclePanel, InitialTiangongInfo, 云纹框架, 云纹框架-标题, Highlight_1, Highlight_2, Highlight_3, Circle_2, Circle_3, Finish_1, Finish_2, Finish_3, CurrentStepBackGround, CurrentStepBackGround_1, CurrentStepBackGround_2, Step1_content, Step2_content, Step3_content, StepNum_1, StepNum_2, StepNum_3, Introducing_1, Introducing_2, Introducing_3, continue, NewbieGuideOverlay, nextstep
 Indtro_Button1 [Button] | parent=Introducing_1 | children=无
 Introducing_1 [CanvasPanel] | parent=CanvasPanel_38 | children=Indtro_Button1, Image_295
 Indtro_Button2 [Button] | parent=Introducing_2 | children=无
@@ -41,9 +41,6 @@ InitialTiangongInfo [CanvasPanel] | parent=CanvasPanel_38 | children=Image
 Circle_3 [Image] | parent=CanvasPanel_38 | children=无
 Highlight_2 [Image] | parent=CanvasPanel_38 | children=无
 Circle_2 [Image] | parent=CanvasPanel_38 | children=无
-StepFinish [Image] | parent=CanvasPanel_38 | children=无
-StepFinish_1 [Image] | parent=CanvasPanel_38 | children=无
-StepFinish_2 [Image] | parent=CanvasPanel_38 | children=无
 Highlight_3 [Image] | parent=CanvasPanel_38 | children=无
 Finish_1 [Image] | parent=CanvasPanel_38 | children=无
 CurrentStepBackGround [Image] | parent=CanvasPanel_38 | children=无
@@ -104,7 +101,7 @@ GuideDimBackground [Image] | parent=NewbieGuideOverlay | children=无
 ### 6.1 自定义变量
 
 1. ShowcaseActor
-   类型：object -> /Script/Engine.BlueprintGeneratedClass'/Game/UI/BP_ShowcaseModel_BC2.BP_ShowcaseModel_BC2_C'
+   类型：object
    显示名：Showcase Actor
 1. bIsDragging
    类型：bool
@@ -160,9 +157,6 @@ GuideDimBackground [Image] | parent=NewbieGuideOverlay | children=无
 1. StepNum_3 -> /Script/CoreUObject.Class'/Script/UMG.EditableTextBox'
 1. StepNum_2 -> /Script/CoreUObject.Class'/Script/UMG.EditableTextBox'
 1. StepNum_1 -> /Script/CoreUObject.Class'/Script/UMG.EditableTextBox'
-1. StepFinish_2 -> /Script/CoreUObject.Class'/Script/UMG.Image'
-1. StepFinish_1 -> /Script/CoreUObject.Class'/Script/UMG.Image'
-1. StepFinish -> /Script/CoreUObject.Class'/Script/UMG.Image'
 1. nextstep -> /Script/CoreUObject.Class'/Script/UMG.Image'
 1. NewbieGuideOverlay -> /Script/CoreUObject.Class'/Script/UMG.CanvasPanel'
 1. Introducing_3 -> /Script/CoreUObject.Class'/Script/UMG.CanvasPanel'
@@ -211,9 +205,6 @@ GuideDimBackground [Image] | parent=NewbieGuideOverlay | children=无
 1. Circle_3.Brush = (ImageType=FullColor,ImageSize=(X=37.000000,Y=36.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/Ellipse_28.Ellipse_28'")
 1. Highlight_2.Brush = (ImageType=FullColor,ImageSize=(X=77.000000,Y=77.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/Ellipse_27.Ellipse_27'")
 1. Circle_2.Brush = (ImageType=FullColor,ImageSize=(X=37.000000,Y=36.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/Ellipse_28.Ellipse_28'")
-1. StepFinish.Brush = (ImageType=FullColor,ImageSize=(X=53.000000,Y=48.000000))
-1. StepFinish_1.Brush = (ImageType=FullColor,ImageSize=(X=53.000000,Y=48.000000))
-1. StepFinish_2.Brush = (ImageType=FullColor,ImageSize=(X=53.000000,Y=48.000000))
 1. Highlight_3.Brush = (ImageType=FullColor,ImageSize=(X=77.000000,Y=77.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/Ellipse_27.Ellipse_27'")
 1. Finish_1.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/对勾.对勾'")
 1. CurrentStepBackGround.Brush = (ImageType=FullColor,ImageSize=(X=905.000000,Y=92.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/高亮显示背景.高亮显示背景'")
@@ -232,6 +223,7 @@ GuideDimBackground [Image] | parent=NewbieGuideOverlay | children=无
 1. 云纹框架.Brush = (ImageType=FullColor,ImageSize=(X=1520.000000,Y=1278.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/新手引导2.新手引导2'")
 1. Highlight_1.Brush = (ImageType=FullColor,ImageSize=(X=77.000000,Y=77.000000),ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/任务栏/Ellipse_27.Ellipse_27'")
 1. TextBlock_2.Text = NSLOCTEXT("[36D278295D84F0200FDE34B5820D24FA]", "562B9E9B4B9734D98D8C93A56FDD4931", "点击屏幕以继续")
+1. TextBlock_2.Visibility = Collapsed
 1. inner.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/点击圆圈内部.点击圆圈内部'")
 1. FocusCircle_Ring.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/点击圆圈外部.点击圆圈外部'")
 1. Image_571.Brush = (ResourceObject="/Script/Engine.Texture2D'/Game/assets/Level1/黄色扩散层.黄色扩散层'")
@@ -263,9 +255,6 @@ GuideDimBackground [Image] | parent=NewbieGuideOverlay | children=无
 1. Finish_1.LayoutData = (Offsets=(Left=90.999985,Top=188.000000,Right=49.069069,Bottom=51.531532))
 1. Finish_2.LayoutData = (Offsets=(Left=90.999985,Top=236.000000,Right=49.069069,Bottom=51.531532))
 1. Finish_3.LayoutData = (Offsets=(Left=90.999985,Top=288.000000,Right=49.069069,Bottom=51.531532))
-1. StepFinish.LayoutData = (Offsets=(Left=-nan(ind),Top=-2147483648.000000,Right=36.000000,Bottom=36.000000))
-1. StepFinish_1.LayoutData = (Offsets=(Left=-nan(ind),Top=-2147483648.000000,Right=36.000000,Bottom=36.000000))
-1. StepFinish_2.LayoutData = (Offsets=(Left=-nan(ind),Top=-2147483648.000000,Right=36.000000,Bottom=36.000000))
 1. CurrentStepBackGround.LayoutData = (Offsets=(Left=63.000015,Top=188.000000,Right=424.000000,Bottom=43.000000))
 1. CurrentStepBackGround_1.LayoutData = (Offsets=(Left=63.000015,Top=236.000000,Right=424.000000,Bottom=43.000000))
 1. CurrentStepBackGround_2.LayoutData = (Offsets=(Left=63.000015,Top=288.000000,Right=424.000000,Bottom=43.000000))
