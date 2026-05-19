@@ -38,6 +38,7 @@
    - 碎片内部多组件鼠标命中检测
    - 拖拽与右键旋转
    - 松手吸附
+   - 松手吸附成功事件 `OnLevel4PieceSnapped`
    - 拼图完成判定
    - 阶段完成与最终完成事件
 5. `ALevel4PuzzlePieceActor`
@@ -89,11 +90,12 @@
 ### 3.4 吸附和完成
 
 1. 松开拖拽时，如果当前碎片与任意已生成碎片的相对位置和相对旋转在容差内，会直接吸附到 0 容差位置。
-2. 任意两个或多个碎片相对正确时，对应碎片会进入“相对正确”表现。
-3. 阶段完成要求当前阶段全部碎片都已生成，并且能相对同一个锚点全部对齐。
-4. 阶段完成后不会立即切换下一阶段，而是进入 `StageCompleted`，广播 `OnLevel4StageSolved`。
-5. 玩家点击 UI 中的继续按钮后，蓝图调用 `ContinueLevel4AfterStageSolved`，C++ 再进入下一阶段或广播最终完成。
-6. 旋转误差使用最短角度计算，避免 `360°` 等价旋转被误判为不正确。
+2. 每次松手吸附成功后，`Level4PuzzleComponent` 会广播 `OnLevel4PieceSnapped(PieceIndex, AnchorPieceIndex)`，蓝图可在这里播放吸附音效；同一碎片重复吸附会重复广播。
+3. 任意两个或多个碎片相对正确时，对应碎片会进入“相对正确”表现。
+4. 阶段完成要求当前阶段全部碎片都已生成，并且能相对同一个锚点全部对齐。
+5. 阶段完成后不会立即切换下一阶段，而是进入 `StageCompleted`，广播 `OnLevel4StageSolved`。
+6. 玩家点击 UI 中的继续按钮后，蓝图调用 `ContinueLevel4AfterStageSolved`，C++ 再进入下一阶段或广播最终完成。
+7. 旋转误差使用最短角度计算，避免 `360°` 等价旋转被误判为不正确。
 
 ### 3.5 生成 Transform 配置
 
@@ -156,6 +158,7 @@
    - `OnLevel4DifficultyChanged`
    - `OnLevel4StageChanged`
    - `OnLevel4PieceSelected`
+   - `OnLevel4PieceSnapped`
    - `OnLevel4StageSolved`
    - `OnLevel4Completed`
 5. `OnLevel4DifficultyChanged` 只负责刷新普通/专家难度高亮。

@@ -13,6 +13,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLevel4DifficultyChanged, ELevel4D
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLevel4PieceSelected, int32, PieceIndex);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnLevel4PieceSpawned, int32, PieceIndex, ALevel4PuzzlePieceActor*, PieceActor);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnLevel4PieceCorrectChanged, int32, PieceIndex, bool, bIsCorrect);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnLevel4PieceSnapped, int32, PieceIndex, int32, AnchorPieceIndex);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnLevel4StageSolved, ELevel4StageId, SolvedStage, int32, StageIndex);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnLevel4Completed);
 
@@ -68,6 +69,10 @@ public:
 
 	UPROPERTY(BlueprintAssignable, Category="Level4|Events")
 	FOnLevel4PieceCorrectChanged OnLevel4PieceCorrectChanged;
+
+	// 只在玩家松开拖拽并成功吸附到任意已生成碎片时触发；同一碎片重复吸附会重复触发。
+	UPROPERTY(BlueprintAssignable, Category="Level4|Events")
+	FOnLevel4PieceSnapped OnLevel4PieceSnapped;
 
 	UPROPERTY(BlueprintAssignable, Category="Level4|Events")
 	FOnLevel4StageSolved OnLevel4StageSolved;

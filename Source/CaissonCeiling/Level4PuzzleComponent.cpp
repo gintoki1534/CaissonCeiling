@@ -1047,6 +1047,7 @@ void ULevel4PuzzleComponent::SnapPieceToBestAnchorIfClose(ALevel4PuzzlePieceActo
 	}
 
 	RuntimePiece->Actor->SetActorTransform(BestSnapTransform);
+	OnLevel4PieceSnapped.Broadcast(RuntimePiece->Config.PieceIndex, BestAnchorPieceIndex);
 	LogCurrentPieceTransforms(TEXT("Snap"));
 
 	if (bEnableLevel4DebugLogs)
